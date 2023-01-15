@@ -1,0 +1,58 @@
+{
+  "collapse-filter": true,
+  "search": "file:-excalidraw path:Technion",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": false,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "file: ALG1",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "file: GCH1",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "file: DEQ1",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    },
+    {
+      "query": "file: PYB1",
+      "color": {
+        "a": 1,
+        "rgb": 5415904
+      }
+    },
+    {
+      "query": "file: BMA1",
+      "color": {
+        "a": 1,
+        "rgb": 7885536
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.320768229166667,
+  "repelStrength": 12.0833333333333,
+  "linkStrength": 1,
+  "linkDistance": 108,
+  "scale": 1.1006853648910664,
+  "close": false
+}

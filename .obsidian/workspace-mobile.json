@@ -1,0 +1,155 @@
+{
+  "main": {
+    "id": "eef599845131565e",
+    "type": "split",
+    "children": [
+      {
+        "id": "03215b2a54b6dba5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "80c371053af26ce4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/Technion - Mechanical Engineering/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "fc72d2120a39ef14",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "029776aede28e75c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/Technion - Mechanical Engineering/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0d47f520c1736c46",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "44a58f715efb93f7",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "e43452c0e76364e5",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": true,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "22883f81b12a7fc9",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "5a5619a8c73874af",
+        "type": "leaf",
+        "state": {
+          "type": "starred",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "0a8057d9021e95ad",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "f9eedbd0c436156f",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "Technion/Technion - Mechanical Engineering/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
+            "collapseAll": true,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": false
+          }
+        }
+      },
+      {
+        "id": "46811168e5a7d2fe",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "Technion/Technion - Mechanical Engineering/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
+            "linksCollapsed": true,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "b9b7155ce7740d3a",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "Technion/Technion - Mechanical Engineering/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md"
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "active": "80c371053af26ce4",
+  "lastOpenFiles": [
+    "Technion/Technion - Mechanical Engineering/ALG1/Untitled.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים 2023-01-15 14.39.08.excalidraw.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_008 דטרמיננטה.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_001 שדה.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_005 מרחב וקטורי.md",
+    "Technion/README.md",
+    "Technion/Technion - Mechanical Engineering.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_006 בסיס ומימד.md",
+    "Technion/Technion - Mechanical Engineering/ALG1_004 מערכת משוואות לינארית.md"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "alwaysUpdateLinks": true,
+  "foldHeading": false,
+  "foldIndent": false,
+  "showIndentGuide": true,
+  "promptDelete": false,
+  "livePreview": true,
+  "autoPairBrackets": false,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": true,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "newFileLocation": "current",
+  "spellcheck": true,
+  "defaultViewMode": "preview",
+  "showFrontmatter": true,
+  "attachmentFolderPath": "./",
+  "autoPairMarkdown": false
+}

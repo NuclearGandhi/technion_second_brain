@@ -1,0 +1,159 @@
+{
+  "main": {
+    "id": "83cf6cecdf2f16d6",
+    "type": "split",
+    "children": [
+      {
+        "id": "eff30872aab29c82",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dc4128c8aa0f1bad",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "57060834a059d6fe",
+    "type": "split",
+    "children": [
+      {
+        "id": "8601b4dc5d66591c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fc1b1532d3947316",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4906d1eaa9904a0a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "מטריצה",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "004ab64fe19f31fc",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "fa682f324f30798a",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef40f509a1a5bb87",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ccd44a788ca80ecb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": true,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "a8377fc858bb769c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "39869e00d76c8903",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "70d425b5085cc14f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "obsidian-excalidraw-plugin:New Excalidraw drawing": false,
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false,
+      "templater-obsidian:Templater": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "dc4128c8aa0f1bad",
+  "lastOpenFiles": [
+    "README.md",
+    "Technion/Technion - Mechanical Engineering/GCH1/GCH1_011 שווי משקל כימי.md",
+    "README/example_2.png",
+    "README/example_1.png",
+    "Technion/Technion - Mechanical Engineering/GCH1/GCH1_009 הקשר הכימי II.md",
+    "Technion/Technion - Mechanical Engineering/GCH1/GCH1_007 הטבלה המחזורית והקונפיגורציה של האטום.md",
+    "Technion/Technion - Mechanical Engineering/GCH1/GCH1_008 הקשר הכימי I.md",
+    "Technion/Technion - Mechanical Engineering/GCH1/GCH1_006 אלקטרונים באטום.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_008 דטרמיננטה.md",
+    "README/graph_15_01_2023.png"
+  ]
+}
