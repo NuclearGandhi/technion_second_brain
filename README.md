@@ -22,7 +22,7 @@
 המחברת הזו היא תוצר של מאות שעות עבודה, אז אשמח אם:
 
 <p align="center">
-<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank" rel="noopener noreferrer">
+<a href="https://r.mtdv.me/QkTxDZCZoi" target="_blank" rel="noopener noreferrer">
 <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg">
 </a>
 </p>
