@@ -4,15 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "eff30872aab29c82",
+        "id": "d835620eeaa4789a",
         "type": "tabs",
         "children": [
           {
-            "id": "dc4128c8aa0f1bad",
+            "id": "d47414b68c7fdf0d",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "graph",
+              "state": {},
+              "pinned": true
             }
           }
         ]
@@ -65,7 +67,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fa682f324f30798a",
@@ -143,17 +146,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dc4128c8aa0f1bad",
+  "active": "d47414b68c7fdf0d",
   "lastOpenFiles": [
-    "README.md",
-    "Technion/Technion - Mechanical Engineering/GCH1/GCH1_011 שווי משקל כימי.md",
-    "README/example_2.png",
-    "README/example_1.png",
-    "Technion/Technion - Mechanical Engineering/GCH1/GCH1_009 הקשר הכימי II.md",
-    "Technion/Technion - Mechanical Engineering/GCH1/GCH1_007 הטבלה המחזורית והקונפיגורציה של האטום.md",
-    "Technion/Technion - Mechanical Engineering/GCH1/GCH1_008 הקשר הכימי I.md",
-    "Technion/Technion - Mechanical Engineering/GCH1/GCH1_006 אלקטרונים באטום.md",
-    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_008 דטרמיננטה.md",
-    "README/graph_15_01_2023.png"
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_005 מרחב וקטורי.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_004 מערכת משוואות לינארית.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_009 טרנספורמציה לינארית.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_006 בסיס ומימד.md",
+    "Technion/Technion - Mechanical Engineering/ALG1 104016 אלגברה 1מ.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
+    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008 אינטגרל מסוים.md",
+    "README/graph_15_01_2023.png",
+    "Technion/Technion - Mechanical Engineering/PYB1 234128 מבוא לפייתון.md",
+    "README.md"
   ]
 }
