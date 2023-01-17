@@ -18,5 +18,8 @@
   "defaultViewMode": "preview",
   "showFrontmatter": true,
   "attachmentFolderPath": "./",
-  "autoPairMarkdown": false
+  "autoPairMarkdown": false,
+  "userIgnoreFilters": [
+    "Technion/templates/"
+  ]
 }

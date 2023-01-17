@@ -1,6 +1,6 @@
 {
-  "collapse-filter": true,
-  "search": "file:-excalidraw path:Technion",
+  "collapse-filter": false,
+  "search": "file:-excalidraw",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -53,6 +53,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 1.2427488985741728,
+  "scale": 1.2427488985741761,
   "close": true
 }

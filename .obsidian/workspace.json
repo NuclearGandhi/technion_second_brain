@@ -16,8 +16,21 @@
               "state": {},
               "pinned": true
             }
+          },
+          {
+            "id": "d10b5c1a9e09b440",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/Technion - Mechanical Engineering/ALG1/ALG1_006 בסיס ומימד.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -46,10 +59,10 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "מטריצה",
+                "query": "TODO",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": true,
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
@@ -63,7 +76,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -78,22 +92,6 @@
         "id": "ef40f509a1a5bb87",
         "type": "tabs",
         "children": [
-          {
-            "id": "ccd44a788ca80ecb",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "collapseAll": false,
-                "extraContext": true,
-                "sortOrder": "alphabetical",
-                "showSearch": true,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
-              }
-            }
-          },
           {
             "id": "a8377fc858bb769c",
             "type": "leaf",
@@ -110,7 +108,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Technion/Technion - Mechanical Engineering/ALG1/ALG1_006 בסיס ומימד.md"
+              }
             }
           },
           {
@@ -119,18 +119,18 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Technion/Technion - Mechanical Engineering/ALG1/ALG1_006 בסיס ומימד.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,17 +146,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d47414b68c7fdf0d",
+  "active": "d10b5c1a9e09b440",
   "lastOpenFiles": [
-    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_005 מרחב וקטורי.md",
-    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_004 מערכת משוואות לינארית.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_002 פולינום.md",
     "Technion/Technion - Mechanical Engineering/ALG1/ALG1_009 טרנספורמציה לינארית.md",
-    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_006 בסיס ומימד.md",
-    "Technion/Technion - Mechanical Engineering/ALG1 104016 אלגברה 1מ.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_008 דטרמיננטה.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_007 מטריצה הפיכה.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_005 מרחב וקטורי.md",
     "Technion/Technion - Mechanical Engineering/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
-    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008 אינטגרל מסוים.md",
-    "README/graph_15_01_2023.png",
-    "Technion/Technion - Mechanical Engineering/PYB1 234128 מבוא לפייתון.md",
-    "README.md"
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_006 בסיס ומימד.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_004 מערכת משוואות לינארית.md",
+    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
+    "Technion/templates/TODO.md"
   ]
 }
