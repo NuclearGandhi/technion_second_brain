@@ -7573,7 +7573,7 @@ var DEFAULT_SETTINGS = {
   taboutEnabled: true,
   autoEnlargeBrackets: true,
   autoEnlargeBracketsTriggers: "sum, int, frac, prod",
-  wordDelimiters: "., +-\\n:;!?\\/{}[]()=~$"
+  wordDelimiters: "., +-\\n	:;!?\\/{}[]()=~$"
 };
 var LatexSuiteSettingTab = class extends import_obsidian6.PluginSettingTab {
   constructor(app, plugin) {
@@ -7913,6 +7913,9 @@ var SnippetManager = class {
   queueSnippet(snippet) {
     this.snippetsToAdd.push(snippet);
   }
+  clearSnippetQueue() {
+    this.snippetsToAdd = [];
+  }
   expandSnippets(view) {
     if (this.snippetsToAdd.length === 0)
       return false;
@@ -8240,9 +8243,14 @@ var LatexSuitePlugin = class extends import_obsidian7.Plugin {
       let success = false;
       if (this.settings.snippetsEnabled) {
         if (!ctrlKey) {
-          success = this.runSnippets(view, key, withinMath, ranges);
-          if (success)
-            return true;
+          try {
+            success = this.runSnippets(view, key, withinMath, ranges);
+            if (success)
+              return true;
+          } catch (e) {
+            this.snippetManager.clearSnippetQueue();
+            console.error(e);
+          }
         }
       }
       const shouldTaboutByCloseBracket = this.shouldTaboutByCloseBracket(view, key);

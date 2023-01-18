@@ -4,35 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "08c27186b55c53a1",
+        "id": "e6050454241f5628",
         "type": "tabs",
         "children": [
           {
-            "id": "73fef3b8f3fe41ba",
+            "id": "bc6494f4d64a86a9",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "f96912130f73f495",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008 אינטגרל מסוים.md",
-                "mode": "preview",
-                "source": false
-              }
+              "type": "graph",
+              "state": {},
+              "pinned": true
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +83,6 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008 אינטגרל מסוים.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -115,7 +99,6 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008 אינטגרל מסוים.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": true
           }
@@ -126,25 +109,23 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {
-            "file": "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008 אינטגרל מסוים.md"
-          }
+          "state": {}
         }
       }
     ],
     "currentTab": 2
   },
-  "active": "f96912130f73f495",
+  "active": "bc6494f4d64a86a9",
   "lastOpenFiles": [
-    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
-    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_009/DEQ1_009 אינטגרל מוכלל 2023-01-12 13.46.36.excalidraw.md",
-    "Technion/Technion - Mechanical Engineering/DEQ1 104041 חדו”א 1מ.md",
-    "Technion/Technion - Mechanical Engineering/GCH1 125001 כימיה כללית.md",
-    "Technion/Technion - Mechanical Engineering/GCH1/GCH1_010 כוחות בין מולקולריים ומעברי פאזה.md",
-    "Technion/Technion - Mechanical Engineering/GCH1/GCH1_011 שווי משקל כימי.md",
-    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_009 טרנספורמציה לינארית.md",
+    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008/DEQ1_008 אינטגרל מסוים 2023-01-10 08.54.39.excalidraw.md",
     "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008 אינטגרל מסוים.md",
+    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008 אינטגרל מסוים 2023-01-18 18.26.04.excalidraw.md",
+    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008/DEQ1_008 אינטגרל מסוים 2023-01-10 09.17.01.excalidraw.md",
     "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008/DEQ1_008 אינטגרל מסוים 2023-01-10 08.36.27.excalidraw.md",
-    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_006 פולינום טיילור.md"
+    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_007 אינטגרל לא מסוים.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_009 טרנספורמציה לינארית.md",
+    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_010/ALG1_010 וקטורים עצמיים וערכים עצמיים 2023-01-15 14.39.08.excalidraw.md",
+    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_009 אינטגרל מוכלל.md"
   ]
 }
