@@ -1,3 +1,5 @@
+### תקופת מבחנים? כנראה האתר [עלה](https://publish.obsidian.md/technion-second-brain/Technion/TECHNION/TECHNION_000)
+
 ### קישור להורדה של הגרסא האחרונה: [הורדה](https://github.com/NuclearGandhi/Technion_Second_Brain/archive/refs/heads/master.zip)
 
 ניתן לראות מתי היה העדכון האחרון ומה היו השינויים [כאן](https://github.com/NuclearGandhi/technion_second_brain/commits/master).
@@ -21,9 +23,10 @@
 ### שימו לב!
 אוסף זה של מחברות עלול להכיל שגיאות. הוא אוסף של סיכומים שאני כותב לעצמי - מטרתו היא לא לאסוף מידע אקדמי לציבור הרחב. לכן, אין להתייחס אליו כמו ספר אקדמי.
 בנוסף, שימו לב כי המחברת הזאת תמיד מתעדכנת.
+
 ---
 
-המחברת הזו היא תוצר של מאות שעות עבודה, אז אשמח אם:
+המחברת הזו היא תוצר של המוןןןןןן שעות עבודה, אז אשמח אם:
 
 <p align="center">
 <a href="https://r.mtdv.me/QkTxDZCZoi" target="_blank" rel="noopener noreferrer">

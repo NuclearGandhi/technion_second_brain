@@ -18,39 +18,19 @@
             }
           },
           {
-            "id": "2d2e600ca01b989d",
+            "id": "3fd9462ba084b1ae",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
+                "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
-            },
-            "group": "b8524cfb91b1f0ba"
+            }
           }
         ],
         "currentTab": 1
-      },
-      {
-        "id": "7aeaec9cad661043",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "0f46710add338e6c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
-                "mode": "preview",
-                "source": true
-              }
-            },
-            "group": "b8524cfb91b1f0ba"
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -75,7 +55,7 @@
         "state": {
           "type": "search",
           "state": {
-            "query": "",
+            "query": "TODO",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": true,
@@ -104,7 +84,7 @@
         }
       }
     ],
-    "currentTab": 0
+    "currentTab": 1
   },
   "right": {
     "id": "0a8057d9021e95ad",
@@ -116,7 +96,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
+            "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -133,7 +113,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
+            "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": true
           }
@@ -145,24 +125,24 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_009 אינטגרל מוכלל.md"
+            "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md"
           }
         }
       }
     ],
     "currentTab": 2
   },
-  "active": "2d2e600ca01b989d",
+  "active": "3fd9462ba084b1ae",
   "lastOpenFiles": [
-    "Technion/Technion - Mechanical Engineering/DEQ1 104041 חדו”א 1מ.md",
-    "Technion/Technion - Mechanical Engineering/ALG1 104016 אלגברה 1מ.md",
-    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_009 טרנספורמציה לינארית.md",
-    "2023-01-20.md",
-    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_007 אינטגרל לא מסוים.md",
-    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008 אינטגרל מסוים.md",
-    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_008/DEQ1_008 אינטגרל מסוים 2023-01-18 18.26.04.excalidraw.md",
-    "Technion/Technion - Mechanical Engineering/ALG1/ALG1_006 בסיס ומימד.md",
-    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_010 טורים.md",
-    "Technion/Technion - Mechanical Engineering/DEQ1/DEQ1_009 אינטגרל מוכלל.md"
+    "Technion/TECHNION/DEQ1/DEQ1_010 טורים.md",
+    "Technion/TECHNION/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
+    "Technion/TECHNION/ALG1/ALG1_009 טרנספורמציה לינארית.md",
+    "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
+    "Technion/TECHNION/GCH1/GCH1_000 125001 כימיה כללית.md",
+    "Technion/TECHNION/DEQ1/DEQ1_007 אינטגרל לא מסוים.md",
+    "Technion/TECHNION/DEQ1/DEQ1_006 פולינום טיילור.md",
+    "Technion/TECHNION/DEQ1/DEQ1_001 פונקציה.md",
+    "Technion/TECHNION/DEQ1/DEQ1_002 גבול של פונקציה.md",
+    "Technion/TECHNION/DEQ1/DEQ1_003 גבולות של סדרות.md"
   ]
 }
