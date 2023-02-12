@@ -1,0 +1,60 @@
+{
+  "onOpenPreferNewTab": false,
+  "alwaysNewTabForSymbols": false,
+  "useActiveTabForSymbolsOnMobile": false,
+  "symbolsInLineOrder": true,
+  "editorListCommand": "edt ",
+  "symbolListCommand": "@",
+  "workspaceListCommand": "+",
+  "headingsListCommand": "#",
+  "starredListCommand": "'",
+  "commandListCommand": ">",
+  "relatedItemsListCommand": "~",
+  "strictHeadingsOnly": false,
+  "searchAllHeadings": true,
+  "excludeViewTypes": [
+    "empty"
+  ],
+  "referenceViews": [
+    "backlink",
+    "localgraph",
+    "outgoing-link",
+    "outline"
+  ],
+  "limit": 50,
+  "includeSidePanelViewTypes": [
+    "backlink",
+    "image",
+    "markdown",
+    "pdf"
+  ],
+  "enabledSymbolTypes": {
+    "1": true,
+    "2": true,
+    "4": true,
+    "8": true,
+    "16": true
+  },
+  "selectNearestHeading": true,
+  "excludeFolders": [],
+  "excludeLinkSubTypes": 0,
+  "excludeRelatedFolders": [
+    ""
+  ],
+  "excludeOpenRelatedFiles": false,
+  "excludeObsidianIgnoredFiles": false,
+  "shouldSearchFilenames": false,
+  "pathDisplayFormat": 3,
+  "hidePathIfRoot": true,
+  "enabledRelatedItems": [
+    "disk-location",
+    "backlink",
+    "outgoing-link"
+  ],
+  "showOptionalIndicatorIcons": true,
+  "overrideStandardModeBehaviors": true,
+  "enabledRibbonCommands": [
+    "HeadingsList",
+    "SymbolList"
+  ]
+}

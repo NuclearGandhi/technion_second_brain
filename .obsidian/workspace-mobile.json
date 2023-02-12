@@ -4,33 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "e6050454241f5628",
+        "id": "a7dfef7381affc06",
         "type": "tabs",
         "children": [
           {
-            "id": "ab4f8d50ba96d807",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "graph",
-              "state": {},
-              "pinned": true
-            }
-          },
-          {
-            "id": "3fd9462ba084b1ae",
+            "id": "9d842a27b361a58a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
-                "mode": "source",
-                "source": false
+                "file": "Technion/TECHNION/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
+                "mode": "preview",
+                "source": true
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -55,7 +44,7 @@
         "state": {
           "type": "search",
           "state": {
-            "query": "TODO",
+            "query": "סטוכיומטרי",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": true,
@@ -84,7 +73,7 @@
         }
       }
     ],
-    "currentTab": 1
+    "currentTab": 0
   },
   "right": {
     "id": "0a8057d9021e95ad",
@@ -96,7 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
+            "file": "Technion/TECHNION/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -113,9 +102,9 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
+            "file": "Technion/TECHNION/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
             "linksCollapsed": true,
-            "unlinkedCollapsed": true
+            "unlinkedCollapsed": false
           }
         }
       },
@@ -125,24 +114,24 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md"
+            "file": "Technion/TECHNION/DEQ1/DEQ1_009 אינטגרל מוכלל.md"
           }
         }
       }
     ],
     "currentTab": 2
   },
-  "active": "3fd9462ba084b1ae",
+  "active": "9d842a27b361a58a",
   "lastOpenFiles": [
-    "Technion/TECHNION/DEQ1/DEQ1_010 טורים.md",
-    "Technion/TECHNION/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
-    "Technion/TECHNION/ALG1/ALG1_009 טרנספורמציה לינארית.md",
-    "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
-    "Technion/TECHNION/GCH1/GCH1_000 125001 כימיה כללית.md",
+    "Technion/TECHNION/DEQ1/DEQ1_008 אינטגרל מסוים.md",
+    "Technion/TECHNION/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
     "Technion/TECHNION/DEQ1/DEQ1_007 אינטגרל לא מסוים.md",
-    "Technion/TECHNION/DEQ1/DEQ1_006 פולינום טיילור.md",
-    "Technion/TECHNION/DEQ1/DEQ1_001 פונקציה.md",
+    "Technion/TECHNION/DEQ1/DEQ1_004 רציפות.md",
+    "Technion/TECHNION/DEQ1/DEQ1_003 גבולות של סדרות.md",
+    "Technion/TECHNION/DEQ1/DEQ1_005 נגזרות.md",
     "Technion/TECHNION/DEQ1/DEQ1_002 גבול של פונקציה.md",
-    "Technion/TECHNION/DEQ1/DEQ1_003 גבולות של סדרות.md"
+    "Technion/TECHNION/DEQ1/DEQ1_010 טורי מספרים.md",
+    "Technion/TECHNION/DEQ1/DEQ1_011 טורי חזקות.md",
+    "Technion/TECHNION/DEQ1/DEQ1_000 104041 חדו”א 1מ.md"
   ]
 }

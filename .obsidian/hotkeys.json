@@ -62,24 +62,6 @@
       "key": "L"
     }
   ],
-  "darlal-switcher-plus:switcher-plus:open": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "G"
-    }
-  ],
-  "darlal-switcher-plus:switcher-plus:open-editors": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "H"
-    }
-  ],
   "templater-obsidian:Technion/templates/דוגמאות.md": [
     {
       "modifiers": [
@@ -114,6 +96,15 @@
         "Shift"
       ],
       "key": ";"
+    }
+  ],
+  "darlal-switcher-plus:switcher-plus:open-headings": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "H"
     }
   ]
 }

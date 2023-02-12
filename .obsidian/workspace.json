@@ -1,23 +1,43 @@
 {
   "main": {
-    "id": "83cf6cecdf2f16d6",
+    "id": "73aa16c91a1e7949",
     "type": "split",
     "children": [
       {
-        "id": "bac87a249335f1eb",
+        "id": "531224811be65bfd",
         "type": "tabs",
         "children": [
           {
-            "id": "7b5b4315bb6d7f91",
+            "id": "81e1ca42d3de9a62",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/TECHNION/GCH1/GCH1_001 רקע ומושגי יסוד.md",
+                "file": "Technion/TECHNION/GCH1/GCH1_012 חומצות ובסיסים.md",
                 "mode": "source",
+                "source": true
+              }
+            },
+            "group": "67f9233f6f1c1f41"
+          }
+        ]
+      },
+      {
+        "id": "de5b694bbb2d56dd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "12ab1212c957df0e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/TECHNION/GCH1/GCH1_012 חומצות ובסיסים.md",
+                "mode": "preview",
                 "source": false
               }
-            }
+            },
+            "group": "67f9233f6f1c1f41"
           }
         ]
       }
@@ -25,15 +45,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "57060834a059d6fe",
+    "id": "295b8347a6be74ca",
     "type": "split",
     "children": [
       {
-        "id": "8601b4dc5d66591c",
+        "id": "b03358443ecad2a0",
         "type": "tabs",
         "children": [
           {
-            "id": "fc1b1532d3947316",
+            "id": "717dd551d2d7a242",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +63,7 @@
             }
           },
           {
-            "id": "4906d1eaa9904a0a",
+            "id": "8841281c19744294",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +78,7 @@
             }
           },
           {
-            "id": "004ab64fe19f31fc",
+            "id": "5991f67376037c55",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -72,15 +92,44 @@
     "width": 300
   },
   "right": {
-    "id": "fa682f324f30798a",
+    "id": "c1c3ae1b57de7de1",
     "type": "split",
     "children": [
       {
-        "id": "ef40f509a1a5bb87",
+        "id": "89b21bb9455ff781",
         "type": "tabs",
         "children": [
           {
-            "id": "a8377fc858bb769c",
+            "id": "81ee544417da4107",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Technion/TECHNION/GCH1/GCH1_012 חומצות ובסיסים.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5833210f157da751",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Technion/TECHNION/GCH1/GCH1_012 חומצות ובסיסים.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "efe95815146e6d7e",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -91,41 +140,12 @@
             }
           },
           {
-            "id": "39869e00d76c8903",
+            "id": "85872b6055ca4d37",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/TECHNION/GCH1/GCH1_001 רקע ומושגי יסוד.md"
-              }
-            }
-          },
-          {
-            "id": "70d425b5085cc14f",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "Technion/TECHNION/GCH1/GCH1_001 רקע ומושגי יסוד.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": false
-              }
-            }
-          },
-          {
-            "id": "886a121beabda2c1",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "Technion/TECHNION/GCH1/GCH1_001 רקע ומושגי יסוד.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": true,
-                "unlinkedCollapsed": false
+                "file": "Technion/TECHNION/GCH1/GCH1_012 חומצות ובסיסים.md"
               }
             }
           }
@@ -140,27 +160,27 @@
   "left-ribbon": {
     "hiddenItems": {
       "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "darlal-switcher-plus:Open in Headings Mode": false,
-      "darlal-switcher-plus:Open Symbols for the active editor": false,
-      "obsidian-excalidraw-plugin:New Excalidraw drawing": false,
       "publish:Publish changes": false
     }
   },
-  "active": "7b5b4315bb6d7f91",
+  "active": "81e1ca42d3de9a62",
   "lastOpenFiles": [
-    "Technion/TECHNION/GCH1/GCH1_001 רקע ומושגי יסוד.md",
-    "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
-    "Technion/TECHNION/PYB1/PYB1_HW010 תרגיל בית 10.md",
-    "DEQ1_009 אינטגרל מוכלל 2023-01-12 13.46.36.excalidraw.dark.svg.md",
-    "Technion/TECHNION/GCH1/GCH1_000 125001 כימיה כללית.md",
-    "Technion/TECHNION/TECHNION_000.md",
-    "favicon-196x196.png",
-    "README.md",
-    "Technion/TECHNION/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
-    "Technion/TECHNION/GCH1/GCH1_012 חומצות ובסיסים.md"
+    "Technion/TECHNION/GCH1/GCH1_011 שווי משקל כימי.md",
+    "Technion/TECHNION/GCH1/GCH1_010 כוחות בין מולקולריים ומעברי פאזה.md",
+    "Technion/TECHNION/GCH1/GCH1_009 הקשר הכימי II.md",
+    "Technion/TECHNION/GCH1/GCH1_008 הקשר הכימי I.md",
+    "Technion/TECHNION/GCH1/GCH1_007 הטבלה המחזורית והקונפיגורציה של האטום.md",
+    "Technion/TECHNION/GCH1/GCH1_006 אלקטרונים באטום.md",
+    "Technion/TECHNION/GCH1/GCH1_005 מבוא למכניקה קוונטית.md",
+    "Technion/TECHNION/GCH1/GCH1_004 תרמודינמיקה.md",
+    "Technion/TECHNION/GCH1/GCH1_003 גזים.md",
+    "Technion/TECHNION/GCH1/GCH1_002 תגובות כימיות.md"
   ]
 }
