@@ -13,9 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/TECHNION/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
+                "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
                 "mode": "preview",
-                "source": true
+                "source": false
               }
             }
           }
@@ -85,7 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/TECHNION/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
+            "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/TECHNION/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
+            "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -114,7 +114,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/TECHNION/DEQ1/DEQ1_009 אינטגרל מוכלל.md"
+            "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md"
           }
         }
       }
@@ -123,15 +123,15 @@
   },
   "active": "9d842a27b361a58a",
   "lastOpenFiles": [
-    "Technion/TECHNION/DEQ1/DEQ1_008 אינטגרל מסוים.md",
-    "Technion/TECHNION/DEQ1/DEQ1_009 אינטגרל מוכלל.md",
-    "Technion/TECHNION/DEQ1/DEQ1_007 אינטגרל לא מסוים.md",
-    "Technion/TECHNION/DEQ1/DEQ1_004 רציפות.md",
-    "Technion/TECHNION/DEQ1/DEQ1_003 גבולות של סדרות.md",
-    "Technion/TECHNION/DEQ1/DEQ1_005 נגזרות.md",
-    "Technion/TECHNION/DEQ1/DEQ1_002 גבול של פונקציה.md",
-    "Technion/TECHNION/DEQ1/DEQ1_010 טורי מספרים.md",
-    "Technion/TECHNION/DEQ1/DEQ1_011 טורי חזקות.md",
-    "Technion/TECHNION/DEQ1/DEQ1_000 104041 חדו”א 1מ.md"
+    "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור 2023-02-17 14.44.02.excalidraw.md",
+    "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור 2023-02-17 14.44.02.excalidraw.svg",
+    "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
+    "Technion/TECHNION/GCH1/GCH1_E2023WA.md",
+    "Technion/TECHNION/GCH1/GCH1_E2023WA 2023-02-17 14.19.47.excalidraw.md",
+    "Technion/TECHNION/GCH1/GCH1_004 תרמודינמיקה.md",
+    "Technion/TECHNION/GCH1/GCH1_E01 תרגילים ממבחנים.md",
+    "Technion/TECHNION/GCH1/GCH1_E01 תרגילים ממבחנים 2023-02-15 10.02.52.excalidraw.md",
+    "Technion/TECHNION/GCH1/GCH1_E01 תרגילים ממבחנים 2023-02-15 09.50.52.excalidraw.md",
+    "Technion/TECHNION/GCH1/GCH1_E01 תרגילים ממבחנים 2023-02-15 09.50.52.excalidraw.svg"
   ]
 }
