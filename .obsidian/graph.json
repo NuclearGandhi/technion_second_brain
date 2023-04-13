@@ -1,11 +1,11 @@
 {
   "collapse-filter": false,
-  "search": "file:-excalidraw",
+  "search": "",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
-  "showOrphans": false,
-  "collapse-color-groups": true,
+  "showOrphans": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "file: ALG1",
@@ -29,30 +29,51 @@
       }
     },
     {
-      "query": "file: PYB1",
-      "color": {
-        "a": 1,
-        "rgb": 5415904
-      }
-    },
-    {
       "query": "file: BMA1",
       "color": {
         "a": 1,
         "rgb": 7885536
       }
+    },
+    {
+      "query": "file: CAL1",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "file: CAL2",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "file: SLD1",
+      "color": {
+        "a": 1,
+        "rgb": 5395168
+      }
+    },
+    {
+      "query": "file: IPY1",
+      "color": {
+        "a": 1,
+        "rgb": 11621088
+      }
     }
   ],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0.3,
   "nodeSizeMultiplier": 1.01875,
   "lineSizeMultiplier": 0.4675,
-  "collapse-forces": false,
+  "collapse-forces": true,
   "centerStrength": 1,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.8546533701667927,
-  "close": true
+  "scale": 0.367225828931119,
+  "close": false
 }

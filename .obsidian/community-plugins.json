@@ -1,7 +1,8 @@
 [
   "obsidian-latex-suite",
-  "templater-obsidian",
   "obsidian-excalidraw-plugin",
+  "dynamic-rtl",
   "darlal-switcher-plus",
-  "dynamic-rtl"
+  "templater-obsidian",
+  "find-unlinked-files"
 ]

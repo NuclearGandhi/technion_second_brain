@@ -1,6 +1,21 @@
- img[alt*="center"] {
+img[alt*="center"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+img[alt*="bwhite"] {
+  background-color: white;
+}
+
+img[alt*="invert"] {
+  filter: invert(1);
+}
+
+img[alt*="wmult"] {
+  mix-blend-mode: multiply;
+}
+
+img[alt*="bmult"] {
+  mix-blend-mode: screen;
 }

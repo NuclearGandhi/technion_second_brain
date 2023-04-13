@@ -8,16 +8,36 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9d842a27b361a58a",
+            "id": "b2c8372cfa858502",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
+                "file": "Technion/TECHNION/DEQ1/DEQ1_001 מבוא.md",
+                "mode": "source",
+                "source": true
+              }
+            },
+            "group": "f9951e4d6b5df112"
+          }
+        ]
+      },
+      {
+        "id": "33062f31d89b49b3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4acc67ae5a300bd5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/TECHNION/DEQ1/DEQ1_001 מבוא.md",
                 "mode": "preview",
                 "source": false
               }
-            }
+            },
+            "group": "f9951e4d6b5df112"
           }
         ]
       }
@@ -85,7 +105,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
+            "file": "Technion/TECHNION/DEQ1/DEQ1_001 מבוא.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -102,7 +122,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
+            "file": "Technion/TECHNION/DEQ1/DEQ1_001 מבוא.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -114,24 +134,67 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md"
+            "file": "Technion/TECHNION/DEQ1/DEQ1_001 מבוא.md"
           }
         }
       }
     ],
     "currentTab": 2
   },
-  "active": "9d842a27b361a58a",
+  "left-ribbon": {
+    "hiddenItems": {
+      "templater-obsidian:Templater": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "publish:Publish changes": false,
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "b2c8372cfa858502",
   "lastOpenFiles": [
-    "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור 2023-02-17 14.44.02.excalidraw.md",
-    "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור 2023-02-17 14.44.02.excalidraw.svg",
-    "Technion/TECHNION/GCH1/GCH1_013 חמצון חיזור.md",
-    "Technion/TECHNION/GCH1/GCH1_E2023WA.md",
-    "Technion/TECHNION/GCH1/GCH1_E2023WA 2023-02-17 14.19.47.excalidraw.md",
-    "Technion/TECHNION/GCH1/GCH1_004 תרמודינמיקה.md",
-    "Technion/TECHNION/GCH1/GCH1_E01 תרגילים ממבחנים.md",
-    "Technion/TECHNION/GCH1/GCH1_E01 תרגילים ממבחנים 2023-02-15 10.02.52.excalidraw.md",
-    "Technion/TECHNION/GCH1/GCH1_E01 תרגילים ממבחנים 2023-02-15 09.50.52.excalidraw.md",
-    "Technion/TECHNION/GCH1/GCH1_E01 תרגילים ממבחנים 2023-02-15 09.50.52.excalidraw.svg"
+    "Technion/TECHNION/CAL2/CAL2_004 משטחים ריבועיים.md",
+    "Technion/TECHNION/CAL2/CAL2_003 מישורים וישרים.md",
+    "Technion/TECHNION/SLD1/SDL_002 שיווי משקל.md",
+    "Technion/TECHNION/SLD1/SLD1_002 שיווי משקל.md",
+    "Technion/TECHNION/IMT1/IMT1_001/Screenshot_20230401_100622_OneDrive.jpg",
+    "Technion/TECHNION/IMT1/IMT1_001/Screenshot_20230401_102251_OneDrive.jpg",
+    "Technion/TECHNION/IMT1/IMT1_001/Screenshot_20230401_102149_OneDrive.jpg",
+    "Technion/TECHNION/IMT1/IMT1_001",
+    "Technion/TECHNION/SLD1/SLD1_002/Pasted image 20230403212732.png",
+    "Technion/TECHNION/SLD1/SLD1_002/Pasted image 20230403212705.png",
+    "Technion/TECHNION/SLD1/SLD1_002/Pasted image 20230403212627.png",
+    "Technion/TECHNION/SLD1/SLD1_002/Pasted image 20230403212642.png",
+    "Technion/TECHNION/SLD1/SLD1_002/Pasted image 20230403212650.png",
+    "Technion/TECHNION/SLD1/Pasted image 20230403212705.png",
+    "Technion/TECHNION/SLD1/Pasted image 20230403212650.png",
+    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-29 20.18.22.excalidraw.md",
+    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.18.46.excalidraw.md",
+    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-29 20.52.13.excalidraw.md",
+    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.37.53.excalidraw.md",
+    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-29 20.18.22.excalidraw.dark.svg.md",
+    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-04-03 08.38.25.excalidraw.md",
+    "Technion/TECHNION/SLD1/SLD1_002",
+    "Technion/TECHNION/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, תגובות.md",
+    "Technion/TECHNION/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.37.53.excalidraw.md",
+    "Technion/TECHNION/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.18.46.excalidraw.md",
+    "Technion/TECHNION/SLD1/SDL_002 סמכים ותגובות 2023-04-03 11.02.23.excalidraw.md",
+    "Technion/TECHNION/SLD1/SDL_002 סמכים ותגובות 2023-04-03 10.24.52.excalidraw.md",
+    "Technion/TECHNION/SLD1/SDL_002 סמכים ותגובות 2023-04-03 10.19.18.excalidraw.md",
+    "Technion/TECHNION/SLD1/SDL_002 סמכים ותגובות 2023-04-03 10.01.20.excalidraw.md",
+    "Technion/TECHNION/SLD1/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-04-03 08.38.25.excalidraw.md",
+    "Technion/TECHNION/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
+    "Technion/TECHNION/CAL2/CAL2_002 עקומים במישור.md",
+    "Technion/TECHNION/CAL2/CAL2_001 וקטורים.md",
+    "Technion/TECHNION/IMT1/IMT1_001 מבוא.md",
+    "Technion/TECHNION/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
+    "Technion/TECHNION/PHY1/PHY1_001 וקטורים וקינמטיקה.md",
+    "Technion/TECHNION/PHY1/PHY1_001 וקטורים וקינמטיקה 2023-03-31 15.46.37.excalidraw.md",
+    "Technion/TECHNION/PHY1/PHY1_001 וקטורים וקינמטיקה 2023-03-31 13.46.19.excalidraw.md",
+    "Technion/TECHNION/CAL2/CAL2_004",
+    "Technion/TECHNION/CAL2/CAL2_003"
   ]
 }
