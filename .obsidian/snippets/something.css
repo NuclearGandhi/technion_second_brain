@@ -1,4 +1,4 @@
-img[alt*="center"] {
+img {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -12,10 +12,24 @@ img[alt*="invert"] {
   filter: invert(1);
 }
 
-img[alt*="wmult"] {
+img[alt*="bmult"] {
+  mix-blend-mode: screen;
+}
+
+.theme-dark img[alt*="book"]{
+  mix-blend-mode: screen;
+  filter: invert(1);
+}
+
+.theme-light img[alt*="book"]{
   mix-blend-mode: multiply;
 }
 
-img[alt*="bmult"] {
+.theme-dark .geo {
   mix-blend-mode: screen;
+  filter: invert(1);
+}
+
+.theme-light .geo {
+  mix-blend-mode: multiply;
 }

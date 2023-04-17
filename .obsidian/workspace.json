@@ -4,20 +4,40 @@
     "type": "split",
     "children": [
       {
-        "id": "69762424cb2a5a1e",
+        "id": "38c60586b39c8981",
         "type": "tabs",
         "children": [
           {
-            "id": "a52f5937b71f1c2c",
+            "id": "91b9599ce69502a3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/TECHNION/IMT1/IMT1_003 המבנה של גבישים.md",
+                "file": "Technion/TECHNION/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
+                "mode": "source",
+                "source": true
+              }
+            },
+            "group": "b7b7dacca71aa301"
+          }
+        ]
+      },
+      {
+        "id": "94697c5c84debee1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2a2d8386ab71d35d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/TECHNION/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
                 "mode": "preview",
                 "source": false
               }
-            }
+            },
+            "group": "b7b7dacca71aa301"
           }
         ]
       }
@@ -69,8 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "c1c3ae1b57de7de1",
@@ -86,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/TECHNION/IMT1/IMT1_003 המבנה של גבישים.md",
+                "file": "Technion/TECHNION/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/TECHNION/IMT1/IMT1_003 המבנה של גבישים.md",
+                "file": "Technion/TECHNION/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/TECHNION/IMT1/IMT1_003 המבנה של גבישים.md"
+                "file": "Technion/TECHNION/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md"
               }
             }
           }
@@ -151,9 +170,37 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "a52f5937b71f1c2c",
+  "active": "91b9599ce69502a3",
   "lastOpenFiles": [
-    "Technion/TECHNION/IMT1/IMT1_003/Pasted image 20230413141902.png",
+    "Technion/TECHNION/IMT1/IMT1_003 המבנה של גבישים.md",
+    "Technion/TECHNION/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
+    "Technion/TECHNION/IMT1/IMT1_004 דיאגרמת פאזות.md",
+    "Technion/TECHNION/SLD1/SLD1_003 שווי משקל של מבנים (מסבכים).md",
+    "Technion/TECHNION/SLD1/SLD1_003/Screenshot_20230417_102122_OneDrive.jpg",
+    "Technion/TECHNION/SLD1/SLD1_003",
+    "Technion/TECHNION/DEQ1/DEQ2_002 משוואת ברנולי.md",
+    "Technion/TECHNION/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
+    "Technion/TECHNION/DEQ1/DEQ1_001 מבוא, גורם אינטגרציה, משוואה פרידה.md",
+    "Technion/TECHNION/IMT1/IMT1_003/Pasted image 20230417170935.png",
+    "Technion/TECHNION/IMT1/IMT1_003/Screenshot_20230417_174825.png",
+    "Technion/TECHNION/IMT1/IMT1_003/Screenshot_20230417_173843.png",
+    "Technion/TECHNION/IMT1/IMT1_003/Pasted image 20230417171810.png",
+    "Technion/TECHNION/IMT1/IMT1_003/Pasted image 20230417164700.png",
+    "Technion/TECHNION/CAL2/CAL2_003 משטחים ריבועיים.md",
+    "Technion/TECHNION/CAL2/CAL2_002 מישורים וישרים.md",
+    "Technion/TECHNION/IMT1/IMT1_004/Screenshot_20230417_131758_OneDrive.jpg",
+    "Technion/TECHNION/IMT1/IMT1_004",
+    "Technion/TECHNION/CAL2/CAL2_004 עקומים במרחב.md",
+    "Technion/TECHNION/CAL2/CAL2_001 וקטורים.md",
+    "favicon-32x32.png",
+    "Technion/TECHNION/TECHNION_000.md",
+    "Technion/TECHNION/CAL2/CAL2_002/CAL2_002 מישורים וישרים 2023-03-29 15.12.46.excalidraw.md",
+    "Technion/TECHNION/CAL2/CAL2_002/CAL2_002 מישורים וישרים 2023-03-29 15.12.46.excalidraw.svg",
+    "Technion/TECHNION/CAL2/CAL2_002/CAL2_002 מישורים וישרים 2023-03-29 15.02.34.excalidraw.md",
+    "Technion/TECHNION/CAL2/CAL2_000 104043 חדוא 2מ.md",
+    "Technion/TECHNION/CAL2/CAL2_002 עקומים במישור.md",
+    "Technion/TECHNION/CAL2/CAL2_002/CAL2_002 מישורים וישרים 2023-03-29 15.02.34.excalidraw.svg",
+    "Technion/TECHNION/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-26 20.12.10.excalidraw.md",
     "broken links output.md",
     "Technion/TECHNION/CAL1/CAL1_008 אינטגרל מסוים.md",
     "Technion/TECHNION/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
@@ -161,34 +208,8 @@
     "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-29 20.18.22.excalidraw.dark.svg.md",
     "orphaned files output.md",
     "Technion/TECHNION/BMA1/BMA1_000 הקדמה למתמטיקה.md",
-    "Technion/TECHNION/PHY1/PHY1_001/PHY1_001 וקטורים וקינמטיקה 2023-03-23 09.44.05.excalidraw.svg",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-22 13.46.18.excalidraw.svg",
-    "Technion/TECHNION/CAL1/CAL1_008/CAL1_008 אינטגרל מסוים 2023-01-10 09.33.12.excalidraw.svg",
-    "Technion/TECHNION/IMT1/IMT1_003/Pasted image 20230412134807.png",
-    "Technion/TECHNION/TECHNION_000.md",
     "Technion/TECHNION/Drawing 2023-04-13 14.38.00.excalidraw.md",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-04-03 08.38.25.excalidraw.svg",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-22 09.32.16.excalidraw.svg",
-    "Technion/TECHNION/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-21 09.14.47.excalidraw.svg",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-22 13.42.28.excalidraw.svg",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.37.53.excalidraw.svg",
-    "Technion/TECHNION/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-21 09.00.07.excalidraw.svg",
     "Notes_230127_155512_4e2.jpg.md",
-    "Technion/TECHNION/CAL2/CAL2_000 104043 חדוא 2מ.md",
-    "Technion/TECHNION/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-21 09.00.07.excalidraw.md",
-    "Technion/TECHNION/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-21 09.14.47.excalidraw.md",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-28 15.44.49.excalidraw.md",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.37.53.excalidraw.md",
-    "Technion/TECHNION/CAL2/Untitled.md",
-    "Technion/TECHNION/CAL2/CAL2_005 עקומים במרחב.md",
-    "Technion/TECHNION/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
-    "Technion/TECHNION/IMT1/IMT1_001 מבוא.md",
-    "Technion/TECHNION/IMT1/IMT1_003 המבנה של גבישים.md",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-04-03 08.38.25.excalidraw.md",
-    "Technion/TECHNION/GCH1/GCH1_001 רקע ומושגי יסוד.md",
-    "Technion/TECHNION/GCH1/GCH1_000 125001 כימיה כללית.md",
-    "Technion/TECHNION/CAL1/CAL1_002 גבול של פונקציה.md",
-    "Technion/TECHNION/PHY1/PHY1_001 וקטורים וקינמטיקה.md",
     "Technion/TECHNION/IMT1/IMT1_003",
     "Technion/TECHNION/IMT1/IMT1_002",
     "Technion/TECHNION/IMT1/IMT1_001",
@@ -196,8 +217,6 @@
     "Technion/TECHNION/SLD1/~syncthing~SDL_002 שיווי משקל.md.tmp",
     "Technion/TECHNION/SLD1/~syncthing~SLD1_001 וקטורים, כוחות, מומנטים, תגובות.md.tmp",
     "Technion/TECHNION/SLD1/~syncthing~SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.37.53.excalidraw.svg.tmp",
-    "Technion/TECHNION/SLD1/~syncthing~SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.37.53.excalidraw.md.tmp",
-    "Technion/TECHNION/SLD1/~syncthing~SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.18.46.excalidraw.md.tmp",
-    "Technion/TECHNION/SLD1/~syncthing~SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.18.46.excalidraw.svg.tmp"
+    "Technion/TECHNION/SLD1/~syncthing~SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.37.53.excalidraw.md.tmp"
   ]
 }
