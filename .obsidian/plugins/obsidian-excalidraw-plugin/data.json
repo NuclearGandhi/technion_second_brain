@@ -1,7 +1,7 @@
 {
   "folder": "Excalidraw",
   "embedUseExcalidrawFolder": false,
-  "templateFilePath": "Technion/templates/default_exca.excalidraw",
+  "templateFilePath": "templates/default_exca.excalidraw",
   "scriptFolderPath": "Excalidraw/Scripts",
   "compress": false,
   "autosave": true,

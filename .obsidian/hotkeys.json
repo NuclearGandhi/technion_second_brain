@@ -106,5 +106,14 @@
       ],
       "key": "H"
     }
+  ],
+  "templater-obsidian:templates/הערות.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": ";"
+    }
   ]
 }

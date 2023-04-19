@@ -22,5 +22,6 @@
   "userIgnoreFilters": [
     "Technion/templates/"
   ],
-  "rightToLeft": false
+  "rightToLeft": false,
+  "newLinkFormat": "absolute"
 }

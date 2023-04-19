@@ -4,40 +4,42 @@
     "type": "split",
     "children": [
       {
-        "id": "a7dfef7381affc06",
+        "id": "95b3e8008fcb2812",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
-            "id": "b2c8372cfa858502",
+            "id": "ccc90efdcff21abc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/TECHNION/IMT1/IMT1_004 דיאגרמת פאזות.md",
+                "file": "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
                 "mode": "source",
                 "source": true
               }
             },
-            "group": "f9951e4d6b5df112"
+            "group": "3b1aba2c7bf6d167"
           }
         ]
       },
       {
-        "id": "33062f31d89b49b3",
+        "id": "949735ee81d8ec27",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
-            "id": "4acc67ae5a300bd5",
+            "id": "ff8b584e208d3be4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/TECHNION/IMT1/IMT1_004 דיאגרמת פאזות.md",
+                "file": "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
                 "mode": "preview",
-                "source": false
+                "source": true
               }
             },
-            "group": "f9951e4d6b5df112"
+            "group": "3b1aba2c7bf6d167"
           }
         ]
       }
@@ -105,7 +107,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/TECHNION/IMT1/IMT1_004 דיאגרמת פאזות.md",
+            "file": "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -122,7 +124,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/TECHNION/IMT1/IMT1_004 דיאגרמת פאזות.md",
+            "file": "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -134,7 +136,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/TECHNION/IMT1/IMT1_004 דיאגרמת פאזות.md"
+            "file": "Technion/CAL2/CAL2_006 נגזרות חלקיות.md"
           }
         }
       }
@@ -143,22 +145,46 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "templater-obsidian:Templater": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "publish:Publish changes": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "b2c8372cfa858502",
+  "active": "ff8b584e208d3be4",
   "lastOpenFiles": [
+    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
+    "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
+    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים.md",
+    "Technion/CAL2/CAL2_004 עקומים במרחב.md",
+    "Technion/CAL2/CNX_Calc_Figure_14_02_002.jpg",
+    "Technion/CAL1/CAL1_002 גבול של פונקציה.md",
+    "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
+    "Technion/SLD1/SLD1_002 שיווי משקל.md",
+    "Technion/SLD1/Screenshot_20230419_103527_Samsung Notes.jpg",
+    "Technion/SLD1/SLD1_002 שיווי משקל 2023-04-19 09.57.05.excalidraw.md",
+    "Technion/SLD1/SLD1_002 שיווי משקל 2023-04-19 09.57.05.excalidraw.svg",
+    "Technion/SLD1/Screenshot_20230419_095353_Samsung Notes.jpg",
+    "_index.md",
+    "Technion/CAL1/CAL1_000 104041 חדוא 1מ.md",
+    "Technion/ALG1/ALG1_000 104016 אלגברה 1מ.md",
+    "Technion/SLD1/SLD1_002/SLD1_002 שיווי משקל 2023-04-19 09.33.32.excalidraw.md",
+    "Technion/SLD1/SLD1_002/SLD1_002 שיווי משקל 2023-04-19 09.33.32.excalidraw.svg",
+    "Technion/SLD1/SLD1_002/Screenshot_20230419_093143_Samsung Notes.jpg",
+    "Technion/TECHNION/DEQ1/DEQ2_002 משוואת ברנולי ומשוואה מטיפוס הומוגני.md",
+    "Technion/TECHNION/DEQ1/DEQ1_001 מבוא, גורם אינטגרציה, משוואה פרידה.md",
+    "Technion/TECHNION/DEQ1/DEQ2_003 משוואות מדויקות, משפחות אורתוגונליות ומשפט קיום ויחידות.md",
+    "Technion/TECHNION/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
+    "Technion/TECHNION/CAL2/CAL2_004 עקומים במרחב.md",
+    "Technion/TECHNION/CAL2/CAL2_003 משטחים ריבועיים.md",
+    "Technion/TECHNION/IMT1/IMT1_004 דיאגרמת פאזות.md",
     "Technion/TECHNION/IMT1/Screenshot_20230417_131758_OneDrive.jpg",
     "Technion/TECHNION/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
-    "Technion/TECHNION/IMT1/IMT1_004 דיאגרמת פאזות.md",
     "Technion/TECHNION/IMT1/IMT1_003 המבנה של גבישים.md",
     "Technion/TECHNION/SLD1/SLD1_003 שווי משקל של מבנים (מסבכים).md",
     "Technion/TECHNION/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
@@ -166,34 +192,10 @@
     "Technion/TECHNION/SLD1/Screenshot_20230417_102122_OneDrive.jpg",
     "Technion/TECHNION/SLD1/Screenshot_20230417_102045_OneDrive.jpg",
     "Technion/TECHNION/SLD1/Screenshot_20230417_095922_Obsidian.jpg",
-    "Technion/TECHNION/SLD1/Screenshot_20230417_095647_OneDrive.jpg",
-    "Technion/TECHNION/SLD1/Screenshot_20230417_094251_Obsidian.jpg",
-    "Technion/TECHNION/SLD1/Screenshot_20230417_093647_OneDrive.jpg",
-    "Technion/TECHNION/SLD1/Screenshot_20230417_091408_OneDrive.jpg",
-    "Technion/TECHNION/SLD1/Screenshot_20230417_090215_Obsidian.jpg",
-    "Technion/TECHNION/SLD1/Screenshot_20230417_085656_Obsidian.jpg",
-    "Technion/TECHNION/SLD1/Screenshot_20230417_085447_OneDrive.jpg",
     "Technion/TECHNION/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
     "Technion/TECHNION/CAL2/CAL2_002 מישורים וישרים.md",
-    "Technion/TECHNION/CAL2/CAL2_004 עקומים במרחב.md",
-    "Technion/TECHNION/CAL2/CAL2_003 משטחים ריבועיים.md",
-    "Technion/TECHNION/DEQ1/DEQ1_001 מבוא.md",
-    "Technion/TECHNION/CAL2/CAL2_004 משטחים ריבועיים.md",
-    "Technion/TECHNION/CAL2/CAL2_003 מישורים וישרים.md",
-    "Technion/TECHNION/SLD1/SDL_002 שיווי משקל.md",
     "Technion/TECHNION/IMT1/IMT1_001",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-29 20.18.22.excalidraw.md",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.18.46.excalidraw.md",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-29 20.52.13.excalidraw.md",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.37.53.excalidraw.md",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-29 20.18.22.excalidraw.dark.svg.md",
-    "Technion/TECHNION/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-04-03 08.38.25.excalidraw.md",
     "Technion/TECHNION/SLD1/SLD1_002",
-    "Technion/TECHNION/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, תגובות.md",
-    "Technion/TECHNION/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.37.53.excalidraw.md",
-    "Technion/TECHNION/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.18.46.excalidraw.md",
-    "Technion/TECHNION/SLD1/SDL_002 סמכים ותגובות 2023-04-03 11.02.23.excalidraw.md",
-    "Technion/TECHNION/SLD1/SDL_002 סמכים ותגובות 2023-04-03 10.24.52.excalidraw.md",
     "Technion/TECHNION/CAL2/CAL2_004",
     "Technion/TECHNION/CAL2/CAL2_003"
   ]
