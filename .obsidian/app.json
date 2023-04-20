@@ -20,7 +20,7 @@
   "attachmentFolderPath": "./",
   "autoPairMarkdown": false,
   "userIgnoreFilters": [
-    "Technion/templates/"
+    "templates/"
   ],
   "rightToLeft": false,
   "newLinkFormat": "absolute"

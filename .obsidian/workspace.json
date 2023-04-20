@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "97495f416d61114e",
+        "id": "7c09cf4fe0b96aca",
         "type": "tabs",
         "children": [
           {
-            "id": "331896ffe63981ec",
+            "id": "271878baff2520d7",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "logo.png"
+                "file": "Technion/CAL2/CAL2_005/CNX_Calc_Figure_14_02_002.jpg"
               }
             }
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "logo.png",
+                "file": "Technion/CAL2/CAL2_005/CNX_Calc_Figure_14_02_002.jpg",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "logo.png",
+                "file": "Technion/CAL2/CAL2_005/CNX_Calc_Figure_14_02_002.jpg",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "logo.png"
+                "file": "Technion/CAL2/CAL2_005/CNX_Calc_Figure_14_02_002.jpg"
               }
             }
           }
@@ -150,9 +150,21 @@
   },
   "active": "717dd551d2d7a242",
   "lastOpenFiles": [
-    "favicon-32x32.png",
-    "logo.png",
+    "Technion/CAL2/CAL2_005",
+    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
+    "Technion/SLD1/SLD1_002/SLD1_002 שיווי משקל 2023-04-19 09.57.05.excalidraw.md",
+    "Technion/SLD1/SLD1_002/SLD1_002 שיווי משקל 2023-04-19 09.57.05.excalidraw.svg",
+    "Technion/SLD1/SLD1_002/Screenshot_20230419_103527_Samsung Notes.jpg",
+    "Technion/SLD1/SLD1_002/Screenshot_20230419_095353_Samsung Notes.jpg",
+    "Technion/SLD1/SLD1_003 שווי משקל של מבנים (מסבכים).md",
+    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
+    "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
+    "Technion/PHY1/PHY1_001 וקטורים וקינמטיקה.md",
+    "Technion/PHY1/PHY1_002/Screenshot_20230420_095712_Samsung Notes.jpg",
     "README.md",
+    "Technion/PHY1/PHY1_002",
+    "logo.png",
+    "favicon-32x32.png",
     "Technion/GCH1 1/GCH1_004/Screenshot_20230127_105054_Microsoft 365 (Office.md",
     "Excalidraw/Drawing 2023-04-20 07.45.28.excalidraw.md",
     "Excalidraw",
@@ -160,9 +172,6 @@
     "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
     "Excalidraw/Drawing 2023-04-19 18.24.33.excalidraw.md",
     "broken links output.md",
-    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
-    "Technion/PHY1/PHY1_001 וקטורים וקינמטיקה.md",
-    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
     "Technion/GCH1/GCH1_000 125001 כימיה כללית.md",
     "Technion/GCH1/GCH1_012 חומצות ובסיסים.md",
     "Technion/GCH1/GCH1_008 הקשר הכימי I.md",
@@ -172,29 +181,20 @@
     "Technion/GCH1/Pasted image 20230418222819.png",
     "Technion/GCH1/Pasted image 20230418222708.png",
     "Technion/GCH1/GCH1_005/Screenshot_20230127_171023_Microsoft 365 (Office).jpg",
-    "Technion/GCH1/GCH1_005/Screenshot_20230127_160219_Microsoft 365 (Office).jpg",
-    "Technion/GCH1/GCH1_005/Screenshot_20230127_153804_Microsoft 365 (Office).jpg",
     "Technion/GCH1/GCH1_004 תרמודינמיקה.md",
     "Technion/GCH1/GCH1_003 גזים.md",
     "Technion/GCH1/1608-1647)](1608-1647.md",
     "Technion/GCH1/GCH1_001 רקע ומושגי יסוד.md",
     "Technion/CAL1/CAL1_002 גבול של פונקציה.md",
     "Technion/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
-    "Technion/GCH1/GCH1_004/Screenshot_20230127_132032_Microsoft 365 (Office).jpg",
-    "Technion/GCH1/GCH1_004/Screenshot_20230127_105054_Microsoft 365 (Office).jpg",
-    "Technion/GCH1/GCH1_004/Screenshot_20230127_102808_Microsoft 365 (Office).jpg",
     "Technion/GCH1 1/GCH1_004",
     "Technion/GCH1 1",
     "Technion/TECHNION",
     "Technion/GCH1/GCH1_004/Screenshot_20231027_102808_Microsoft 365 (Office.md",
     "Technion/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
-    "Technion/SLD1/SLD1_002 שיווי משקל.md",
-    "Technion/DEQ1/DEQ1_001 מבוא, גורם אינטגרציה, משוואה פרידה.md",
-    "Technion/TECHNION/IMT1/IMT1_001.md",
     "Technion/SLD1/SLD1_003",
     "Technion/IMT1/IMT1_004",
     "Technion/IMT1/IMT1_003",
-    "Technion/IMT1/IMT1_002",
-    "Technion/IMT1/IMT1_001"
+    "Technion/IMT1/IMT1_002"
   ]
 }

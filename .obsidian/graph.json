@@ -1,6 +1,6 @@
 {
-  "collapse-filter": false,
-  "search": "",
+  "collapse-filter": true,
+  "search": "file: -.excalidraw",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
@@ -11,7 +11,7 @@
       "query": "file: ALG1",
       "color": {
         "a": 1,
-        "rgb": 14701138
+        "rgb": 5397472
       }
     },
     {
@@ -32,7 +32,7 @@
       "query": "file: BMA1",
       "color": {
         "a": 1,
-        "rgb": 7885536
+        "rgb": 5111786
       }
     },
     {
@@ -53,14 +53,28 @@
       "query": "file: SLD1",
       "color": {
         "a": 1,
-        "rgb": 5395168
+        "rgb": 3772180
       }
     },
     {
       "query": "file: IPY1",
       "color": {
         "a": 1,
-        "rgb": 11621088
+        "rgb": 10434004
+      }
+    },
+    {
+      "query": "file: IMT1",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "file: PHY1",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
       }
     }
   ],
@@ -74,6 +88,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.367225828931119,
+  "scale": 0.5602238769530228,
   "close": false
 }
