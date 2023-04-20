@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
+                "file": "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
                 "mode": "source",
                 "source": true
               }
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
+                "file": "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
                 "mode": "preview",
                 "source": true
               }
@@ -107,7 +107,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
+            "file": "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
+            "file": "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -136,7 +136,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/CAL2/CAL2_006 נגזרות חלקיות.md"
+            "file": "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md"
           }
         }
       }
@@ -156,10 +156,17 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "ff8b584e208d3be4",
+  "active": "ccc90efdcff21abc",
   "lastOpenFiles": [
-    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
+    "Technion/PHY1/Screenshot_20230420_101623_Samsung Notes.jpg",
+    "Technion/PHY1/Screenshot_20230420_100131_Samsung Notes.jpg",
+    "Technion/PHY1/Screenshot_20230420_100040_Samsung Notes.jpg",
+    "Technion/PHY1/Screenshot_20230420_095712_Samsung Notes.jpg",
+    "Technion/PHY1/PHY1_001 וקטורים וקינמטיקה.md",
+    "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
+    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
     "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
+    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
     "Technion/CAL2/CAL2_005 פונקציה בשני משתנים.md",
     "Technion/CAL2/CAL2_004 עקומים במרחב.md",
     "Technion/CAL2/CNX_Calc_Figure_14_02_002.jpg",
@@ -187,13 +194,6 @@
     "Technion/TECHNION/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
     "Technion/TECHNION/IMT1/IMT1_003 המבנה של גבישים.md",
     "Technion/TECHNION/SLD1/SLD1_003 שווי משקל של מבנים (מסבכים).md",
-    "Technion/TECHNION/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
-    "Technion/TECHNION/SLD1/SLD1_002 שיווי משקל.md",
-    "Technion/TECHNION/SLD1/Screenshot_20230417_102122_OneDrive.jpg",
-    "Technion/TECHNION/SLD1/Screenshot_20230417_102045_OneDrive.jpg",
-    "Technion/TECHNION/SLD1/Screenshot_20230417_095922_Obsidian.jpg",
-    "Technion/TECHNION/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
-    "Technion/TECHNION/CAL2/CAL2_002 מישורים וישרים.md",
     "Technion/TECHNION/IMT1/IMT1_001",
     "Technion/TECHNION/SLD1/SLD1_002",
     "Technion/TECHNION/CAL2/CAL2_004",

@@ -4,18 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "38c60586b39c8981",
+        "id": "97495f416d61114e",
         "type": "tabs",
         "children": [
           {
-            "id": "c1691aa4cedecfe5",
+            "id": "331896ffe63981ec",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "README.md",
-                "mode": "preview",
-                "source": false
+                "file": "logo.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "logo.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "logo.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "logo.png"
               }
             }
           }
@@ -150,12 +148,17 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "c1691aa4cedecfe5",
+  "active": "717dd551d2d7a242",
   "lastOpenFiles": [
+    "favicon-32x32.png",
+    "logo.png",
+    "README.md",
+    "Technion/GCH1 1/GCH1_004/Screenshot_20230127_105054_Microsoft 365 (Office.md",
+    "Excalidraw/Drawing 2023-04-20 07.45.28.excalidraw.md",
+    "Excalidraw",
+    "publish.js",
     "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
     "Excalidraw/Drawing 2023-04-19 18.24.33.excalidraw.md",
-    "Excalidraw",
-    "README.md",
     "broken links output.md",
     "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
     "Technion/PHY1/PHY1_001 וקטורים וקינמטיקה.md",
@@ -180,23 +183,18 @@
     "Technion/GCH1/GCH1_004/Screenshot_20230127_132032_Microsoft 365 (Office).jpg",
     "Technion/GCH1/GCH1_004/Screenshot_20230127_105054_Microsoft 365 (Office).jpg",
     "Technion/GCH1/GCH1_004/Screenshot_20230127_102808_Microsoft 365 (Office).jpg",
-    "Technion/TECHNION/GCH1/GCH1_004/Screenshot_20230127_105054_Microsoft 365 (Office.md",
-    "Technion/TECHNION/GCH1/GCH1_004",
-    "Technion/TECHNION/GCH1",
+    "Technion/GCH1 1/GCH1_004",
+    "Technion/GCH1 1",
     "Technion/TECHNION",
     "Technion/GCH1/GCH1_004/Screenshot_20231027_102808_Microsoft 365 (Office.md",
     "Technion/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
-    "favicon-196x196.png",
     "Technion/SLD1/SLD1_002 שיווי משקל.md",
     "Technion/DEQ1/DEQ1_001 מבוא, גורם אינטגרציה, משוואה פרידה.md",
     "Technion/TECHNION/IMT1/IMT1_001.md",
-    "Technion/IMT1/IMT1_001 מבוא.md",
-    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
     "Technion/SLD1/SLD1_003",
     "Technion/IMT1/IMT1_004",
     "Technion/IMT1/IMT1_003",
     "Technion/IMT1/IMT1_002",
-    "Technion/IMT1/IMT1_001",
-    "Technion/SLD1/SLD1_002"
+    "Technion/IMT1/IMT1_001"
   ]
 }
