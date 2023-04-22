@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+                "file": "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
                 "mode": "source",
                 "source": true
               }
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+                "file": "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
                 "mode": "preview",
                 "source": false
               }
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+                "file": "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+                "file": "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md"
+                "file": "Technion/CAL2/CAL2_003 משטחים ריבועיים.md"
               }
             }
           }
@@ -173,15 +173,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "717dd551d2d7a242",
+  "active": "271878baff2520d7",
   "lastOpenFiles": [
+    "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
     "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
+    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
     "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
     "README.md",
     "Technion/SLD1/SLD1_003 מסבכים.md",
     "Technion/SLD1/SLD1_002 שיווי משקל.md",
     "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
-    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
     "Technion/DEQ1/DEQ2_003 משוואות מדויקות, משפחות אורתוגונליות.md",
     "Technion/IPY1/IPY1_HW010 תרגיל בית 10.md",
     "Technion/CAL1/CAL1_005 נגזרות.md",
@@ -213,8 +215,6 @@
     "Technion/GCH1/Pasted image 20230418222846.png",
     "Technion/GCH1/Pasted image 20230418222819.png",
     "Technion/GCH1/Pasted image 20230418222708.png",
-    "Technion/GCH1/GCH1_004 תרמודינמיקה.md",
-    "Technion/GCH1/GCH1_003 גזים.md",
     "Technion/GCH1 1/GCH1_004",
     "Technion/GCH1 1",
     "Technion/TECHNION",
