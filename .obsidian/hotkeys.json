@@ -115,5 +115,14 @@
       ],
       "key": ";"
     }
+  ],
+  "templater-obsidian:templates/TODO.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "["
+    }
   ]
 }

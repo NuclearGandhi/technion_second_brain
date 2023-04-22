@@ -24,7 +24,8 @@
     "templates/הגדרה.md",
     "templates/משפט.md",
     "templates/דוגמאות.md",
-    "templates/הערות.md"
+    "templates/הערות.md",
+    "templates/TODO.md"
   ],
   "startup_templates": [
     ""

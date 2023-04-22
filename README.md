@@ -1,3 +1,8 @@
+---
+description: "A collection of my notes."
+image: "https://publish-01.obsidian.md/access/621866b07f34d3860ecbe58d462526fc/logo.png"
+---
+
 המחברת הזו היא תוצר של המוןןןןןן שעות עבודה, אז אשמח אם:
 
 <p align="center">

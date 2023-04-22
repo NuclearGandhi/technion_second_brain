@@ -6,16 +6,40 @@
       {
         "id": "7c09cf4fe0b96aca",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "271878baff2520d7",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_005/CNX_Calc_Figure_14_02_002.jpg"
+                "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+                "mode": "source",
+                "source": true
               }
-            }
+            },
+            "group": "8dbf7823fa94088f"
+          }
+        ]
+      },
+      {
+        "id": "7ef2ac7a785df6a1",
+        "type": "tabs",
+        "dimension": 50,
+        "children": [
+          {
+            "id": "db9f2e6c99040b86",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+                "mode": "preview",
+                "source": false
+              }
+            },
+            "group": "8dbf7823fa94088f"
           }
         ]
       }
@@ -67,7 +91,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "c1c3ae1b57de7de1",
@@ -83,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/CAL2/CAL2_005/CNX_Calc_Figure_14_02_002.jpg",
+                "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/CAL2/CAL2_005/CNX_Calc_Figure_14_02_002.jpg",
+                "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/CAL2/CAL2_005/CNX_Calc_Figure_14_02_002.jpg"
+                "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md"
               }
             }
           }
@@ -142,26 +167,35 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "publish:Publish changes": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "templater-obsidian:Templater": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
-      "templater-obsidian:Templater": false
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
   "active": "717dd551d2d7a242",
   "lastOpenFiles": [
+    "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
+    "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
+    "README.md",
+    "Technion/SLD1/SLD1_003 מסבכים.md",
+    "Technion/SLD1/SLD1_002 שיווי משקל.md",
+    "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
+    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+    "Technion/DEQ1/DEQ2_003 משוואות מדויקות, משפחות אורתוגונליות.md",
+    "Technion/IPY1/IPY1_HW010 תרגיל בית 10.md",
+    "Technion/CAL1/CAL1_005 נגזרות.md",
+    "Technion/CAL2/CAL2_005/CNX_Calc_Figure_14_02_002.jpg",
     "Technion/CAL2/CAL2_005",
     "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
     "Technion/SLD1/SLD1_002/SLD1_002 שיווי משקל 2023-04-19 09.57.05.excalidraw.md",
     "Technion/SLD1/SLD1_002/SLD1_002 שיווי משקל 2023-04-19 09.57.05.excalidraw.svg",
     "Technion/SLD1/SLD1_002/Screenshot_20230419_103527_Samsung Notes.jpg",
     "Technion/SLD1/SLD1_002/Screenshot_20230419_095353_Samsung Notes.jpg",
-    "Technion/SLD1/SLD1_003 שווי משקל של מבנים (מסבכים).md",
     "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
     "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
     "Technion/PHY1/PHY1_001 וקטורים וקינמטיקה.md",
     "Technion/PHY1/PHY1_002/Screenshot_20230420_095712_Samsung Notes.jpg",
-    "README.md",
     "Technion/PHY1/PHY1_002",
     "logo.png",
     "favicon-32x32.png",
@@ -169,7 +203,6 @@
     "Excalidraw/Drawing 2023-04-20 07.45.28.excalidraw.md",
     "Excalidraw",
     "publish.js",
-    "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
     "Excalidraw/Drawing 2023-04-19 18.24.33.excalidraw.md",
     "broken links output.md",
     "Technion/GCH1/GCH1_000 125001 כימיה כללית.md",
@@ -180,21 +213,13 @@
     "Technion/GCH1/Pasted image 20230418222846.png",
     "Technion/GCH1/Pasted image 20230418222819.png",
     "Technion/GCH1/Pasted image 20230418222708.png",
-    "Technion/GCH1/GCH1_005/Screenshot_20230127_171023_Microsoft 365 (Office).jpg",
     "Technion/GCH1/GCH1_004 תרמודינמיקה.md",
     "Technion/GCH1/GCH1_003 גזים.md",
-    "Technion/GCH1/1608-1647)](1608-1647.md",
-    "Technion/GCH1/GCH1_001 רקע ומושגי יסוד.md",
-    "Technion/CAL1/CAL1_002 גבול של פונקציה.md",
-    "Technion/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
     "Technion/GCH1 1/GCH1_004",
     "Technion/GCH1 1",
     "Technion/TECHNION",
-    "Technion/GCH1/GCH1_004/Screenshot_20231027_102808_Microsoft 365 (Office.md",
-    "Technion/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
     "Technion/SLD1/SLD1_003",
     "Technion/IMT1/IMT1_004",
-    "Technion/IMT1/IMT1_003",
-    "Technion/IMT1/IMT1_002"
+    "Technion/IMT1/IMT1_003"
   ]
 }
