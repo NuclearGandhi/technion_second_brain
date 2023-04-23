@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
+                "file": "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
                 "mode": "source",
                 "source": true
               }
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
+                "file": "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
                 "mode": "preview",
                 "source": false
               }
@@ -91,8 +91,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "c1c3ae1b57de7de1",
@@ -108,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
+                "file": "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
+                "file": "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/CAL2/CAL2_003 משטחים ריבועיים.md"
+                "file": "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md"
               }
             }
           }
@@ -175,7 +174,11 @@
   },
   "active": "271878baff2520d7",
   "lastOpenFiles": [
+    "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
+    "Technion/CAL2/CAL2_002 מישורים וישרים.md",
+    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
     "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
+    "Technion/CAL2/CAL2_001 וקטורים.md",
     "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
     "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
     "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
@@ -208,10 +211,6 @@
     "Excalidraw/Drawing 2023-04-19 18.24.33.excalidraw.md",
     "broken links output.md",
     "Technion/GCH1/GCH1_000 125001 כימיה כללית.md",
-    "Technion/GCH1/GCH1_012 חומצות ובסיסים.md",
-    "Technion/GCH1/GCH1_008 הקשר הכימי I.md",
-    "Technion/GCH1/GCH1_006 אלקטרונים באטום.md",
-    "Technion/GCH1/GCH1_005 מבוא למכניקה קוונטית.md",
     "Technion/GCH1/Pasted image 20230418222846.png",
     "Technion/GCH1/Pasted image 20230418222819.png",
     "Technion/GCH1/Pasted image 20230418222708.png",
