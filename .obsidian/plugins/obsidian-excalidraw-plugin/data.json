@@ -5,7 +5,7 @@
   "scriptFolderPath": "Excalidraw/Scripts",
   "compress": false,
   "autosave": true,
-  "autosaveInterval": 15000,
+  "autosaveInterval": 10000,
   "autosaveIntervalDesktop": 15000,
   "autosaveIntervalMobile": 10000,
   "drawingFilenamePrefix": "Drawing ",
@@ -69,7 +69,7 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.8.22",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.8.24",
     "libraryItems": [
       {
         "status": "unpublished",
@@ -353,7 +353,8 @@
             "verticalAlign": "top",
             "containerId": null,
             "originalText": "-5   -4    -3   -2   -1   0      1    2     3    4    5",
-            "lineHeight": 1.25
+            "lineHeight": 1.25,
+            "baseline": 14
           },
           {
             "type": "text",
@@ -390,7 +391,8 @@
             "verticalAlign": "top",
             "containerId": null,
             "originalText": "5\n\n4\n\n3\n\n2\n\n1   \n\n0\n\n\n-1\n\n-2\n\n-3\n\n-4\n\n-5",
-            "lineHeight": 1.2499999999999996
+            "lineHeight": 1.2499999999999996,
+            "baseline": 441
           },
           {
             "type": "line",
@@ -1292,7 +1294,8 @@
             "verticalAlign": "top",
             "containerId": null,
             "originalText": "x",
-            "lineHeight": 1.25
+            "lineHeight": 1.25,
+            "baseline": 17
           },
           {
             "type": "text",
@@ -1334,7 +1337,8 @@
             "verticalAlign": "top",
             "containerId": null,
             "originalText": "y",
-            "lineHeight": 1.25
+            "lineHeight": 1.25,
+            "baseline": 17
           }
         ],
         "id": "l9cXGiz_dQPDMRBQfvCHl",
@@ -1537,7 +1541,8 @@
             "verticalAlign": "top",
             "containerId": null,
             "originalText": "-5   -4    -3   -2   -1   0      1    2     3    4    5",
-            "lineHeight": 1.25
+            "lineHeight": 1.25,
+            "baseline": 14
           },
           {
             "type": "text",
@@ -1574,7 +1579,8 @@
             "verticalAlign": "top",
             "containerId": null,
             "originalText": "5\n\n4\n\n3\n\n2\n\n1   \n\n0\n\n\n-1\n\n-2\n\n-3\n\n-4\n\n-5",
-            "lineHeight": 1.2499999999999996
+            "lineHeight": 1.2499999999999996,
+            "baseline": 441
           },
           {
             "type": "line",
@@ -2476,7 +2482,8 @@
             "verticalAlign": "top",
             "containerId": null,
             "originalText": "x",
-            "lineHeight": 1.25
+            "lineHeight": 1.25,
+            "baseline": 17
           },
           {
             "type": "text",
@@ -2518,7 +2525,8 @@
             "verticalAlign": "top",
             "containerId": null,
             "originalText": "y",
-            "lineHeight": 1.25
+            "lineHeight": 1.25,
+            "baseline": 17
           }
         ],
         "id": "0F4vbpZF3RoNMKF0ahxEJ",
@@ -3102,7 +3110,8 @@
             "verticalAlign": "top",
             "containerId": null,
             "originalText": "-5   -4   -3  -2   -1   0    1    2   3   4    5",
-            "lineHeight": 1.25
+            "lineHeight": 1.25,
+            "baseline": 14
           }
         ],
         "id": "tbEQodw_eVx6OA2POnIkv",
@@ -6291,6 +6300,7 @@
   "showReleaseNotes": false,
   "showNewVersionNotification": true,
   "mathjaxSourceURL": "https://cdn.jsdelivr.net/npm/mathjax@3.2.1/es5/tex-svg.js",
+  "latexBoilerplate": "\\color{blue}",
   "taskboneEnabled": false,
   "taskboneAPIkey": "",
   "pinnedScripts": [],
