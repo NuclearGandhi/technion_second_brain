@@ -6,7 +6,7 @@
       {
         "id": "7c09cf4fe0b96aca",
         "type": "tabs",
-        "dimension": 46.84986595174262,
+        "dimension": 46.81208053691275,
         "children": [
           {
             "id": "271878baff2520d7",
@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
+                "file": "Technion/SLD1/SLD1_002 שיווי משקל.md",
                 "mode": "source",
                 "source": true
               }
@@ -26,7 +26,7 @@
       {
         "id": "7ef2ac7a785df6a1",
         "type": "tabs",
-        "dimension": 53.15013404825737,
+        "dimension": 53.187919463087255,
         "children": [
           {
             "id": "db9f2e6c99040b86",
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
+                "file": "Technion/SLD1/SLD1_002 שיווי משקל.md",
                 "mode": "preview",
                 "source": false
               }
@@ -91,7 +91,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "c1c3ae1b57de7de1",
@@ -107,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
+                "file": "Technion/SLD1/SLD1_002 שיווי משקל.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
+                "file": "Technion/SLD1/SLD1_002 שיווי משקל.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md"
+                "file": "Technion/SLD1/SLD1_002 שיווי משקל.md"
               }
             }
           }
@@ -175,43 +176,43 @@
   },
   "active": "271878baff2520d7",
   "lastOpenFiles": [
-    "Technion/SLD1/SLD1_003 מסבכים.md",
-    "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
-    "Technion/SLD1/SLD1_002 שיווי משקל.md",
-    "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
-    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
-    "Technion/CAL2/CAL2_004 עקומים במרחב.md",
-    "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
-    "Technion/CAL2/CAL2_002 מישורים וישרים.md",
-    "Technion/CAL2/CAL2_001 וקטורים.md",
-    "Technion/DEQ1/DEQ1_004 משוואות מדויקות, משפחות אורתוגונליות.md",
     "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
-    "Technion/GCH1/GCH1_009 הקשר הכימי II.md",
-    "Technion/DEQ1/DEQ2_003 משוואת ברנולי ומשוואה מטיפוס הומוגני.md",
-    "Technion/DEQ1/DEQ1_002 גורם אינטגרציה, משוואה פרידה.md",
-    "Technion/DEQ1/DEQ1_001 מבוא.md",
-    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
-    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
-    "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
-    "Technion/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
-    "Technion/IMT1/IMT1_001 מבוא.md",
-    "Technion/PHY1/PHY1_001 וקטורים וקינמטיקה.md",
-    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
-    "Technion/SLD1/Untitled.md",
-    "templates/Default note.md",
-    "templates/Untitled",
+    "שיווי משקל כימי.md",
+    "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
+    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
     "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
+    "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
+    "Technion/IMT1/IMT1_001 מבוא.md",
+    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+    "Technion/IMT1/IMT1_004/Pasted image 20230501091603.png",
+    "Technion/SLD1/SLD1_003 מסבכים.md",
+    "Technion/GCH1/GCH1_013 חמצון חיזור.md",
+    "Technion/GCH1/GCH1_012 חומצות ובסיסים.md",
+    "Technion/GCH1/GCH1_011 שווי משקל כימי.md",
+    "Technion/GCH1/GCH1_010 כוחות בין מולקולריים ומעברי פאזה.md",
+    "Technion/GCH1/GCH1_009 הקשר הכימי II.md",
+    "Technion/GCH1/GCH1_008 הקשר הכימי I.md",
+    "Technion/GCH1/GCH1_008/Untitled 6.png",
+    "Technion/GCH1/GCH1_007 הטבלה המחזורית והקונפיגורציה של האטום.md",
+    "Technion/GCH1/GCH1_006 אלקטרונים באטום.md",
+    "Technion/GCH1/GCH1_005 מבוא למכניקה קוונטית.md",
+    "Technion/GCH1/GCH1_004 תרמודינמיקה.md",
+    "Technion/GCH1/GCH1_003 גזים.md",
+    "Technion/GCH1/GCH1_002 תגובות כימיות.md",
+    "Technion/GCH1/GCH1_001 רקע ומושגי יסוד.md",
+    "Technion/IMT1/IMT1_004/Pasted image 20230501094636.png",
+    "Technion/IMT1/IMT1_004/Pasted image 20230501092409.png",
+    "Technion/GCH1/GCH1_005/Pasted image 20230418222708.png",
+    "Technion/SLD1/SLD1_002 שיווי משקל.md",
+    "Technion/DEQ1/DEQ1_002 גורם אינטגרציה, משוואה פרידה.md",
+    "Technion/CAL1/CAL1_005 נגזרות.md",
+    "Technion/CAL1/CAL1_004 רציפות.md",
+    "templates/Untitled",
     "Technion/PHY1/PHY1_002/Screenshot_20230424_083318_Samsung Notes.jpg",
     "Technion/PHY1/PHY1_002/Screenshot_20230420_101623_Samsung Notes.jpg",
     "Technion/PHY1/PHY1_002/Screenshot_20230424_084728_Samsung Notes.jpg",
     "Technion/PHY1/PHY1_002/Screenshot_20230424_083355_Samsung Notes.jpg",
     "Technion/PHY1/PHY1_002/Screenshot_20230424_100904_Samsung Notes.jpg",
-    "Technion/PHY1/PHY1_002/Screenshot_20230424_095841_Samsung Notes.jpg",
-    "Technion/PHY1/PHY1_002/Screenshot_20230424_094258_Samsung Notes.jpg",
-    "Technion/PHY1/PHY1_002/Screenshot_20230424_085522_Samsung Notes 1.jpg",
-    "Technion/PHY1/PHY1_002/Screenshot_20230424_085455_Samsung Notes.jpg",
-    "Technion/PHY1/PHY1_002/Screenshot_20230424_085522_Samsung Notes.jpg",
-    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
     "Technion/CAL2/CAL2_005",
     "Technion/PHY1/PHY1_002",
     "Excalidraw",
