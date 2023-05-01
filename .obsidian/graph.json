@@ -5,73 +5,66 @@
   "showAttachments": false,
   "hideUnresolved": true,
   "showOrphans": true,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
-      "query": "file: ALG1",
+      "query": "file: ALG",
       "color": {
         "a": 1,
         "rgb": 5397472
       }
     },
     {
-      "query": "file: GCH1",
+      "query": "file: GCH",
       "color": {
         "a": 1,
         "rgb": 14725458
       }
     },
     {
-      "query": "file: DEQ1",
+      "query": "file: DEQ",
       "color": {
         "a": 1,
         "rgb": 11657298
       }
     },
     {
-      "query": "file: BMA1",
+      "query": "file: BMA",
       "color": {
         "a": 1,
         "rgb": 5111786
       }
     },
     {
-      "query": "file: CAL1",
+      "query": "file: CAL",
       "color": {
         "a": 1,
         "rgb": 5431473
       }
     },
     {
-      "query": "file: CAL2",
+      "query": "file: SLD",
       "color": {
         "a": 1,
-        "rgb": 5431473
+        "rgb": 9900305
       }
     },
     {
-      "query": "file: SLD1",
-      "color": {
-        "a": 1,
-        "rgb": 3772180
-      }
-    },
-    {
-      "query": "file: IPY1",
+      "query": "file: IPY",
       "color": {
         "a": 1,
         "rgb": 10434004
       }
     },
     {
-      "query": "file: IMT1",
+      "query": "file: IMT",
       "color": {
         "a": 1,
-        "rgb": 14725458
+        "rgb": 11236099
       }
     },
     {
-      "query": "file: PHY1",
+      "query": "file: PHY",
       "color": {
         "a": 1,
         "rgb": 14701138
@@ -83,11 +76,11 @@
   "textFadeMultiplier": 0.3,
   "nodeSizeMultiplier": 1.01875,
   "lineSizeMultiplier": 0.4675,
-  "collapse-forces": true,
+  "collapse-forces": false,
   "centerStrength": 1,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.5602238769530228,
-  "close": false
+  "scale": 0.36722582893111916,
+  "close": true
 }
