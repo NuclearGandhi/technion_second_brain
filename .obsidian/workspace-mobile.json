@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
+                "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
                 "mode": "source",
                 "source": true
               }
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
+                "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
                 "mode": "preview",
                 "source": false
               }
@@ -93,6 +93,14 @@
           "type": "starred",
           "state": {}
         }
+      },
+      {
+        "id": "ec5f50569c379c3b",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {}
+        }
       }
     ],
     "currentTab": 0
@@ -107,7 +115,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
+            "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -124,7 +132,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
+            "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -136,7 +144,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md"
+            "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md"
           }
         }
       }
@@ -145,57 +153,59 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "workspaces:Manage workspace layouts": false,
+      "publish:Publish changes...": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "publish:Publish changes": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "templater-obsidian:Templater": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
-      "templater-obsidian:Templater": false
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
   "active": "ccc90efdcff21abc",
   "lastOpenFiles": [
-    "Technion/PHY1/PHY1_001 וקטורים וקינמטיקה.md",
+    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
+    "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
+    "Technion/CAL2/CAL2_006/Screenshot_20230503_144200_Chrome.jpg",
+    "Technion/CAL2/CAL2_006/Screenshot_20230503_161811_Chrome.jpg",
+    "Technion/CAL2/CAL2_006/Screenshot_20230503_151741_Chrome.jpg",
+    "Technion/CAL2/CAL2_006",
+    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.sync-conflict-20230503-164458-VUW46KA.md",
+    "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
+    "Technion/CAL2/Screenshot_20230503_161811_Chrome.jpg",
+    "Technion/CAL2/Screenshot_20230503_151741_Chrome.jpg",
+    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
+    "Technion/CAL2/Screenshot_20230503_144200_Chrome.jpg",
+    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
+    "Technion/SLD1/SLD1_003 מסבכים.md",
+    "templates/default_exca.excalidraw.md",
+    "Technion/SLD1/SLD1_003 מסבכים 2023-05-03 10.00.04.excalidraw.md",
+    "Technion/SLD1/SLD1_003 מסבכים 2023-05-03 10.00.04.excalidraw.svg",
+    "Technion/SLD1/SLD1_003 מסבכים 2023-05-03 09.38.06.excalidraw.md",
+    "Technion/SLD1/SLD1_003 מסבכים 2023-05-03 09.38.06.excalidraw.svg",
+    "Technion/SLD1/Screenshot_20230503_093643_Samsung Notes.jpg",
     "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
+    "Technion/PHY1/PHY1_001 וקטורים וקינמטיקה.md",
     "Technion/DEQ1/DEQ2_003 משוואת ברנולי ומשוואה מטיפוס הומוגני.md",
     "Technion/DEQ1/DEQ2_004 משוואות מדויקות, משפחות אורתוגונליות.md",
     "Technion/DEQ1/DEQ1_002 גורם אינטגרציה, משוואה פרידה.md",
     "Technion/DEQ1/DEQ1_001 מבוא.md",
     "Technion/DEQ1/DEQ1_001/Screenshot_20230429_115355_Chrome.jpg",
     "Technion/DEQ1/DEQ1_001",
-    "Technion/DEQ1/DEQ1_001/Screenshot_20230429_115015_Chrome.jpg",
-    "Technion/DEQ1/DEQ1_001/Screenshot_20230426_235017_Chrome.jpg",
-    "Technion/DEQ1/plot of slope field.png",
     "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
     "DEQ1",
-    "Technion/DEQ1/DEQ1_001/plot of slope field (1).png",
-    "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
     "Excalidraw/Drawing 2023-04-26 20.14.37.excalidraw.md",
     "Excalidraw",
-    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
-    "Technion/PHY1/Screenshot_20230424_100904_Samsung Notes.jpg",
-    "Technion/PHY1/Screenshot_20230424_095841_Samsung Notes.jpg",
-    "Technion/PHY1/Screenshot_20230424_094258_Samsung Notes.jpg",
-    "Technion/PHY1/Screenshot_20230424_085522_Samsung Notes 1.jpg",
     "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
-    "Technion/PHY1/Screenshot_20230424_085522_Samsung Notes.jpg",
     "Technion/CAL2/CAL2_004 עקומים במרחב.md",
-    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
     "Technion/CAL2/CAL2_005 פונקציה בשני משתנים.md",
     "Technion/CAL1/CAL1_002 גבול של פונקציה.md",
     "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
     "Technion/SLD1/SLD1_002 שיווי משקל.md",
     "Technion/SLD1/SLD1_002 שיווי משקל 2023-04-19 09.57.05.excalidraw.md",
-    "_index.md",
-    "Technion/CAL1/CAL1_000 104041 חדוא 1מ.md",
-    "Technion/ALG1/ALG1_000 104016 אלגברה 1מ.md",
-    "Technion/SLD1/SLD1_002/SLD1_002 שיווי משקל 2023-04-19 09.33.32.excalidraw.md",
-    "Technion/TECHNION/DEQ1/DEQ2_002 משוואת ברנולי ומשוואה מטיפוס הומוגני.md",
-    "Technion/TECHNION/DEQ1/DEQ1_001 מבוא, גורם אינטגרציה, משוואה פרידה.md",
-    "Technion/TECHNION/DEQ1/DEQ2_003 משוואות מדויקות, משפחות אורתוגונליות ומשפט קיום ויחידות.md",
     "Technion/TECHNION/IMT1/IMT1_001",
     "Technion/TECHNION/SLD1/SLD1_002",
     "Technion/TECHNION/CAL2/CAL2_004",

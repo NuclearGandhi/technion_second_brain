@@ -6,7 +6,7 @@
       {
         "id": "7c09cf4fe0b96aca",
         "type": "tabs",
-        "dimension": 46.81208053691275,
+        "dimension": 49.06166219839142,
         "children": [
           {
             "id": "271878baff2520d7",
@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD1/SLD1_002 שיווי משקל.md",
+                "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
                 "mode": "source",
                 "source": true
               }
@@ -26,7 +26,7 @@
       {
         "id": "7ef2ac7a785df6a1",
         "type": "tabs",
-        "dimension": 53.187919463087255,
+        "dimension": 50.93833780160858,
         "children": [
           {
             "id": "db9f2e6c99040b86",
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD1/SLD1_002 שיווי משקל.md",
+                "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
                 "mode": "preview",
                 "source": false
               }
@@ -86,6 +86,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "03ce904747e52227",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -108,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/SLD1/SLD1_002 שיווי משקל.md",
+                "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/SLD1/SLD1_002 שיווי משקל.md",
+                "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/SLD1/SLD1_002 שיווי משקל.md"
+                "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md"
               }
             }
           }
@@ -162,11 +170,11 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "publish:Publish changes...": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "publish:Publish changes": false,
       "templater-obsidian:Templater": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
@@ -176,16 +184,25 @@
   },
   "active": "271878baff2520d7",
   "lastOpenFiles": [
+    "Technion/CAL2/Untitled.md",
+    "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
+    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
+    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
+    "Technion/CAL2/CAL2_006/Pasted image 20230504115318.png",
+    "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
+    "favicon-32x32.png",
+    "Technion/CAL2/CAL2_006/Screenshot_20230503_144200_Chrome.jpg",
+    "Technion/CAL2/CAL2_006",
+    "Technion/CAL2/CAL2_004 עקומים במרחב.md",
+    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+    "Technion/SLD1/SLD1_003 מסבכים.md",
+    "Technion/SLD1/SLD1_002 שיווי משקל.md",
     "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
     "שיווי משקל כימי.md",
-    "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
-    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
     "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
     "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
     "Technion/IMT1/IMT1_001 מבוא.md",
-    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
     "Technion/IMT1/IMT1_004/Pasted image 20230501091603.png",
-    "Technion/SLD1/SLD1_003 מסבכים.md",
     "Technion/GCH1/GCH1_013 חמצון חיזור.md",
     "Technion/GCH1/GCH1_012 חומצות ובסיסים.md",
     "Technion/GCH1/GCH1_011 שווי משקל כימי.md",
@@ -199,20 +216,12 @@
     "Technion/GCH1/GCH1_004 תרמודינמיקה.md",
     "Technion/GCH1/GCH1_003 גזים.md",
     "Technion/GCH1/GCH1_002 תגובות כימיות.md",
-    "Technion/GCH1/GCH1_001 רקע ומושגי יסוד.md",
     "Technion/IMT1/IMT1_004/Pasted image 20230501094636.png",
     "Technion/IMT1/IMT1_004/Pasted image 20230501092409.png",
     "Technion/GCH1/GCH1_005/Pasted image 20230418222708.png",
-    "Technion/SLD1/SLD1_002 שיווי משקל.md",
-    "Technion/DEQ1/DEQ1_002 גורם אינטגרציה, משוואה פרידה.md",
-    "Technion/CAL1/CAL1_005 נגזרות.md",
-    "Technion/CAL1/CAL1_004 רציפות.md",
     "templates/Untitled",
     "Technion/PHY1/PHY1_002/Screenshot_20230424_083318_Samsung Notes.jpg",
     "Technion/PHY1/PHY1_002/Screenshot_20230420_101623_Samsung Notes.jpg",
-    "Technion/PHY1/PHY1_002/Screenshot_20230424_084728_Samsung Notes.jpg",
-    "Technion/PHY1/PHY1_002/Screenshot_20230424_083355_Samsung Notes.jpg",
-    "Technion/PHY1/PHY1_002/Screenshot_20230424_100904_Samsung Notes.jpg",
     "Technion/CAL2/CAL2_005",
     "Technion/PHY1/PHY1_002",
     "Excalidraw",
@@ -220,7 +229,6 @@
     "Technion/GCH1 1/GCH1_004",
     "Technion/GCH1 1",
     "Technion/TECHNION",
-    "Technion/SLD1/SLD1_003",
-    "Technion/IMT1/IMT1_004"
+    "Technion/SLD1/SLD1_003"
   ]
 }
