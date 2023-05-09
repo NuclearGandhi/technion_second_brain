@@ -6,7 +6,7 @@
       {
         "id": "7c09cf4fe0b96aca",
         "type": "tabs",
-        "dimension": 49.06166219839142,
+        "dimension": 46.84986595174262,
         "children": [
           {
             "id": "271878baff2520d7",
@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
+                "file": "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
                 "mode": "source",
                 "source": true
               }
@@ -26,7 +26,7 @@
       {
         "id": "7ef2ac7a785df6a1",
         "type": "tabs",
-        "dimension": 50.93833780160858,
+        "dimension": 53.15013404825737,
         "children": [
           {
             "id": "db9f2e6c99040b86",
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
+                "file": "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
                 "mode": "preview",
                 "source": false
               }
@@ -86,14 +86,6 @@
               "type": "starred",
               "state": {}
             }
-          },
-          {
-            "id": "03ce904747e52227",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {}
-            }
           }
         ]
       }
@@ -116,14 +108,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
+                "file": "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               }
             }
           },
@@ -133,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
+                "file": "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md"
+                "file": "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md"
               }
             }
           }
@@ -184,51 +176,50 @@
   },
   "active": "271878baff2520d7",
   "lastOpenFiles": [
-    "Technion/CAL2/Untitled.md",
-    "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
-    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
-    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
-    "Technion/CAL2/CAL2_006/Pasted image 20230504115318.png",
-    "Technion/CAL2/CAL2_006 נגזרות חלקיות.md",
-    "favicon-32x32.png",
-    "Technion/CAL2/CAL2_006/Screenshot_20230503_144200_Chrome.jpg",
-    "Technion/CAL2/CAL2_006",
-    "Technion/CAL2/CAL2_004 עקומים במרחב.md",
-    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
-    "Technion/SLD1/SLD1_003 מסבכים.md",
+    "Technion/DEQ1/DEQ1_005 משפט קיום ויחידות.md",
+    "Technion/PHY1/PHY1_003 אנרגיה.md",
+    "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות.md",
     "Technion/SLD1/SLD1_002 שיווי משקל.md",
     "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
-    "שיווי משקל כימי.md",
     "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
-    "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
-    "Technion/IMT1/IMT1_001 מבוא.md",
-    "Technion/IMT1/IMT1_004/Pasted image 20230501091603.png",
-    "Technion/GCH1/GCH1_013 חמצון חיזור.md",
-    "Technion/GCH1/GCH1_012 חומצות ובסיסים.md",
-    "Technion/GCH1/GCH1_011 שווי משקל כימי.md",
-    "Technion/GCH1/GCH1_010 כוחות בין מולקולריים ומעברי פאזה.md",
-    "Technion/GCH1/GCH1_009 הקשר הכימי II.md",
-    "Technion/GCH1/GCH1_008 הקשר הכימי I.md",
-    "Technion/GCH1/GCH1_008/Untitled 6.png",
-    "Technion/GCH1/GCH1_007 הטבלה המחזורית והקונפיגורציה של האטום.md",
-    "Technion/GCH1/GCH1_006 אלקטרונים באטום.md",
-    "Technion/GCH1/GCH1_005 מבוא למכניקה קוונטית.md",
+    "Technion/SLD1/SLD1_001/Pasted image 20230323140947.png",
+    "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
+    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
+    "Technion/DEQ1/DEQ1_004 משוואות מדויקות, משפחות אורתוגונליות.md",
+    "Technion/DEQ1/DEQ1_003 משוואת ברנולי ומשוואה מטיפוס הומוגני.md",
+    "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
+    "Technion/CAL2/CAL2_007 נגזרות מכוונות.md",
+    "Technion/CAL2/CAL2_007/Screenshot_20230509_101024_Chrome.jpg",
+    "Technion/CAL2/CAL2_006/CAL2_006 נגזרות של פונקציות בשני משתנים 2023-05-09 08.38.56.excalidraw.md",
+    "Technion/CAL2/CAL2_007",
+    "Technion/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-22 12.35.48.excalidraw.md",
+    "README.md",
+    "logo.png",
+    "Technion/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-28 15.12.39.excalidraw.md",
+    "Technion/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.18.46.excalidraw.md",
+    "Technion/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-22 12.35.48.excalidraw.svg",
+    "Technion/CAL2/CAL2_001 וקטורים.md",
+    "Technion/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-21 08.49.42.excalidraw.md",
     "Technion/GCH1/GCH1_004 תרמודינמיקה.md",
-    "Technion/GCH1/GCH1_003 גזים.md",
-    "Technion/GCH1/GCH1_002 תגובות כימיות.md",
-    "Technion/IMT1/IMT1_004/Pasted image 20230501094636.png",
-    "Technion/IMT1/IMT1_004/Pasted image 20230501092409.png",
-    "Technion/GCH1/GCH1_005/Pasted image 20230418222708.png",
+    "Technion/PHY1/Pasted image 20230508190620.png",
+    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
+    "Technion/PHY1/PHY1_001/Pasted image 20230508184156.png",
+    "Technion/PHY1/PHY1_001/Pasted image 20230508184103.png",
+    "Technion/PHY1/PHY1_001/Pasted image 20230508183526.png",
+    "Technion/PHY1/PHY1_002/Pasted image 20230507212556.png",
+    "Technion/PHY1/PHY1_002/Pasted image 20230507212102.png",
+    "Technion/PHY1/PHY1_002 חוקי ניוטון.md",
+    "Technion/PHY1/PHY1_001 קינמטיקה.md",
+    "templates/default_exca.excalidraw.md",
+    "Technion/PHY1/PHY1_001/PHY1_001 וקטורים וקינמטיקה 2023-03-31 12.42.24.excalidraw.md",
+    "Technion/CAL2/CAL2_006",
     "templates/Untitled",
-    "Technion/PHY1/PHY1_002/Screenshot_20230424_083318_Samsung Notes.jpg",
-    "Technion/PHY1/PHY1_002/Screenshot_20230420_101623_Samsung Notes.jpg",
     "Technion/CAL2/CAL2_005",
     "Technion/PHY1/PHY1_002",
     "Excalidraw",
     "publish.js",
     "Technion/GCH1 1/GCH1_004",
     "Technion/GCH1 1",
-    "Technion/TECHNION",
-    "Technion/SLD1/SLD1_003"
+    "Technion/TECHNION"
   ]
 }
