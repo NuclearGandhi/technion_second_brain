@@ -13,31 +13,11 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
+                "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
                 "mode": "source",
-                "source": true
-              }
-            },
-            "group": "b85b550c8b919dea"
-          }
-        ]
-      },
-      {
-        "id": "692c16daf63be482",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "eb84ee815e9c81a8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
-                "mode": "preview",
                 "source": false
               }
-            },
-            "group": "b85b550c8b919dea"
+            }
           }
         ]
       }
@@ -113,7 +93,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
+            "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -130,7 +110,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
+            "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -142,7 +122,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md"
+            "file": "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md"
           }
         }
       }
@@ -163,12 +143,21 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "44a58f715efb93f7",
+  "active": "941c1f49c23b9e3a",
   "lastOpenFiles": [
-    "Technion/ALG1/ALG1_008 דטרמיננטה.md",
-    "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
-    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
+    "Technion/IMT1/Screenshot_20230514_172928_OneDrive.jpg",
+    "Technion/IMT1/Screenshot_20230514_171749_OneDrive.jpg",
+    "Technion/IMT1/Screenshot_20230514_170329_OneDrive.jpg",
+    "Technion/IMT1/Screenshot_20230514_150455_OneDrive.jpg",
+    "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
+    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
     "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות.md",
+    "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
+    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
+    "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
+    "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
+    "Technion/ALG1/ALG1_008 דטרמיננטה.md",
+    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
     "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות 2023-05-10 10.17.23.excalidraw.md",
     "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות 2023-05-10 10.17.23.excalidraw.svg",
     "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות 2023-05-10 09.36.39.excalidraw.md",
@@ -183,24 +172,15 @@
     "templates/default_exca.excalidraw.svg",
     "Technion/SLD1/Screenshot_20230510_092727_Samsung Notes.jpg",
     "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
-    "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
     "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר n.md",
     "Technion/DEQ1/DEQ1_005 משפט קיום ויחידות.md",
-    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
     "Technion/CAL2/CAL2_007 נגזרות מכוונות.md",
-    "Technion/CAL2/Screenshot_20230509_101024_Chrome.jpg",
     "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
     "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים 2023-05-09 08.38.56.excalidraw.md",
-    "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים 2023-05-09 08.38.56.excalidraw.svg",
     "Technion/DEQ1/DEQ2_003 משוואת ברנולי ומשוואה מטיפוס הומוגני.md",
     "Technion/DEQ1/DEQ1_002 גורם אינטגרציה, משוואה פרידה.md",
     "Technion/DEQ1/DEQ1_004 משוואות מדויקות, משפחות אורתוגונליות.md",
     "Technion/PHY1/PHY1_002 דינמיקה, חוקי ניוטון.md",
-    "Technion/PHY1/PHY1_003 מערכות ייחוס והטרנספורציה של גליליי.md",
-    "Technion/SLD1/SLD1_003 מסבכים.md",
-    "Technion/SLD1/SLD1_003/SLD1_003 מסבכים 2023-05-03 10.00.04.excalidraw.md",
-    "Technion/SLD1/SLD1_003/SLD1_003 מסבכים 2023-05-03 09.38.06.excalidraw.md",
-    "Technion/SLD1/SLD1_003/SLD1_003 מסבכים 2023-05-03 10.00.04.excalidraw.svg",
     "Technion/SLD1/SLD1_004",
     "Technion/CAL2/CAL2_006",
     "Technion/DEQ1/DEQ1_001",

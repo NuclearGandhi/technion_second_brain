@@ -6,7 +6,7 @@ image: "https://publish-01.obsidian.md/access/621866b07f34d3860ecbe58d462526fc/l
 המחברת הזו היא תוצר של המוןןןןןן שעות עבודה, אז אשמח אם:
 
 <p align="center">
-<a href="https://r.mtdv.me/QkTxDZCZoi" target="_blank" rel="noopener noreferrer">
+<a href="http://news.rr.nihalnavath.com/posts/Buy-me-a-coffee-24f095da" target="_blank" rel="noopener noreferrer">
 <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg">
 </a>
 </p>
