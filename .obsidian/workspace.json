@@ -4,38 +4,42 @@
     "type": "split",
     "children": [
       {
-        "id": "7ef2ac7a785df6a1",
-        "type": "tabs",
-        "dimension": 47.05093833780161,
-        "children": [
-          {
-            "id": "98d1e97bce27c3b2",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Technion/IMT1/IMT1_005/Pasted image 20230514202911.png"
-              }
-            },
-            "group": "11517b1fb10db450"
-          }
-        ]
-      },
-      {
         "id": "919698c25eef005a",
         "type": "tabs",
-        "dimension": 52.94906166219839,
+        "dimension": 49.74832214765101,
         "children": [
           {
             "id": "ca091886d4036a9c",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Technion/IMT1/IMT1_005/Pasted image 20230514202911.png"
+                "file": "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
+                "mode": "source",
+                "source": true
               }
             },
-            "group": "11517b1fb10db450"
+            "group": "0cdbf6a038411eb9"
+          }
+        ]
+      },
+      {
+        "id": "7ef2ac7a785df6a1",
+        "type": "tabs",
+        "dimension": 50.251677852349,
+        "children": [
+          {
+            "id": "425949a497f99c24",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
+                "mode": "preview",
+                "source": false
+              }
+            },
+            "group": "0cdbf6a038411eb9"
           }
         ]
       }
@@ -111,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/IMT1/IMT1_005/Pasted image 20230514202911.png",
+                "file": "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/IMT1/IMT1_005/Pasted image 20230514202911.png",
+                "file": "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,12 +155,11 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/IMT1/IMT1_005/Pasted image 20230514202911.png"
+                "file": "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md"
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -171,59 +174,58 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "templater-obsidian:Templater": false,
+      "workspaces:Manage workspace layouts": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "workspaces:Manage workspace layouts": false
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "717dd551d2d7a242",
+  "active": "ca091886d4036a9c",
   "lastOpenFiles": [
-    "Technion/IMT1/IMT1_005",
-    "Technion/IMT1/IMT1_005 דיאגרמת ברזל-פחמן.md",
-    "Technion/IMT1/IMT1_005/Pasted image 20230514224530.png",
-    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
-    "Technion/IMT1/IMT1_005/Pasted image 20230514223719.png",
-    "Technion/IMT1/IMT1_005/Pasted image 20230514223629.png",
-    "Technion/IMT1/IMT1_005/Pasted image 20230514222836.png",
-    "Technion/IMT1/IMT1_005/Pasted image 20230514222305.png",
-    "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
-    "Technion/IMT1/IMT1_005/Pasted image 20230514202911.png",
-    "Technion/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
-    "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
-    "Technion/IMT1/IMT1_004/Pasted image 20230514194421.png",
-    "Technion/IMT1/IMT1_004/Pasted image 20230514201639.png",
-    "Technion/CAL1/CAL1_002 גבול של פונקציה.md",
-    "Technion/IMT1/IMT1_004/Pasted image 20230514200146.png",
-    "Technion/IMT1/IMT1_004/Pasted image 20230514194957.png",
-    "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות.md",
-    "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
-    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
-    "README.md",
-    "Technion/ALG1/ALG1_000 104016 אלגברה 1מ.md",
-    "Technion/CAL1/CAL1_000 104041 חדוא 1מ.md",
-    "Technion/DEQ1/DEQ1_005 משפט קיום ויחידות.md",
-    "Technion/DEQ1/DEQ1_001 מבוא.md",
-    "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
-    "Technion/CAL1/CAL1_005 נגזרות.md",
+    "Technion/SLD1/SLD1_004 עבודה וירטואלית.md",
+    "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
+    "Technion/PHY1/PHY1_006 כוחות משמרים שימור אנרגיה מכנית, הספק.md",
+    "Technion/PHY1/PHY1_005 עבודה ואנרגיה.md",
+    "Technion/PHY1/PHY1_007/Pasted image 20230522105703.png",
+    "Technion/PHY1/PHY1_007",
+    "Technion/PHY1/PHY1_007/Pasted image 20230522121947.png",
+    "Technion/PHY1/PHY1_006/Pasted image 20230522121351.png",
+    "Technion/PHY1/PHY1_007/Pasted image 20230522120129.png",
+    "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
+    "Technion/PHY1/PHY1_003 חוקי ניוטון.md",
+    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
+    "Technion/PHY1/PHY1_006/Pasted image 20230522090832.png",
+    "Technion/PHY1/PHY1_006",
+    "Technion/PHY1/PHY1_002 קינמטיקה.md",
+    "Technion/PHY1/PHY1_001 מבוא.md",
     "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
-    "templates/default_exca.excalidraw.md",
-    "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
+    "Technion/PHY1/PHY1_006/Pasted image 20230522092335.png",
+    "Technion/PHY1/PHY1_005/Pasted image 20230521134611.png",
+    "Technion/PHY1/PHY1_005",
+    "Technion/PHY1/PHY1_005/Pasted image 20230521234916.png",
+    "Technion/PHY1/PHY1_005/Pasted image 20230521233650.png",
+    "Technion/CAL2/CAL2_009 פונקציות סתומות.md",
+    "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
     "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
-    "Technion/GCH1/GCH1_009 הקשר הכימי II.md",
-    "Technion/GCH1/GCH1_003 גזים.md",
+    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+    "Technion/GCH1/GCH1_010 כוחות בין מולקולריים ומעברי פאזה.md",
+    "Technion/IMT1/IMT1_005 דיאגרמת ברזל-פחמן.md",
+    "Technion/GCH1/GCH1_011 שווי משקל כימי.md",
+    "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
     "Technion/IMT1/IMT1_001 מבוא.md",
-    "Technion/PHY1/PHY1_003 אנרגיה.md",
-    "Technion/PHY1/PHY1_002 חוקי ניוטון.md",
+    "Technion/GCH1/GCH1_003 גזים.md",
+    "Technion/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
+    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
+    "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
+    "Technion/GCH1/GCH1_009 הקשר הכימי II.md",
+    "Technion/CAL2/CAL2_004 עקומים במרחב.md",
+    "Technion/PHY1/PHY1_003/Pasted image 20230508190620.png",
+    "Technion/CAL2/CAL2_009",
+    "Excalidraw",
+    "Technion/IMT1/IMT1_005",
     "Technion/PHY1/PHY1_003",
     "Technion/CAL2/CAL2_007",
     "Technion/CAL2/CAL2_006",
-    "templates/Untitled",
-    "Technion/CAL2/CAL2_005",
-    "Technion/PHY1/PHY1_002",
-    "Excalidraw",
-    "publish.js",
-    "Technion/GCH1 1/GCH1_004",
-    "Technion/GCH1 1"
+    "templates/Untitled"
   ]
 }

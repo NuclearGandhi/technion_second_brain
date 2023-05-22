@@ -5,7 +5,7 @@
   "showAttachments": false,
   "hideUnresolved": true,
   "showOrphans": true,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "file: ALG",
@@ -39,7 +39,7 @@
       "query": "file: CAL",
       "color": {
         "a": 1,
-        "rgb": 5431473
+        "rgb": 1301913
       }
     },
     {
@@ -71,16 +71,16 @@
       }
     }
   ],
-  "collapse-display": true,
+  "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": 0.3,
   "nodeSizeMultiplier": 1.01875,
-  "lineSizeMultiplier": 0.4675,
+  "lineSizeMultiplier": 1.27395833333333,
   "collapse-forces": false,
   "centerStrength": 1,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.3672258289311195,
+  "scale": 0.6596149385016385,
   "close": true
 }
