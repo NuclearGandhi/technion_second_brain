@@ -11,6 +11,7 @@ image: "https://publish-01.obsidian.md/access/621866b07f34d3860ecbe58d462526fc/l
 </a>
 </p>
 
+[[#סמסטר א’|קפוץ לחומר]].
 # הקדמה
 תיקייה זו היא אוסף כלל הסיכומים שלי בנושאים שונים. אפשר להתייחס לזה כמו מחברת אחת ענקית שמכילה תתי מחברות, אבל תאכלס זה פשוט תיקיות תחת תיקיות תחת תיקיות תחת תיקיות...
 
@@ -27,6 +28,9 @@ image: "https://publish-01.obsidian.md/access/621866b07f34d3860ecbe58d462526fc/l
 
 אם אתם רוצים לחפש נושא מסוים - יש בצד ימין חלונית חיפוש.
 אם אתם רוצים לתרום לפרויקט הזה, ואתם כבר מכירים GitHub, יש כפתור עריכה בראש כל עמוד.
+
+
+<div style="background-color:#FFFFFF; border-radius:25px; padding-right:20px; padding-left:20px"><iframe id="widget-link" src='https://widget.elfsig.ht/faaa7130-18d6-4330-b0a0-69bc6ffd2359' width='100%' height='700' frameborder='2'></iframe></div>
 
 ---
 

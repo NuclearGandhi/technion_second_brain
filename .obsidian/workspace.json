@@ -4,42 +4,48 @@
     "type": "split",
     "children": [
       {
-        "id": "919698c25eef005a",
-        "type": "tabs",
-        "dimension": 49.74832214765101,
-        "children": [
-          {
-            "id": "ca091886d4036a9c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "0cdbf6a038411eb9"
-          }
-        ]
-      },
-      {
         "id": "7ef2ac7a785df6a1",
         "type": "tabs",
-        "dimension": 50.251677852349,
         "children": [
           {
-            "id": "425949a497f99c24",
+            "id": "cb6c4db826352c57",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
+                "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
                 "mode": "preview",
                 "source": false
               }
             },
-            "group": "0cdbf6a038411eb9"
+            "group": "1bbd7a9bccd96162"
+          }
+        ]
+      },
+      {
+        "id": "919698c25eef005a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "295b36af48360f8b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+                "mode": "preview",
+                "source": false
+              }
+            },
+            "group": "1bbd7a9bccd96162"
+          },
+          {
+            "id": "2273f4d1f680aa16",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
           }
         ]
       }
@@ -70,7 +76,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "TODO",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -95,7 +101,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -115,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
+                "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
+                "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,16 +157,17 @@
             }
           },
           {
-            "id": "85872b6055ca4d37",
+            "id": "9dafd58fe938f77b",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md"
+                "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -180,52 +188,53 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "ca091886d4036a9c",
+  "active": "8841281c19744294",
   "lastOpenFiles": [
-    "Technion/SLD1/SLD1_004 עבודה וירטואלית.md",
-    "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
-    "Technion/PHY1/PHY1_006 כוחות משמרים שימור אנרגיה מכנית, הספק.md",
-    "Technion/PHY1/PHY1_005 עבודה ואנרגיה.md",
-    "Technion/PHY1/PHY1_007/Pasted image 20230522105703.png",
-    "Technion/PHY1/PHY1_007",
-    "Technion/PHY1/PHY1_007/Pasted image 20230522121947.png",
-    "Technion/PHY1/PHY1_006/Pasted image 20230522121351.png",
-    "Technion/PHY1/PHY1_007/Pasted image 20230522120129.png",
-    "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
-    "Technion/PHY1/PHY1_003 חוקי ניוטון.md",
-    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
-    "Technion/PHY1/PHY1_006/Pasted image 20230522090832.png",
-    "Technion/PHY1/PHY1_006",
-    "Technion/PHY1/PHY1_002 קינמטיקה.md",
-    "Technion/PHY1/PHY1_001 מבוא.md",
-    "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
-    "Technion/PHY1/PHY1_006/Pasted image 20230522092335.png",
-    "Technion/PHY1/PHY1_005/Pasted image 20230521134611.png",
-    "Technion/PHY1/PHY1_005",
-    "Technion/PHY1/PHY1_005/Pasted image 20230521234916.png",
-    "Technion/PHY1/PHY1_005/Pasted image 20230521233650.png",
-    "Technion/CAL2/CAL2_009 פונקציות סתומות.md",
-    "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
-    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
-    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
-    "Technion/GCH1/GCH1_010 כוחות בין מולקולריים ומעברי פאזה.md",
-    "Technion/IMT1/IMT1_005 דיאגרמת ברזל-פחמן.md",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-05-31 15.40.58.excalidraw.svg",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
+    "Technion/GCH1/GCH1_012 חומצות ובסיסים.md",
     "Technion/GCH1/GCH1_011 שווי משקל כימי.md",
-    "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
-    "Technion/IMT1/IMT1_001 מבוא.md",
-    "Technion/GCH1/GCH1_003 גזים.md",
-    "Technion/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
-    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
-    "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
-    "Technion/GCH1/GCH1_009 הקשר הכימי II.md",
-    "Technion/CAL2/CAL2_004 עקומים במרחב.md",
-    "Technion/PHY1/PHY1_003/Pasted image 20230508190620.png",
+    "Technion/SLD1/SLD1_005/Screenshot_20230530_112739_OneDrive.jpg",
+    "Technion/SLD1/SLD1_005/Screenshot_20230530_112643_OneDrive.jpg",
+    "Technion/SLD1/SLD1_005/Screenshot_20230526_204707_OneDrive.jpg",
+    "Technion/SLD1/SLD1_005/Screenshot_20230526_204211_OneDrive.jpg",
+    "Technion/SLD1/SLD1_005/Screenshot_20230526_212732_OneDrive.jpg",
+    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-26 18.15.51.excalidraw.md",
+    "Technion/SLD1/SLD1_005/Screenshot_20230526_203939_OneDrive.jpg",
+    "Technion/SLD1/SLD1_005/Pasted image 20230530215022.png",
+    "Technion/SLD1/SLD1_005/Screenshot_20230526_203831_OneDrive.jpg",
+    "Technion/SLD1/SLD1_005/Screenshot_20230524_103545_OneDrive.jpg",
+    "Technion/SLD1/SLD1_005/Screenshot_20230524_105800_OneDrive.jpg",
+    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-30 22.48.21.excalidraw.md",
+    "templates/default_exca.excalidraw.md",
+    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-29 22.21.39.excalidraw.md",
+    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-30 18.53.48.excalidraw.md",
+    "Technion/SLD1/SLD1_006 קורות - עומסים מפורסים.md",
+    "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
+    "Technion/SLD1/SLD1_002 שיווי משקל.md",
+    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-30 19.23.29.excalidraw.md",
+    "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות.md",
+    "README.md",
+    "Technion/CAL2/CAL2_009/CAL2_009 פונקציות סתומות 2023-05-17 14.59.24.excalidraw.md",
+    "Technion/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-28 09.07.30.excalidraw.md",
+    "Technion/CAL2/CAL2_010/CAL2_010 נקודות מינימום ומקסימום 2023-05-24 16.09.20.excalidraw.md",
+    "Technion/PHY1/PHY1_001/PHY1_001 וקטורים וקינמטיקה 2023-03-31 15.46.37.excalidraw.md",
+    "Technion/CAL2/CAL2_002/CAL2_002 מישורים וישרים 2023-03-29 15.02.34.excalidraw.md",
+    "Technion/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-22 16.14.19.excalidraw.md",
+    "Technion/PHY1/PHY1_001/PHY1_001 וקטורים וקינמטיקה 2023-03-31 13.46.19.excalidraw.md",
+    "Technion/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.18.46.excalidraw.md",
+    "Technion/PHY1/PHY1_001/PHY1_001 וקטורים וקינמטיקה 2023-03-23 09.05.39.excalidraw.md",
+    "Technion/SLD1/~syncthing~SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-29 22.20.48.excalidraw.sync-conflict-20230529-222126-O2RDG4A.md.tmp",
+    "Technion/SLD1/SLD1_005",
+    "Technion/CAL2/CAL2_010",
+    "Technion/PHY1/PHY1_007",
+    "Technion/PHY1/PHY1_006",
+    "Technion/PHY1/PHY1_005",
     "Technion/CAL2/CAL2_009",
     "Excalidraw",
     "Technion/IMT1/IMT1_005",
-    "Technion/PHY1/PHY1_003",
-    "Technion/CAL2/CAL2_007",
-    "Technion/CAL2/CAL2_006",
-    "templates/Untitled"
+    "Technion/PHY1/PHY1_003"
   ]
 }

@@ -33,3 +33,7 @@ img[alt*="bmult"] {
 .theme-light .geo {
   mix-blend-mode: multiply;
 }
+
+.eapps-testimonials-slider-page-item-single-postcard .eapps-testimonials-slider-page-item-author-picture {
+  filter: invert(1);
+}

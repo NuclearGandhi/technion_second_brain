@@ -13,31 +13,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
+                "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
                 "mode": "source",
                 "source": true
               }
             },
-            "group": "189574dbbba896a2"
+            "group": "ccff4a1a14c8382e"
           }
         ]
       },
       {
-        "id": "bc378fb13c335e3b",
+        "id": "d1eb3cbbcba7d8cf",
         "type": "tabs",
         "children": [
           {
-            "id": "f5458e101bac3126",
+            "id": "7ba5ee5bfd801316",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
+                "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
                 "mode": "preview",
                 "source": false
               }
             },
-            "group": "189574dbbba896a2"
+            "group": "ccff4a1a14c8382e"
           }
         ]
       }
@@ -64,7 +64,7 @@
         "state": {
           "type": "search",
           "state": {
-            "query": "סטוכיומטרי",
+            "query": "",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": true,
@@ -113,7 +113,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
+            "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
+            "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -142,7 +142,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md"
+            "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md"
           }
         }
       }
@@ -163,52 +163,52 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "a3d55a71ad3ddb03",
+  "active": "7ba5ee5bfd801316",
   "lastOpenFiles": [
-    "Technion/CAL2/CAL2_009 פונקציות סתומות.md",
-    "Technion/CAL2/CAL2_008 טיילור 2.0.md",
-    "Technion/SLD1/SLD1_004 עבודה וירטואלית.md",
-    "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
-    "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
-    "Technion/CAL2/CAL2_002 מישורים וישרים.md",
-    "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
-    "Technion/CAL2/CAL2_009 פונקציות סתומות 2023-05-17 14.59.24.excalidraw.md",
-    "Technion/CAL2/CAL2_009 פונקציות סתומות 2023-05-17 14.59.24.excalidraw.svg",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-05-31 15.40.58.excalidraw.md",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-05-31 15.40.58.excalidraw.svg",
+    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-05-31 15.06.50.excalidraw.md",
+    "Technion/CAL2/CAL2_010 נקודות מינימום ומקסימום, מבחן הנגזרת השנייה, כופלי לגרנג.md",
+    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-05-31 15.06.50.excalidraw.svg",
+    "Technion/CAL1/CAL1_008 אינטגרל מסוים.md",
     "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
-    "Technion/SLD1/Screenshot_20230517_105233_Samsung Notes.jpg",
-    "Technion/SLD1/SLD1_004 עבודה וירטואלית 2023-05-17 09.40.09.excalidraw.md",
-    "Technion/SLD1/SLD1_004 עבודה וירטואלית 2023-05-17 09.40.09.excalidraw.svg",
-    "Technion/SLD1/Screenshot_20230517_093259_Samsung Notes.jpg",
-    "Technion/DEQ1/DEQ1_006 משוואות לינאריות מסדר גבוה.md",
-    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
-    "Technion/IMT1/IMT1_005 דיאגרמת ברזל-פחמן.md",
-    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
-    "Technion/CAL1/CAL1_006 פולינום טיילור.md",
-    "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
-    "Technion/IMT1/Screenshot_20230515_130127_Samsung Notes.jpg",
-    "Technion/IMT1/Screenshot_20230515_125114_Samsung Notes.jpg",
-    "Technion/SLD1/Screenshot_20230515_110035_OneDrive.jpg",
-    "Technion/SLD1/Screenshot_20230515_105539_OneDrive.jpg",
-    "Technion/SLD1/Screenshot_20230515_104922_OneDrive.jpg",
-    "Technion/SLD1/Screenshot_20230515_101011_OneDrive.jpg",
-    "Technion/SLD1/SLD1_004 עבודה וירטואלית 2023-05-15 08.33.27.excalidraw.md",
-    "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות.md",
-    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
-    "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
-    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
-    "Technion/ALG1/ALG1_008 דטרמיננטה.md",
-    "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות 2023-05-10 10.17.23.excalidraw.md",
-    "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות 2023-05-10 09.36.39.excalidraw.md",
-    "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות 2023-05-10 10.06.19.excalidraw.md",
-    "templates/default_exca.excalidraw.md",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-31 09.59.16.excalidraw.md",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-31 10.17.41.excalidraw.md",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-31 09.46.46.excalidraw.svg",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-31 09.46.46.excalidraw.md",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-31 10.17.41.excalidraw.svg",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-31 09.59.16.excalidraw.svg",
+    "Technion/SLD1/Screenshot_20230531_092922_Samsung Notes.jpg",
+    "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
+    "Technion/SLD1/SLD1_006/Screenshot_20230530_112739_OneDrive.jpg",
+    "Technion/SLD1/SLD1_006/Screenshot_20230530_112643_OneDrive.jpg",
+    "Technion/SLD1/Screenshot_20230530_111247_OneDrive.jpg",
+    "Technion/SLD1/SLD1_006 עומסים מפורסים.md",
+    "Technion/CAL2/CAL2_011 אינטגרציה מרובה.md",
+    "Technion/CAL2/CAL2_011/Screenshot_20230530_090953_Chrome.jpg",
+    "Technion/CAL2/CAL2_011",
+    "Technion/CAL2/CAL2_011 אינטגרציה מרובה 1.md",
+    "Technion/SLD1/SLD1_006",
+    "Technion/SLD1/SLD1_007 עומסים מחולקים.md",
+    "Technion/SLD1/SLD1_007 עומס מחולק.md",
+    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-29 22.21.39.excalidraw.md",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-29 22.21.39.excalidraw.md",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-29 22.20.48.excalidraw.sync-conflict-20230529-222126-O2RDG4A.md",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-29 22.20.48.excalidraw.md",
+    "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
+    "Technion/CAL2/CAL2_010/CAL2_010 נקודות מינימום ומקסימום, מבחן הנגזרת השנייה, כופלי לגרנג 2023-05-25 18.42.13.excalidraw.md",
+    "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
+    "Technion/PHY1/PHY1_008 תנע ומרכז מסה.md",
+    "Technion/PHY1/PHY1_008",
+    "Technion/PHY1/PHY1_007/Untitled",
+    "Technion/PHY1/PHY1_008/PHY1_008 תנע זוויתי 2023-05-28 11.12.54.excalidraw.md",
+    "Technion/PHY1/הרצאה 8_bc4e1af8434ff76f23e894e79f98c764_230528_103533.pdf",
     "Technion/SLD1/SLD1_004",
     "Technion/CAL2/CAL2_006",
     "Technion/DEQ1/DEQ1_001",
     "DEQ1",
-    "Excalidraw",
-    "Technion/TECHNION/IMT1/IMT1_001",
-    "Technion/TECHNION/SLD1/SLD1_002",
-    "Technion/TECHNION/CAL2/CAL2_004",
-    "Technion/TECHNION/CAL2/CAL2_003"
+    "Excalidraw"
   ]
 }
