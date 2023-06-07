@@ -6,6 +6,7 @@
       {
         "id": "7ef2ac7a785df6a1",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "cb6c4db826352c57",
@@ -13,9 +14,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
-                "mode": "preview",
-                "source": false
+                "file": "Technion/SLD1/SLD1_006 מרכז כובד.md",
+                "mode": "source",
+                "source": true
               }
             },
             "group": "1bbd7a9bccd96162"
@@ -25,6 +26,7 @@
       {
         "id": "919698c25eef005a",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "295b36af48360f8b",
@@ -32,20 +34,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+                "file": "Technion/SLD1/SLD1_006 מרכז כובד.md",
                 "mode": "preview",
                 "source": false
               }
             },
             "group": "1bbd7a9bccd96162"
-          },
-          {
-            "id": "2273f4d1f680aa16",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
           }
         ]
       }
@@ -76,7 +70,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "TODO",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -101,12 +95,12 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "c1c3ae1b57de7de1",
@@ -122,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+                "file": "Technion/SLD1/SLD1_006 מרכז כובד.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+                "file": "Technion/SLD1/SLD1_006 מרכז כובד.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md"
+                "file": "Technion/SLD1/SLD1_006 מרכז כובד.md"
               }
             }
           }
@@ -188,10 +182,27 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "8841281c19744294",
+  "active": "cb6c4db826352c57",
   "lastOpenFiles": [
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-05-31 15.40.58.excalidraw.svg",
+    "Technion/SLD1/Pasted image 20230607081906.png",
+    "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
+    "Technion/SLD1/SLD1_002 שיווי משקל.md",
+    "Technion/SLD1/SLD1_006 מרכז כובד.md",
+    "Technion/SLD1/Pasted image 20230607075722.png",
+    "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
+    "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
+    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
+    "Technion/IMT1/IMT1_006 דאגרמות TTT ו-CTT.md",
+    "Technion/PHY1/PHY1_008/Screenshot_20230604_103818_Samsung Notes.jpg",
+    "Technion/PHY1/PHY1_008 תנע ומרכז מסה.md",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 12.53.40.excalidraw.md",
     "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
+    "Technion/PHY1/PHY1_002 קינמטיקה.md",
+    "logo.png",
+    "favicon-32x32.png",
+    "Technion/PHY1/PHY1_003 חוקי ניוטון.md",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-05-31 15.40.58.excalidraw.svg",
     "Technion/GCH1/GCH1_012 חומצות ובסיסים.md",
     "Technion/GCH1/GCH1_011 שווי משקל כימי.md",
     "Technion/SLD1/SLD1_005/Screenshot_20230530_112739_OneDrive.jpg",
@@ -200,32 +211,15 @@
     "Technion/SLD1/SLD1_005/Screenshot_20230526_204211_OneDrive.jpg",
     "Technion/SLD1/SLD1_005/Screenshot_20230526_212732_OneDrive.jpg",
     "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-26 18.15.51.excalidraw.md",
-    "Technion/SLD1/SLD1_005/Screenshot_20230526_203939_OneDrive.jpg",
-    "Technion/SLD1/SLD1_005/Pasted image 20230530215022.png",
-    "Technion/SLD1/SLD1_005/Screenshot_20230526_203831_OneDrive.jpg",
-    "Technion/SLD1/SLD1_005/Screenshot_20230524_103545_OneDrive.jpg",
-    "Technion/SLD1/SLD1_005/Screenshot_20230524_105800_OneDrive.jpg",
     "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-30 22.48.21.excalidraw.md",
     "templates/default_exca.excalidraw.md",
     "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
     "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-29 22.21.39.excalidraw.md",
     "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-30 18.53.48.excalidraw.md",
     "Technion/SLD1/SLD1_006 קורות - עומסים מפורסים.md",
-    "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
-    "Technion/SLD1/SLD1_002 שיווי משקל.md",
     "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-30 19.23.29.excalidraw.md",
     "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות.md",
     "README.md",
-    "Technion/CAL2/CAL2_009/CAL2_009 פונקציות סתומות 2023-05-17 14.59.24.excalidraw.md",
-    "Technion/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-28 09.07.30.excalidraw.md",
-    "Technion/CAL2/CAL2_010/CAL2_010 נקודות מינימום ומקסימום 2023-05-24 16.09.20.excalidraw.md",
-    "Technion/PHY1/PHY1_001/PHY1_001 וקטורים וקינמטיקה 2023-03-31 15.46.37.excalidraw.md",
-    "Technion/CAL2/CAL2_002/CAL2_002 מישורים וישרים 2023-03-29 15.02.34.excalidraw.md",
-    "Technion/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-22 16.14.19.excalidraw.md",
-    "Technion/PHY1/PHY1_001/PHY1_001 וקטורים וקינמטיקה 2023-03-31 13.46.19.excalidraw.md",
-    "Technion/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.18.46.excalidraw.md",
-    "Technion/PHY1/PHY1_001/PHY1_001 וקטורים וקינמטיקה 2023-03-23 09.05.39.excalidraw.md",
     "Technion/SLD1/~syncthing~SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-29 22.20.48.excalidraw.sync-conflict-20230529-222126-O2RDG4A.md.tmp",
     "Technion/SLD1/SLD1_005",
     "Technion/CAL2/CAL2_010",
