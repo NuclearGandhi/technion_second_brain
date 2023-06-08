@@ -15,8 +15,8 @@
               "type": "markdown",
               "state": {
                 "file": "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
-                "mode": "source",
-                "source": true
+                "mode": "preview",
+                "source": false
               }
             },
             "group": "ccff4a1a14c8382e"
@@ -66,7 +66,7 @@
         "state": {
           "type": "search",
           "state": {
-            "query": "אויילר",
+            "query": "",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": true,
@@ -103,7 +103,7 @@
         }
       }
     ],
-    "currentTab": 1
+    "currentTab": 0
   },
   "right": {
     "id": "0a8057d9021e95ad",
@@ -167,10 +167,27 @@
   },
   "active": "a3d55a71ad3ddb03",
   "lastOpenFiles": [
+    "Technion/IMT1/IMT1_006 דאגרמות TTT ו-CTT.md",
+    "Technion/IMT1/IMT1_005 דיאגרמת ברזל-פחמן.md",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+    "Technion/CAL2/CAL2_011/Screenshot_20230607_142753_Chrome.jpg",
+    "Technion/CAL2/CAL2_011/Screenshot_20230607_160627_Chrome.jpg",
+    "Technion/CAL2/CAL2_011/Screenshot_20230607_160225_Chrome.jpg",
+    "Technion/CAL2/CAL2_011/Screenshot_20230607_155224_Chrome.jpg",
+    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-05-31 15.06.50.excalidraw.md",
+    "Technion/CAL2/CAL2_011/Screenshot_20230607_151941_Chrome.jpg",
+    "Technion/CAL2/CAL2_011/Screenshot_20230607_151720_Chrome.jpg",
+    "Technion/CAL2/CAL2_009 פונקציות סתומות.md",
+    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
+    "Technion/SLD1/SLD1_006 מרכז כובד.md",
+    "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
+    "Technion/PHY1/PHY1_008 תנע ומרכז מסה.md",
+    "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
+    "Technion/SLD1/SLD1_006/Pasted image 20230607081906.png",
+    "Technion/SLD1/SLD1_006",
+    "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
     "TechGamble.md",
     "Technion/CAL2/15.4.3.png",
-    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
     "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.12.46.excalidraw.md",
     "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.12.46.excalidraw.svg",
     "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.05.57.excalidraw.svg",
@@ -178,40 +195,23 @@
     "Technion/SLD1/SLD1_006 מרכז מסה.md",
     "README.md",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.12.46.excalidraw.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.12.46.excalidraw.svg",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.05.57.excalidraw.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.05.57.excalidraw.svg",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 12.53.40.excalidraw.md",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.03.14.excalidraw.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.03.14.excalidraw.svg",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.02.49.excalidraw.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.02.49.excalidraw.svg",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 12.53.40.excalidraw.svg",
-    "Technion/PHY1/PHY1_008 תנע ומרכז מסה.md",
     "Technion/PHY1/הרצאה 9_230604_104123.pdf",
-    "Technion/PHY1/Screenshot_20230604_103818_Samsung Notes.jpg",
     "templates/Default note.md",
     "templates/משפט.md",
     "templates/הגדרה.md",
     "templates/הערות.md",
-    "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
-    "Technion/DEQ1/DEQ1_007/Screenshot_20230602_190031_Chrome.jpg",
     "Technion/DEQ1/DEQ1_007",
     "Technion/IMT1/IMT1_006",
     "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-31 09.46.46.excalidraw.md",
-    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
-    "Technion/IMT1/IMT1_006 דאגרמות TTT ו-CTT.md",
-    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
-    "Technion/IMT1/IMT1_005 דיאגרמת ברזל-פחמן.md",
-    "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
-    "Technion/ALG1/ALG1_008 דטרמיננטה.md",
-    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-31 10.17.41.excalidraw.md",
     "Technion/BMA1/BMA1_007",
     "Technion/CAL2/CAL2_008",
     "Technion/CAL2/CAL2_011",
     "Technion/SLD1/SLD1_006",
     "Technion/PHY1/PHY1_008",
-    "Technion/PHY1/PHY1_007/Untitled",
-    "Technion/PHY1/הרצאה 8_bc4e1af8434ff76f23e894e79f98c764_230528_103533.pdf"
+    "Technion/PHY1/PHY1_007/Untitled"
   ]
 }

@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD1/SLD1_006 מרכז כובד.md",
+                "file": "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
                 "mode": "source",
                 "source": true
               }
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD1/SLD1_006 מרכז כובד.md",
+                "file": "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
                 "mode": "preview",
                 "source": false
               }
@@ -99,8 +99,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "c1c3ae1b57de7de1",
@@ -116,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/SLD1/SLD1_006 מרכז כובד.md",
+                "file": "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/SLD1/SLD1_006 מרכז כובד.md",
+                "file": "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/SLD1/SLD1_006 מרכז כובד.md"
+                "file": "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md"
               }
             }
           }
@@ -184,10 +183,13 @@
   },
   "active": "cb6c4db826352c57",
   "lastOpenFiles": [
+    "Technion/SLD1/SLD1_006 מרכז כובד.md",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
+    "Technion/SLD1/SLD1_004 עבודה וירטואלית.md",
+    "Technion/CAL2/CAL2_010 נקודות מינימום ומקסימום, מבחן הנגזרת השנייה, כופלי לגרנג.md",
     "Technion/SLD1/Pasted image 20230607081906.png",
     "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
     "Technion/SLD1/SLD1_002 שיווי משקל.md",
-    "Technion/SLD1/SLD1_006 מרכז כובד.md",
     "Technion/SLD1/Pasted image 20230607075722.png",
     "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
     "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
@@ -197,7 +199,6 @@
     "Technion/PHY1/PHY1_008 תנע ומרכז מסה.md",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
     "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 12.53.40.excalidraw.md",
-    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
     "Technion/PHY1/PHY1_002 קינמטיקה.md",
     "logo.png",
     "favicon-32x32.png",
@@ -209,7 +210,6 @@
     "Technion/SLD1/SLD1_005/Screenshot_20230530_112643_OneDrive.jpg",
     "Technion/SLD1/SLD1_005/Screenshot_20230526_204707_OneDrive.jpg",
     "Technion/SLD1/SLD1_005/Screenshot_20230526_204211_OneDrive.jpg",
-    "Technion/SLD1/SLD1_005/Screenshot_20230526_212732_OneDrive.jpg",
     "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-26 18.15.51.excalidraw.md",
     "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-30 22.48.21.excalidraw.md",
     "templates/default_exca.excalidraw.md",
@@ -219,7 +219,6 @@
     "Technion/SLD1/SLD1_006 קורות - עומסים מפורסים.md",
     "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-30 19.23.29.excalidraw.md",
     "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות.md",
-    "README.md",
     "Technion/SLD1/~syncthing~SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-29 22.20.48.excalidraw.sync-conflict-20230529-222126-O2RDG4A.md.tmp",
     "Technion/SLD1/SLD1_005",
     "Technion/CAL2/CAL2_010",
