@@ -6,7 +6,6 @@
       {
         "id": "8d57d955f30f0224",
         "type": "tabs",
-        "dimension": 50,
         "children": [
           {
             "id": "a3d55a71ad3ddb03",
@@ -14,32 +13,43 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
-                "mode": "preview",
-                "source": false
+                "file": "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
+                "mode": "source",
+                "source": true
               }
             },
-            "group": "ccff4a1a14c8382e"
+            "group": "9e07870316c09d11"
           }
         ]
       },
       {
-        "id": "d1eb3cbbcba7d8cf",
+        "id": "2240c517b55b13d1",
         "type": "tabs",
-        "dimension": 50,
         "children": [
           {
-            "id": "7ba5ee5bfd801316",
+            "id": "aca7f060141dbeef",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
+                "file": "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
                 "mode": "preview",
                 "source": false
               }
             },
-            "group": "ccff4a1a14c8382e"
+            "group": "9e07870316c09d11"
+          },
+          {
+            "id": "125acf0c757a873b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -115,7 +125,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
+            "file": "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -132,7 +142,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
+            "file": "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -144,7 +154,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md"
+            "file": "Technion/CAL2/CAL2_012 אינטגרל קווי.md"
           }
         }
       }
@@ -165,53 +175,52 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "a3d55a71ad3ddb03",
+  "active": "b9b7155ce7740d3a",
   "lastOpenFiles": [
-    "Technion/IMT1/IMT1_006 דאגרמות TTT ו-CTT.md",
-    "Technion/IMT1/IMT1_005 דיאגרמת ברזל-פחמן.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
-    "Technion/CAL2/CAL2_011/Screenshot_20230607_142753_Chrome.jpg",
-    "Technion/CAL2/CAL2_011/Screenshot_20230607_160627_Chrome.jpg",
-    "Technion/CAL2/CAL2_011/Screenshot_20230607_160225_Chrome.jpg",
-    "Technion/CAL2/CAL2_011/Screenshot_20230607_155224_Chrome.jpg",
-    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-05-31 15.06.50.excalidraw.md",
-    "Technion/CAL2/CAL2_011/Screenshot_20230607_151941_Chrome.jpg",
-    "Technion/CAL2/CAL2_011/Screenshot_20230607_151720_Chrome.jpg",
-    "Technion/CAL2/CAL2_009 פונקציות סתומות.md",
+    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
+    "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
+    "Technion/CAL2/154447645358687827.png",
+    "Technion/CAL2/16.3.1.png",
+    "Technion/CAL2/CNX_Calc_Figure_16_02_005.jpg",
+    "Technion/CAL2/1.png",
+    "Technion/CAL2/CNX_Calc_Figure_16_02_006 1.jpg",
+    "Technion/CAL2/CNX_Calc_Figure_16_02_006.jpg",
+    "Technion/CAL2/imageedit_4_9362707845.png",
     "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
-    "Technion/SLD1/SLD1_006 מרכז כובד.md",
-    "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
-    "Technion/PHY1/PHY1_008 תנע ומרכז מסה.md",
-    "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
-    "Technion/SLD1/SLD1_006/Pasted image 20230607081906.png",
-    "Technion/SLD1/SLD1_006",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+    "Technion/CAL2/CAL2_012/Pasted image 20230613094016.png",
+    "Technion/CAL2/CAL2_012",
+    "Technion/CAL2/CAL2_012/CNX_Calc_Figure_16_02_001.jpg",
+    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
+    "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
+    "Technion/IMT1/IMT1_001 מבוא.md",
+    "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
+    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
+    "Technion/IMT1/IMT1_007/Pasted image 20230613175233.png",
+    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-14 09.52.06.excalidraw.md",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור 2023-06-14 09.45.20.excalidraw.md",
+    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
+    "Technion/DEQ1/DEQ1_008 פתרון משוואות בעזרת טורים.md",
+    "Technion/DEQ1/DEQ1_001 מבוא.md",
     "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
-    "TechGamble.md",
-    "Technion/CAL2/15.4.3.png",
-    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.12.46.excalidraw.md",
-    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.12.46.excalidraw.svg",
-    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.05.57.excalidraw.svg",
-    "Technion/CAL2/CAL2_010 נקודות מינימום ומקסימום, מבחן הנגזרת השנייה, כופלי לגרנג.md",
-    "Technion/SLD1/SLD1_006 מרכז מסה.md",
-    "README.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.12.46.excalidraw.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.05.57.excalidraw.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 12.53.40.excalidraw.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.03.14.excalidraw.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.02.49.excalidraw.md",
+    "Technion/DEQ1/DEQ1_006 משוואות לינאריות הומוגניות מסדר גבוה.md",
+    "Technion/CAL1/CAL1_008 אינטגרל מסוים.md",
+    "Technion/SLD1/SLD1_006 מרכז כובד.md",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-11 13.22.11.excalidraw.md",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-11 13.11.19.excalidraw.md",
+    "Technion/PHY1/PHY1_008 תנע ומרכז מסה.md",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-11 12.47.28.excalidraw.md",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-11 12.36.23.excalidraw.md",
+    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
+    "Technion/SLD1/SLD1_006",
     "Technion/PHY1/הרצאה 9_230604_104123.pdf",
-    "templates/Default note.md",
-    "templates/משפט.md",
-    "templates/הגדרה.md",
-    "templates/הערות.md",
     "Technion/DEQ1/DEQ1_007",
     "Technion/IMT1/IMT1_006",
-    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-31 09.46.46.excalidraw.md",
     "Technion/BMA1/BMA1_007",
     "Technion/CAL2/CAL2_008",
     "Technion/CAL2/CAL2_011",
     "Technion/SLD1/SLD1_006",
-    "Technion/PHY1/PHY1_008",
-    "Technion/PHY1/PHY1_007/Untitled"
+    "Technion/PHY1/PHY1_008"
   ]
 }

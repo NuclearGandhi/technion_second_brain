@@ -23,5 +23,5 @@
     "templates/"
   ],
   "rightToLeft": false,
-  "newLinkFormat": "absolute"
+  "newLinkFormat": "relative"
 }

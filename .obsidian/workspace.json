@@ -4,42 +4,42 @@
     "type": "split",
     "children": [
       {
-        "id": "7ef2ac7a785df6a1",
-        "type": "tabs",
-        "dimension": 50,
-        "children": [
-          {
-            "id": "cb6c4db826352c57",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "1bbd7a9bccd96162"
-          }
-        ]
-      },
-      {
         "id": "919698c25eef005a",
         "type": "tabs",
-        "dimension": 50,
+        "dimension": 44.90616621983914,
         "children": [
           {
-            "id": "295b36af48360f8b",
+            "id": "ce19c05e72fbdf38",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
+                "file": "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
                 "mode": "preview",
                 "source": false
               }
             },
-            "group": "1bbd7a9bccd96162"
+            "group": "ca30b96349bc563d"
+          }
+        ]
+      },
+      {
+        "id": "1df64320fad0a633",
+        "type": "tabs",
+        "dimension": 55.093833780160864,
+        "children": [
+          {
+            "id": "29ec29215c374bde",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+                "mode": "preview",
+                "source": false
+              }
+            },
+            "group": "ca30b96349bc563d"
           }
         ]
       }
@@ -70,7 +70,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "TODO",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -99,7 +99,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "c1c3ae1b57de7de1",
@@ -115,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
+                "file": "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
+                "file": "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md"
+                "file": "Technion/SLD1/SLD1_007 מאמץ ועיבור.md"
               }
             }
           }
@@ -181,53 +182,53 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "cb6c4db826352c57",
+  "active": "ce19c05e72fbdf38",
   "lastOpenFiles": [
-    "Technion/SLD1/SLD1_006 מרכז כובד.md",
-    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
-    "Technion/SLD1/SLD1_004 עבודה וירטואלית.md",
-    "Technion/CAL2/CAL2_010 נקודות מינימום ומקסימום, מבחן הנגזרת השנייה, כופלי לגרנג.md",
-    "Technion/SLD1/Pasted image 20230607081906.png",
+    "Technion/PHY1/PHY1_008 תנע קווי ומרכז מסה.md",
+    "Technion/PHY1/PHY1_009 תנע זוויתי.md",
+    "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
+    "Technion/PHY1/PHY1_005 עבודה ואנרגיה.md",
+    "Technion/PHY1/PHY1_009/Pasted image 20230616201528.png",
+    "Technion/PHY1/PHY1_009/Torque_animation.gif",
     "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
     "Technion/SLD1/SLD1_002 שיווי משקל.md",
-    "Technion/SLD1/Pasted image 20230607075722.png",
-    "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
-    "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
-    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
-    "Technion/IMT1/IMT1_006 דאגרמות TTT ו-CTT.md",
-    "Technion/PHY1/PHY1_008/Screenshot_20230604_103818_Samsung Notes.jpg",
-    "Technion/PHY1/PHY1_008 תנע ומרכז מסה.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
-    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 12.53.40.excalidraw.md",
-    "Technion/PHY1/PHY1_002 קינמטיקה.md",
-    "logo.png",
-    "favicon-32x32.png",
-    "Technion/PHY1/PHY1_003 חוקי ניוטון.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-05-31 15.40.58.excalidraw.svg",
-    "Technion/GCH1/GCH1_012 חומצות ובסיסים.md",
-    "Technion/GCH1/GCH1_011 שווי משקל כימי.md",
-    "Technion/SLD1/SLD1_005/Screenshot_20230530_112739_OneDrive.jpg",
-    "Technion/SLD1/SLD1_005/Screenshot_20230530_112643_OneDrive.jpg",
-    "Technion/SLD1/SLD1_005/Screenshot_20230526_204707_OneDrive.jpg",
-    "Technion/SLD1/SLD1_005/Screenshot_20230526_204211_OneDrive.jpg",
-    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-26 18.15.51.excalidraw.md",
-    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-30 22.48.21.excalidraw.md",
-    "templates/default_exca.excalidraw.md",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה.md",
+    "Technion/PHY1/PHY1_009/Pasted image 20230616215633.png",
+    "Technion/PHY1/PHY1_009/Pasted image 20230616215127.png",
+    "Technion/PHY1/PHY1_009/Pasted image 20230616213859.png",
     "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
-    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-29 22.21.39.excalidraw.md",
-    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-30 18.53.48.excalidraw.md",
-    "Technion/SLD1/SLD1_006 קורות - עומסים מפורסים.md",
-    "Technion/SLD1/SLD1_005/SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-30 19.23.29.excalidraw.md",
-    "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות.md",
+    "Technion/PHY1/PHY1_009/Pasted image 20230616213325.png",
+    "Technion/PHY1/PHY1_009/Pasted image 20230616203620.png",
+    "Technion/PHY1/PHY1_003 חוקי ניוטון.md",
+    "Technion/PHY1/PHY1_009/Pasted image 20230616194905.png",
+    "Technion/PHY1/PHY1_009/Pasted image 20230616195521.png",
+    "Technion/PHY1/PHY1_009/Pasted image 20230616195658.png",
+    "Technion/PHY1/PHY1_009",
+    "Technion/CAL2/CAL2_001 וקטורים.md",
+    "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
+    "Technion/PHY1/PHY1_008/PHY1_008 תנע קווי ומרכז מסה 2023-06-16 18.43.16.excalidraw.md",
+    "Technion/PHY1/PHY1_002 קינמטיקה.md",
+    "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
+    "Technion/DEQ1/DEQ1_008 פתרונות טוריים למשוואות.md",
+    "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
+    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
+    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
+    "Technion/IMT1/Pasted image 20230613183523.png.~tmp",
+    "Technion/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
+    "Technion/DEQ1/DEQ1_001 מבוא.md",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-11 12.36.23.excalidraw.md",
+    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-11 12.47.28.excalidraw.md",
+    "Technion/SLD1/SLD1_007",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
+    "Technion/IMT1/IMT1_007",
+    "Technion/GCH1/GCH1_008 הקשר הכימי I.md",
     "Technion/SLD1/~syncthing~SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-29 22.20.48.excalidraw.sync-conflict-20230529-222126-O2RDG4A.md.tmp",
     "Technion/SLD1/SLD1_005",
     "Technion/CAL2/CAL2_010",
     "Technion/PHY1/PHY1_007",
     "Technion/PHY1/PHY1_006",
-    "Technion/PHY1/PHY1_005",
-    "Technion/CAL2/CAL2_009",
-    "Excalidraw",
-    "Technion/IMT1/IMT1_005",
-    "Technion/PHY1/PHY1_003"
+    "Technion/PHY1/PHY1_005"
   ]
 }

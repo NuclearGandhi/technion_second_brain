@@ -16,6 +16,10 @@ img[alt*="bmult"] {
   mix-blend-mode: screen;
 }
 
+.callout {
+  mix-blend-mode: inherit
+}
+
 .theme-dark img[alt*="book"]{
   mix-blend-mode: screen;
   filter: invert(1);
@@ -23,6 +27,10 @@ img[alt*="bmult"] {
 
 .theme-light img[alt*="book"]{
   mix-blend-mode: multiply;
+}
+
+.theme-light img[alt*="svg"] {
+  filter: invert(1);
 }
 
 .theme-dark .geo {
@@ -34,6 +42,8 @@ img[alt*="bmult"] {
   mix-blend-mode: multiply;
 }
 
-.eapps-testimonials-slider-page-item-single-postcard .eapps-testimonials-slider-page-item-author-picture {
-  filter: invert(1);
+iframe.external-embed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
