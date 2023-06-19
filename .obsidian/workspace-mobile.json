@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
+                "file": "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
                 "mode": "source",
                 "source": true
               }
@@ -32,24 +32,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
+                "file": "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
                 "mode": "preview",
                 "source": false
               }
             },
             "group": "9e07870316c09d11"
-          },
-          {
-            "id": "125acf0c757a873b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ]
       }
@@ -76,7 +64,7 @@
         "state": {
           "type": "search",
           "state": {
-            "query": "",
+            "query": "TODO",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": true,
@@ -113,7 +101,7 @@
         }
       }
     ],
-    "currentTab": 0
+    "currentTab": 1
   },
   "right": {
     "id": "0a8057d9021e95ad",
@@ -125,7 +113,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
+            "file": "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -142,7 +130,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
+            "file": "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -154,7 +142,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/CAL2/CAL2_012 אינטגרל קווי.md"
+            "file": "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md"
           }
         }
       }
@@ -175,44 +163,45 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b9b7155ce7740d3a",
+  "active": "a3d55a71ad3ddb03",
   "lastOpenFiles": [
-    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
+    "Technion/DEQ1/DEQ1_008 פתרונות טוריים למשוואות.md",
+    "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
+    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה.md",
+    "Technion/SLD1/Screenshot_20230619_110258_OneDrive.jpg",
+    "Technion/SLD1/Screenshot_20230619_110153_OneDrive.jpg",
+    "Technion/SLD1/Screenshot_20230619_105222_Obsidian.jpg",
+    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה 1.md",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/CAL1/CAL1_007 אינטגרל לא מסוים.md",
+    "Technion/SLD1/Screenshot_20230619_085832_OneDrive.jpg",
+    "Technion/SLD1/Screenshot_20230619_085720_OneDrive.jpg",
+    "Technion/SLD1/Screenshot_20230619_085330_OneDrive.jpg",
+    "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
     "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
+    "Technion/CAL2/CAL2_012 אינטגרל קווי 2023-06-18 13.16.18.excalidraw.md",
+    "Technion/CAL2/CAL2_012 אינטגרל קווי 2023-06-18 13.16.18.excalidraw.svg",
+    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
+    "Technion/CAL2/CAL2_012 אינטגרל קווי 2023-06-18 12.51.56.excalidraw.md",
+    "Technion/CAL2/CAL2_012 אינטגרל קווי 2023-06-18 12.51.56.excalidraw.svg",
+    "Technion/PHY1/Screenshot_20230618_103830_Samsung Notes.jpg",
+    "Technion/IPY1/IPY1_HW010 תרגיל בית 10.md",
+    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
+    "Technion/PHY1/PHY1_009 תנע זוויתי.md",
     "Technion/CAL2/154447645358687827.png",
-    "Technion/CAL2/16.3.1.png",
-    "Technion/CAL2/CNX_Calc_Figure_16_02_005.jpg",
-    "Technion/CAL2/1.png",
-    "Technion/CAL2/CNX_Calc_Figure_16_02_006 1.jpg",
-    "Technion/CAL2/CNX_Calc_Figure_16_02_006.jpg",
-    "Technion/CAL2/imageedit_4_9362707845.png",
     "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
-    "Technion/CAL2/CAL2_012/Pasted image 20230613094016.png",
     "Technion/CAL2/CAL2_012",
-    "Technion/CAL2/CAL2_012/CNX_Calc_Figure_16_02_001.jpg",
     "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
     "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
     "Technion/IMT1/IMT1_001 מבוא.md",
-    "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
     "Technion/IMT1/IMT1_007 תכונות מכניות.md",
-    "Technion/IMT1/IMT1_007/Pasted image 20230613175233.png",
     "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-14 09.52.06.excalidraw.md",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
     "Technion/SLD1/SLD1_007 מאמץ ועיבור 2023-06-14 09.45.20.excalidraw.md",
     "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
     "Technion/DEQ1/DEQ1_008 פתרון משוואות בעזרת טורים.md",
     "Technion/DEQ1/DEQ1_001 מבוא.md",
     "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
-    "Technion/DEQ1/DEQ1_006 משוואות לינאריות הומוגניות מסדר גבוה.md",
-    "Technion/CAL1/CAL1_008 אינטגרל מסוים.md",
-    "Technion/SLD1/SLD1_006 מרכז כובד.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-11 13.22.11.excalidraw.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-11 13.11.19.excalidraw.md",
-    "Technion/PHY1/PHY1_008 תנע ומרכז מסה.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-11 12.47.28.excalidraw.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי 2023-06-11 12.36.23.excalidraw.md",
-    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
     "Technion/SLD1/SLD1_006",
     "Technion/PHY1/הרצאה 9_230604_104123.pdf",
     "Technion/DEQ1/DEQ1_007",

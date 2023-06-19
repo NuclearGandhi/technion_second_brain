@@ -6,7 +6,7 @@
       {
         "id": "919698c25eef005a",
         "type": "tabs",
-        "dimension": 44.90616621983914,
+        "dimension": 48.99463806970509,
         "children": [
           {
             "id": "ce19c05e72fbdf38",
@@ -14,9 +14,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-                "mode": "preview",
-                "source": false
+                "file": "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
+                "mode": "source",
+                "source": true
               }
             },
             "group": "ca30b96349bc563d"
@@ -26,7 +26,7 @@
       {
         "id": "1df64320fad0a633",
         "type": "tabs",
-        "dimension": 55.093833780160864,
+        "dimension": 51.0053619302949,
         "children": [
           {
             "id": "29ec29215c374bde",
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+                "file": "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
                 "mode": "preview",
                 "source": false
               }
@@ -70,7 +70,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "TODO",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -99,8 +99,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "c1c3ae1b57de7de1",
@@ -116,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+                "file": "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+                "file": "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/SLD1/SLD1_007 מאמץ ועיבור.md"
+                "file": "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md"
               }
             }
           }
@@ -177,58 +176,58 @@
       "command-palette:Open command palette": false,
       "templater-obsidian:Templater": false,
       "workspaces:Manage workspace layouts": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
-      "darlal-switcher-plus:Open Symbols for the active editor": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
   "active": "ce19c05e72fbdf38",
   "lastOpenFiles": [
-    "Technion/PHY1/PHY1_008 תנע קווי ומרכז מסה.md",
-    "Technion/PHY1/PHY1_009 תנע זוויתי.md",
-    "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
-    "Technion/PHY1/PHY1_005 עבודה ואנרגיה.md",
-    "Technion/PHY1/PHY1_009/Pasted image 20230616201528.png",
-    "Technion/PHY1/PHY1_009/Torque_animation.gif",
-    "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
-    "Technion/SLD1/SLD1_002 שיווי משקל.md",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה.md",
-    "Technion/PHY1/PHY1_009/Pasted image 20230616215633.png",
-    "Technion/PHY1/PHY1_009/Pasted image 20230616215127.png",
-    "Technion/PHY1/PHY1_009/Pasted image 20230616213859.png",
-    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
-    "Technion/PHY1/PHY1_009/Pasted image 20230616213325.png",
-    "Technion/PHY1/PHY1_009/Pasted image 20230616203620.png",
-    "Technion/PHY1/PHY1_003 חוקי ניוטון.md",
-    "Technion/PHY1/PHY1_009/Pasted image 20230616194905.png",
-    "Technion/PHY1/PHY1_009/Pasted image 20230616195521.png",
-    "Technion/PHY1/PHY1_009/Pasted image 20230616195658.png",
-    "Technion/PHY1/PHY1_009",
-    "Technion/CAL2/CAL2_001 וקטורים.md",
-    "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
-    "Technion/PHY1/PHY1_008/PHY1_008 תנע קווי ומרכז מסה 2023-06-16 18.43.16.excalidraw.md",
-    "Technion/PHY1/PHY1_002 קינמטיקה.md",
-    "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
-    "Technion/DEQ1/DEQ1_008 פתרונות טוריים למשוואות.md",
-    "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
-    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
-    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
-    "Technion/IMT1/Pasted image 20230613183523.png.~tmp",
-    "Technion/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
-    "Technion/DEQ1/DEQ1_001 מבוא.md",
+    "Technion/PHY1/PHY1_008/Pasted image 20230616192808.png",
+    "Technion/PHY1/PHY1_001/PHY1_001 וקטורים וקינמטיקה 2023-03-23 09.05.39.excalidraw.svg",
+    "Technion/SLD1/SLD1_003/Screenshot_20230417_084953_OneDrive.jpg",
+    "Technion/CAL2/CAL2_010/CAL2_010 נקודות מינימום ומקסימום 2023-05-24 16.09.20.excalidraw.svg",
+    "Technion/SLD1/SLD1_003/Screenshot_20230417_102045_OneDrive.jpg",
+    "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
+    "Technion/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-28 09.07.30.excalidraw.svg",
+    "Technion/IMT1/IMT1_007/Screenshot_20230610_200218_OneDrive.jpg",
+    "logo.png",
+    "Technion/SLD1/SLD1_007/Screenshot_20230612_094054_OneDrive.jpg",
+    "Technion/CAL2/CAL2_006/Screenshot_20230503_161811_Chrome.jpg",
+    "Technion/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות, מומנטים, תגובות 2023-04-03 20.18.46.excalidraw.svg",
+    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.02.49.excalidraw.md",
+    "Technion/PHY1/PHY1_008/הרצאה 9_230604_104123.pdf",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
-    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-11 12.36.23.excalidraw.md",
-    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-11 12.47.28.excalidraw.md",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
+    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+    "Technion/IMT1/IMT1_005 דיאגרמת ברזל-פחמן.md",
+    "Technion/IMT1/IMT1_006 דאגרמות TTT ו-CTT.md",
+    "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
+    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
+    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
+    "Technion/DEQ1/DEQ1_008 פתרונות טוריים למשוואות דיפרנציאליות רגילות.md",
+    "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
+    "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.md",
+    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
+    "Technion/DEQ1/DEQ1_001 מבוא.md",
+    "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
+    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
+    "Technion/PHY1/PHY1_010",
+    "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
+    "Technion/CAL2/CAL2_012/CAL2_012 אינטגרל קווי 2023-06-18 12.51.56.excalidraw.md",
+    "Technion/CAL2/CAL2_012/CAL2_012 אינטגרל קווי 2023-06-18 13.16.18.excalidraw.md",
+    "Technion/CAL2/CAL2_004 עקומים במרחב.md",
+    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.05.57.excalidraw.md",
+    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.03.14.excalidraw.md",
+    "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 12.53.40.excalidraw.md",
+    "Technion/PHY1/PHY1_009",
+    "Technion/IMT1/Pasted image 20230613183523.png.~tmp",
     "Technion/SLD1/SLD1_007",
-    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
     "Technion/IMT1/IMT1_007",
-    "Technion/GCH1/GCH1_008 הקשר הכימי I.md",
     "Technion/SLD1/~syncthing~SLD1_005 מהלכי כוחות ומומנטים בקורות 2023-05-29 22.20.48.excalidraw.sync-conflict-20230529-222126-O2RDG4A.md.tmp",
     "Technion/SLD1/SLD1_005",
     "Technion/CAL2/CAL2_010",
-    "Technion/PHY1/PHY1_007",
-    "Technion/PHY1/PHY1_006",
-    "Technion/PHY1/PHY1_005"
+    "Technion/PHY1/PHY1_007"
   ]
 }
