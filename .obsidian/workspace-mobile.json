@@ -6,6 +6,7 @@
       {
         "id": "8d57d955f30f0224",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "a3d55a71ad3ddb03",
@@ -13,18 +14,29 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
+                "file": "Technion/CAL2/CAL2_013 שדות משמרים.md",
                 "mode": "source",
                 "source": true
               }
             },
             "group": "9e07870316c09d11"
+          },
+          {
+            "id": "b7ecf772dd86c3e0",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 09.53.10.excalidraw.md"
+              }
+            }
           }
         ]
       },
       {
         "id": "2240c517b55b13d1",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "aca7f060141dbeef",
@@ -32,7 +44,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
+                "file": "Technion/CAL2/CAL2_013 שדות משמרים.md",
                 "mode": "preview",
                 "source": false
               }
@@ -101,7 +113,7 @@
         }
       }
     ],
-    "currentTab": 1
+    "currentTab": 0
   },
   "right": {
     "id": "0a8057d9021e95ad",
@@ -113,7 +125,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
+            "file": "Technion/CAL2/CAL2_013 שדות משמרים.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -130,7 +142,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
+            "file": "Technion/CAL2/CAL2_013 שדות משמרים.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -142,7 +154,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md"
+            "file": "Technion/CAL2/CAL2_013 שדות משמרים.md"
           }
         }
       }
@@ -165,43 +177,44 @@
   },
   "active": "a3d55a71ad3ddb03",
   "lastOpenFiles": [
-    "Technion/DEQ1/DEQ1_008 פתרונות טוריים למשוואות.md",
-    "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
-    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה.md",
-    "Technion/SLD1/Screenshot_20230619_110258_OneDrive.jpg",
-    "Technion/SLD1/Screenshot_20230619_110153_OneDrive.jpg",
-    "Technion/SLD1/Screenshot_20230619_105222_Obsidian.jpg",
-    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה 1.md",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-    "Technion/CAL1/CAL1_007 אינטגרל לא מסוים.md",
-    "Technion/SLD1/Screenshot_20230619_085832_OneDrive.jpg",
-    "Technion/SLD1/Screenshot_20230619_085720_OneDrive.jpg",
-    "Technion/SLD1/Screenshot_20230619_085330_OneDrive.jpg",
+    "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.sync-conflict-20230621-153915-VUW46KA.md",
+    "Technion/DEQ1/DEQ1_009/Pasted image 20230621011735.png",
+    "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
+    "Technion/DEQ1/DEQ1_009/Pasted image 20230621012017.png",
+    "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
+    "Technion/CAL2/Screen_Shot_2019-05-31_at_9.png",
+    "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
+    "Technion/CAL2/CAL2_013 שדות משמרים.md",
+    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 09.48.44.excalidraw.md",
+    "Technion/SLD1/SLD1_007/Screenshot_20230621_093920_Obsidian.jpg",
+    "Technion/DEQ1/DEQ1_009/Pasted image 20230621010824.png",
+    "Technion/DEQ1/DEQ1_009",
     "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 09.48.44.excalidraw.svg",
+    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 10.25.32.excalidraw.md",
+    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 09.53.10.excalidraw.md",
+    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 10.25.32.excalidraw.svg",
+    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 10.00.03.excalidraw.md",
+    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 10.00.03.excalidraw.svg",
+    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 09.53.10.excalidraw.svg",
+    "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.md",
+    "Technion/DEQ1/DEQ1_009/Screenshot_20230620_120243_Obsidian.jpg",
     "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
-    "Technion/CAL2/CAL2_012 אינטגרל קווי 2023-06-18 13.16.18.excalidraw.md",
-    "Technion/CAL2/CAL2_012 אינטגרל קווי 2023-06-18 13.16.18.excalidraw.svg",
-    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
-    "Technion/CAL2/CAL2_012 אינטגרל קווי 2023-06-18 12.51.56.excalidraw.md",
-    "Technion/CAL2/CAL2_012 אינטגרל קווי 2023-06-18 12.51.56.excalidraw.svg",
-    "Technion/PHY1/Screenshot_20230618_103830_Samsung Notes.jpg",
-    "Technion/IPY1/IPY1_HW010 תרגיל בית 10.md",
-    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
-    "Technion/PHY1/PHY1_009 תנע זוויתי.md",
-    "Technion/CAL2/154447645358687827.png",
+    "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
+    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
     "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה.md",
+    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה 1.md",
+    "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
+    "Technion/DEQ1/DEQ1_008 פתרונות טוריים למשוואות.md",
+    "Technion/CAL1/CAL1_007 אינטגרל לא מסוים.md",
+    "Technion/CAL2/CAL2_012 אינטגרל קווי 2023-06-18 13.16.18.excalidraw.md",
+    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
+    "Technion/CAL2/CAL2_012 אינטגרל קווי 2023-06-18 12.51.56.excalidraw.md",
+    "Technion/IPY1/IPY1_HW010 תרגיל בית 10.md",
     "Technion/CAL2/CAL2_012",
-    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
-    "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
-    "Technion/IMT1/IMT1_001 מבוא.md",
-    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
-    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-14 09.52.06.excalidraw.md",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור 2023-06-14 09.45.20.excalidraw.md",
-    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
-    "Technion/DEQ1/DEQ1_008 פתרון משוואות בעזרת טורים.md",
-    "Technion/DEQ1/DEQ1_001 מבוא.md",
-    "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
     "Technion/SLD1/SLD1_006",
     "Technion/PHY1/הרצאה 9_230604_104123.pdf",
     "Technion/DEQ1/DEQ1_007",
@@ -209,7 +222,6 @@
     "Technion/BMA1/BMA1_007",
     "Technion/CAL2/CAL2_008",
     "Technion/CAL2/CAL2_011",
-    "Technion/SLD1/SLD1_006",
-    "Technion/PHY1/PHY1_008"
+    "Technion/SLD1/SLD1_006"
   ]
 }
