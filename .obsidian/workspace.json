@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.md",
+                "file": "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
                 "mode": "source",
                 "source": true
               }
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.md",
+                "file": "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
                 "mode": "preview",
                 "source": false
               }
@@ -115,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.md",
+                "file": "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.md",
+                "file": "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.md"
+                "file": "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md"
               }
             }
           }
@@ -183,15 +183,18 @@
   },
   "active": "ce19c05e72fbdf38",
   "lastOpenFiles": [
-    "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.sync-conflict-20230621-153915-VUW46KA.md",
+    "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
+    "Technion/CAL2/CAL2_013 שדות משמרים.md",
+    "Technion/CAL2/CAL2_013/Pasted image 20230622142120.png",
+    "Technion/CAL2/CAL2_013/Pasted image 20230622101119.png",
+    "README.md",
     "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.md",
+    "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.sync-conflict-20230621-153915-VUW46KA.md",
     "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
     "Technion/PHY1/PHY1_009 תנע זוויתי.md",
-    "Technion/CAL2/CAL2_013 שדות משמרים.md",
     "Technion/CAL1/CAL1_007 אינטגרל לא מסוים.md",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
     "Technion/CAL2/CAL2_013/Pasted image 20230621205235.png",
-    "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
     "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
     "Technion/CAL2/CAL2_012/CAL2_012 אינטגרלים קוויים ומשפט גרין 2023-06-21 17.21.13.excalidraw.svg",
     "Technion/CAL2/CAL2_012/Pasted image 20230621181207.png",
@@ -205,8 +208,6 @@
     "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
     "Technion/DEQ1/DEQ1_009/Pasted image 20230621012017.png",
     "Technion/DEQ1/DEQ1_009",
-    "Technion/DEQ1/Screenshot_20230620_120243_Obsidian.jpg",
-    "Technion/DEQ1/DEQ1_009/Pasted image 20230621011735.png",
     "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
     "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.02.49.excalidraw.md",
     "Technion/PHY1/PHY1_008/הרצאה 9_230604_104123.pdf",
@@ -220,8 +221,6 @@
     "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
     "Technion/DEQ1/DEQ1_008 פתרונות טוריים למשוואות דיפרנציאליות רגילות.md",
     "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
-    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
-    "Technion/DEQ1/DEQ1_001 מבוא.md",
     "Technion/PHY1/PHY1_010",
     "Technion/PHY1/PHY1_009",
     "Technion/IMT1/Pasted image 20230613183523.png.~tmp",
