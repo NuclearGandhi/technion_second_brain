@@ -16,7 +16,7 @@
               "state": {
                 "file": "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             },
             "group": "ca30b96349bc563d"
@@ -181,8 +181,16 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "ce19c05e72fbdf38",
+  "active": "717dd551d2d7a242",
   "lastOpenFiles": [
+    "Technion/CAL2/CAL2_001 וקטורים.md",
+    "Technion/PHY1/PHY1_010/Pasted image 20230625095040.png",
+    "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
+    "Technion/PHY1/PHY1_010/Pasted image 20230625094847.png",
+    "Technion/PHY1/PHY1_010/Pasted image 20230625094723.png",
+    "Technion/PHY1/PHY1_010/Pasted image 20230625094528.png",
+    "Technion/PHY1/PHY1_009 תנע זוויתי.md",
+    "Technion/PHY1/PHY1_010/PHY1_010 תורת היחסות הפרטית 2023-06-24 12.51.37.excalidraw.md",
     "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
     "Technion/CAL2/CAL2_013 שדות משמרים.md",
     "Technion/CAL2/CAL2_013/Pasted image 20230622142120.png",
@@ -190,8 +198,6 @@
     "README.md",
     "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.md",
     "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.sync-conflict-20230621-153915-VUW46KA.md",
-    "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
-    "Technion/PHY1/PHY1_009 תנע זוויתי.md",
     "Technion/CAL1/CAL1_007 אינטגרל לא מסוים.md",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
     "Technion/CAL2/CAL2_013/Pasted image 20230621205235.png",
@@ -199,14 +205,10 @@
     "Technion/CAL2/CAL2_012/CAL2_012 אינטגרלים קוויים ומשפט גרין 2023-06-21 17.21.13.excalidraw.svg",
     "Technion/CAL2/CAL2_012/Pasted image 20230621181207.png",
     "Technion/CAL2/CAL2_012/Pasted image 20230621183126.png",
-    "Technion/CAL2/CAL2_012/Pasted image 20230621182210.png",
-    "Technion/CAL2/CAL2_012/Pasted image 20230621182157.png",
     "Technion/CAL2/CAL2_012/CAL2_012 אינטגרלים קוויים ומשפט גרין 2023-06-21 17.21.13.excalidraw.md",
-    "Technion/CAL2/CAL2_013/Screen_Shot_2019-05-31_at_9.png",
     "Technion/CAL2/CAL2_013",
     "Technion/CAL2/CAL2_008 טיילור 2.0.md",
     "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
-    "Technion/DEQ1/DEQ1_009/Pasted image 20230621012017.png",
     "Technion/DEQ1/DEQ1_009",
     "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
     "Technion/CAL2/CAL2_011/CAL2_011 אינטגרל רב מימדי 2023-06-04 13.02.49.excalidraw.md",
@@ -220,7 +222,6 @@
     "Technion/IMT1/IMT1_007 תכונות מכניות.md",
     "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
     "Technion/DEQ1/DEQ1_008 פתרונות טוריים למשוואות דיפרנציאליות רגילות.md",
-    "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
     "Technion/PHY1/PHY1_010",
     "Technion/PHY1/PHY1_009",
     "Technion/IMT1/Pasted image 20230613183523.png.~tmp",

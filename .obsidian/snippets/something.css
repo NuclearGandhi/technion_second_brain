@@ -16,6 +16,15 @@ img[alt*="bmult"] {
   mix-blend-mode: screen;
 }
 
+table {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.markdown-rendered thead tr > th {
+  text-align: start !important;
+}
+
 .callout {
   mix-blend-mode: inherit
 }

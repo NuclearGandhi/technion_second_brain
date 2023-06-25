@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_013 שדות משמרים.md",
+                "file": "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
                 "mode": "source",
                 "source": true
               }
@@ -34,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_013 שדות משמרים.md",
+                "file": "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
                 "mode": "preview",
                 "source": false
               }
@@ -66,7 +66,7 @@
         "state": {
           "type": "search",
           "state": {
-            "query": "TODO",
+            "query": "",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": true,
@@ -115,7 +115,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/CAL2/CAL2_013 שדות משמרים.md",
+            "file": "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/CAL2/CAL2_013 שדות משמרים.md",
+            "file": "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -144,7 +144,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/CAL2/CAL2_013 שדות משמרים.md"
+            "file": "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md"
           }
         }
       }
@@ -165,45 +165,45 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "a3d55a71ad3ddb03",
+  "active": "b9b7155ce7740d3a",
   "lastOpenFiles": [
-    "Technion/CAL2/Pasted image 20230622101119.png",
-    "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
     "Technion/CAL2/CAL2_013 שדות משמרים.md",
-    "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.sync-conflict-20230621-153915-VUW46KA.md",
-    "Technion/DEQ1/DEQ1_009/Pasted image 20230621011735.png",
-    "Technion/DEQ1/DEQ1_009/Pasted image 20230621012017.png",
-    "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
-    "Technion/CAL2/Screen_Shot_2019-05-31_at_9.png",
-    "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
-    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 09.48.44.excalidraw.md",
-    "Technion/SLD1/SLD1_007/Screenshot_20230621_093920_Obsidian.jpg",
-    "Technion/DEQ1/DEQ1_009/Pasted image 20230621010824.png",
-    "Technion/DEQ1/DEQ1_009",
+    "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
+    "Technion/CAL2/CAL2_012/CAL2_012 אינטגרלים קוויים ומשפט גרין 2023-06-25 12.38.01.excalidraw.md",
+    "Technion/CAL2/CAL2_012/CAL2_012 אינטגרלים קוויים ומשפט גרין 2023-06-25 13.09.26.excalidraw.md",
+    "Technion/CAL2/CAL2_012/CAL2_012 אינטגרלים קוויים ומשפט גרין 2023-06-25 13.09.26.excalidraw.svg",
+    "Technion/CAL2/CAL2_012/CAL2_012 אינטגרלים קוויים ומשפט גרין 2023-06-25 12.54.10.excalidraw.md",
+    "Technion/CAL2/CAL2_012/CAL2_012 אינטגרלים קוויים ומשפט גרין 2023-06-25 12.54.10.excalidraw.svg",
+    "Technion/CAL2/CAL2_012/CAL2_012 אינטגרלים קוויים ומשפט גרין 2023-06-25 12.38.01.excalidraw.svg",
     "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 09.48.44.excalidraw.svg",
-    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 10.25.32.excalidraw.md",
-    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 09.53.10.excalidraw.md",
-    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 10.25.32.excalidraw.svg",
-    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 10.00.03.excalidraw.md",
-    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 10.00.03.excalidraw.svg",
-    "Technion/SLD1/SLD1_007/SLD1_007 מאמץ ועיבור 2023-06-21 09.53.10.excalidraw.svg",
-    "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.md",
-    "Technion/DEQ1/DEQ1_009/Screenshot_20230620_120243_Obsidian.jpg",
-    "Technion/CAL2/CAL2_012 אינטגרל קווי.md",
-    "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
-    "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
-    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
-    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
-    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה.md",
-    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה 1.md",
+    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
+    "Technion/IMT1/IMT1_008/Pasted image 20230624193648.png",
+    "Technion/IMT1/IMT1_008",
     "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
-    "Technion/DEQ1/DEQ1_008 פתרונות טוריים למשוואות.md",
-    "Technion/CAL1/CAL1_007 אינטגרל לא מסוים.md",
-    "Technion/CAL2/CAL2_012 אינטגרל קווי 2023-06-18 13.16.18.excalidraw.md",
-    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
-    "Technion/CAL2/CAL2_012 אינטגרל קווי 2023-06-18 12.51.56.excalidraw.md",
+    "Technion/IMT1/IMT1_008/Screenshot_20230624_205617_OneDrive.jpg",
+    "Technion/IMT1/IMT1_008/Screenshot_20230624_204754_OneDrive.jpg",
+    "Technion/IMT1/IMT1_008/SmartSelect_20230624_204015_OneDrive.png",
+    "Technion/IMT1/IMT1_008/SmartSelect_20230624_204032_OneDrive.png",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
+    "Technion/IMT1/IMT1_008/Screenshot_20230624_194108_OneDrive.jpg",
+    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
+    "Technion/IMT1/IMT1_008/Screenshot_20230624_184932_OneDrive.jpg",
+    "Technion/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
+    "Technion/PHY1/PHY1_010/PHY1_010 תורת היחסות הפרטית 2023-06-24 10.41.41.excalidraw.md",
+    "Technion/PHY1/PHY1_010/PHY1_010 תורת היחסות הפרטית 2023-06-24 12.36.22.excalidraw.md",
+    "Technion/PHY1/PHY1_010/PHY1_010 תורת היחסות הפרטית 2023-06-24 12.51.37.excalidraw.md",
+    "Technion/PHY1/PHY1_010/PHY1_010 תורת היחסות הפרטית 2023-06-24 13.14.12.excalidraw.md",
+    "Technion/PHY1/PHY1_010/PHY1_010 תורת היחסות הפרטית 2023-06-23 22.21.20.excalidraw.md",
+    "Technion/PHY1/PHY1_010/PHY1_010 תורת היחסות הפרטית 2023-06-24 12.19.37.excalidraw.md",
+    "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
+    "Technion/PHY1/PHY1_010/PHY1_010 תורת היחסות הפרטית 2023-06-24 10.57.14.excalidraw.md",
+    "Technion/PHY1/PHY1_009 תנע זוויתי.md",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+    "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.sync-conflict-20230621-153915-VUW46KA.md",
+    "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
+    "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
+    "Technion/DEQ1/DEQ1_009",
     "Technion/CAL2/CAL2_012",
     "Technion/SLD1/SLD1_006",
     "Technion/PHY1/הרצאה 9_230604_104123.pdf",
@@ -211,7 +211,6 @@
     "Technion/IMT1/IMT1_006",
     "Technion/BMA1/BMA1_007",
     "Technion/CAL2/CAL2_008",
-    "Technion/CAL2/CAL2_011",
-    "Technion/SLD1/SLD1_006"
+    "Technion/CAL2/CAL2_011"
   ]
 }

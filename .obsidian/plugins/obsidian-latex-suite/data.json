@@ -16,6 +16,6 @@
   "matrixShortcutsEnvNames": "pmatrix, cases, align, bmatrix, Bmatrix, vmatrix, Vmatrix, array, matrix, aligned, gather",
   "taboutEnabled": true,
   "autoEnlargeBrackets": true,
-  "autoEnlargeBracketsTriggers": "sum, int, frac, prod, begin",
+  "autoEnlargeBracketsTriggers": "sum, int, frac, prod, begin, dfrac",
   "wordDelimiters": "., -\\n:;!?\\/{}[]()=~"
 }
