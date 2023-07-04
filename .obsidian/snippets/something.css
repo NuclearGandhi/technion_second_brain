@@ -16,6 +16,11 @@ img[alt*="bmult"] {
   mix-blend-mode: screen;
 }
 
+.markdown-rendered ol > li, .markdown-rendered ul > li {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
 table {
   margin-right: auto;
   margin-left: auto;

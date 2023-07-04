@@ -1423,7 +1423,7 @@ var import_obsidian8 = __toModule(require("obsidian"));
 
 // src/settings.ts
 var import_obsidian7 = __toModule(require("obsidian"));
-var import_view9 = __toModule(require("@codemirror/view"));
+var import_view8 = __toModule(require("@codemirror/view"));
 var import_state8 = __toModule(require("@codemirror/state"));
 
 // src/ui/snippets_editor/extensions.ts
@@ -4516,12 +4516,11 @@ var DEFAULT_SNIPPETS = '[    \n    // Math mode\n    {trigger: "mk", replacement
 
 // src/editor_extensions/conceal.ts
 var import_obsidian2 = __toModule(require("obsidian"));
-var import_view5 = __toModule(require("@codemirror/view"));
+var import_view4 = __toModule(require("@codemirror/view"));
 var import_language5 = __toModule(require("@codemirror/language"));
 
 // src/editor_helpers.ts
 var import_obsidian = __toModule(require("obsidian"));
-var import_view4 = __toModule(require("@codemirror/view"));
 var import_state3 = __toModule(require("@codemirror/state"));
 var import_language4 = __toModule(require("@codemirror/language"));
 function replaceRange(view, start2, end2, replacement) {
@@ -4560,10 +4559,9 @@ function resetCursorBlink() {
     cursorLayer.style.animationName = curAnim === "cm-blink" ? "cm-blink2" : "cm-blink";
   }
 }
-function isWithinEquation(view) {
-  const s = view instanceof import_view4.EditorView ? view.state : view;
-  const pos = s.selection.main.to - 1;
-  const tree = (0, import_language4.syntaxTree)(s);
+function isWithinEquation(state) {
+  const pos = state.selection.main.to - 1;
+  const tree = (0, import_language4.syntaxTree)(state);
   const token = tree.resolveInner(pos, 1).name;
   let withinEquation = token.contains("math");
   if (!withinEquation) {
@@ -4572,24 +4570,13 @@ function isWithinEquation(view) {
     if (tokenLeft.contains("math") && tokenRight.contains("math")) {
       withinEquation = true;
     }
-  } else {
-    if (token.contains("end")) {
-      withinEquation = false;
-    }
+  } else if (token.contains("end")) {
+    withinEquation = false;
   }
   return withinEquation;
 }
-function isWithinInlineEquation(view) {
-  const result = getEquationBounds(view);
-  if (!result)
-    return false;
-  const end2 = result.end;
-  const d = view.state.doc;
-  const inlineMath = d.sliceString(end2, end2 + 2) != "$$";
-  return inlineMath;
-}
-function isWithinInlineEquationState(state) {
-  const result = getEquationBounds(state);
+function isWithinInlineEquation(state, pos = state.selection.main.from) {
+  const result = getEquationBounds(state, pos);
   if (!result)
     return false;
   const end2 = result.end;
@@ -4597,27 +4584,9 @@ function isWithinInlineEquationState(state) {
   const inlineMath = d.sliceString(end2, end2 + 2) != "$$";
   return inlineMath;
 }
-function isTouchingInlineEquation(state, pos) {
-  const tree = (0, import_language4.syntaxTree)(state);
-  const prevToken = tree.resolveInner(pos - 1, 1).name;
-  const token = tree.resolveInner(pos, 1).name;
-  const nextToken = tree.resolveInner(pos + 1, 1).name;
-  if (token.contains("math-end") && !prevToken.contains("math-end") && !nextToken.contains("math-end")) {
-    return -1;
-  } else if (!token.contains("math-begin") && nextToken.contains("math-begin")) {
-    const nextNextToken = tree.resolveInner(pos + 2, 1).name;
-    if (!nextNextToken.contains("math-begin")) {
-      return 1;
-    }
-  }
-  return 0;
-}
-function getEquationBounds(view, pos) {
-  const s = view instanceof import_view4.EditorView ? view.state : view;
-  const text = s.doc.toString();
-  if (typeof pos === "undefined") {
-    pos = s.selection.main.from;
-  }
+function getEquationBounds(state, pos = state.selection.main.from) {
+  let text = state.doc.toString();
+  text = text.replaceAll("\\$", "\\R");
   const left2 = text.lastIndexOf("$", pos - 1);
   const right2 = text.indexOf("$", pos);
   if (left2 === -1 || right2 === -1)
@@ -4625,7 +4594,7 @@ function getEquationBounds(view, pos) {
   return { start: left2 + 1, end: right2 };
 }
 function isInsideEnvironment(view, pos, env) {
-  const result = getEquationBounds(view);
+  const result = getEquationBounds(view.state);
   if (!result)
     return false;
   const { start: start2, end: end2 } = result;
@@ -4658,7 +4627,7 @@ function isInsideEnvironment(view, pos, env) {
   return false;
 }
 function getEnclosingBracketsPos(view, pos) {
-  const result = getEquationBounds(view);
+  const result = getEquationBounds(view.state);
   if (!result)
     return -1;
   const { start: start2, end: end2 } = result;
@@ -5192,7 +5161,7 @@ var mathscrcal = {
 };
 
 // src/editor_extensions/conceal.ts
-var ConcealWidget = class extends import_view5.WidgetType {
+var ConcealWidget = class extends import_view4.WidgetType {
   constructor(symbol, className, elementType) {
     super();
     this.symbol = symbol;
@@ -5212,7 +5181,7 @@ var ConcealWidget = class extends import_view5.WidgetType {
     return false;
   }
 };
-var TextWidget = class extends import_view5.WidgetType {
+var TextWidget = class extends import_view4.WidgetType {
   constructor(symbol) {
     super();
     this.symbol = symbol;
@@ -5245,7 +5214,7 @@ function escapeRegex(regex) {
   }
   return regex;
 }
-function concealSymbols(eqn, prefix, suffix, symbolMap, className) {
+function concealSymbols(eqn, prefix, suffix, symbolMap, className, allowSucceedingLetters = true) {
   const symbolNames = Object.keys(symbolMap);
   const regexStr = prefix + "(" + escapeRegex(symbolNames.join("|")) + ")" + suffix;
   const symbolRegex = new RegExp(regexStr, "g");
@@ -5253,6 +5222,12 @@ function concealSymbols(eqn, prefix, suffix, symbolMap, className) {
   const concealments = [];
   for (const match of matches) {
     const symbol = match[1];
+    if (!allowSucceedingLetters) {
+      const end2 = match.index + match[0].length;
+      if (eqn.charAt(end2).match(/[a-zA-Z]/)) {
+        continue;
+      }
+    }
     concealments.push({ start: match.index, end: match.index + match[0].length, replacement: symbolMap[symbol], class: className });
   }
   return concealments;
@@ -5453,7 +5428,7 @@ function conceal(view) {
         if (!(type.name.contains("begin") && type.name.contains("math"))) {
           return;
         }
-        const bounds = getEquationBounds(view, to2 + 1);
+        const bounds = getEquationBounds(view.state, to2 + 1);
         if (!bounds)
           return;
         const eqn = view.state.doc.sliceString(bounds.start, bounds.end);
@@ -5462,7 +5437,7 @@ function conceal(view) {
           ...concealSymbols(eqn, "\\^", "", map_super),
           ...concealSymbols(eqn, "_", "", map_sub),
           ...concealSymbols(eqn, "\\\\frac", "", fractions),
-          ...concealSymbols(eqn, "\\\\", "", ALL_SYMBOLS),
+          ...concealSymbols(eqn, "\\\\", "", ALL_SYMBOLS, void 0, false),
           ...concealSupSub(eqn, true, ALL_SYMBOLS),
           ...concealSupSub(eqn, false, ALL_SYMBOLS),
           ...concealModifier(eqn, "hat", "\u0302"),
@@ -5488,12 +5463,12 @@ function conceal(view) {
           if (!mousedown && selectionAndRangeOverlap(selection, start2, end2))
             continue;
           if (start2 === end2) {
-            widgets.push(import_view5.Decoration.widget({
+            widgets.push(import_view4.Decoration.widget({
               widget: new TextWidget(symbol),
               block: false
             }).range(start2, end2));
           } else {
-            widgets.push(import_view5.Decoration.replace({
+            widgets.push(import_view4.Decoration.replace({
               widget: new ConcealWidget(symbol, concealment.class, concealment.elementType),
               inclusive: false,
               block: false
@@ -5503,9 +5478,9 @@ function conceal(view) {
       }
     });
   }
-  return import_view5.Decoration.set(widgets, true);
+  return import_view4.Decoration.set(widgets, true);
 }
-var concealPlugin = import_view5.ViewPlugin.fromClass(class {
+var concealPlugin = import_view4.ViewPlugin.fromClass(class {
   constructor(view) {
     this.decorations = conceal(view);
   }
@@ -5516,12 +5491,12 @@ var concealPlugin = import_view5.ViewPlugin.fromClass(class {
 }, { decorations: (v) => v.decorations });
 
 // src/editor_extensions/highlight_brackets.ts
-var import_view6 = __toModule(require("@codemirror/view"));
+var import_view5 = __toModule(require("@codemirror/view"));
 var import_state4 = __toModule(require("@codemirror/state"));
 var import_language6 = __toModule(require("@codemirror/language"));
 var Ncolors = 3;
 function getHighlightBracketMark(pos, className) {
-  return import_view6.Decoration.mark({
+  return import_view5.Decoration.mark({
     inclusive: true,
     attributes: {},
     class: className
@@ -5539,7 +5514,7 @@ function colorPairedBrackets(view) {
         if (!(type.name.contains("begin") && type.name.contains("math"))) {
           return;
         }
-        const bounds = getEquationBounds(view, to2 + 1);
+        const bounds = getEquationBounds(view.state, to2 + 1);
         if (!bounds)
           return;
         const eqn = view.state.doc.sliceString(bounds.start, bounds.end);
@@ -5569,19 +5544,19 @@ function colorPairedBrackets(view) {
       }
     });
   }
-  return import_view6.Decoration.set(widgets, true);
+  return import_view5.Decoration.set(widgets, true);
 }
 function highlightCursorBrackets(view) {
   const widgets = [];
   const selection = view.state.selection;
   const ranges = selection.ranges;
   const text = view.state.doc.toString();
-  if (!isWithinEquation(view)) {
-    return import_view6.Decoration.set(widgets, true);
+  if (!isWithinEquation(view.state)) {
+    return import_view5.Decoration.set(widgets, true);
   }
-  const bounds = getEquationBounds(view, selection.main.to);
+  const bounds = getEquationBounds(view.state, selection.main.to);
   if (!bounds)
-    return import_view6.Decoration.set(widgets, true);
+    return import_view5.Decoration.set(widgets, true);
   const eqn = view.state.doc.sliceString(bounds.start, bounds.end);
   const openBrackets = ["{", "[", "("];
   const brackets2 = ["{", "[", "(", "}", "]", ")"];
@@ -5625,9 +5600,9 @@ function highlightCursorBrackets(view) {
     if (done)
       break;
   }
-  return import_view6.Decoration.set(widgets, true);
+  return import_view5.Decoration.set(widgets, true);
 }
-var colorPairedBracketsPlugin = import_view6.ViewPlugin.fromClass(class {
+var colorPairedBracketsPlugin = import_view5.ViewPlugin.fromClass(class {
   constructor(view) {
     this.decorations = colorPairedBrackets(view);
   }
@@ -5638,7 +5613,7 @@ var colorPairedBracketsPlugin = import_view6.ViewPlugin.fromClass(class {
   }
 }, { decorations: (v) => v.decorations });
 var colorPairedBracketsPluginLowestPrec = import_state4.Prec.lowest(colorPairedBracketsPlugin.extension);
-var highlightCursorBracketsPlugin = import_view6.ViewPlugin.fromClass(class {
+var highlightCursorBracketsPlugin = import_view5.ViewPlugin.fromClass(class {
   constructor(view) {
     this.decorations = highlightCursorBrackets(view);
   }
@@ -5648,8 +5623,8 @@ var highlightCursorBracketsPlugin = import_view6.ViewPlugin.fromClass(class {
   }
 }, { decorations: (v) => v.decorations });
 
-// src/editor_extensions/inline_math_tooltip.ts
-var import_view7 = __toModule(require("@codemirror/view"));
+// src/editor_extensions/math_tooltip.ts
+var import_view6 = __toModule(require("@codemirror/view"));
 var import_state5 = __toModule(require("@codemirror/state"));
 var import_obsidian3 = __toModule(require("obsidian"));
 var cursorTooltipField = import_state5.StateField.define({
@@ -5659,27 +5634,21 @@ var cursorTooltipField = import_state5.StateField.define({
       return tooltips2;
     return getCursorTooltips(tr.state);
   },
-  provide: (f) => import_view7.showTooltip.computeN([f], (state) => state.field(f))
+  provide: (f) => import_view6.showTooltip.computeN([f], (state) => state.field(f))
 });
 function getCursorTooltips(state) {
-  const isInsideInlineEqn = isWithinEquation(state) && isWithinInlineEquationState(state);
-  let shouldShowTooltip = isInsideInlineEqn;
-  let isTouchingInlineEqn;
-  let pos = state.selection.main.from;
-  if (!isInsideInlineEqn) {
-    isTouchingInlineEqn = isTouchingInlineEquation(state, pos - 1);
-    if (isTouchingInlineEqn != 0) {
-      pos += isTouchingInlineEqn;
-      shouldShowTooltip = true;
-    }
-  }
-  if (shouldShowTooltip) {
+  const pos = state.selection.main.from;
+  if (isWithinEquation(state)) {
+    const isInline = isWithinInlineEquation(state, pos);
+    const isLivePreview = state.field(import_obsidian3.editorLivePreviewField);
+    if (!isInline && isLivePreview)
+      return [];
     const bounds = getEquationBounds(state, pos);
     if (!bounds)
       return [];
-    if (bounds.start === bounds.end)
-      return [];
     const eqn = state.sliceDoc(bounds.start, bounds.end);
+    if (eqn.trim() === "")
+      return [];
     return [
       {
         pos: bounds.start,
@@ -5687,9 +5656,10 @@ function getCursorTooltips(state) {
         strictSide: true,
         arrow: true,
         create: () => {
+          const delimiter = isInline ? "$" : "$$";
           const dom = document.createElement("div");
           dom.className = "cm-tooltip-cursor";
-          import_obsidian3.MarkdownRenderer.renderMarkdown("$" + eqn + "$", dom, "", null);
+          import_obsidian3.MarkdownRenderer.renderMarkdown(delimiter + eqn + delimiter, dom, "", null);
           return { dom };
         }
       }
@@ -5698,12 +5668,12 @@ function getCursorTooltips(state) {
     return [];
   }
 }
-var cursorTooltipBaseTheme = import_view7.EditorView.baseTheme({
+var cursorTooltipBaseTheme = import_view6.EditorView.baseTheme({
   ".cm-tooltip.cm-tooltip-cursor": {
     backgroundColor: "var(--background-primary)",
     color: "var(--text-normal)",
     border: "1px solid var(--background-modifier-border)",
-    padding: "2px 7px",
+    padding: "4px 6px",
     borderRadius: "6px",
     "& .cm-tooltip-arrow:before": {
       borderTopColor: "var(--background-modifier-border)"
@@ -5712,8 +5682,10 @@ var cursorTooltipBaseTheme = import_view7.EditorView.baseTheme({
       borderTopColor: "var(--background-primary)"
     },
     "& p": {
-      marginTop: "2px",
-      marginBottom: "2px"
+      margin: "0px"
+    },
+    "& mjx-container": {
+      padding: "2px !important"
     }
   }
 });
@@ -7428,7 +7400,7 @@ var import_commands2 = __toModule(require("@codemirror/commands"));
 
 // src/snippets/marker_state_field.ts
 var import_state6 = __toModule(require("@codemirror/state"));
-var import_view8 = __toModule(require("@codemirror/view"));
+var import_view7 = __toModule(require("@codemirror/view"));
 var addMark = import_state6.StateEffect.define();
 var removeMark = import_state6.StateEffect.define();
 var clearMarks = import_state6.StateEffect.define();
@@ -7439,7 +7411,7 @@ var undidStartSnippet = import_state6.StateEffect.define();
 var undidEndSnippet = import_state6.StateEffect.define();
 var markerStateField = import_state6.StateField.define({
   create() {
-    return import_view8.Decoration.none;
+    return import_view7.Decoration.none;
   },
   update(value, tr) {
     value = value.map(tr.changes);
@@ -7458,7 +7430,7 @@ var markerStateField = import_state6.StateField.define({
     }
     return value;
   },
-  provide: (f) => import_view8.EditorView.decorations.from(f)
+  provide: (f) => import_view7.EditorView.decorations.from(f)
 });
 
 // src/snippets/tabstops_state_field.ts
@@ -7696,7 +7668,7 @@ var DEFAULT_SETTINGS = {
   concealEnabled: false,
   colorPairedBracketsEnabled: true,
   highlightCursorBracketsEnabled: true,
-  inlineMathPreviewEnabled: true,
+  mathPreviewEnabled: true,
   autofractionEnabled: true,
   autofractionExcludedEnvs: `[
         ["^{", "}"],
@@ -7743,7 +7715,7 @@ var LatexSuiteSettingTab = class extends import_obsidian7.PluginSettingTab {
       validityText.setText(success ? "Saved" : "Invalid syntax. Changes not saved");
     }
     const extensions = basicSetup;
-    const change = import_view9.EditorView.updateListener.of((v) => __async(this, null, function* () {
+    const change = import_view8.EditorView.updateListener.of((v) => __async(this, null, function* () {
       if (v.docChanged) {
         const value = v.state.doc.toString();
         let success = true;
@@ -7857,9 +7829,16 @@ var LatexSuiteSettingTab = class extends import_obsidian7.PluginSettingTab {
       }
       yield this.plugin.saveSettings();
     })));
-    containerEl.createEl("div", { text: "Inline math preview" }).addClasses(["setting-item", "setting-item-heading", "setting-item-name"]);
-    new import_obsidian7.Setting(containerEl).setName("Enabled").setDesc("When inside inline math, show a popup preview window of the rendered math.").addToggle((toggle) => toggle.setValue(this.plugin.settings.inlineMathPreviewEnabled).onChange((value) => __async(this, null, function* () {
-      this.plugin.settings.inlineMathPreviewEnabled = value;
+    containerEl.createEl("div", { text: "Math popup preview" }).addClasses(["setting-item", "setting-item-heading", "setting-item-name"]);
+    const popup_fragment = document.createDocumentFragment();
+    const popup_line1 = document.createElement("div");
+    popup_line1.setText("When inside an equation, show a popup preview window of the rendered math.");
+    const popup_space = document.createElement("br");
+    const popup_line4 = document.createElement("div");
+    popup_line4.setText("The popup preview will be shown for all inline math equations, as well as for block math equations in Source mode.");
+    popup_fragment.append(popup_line1, popup_space, popup_line4);
+    new import_obsidian7.Setting(containerEl).setName("Enabled").setDesc(popup_fragment).addToggle((toggle) => toggle.setValue(this.plugin.settings.mathPreviewEnabled).onChange((value) => __async(this, null, function* () {
+      this.plugin.settings.mathPreviewEnabled = value;
       if (value) {
         this.plugin.enableExtension(cursorTooltipField);
         this.plugin.enableExtension(cursorTooltipBaseTheme);
@@ -7934,18 +7913,18 @@ var ConfirmationModal = class extends import_obsidian7.Modal {
   }
 };
 function createSnippetsEditor(content, extensions) {
-  const view = new import_view9.EditorView({
+  const view = new import_view8.EditorView({
     state: import_state8.EditorState.create({ doc: content, extensions })
   });
   return view;
 }
 
 // src/main.ts
-var import_view11 = __toModule(require("@codemirror/view"));
+var import_view10 = __toModule(require("@codemirror/view"));
 var import_state11 = __toModule(require("@codemirror/state"));
 
 // src/snippets/snippet_management.ts
-var import_view10 = __toModule(require("@codemirror/view"));
+var import_view9 = __toModule(require("@codemirror/view"));
 var import_state10 = __toModule(require("@codemirror/state"));
 var import_commands3 = __toModule(require("@codemirror/commands"));
 
@@ -8127,7 +8106,7 @@ function insertTabstopsTransaction(view, tabstops) {
   const effects = tabstops.map((tabstop) => {
     const currentTabstopReferences2 = view.state.field(tabstopsStateField);
     const reference2 = currentTabstopReferences2[tabstop.number];
-    const mark = import_view10.Decoration.mark({
+    const mark = import_view9.Decoration.mark({
       inclusive: true,
       attributes: {},
       class: getColorClass(reference2.colorIndex),
@@ -8261,7 +8240,7 @@ var EXCLUSIONS = {
 var autoEnlargeBrackets = (view, plugin) => {
   if (!plugin.settings.autoEnlargeBrackets)
     return;
-  const result = getEquationBounds(view);
+  const result = getEquationBounds(view.state);
   if (!result)
     return false;
   const { start: start2, end: end2 } = result;
@@ -8364,7 +8343,7 @@ var runSnippetCursor = (view, key, withinMath, range, plugin) => {
         }
       }
       if (spaceIndex != 0) {
-        const inlineMath = isWithinInlineEquation(view);
+        const inlineMath = isWithinInlineEquation(view.state);
         if (inlineMath) {
           if (spaceIndex === -1) {
             replacement = replacement.trimEnd();
@@ -8437,7 +8416,7 @@ var runAutoFractionCursor = (view, range, plugin) => {
       return false;
     }
   }
-  const result = getEquationBounds(view);
+  const result = getEquationBounds(view.state);
   if (!result)
     return false;
   const eqnStart = result.start;
@@ -8484,7 +8463,7 @@ var tabout = (view, withinEquation) => {
   if (!withinEquation)
     return false;
   const pos = view.state.selection.main.to;
-  const result = getEquationBounds(view);
+  const result = getEquationBounds(view.state);
   if (!result)
     return false;
   const end2 = result.end;
@@ -8563,7 +8542,7 @@ var runMatrixShortcuts = (view, key, shiftKey, pos, matrixShortcutsEnvNames) => 
 
 // src/features/editor_commands.ts
 function boxCurrentEquation(view) {
-  const result = getEquationBounds(view);
+  const result = getEquationBounds(view.state);
   if (!result)
     return false;
   const { start: start2, end: end2 } = result;
@@ -8581,7 +8560,7 @@ function getBoxEquationCommand() {
     name: "Box current equation",
     editorCheckCallback: (checking, editor, markdownView) => {
       const view = editor.cm;
-      const withinEquation = isWithinEquation(view);
+      const withinEquation = isWithinEquation(view.state);
       if (checking)
         return withinEquation;
       if (!withinEquation)
@@ -8597,12 +8576,12 @@ function getSelectEquationCommand() {
     name: "Select current equation",
     editorCheckCallback: (checking, editor, markdownView) => {
       const view = editor.cm;
-      const withinEquation = isWithinEquation(view);
+      const withinEquation = isWithinEquation(view.state);
       if (checking)
         return withinEquation;
       if (!withinEquation)
         return;
-      const result = getEquationBounds(view);
+      const result = getEquationBounds(view.state);
       if (!result)
         return false;
       let { start: start2, end: end2 } = result;
@@ -8695,7 +8674,7 @@ var LatexSuitePlugin = class extends import_obsidian8.Plugin {
       const s = view.state.selection;
       const pos = s.main.to;
       const ranges = Array.from(s.ranges).reverse();
-      const withinEquation = isWithinEquation(view);
+      const withinEquation = isWithinEquation(view.state);
       let withinMath = false;
       if (withinEquation)
         withinMath = !(isInsideEnvironment(view, pos, { openSymbol: "\\text{", closeSymbol: "}" }) || isInsideEnvironment(view, pos, { openSymbol: "\\tag{", closeSymbol: "}" }));
@@ -8751,12 +8730,12 @@ var LatexSuitePlugin = class extends import_obsidian8.Plugin {
       yield this.loadSettings();
       this.addSettingTab(new LatexSuiteSettingTab(this.app, this));
       this.legacyEditorWarning();
-      this.registerEditorExtension(import_state11.Prec.highest(import_view11.EditorView.domEventHandlers({
+      this.registerEditorExtension(import_state11.Prec.highest(import_view10.EditorView.domEventHandlers({
         "keydown": this.onKeydown
       })));
       this.registerEditorExtension([markerStateField, tabstopsStateField, snippetQueueStateField, snippetInvertedEffects]);
-      this.registerEditorExtension(import_view11.EditorView.updateListener.of(this.handleUpdate));
-      this.registerEditorExtension((0, import_view11.tooltips)({ position: "absolute" }));
+      this.registerEditorExtension(import_view10.EditorView.updateListener.of(this.handleUpdate));
+      this.registerEditorExtension((0, import_view10.tooltips)({ position: "absolute" }));
       this.registerEditorExtension(this.editorExtensions);
       this.registerEvent(this.app.vault.on("modify", (file) => onFileChange(this, file)));
       this.registerEvent(this.app.vault.on("delete", (file) => onFileDelete(this, file)));
@@ -8802,7 +8781,7 @@ var LatexSuitePlugin = class extends import_obsidian8.Plugin {
         this.enableExtension(colorPairedBracketsPluginLowestPrec);
       if (this.settings.highlightCursorBracketsEnabled)
         this.enableExtension(highlightCursorBracketsPlugin.extension);
-      if (this.settings.inlineMathPreviewEnabled) {
+      if (this.settings.mathPreviewEnabled) {
         this.enableExtension(cursorTooltipField);
         this.enableExtension(cursorTooltipBaseTheme);
       }
