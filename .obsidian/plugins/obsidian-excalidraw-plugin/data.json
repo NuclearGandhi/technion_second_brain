@@ -5,7 +5,7 @@
   "scriptFolderPath": "Excalidraw/Scripts",
   "compress": false,
   "autosave": true,
-  "autosaveInterval": 10000,
+  "autosaveInterval": 15000,
   "autosaveIntervalDesktop": 15000,
   "autosaveIntervalMobile": 10000,
   "drawingFilenamePrefix": "Drawing ",
@@ -1656,7 +1656,7 @@
             "containerId": null,
             "originalText": "x",
             "lineHeight": 1.25,
-            "baseline": 17
+            "baseline": 18
           },
           {
             "type": "text",
@@ -1700,7 +1700,7 @@
             "containerId": null,
             "originalText": "y",
             "lineHeight": 1.25,
-            "baseline": 17
+            "baseline": 18
           }
         ],
         "id": "l9cXGiz_dQPDMRBQfvCHl",
@@ -2872,7 +2872,7 @@
             "containerId": null,
             "originalText": "x",
             "lineHeight": 1.25,
-            "baseline": 17
+            "baseline": 18
           },
           {
             "type": "text",
@@ -2916,7 +2916,7 @@
             "containerId": null,
             "originalText": "y",
             "lineHeight": 1.25,
-            "baseline": 17
+            "baseline": 18
           }
         ],
         "id": "0F4vbpZF3RoNMKF0ahxEJ",

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/DEQ1/DEQ1_010 מערכת משוואות.md",
+                "file": "Technion/SLD1/SLD1_008 פיתול.md",
                 "mode": "source",
                 "source": true
               }
@@ -32,9 +32,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/DEQ1/DEQ1_010 מערכת משוואות.md",
+                "file": "Technion/SLD1/SLD1_008 פיתול.md",
                 "mode": "preview",
-                "source": true
+                "source": false
               }
             },
             "group": "379067912611f4e4"
@@ -113,7 +113,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/DEQ1/DEQ1_010 מערכת משוואות.md",
+            "file": "Technion/SLD1/SLD1_008 פיתול.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/DEQ1/DEQ1_010 מערכת משוואות.md",
+            "file": "Technion/SLD1/SLD1_008 פיתול.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -142,7 +142,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/DEQ1/DEQ1_010 מערכת משוואות.md"
+            "file": "Technion/SLD1/SLD1_008 פיתול.md"
           }
         }
       }
@@ -163,23 +163,25 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b9b7155ce7740d3a",
+  "active": "aca7f060141dbeef",
   "lastOpenFiles": [
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/SLD1/SLD1_008 פיתול.md",
+    "Technion/SLD1/SLD1_008/SLD1_008 פיתול 2023-07-05 09.46.13.excalidraw.md",
+    "Technion/SLD1/SLD1_008/SLD1_008 פיתול 2023-07-05 10.03.25.excalidraw.svg",
+    "Technion/SLD1/SLD1_008/Screenshot_20230705_093240_Samsung Notes.jpg",
+    "Technion/SLD1/SLD1_008/SLD1_008 פיתול 2023-07-05 10.03.25.excalidraw.md",
+    "Technion/SLD1/SLD1_008/SLD1_008 פיתול 2023-07-05 09.46.13.excalidraw.svg",
     "Technion/DEQ1/DEQ1_010 מערכת משוואות.md",
     "Technion/DEQ1/DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md",
     "Technion/CAL2/CAL2_014 אינטגרלים משטחיים.md",
-    "Technion/SLD1/SLD1_008 פיתול.md",
     "Technion/SLD1/Screenshot_20230703_110145_OneDrive.jpg",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
     "Technion/SLD1/Screenshot_20230703_103959_OneDrive.jpg",
     "Technion/SLD1/Screenshot_20230703_102210_OneDrive.jpg",
     "Technion/SLD1/Screenshot_20230703_102139_OneDrive.jpg",
     "Technion/SLD1/Screenshot_20230703_102108_OneDrive.jpg",
     "Technion/SLD1/Screenshot_20230703_101155_OneDrive.jpg",
     "Technion/SLD1/Screenshot_20230703_095432_OneDrive.jpg",
-    "Technion/SLD1/Screenshot_20230703_094542_OneDrive.jpg",
-    "Technion/SLD1/Screenshot_20230703_094154_OneDrive.jpg",
-    "Technion/SLD1/Screenshot_20230703_091404_OneDrive.jpg",
     "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
     "Technion/CAL2/CAL2_001 וקטורים.md",
     "Technion/CAL2/CAL2_002 מישורים וישרים.md",
@@ -199,9 +201,6 @@
     "Technion/SLD1/SLD1_007 מאמץ ועיבור 2023-06-28 09.51.35.excalidraw.md",
     "Technion/PHY1/PHY1_003 חוקי ניוטון.md",
     "Technion/DEQ1/DEQ1_010 מערכות.md",
-    "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.md",
-    "Technion/SLD1/SLD1_010 בעיות בלתי מסוימות, עיבורים תרמיים.md",
-    "Technion/CAL2/CAL2_012/CAL2_012 אינטגרלים קוויים ומשפט גרין 2023-06-25 12.38.01.excalidraw.md",
     "Technion/IMT1/IMT1_008",
     "Technion/DEQ1/DEQ1_009",
     "Technion/CAL2/CAL2_012",

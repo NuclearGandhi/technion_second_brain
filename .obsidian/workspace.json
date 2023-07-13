@@ -4,25 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "1df64320fad0a633",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "29ec29215c374bde",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/CAL2/CAL2_014 אינטגרלים משטחיים.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "13903b94f8b17fda"
-          }
-        ]
-      },
-      {
         "id": "919698c25eef005a",
         "type": "tabs",
         "children": [
@@ -36,8 +17,7 @@
                 "mode": "preview",
                 "source": false
               }
-            },
-            "group": "13903b94f8b17fda"
+            }
           }
         ]
       }
@@ -68,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "TODO",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -97,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 297.5,
     "collapsed": true
   },
   "right": {
@@ -182,42 +162,44 @@
   },
   "active": "b87a2d9bf4c127bb",
   "lastOpenFiles": [
-    "Technion/SLD1/SLD1_004/Pasted image 20230704235736.png",
-    "Technion/SLD1/SLD1_004 עבודה וירטואלית.md",
-    "Technion/SLD1/SLD1_004/Pasted image 20230704235801.png",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-    "Technion/SLD1/SLD1_008/Pasted image 20230704223911.png",
-    "Technion/SLD1/SLD1_008/Screenshot_20230703_110145_OneDrive.jpg",
-    "Technion/SLD1/SLD1_008",
-    "Technion/SLD1/SLD1_008/Screenshot_20230703_102139_OneDrive.jpg",
-    "Technion/SLD1/SLD1_008 פיתול.md",
-    "Technion/SLD1/SLD1_008/Pasted image 20230704232445.png",
-    "Technion/SLD1/SLD1_008/Pasted image 20230704232428.png",
-    "Technion/SLD1/SLD1_008/Pasted image 20230704232424.png",
+    "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
+    "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
     "Technion/CAL2/CAL2_014 אינטגרלים משטחיים.md",
-    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
-    "Technion/CAL2/CAL2_014/Pasted image 20230628162610.png",
-    "README.md",
     "Technion/CAL2/CAL2_013 שדות משמרים.md",
-    "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
-    "Technion/PHY1/PHY1_010/Pasted image 20230702092725.png",
-    "Technion/IMT1/IMT1_009 זחילה.md",
-    "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
-    "Technion/CAL2/CAL2_013 שדות משמרים ודיבגרנצים.md",
+    "Technion/CAL2/CAL2_001 וקטורים.md",
+    "Technion/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-22 15.19.58.excalidraw.md",
+    "Technion/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-22 15.10.03.excalidraw.md",
+    "Technion/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-22 15.59.51.excalidraw.md",
     "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
-    "Technion/CAL2/CAL2_004 עקומים במרחב.md",
-    "Technion/CAL2/CAL2_005 פונקציה בשני משתנים, טופולוגיה.md",
-    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
-    "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
-    "Technion/IMT1/IMT1_010 התעייפות.md",
+    "Technion/CAL2/CAL2_002 מישורים וישרים.md",
     "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות.md",
-    "Technion/GCH1/GCH1_010 כוחות בין מולקולריים ומעברי פאזה.md",
+    "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
+    "Technion/IMT1/IMT1_011 חומרים פולימריים.md",
+    "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
+    "Technion/IMT1/IMT1_009 זחילה.md",
     "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
-    "Technion/DEQ1/DEQ1_010 מערכת משוואות.md",
-    "Technion/DEQ1/DEQ1_006 משוואות לינאריות הומוגניות מסדר גבוה.md",
-    "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
-    "Technion/DEQ1/DEQ1_008 פתרונות טוריים למשוואות דיפרנציאליות רגילות.md",
-    "Technion/DEQ1/DEQ1_009 טרנספורמציית לפלס.md",
+    "Technion/IMT1/IMT1_010 התעייפות.md",
+    "Technion/CAL2/CAL2_014/Pasted image 20230709215341.png",
+    "Technion/PHY1/PHY1_002 קינמטיקה.md",
+    "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
+    "Technion/CAL2/CAL2_009 פונקציות סתומות.md",
+    "Technion/PHY1/PHY1_008 תנע קווי ומרכז מסה.md",
+    "Technion/PHY1/PHY1_009 תנע זוויתי.md",
+    "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
+    "Technion/PHY1/PHY1_005 עבודה ואנרגיה.md",
+    "Technion/CAL2/CAL2_014/Pasted image 20230706214222.png",
+    "Technion/CAL2/CAL2_014/Pasted image 20230706210229.png",
+    "Technion/CAL2/CAL2_014/Pasted image 20230706204623.png",
+    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
+    "Technion/IMT1/IMT1_008/Screenshot_20230624_205617_OneDrive.jpg",
+    "Technion/IMT1/IMT1_008/SmartSelect_20230624_204015_OneDrive.png",
+    "Technion/IMT1/IMT1_008/SmartSelect_20230624_204032_OneDrive.png",
+    "Technion/IMT1/IMT1_009/Pasted image 20230705212200.png",
+    "Technion/IMT1/IMT1_007/Pasted image 20230705214241.png",
+    "Technion/IMT1/IMT1_009/Pasted image 20230705211407.png",
+    "Technion/IMT1/IMT1_009",
+    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
+    "Technion/SLD1/SLD1_008",
     "Technion/DEQ1/~syncthing~DEQ1_010 מערכות.md.tmp",
     "Technion/DEQ1/~syncthing~DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md.tmp",
     "Technion/DEQ1/~syncthing~DEQ1_009 טרנספורמציית לפלס.md.tmp",
@@ -225,7 +207,6 @@
     "Technion/DEQ1/DEQ1_009",
     "Technion/PHY1/PHY1_008/הרצאה 9_230604_104123.pdf",
     "Technion/PHY1/PHY1_010",
-    "Technion/PHY1/PHY1_009",
-    "Technion/IMT1/Pasted image 20230613183523.png.~tmp"
+    "Technion/PHY1/PHY1_009"
   ]
 }
