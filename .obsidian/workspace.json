@@ -13,11 +13,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/CAL2/CAL2_014 אינטגרלים משטחיים.md",
+                "file": "פנגייה - רשימת סיכומים.md",
+                "mode": "source",
+                "source": true
+              }
+            },
+            "group": "77bb184b9c308e53"
+          }
+        ]
+      },
+      {
+        "id": "363938d18c86b43f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e601bb54c08e5251",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "פנגייה - רשימת סיכומים.md",
                 "mode": "preview",
                 "source": false
               }
-            }
+            },
+            "group": "77bb184b9c308e53"
           }
         ]
       }
@@ -77,8 +97,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 297.5,
-    "collapsed": true
+    "width": 297.5
   },
   "right": {
     "id": "c1c3ae1b57de7de1",
@@ -94,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/CAL2/CAL2_014 אינטגרלים משטחיים.md",
+                "file": "פנגייה - רשימת סיכומים.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/CAL2/CAL2_014 אינטגרלים משטחיים.md",
+                "file": "פנגייה - רשימת סיכומים.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/CAL2/CAL2_014 אינטגרלים משטחיים.md"
+                "file": "פנגייה - רשימת סיכומים.md"
               }
             }
           }
@@ -160,11 +179,24 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b87a2d9bf4c127bb",
+  "active": "717dd551d2d7a242",
   "lastOpenFiles": [
+    "favicon-32x32.png",
+    "Technion/Pasted image 20230719153058.png",
+    "פנגייה - רשימת סיכומים.md",
+    "logo.png",
+    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה.md",
+    "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
+    "Technion/SLD1/SLD1_002 שיווי משקל.md",
+    "Technion/CAL2/CAL2_014/Pasted image 20230716221421.png",
+    "Technion/CAL2/CAL2_014 אינטגרלים משטחיים.md",
+    "Technion/SLD1/SLD1_008 פיתול.md",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
+    "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות.md",
+    "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
+    "Technion/CAL1/CAL1_005 נגזרות.md",
     "Technion/CAL2/CAL2_011 אינטגרל רב מימדי.md",
     "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
-    "Technion/CAL2/CAL2_014 אינטגרלים משטחיים.md",
     "Technion/CAL2/CAL2_013 שדות משמרים.md",
     "Technion/CAL2/CAL2_001 וקטורים.md",
     "Technion/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-22 15.19.58.excalidraw.md",
@@ -172,7 +204,6 @@
     "Technion/CAL2/CAL2_001/CAL2_001 וקטורים 2023-03-22 15.59.51.excalidraw.md",
     "Technion/CAL2/CAL2_003 משטחים ריבועיים.md",
     "Technion/CAL2/CAL2_002 מישורים וישרים.md",
-    "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות.md",
     "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
     "Technion/IMT1/IMT1_011 חומרים פולימריים.md",
     "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
@@ -180,25 +211,12 @@
     "Technion/IMT1/IMT1_000 314533 מבוא להנדסת חומרים 1מ.md",
     "Technion/IMT1/IMT1_010 התעייפות.md",
     "Technion/CAL2/CAL2_014/Pasted image 20230709215341.png",
-    "Technion/PHY1/PHY1_002 קינמטיקה.md",
-    "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
-    "Technion/CAL2/CAL2_009 פונקציות סתומות.md",
-    "Technion/PHY1/PHY1_008 תנע קווי ומרכז מסה.md",
-    "Technion/PHY1/PHY1_009 תנע זוויתי.md",
-    "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
-    "Technion/PHY1/PHY1_005 עבודה ואנרגיה.md",
     "Technion/CAL2/CAL2_014/Pasted image 20230706214222.png",
     "Technion/CAL2/CAL2_014/Pasted image 20230706210229.png",
     "Technion/CAL2/CAL2_014/Pasted image 20230706204623.png",
-    "Technion/CAL2/CAL2_000 104043 חדוא 2מ.md",
     "Technion/IMT1/IMT1_008/Screenshot_20230624_205617_OneDrive.jpg",
     "Technion/IMT1/IMT1_008/SmartSelect_20230624_204015_OneDrive.png",
-    "Technion/IMT1/IMT1_008/SmartSelect_20230624_204032_OneDrive.png",
-    "Technion/IMT1/IMT1_009/Pasted image 20230705212200.png",
-    "Technion/IMT1/IMT1_007/Pasted image 20230705214241.png",
-    "Technion/IMT1/IMT1_009/Pasted image 20230705211407.png",
     "Technion/IMT1/IMT1_009",
-    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
     "Technion/SLD1/SLD1_008",
     "Technion/DEQ1/~syncthing~DEQ1_010 מערכות.md.tmp",
     "Technion/DEQ1/~syncthing~DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md.tmp",

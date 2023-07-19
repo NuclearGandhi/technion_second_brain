@@ -1,3 +1,10 @@
+/*
+Publish and Local
+=================
+ */
+
+
+/* All images */
 img {
   display: block;
   margin-left: auto;
@@ -16,24 +23,23 @@ img[alt*="bmult"] {
   mix-blend-mode: screen;
 }
 
-.markdown-rendered ol > li, .markdown-rendered ul > li {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
-
+/* Center tables */
 table {
   margin-right: auto;
   margin-left: auto;
 }
 
+/* Center table headers */
 .markdown-rendered thead tr > th {
   text-align: start !important;
 }
 
+/* Allow images in callouts to smoothly interact with the callout background */
 .callout {
   mix-blend-mode: inherit
 }
 
+/* transparent background, black themed */
 .theme-dark img[alt*="book"]{
   mix-blend-mode: screen;
   filter: invert(1);
@@ -43,10 +49,12 @@ table {
   mix-blend-mode: multiply;
 }
 
+/* Vector art also need to have a transparent background */
 .theme-light img[alt*="svg"] {
   filter: invert(1);
 }
 
+/* Dark theme for GeoGebra applets */
 .theme-dark .geo {
   mix-blend-mode: screen;
   filter: invert(1);
@@ -56,8 +64,20 @@ table {
   mix-blend-mode: multiply;
 }
 
+/* Center iframes */
 iframe.external-embed {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+/*
+Local only
+==========
+ */
+
+ /* Padding between numbers */
+.markdown-rendered ol > li, .markdown-rendered ul > li {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
