@@ -54,6 +54,10 @@ table {
   filter: invert(1);
 }
 
+.theme-light img[alt*="ignore"] {
+  filter: unset !important;
+}
+
 /* Dark theme for GeoGebra applets */
 .theme-dark .geo {
   mix-blend-mode: screen;

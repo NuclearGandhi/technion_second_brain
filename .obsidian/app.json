@@ -23,5 +23,6 @@
     "templates/"
   ],
   "rightToLeft": false,
-  "newLinkFormat": "relative"
+  "newLinkFormat": "relative",
+  "showInlineTitle": false
 }
