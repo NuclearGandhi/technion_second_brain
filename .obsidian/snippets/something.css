@@ -3,7 +3,6 @@ Publish and Local
 =================
  */
 
-
 /* All images */
 img {
   display: block;
@@ -36,16 +35,16 @@ table {
 
 /* Allow images in callouts to smoothly interact with the callout background */
 .callout {
-  mix-blend-mode: inherit
+  mix-blend-mode: inherit;
 }
 
 /* transparent background, black themed */
-.theme-dark img[alt*="book"]{
+.theme-dark img[alt*="book"] {
   mix-blend-mode: screen;
   filter: invert(1);
 }
 
-.theme-light img[alt*="book"]{
+.theme-light img[alt*="book"] {
   mix-blend-mode: multiply;
 }
 
@@ -75,13 +74,124 @@ iframe.external-embed {
   margin-right: auto;
 }
 
+/* 
+Testimonials (Publish and local)
+============
+*/
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  align-items: center;
+  direction: rtl;
+}
+
+figure.testi {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  color: #333;
+  text-align: right;
+  box-shadow: none !important;
+}
+
+figure.testi * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+  transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+
+figure.testi img {
+  max-width: 100%;
+  height: 90px;
+  width: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 40px 0 0 10px;
+  bottom: 45px;
+}
+
+figure.testi blockquote {
+  display: block;
+  border-radius: 8px;
+  position: relative;
+  background-color: #fafafa;
+  padding: 25px 50px 30px 50px;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.6em;
+  font-style: italic;
+}
+
+figure.testi blockquote:before,
+figure.testi blockquote:after {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  content: "\201D";
+  position: absolute;
+  font-size: 50px;
+  opacity: 0.3;
+  font-style: normal;
+}
+
+figure.testi blockquote:before {
+  right: 20px;
+  top: 25px;
+}
+
+figure.testi blockquote:after {
+  bottom: 0;
+  left: 20px;
+  transform: scaleX(-1);
+  content: "\201D";
+}
+
+figure.testi .arrow {
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-right: 0 solid transparent;
+  border-left: 25px solid transparent;
+  border-top: 25px solid #fafafa;
+  margin: 0;
+  position: absolute;
+}
+
+figure.testi .author {
+  position: absolute;
+  bottom: 45px;
+  padding: 0 120px 0 10px;
+  margin-left: 0;
+  text-transform: uppercase;
+  color: #ffffff;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+}
+figure.testi .author h5 {
+  opacity: 0.8;
+  margin: 0;
+  font-weight: 700;
+}
+figure.testi .author h5 span {
+  font-weight: 400;
+  text-transform: none;
+  padding-left: 5px;
+}
+
 /*
 Local only
 ==========
  */
 
- /* Padding between numbers */
-.markdown-rendered ol > li, .markdown-rendered ul > li {
+/* Padding between numbers */
+.markdown-rendered ol > li,
+.markdown-rendered ul > li {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
+

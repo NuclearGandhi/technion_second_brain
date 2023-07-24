@@ -4,29 +4,9 @@
     "type": "split",
     "children": [
       {
-        "id": "919698c25eef005a",
-        "type": "tabs",
-        "dimension": 49.32998324958124,
-        "children": [
-          {
-            "id": "b87a2d9bf4c127bb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "פנגייה - רשימת סיכומים.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "77bb184b9c308e53"
-          }
-        ]
-      },
-      {
         "id": "363938d18c86b43f",
         "type": "tabs",
-        "dimension": 50.67001675041875,
+        "dimension": 50.80428954423593,
         "children": [
           {
             "id": "e601bb54c08e5251",
@@ -34,12 +14,32 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "פנגייה - רשימת סיכומים.md",
+                "file": "Technion/IMT1/IMT1_011 חומרים פולימריים.md",
+                "mode": "source",
+                "source": false
+              }
+            },
+            "group": "a5ae10e79cf816c8"
+          }
+        ]
+      },
+      {
+        "id": "919698c25eef005a",
+        "type": "tabs",
+        "dimension": 49.19571045576407,
+        "children": [
+          {
+            "id": "57d4ff174bbd9094",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/IMT1/IMT1_011 חומרים פולימריים.md",
                 "mode": "preview",
                 "source": false
               }
             },
-            "group": "77bb184b9c308e53"
+            "group": "a5ae10e79cf816c8"
           }
         ]
       }
@@ -115,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "פנגייה - רשימת סיכומים.md",
+                "file": "Technion/IMT1/IMT1_011 חומרים פולימריים.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "פנגייה - רשימת סיכומים.md",
+                "file": "Technion/IMT1/IMT1_011 חומרים פולימריים.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "פנגייה - רשימת סיכומים.md"
+                "file": "Technion/IMT1/IMT1_011 חומרים פולימריים.md"
               }
             }
           }
@@ -181,53 +181,52 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b87a2d9bf4c127bb",
+  "active": "e601bb54c08e5251",
   "lastOpenFiles": [
+    "Technion/SLD1/SLD1_009 עקרונות חשובים.md",
+    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
     "Technion/SLD1/SLD1_008 פיתול.md",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
     "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה.md",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/SLD1/SLD1_009/SLD1_009 עקרונות חשובים 2023-07-23 11.38.05.excalidraw.md",
+    "Technion/SLD1/SLD1_009",
+    "Technion/IMT1/IMT1_011/Pasted image 20230724175011.png",
+    "Technion/IMT1/IMT1_011",
+    "Technion/IMT1/IMT1_011 חומרים פולימריים.md",
+    "Technion/IMT1/IMT1_011/Pasted image 20230724211651.png",
+    "Technion/IMT1/IMT1_011/Pasted image 20230724211554.png",
+    "Technion/IMT1/IMT1_011/Pasted image 20230724211521.png",
+    "Technion/IMT1/IMT1_011/Pasted image 20230724205808.png",
+    "Technion/IMT1/IMT1_011/Pasted image 20230724183252.png",
+    "Technion/IMT1/IMT1_011/Pasted image 20230724183247.png",
+    "Technion/IMT1/IMT1_011/Pasted image 20230724182910.png",
+    "Technion/IMT1/IMT1_011/Pasted image 20230724180608.png",
+    "Technion/IMT1/IMT1_011/Pasted image 20230724180545.png",
+    "Technion/IMT1/IMT1_006 דאגרמות TTT ו-CTT.md",
+    "Technion/IMT1/IMT1_004 דיאגרמת פאזות.md",
+    "Technion/IMT1/IMT1_001 מבוא.md",
+    "Technion/IMT1/IMT1_003 המבנה של גבישים.md",
+    "Technion/IMT1/IMT1_002 מבנה האטום וקשר בין אטומים.md",
+    "Technion/IMT1/IMT1_010 התעייפות.md",
+    "Technion/IMT1/IMT1_010",
+    "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
+    "Technion/IMT1/IMT1_009 זחילה.md",
+    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
+    "פנגייה - רשימת סיכומים.md",
     "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
     "Technion/SLD1/SLD1_004 עבודה וירטואלית.md",
     "Technion/SLD1/SLD1_003 מסבכים, מסגרות ומכונות.md",
     "Technion/SLD1/SLD1_002 שיווי משקל.md",
     "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md",
-    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
     "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
     "Technion/PHY1/PHY1_009 תנע זוויתי.md",
     "Technion/PHY1/PHY1_008 תנע קווי ומרכז מסה.md",
-    "Technion/PHY1/PHY1_007 אנרגיה פוטנציאלית ושימור אנרגיה.md",
-    "Technion/PHY1/PHY1_006 כוחות משמרים שימור אנרגיה מכנית, הספק.md",
-    "Technion/PHY1/PHY1_005 עבודה ואנרגיה.md",
-    "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
-    "Technion/PHY1/PHY1_003 חוקי ניוטון.md",
-    "Technion/PHY1/PHY1_002 קינמטיקה.md",
-    "Technion/PHY1/PHY1_001 מבוא.md",
-    "Technion/PHY1/PHY1_000 114051 פיזיקה 1.md",
-    "Technion/IPY1/IPY1_HW010 תרגיל בית 10.md",
-    "Technion/IPY1/IPY1_000 234128 מבוא לפייתון.md",
-    "Technion/IMT1/IMT1_011 חומרים פולימריים.md",
-    "Technion/IMT1/IMT1_010 התעייפות.md",
-    "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
-    "Technion/IMT1/IMT1_009 זחילה.md",
-    "Technion/CAL1/CAL1_009/CAL1_009 אינטגרל מוכלל 2023-01-12 13.46.36.excalidraw.svg",
-    "favicon-32x32.png",
-    "Technion/Pasted image 20230719153058.png",
-    "logo.png",
-    "Technion/CAL2/CAL2_014/Pasted image 20230716221421.png",
-    "Technion/CAL2/CAL2_014/Pasted image 20230709215341.png",
-    "Technion/CAL2/CAL2_014/Pasted image 20230706214222.png",
-    "Technion/CAL2/CAL2_014/Pasted image 20230706210229.png",
-    "Technion/CAL2/CAL2_014/Pasted image 20230706204623.png",
-    "Technion/IMT1/IMT1_008/Screenshot_20230624_205617_OneDrive.jpg",
     "Technion/IMT1/IMT1_009",
     "Technion/SLD1/SLD1_008",
     "Technion/DEQ1/~syncthing~DEQ1_010 מערכות.md.tmp",
     "Technion/DEQ1/~syncthing~DEQ1_000 104131 משוואות דיפרנציאליות רגילות ח.md.tmp",
     "Technion/DEQ1/~syncthing~DEQ1_009 טרנספורמציית לפלס.md.tmp",
     "Technion/CAL2/CAL2_013",
-    "Technion/DEQ1/DEQ1_009",
-    "Technion/PHY1/PHY1_008/הרצאה 9_230604_104123.pdf",
-    "Technion/PHY1/PHY1_010",
-    "Technion/PHY1/PHY1_009"
+    "Technion/DEQ1/DEQ1_009"
   ]
 }
