@@ -22,6 +22,13 @@ img[alt*="bmult"] {
   mix-blend-mode: screen;
 }
 
+/* Not code blocks */
+.markdown-rendered code {
+  direction: ltr;
+  unicode-bidi: plaintext;
+  display: inline-block;
+}
+
 /* Center tables */
 table {
   margin-right: auto;
@@ -74,6 +81,15 @@ iframe.external-embed {
   margin-right: auto;
 }
 
+/* block quotes (for image captioning) */
+.markdown-rendered blockquote {
+  font-style: italic;
+  border-left: 0;
+  border-right: 0;
+  font-size: var(--font-ui-medium);
+  text-align: center;
+}
+
 /* 
 Testimonials (Publish and local)
 ============
@@ -120,9 +136,10 @@ figure.testi blockquote {
   display: block;
   border-radius: 8px;
   position: relative;
+  text-align: right;
   background-color: #fafafa;
   padding: 25px 50px 30px 50px;
-  font-size: 0.8em;
+  font-size: 17px;
   font-weight: 500;
   margin: 0;
   line-height: 1.6em;
@@ -195,3 +212,8 @@ Local only
   padding-bottom: 0.5em;
 }
 
+.markdown-rendered ol.has-list-bullet > li,
+.markdown-rendered ul.has-list-bullet > li {
+  padding-top: var(--list-spacing);
+  padding-bottom: var(--list-spacing);
+}

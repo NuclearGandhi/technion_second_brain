@@ -1,14 +1,9 @@
-# Ignore everything
-/*
-
-# But not these files...
-!.gitignore
-!README.md
-!README/
-!.obsidian/
-!Technion/
+.stfolder
+.trash
+.stignore
+.obsidian/workspace.json
 
 # Ignore Smart Connections folder because embeddings file is large and updated frequently
 .smart-connections
-
 .obsidian/plugins/smart-connections/
+

@@ -23,6 +23,5 @@
     "templates/"
   ],
   "rightToLeft": false,
-  "newLinkFormat": "relative",
-  "showInlineTitle": false
+  "newLinkFormat": "relative"
 }
