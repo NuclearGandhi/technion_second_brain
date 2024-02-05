@@ -45,6 +45,42 @@ table {
   mix-blend-mode: inherit;
 }
 
+.callout[data-callout="notes"] {
+  --callout-color: var(--callout-tip);
+  --callout-icon: message-square-plus;
+}
+
+.callout[data-callout="def"] {
+  --callout-color: var(--callout-default);
+  --callout-icon: book-open;
+}
+
+.callout[data-callout="theorem"] {
+  --callout-color: var(--callout-default);
+  --callout-icon: wand-2;
+}
+
+.callout[data-callout="formula"] .callout-content {
+  --callout-color: var(--callout-default);
+  --callout-icon: sigma;
+}
+
+.callout[data-callout="quote"] .callout-content{
+  font-style: italic;
+}
+
+/* block quotes (for image captioning) */
+.markdown-rendered blockquote {
+  border-left: 0;
+  border-right: 0;
+  font-size: var(--font-ui-medium);
+  color: var(--icon-color-hover);
+  text-align: center;
+}
+
+.markdown-rendered blockquote p {
+  text-align: center !important;
+}
 /* transparent background, black themed */
 .theme-dark img[alt*="book"] {
   mix-blend-mode: screen;
@@ -79,15 +115,6 @@ iframe.external-embed {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* block quotes (for image captioning) */
-.markdown-rendered blockquote {
-  font-style: italic;
-  border-left: 0;
-  border-right: 0;
-  font-size: var(--font-ui-medium);
-  text-align: center;
 }
 
 /* 
@@ -224,6 +251,14 @@ h3,
 h4,
 h5 {
   direction: rtl;
+}
+
+.published-container .markdown-rendered h1, .published-container .markdown-rendered h2 {
+  border-bottom: 0px;
+}
+
+.published-container, .published-container .markdown-rendered h2 {
+  margin: 0.5em 0 0.5em;
 }
 
 :root {

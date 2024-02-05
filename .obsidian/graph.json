@@ -74,7 +74,7 @@
       "query": "file: THE",
       "color": {
         "a": 1,
-        "rgb": 14725458
+        "rgb": 16733983
       }
     }
   ],
@@ -88,6 +88,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.3075587038602478,
+  "scale": 0.20160422398335448,
   "close": true
 }

@@ -45,6 +45,43 @@ table {
   mix-blend-mode: inherit;
 }
 
+.callout[data-callout="notes"] {
+  --callout-color: var(--callout-tip);
+  --callout-icon: message-square-plus;
+}
+
+.callout[data-callout="def"] {
+  --callout-color: var(--callout-default);
+  --callout-icon: book-open;
+}
+
+.callout[data-callout="theorem"] {
+  --callout-color: var(--callout-default);
+  --callout-icon: wand-2;
+}
+
+.callout[data-callout="formula"] .callout-content {
+  --callout-color: var(--callout-default);
+  --callout-icon: sigma;
+}
+
+.callout[data-callout="quote"] .callout-content{
+  font-style: italic;
+}
+
+/* block quotes (for image captioning) */
+.markdown-rendered blockquote {
+  border-left: 0;
+  border-right: 0;
+  font-size: var(--font-ui-medium);
+  color: var(--icon-color-hover);
+  text-align: center;
+}
+
+.markdown-rendered blockquote p {
+  text-align: center !important;
+}
+
 /* transparent background, black themed */
 .theme-dark img[alt*="book"] {
   mix-blend-mode: screen;
@@ -79,15 +116,6 @@ iframe.external-embed {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* block quotes (for image captioning) */
-.markdown-rendered blockquote {
-  font-style: italic;
-  border-left: 0;
-  border-right: 0;
-  font-size: var(--font-ui-medium);
-  text-align: center;
 }
 
 /* 
@@ -148,7 +176,8 @@ figure.testi blockquote {
 
 figure.testi blockquote:before,
 figure.testi blockquote:after {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   content: "\201D";
   position: absolute;
   font-size: 50px;
@@ -208,8 +237,8 @@ Local only
 /* Padding between numbers */
 .markdown-rendered ol > li,
 .markdown-rendered ul > li {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
 }
 
 .markdown-rendered ol.has-list-bullet > li,

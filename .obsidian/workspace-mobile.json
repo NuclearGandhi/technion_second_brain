@@ -4,20 +4,42 @@
     "type": "split",
     "children": [
       {
-        "id": "2240c517b55b13d1",
+        "id": "402bd42d69c4d1d2",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
-            "id": "aca7f060141dbeef",
+            "id": "30c233dd95ade749",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/THE1/THE1_001 עבודה, אנרגיה וחום.md",
+                "file": "Technion/SLD2/SLD2_004 טנזור העיבור.md",
                 "mode": "source",
+                "source": true
+              }
+            },
+            "group": "a8aa1705aaf3d999"
+          }
+        ]
+      },
+      {
+        "id": "f935b64b0a8715bc",
+        "type": "tabs",
+        "dimension": 50,
+        "children": [
+          {
+            "id": "87baf436205eb887",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/SLD2/SLD2_004 טנזור העיבור.md",
+                "mode": "preview",
                 "source": false
               }
-            }
+            },
+            "group": "a8aa1705aaf3d999"
           }
         ]
       }
@@ -44,7 +66,7 @@
         "state": {
           "type": "search",
           "state": {
-            "query": "",
+            "query": "TODO",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": true,
@@ -93,7 +115,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/THE1/THE1_001 עבודה, אנרגיה וחום.md",
+            "file": "Technion/SLD2/SLD2_004 טנזור העיבור.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -110,7 +132,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/THE1/THE1_001 עבודה, אנרגיה וחום.md",
+            "file": "Technion/SLD2/SLD2_004 טנזור העיבור.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -122,7 +144,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/THE1/THE1_001 עבודה, אנרגיה וחום.md"
+            "file": "Technion/SLD2/SLD2_004 טנזור העיבור.md"
           }
         }
       }
@@ -143,44 +165,44 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "aca7f060141dbeef",
+  "active": "30c233dd95ade749",
   "lastOpenFiles": [
-    "Technion/CAL2/CAL2_013 שדות משמרים.md",
-    "Technion/THE1/THE1_001 עבודה, אנרגיה וחום.md",
-    "Technion/GCH1/GCH1_004 מבוא לתרמודינמיקה.md",
-    "Technion/THE1/Screenshot_20240116_103754_OneDrive.jpg",
-    "Technion/THE1/Screenshot_20240116_103423_OneDrive.jpg",
-    "Technion/THE1/Screenshot_20240116_100919_OneDrive.jpg",
-    "Technion/THE1/Screenshot_20240116_095622_Obsidian.jpg",
-    "Technion/THE1/אינטרקציה.md",
-    "Technion/PHY1/PHY1_005 עבודה ואנרגיה.md",
-    "Technion/THE1/Screenshot_20240116_090241_OneDrive.jpg",
-    "Technion/THE1/Screenshot_20240116_084924_Obsidian.jpg",
-    "Technion/THE1/Untitled.md",
-    "Technion/THE1/THE1_000 תרמודינמיקה 1 034035.md",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ.md",
-    "Technion/SLD2/Pasted image 20240115131253.png",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ 2024-01-15 13.09.14.excalidraw.md",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ 2024-01-15 13.10.33.excalidraw.md",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ 2024-01-15 13.10.33.excalidraw.svg",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ 2024-01-15 13.09.14.excalidraw.svg",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ 2024-01-15 11.43.21.excalidraw.md",
-    "Technion/SLD2/Screenshot_20240115_124334_OneDrive.jpg",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ 2024-01-15 11.49.09.excalidraw.md",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ 2024-01-15 11.16.27.excalidraw.md",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ 2024-01-15 11.05.52.excalidraw.md",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ 2024-01-15 10.59.26.excalidraw.md",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ 2024-01-15 10.56.24.excalidraw.md",
-    "Technion/SLD2/SLD2_000 מכניקת מוצקים 2מ 034053.md",
-    "Technion/SLD2/SLD2_000 מכניקת מוצקים 2מ 034053 2024-01-15 10.41.30.excalidraw.md",
-    "פנגייה - רשימת סיכומים.md",
-    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
-    "Technion/IPY1/IPY1_HW010 תרגיל בית 10.md",
-    "Technion/CAL2/CAL2_002 מישורים וישרים.md",
-    "Technion/SLD1/SLD1_008 פיתול.md",
-    "Technion/CAL2/CAL2_014 אינטגרלים משטחיים.md",
+    "Technion/SLD2/SLD2_004 טנזור העיבור 2024-02-05 14.01.05.excalidraw.md",
+    "Technion/SLD2/SLD2_004 טנזור העיבור.md",
+    "Technion/SLD2/SLD2_004 טנזור העיבור 2024-02-05 14.01.05.excalidraw.svg",
     "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-    "Technion/SLD1/SLD1_008/SLD1_008 פיתול 2023-07-05 09.46.13.excalidraw.md",
+    "Technion/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
+    "Technion/ALG1/ALG1_002 פולינומים.md",
+    "Technion/ALG1/ALG1_009 טרנספורמציות לינאריות.md",
+    "Technion/ALG1/ALG1_008 הדטרמיננטה.md",
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים.md",
+    "Technion/SLD2/SLD2_004 עיבור 2024-02-05 12.59.24.excalidraw.md",
+    "Technion/SLD2/SLD2_004 עיבור 2024-02-05 12.59.24.excalidraw.svg",
+    "Technion/SLD2/SLD2_004 עיבור 2024-02-05 12.29.19.excalidraw.md",
+    "Technion/SLD2/SLD2_004 עיבור 2024-02-05 12.29.19.excalidraw.svg",
+    "Technion/SLD2/SLD2_004 עיבור 2024-02-05 11.55.11.excalidraw.md",
+    "Technion/SLD2/SLD2_004 עיבור 2024-02-05 11.55.11.excalidraw.svg",
+    "Technion/SLD2/SLD2_004/SLD2_004 עיבור 2024-01-29 13.54.02.excalidraw.md",
+    "Technion/SLD2/SLD2_004/SLD2_004 עיבור 2024-01-29 13.13.32.excalidraw.md",
+    "Technion/THE1/THE1_002 תכונות מערכת.md",
+    "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
+    "Technion/PDE1/PDE1_002 משוואות קוואזילינאריות.md",
+    "Technion/PDE1/PDE1_003 משוואות מסדר שני.md",
+    "Technion/PDE1/PDE1_000 מדח מ 104228.md",
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים 2024-02-01 09.48.53.excalidraw.md",
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים 2024-02-01 09.48.53.excalidraw.svg",
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים 2024-02-01 09.41.30.excalidraw.md",
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים 2024-02-01 09.41.30.excalidraw.svg",
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים 2024-02-01 09.24.31.excalidraw.md",
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים 2024-02-01 08.37.21.excalidraw.md",
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים 2024-02-01 09.24.31.excalidraw.svg",
+    "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים 2024-02-01 09.05.48.excalidraw.md",
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים 2024-02-01 09.05.48.excalidraw.svg",
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים 2024-02-01 08.37.21.excalidraw.svg",
+    "Technion/NUM1/NUM1_EX001 תרגיל בית 1.md",
+    "Technion/THE1/THE1_002 תכונות מערכת 2024-01-31 10.56.16.excalidraw.svg",
+    "Technion/PDE1/PDE1",
     "Technion/CAL2/CAL2_014",
     "Technion/IMT1/IMT1_008",
     "Technion/DEQ1/DEQ1_009",
@@ -189,7 +211,6 @@
     "Technion/PHY1/הרצאה 9_230604_104123.pdf",
     "Technion/DEQ1/DEQ1_007",
     "Technion/IMT1/IMT1_006",
-    "Technion/BMA1/BMA1_007",
-    "Technion/CAL2/CAL2_008"
+    "Technion/BMA1/BMA1_007"
   ]
 }
