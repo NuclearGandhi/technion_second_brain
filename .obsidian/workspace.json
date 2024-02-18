@@ -4,29 +4,8 @@
     "type": "split",
     "children": [
       {
-        "id": "363938d18c86b43f",
-        "type": "tabs",
-        "dimension": 47.31903485254691,
-        "children": [
-          {
-            "id": "2ae37ea286b1142f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים.md",
-                "mode": "preview",
-                "source": false
-              }
-            },
-            "group": "8b27ced742be1ca4"
-          }
-        ]
-      },
-      {
         "id": "08e0934569aa313a",
         "type": "tabs",
-        "dimension": 52.68096514745309,
         "children": [
           {
             "id": "629b763be61663f1",
@@ -34,12 +13,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים.md",
+                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
+                "mode": "preview",
+                "source": false
+              }
+            },
+            "group": "48c02a356f8826b0"
+          }
+        ]
+      },
+      {
+        "id": "363938d18c86b43f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c6ec7acbc007efca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
                 "mode": "source",
                 "source": true
               }
             },
-            "group": "8b27ced742be1ca4"
+            "group": "48c02a356f8826b0"
           }
         ]
       }
@@ -95,8 +93,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -116,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים.md",
+                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים.md",
+                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים.md"
+                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md"
               }
             }
           },
@@ -171,9 +168,17 @@
                 "searchQuery": ""
               }
             }
+          },
+          {
+            "id": "6ae0abc701af3dd7",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -187,60 +192,60 @@
       "graph:Open graph view": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "templater-obsidian:Templater": false,
       "workspaces:Manage workspace layouts": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
+      "templater-obsidian:Templater": false,
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "8841281c19744294",
+  "active": "629b763be61663f1",
   "lastOpenFiles": [
-    "Technion/SLD2/SLD2_004 טנזור העיבור.md",
-    "Technion/SLD2/SLD2_004/SLD2_004 טנזור העיבור 2024-02-05 14.01.05.excalidraw.md",
-    "Technion/SLD2/SLD2_004/SLD2_004 עיבור 2024-02-05 12.29.19.excalidraw.md",
-    "Technion/NUM1/NUM1_EX001 תרגיל בית 1.md",
-    "Technion/SLD2/SLD2_004/SLD2_004 עיבור 2024-02-05 11.55.11.excalidraw.md",
-    "Technion/SLD2/SLD2_004/SLD2_004 טנזור העיבור 2024-02-05 14.01.05.excalidraw.svg",
-    "Technion/SLD2/SLD2_004/SLD2_004 עיבור 2024-02-05 12.59.24.excalidraw.md",
-    "Technion/SLD2/SLD2_004/SLD2_004 עיבור 2024-02-05 12.59.24.excalidraw.svg",
-    "Technion/SLD2/SLD2_004/SLD2_004 עיבור 2024-02-05 11.55.11.excalidraw.svg",
-    "Technion/SLD2/SLD2_004/SLD2_004 עיבור 2024-02-05 12.29.19.excalidraw.svg",
-    "Technion/SLD2/~syncthing~SLD2_004 עיבור 2024-02-05 12.29.19.excalidraw.md.tmp",
-    "Technion/SLD2/~syncthing~SLD2_004 עיבור 2024-02-05 11.55.11.excalidraw.svg.tmp",
-    "Technion/SLD2/~syncthing~SLD2_004 טנזור העיבור.md.tmp",
-    "Technion/SLD2/SLD2_004/~syncthing~SLD2_004 עיבור 2024-01-29 13.54.02.excalidraw.svg.tmp",
-    "Technion/SLD2/~syncthing~SLD2_004 עיבור 2024-02-05 12.59.24.excalidraw.svg.tmp",
-    "Technion/SLD2/~syncthing~SLD2_004 עיבור 2024-02-05 12.59.24.excalidraw.md.tmp",
-    "Technion/SLD2/~syncthing~SLD2_004 טנזור העיבור 2024-02-05 14.01.05.excalidraw.svg.tmp",
-    "Technion/SLD2/~syncthing~SLD2_003 טרנספורמציה של מאמצים.md.tmp",
-    "Technion/SLD2/~syncthing~SLD2_004 טנזור העיבור 2024-02-05 14.01.05.excalidraw.md.tmp",
-    "Technion/SLD2/~syncthing~SLD2_000 מכניקת מוצקים 2מ 034053.md.tmp",
-    "Technion/PDE1/PDE1_001 הקדמה ומושגי יסוד.md",
-    "Technion/PDE1/PDE1_003 משוואות מסדר שני.md",
-    "Technion/THE1/THE1_002 תכונות מערכת.md",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ.md",
-    "Technion/SLD2/SLD2_002 מישורים ראשיים.md",
-    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים.md",
-    "Technion/SLD2/SLD2_004 עיבור.md",
-    "Technion/SLD2/SLD2_003/SLD2_003 טרנספורמציה של מאמצים 2024-02-01 08.37.21.excalidraw.md",
-    "Technion/PDE1/PDE1_002 משוואות קוואזילינאריות.md",
-    "Technion/CAL1/CAL1_001 פונקציה.md",
-    "Technion/PDE1/PDE2/PDE1_002 משוואות קוואזילינאריות 2024-01-30 13.00.26.excalidraw.md",
+    "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
+    "Technion/NUM1/NUM1_002 שיטות ישירות לפתרון מערכות לינאריות.md",
+    "Technion/NUM1/NUM1_006/Pasted image 20240218212416.png",
+    "Technion/NUM1/NUM1_005 משוואות לא לינאריות במשתנה אחד.md",
+    "Technion/NUM1/NUM1_004 שיטות איטרטיביות לפתרון מערכות לינאריות.md",
+    "Technion/NUM1/NUM1_006/Screenshot_20240218_135321_OneDrive.jpg",
+    "Technion/NUM1/NUM1_006",
     "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+    "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
+    "Technion/SLD2/~syncthing~SLD2_005 קשרי מאמץ עיבור.md.tmp",
+    "Technion/THE1/THE1_002 חישוב תכונות מערכת.md",
+    "Technion/THE1/THE1_004 מכונות חום והחוק השני של התרמודינמיקה.md",
+    "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
     "פנגייה - רשימת סיכומים.md",
-    "Technion/NUM1/NUM1_HW001/Figure_1.png",
-    "Technion/NUM1/NUM1_HW001/Figure_2.png",
-    "Technion/NUM1/NUM1_HW001/Pasted image 20240131170548.png",
-    "Technion/NUM1/untitled1.png",
-    "Technion/NUM1/NUM1_HW001/untitled4.png",
-    "Technion/IPY1/IPY1_HW010 תרגיל בית 10.md",
-    "Technion/CAL1/CAL1_000 104041 חדוא 1מ.md",
-    "Technion/ALG1/ALG1_000 104016 אלגברה 1מ.md",
-    "Technion/GCH1/GCH1_000 125001 כימיה כללית.md",
-    "Technion/THE1/THE1_002/Pasted image 20240131153831.png",
-    "Technion/THE1/THE1_002/THE1_002 תכונות מערכת 2024-01-31 10.56.16.excalidraw.md",
-    "Technion/PDE1/PDE1_000 מדח מ 104228.md",
-    "Technion/SLD1/SLD1_001 וקטורים, כוחות, מומנטים, שקול.md"
+    "Technion/PDE1/PDE1_000 104228 מדח מ.md",
+    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
+    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
+    "Technion/NUM1/NUM1_003 נורמה.md",
+    "Technion/THE1/THE1_003/THE1_003 אנליזת נפח בקרה 2024-02-14 10.33.29.excalidraw.md",
+    "Technion/PDE1/PDE1_004 משוואת הגלים.md",
+    "Technion/PDE1/PDE4/PDE1_004 משוואת הגלים 2024-02-13 13.39.12.excalidraw.md",
+    "Technion/PDE1/PDE4/1d_wave_equation_animation.gif",
+    "Technion/SLD2/SLD2_004 טנזור העיבור.md",
+    "Technion/SLD2/SLD2_005 קשרי מאמץ עיבור.md",
+    "Technion/SLD2/SLD2_006",
+    "Technion/SLD2/SLD2_002 מישורים ראשיים.md",
+    "Technion/SLD2/SLD2_006/SLD2_006 קריטריוני כניעה וכשל 2024-02-13 22.29.09.excalidraw.md",
+    "Technion/SLD2/SLD2_006/SLD2_006 קריטריוני כניעה וכשל 2024-02-13 22.29.09.excalidraw.svg",
+    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
+    "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/IMT1/IMT1_006 דאגרמות TTT ו-CTT.md",
+    "Technion/PDE1/PDE4/PDE1_004 משוואת הגלים 2024-02-13 13.19.27.excalidraw.md",
+    "Technion/PDE1/PDE4/PDE1_004 משוואת הגלים 2024-02-13 12.54.13.excalidraw.svg",
+    "Technion/PDE1/PDE4",
+    "Technion/THE1/THE1_004/Screenshot_20240213_105743_OneDrive.jpg",
+    "Technion/THE1/THE1_004/Screenshot_20240213_104731_OneDrive.jpg",
+    "Technion/THE1/THE1_004/Screenshot_20240213_101854_OneDrive.jpg",
+    "Technion/THE1/THE1_004/Screenshot_20240213_100559_OneDrive.jpg",
+    "Technion/THE1/THE1_004/Screenshot_20240213_095218_OneDrive.jpg",
+    "Technion/THE1/~syncthing~Screenshot_20240213_101854_OneDrive.jpg.tmp",
+    "Technion/THE1/~syncthing~THE1_000 תרמודינמיקה 1 034035.md.tmp",
+    "Technion/PDE1/~syncthing~PDE1_004 משוואת הגלים 2024-02-13 13.12.46.excalidraw.svg.tmp",
+    "Technion/THE1/~syncthing~Screenshot_20240213_095218_OneDrive.jpg.tmp",
+    "Technion/PDE1/~syncthing~PDE1_004 משוואת הגלים 2024-02-13 13.12.46.excalidraw.md.tmp",
+    "Technion/PDE1/~syncthing~PDE1_004 משוואת הגלים 2024-02-13 13.19.27.excalidraw.md.tmp"
   ]
 }

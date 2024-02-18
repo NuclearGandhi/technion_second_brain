@@ -10,11 +10,11 @@
     "includeName": true,
     "pageSize": "A4",
     "landscape": false,
-    "margin": "2",
+    "margin": "0",
     "downscalePercent": 100
   },
   "newFileLocation": "current",
-  "spellcheck": true,
+  "spellcheck": false,
   "defaultViewMode": "preview",
   "showFrontmatter": true,
   "attachmentFolderPath": "./",

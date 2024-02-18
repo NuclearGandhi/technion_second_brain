@@ -5,7 +5,7 @@
   "showAttachments": false,
   "hideUnresolved": true,
   "showOrphans": true,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
       "query": "file: ALG",
@@ -25,28 +25,28 @@
       "query": "file: DEQ",
       "color": {
         "a": 1,
-        "rgb": 11657298
+        "rgb": 4225445
       }
     },
     {
       "query": "file: BMA",
       "color": {
         "a": 1,
-        "rgb": 5111786
+        "rgb": 5407200
       }
     },
     {
       "query": "file: CAL",
       "color": {
         "a": 1,
-        "rgb": 1301913
+        "rgb": 4278442
       }
     },
     {
       "query": "file: SLD",
       "color": {
         "a": 1,
-        "rgb": 9900305
+        "rgb": 12327450
       }
     },
     {
@@ -60,7 +60,7 @@
       "query": "file: IMT",
       "color": {
         "a": 1,
-        "rgb": 11236099
+        "rgb": 16366659
       }
     },
     {
@@ -74,7 +74,21 @@
       "query": "file: THE",
       "color": {
         "a": 1,
-        "rgb": 16733983
+        "rgb": 14711890
+      }
+    },
+    {
+      "query": "file: PDE",
+      "color": {
+        "a": 1,
+        "rgb": 3762574
+      }
+    },
+    {
+      "query": "file: NUM",
+      "color": {
+        "a": 1,
+        "rgb": 8472713
       }
     }
   ],
@@ -84,10 +98,10 @@
   "nodeSizeMultiplier": 1.01875,
   "lineSizeMultiplier": 1.27395833333333,
   "collapse-forces": false,
-  "centerStrength": 0.834719334719335,
+  "centerStrength": 0.778586278586279,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.20160422398335448,
+  "scale": 0.15978125959771317,
   "close": true
 }
