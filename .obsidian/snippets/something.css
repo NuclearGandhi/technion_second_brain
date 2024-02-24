@@ -66,7 +66,7 @@ table {
 }
 
 .callout[data-callout="quote"] .callout-content{
-  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* block quotes (for image captioning) */
@@ -89,6 +89,16 @@ table {
 }
 
 .theme-light img[alt*="book"] {
+  mix-blend-mode: multiply;
+}
+
+/* transparent background, black themed, with hue filter */
+.theme-dark img[alt*="bookhue"] {
+  mix-blend-mode: screen;
+  filter: hue-rotate(180deg) invert(1);
+}
+
+.theme-light img[alt*="bookhue"] {
   mix-blend-mode: multiply;
 }
 
@@ -171,6 +181,7 @@ figure.testi blockquote {
   font-weight: 500;
   margin: 0;
   line-height: 1.6em;
+  color: var(--blockquote-color);
   font-style: italic;
 }
 

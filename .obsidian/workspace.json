@@ -4,40 +4,40 @@
     "type": "split",
     "children": [
       {
-        "id": "08e0934569aa313a",
+        "id": "7c9d8dfd1bc4d35c",
         "type": "tabs",
         "children": [
           {
-            "id": "629b763be61663f1",
+            "id": "c5ec956dbd454029",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
+                "file": "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
                 "mode": "preview",
-                "source": false
+                "source": true
               }
             },
-            "group": "48c02a356f8826b0"
+            "group": "f533133d2df954e5"
           }
         ]
       },
       {
-        "id": "363938d18c86b43f",
+        "id": "69c32b8a5bd28c85",
         "type": "tabs",
         "children": [
           {
-            "id": "c6ec7acbc007efca",
+            "id": "91d65d23e1e3b363",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
+                "file": "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
                 "mode": "source",
                 "source": true
               }
             },
-            "group": "48c02a356f8826b0"
+            "group": "f533133d2df954e5"
           }
         ]
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "TODO",
+                "query": "אינטגרב",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -97,7 +97,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 297.5
+    "width": 297.5,
+    "collapsed": true
   },
   "right": {
     "id": "c1c3ae1b57de7de1",
@@ -113,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
+                "file": "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
+                "file": "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,32 +154,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md"
+                "file": "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md"
               }
-            }
-          },
-          {
-            "id": "116ead39937c020f",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              }
-            }
-          },
-          {
-            "id": "6ae0abc701af3dd7",
-            "type": "leaf",
-            "state": {
-              "type": "smart-connections-view",
-              "state": {}
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -199,53 +180,90 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "629b763be61663f1",
+  "floating": {
+    "id": "985da5ca88e60357",
+    "type": "floating",
+    "children": [
+      {
+        "id": "05504b4b5df62f8f",
+        "type": "window",
+        "children": [
+          {
+            "id": "c0c4b85b7c690c83",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "5e9b29c1fe6190b8",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
+                    "mode": "preview",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": -961,
+        "y": 252,
+        "width": 1025,
+        "height": 801,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "717dd551d2d7a242",
   "lastOpenFiles": [
+    "Technion/CAL1/CAL1_008 אינטגרל מסוים.md",
+    "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
+    "Technion/CAL1/CAL1_011 טורי חזקות.md",
+    "Technion/PDE1/Untitled.md",
+    "Technion/PDE1/PDE1_004 משוואת הגלים.md",
+    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+    "פנגייה - רשימת סיכומים.md",
+    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
+    "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
+    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
+    "Technion/PDE1/PDE1_000 104228 מדח מ.md",
+    "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
+    "Technion/NUM1/NUM1_007/Pasted image 20240224113052.png",
+    "Technion/NUM1/NUM1_EX003 תרגיל בית 3.md",
+    "Technion/CAL1/CAL1_006 פולינום טיילור.md",
+    "Technion/NUM1/NUM1_007/NUM1_007 אינטרפולציה פולינומית 2024-02-24 11.09.14.excalidraw.md",
+    "Technion/NUM1/NUM1_007/Pasted Image 20240224111341_094.png",
+    "Technion/NUM1/Pasted Image 20240224111213_909.png",
+    "Technion/NUM1/NUM1_007/NUM1_007 אינטרפולציה פולינומית 2024-02-24 11.09.14.excalidraw.svg",
+    "Technion/NUM1/Pasted Image 20240224110929_482.png",
+    "Technion/ALG1/ALG1_009 טרנספורמציות לינאריות.md",
+    "Technion/ALG1/ALG1_008 הדטרמיננטה.md",
+    "Technion/ALG1/ALG1_005 מרחבים וקטוריים.md",
+    "Technion/NUM1/NUM1_007/Pasted image 20240224094150.png",
+    "Technion/NUM1/NUM1_007/Pasted image 20240223224556.png",
+    "Technion/NUM1/NUM1_007",
+    "Technion/NUM1/Pasted image 20240224094117.png",
     "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
-    "Technion/NUM1/NUM1_002 שיטות ישירות לפתרון מערכות לינאריות.md",
-    "Technion/NUM1/NUM1_006/Pasted image 20240218212416.png",
     "Technion/NUM1/NUM1_005 משוואות לא לינאריות במשתנה אחד.md",
     "Technion/NUM1/NUM1_004 שיטות איטרטיביות לפתרון מערכות לינאריות.md",
-    "Technion/NUM1/NUM1_006/Screenshot_20240218_135321_OneDrive.jpg",
+    "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
+    "broken links output.md",
+    "Technion/SLD1/SLD1_004 עבודה וירטואלית.md",
+    "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
+    "Technion/CAL2/CAL2_002 מישורים וישרים.md",
+    "Technion/CAL2/CAL2_012/Pasted image 20230621182157.png",
+    "Technion/THE1/THE1_001/Screenshot_20240116_103754_OneDrive.jpg",
+    "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 08.32.35.excalidraw.svg.tmp",
+    "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 09.47.52.excalidraw.svg.tmp",
+    "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל.md.tmp",
+    "Technion/THE1/~syncthing~THE1_003 אנליזת נפח בקרה.md.tmp",
+    "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 08.32.35.excalidraw.md.tmp",
+    "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 09.47.52.excalidraw.md.tmp",
+    "Technion/NUM1/NUM1_HW003",
     "Technion/NUM1/NUM1_006",
-    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
-    "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
-    "Technion/SLD2/~syncthing~SLD2_005 קשרי מאמץ עיבור.md.tmp",
-    "Technion/THE1/THE1_002 חישוב תכונות מערכת.md",
-    "Technion/THE1/THE1_004 מכונות חום והחוק השני של התרמודינמיקה.md",
-    "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
-    "פנגייה - רשימת סיכומים.md",
-    "Technion/PDE1/PDE1_000 104228 מדח מ.md",
-    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
-    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
-    "Technion/NUM1/NUM1_003 נורמה.md",
-    "Technion/THE1/THE1_003/THE1_003 אנליזת נפח בקרה 2024-02-14 10.33.29.excalidraw.md",
-    "Technion/PDE1/PDE1_004 משוואת הגלים.md",
-    "Technion/PDE1/PDE4/PDE1_004 משוואת הגלים 2024-02-13 13.39.12.excalidraw.md",
-    "Technion/PDE1/PDE4/1d_wave_equation_animation.gif",
-    "Technion/SLD2/SLD2_004 טנזור העיבור.md",
-    "Technion/SLD2/SLD2_005 קשרי מאמץ עיבור.md",
-    "Technion/SLD2/SLD2_006",
-    "Technion/SLD2/SLD2_002 מישורים ראשיים.md",
-    "Technion/SLD2/SLD2_006/SLD2_006 קריטריוני כניעה וכשל 2024-02-13 22.29.09.excalidraw.md",
-    "Technion/SLD2/SLD2_006/SLD2_006 קריטריוני כניעה וכשל 2024-02-13 22.29.09.excalidraw.svg",
-    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
-    "Technion/IMT1/IMT1_008 שבר וחסינות השבר.md",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-    "Technion/IMT1/IMT1_006 דאגרמות TTT ו-CTT.md",
-    "Technion/PDE1/PDE4/PDE1_004 משוואת הגלים 2024-02-13 13.19.27.excalidraw.md",
-    "Technion/PDE1/PDE4/PDE1_004 משוואת הגלים 2024-02-13 12.54.13.excalidraw.svg",
-    "Technion/PDE1/PDE4",
-    "Technion/THE1/THE1_004/Screenshot_20240213_105743_OneDrive.jpg",
-    "Technion/THE1/THE1_004/Screenshot_20240213_104731_OneDrive.jpg",
-    "Technion/THE1/THE1_004/Screenshot_20240213_101854_OneDrive.jpg",
-    "Technion/THE1/THE1_004/Screenshot_20240213_100559_OneDrive.jpg",
-    "Technion/THE1/THE1_004/Screenshot_20240213_095218_OneDrive.jpg",
-    "Technion/THE1/~syncthing~Screenshot_20240213_101854_OneDrive.jpg.tmp",
-    "Technion/THE1/~syncthing~THE1_000 תרמודינמיקה 1 034035.md.tmp",
-    "Technion/PDE1/~syncthing~PDE1_004 משוואת הגלים 2024-02-13 13.12.46.excalidraw.svg.tmp",
-    "Technion/THE1/~syncthing~Screenshot_20240213_095218_OneDrive.jpg.tmp",
-    "Technion/PDE1/~syncthing~PDE1_004 משוואת הגלים 2024-02-13 13.12.46.excalidraw.md.tmp",
-    "Technion/PDE1/~syncthing~PDE1_004 משוואת הגלים 2024-02-13 13.19.27.excalidraw.md.tmp"
+    "Technion/SLD2/~syncthing~SLD2_005 קשרי מאמץ עיבור.md.tmp"
   ]
 }

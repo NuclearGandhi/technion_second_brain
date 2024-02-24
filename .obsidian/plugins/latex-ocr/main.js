@@ -20538,7 +20538,12 @@ var ApiModel = class {
           model: "Norm/nougat-latex-base",
           data
         }, {
-          retry_on_error: false
+          retry_on_error: false,
+          fetch: (input, init) => {
+            const image_data = (init == null ? void 0 : init.body).toString("base64");
+            const payload = { "inputs": image_data, "parameters": { "max_new_tokens": 800 } };
+            return fetch(input, { ...init, body: JSON.stringify(payload) });
+          }
         });
       } catch (error) {
         console.error(error);
