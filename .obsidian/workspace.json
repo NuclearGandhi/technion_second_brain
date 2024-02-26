@@ -13,9 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
+                "file": "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
                 "mode": "preview",
-                "source": true
+                "source": false
               }
             },
             "group": "f533133d2df954e5"
@@ -32,7 +32,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
+                "file": "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
                 "mode": "source",
                 "source": true
               }
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "אינטגרב",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
+                "file": "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
+                "file": "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md"
+                "file": "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md"
               }
             }
           }
@@ -180,82 +180,45 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "floating": {
-    "id": "985da5ca88e60357",
-    "type": "floating",
-    "children": [
-      {
-        "id": "05504b4b5df62f8f",
-        "type": "window",
-        "children": [
-          {
-            "id": "c0c4b85b7c690c83",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "5e9b29c1fe6190b8",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
-                    "mode": "preview",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": -961,
-        "y": 252,
-        "width": 1025,
-        "height": 801,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "717dd551d2d7a242",
+  "active": "91d65d23e1e3b363",
   "lastOpenFiles": [
-    "Technion/CAL1/CAL1_008 אינטגרל מסוים.md",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 13.22.46.excalidraw.md",
+    "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 13.15.47.excalidraw.md",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 18.00.50.excalidraw.svg",
+    "Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים.md",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 18.00.50.excalidraw.md",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 17.37.50.excalidraw.md",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 13.40.26.excalidraw.md",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 17.37.50.excalidraw.svg",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 17.30.45.excalidraw.md",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 17.30.45.excalidraw.svg",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 11.50.58.excalidraw.md",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 11.42.15.excalidraw.md",
+    "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
+    "Technion/GCH1/GCH1_005 מבוא למכניקה קוונטית.md",
+    "favicon-32x32.png",
     "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/CAL1/CAL1_005 נגזרות.md",
+    "Technion/THE1/THE1_002 חישוב תכונות מערכת.md",
+    "Technion/IMT1/IMT1_005 דיאגרמת ברזל-פחמן.md",
+    "Technion/CAL2/CAL2_012 אינטגרלים קוויים ומשפט גרין.md",
+    "Technion/CAL1/CAL1_002 גבול של פונקציה.md",
+    "Technion/PDE1/PDE4/PDE1_004 משוואת הגלים 2024-02-22 19.41.31.excalidraw.md",
+    "Technion/PDE1/PDE1_004 משוואת הגלים.md",
+    "Technion/CAL1/CAL1_008 אינטגרל מסוים.md",
     "Technion/CAL1/CAL1_011 טורי חזקות.md",
     "Technion/PDE1/Untitled.md",
-    "Technion/PDE1/PDE1_004 משוואת הגלים.md",
     "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
     "פנגייה - רשימת סיכומים.md",
-    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
-    "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
-    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
-    "Technion/PDE1/PDE1_000 104228 מדח מ.md",
-    "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
     "Technion/NUM1/NUM1_007/Pasted image 20240224113052.png",
-    "Technion/NUM1/NUM1_EX003 תרגיל בית 3.md",
-    "Technion/CAL1/CAL1_006 פולינום טיילור.md",
-    "Technion/NUM1/NUM1_007/NUM1_007 אינטרפולציה פולינומית 2024-02-24 11.09.14.excalidraw.md",
     "Technion/NUM1/NUM1_007/Pasted Image 20240224111341_094.png",
     "Technion/NUM1/Pasted Image 20240224111213_909.png",
     "Technion/NUM1/NUM1_007/NUM1_007 אינטרפולציה פולינומית 2024-02-24 11.09.14.excalidraw.svg",
     "Technion/NUM1/Pasted Image 20240224110929_482.png",
-    "Technion/ALG1/ALG1_009 טרנספורמציות לינאריות.md",
-    "Technion/ALG1/ALG1_008 הדטרמיננטה.md",
-    "Technion/ALG1/ALG1_005 מרחבים וקטוריים.md",
     "Technion/NUM1/NUM1_007/Pasted image 20240224094150.png",
-    "Technion/NUM1/NUM1_007/Pasted image 20240223224556.png",
     "Technion/NUM1/NUM1_007",
-    "Technion/NUM1/Pasted image 20240224094117.png",
-    "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
-    "Technion/NUM1/NUM1_005 משוואות לא לינאריות במשתנה אחד.md",
-    "Technion/NUM1/NUM1_004 שיטות איטרטיביות לפתרון מערכות לינאריות.md",
-    "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
-    "broken links output.md",
-    "Technion/SLD1/SLD1_004 עבודה וירטואלית.md",
-    "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
-    "Technion/CAL2/CAL2_002 מישורים וישרים.md",
-    "Technion/CAL2/CAL2_012/Pasted image 20230621182157.png",
-    "Technion/THE1/THE1_001/Screenshot_20240116_103754_OneDrive.jpg",
     "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 08.32.35.excalidraw.svg.tmp",
     "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 09.47.52.excalidraw.svg.tmp",
     "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל.md.tmp",
