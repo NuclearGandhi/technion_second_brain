@@ -13,3 +13,4 @@
 
 # Ignore Smart Connections folder
 .smart-connections
+.obsidian/workspace.json

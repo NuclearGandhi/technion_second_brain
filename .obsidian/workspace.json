@@ -13,12 +13,36 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
+                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
                 "mode": "preview",
                 "source": false
               }
             },
             "group": "f533133d2df954e5"
+          },
+          {
+            "id": "8c6c40f1be386b7b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/SLD2/SLD2_005 קשרי מאמץ עיבור.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "dab35d6bf8f3a369",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
           }
         ]
       },
@@ -32,7 +56,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
+                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
                 "mode": "source",
                 "source": true
               }
@@ -114,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
+                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +155,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
+                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md"
+                "file": "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md"
               }
             }
           }
@@ -182,8 +206,16 @@
   },
   "active": "91d65d23e1e3b363",
   "lastOpenFiles": [
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 13.22.46.excalidraw.md",
+    "Technion/SLD2/SLD2_006/SLD2_006 קריטריוני כניעה וכשל 2024-02-22 15.46.16.excalidraw.md",
+    "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
+    "Technion/SLD2/SLD2_005 קשרי מאמץ עיבור.md",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
     "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
+    "_config.yml",
+    "README.md",
+    "CNAME",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 13.22.46.excalidraw.md",
     "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 13.15.47.excalidraw.md",
     "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 18.00.50.excalidraw.svg",
     "Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים.md",
@@ -199,7 +231,6 @@
     "Technion/GCH1/GCH1_005 מבוא למכניקה קוונטית.md",
     "favicon-32x32.png",
     "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
     "Technion/CAL1/CAL1_005 נגזרות.md",
     "Technion/THE1/THE1_002 חישוב תכונות מערכת.md",
     "Technion/IMT1/IMT1_005 דיאגרמת ברזל-פחמן.md",
@@ -207,11 +238,6 @@
     "Technion/CAL1/CAL1_002 גבול של פונקציה.md",
     "Technion/PDE1/PDE4/PDE1_004 משוואת הגלים 2024-02-22 19.41.31.excalidraw.md",
     "Technion/PDE1/PDE1_004 משוואת הגלים.md",
-    "Technion/CAL1/CAL1_008 אינטגרל מסוים.md",
-    "Technion/CAL1/CAL1_011 טורי חזקות.md",
-    "Technion/PDE1/Untitled.md",
-    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
-    "פנגייה - רשימת סיכומים.md",
     "Technion/NUM1/NUM1_007/Pasted image 20240224113052.png",
     "Technion/NUM1/NUM1_007/Pasted Image 20240224111341_094.png",
     "Technion/NUM1/Pasted Image 20240224111213_909.png",
@@ -225,8 +251,6 @@
     "Technion/THE1/~syncthing~THE1_003 אנליזת נפח בקרה.md.tmp",
     "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 08.32.35.excalidraw.md.tmp",
     "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 09.47.52.excalidraw.md.tmp",
-    "Technion/NUM1/NUM1_HW003",
-    "Technion/NUM1/NUM1_006",
-    "Technion/SLD2/~syncthing~SLD2_005 קשרי מאמץ עיבור.md.tmp"
+    "Technion/NUM1/NUM1_HW003"
   ]
 }
