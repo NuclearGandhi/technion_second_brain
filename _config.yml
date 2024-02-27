@@ -5,3 +5,6 @@ plugins:
 
 title: פנגייה
 description: Bookmark this to keep an eye on my project updates!
+
+exclude:
+  - Technion
