@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "9c020a4ce3ad97e0",
+        "id": "793f921698953f00",
         "type": "tabs",
         "children": [
           {
-            "id": "6f3c2024bdf24ab5",
+            "id": "cb03277fbd110f86",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
-                "mode": "source",
+                "file": "Technion/NUM1/NUM1_EX005 תרגיל בית 5.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -93,7 +93,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
+            "file": "Technion/NUM1/NUM1_EX005 תרגיל בית 5.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
+            "file": "Technion/NUM1/NUM1_EX005 תרגיל בית 5.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -122,7 +122,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md"
+            "file": "Technion/NUM1/NUM1_EX005 תרגיל בית 5.md"
           }
         }
       }
@@ -143,52 +143,53 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "6f3c2024bdf24ab5",
+  "active": "cb03277fbd110f86",
   "lastOpenFiles": [
-    "Technion/NUM1/NUM1_009/Screenshot_20240302_151830_Samsung Notes.jpg",
-    "Technion/NUM1/Untitled.md",
-    "Technion/NUM1/NUM1_009",
-    "Technion/NUM1/NUM1_EX004 תרגיל בית 4.md",
-    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
-    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
-    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
-    "Technion/CAL1/CAL1_010 טורי מספרים.md",
-    "Technion/PDE1/PDE1_004 משוואת הגלים.md",
-    "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
-    "Technion/PDE1/PDE1_001 הקדמה ומשוואות מסדר ראשון.md",
-    "Technion/PDE1/PDE1_000 104228 מדח מ.md",
-    "Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים.md",
-    "Technion/NUM1/NUM1_002 שיטות ישירות לפתרון מערכות לינאריות.md",
-    "Technion/NUM1/NUM1_004 שיטות איטרטיביות לפתרון מערכות לינאריות.md",
-    "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
-    "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
-    "Technion/NUM1/NUM1_005 משוואות לא לינאריות במשתנה אחד.md",
-    "Technion/DEQ1/DEQ1_006 משוואות לינאריות הומוגניות מסדר גבוה.md",
-    "Technion/DEQ1/DEQ1_007 משוואות לא הומוגניות.md",
-    "Technion/NUM1/NUM1_HW004/q3_Figure_1.png",
-    "Technion/NUM1/NUM1_HW004/q3_Figure_1.png",
-    "Technion/NUM1/NUM1_HW004/Figure_2.png",
-    "Technion/NUM1/NUM1_HW004/q1_Figure_1 (1).png",
-    "Technion/NUM1/NUM1_HW004/Figure_1.png",
-    "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
-    "Technion/THE1/THE1_005 החוק השני של התרמודינמיקה.md",
-    "Technion/THE1/THE1_004 מכונות חום.md",
     "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
-    "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-29 09.45.33.excalidraw.md",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-29 08.51.32.excalidraw.md",
-    "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-29 09.45.33.excalidraw.svg",
-    "Technion/SLD2/SLD2_007/Screenshot_20240229_085732_Samsung Notes.jpg",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-29 08.51.32.excalidraw.svg",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-29 08.32.38.excalidraw.md",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-29 08.42.40.excalidraw.svg",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה.md",
+    "Technion/NUM1/NUM1_EX005 תרגיל בית 5.md",
+    "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
+    "Technion/NUM1/NUM1_EX003 תרגיל בית 3.md",
+    "Technion/NUM1/NUM1_002 שיטות ישירות לפתרון מערכות לינאריות.md",
+    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+    "Technion/NUM1/NUM1_EX004 תרגיל בית 4.md",
+    "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
+    "Technion/PDE1/PDE5",
+    "Technion/PDE1/PDE5/PDE1_005 בעיית שטורם ליוביל 2024-03-05 14.09.17.excalidraw.md",
+    "Technion/PDE1/PDE5/PDE1_005 בעיית שטורם ליוביל 2024-03-05 14.09.17.excalidraw.svg",
+    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
+    "Technion/BMA1/BMA1_000 הקדמה למתמטיקה.md",
+    "Technion/BMA1/BMA1_009 זהויות טריגונומטריות.md",
+    "Technion/THE1/THE1_006 אנטרופיה.md",
+    "Technion/THE1/Screenshot_20240305_111028_OneDrive.jpg",
+    "Technion/THE1/THE1_002 חישוב תכונות מערכת.md",
+    "Technion/THE1/THE1_005 החוק השני של התרמודינמיקה.md",
+    "Technion/THE1/Screenshot_20240305_084412_OneDrive.jpg",
+    "Technion/THE1/THE1_006 אנטרופיה 2024-03-05 08.44.26.excalidraw.md",
+    "Technion/THE1/THE1_006 אנטרופיה 2024-03-05 08.44.26.excalidraw.svg",
+    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
+    "Technion/SLD2/SLD2_009 משוואות שיווי משקל דיפרנציאליות.md",
+    "Technion/SLD2/SLD2_009/SLD2_009 משוואות שיווי משקל דיפרנציאליות 2024-03-04 14.15.03.excalidraw.md",
+    "Technion/SLD2/SLD2_009/SLD2_009 משוואות שיווי משקל דיפרנציאליות 2024-03-04 14.15.03.excalidraw.svg",
+    "Technion/SLD2/SLD2_009",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 10.59.44.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 13.10.47.excalidraw.svg",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 12.12.04.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 13.00.55.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 13.27.38.excalidraw.svg",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 13.14.23.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 13.05.51.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 13.10.47.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 12.52.59.excalidraw.svg",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 13.05.51.excalidraw.svg",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 10.59.44.excalidraw.svg",
+    "Technion/SLD2/SLD2_008",
+    "Excalidraw/Scripts",
+    "Excalidraw",
+    "Excalidraw/Scripts/Downloaded",
+    "Technion/NUM1/NUM1_009",
     "Technion/SLD2/SLD2_007",
     "Technion/THE1/THE1_005",
-    "Technion/NUM1/NUM1_005",
-    "Technion/NUM1/NUM1_003",
-    "Technion/NUM1/NUM1_004",
-    "Technion/BMA1/BMA1_008",
-    "Technion/THE1/THE1_004",
-    "Technion/PDE1/PDE3",
-    "Excalidraw"
+    "Technion/NUM1/NUM1_005"
   ]
 }

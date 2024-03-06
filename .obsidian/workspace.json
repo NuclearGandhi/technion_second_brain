@@ -6,6 +6,7 @@
       {
         "id": "7c9d8dfd1bc4d35c",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "c5ec956dbd454029",
@@ -13,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
+                "file": "Technion/NUM1/NUM1_EX005 תרגיל בית 5.md",
                 "mode": "preview",
                 "source": false
               }
@@ -25,6 +26,7 @@
       {
         "id": "69c32b8a5bd28c85",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "91d65d23e1e3b363",
@@ -32,9 +34,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
-                "mode": "source",
-                "source": true
+                "file": "Technion/NUM1/NUM1_EX005 תרגיל בית 5.md",
+                "mode": "preview",
+                "source": false
               }
             },
             "group": "f533133d2df954e5"
@@ -68,7 +70,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "TODO",
+                "query": "אינטגרציה בחלקי",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -97,7 +99,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 297.5
+    "width": 297.5,
+    "collapsed": true
   },
   "right": {
     "id": "c1c3ae1b57de7de1",
@@ -113,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
+                "file": "Technion/NUM1/NUM1_EX005 תרגיל בית 5.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
+                "file": "Technion/NUM1/NUM1_EX005 תרגיל בית 5.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md"
+                "file": "Technion/NUM1/NUM1_EX005 תרגיל בית 5.md"
               }
             }
           }
@@ -181,51 +184,50 @@
   },
   "active": "91d65d23e1e3b363",
   "lastOpenFiles": [
-    "Technion/NUM1/NUM1_005 משוואות לא לינאריות במשתנה אחד.md",
-    "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
-    "Technion/NUM1/NUM1_EX004 תרגיל בית 4.md",
-    "פנגייה - רשימת סיכומים.md",
-    "README.md",
-    "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-29 09.45.33.excalidraw.md",
-    "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
-    "Technion/THE1/THE1_004 מכונות חום.md",
-    "Technion/THE1/THE1_005 החוק השני של התרמודינמיקה.md",
-    "Technion/NUM1/NUM1_HW004/q1_Figure_1 (1).png",
-    "Technion/SLD2/SLD2_005 קשרי מאמץ עיבור.md",
-    "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
+    "Technion/THE1/THE1_006/Screenshot_20240305_111028_OneDrive.jpg",
+    "Technion/THE1/THE1_006 אנטרופיה 2024-03-05 08.44.26.excalidraw.md",
+    "Technion/THE1/THE1_006 אנטרופיה 2024-03-05 08.44.26.excalidraw.svg",
+    "Technion/THE1/THE1_006",
+    "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
+    "Technion/CAL1/CAL1_007 אינטגרל לא מסוים.md",
+    "Technion/CAL1/CAL1_008 אינטגרל מסוים.md",
+    "Technion/PDE1/PDE1_004 משוואת הגלים.md",
+    "Technion/NUM1/NUM1_EX005 תרגיל בית 5.md",
     "Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים.md",
-    "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
-    "Technion/NUM1/Figure_2.png",
-    "Technion/NUM1/Figure_1.png",
-    "Technion/NUM1/NUM1_HW004",
-    "Technion/NUM1/q1_Figure_1.png",
+    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
+    "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
+    "Technion/NUM1/NUM1_HW005/Figure_2.png",
     "Technion/NUM1/NUM1_EX003 תרגיל בית 3.md",
-    "Technion/NUM1/NUM1_HW004/q3_Figure_1.png",
-    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
+    "Technion/NUM1/NUM1_EX002 תרגיל בית 2.md",
+    "Technion/NUM1/NUM1_EX004 תרגיל בית 4.md",
+    "Technion/NUM1/NUM1_HW005/Figure_1.png",
+    "Technion/NUM1/NUM1_HW005/Figure_5.png",
+    "Technion/NUM1/NUM1_HW005/Figure_4.png",
+    "Technion/NUM1/NUM1_HW005/Figure_3.png",
+    "Technion/NUM1/NUM1_HW005/Pasted image 20240305222108.png",
+    "Technion/NUM1/NUM1_HW005",
+    "Technion/SLD2/SLD2_009 משוואות שיווי משקל דיפרנציאליות.md",
+    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
+    "Excalidraw/Scripts/Downloaded/Boolean Operations.svg",
+    "Excalidraw/Scripts/Downloaded/Boolean Operations.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 13.27.38.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 13.14.23.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 13.10.47.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 19.32.18.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 19.40.02.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 17.14.27.excalidraw.md",
     "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-    "Technion/SLD2/SLD2_006/SLD2_006 קריטריוני כניעה וכשל 2024-02-22 15.46.16.excalidraw.md",
-    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
+    "Technion/SLD2/SLD2_008/Pasted Image 20240304171947_285 1.png",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 20.17.18.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 19.59.19.excalidraw.md",
+    "Technion/SLD2/SLD2_009",
+    "Technion/SLD2/SLD2_008",
+    "Technion/NUM1/NUM1_HW004",
     "_config.yml",
     "CNAME",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 13.22.46.excalidraw.md",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 13.15.47.excalidraw.md",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 18.00.50.excalidraw.svg",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 18.00.50.excalidraw.md",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 17.37.50.excalidraw.md",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 13.40.26.excalidraw.md",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 17.37.50.excalidraw.svg",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 17.30.45.excalidraw.md",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 17.30.45.excalidraw.svg",
-    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-26 11.50.58.excalidraw.md",
-    "favicon-32x32.png",
-    "Technion/NUM1/NUM1_007/Pasted image 20240224113052.png",
     "Technion/NUM1/NUM1_007",
     "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 08.32.35.excalidraw.svg.tmp",
-    "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 09.47.52.excalidraw.svg.tmp",
-    "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל.md.tmp",
-    "Technion/THE1/~syncthing~THE1_003 אנליזת נפח בקרה.md.tmp",
-    "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 08.32.35.excalidraw.md.tmp",
-    "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 09.47.52.excalidraw.md.tmp"
+    "Technion/SLD2/~syncthing~SLD2_006 קריטריוני כניעה וכשל 2024-02-22 09.47.52.excalidraw.svg.tmp"
   ]
 }
