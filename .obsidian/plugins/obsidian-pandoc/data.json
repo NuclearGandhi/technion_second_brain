@@ -1,0 +1,15 @@
+{
+  "showCLICommands": true,
+  "addExtensionsToInternalLinks": "html",
+  "injectAppCSS": "light",
+  "injectThemeCSS": false,
+  "customCSSFile": null,
+  "displayYAMLFrontmatter": false,
+  "linkStrippingBehaviour": "text",
+  "highDPIDiagrams": true,
+  "pandoc": null,
+  "pdflatex": null,
+  "outputFolder": null,
+  "extraArguments": "-f markdown+wikilinks_title_after_pipe\n--pdf-engine=xelatex\n-V lang:he \n-V dir:rtl \n--mathml \n--lua-filter obsidian.lua \n-s \n--template hebrew.tex ",
+  "exportFrom": "md"
+}

@@ -1,0 +1,2 @@
+pandoc "NUM1_EX005 תרגיל בית 5.md" -f markdown+wikilinks_title_after_pipe -t latex -o NUM1_000.tex --pdf-engine=xelatex -V lang:he -V dir:rtl -V  --mathml --lua-filter obsidian.lua -s --template hebrew.tex
+pandoc "NUM1_EX005 תרגיל בית 5.md" -f markdown+wikilinks_title_after_pipe -t json -o NUM1_000.json --pdf-engine=xelatex -V lang:he -V dir:rtl -V  --mathml --lua-filter obsidian.lua -s

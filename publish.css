@@ -75,7 +75,6 @@ table {
   border-right: 0;
   font-size: var(--font-ui-medium);
   color: var(--icon-color-hover);
-  text-align: center;
 }
 
 .markdown-rendered blockquote p {
@@ -255,6 +254,7 @@ Publish only
   --site-name-size: 36px;
   --logo-max-height: 100px;
   --component-title-size: var(--font-ui-medium);
+  --font-caption-size: 18px;
 }
 
 /* Make it rtl */

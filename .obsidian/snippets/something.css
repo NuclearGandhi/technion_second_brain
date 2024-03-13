@@ -3,6 +3,7 @@ Publish and Local
 =================
  */
 
+
 /* All images */
 img {
   display: block;
@@ -244,6 +245,11 @@ figure.testi .author h5 span {
 Local only
 ==========
  */
+
+ .app-container {
+  --font-caption-size: 18px;
+ } 
+
 
 /* Padding between numbers */
 .markdown-rendered ol > li,
