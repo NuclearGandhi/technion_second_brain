@@ -3,6 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
+  a4paper,
 ]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -39,6 +40,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
 \newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
@@ -86,19 +88,6 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -134,6 +123,7 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
+\usepackage{fvextra}
 \usepackage{bidi}
 
 
@@ -151,22 +141,32 @@
 
 \newcommand{\SetCallout}[2]{%
     \SetHorizontalCoffin\Output{} % It will be the reference point join the others  
-    \SetVerticalCoffin\Callout{\linewidth}{\textbf{#1} #2}
+    \SetVerticalCoffin\Callout{\linewidth-20pt}{\textbf{#1} #2}
 
     %% Make both \BackFrame & SideRule heights = height of Callout + 1*baselineskip
-    \SetHorizontalCoffin\BackFrame{\color{green!30!gray!15}\rule{\linewidth}{\CoffinTotalHeight\Callout + \baselineskip}} 
-    \SetHorizontalCoffin\SideRule{\textcolor{green}{\rule{3pt}{\CoffinTotalHeight\Callout +\baselineskip}}} %vertical side rule 
+    \SetHorizontalCoffin\BackFrame{
+      \begingroup
+      \color{green!30!gray!15}\rule{\linewidth}{\CoffinTotalHeight\Callout + \baselineskip}
+      \endgroup
+    }    
+    \SetHorizontalCoffin\SideRule{
+      \begingroup  
+      \color{green!50!black}\rule{3pt}{\CoffinTotalHeight\Callout +\baselineskip}
+      \endgroup
+    } %vertical side rule 
 
     %% Assembly Coffins
-    \JoinCoffins*\Output[l,t]\BackFrame[l,t] %attach left-top corner of BackFrame  to idem of Output
+    \JoinCoffins*\Output[l,t]\Callout[l,t](10pt,-\baselineskip) %attach left-top corner of Callout to idem of Output
     \JoinCoffins*\Output[l,t]\SideRule[l,t] %attach left-top corner of  SideRule to idem of Output
-    \JoinCoffins*\Output[l,t]\Callout[l,t](0pt,-\baselineskip) %attach left-top corner of Callout to idem of Output
+    \JoinCoffins*\Output[l,t]\BackFrame[l,t] %attach left-top corner of BackFrame  to idem of Output
     %% Typeset ooutput
     \noindent\TypesetCoffin\Output % at the text insertion point. It is not a float.
     \vspace*{\CoffinTotalHeight\Callout}\bigskip %make some room for Output
 }
 
-\begin{longtable}[]{@{}ll@{}}
+\section{תרגיל בית 6}\label{ux5eaux5e8ux5d2ux5d9ux5dc-ux5d1ux5d9ux5ea-6}
+
+\begin{longtable}[]{@{}rr@{}}
 \toprule\noalign{}
 & סטודנט א' \\
 \midrule\noalign{}
@@ -178,9 +178,7 @@
 \textbf{דואר אלקטרוני} & ido.fang@campus.technion.ac.il \\
 \end{longtable}
 
-{\color{green!30!gray!15} \rule{10pt}{1pt}}
-
-\begin{longtable}[]{@{}ll@{}}
+\begin{longtable}[]{@{}rr@{}}
 \toprule\noalign{}
 & סטודנט ב' \\
 \midrule\noalign{}
@@ -192,425 +190,261 @@
 \textbf{דואר אלקטרוני} & nir.karl@campus.technion.ac.il \\
 \end{longtable}
 
-\subsection{תרגיל 1}\label{ux5eaux5e8ux5d2ux5d9ux5dc-1}
+\subsection{שאלה 1}\label{ux5e9ux5d0ux5dcux5d4-1}
 
-\subsubsection{סעיף א'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d0}
+\[I=\int_{0}^{6} \dfrac{x+1}{4x+3} \, \mathrm{d}x \]
 
-הקוד הכולל של סעיף א' וסעיף ב' ב-\texttt{python}:
+\subsubsection{שאלה א'}\label{ux5e9ux5d0ux5dcux5d4-ux5d0}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
-\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
-
-\KeywordTok{def}\NormalTok{ weight(j, point\_x):}
-\NormalTok{    w }\OperatorTok{=} \DecValTok{1}
-\NormalTok{    n }\OperatorTok{=} \BuiltInTok{len}\NormalTok{(point\_x)}
-    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(n):}
-        \ControlFlowTok{if}\NormalTok{ i }\OperatorTok{!=}\NormalTok{ j:}
-\NormalTok{            w }\OperatorTok{*=}\NormalTok{ (}\DecValTok{1} \OperatorTok{/}\NormalTok{ (point\_x[j] }\OperatorTok{{-}}\NormalTok{ point\_x[i]))}
-    \ControlFlowTok{return}\NormalTok{ w}
-
-\KeywordTok{def}\NormalTok{ helper\_polynom(x, point\_x):}
-\NormalTok{    phi }\OperatorTok{=} \DecValTok{1}
-\NormalTok{    n }\OperatorTok{=} \BuiltInTok{len}\NormalTok{(point\_x)}
-    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(n):}
-\NormalTok{        phi }\OperatorTok{*=}\NormalTok{ (x }\OperatorTok{{-}}\NormalTok{ point\_x[i])}
-    \ControlFlowTok{return}\NormalTok{ phi}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-    
-\KeywordTok{def}\NormalTok{ lagrange(f, n, a, b):}
-\NormalTok{    point\_x }\OperatorTok{=}\NormalTok{ np.linspace(a, b, n)}
-\NormalTok{    point\_y }\OperatorTok{=}\NormalTok{ f(point\_x)}
-\NormalTok{    w }\OperatorTok{=}\NormalTok{ [weight(j, point\_x) }\ControlFlowTok{for}\NormalTok{ j }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(n)]}
-    
-    \CommentTok{\# Evaluate p at 0.01 intervals}
-\NormalTok{    t }\OperatorTok{=} \FloatTok{0.01}
-\NormalTok{    x }\OperatorTok{=}\NormalTok{ np.linspace(a, b, }\BuiltInTok{int}\NormalTok{((b }\OperatorTok{{-}}\NormalTok{ a) }\OperatorTok{/}\NormalTok{ t) }\OperatorTok{+} \DecValTok{1}\NormalTok{)}
-\NormalTok{    p }\OperatorTok{=}\NormalTok{ np.zeros\_like(x)}
-\NormalTok{    phi }\OperatorTok{=}\NormalTok{ np.zeros\_like(x)}
-    \ControlFlowTok{for}\NormalTok{ k }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\BuiltInTok{len}\NormalTok{(x)):}
-        \ControlFlowTok{for}\NormalTok{ j }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(n):}
-\NormalTok{            p[k] }\OperatorTok{+=}\NormalTok{ (w[j] }\OperatorTok{*}\NormalTok{ point\_y[j]) }\OperatorTok{/}\NormalTok{ (x[k] }\OperatorTok{{-}}\NormalTok{ point\_x[j])}
-\NormalTok{        phi[k] }\OperatorTok{=}\NormalTok{ helper\_polynom(x[k], point\_x)}
-\NormalTok{        p[k] }\OperatorTok{=}\NormalTok{ phi[k] }\OperatorTok{*}\NormalTok{ p[k]}
-    \ControlFlowTok{return}\NormalTok{ x, p, phi}
-
-\KeywordTok{def}\NormalTok{ f(x):}
-    \ControlFlowTok{return}\NormalTok{ np.cos(}\DecValTok{2} \OperatorTok{*}\NormalTok{ np.pi }\OperatorTok{*}\NormalTok{ x)}
-
-\NormalTok{a }\OperatorTok{=} \OperatorTok{{-}}\DecValTok{1}
-\NormalTok{b }\OperatorTok{=} \DecValTok{1}
-\NormalTok{n }\OperatorTok{=}\NormalTok{ [}\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{]}
-
-\CommentTok{\# n derivative of f}
-
-\NormalTok{f\_n }\OperatorTok{=}\NormalTok{ [}
-    \KeywordTok{lambda}\NormalTok{ x: }\OperatorTok{{-}}\NormalTok{((}\DecValTok{2} \OperatorTok{*}\NormalTok{ np.pi) }\OperatorTok{**} \DecValTok{2}\NormalTok{) }\OperatorTok{*}\NormalTok{ np.cos(}\DecValTok{2} \OperatorTok{*}\NormalTok{ np.pi }\OperatorTok{*}\NormalTok{ x),}
-    \KeywordTok{lambda}\NormalTok{ x: }\OperatorTok{{-}}\NormalTok{((}\DecValTok{2} \OperatorTok{*}\NormalTok{ np.pi) }\OperatorTok{**} \DecValTok{5}\NormalTok{) }\OperatorTok{*}\NormalTok{ np.sin(}\DecValTok{2} \OperatorTok{*}\NormalTok{ np.pi }\OperatorTok{*}\NormalTok{ x),}
-    \KeywordTok{lambda}\NormalTok{ x: }\OperatorTok{{-}}\NormalTok{((}\DecValTok{2} \OperatorTok{*}\NormalTok{ np.pi) }\OperatorTok{**} \DecValTok{10}\NormalTok{) }\OperatorTok{*}\NormalTok{ np.cos(}\DecValTok{2} \OperatorTok{*}\NormalTok{ np.pi }\OperatorTok{*}\NormalTok{ x),}
-    \KeywordTok{lambda}\NormalTok{ x: ((}\DecValTok{2} \OperatorTok{*}\NormalTok{ np.pi) }\OperatorTok{**} \DecValTok{20}\NormalTok{) }\OperatorTok{*}\NormalTok{ np.cos(}\DecValTok{2} \OperatorTok{*}\NormalTok{ np.pi }\OperatorTok{*}\NormalTok{ x)}
-\NormalTok{]}
-
-\NormalTok{graph\_i }\OperatorTok{=}\NormalTok{ plt.figure()}
-\NormalTok{plt.title(}\StringTok{"Interpolant evaluations"}\NormalTok{)}
-\NormalTok{plt.plot(np.linspace(a, b, }\DecValTok{100}\NormalTok{), f(np.linspace(a, b, }\DecValTok{100}\NormalTok{)))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-
-\ControlFlowTok{for}\NormalTok{ k }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\BuiltInTok{len}\NormalTok{(n)):}
-    \CommentTok{\# Interpolant evaluation}
-\NormalTok{    plt.figure(graph\_i.number)}
-    
-\NormalTok{    x, p, phi }\OperatorTok{=}\NormalTok{ lagrange(f, n[k], a, b)}
-\NormalTok{    plt.plot(x, p, }\StringTok{"{-}{-}"}\NormalTok{)}
-    
-    \CommentTok{\# Absolute error}
-\NormalTok{    graph\_e }\OperatorTok{=}\NormalTok{ plt.figure()}
-\NormalTok{    plt.title(}\StringTok{"n = "} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(n[k]) }\OperatorTok{+} \StringTok{" error"}\NormalTok{)}
-    
-\NormalTok{    fval }\OperatorTok{=}\NormalTok{ f(x)}
-\NormalTok{    e\_abs }\OperatorTok{=}\NormalTok{ np.}\BuiltInTok{abs}\NormalTok{(fval }\OperatorTok{{-}}\NormalTok{ p)}
-\NormalTok{    plt.plot(x, e\_abs)}
-    
-    \CommentTok{\# Error boundaries}
-\NormalTok{    fnxi }\OperatorTok{=}\NormalTok{ np.}\BuiltInTok{max}\NormalTok{(np.}\BuiltInTok{abs}\NormalTok{(f\_n[k](np.arange(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{, }\FloatTok{1.25}\NormalTok{, }\FloatTok{0.25}\NormalTok{))))}
-\NormalTok{    e\_boundary }\OperatorTok{=}\NormalTok{ np.}\BuiltInTok{abs}\NormalTok{(phi) }\OperatorTok{*}\NormalTok{ (fnxi }\OperatorTok{*}\NormalTok{ (}\DecValTok{1} \OperatorTok{/}\NormalTok{ np.math.factorial(n[k])))}
-
-\NormalTok{    plt.plot(x, e\_boundary, }\StringTok{"{-}{-}"}\NormalTok{)}
-\NormalTok{    plt.legend([}\StringTok{"Absolute error"}\NormalTok{, }\StringTok{"Error boundary"}\NormalTok{])}
-
-\NormalTok{plt.figure(graph\_i.number)}
-\NormalTok{plt.legend([}\StringTok{"f(x)"}\NormalTok{, }\StringTok{"n=2"}\NormalTok{, }\StringTok{"n=5"}\NormalTok{, }\StringTok{"n=10"}\NormalTok{, }\StringTok{"n=20"}\NormalTok{])}
-\NormalTok{plt.show()}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-\centering
-\beginR{\beginL{\includegraphics[width=\textwidth,height=0.4\textheight]{NUM1_HW005/evals.png}}}
-\caption{book}
-\end{figure}
-
-\SetCallout{הערה:}{
-של \(f(x)\) ו-\(p_{19}\) מאוד דומים, ולכן הם פשוט נמצאים בגרף אחד על
-השני.
-}
+\[\begin{aligned}
+I&=\int_{0}^{6} \dfrac{x+1}{4x+3} \, \mathrm{d}x  \\[2ex]
+&=\dfrac{1}{4}\int_{0}^{6} \dfrac{4x+4}{4x+3} \, \mathrm{d}x  \\[2ex]
+&=\dfrac{1}{4}\int_{0}^{6} \dfrac{4x+3}{4x+3}+\dfrac{1}{4x+3} \, \mathrm{d}x \\[2ex]
+  & =\dfrac{1}{4}\int_{0}^{6} 1 \, \mathrm{d}x +\dfrac{1}{4}\int_{0}^{6} \dfrac{1}{4x+3} \, \mathrm{d}x  \\[2ex]
+&=\dfrac{1}{4}x\bigg|_{0}^{6} +\dfrac{1}{16}\ln(4x+3)\bigg|_{0}^{6} \\[2ex]
+&=\dfrac{1}{4}\cdot 6+\dfrac{1}{16}\ln(27)-\dfrac{1}{16}\ln(3) \\[2ex]
+&=\boxed {
+1.63732653608
+ }
+\end{aligned}\]
 
 \subsubsection{סעיף ב'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d1}
 
-מאחר והנגזרות של \(f(x)\) הן כולן פונקציות של \(\cos(2\pi x)\) או
-\(\sin(2\pi x)\) בכפולות שונות, ערכן המקסימלי תמיד יתקבל באחד מהערכים:
-\[x=-1,-0.75,-0.5,\dots,\, 0.75,\, 1 \] ולכן מספיק לחשב את ערכי הנגזרת
-רק בהן. ברור שעבור רוב הנקודות הערכים יהיו זהים, אבל זה רק מוסיף כמה
-בדיקות בודדות, אז טוב לקחת מקדם ביטחון.
+האינטגרנד שלנו:
 
-\SetCallout{
-הערה:
-}{
-\(n\) שלנו בשאלה הוא שונה מה-\(n\) שנתונה בנוסחה (וזה למה הוגדר \(N\)
-שונה מ-\(n\) בשאלה). לכן, בקוד, ה-\(n\) שאנו משתמשים בו לחישוב הוא
-\(n-1\), כך שמקבלים את הנוסחה:
-\[\left|e_{n}(x)\right|\leq \dfrac{1}{(n)!}\cdot\psi(x)\cdot \max_{\xi \in [-1,1]}\left|f^{(n)}(\xi)\right|\]
-}
-
-קיבלנו כי החסם לשגיאה אכן מהווה חסם לשגיאה האמיתית:
-
-\begin{figure}
-\centering
-\beginR{\beginL{\includegraphics[width=\textwidth,height=0.4\textheight]{NUM1_HW005/n2.png}}}
-\caption{book}
-\end{figure}
-
-\begin{figure}
-\centering
-\beginR{\beginL{\includegraphics[width=\textwidth,height=0.4\textheight]{NUM1_HW005/n5.png}}}
-\caption{book}
-\end{figure}
-
-\begin{figure}
-\centering
-\beginR{\beginL{\includegraphics[width=\textwidth,height=0.4\textheight]{NUM1_HW005/n10.png}}}
-\caption{book}
-\end{figure}
-
-\begin{figure}
-\centering
-\beginR{\beginL{\includegraphics[width=\textwidth,height=0.4\textheight]{NUM1_HW005/n20.png}}}
-\caption{book}
-\end{figure}
-
-\subsection{תרגיל 2}\label{ux5eaux5e8ux5d2ux5d9ux5dc-2}
-
-\subsubsection{סעיף א'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d0-1}
-
-נחשב את פולינום הבסיס עבור כל אחד מה-\(x\) הנתונים:
-\[L _{i}=\prod_{\begin{array}{c}
-j=0 \\
-i\neq j
-\end{array}}^{2}=\frac{x-x_{j}}{x_{i}-x_{j}}\]
-
-\[\begin{aligned}
-&\begin{aligned}
-L_{0}(x):& \\
- & j=0:\; i=j\Longrightarrow \emptyset \\
- & j=1:\; \frac{x-0}{-1-0}=-x \\
- & j=2:\; \frac{x-1}{-1-1}=-\frac{x}{2}+\frac{1}{2} \\
-&L_{0}(x)=(-x)\cdot \left(- \frac{x}{2}+\frac{1}{2} \right)=\frac{x^{2}}{2}-\frac{x}{2}
-\end{aligned}\\
-&\begin{aligned}
-L_{1}(x):& \\
-&j=0:\; \frac{x-(-1)}{0-(-1)}=x+1 \\
-&j=1:\;i=j\Longrightarrow \emptyset \\
-&j=2:\; \frac{x-1}{0-1}=-x+1 \\
-&L _{1(x)}=(x+1)(-x+1)=-x^{2}+1
-\end{aligned}\\
-&\begin{aligned}\\
-L_{2}(x): \\
-& j=0:\;\frac{x-(-1)}{1-(-1)}=\frac{x}{2}+\frac{1}{2} \\
-& j=1:\;\frac{x-0}{1-0}=x \\
-& j=2:\;i=j\Longrightarrow \emptyset \\
-&L _{2}=\left( \frac{x}{2}+\frac{1}{2} \right)\cdot x=\frac{x^{2}}{2}+\frac{x}{2}
-\end{aligned}\\
+\[f(x)=\dfrac{x+1}{4x+3}\] נשים לב כי: \[a=0,\, \quad b=6\] וערכי
+הפונקציה בנקודות אלו:
+\[f(0)=\dfrac{1}{3},\, \quad f(3)=\dfrac{4}{15},\, \quad f(6)=\dfrac{7}{27}\]
+ניוטון קוטס מסדר ראשון: \[I_{\text{trap}}=\dfrac{b-a}{2}[f(a)+f(b)]\]
+נציב:
+\[I_{\text{trap}}=3\left( \dfrac{1}{3}+\dfrac{7}{27} \right)=\boxed {
+\dfrac{16}{9}
+ }\] ניוטון קוטס מסדר שני:
+\[I_{\text{Simp}}=\dfrac{b-a}{6}\left[ f(a)+4f\left( \dfrac{b+a}{2} \right)+f(b) \right]\]
+נציב: \[\begin{aligned}
+I_{\text{Simp}} & =1\cdot\left[ \dfrac{1}{3}+4\cdot \dfrac{4}{15}+\dfrac{7}{27} \right]=\boxed {
+\dfrac{224}{135}
+ }
 \end{aligned}\]
 
-\subsubsection{סעיף ב'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d1-1}
-
-\[\sum_{i=0}^{2}L _{i}(x)=\left( \frac{x^{2}}{2}-\frac{x}{2} \right)+(-x^{2}+1)+\left( \frac{x^{2}}{2}+\frac{x}{2} \right)=1\]
-נשים לב שקיבלנו שהסכום של פולינומי הבסיס קבוע, לכן נשער שלא משנה אילו
-\(x\)-ים נבחר, נקבל שהסכום של פולינומי הבסיס הוא 1.
-
-נוכיח את ההשערה: ניקח פונקציה \(f(x)=1\). לפי הגדרה קירוב פולינומי של
-פולינום הוא הפולינום עצמו, לכן:
-\[P(x)=f(x)=\sum_{i=0}^{n}f(x_{i})L_{i}(x)=\sum_{i=0}^{n}L_{i}(x)\]
-מכיוון ש-\(P(x)\) הוא קירוב פולינומי של \(f(x)\) שבחרנו להיות פולינום
-מסדר \(0\) נקבל ש- \(P(x)=1=f(x)\) כלומר:
-\[P(x)=1=\sum_{i=0}^{n}L_{i}(x)\] בהוכחה שהצגנו למעלה, לא הייתה תלות
-ב-\(n\) שמייצג את מספר הנקודות שלנו, כלומר את מספר צמדי האינטרפולציה
-שיהיו לנו. לכן הסכום של פולינומי הבסיס יהיה 1 לא משנה כמה צמדי
-אינטרפולציה יהיו לנו.
-
-\subsubsection{סעיף ג'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d2}
-
-\[P(x)=\sum_{i=0}^{n}y(x_{j})\prod_{\begin{array}{c}
-j=0 \\
-j\neq i
-\end{array}}^{n}\frac{x-x_{j}}{x_{i}-x_{j}}=\sum_{i=0}^{n}y(x_{j})\cdot \prod_{\begin{array}{c}
-j=0 \\
-j\neq i
-\end{array}}^{n}\frac{1}{x_{i}-x_{j}}\cdot \prod_{\begin{array}{c}
-j=0 \\
-j\neq i
-\end{array}}^{n}x-x_{j}\] \[\prod_{\begin{array}{c}
-j=0 \\
-j\neq i
-\end{array}}^{n}x-x_{j}=(x-x_{1})(x-x_{2})\dots (x-x_{n-1})(x-x_{n})\]
-מכיוון שבכל הגורמים יש לנו \(x\) ללא מקדם, תוצאת המכפלה של כל הגורמים
-תכיל ביטוי של \(x^{n}\) ללא מקדם - מכיוון שזוהי תוצאת המכפלה של כל
-ה-\(x\) בכל הגורמים.
-
-לכן נקבל: \[\sum_{i=0}^{n}y(x_{j})\cdot \prod_{\begin{array}{c}
-j=0 \\
-j\neq i
-\end{array}}^{n}\frac{1}{x_{i}-x_{j}}\cdot \prod_{\begin{array}{c}
-j=0 \\
-j\neq i
-\end{array}}^{n}x-x_{j}=\sum_{i=0}^{n}y(x_{j})\cdot \prod_{\begin{array}{c}
-j=0 \\
-j\neq i
-\end{array}}^{n}\frac{1}{x_{i}-x_{j}}\cdot \Big[x^{n}+p(x)\Big]\] כאשר
-\(p(x)\) זהו פולינום שמייצג את שאר המכפלות שאינן מכילות את \(x^{n}\).
-מכאן שהמקדם של \(x^{n}\) הוא:
-\[\sum_{i=0}^{n}y(x_{i})\cdot \prod_{\begin{array}{c}
-j=0 \\
-j\neq i
-\end{array}}^{n}\frac{1}{x_{i}-x_{j}}\]
-
-\subsection{תרגיל 3}\label{ux5eaux5e8ux5d2ux5d9ux5dc-3}
-
-\[u(t)={\gamma}_{1}e^{{\gamma}_{2}t}\] \#\#\# סעיף א' לא נוכל להשתמש
-בשיטת רגרסיה לינארית כדי לפתור ישירות את הבעיה. הסיבה היא שאחד מהתנאים
-לשימוש בשיטה זו היא שהפונקציה שאליה אנו רוצים להתאים, \(u\), תהיה מהצורה
-הבאה: \[u(t)=\begin{pmatrix}
-{f}_{1}(t) \\
-{f}_{2}(t) \\
-\vdots 
-\end{pmatrix}\begin{pmatrix}
-{\gamma}_{1} \\
-{\gamma}_{2} \\
-\vdots 
-\end{pmatrix}=\bar{f}(t)\bar{\gamma}\] אבל כל הפרמטרים
-\({\gamma}_{1},{\gamma}_{2}\) לא לינאריים במשוואה שלנו, ולכן לא נוכל
-לרשום את \(u\) בצורה זו. כן נוכל לפתור את הבעיה הזאת בעקיפין עם שיטת
-הרגרסיה, אם נגדיר פונקציה חדשה, \(v(t)\) כפי שאנו נעשה בסעיף ב'.
-
-\subsubsection{סעיף ב'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d1-2}
-
-\[\begin{aligned}
-y(t)&=\ln (u(t)) \\
-&=\ln{\gamma}_{1}+{\gamma}_{2} t
-\end{aligned}\] נסמן: \[{\alpha}_{1}=\ln{\gamma}_{1}\] נבנה את המערכת
-משוואות: \[\begin{aligned}
- & {\alpha}_{1}+{\gamma}_{2}{t}_{1}={y}_{1} \\
- & {\alpha}_{1}+{\gamma}_{2}{t}_{2}={y}_{2} \\
- &  \quad \quad \,\,\, \vdots  \\
- & {\alpha}_{1}+{\gamma}_{2}t_{n}=y_{n}
-\end{aligned}\] בצורה מטריציונית: \[\begin{pmatrix}
-1 & {t}_{1} \\
-1 & {t}_{2} \\
-\vdots  & \vdots  \\
-1 & t_{n}
-\end{pmatrix}\begin{pmatrix}
-{\alpha}_{1} \\
-{\gamma}_{2}
-\end{pmatrix}=\begin{pmatrix}
-{y}_{1} \\
-{y}_{2} \\
-\vdots  \\
-y_{n}
-\end{pmatrix}\] נפתור כעת את הבעיה:
-
-\[\begin{gathered}
-(A^{T}A)\hat{x}=A^{T}b \\[2ex]
-\begin{pmatrix}
-1 & 1 & \cdots  & 1 \\
-{t}_{1} & {t}_{2} & \cdots  & t_{n}
-\end{pmatrix}\begin{pmatrix}
-1 & {t}_{1} \\
-1 & {t}_{2} \\
-\vdots  & \vdots  \\
-1 & t_{n}
-\end{pmatrix}\begin{pmatrix}
-{\alpha}_{1} \\
-{\gamma}_{2}
-\end{pmatrix}=\begin{pmatrix}
-1 & 1 & \cdots  & 1 \\
-{t}_{1} & {t}_{2} & \cdots  & t_{n}
-\end{pmatrix}\begin{pmatrix}
-{y}_{1} \\
-{y}_{2} \\
-\vdots  \\
-y_{n}
-\end{pmatrix} \\[2ex]
-\begin{pmatrix}
-n & \sum_{i=1}^{n}t_{i} \\
-\sum_{i=1}^{n}t_{i} & \sum_{n=1}^{n}(t_{i})^{2}  
-\end{pmatrix}\begin{pmatrix}
-{\alpha}_{1} \\
-{\gamma}_{2}
-\end{pmatrix}=\begin{pmatrix}
-\sum_{i=1}^{n}y_{i} \\
-\sum_{i=1}^{n}t_{i}y_{i}  
-\end{pmatrix}
-\end{gathered}\]
-
-\subsubsection{סעיף ג'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d2-1}
-
-נציב את הנתונים במערכת משוואות:
-
-\[\begin{gathered}
-\begin{pmatrix}
-n & \sum_{i=1}^{n}t_{i} \\
-\sum_{i=1}^{n}t_{i} & \sum_{n=1}^{n}(t_{i})^{2}  
-\end{pmatrix}\begin{pmatrix}
-{\alpha}_{1} \\
-{\gamma}_{2}
-\end{pmatrix}=\begin{pmatrix}
-\sum_{i=1}^{n}y_{i}\\
-\sum_{i=1}^{n}t_{i}y_{i}  
-\end{pmatrix} \\[2ex]
-\begin{pmatrix}
-3 & 3.0 \\
-3.0 & 5.0
-\end{pmatrix}\begin{pmatrix}
-{\alpha}_{1} \\
-{\gamma}_{2}
-\end{pmatrix}=\begin{pmatrix}
-10.9539 \\
-17.2378
-\end{pmatrix} \\[2ex]
-\begin{pmatrix}
-3 & 3 \\
-0 & 2
-\end{pmatrix}\begin{pmatrix}
-{\alpha}_{1} \\
-{\gamma}_{2}
-\end{pmatrix}=\begin{pmatrix}
-10.9539 \\
-6.2839
-\end{pmatrix} \\[2ex]
-\begin{pmatrix}
-1 & 1 \\
-0 & 1
-\end{pmatrix}\begin{pmatrix}
-{\alpha}_{1} \\
-{\gamma}_{2}
-\end{pmatrix}=\begin{pmatrix}
-3.6513 \\
-3.142
-\end{pmatrix} \\[2ex]
-\begin{pmatrix}
-1 & 0 \\
-0 & 1
-\end{pmatrix}\begin{pmatrix}
-{\alpha}_{1} \\
-{\gamma}_{2}
-\end{pmatrix}=\begin{pmatrix}
-0.5093 \\
-3.142
-\end{pmatrix}
-\end{gathered}\] נסיק כי: \[\begin{aligned}
- & {\gamma}_{1}=e^{\alpha}=1.6641 \\
- & {\gamma}_{2}=3.142
-\end{aligned}\] ולכן הפונקציה המקורית היא מהצורה:
-\[u(t)=1.6641e^{3.142x}\]
-
-הנקודות \((t_{i},y_{i})\), לאחר המרה ל-\(u_{i}\):
-\[y_{i}=\ln(u_{i})\implies u_{i}=e^{y_{i}}\] \[\begin{aligned}
- & u_{1}=3.0198 \\
- & u_{2}=11.7001 \\
- & u_{3}=1618.249
+השגיאה בפועל: \[\begin{aligned}
+ & E_{\text{trap}}=I-I_{\text{trap}}=\boxed {
+-0.14045124169
+ } \\[2ex]
+ & E_{\text{Simp}}=I-I_{\text{Simp}}=\boxed{ -0.02193272318}
 \end{aligned}\]
 
-קוד \texttt{python} להצגת הגרף והנקודות:
+השגיאה התאורטית: \[\begin{aligned}
+ & E_{\text{trap}}=-\dfrac{f''(\xi)}{12}(b-a)^{3} \\[2ex]
+ & E_{\text{Simp}}=-\dfrac{f^{(4)}(\xi)}{90}\left( \dfrac{b-a}{2} \right)^{5}
+\end{aligned} \] כאשר \(0<\xi<6\).
+
+נמצא את הנגזרות של \(f\): \[\begin{aligned}
+ & f'(x)=\dfrac{4x+3-4(x+1)}{(4x+3)^{2}}=-\dfrac{1}{(4x+3)^{2}} =-(4x+3)^{-2}\\[1ex]
+ & f''(x)=2(4x+3)^{-3} \\[1ex]
+ & f'''(x)=-24(4x+3)^{-4} \\[1ex]
+ & f^{(4)}(x)=384(4x+3)^{-5}
+\end{aligned}\] הפונקציות \(f''\) ו-\(f^{(4)}\) הן פונקציות יורדות בקטע
+הנתון. לכן נקבל ערך מקסימלי בקצוות. \[\begin{aligned}
+ & f''(0)=\dfrac{2}{27} &  & f''(6)=1.0162\cdot 10^{-4}\\
+ & f^{(4)}(0)=\dfrac{128}{81} &  & f^{(4)}(6)=2.676\cdot 10^{-5}
+\end{aligned}\] נסיק כי החסמים העליונים והתחתונים עבור שתי השיטות הן:
+\[\begin{gathered}
+-\dfrac{4}{3}=-\dfrac{f''(0)}{12}\cdot 6^{3}<E_{\text{trap}}<-\dfrac{f''(6)}{12}\cdot 6^{3}=-0.00183 \\[2ex]
+-4.2666<-\dfrac{f^{(4)}(0)}{90}\cdot 3^{5}<E_{\text{Simp}}<-\dfrac{f^{(4)}(6)}{90}\cdot 3^{5}=-7.2252\cdot 10^{-5}
+\end{gathered}\] אכן השגיאות שלנו נמצאים בטווח של השגיאה התאורטית.
+
+\subsubsection{סעיפים ג', ד
+ו-ה'}\label{ux5e1ux5e2ux5d9ux5e4ux5d9ux5dd-ux5d2-ux5d3-ux5d5-ux5d4}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{import}\NormalTok{ sympy }\ImportTok{as}\NormalTok{ sp}
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
 
-\NormalTok{points\_t }\OperatorTok{=}\NormalTok{ [}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{]}
-\NormalTok{points\_y }\OperatorTok{=}\NormalTok{ [}\FloatTok{1.1052}\NormalTok{, }\FloatTok{2.4956}\NormalTok{, }\FloatTok{7.3891}\NormalTok{]}
+\KeywordTok{def}\NormalTok{ composite\_trapezoidal(f, a, b, n):}
+\NormalTok{    h }\OperatorTok{=}\NormalTok{ (b }\OperatorTok{{-}}\NormalTok{ a) }\OperatorTok{/}\NormalTok{ n}
+\NormalTok{    s }\OperatorTok{=}\NormalTok{ f(a) }\OperatorTok{+}\NormalTok{ f(b)}
+    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{1}\NormalTok{, n):}
+\NormalTok{        s }\OperatorTok{+=} \DecValTok{2} \OperatorTok{*}\NormalTok{ f(a }\OperatorTok{+}\NormalTok{ i }\OperatorTok{*}\NormalTok{ h)}
+    \ControlFlowTok{return}\NormalTok{ s }\OperatorTok{*}\NormalTok{ h }\OperatorTok{/} \DecValTok{2}
 
-\NormalTok{points\_u }\OperatorTok{=}\NormalTok{ [np.exp(y) }\ControlFlowTok{for}\NormalTok{ y }\KeywordTok{in}\NormalTok{ points\_y]}
+\KeywordTok{def}\NormalTok{ composite\_simpsons(f, a, b, n):}
+\NormalTok{    h }\OperatorTok{=}\NormalTok{ (b }\OperatorTok{{-}}\NormalTok{ a) }\OperatorTok{/}\NormalTok{ n}
+\NormalTok{    s }\OperatorTok{=}\NormalTok{ f(a) }\OperatorTok{+}\NormalTok{ f(b)}
+    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{1}\NormalTok{, n):}
+        \ControlFlowTok{if}\NormalTok{ i }\OperatorTok{\%} \DecValTok{2} \OperatorTok{==} \DecValTok{0}\NormalTok{:}
+\NormalTok{            s }\OperatorTok{+=} \DecValTok{2} \OperatorTok{*}\NormalTok{ f(a }\OperatorTok{+}\NormalTok{ i }\OperatorTok{*}\NormalTok{ h)}
+        \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{            s }\OperatorTok{+=} \DecValTok{4} \OperatorTok{*}\NormalTok{ f(a }\OperatorTok{+}\NormalTok{ i }\OperatorTok{*}\NormalTok{ h)}
+    \ControlFlowTok{return}\NormalTok{ s }\OperatorTok{*}\NormalTok{ h }\OperatorTok{/} \DecValTok{3}
 
-\NormalTok{plt.plot(points\_t, points\_u, }\StringTok{\textquotesingle{}ro\textquotesingle{}}\NormalTok{)}
+\KeywordTok{def}\NormalTok{ richardson\_extrapolation(f, a, b, n, method):}
+\NormalTok{    I1 }\OperatorTok{=}\NormalTok{ method(f, a, b, n)}
+\NormalTok{    I2 }\OperatorTok{=}\NormalTok{ method(f, a, b, }\DecValTok{2}\OperatorTok{*}\NormalTok{n)}
+    \ControlFlowTok{return}\NormalTok{ (}\DecValTok{4}\OperatorTok{*}\NormalTok{I2 }\OperatorTok{{-}}\NormalTok{ I1) }\OperatorTok{/} \DecValTok{3}
 
-\NormalTok{u }\OperatorTok{=} \KeywordTok{lambda}\NormalTok{ t: }\FloatTok{1.6641}\OperatorTok{*}\NormalTok{np.exp(}\FloatTok{3.142}\OperatorTok{*}\NormalTok{t)}
-\NormalTok{ts }\OperatorTok{=}\NormalTok{ np.linspace(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{100}\NormalTok{)}
-\NormalTok{plt.plot(ts, [u(t) }\ControlFlowTok{for}\NormalTok{ t }\KeywordTok{in}\NormalTok{ ts], }\StringTok{\textquotesingle{}{-}\textquotesingle{}}\NormalTok{)}
+\NormalTok{f }\OperatorTok{=} \KeywordTok{lambda}\NormalTok{ x: (x}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{(}\DecValTok{4}\OperatorTok{*}\NormalTok{x}\OperatorTok{+}\DecValTok{3}\NormalTok{)}
+\NormalTok{a }\OperatorTok{=} \DecValTok{0}
+\NormalTok{b }\OperatorTok{=} \DecValTok{6}
 
-\NormalTok{plt.title(}\StringTok{\textquotesingle{}u(t) = 1.6641*exp(3.142*t)\textquotesingle{}}\NormalTok{)}
+\NormalTok{points }\OperatorTok{=}\NormalTok{ [}\DecValTok{21}\NormalTok{,}\DecValTok{41}\NormalTok{,}\DecValTok{81}\NormalTok{,}\DecValTok{161}\NormalTok{]}
+\NormalTok{n }\OperatorTok{=}\NormalTok{ np.array(points) }\OperatorTok{{-}} \DecValTok{1}
 
+\NormalTok{x }\OperatorTok{=}\NormalTok{ sp.symbols(}\StringTok{\textquotesingle{}x\textquotesingle{}}\NormalTok{)}
+\NormalTok{fsym }\OperatorTok{=}\NormalTok{ (x}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\NormalTok{(}\DecValTok{4}\OperatorTok{*}\NormalTok{x}\OperatorTok{+}\DecValTok{3}\NormalTok{)}
+\NormalTok{I\_real }\OperatorTok{=}\NormalTok{ sp.integrate(fsym, (x, }\DecValTok{0}\NormalTok{, }\DecValTok{6}\NormalTok{))}
+\NormalTok{I\_real }\OperatorTok{=} \BuiltInTok{float}\NormalTok{(I\_real)}
+
+\NormalTok{E\_trap }\OperatorTok{=}\NormalTok{ [}\BuiltInTok{abs}\NormalTok{(I\_real }\OperatorTok{{-}}\NormalTok{ composite\_trapezoidal(f, a, b, i)) }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in}\NormalTok{ n]}
+\NormalTok{E\_simp }\OperatorTok{=}\NormalTok{ [}\BuiltInTok{abs}\NormalTok{(I\_real }\OperatorTok{{-}}\NormalTok{ composite\_simpsons(f, a, b, i)) }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in}\NormalTok{ n]}
+\NormalTok{E\_rich }\OperatorTok{=}\NormalTok{ [}\BuiltInTok{abs}\NormalTok{(I\_real }\OperatorTok{{-}}\NormalTok{ richardson\_extrapolation(f, a, b, i, composite\_simpsons)) }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in}\NormalTok{ n]}
+
+\NormalTok{plt.plot(n, E\_trap, label}\OperatorTok{=}\StringTok{"Trapezoidal rule"}\NormalTok{)}
+\NormalTok{plt.plot(n, E\_simp, label}\OperatorTok{=}\StringTok{"Simpson\textquotesingle{}s rule"}\NormalTok{)}
+\NormalTok{plt.plot(n, E\_rich, label}\OperatorTok{=}\StringTok{"Richardson extrapolation"}\NormalTok{)}
 \NormalTok{plt.yscale(}\StringTok{\textquotesingle{}log\textquotesingle{}}\NormalTok{)}
-\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}t\textquotesingle{}}\NormalTok{)}
-\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}u\textquotesingle{}}\NormalTok{)}
-
+\NormalTok{plt.xscale(}\StringTok{\textquotesingle{}log\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Error\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.legend()}
 \NormalTok{plt.show()}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
-\centering
-\beginR{\beginL{\includegraphics[width=\textwidth,height=0.4\textheight]{NUM1_HW005/output.png}}}
-\caption{book}
-\end{figure}
+\begin{quote}
+{[}!TODO{]} להוסיף גרף
+\end{quote}
+
+\begin{quote}
+{[}!TODO{]} להוסיף לגבי תאוריה
+\end{quote}
+
+\subsection{תרגיל 2}\label{ux5eaux5e8ux5d2ux5d9ux5dc-2}
+
+\subsubsection{סעיף א'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d0}
+
+נשתמש בשיטת המקדמים החופשיים:
+\[f(x)=1\longrightarrow \int_{0}^{1} \frac{1}{\sqrt{x} \cdot \sqrt{1-x}} \; dx=\pi=A_{1}+A_{2}\]
+\[f(x)=x\longrightarrow \int_{0}^{1} \frac{x}{\sqrt{x} \cdot \sqrt{1-x}} \; dx=\frac{\pi}{2}=\frac{1}{3}A_{1}+\frac{2}{3}A_{2} \]
+\[\begin{array}{rl} \\
+\mathrm{I} :&\pi=A_{1}+A_{2} \\
+\mathrm{II} :&\frac{\pi}{2}=\frac{1}{3}A_{1}+\frac{2}{3}A_{2} \\
+3\cdot \mathrm{II} -\mathrm{I} :&\frac{\pi}{2}=A_{2} \\
+A_{2}\to \mathrm{I} :& \pi=A_{1}+\frac{\pi}{2}\Longrightarrow A_{1}=\frac{\pi}{2}
+\end{array}\] \[\boxed{A_{1}=A_{2}=\frac{\pi}{2}}\]
+
+\subsubsection{סעיף ב'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d1-1}
+
+\[f(x)=\sqrt{x}\cdot \sqrt{(1+x)}\]
+\[I=\int_{0}^{1} f(x) \; dx =\frac{\pi}{2}f\left( \frac{1}{3} \right)+\frac{\pi}{2}f\left( \frac{2}{3} \right)+E\]
+\[\frac{\pi}{2}\sqrt{\frac{1}{3}}\cdot \sqrt{\frac{4}{3}}+\frac{\pi}{2}\sqrt{\frac{2}{3}}\cdot \sqrt{\frac{5}{3}}+E=\frac{\pi}{3}+\frac{\pi}{2}\cdot \frac{\sqrt{10}}{3}+E\]
+\[\boxed{I=2.70296+E}\]
+
+\subsubsection{סעיף ג'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d2}
+
+בקטע \([0,\;1]\) הפונקציה \(f(x)=\frac{1}{\sqrt{x(1-x)}}\) לא רציפה בכל
+נק', ולכן גם לא גזירה בכל נק'. לכן אי אפשר לעשות לה פיתוח מקלורן - ומכאן
+שאי אפשר לחסום את השגיאה.
+
+\subsection{תרגיל 3}\label{ux5eaux5e8ux5d2ux5d9ux5dc-3}
+
+\subsubsection{סעיף א'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d0-1}
+
+\[\begin{aligned}
+I & =\int_{0}^{1.2} e^{-x} \, \mathrm{d}x \\[1ex]
+ &  =-e^{-x}\bigg|_{0}^{1.2} \\[1ex]
+& =e^{0}-e^{-1.2} \\[1ex]
+ & =\boxed {
+0.69880578809
+ }
+\end{aligned}\]
+
+\subsubsection{סעיף ב'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d1-2}
+
+עבור 2 צמתי אינטגרציה: \[x_{1}=0,\; x_{2}=1.2\] \[\begin{aligned}
+\tilde{I}  & =\;\frac{h}{2}\Big[f(x_{2})+f(x_{1})\Big]\\[1ex]
+&=\underbrace{0.6}_{1.2/2}\cdot (1+0.3012)\\[1ex]
+ & =0.78071652715
+\end{aligned}\] ולכן השגיאה שלנו: \[\begin{aligned}
+E_{\text{trap}} & =0.69880578809-0.78071652715 \\[1ex]
+ & =\boxed{-0.08191073906}
+\end{aligned}\] עבור 3 צמתי אינטגרציה:
+
+\[x_{1}=0,\; x_{2}=0.6,\; x_{3}=1.2\] \[\begin{aligned}
+\tilde{I}  & =\;\frac{h}{3}\Big[f(x_{1})+4f(x_{2})+f(x_{3})\Big] \\[1ex]
+&=\underbrace{0.2}_{0.6/3}\Big[1+4\cdot 0.5488+0.3012\Big] \\[1ex]
+ & =0.69928815126
+\end{aligned}\] ולכן השגיאה שלנו: \[\begin{aligned}
+E_{\text{Simp}} & =0.69880578809-0.69928815126 \\[1ex]
+ & =\boxed{-0.00048236317}
+\end{aligned}\]
+
+\subsubsection{סעיף ג'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d2-1}
+
+נעביר לתחום אינטגרציה \([-1,1]\): \[\begin{aligned}
+ & x=T(t)=\frac{(1.2-0)t+(1.2+0)}{2}=0.6t+0.6 \\[2ex]
+ & \mathrm{d}x=0.6\mathrm{d}t
+\end{aligned}\] נציב בנוסחה של אינטגרציית גאוס:
+\[\int_{0}^{1.2} f(x) \, \mathrm{d}x =\int_{-1}^{1} 0.6\cdot f(0.6t+0.6) \, \mathrm{d}t =\int_{-1}^{1}0.6 e^{-(0.6t+0.6)} \, \mathrm{d}t\]
+נסמן: \[g(t)=0.6e^{-(0.6t+0.6)}\] ולכן:
+\[\int_{0}^{1.2} f(x) \, \mathrm{d}x =\int_{-1}^{1} g(t) \, \mathrm{d}t\approx {A}_{1}g({t}_{1})+{A}_{2}g({t}_{2}) \]
+מטבלת שורשי לג'נדר: \[\begin{aligned}
+ & t_{1}=-0.57735 &  &  A_{1}=1 \\[1ex]
+ & t_{2}=0.57735 &  &  A_{2}=1
+\end{aligned}\] נוכל כעת לשער את ערך האינטגרל: \[\begin{aligned}
+\tilde{I}  & = {A_{1}}g(t_{1})+{A_{2}}_{}g(t_{2})\\[2ex]
+&=0.6\cdot e^{-0.6}\cdot \left( e^{0.6\cdot 0.57735}+e^{-0.6\cdot 0.57735}\right) \\[2ex]
+ & =0.69848509187
+\end{aligned}\] נסיק כי השגיאה: \[\begin{aligned}
+  E & =0.69880578809-0.69848509187 \\
+ & =\boxed{0.00032069622}
+\end{aligned}\]
+
+\[\left| E_{\text{gauss}}^{(2)} \right|<\left| E_{\text{trap}} \right|\]
+נשים לב שבסעיף ב' קיבלנו חסם שלילי, כלומר בשיטה מסעיף ב' קיבלנו שטח קטן
+מהשטח האמיתי. לעומת זאת בשיטה בסעיף זה החסם הוא חיובי, כלומר תמיד נקבל
+שטח גדול מהשטח האמיתי.
+
+נבדוק את השגיאה התיאורטית לפי שיטת גאוס-לז'נדר. עבור \(0<\xi<1.2\):
+\[E=\frac{2^{(2n+1)}(n!)^{4}}{(2n+1)[(2n)!]^{3}}g^{(2n)}(\xi)=\frac{2^{5}\cdot 2^{4}}{5\cdot 24^{3}}\cdot g^{(4)}(\xi)=0.0074\cdot g^{(4)}(\xi)\]
+נשים לב שהנגזרת הרביעית היא: \[g^{(4)}(x)=0.0426756 \cdot e^{-0.6 t}\]
+ולכן החסם העליון והתחתון הם: \[\begin{aligned}
+&0.0074\cdot g^{(4)}(1)=0.00031579944 \cdot e^{-0.6 \cdot 1}=0.000288857 \\
+&0.0074\cdot g^{(4)}(-1)=0.00031579944 \cdot e^{-0.6 \cdot (-1)}=0.000576
+\end{aligned}\] \[\boxed{0.000173\leq E=0.00032069622\leq 0.000576}\]
+
+קיבלנו ש- \(E\) בפועל אכן בטווח ששיערנו שהוא יהיה.
+
+\subsubsection{סעיף ד'}\label{ux5e1ux5e2ux5d9ux5e3-ux5d3}
+
+מסעיף קודם: \[g(t)=0.6e^{-(0.6t+0.6)}\] שורשי לג'נדר: \[\begin{aligned}
+ & t_{1,2}=\pm 0.774597 &  & A_{1,2}=\frac{5}{9} \\
+ & t_{3}=0.774597 &  &  A_{3}=\frac{8}{9}
+\end{aligned}\] נוכל כעת לשער את ערך האינטגרל: \[\begin{aligned}
+\tilde{I}  & =A_{1}g(x_{1})+A_{2}g(x_{2})+A_{3}g(x_{3}) \\[2ex]
+&= 0.6\cdot e^{-0.6}\cdot \Big(\frac{5}{9}\cdot e^{0.6\cdot 0 }+\frac{8}{9}\cdot  e^{0.6\cdot 0.774597 }+\frac{8}{9}\cdot  e^{-0.6\cdot 0.774597 } \Big) \\[2ex]
+&=0.9880483684
+\end{aligned}\] נסיק כי השגיאה: \[\begin{aligned}
+E & =0.69880578809-0.69880483684 \\
+ & =\boxed{0.9512\cdot 10^{-6}}
+\end{aligned}\]
+\[\left| E_{\text{gauss}}^{(3)} \right|<\left| E_{\text{trap}} \right|\]
+נשים לב שבסעיף ב' קיבלנו חסם שלילי, כלומר בשיטה מסעיף ב' קיבלנו שטח קטן
+מהשטח האמיתי. לעומת זאת בשיטה בסעיף זה החסם הוא חיובי, כלומר תמיד נקבל
+שטח גדול מהשטח האמיתי.
+
+נבדוק את השגיאה התיאורטית לפי שיטת גאוס-לז'נדר. עבור \(0<\xi<1.2\):
+\[E=\frac{2^{(2n+1)}(n!)^{4}}{(2n+1)[(2n)!]^{3}}g^{(2n)}(\xi)=\frac{2^{7}\cdot 6^{4}}{7\cdot 720^{3}}\cdot g^{(6)}(\xi)=6.3492\cdot 10^{-5}\cdot g^{(4)}(\xi)\]
+נשים לב שהנגזרת הרביעית היא: \[g^{(6)}(t)=0.0153632\cdot e^{-0.6t}\]
+ולכן החסם העליון והתחתון הם:
+
+\[\begin{aligned}
+&6.3492\cdot 10^{-5}\cdot g^{(6)}(1)=0.97544\cdot 10^{-6}\cdot e^{-0.6\cdot 1}= 0.5354\cdot 10^{-6}\\
+&6.3492\cdot 10^{-5}\cdot g^{(6)}(-1)=0.97544\cdot 10^{-6}\cdot e^{-0.6\cdot (-1)}=1.777\cdot 10^{-6}
+\end{aligned}\]
+\[\boxed{0.5354\cdot 10^{-6}\leq E=0.9512\cdot 10^{-6}\leq 1.777\cdot 10^{-6}}\]
+קיבלנו ש- \(E\) בפועל אכן בטווח ששיערנו שהוא יהיה.
 
 \end{document}

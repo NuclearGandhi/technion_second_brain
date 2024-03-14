@@ -268,10 +268,10 @@ function dirClass(dir) {
   }
 }
 function addDirClassIfNotAddedBefore(el, cls) {
-  if (el.hasClass("esm-rtl") || el.hasClass("esm-ltr")) {
-    return;
+  if (!el.hasClass(cls)) {
+    el.removeClass("esm-rtl", "esm-ltr");
+    el.addClass(cls);
   }
-  el.addClass(cls);
 }
 function nonSpecialParent(el) {
   while (specialNodes.contains(el.nodeName)) {
@@ -287,7 +287,7 @@ var import_view2 = require("@codemirror/view");
 var import_obsidian2 = require("obsidian");
 var DEFAULT_SETTINGS = {
   fileDirections: {},
-  defaultDirection: "ltr",
+  defaultDirection: "auto",
   rememberPerFile: true,
   setNoteTitleDirection: true,
   setYamlDirection: false,

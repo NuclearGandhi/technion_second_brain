@@ -13,26 +13,33 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
-                "mode": "source",
+                "file": "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
+                "mode": "preview",
                 "source": false
               }
-            }
-          },
+            },
+            "group": "dd6478e707f70604"
+          }
+        ]
+      },
+      {
+        "id": "2f937f440068e957",
+        "type": "tabs",
+        "children": [
           {
-            "id": "da9480cc0d65724f",
+            "id": "0cfa8b0dc38205a6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
+                "file": "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
-            }
+            },
+            "group": "dd6478e707f70604"
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,7 +113,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
+            "file": "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -123,7 +130,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
+            "file": "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -135,7 +142,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md"
+            "file": "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md"
           }
         }
       }
@@ -156,46 +163,46 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "da9480cc0d65724f",
+  "active": "b9b7155ce7740d3a",
   "lastOpenFiles": [
+    "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
+    "Technion/THE1/THE1_006 אנטרופיה.md",
+    "Technion/THE1/THE1_005 החוק השני של התרמודינמיקה.md",
+    "Technion/THE1/THE1_006 אנטרופיה 2024-03-14 10.39.00.excalidraw.md",
+    "Technion/THE1/THE1_006 אנטרופיה 2024-03-14 10.39.00.excalidraw.svg",
+    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.14.25.excalidraw.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.45.36.excalidraw.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.45.36.excalidraw.svg",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.20.10.excalidraw.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.28.25.excalidraw.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.28.25.excalidraw.svg",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.05.50.excalidraw.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.20.10.excalidraw.svg",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.14.25.excalidraw.svg",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.05.50.excalidraw.svg",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 08.44.09.excalidraw.md",
+    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 19.59.19.excalidraw.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 08.44.09.excalidraw.svg",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 08.35.34.excalidraw.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 08.28.58.excalidraw.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 08.35.34.excalidraw.svg",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 08.28.58.excalidraw.svg",
+    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
     "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
     "Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים.md",
-    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
     "Technion/CAL1/CAL1_007 אינטגרל לא מסוים.md",
     "Technion/CAL1/CAL1_009 אינטגרל מוכלל.md",
     "Technion/CAL1/CAL1_008 אינטגרל מסוים.md",
-    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
     "Technion/NUM1/NUM1_HW005 תרגיל בית 5.md",
     "Technion/NUM1/NUM1_HW004 תרגיל בית 4.md",
     "Technion/NUM1/NUM1_HW003 תרגיל בית 3.md",
     "Technion/NUM1/NUM1_HW002 תרגיל בית 2.md",
     "Technion/NUM1/NUM1_HW001 תרגיל בית 1.md",
-    "Technion/NUM1/NUM1_001 הקדמה ומושגי יסוד.md",
     "Technion/NUM1/NUM1_000.pdf",
-    "Technion/THE1/THE1_006 אנטרופיה.md",
-    "Technion/THE1/THE1_005 החוק השני של התרמודינמיקה.md",
-    "Technion/THE1/THE1_004 מכונות חום.md",
-    "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
-    "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
-    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה.md",
-    "Technion/SLD1/SLD1_008 פיתול.md",
-    "Technion/SLD1/SLD1_009 עקרונות חשובים.md",
-    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
-    "Technion/SLD2/SLD2_009 משוואות שיווי משקל דיפרנציאליות.md",
-    "Technion/SLD2/SLD2_009 משוואות שיווי משקל דיפרנציאליות 2024-03-12 00.25.21.excalidraw.md",
-    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 12.12.04.excalidraw.md",
-    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 19.40.02.excalidraw.md",
     "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 12.12.04.excalidraw.svg",
-    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-13 08.45.05.excalidraw.svg",
     "Technion/NUM1/NUM1_009 אינטגרציה נומרית.pdf",
-    "Technion/THE1/Screenshot_20240312_102209_OneDrive.jpg",
-    "Technion/THE1/THE1_003/Pasted image 20240312095829.png",
-    "Technion/THE1/THE1_003/Screenshot_20240312_094514_OneDrive.jpg",
-    "Technion/THE1/THE1_006 אנטרופיה 2024-03-12 09.03.49.excalidraw 1.svg",
-    "Technion/THE1/THE1_001/Screenshot_20240312_091704_OneDrive.jpg",
-    "Technion/THE1/THE1_006/THE1_006 אנטרופיה 2024-03-12 09.03.49.excalidraw.svg",
-    "Technion/SLD2/SLD2_009/SLD2_009 משוואות שיווי משקל דיפרנציאליות 2024-03-12 00.25.21.excalidraw.svg",
-    "Technion/SLD2/SLD2_009 משוואות שיווי משקל דיפרנציאליות 2024-03-11 14.11.25.excalidraw.svg",
     "Technion/PDE1/PDE5",
     "Technion/SLD2/SLD2_009",
     "Technion/SLD2/SLD2_008",

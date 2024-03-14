@@ -6,7 +6,7 @@
   "scriptFolderPath": "Excalidraw/Scripts",
   "compress": false,
   "autosave": true,
-  "autosaveInterval": 10000,
+  "autosaveInterval": 15000,
   "autosaveIntervalDesktop": 15000,
   "autosaveIntervalMobile": 10000,
   "drawingFilenamePrefix": "Drawing ",
@@ -21,6 +21,7 @@
   "displayExportedImageIfAvailable": false,
   "previewMatchObsidianTheme": true,
   "width": "400",
+  "height": "",
   "dynamicStyling": "colorful",
   "isLeftHanded": false,
   "iframeMatchExcalidrawTheme": true,
@@ -42,6 +43,7 @@
   "hoverPreviewWithoutCTRL": false,
   "linkOpacity": 1,
   "openInAdjacentPane": false,
+  "showSecondOrderLinks": true,
   "focusOnFileTab": false,
   "openInMainWorkspace": true,
   "showLinkBrackets": true,
@@ -76,8 +78,212 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.0.21",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.0.24",
     "libraryItems": [
+      {
+        "status": "unpublished",
+        "elements": [
+          {
+            "type": "line",
+            "version": 1,
+            "versionNonce": 794297775,
+            "isDeleted": false,
+            "id": "NkLk2gII",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "angle": 0,
+            "x": 20,
+            "y": 20,
+            "strokeColor": "transparent",
+            "backgroundColor": "#a5d8ff",
+            "width": 240,
+            "height": 240,
+            "seed": 82195,
+            "groupIds": [
+              "5Hla9v6G",
+              "ShadowCloneOf-HpovKEOH"
+            ],
+            "frameId": null,
+            "roundness": null,
+            "boundElements": [],
+            "updated": 1710400045777,
+            "link": null,
+            "locked": false,
+            "startBinding": null,
+            "endBinding": null,
+            "lastCommittedPoint": null,
+            "startArrowhead": null,
+            "endArrowhead": null,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                -240
+              ],
+              [
+                -240,
+                -240
+              ],
+              [
+                -240,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                -20,
+                -20
+              ],
+              [
+                -20,
+                -220
+              ],
+              [
+                -220,
+                -220
+              ],
+              [
+                -220,
+                -20
+              ],
+              [
+                -20,
+                -20
+              ],
+              [
+                -20,
+                -20
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "type": "line",
+            "version": 1,
+            "versionNonce": 800129400,
+            "isDeleted": false,
+            "id": "HpovKEOH",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "angle": 0,
+            "x": 20,
+            "y": 20,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "transparent",
+            "width": 240,
+            "height": 240,
+            "seed": 89281,
+            "groupIds": [
+              "5Hla9v6G"
+            ],
+            "frameId": null,
+            "roundness": null,
+            "boundElements": [],
+            "updated": 1710400045777,
+            "link": null,
+            "locked": false,
+            "startBinding": null,
+            "endBinding": null,
+            "lastCommittedPoint": null,
+            "startArrowhead": null,
+            "endArrowhead": null,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                -240
+              ],
+              [
+                -240,
+                -240
+              ],
+              [
+                -240,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "type": "line",
+            "version": 1,
+            "versionNonce": 509620404,
+            "isDeleted": false,
+            "id": "H8gWF2nZ",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "angle": 0,
+            "x": 0,
+            "y": 0,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "transparent",
+            "width": 200,
+            "height": 200,
+            "seed": 51191,
+            "groupIds": [
+              "5Hla9v6G"
+            ],
+            "frameId": null,
+            "roundness": null,
+            "boundElements": [],
+            "updated": 1710400045778,
+            "link": null,
+            "locked": false,
+            "startBinding": null,
+            "endBinding": null,
+            "lastCommittedPoint": null,
+            "startArrowhead": null,
+            "endArrowhead": null,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                -200
+              ],
+              [
+                -200,
+                -200
+              ],
+              [
+                -200,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          }
+        ],
+        "id": "UR4CW8kSohcyt46Q-4x9O",
+        "created": 1710400052886
+      },
       {
         "status": "unpublished",
         "elements": [
