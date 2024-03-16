@@ -14,9 +14,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+                "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
                 "mode": "preview",
-                "source": false
+                "source": true
               }
             },
             "group": "f533133d2df954e5"
@@ -34,12 +34,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+                "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
                 "mode": "source",
                 "source": true
               }
             },
             "group": "f533133d2df954e5"
+          },
+          {
+            "id": "214a58aa98a5eb4c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -116,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+                "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+                "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md"
+                "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md"
               }
             }
           }
@@ -184,50 +196,51 @@
   },
   "active": "91d65d23e1e3b363",
   "lastOpenFiles": [
-    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.pdf",
+    "Technion/NUM1/NUM1_HW006.pdf",
+    "Technion/NUM1/NUM1_HW006.pyg",
+    "Technion/NUM1/NUM1_HW006.aex",
+    "Technion/NUM1/NUM1_HW006.fls",
+    "Technion/NUM1/NUM1_HW006.xdv",
+    "Technion/NUM1/NUM1_HW006.log",
+    "Technion/NUM1/NUM1_HW006.fdb_latexmk",
+    "Technion/NUM1/NUM1_HW006.aux",
+    "Technion/NUM1/NUM1_HW006.tex",
+    "Technion/NUM1/NUM1_HW006.synctex(busy)",
+    "Technion/NUM1/NUM1_HW006.synctex.gz",
+    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
+    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
+    "Technion/NUM1/NUM1_HW006/error_vs_n.png",
+    "Technion/NUM1/NUM1_HW006/error_vs_n.png",
+    "Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים.md",
+    "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
+    "Technion/SLD2/SLD2_009 משוואות שיווי משקל דיפרנציאליות.md",
+    "Technion/SLD2/SLD2_009/SLD2_009 משוואות שיווי משקל דיפרנציאליות 2024-03-12 00.25.21.excalidraw.md",
+    "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
+    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
+    "Technion/BMA1/BMA1_009 זהויות טריגונומטריות.md",
+    "Technion/DEQ1/DEQ1_002 גורם אינטגרציה, משוואה פרידה.md",
+    "Technion/CAL1/CAL1_007 אינטגרל לא מסוים.md",
+    "Technion/CAL1/CAL1_010 טורי מספרים.md",
+    "Technion/DEQ1/DEQ1_001 מבוא.md",
+    "Technion/PDE1/PDE1_001 הקדמה ומשוואות מסדר ראשון.md",
+    "Technion/THE1/THE1_006 אנטרופיה.md",
+    "Technion/NUM1/NUM1_HW005 תרגיל בית 5.md",
+    "Technion/NUM1/NUM1_HW005/output.png",
+    "Technion/NUM1/NUM1_HW005/n5.png",
+    "Technion/NUM1/NUM1_HW005/n20.png",
+    "Technion/NUM1/NUM1_HW005/n2.png",
+    "Technion/NUM1/NUM1_HW005/n10.png",
+    "Technion/NUM1/NUM1_HW005/evals.png",
+    "Technion/THE1/THE1_005/Screenshot_20240217_102059_OneDrive.jpg",
+    "Technion/NUM1/NUM1_005/Screenshot_20240216_171009_OneDrive.jpg",
+    "Technion/NUM1/NUM1_HW002 תרגיל בית 2.md",
     "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
     "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה.md",
     "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 08.35.34.excalidraw.md",
     "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.45.36.excalidraw.md",
     "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-13 08.45.05.excalidraw.md",
-    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
-    "Technion/NUM1/NUM1_HW006",
-    "Technion/NUM1/NUM1_HW006/error_vs_n.png",
-    "Technion/NUM1/NUM1_000.synctex(busy)",
     "Technion/NUM1/NUM1_HW001 תרגיל בית 1.md",
-    "Technion/NUM1/NUM1_HW005 תרגיל בית 5.md",
-    "Technion/NUM1/NUM1_HW002 תרגיל בית 2.md",
     "Technion/NUM1/NUM1_HW003 תרגיל בית 3.md",
-    "Technion/NUM1/NUM1_HW004 תרגיל בית 4.md",
-    "Untitled.md",
-    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
-    "Technion/NUM1/NUM1_000.fls",
-    "Technion/NUM1/NUM1_000.xdv",
-    "Technion/NUM1/NUM1_000.fdb_latexmk",
-    "Technion/NUM1/NUM1_000.aux",
-    "Technion/NUM1/NUM1_000.log",
-    "Technion/NUM1/test.pdf",
-    "Technion/NUM1/test.fls",
-    "פנגייה - רשימת סיכומים.md",
-    "README.md",
-    "Technion/SLD2/SLD2_009 משוואות שיווי משקל דיפרנציאליות.md",
-    "Technion/SLD2/SLD2_009/SLD2_009 משוואות שיווי משקל דיפרנציאליות 2024-03-11 13.39.24.excalidraw.md",
-    "Technion/SLD2/SLD2_009/SLD2_009 משוואות שיווי משקל דיפרנציאליות 2024-03-11 13.39.24.excalidraw.svg",
-    "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
-    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
-    "Technion/PDE1/PDE1_004 משוואת הגלים.md",
-    "Technion/THE1/THE1_006/Pasted image 20240312182739.png",
-    "Technion/THE1/THE1_006/Pasted image 20240312175609.png",
-    "Technion/THE1/THE1_006/Pasted image 20240312175536.png",
-    "Technion/THE1/THE1_006 אנטרופיה.md",
-    "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
-    "Technion/THE1/THE1_004 מכונות חום.md",
-    "Technion/THE1/THE1_006/Screenshot_20240312_102209_OneDrive.jpg",
-    "Technion/THE1/THE1_003/Screenshot_20240312_094514_OneDrive.jpg",
-    "Technion/THE1/THE1_006/THE1_006 אנטרופיה 2024-03-12 09.03.49.excalidraw.svg",
-    "Technion/THE1/THE1_003/Pasted image 20240312095829.png",
-    "Technion/THE1/THE1_001/Screenshot_20240312_091704_OneDrive.jpg",
-    "Technion/THE1/THE1_006/THE1_006 אנטרופיה 2024-03-12 09.03.49.excalidraw.md",
-    "Technion/SLD2/SLD2_009 משוואות שיווי משקל דיפרנציאליות 2024-03-12 00.25.21.excalidraw.md"
+    "Technion/NUM1/NUM1_HW004 תרגיל בית 4.md"
   ]
 }
