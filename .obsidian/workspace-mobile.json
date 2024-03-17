@@ -13,31 +13,11 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
-                "mode": "preview",
+                "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
+                "mode": "source",
                 "source": false
               }
-            },
-            "group": "dd6478e707f70604"
-          }
-        ]
-      },
-      {
-        "id": "2f937f440068e957",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "0cfa8b0dc38205a6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "dd6478e707f70604"
+            }
           }
         ]
       }
@@ -113,7 +93,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
+            "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -130,7 +110,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
+            "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -142,7 +122,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md"
+            "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md"
           }
         }
       }
@@ -163,8 +143,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b9b7155ce7740d3a",
+  "active": "bffef0b9449c3ab3",
   "lastOpenFiles": [
+    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+    "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
+    "Technion/NUM1/NUM1_010 גזירה נומרית.md",
+    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
+    "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
     "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
     "Technion/THE1/THE1_006 אנטרופיה.md",
     "Technion/THE1/THE1_005 החוק השני של התרמודינמיקה.md",
@@ -189,17 +174,12 @@
     "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 08.28.58.excalidraw.md",
     "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 08.35.34.excalidraw.svg",
     "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 08.28.58.excalidraw.svg",
-    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
-    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
     "Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים.md",
     "Technion/CAL1/CAL1_007 אינטגרל לא מסוים.md",
     "Technion/CAL1/CAL1_009 אינטגרל מוכלל.md",
     "Technion/CAL1/CAL1_008 אינטגרל מסוים.md",
     "Technion/NUM1/NUM1_HW005 תרגיל בית 5.md",
     "Technion/NUM1/NUM1_HW004 תרגיל בית 4.md",
-    "Technion/NUM1/NUM1_HW003 תרגיל בית 3.md",
-    "Technion/NUM1/NUM1_HW002 תרגיל בית 2.md",
-    "Technion/NUM1/NUM1_HW001 תרגיל בית 1.md",
     "Technion/NUM1/NUM1_000.pdf",
     "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-04 12.12.04.excalidraw.svg",
     "Technion/NUM1/NUM1_009 אינטגרציה נומרית.pdf",

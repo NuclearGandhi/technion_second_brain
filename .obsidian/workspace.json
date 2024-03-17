@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
+                "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
                 "mode": "preview",
                 "source": false
               }
             },
-            "group": "f533133d2df954e5"
+            "group": "aef24e68e2d20f6f"
           }
         ]
       },
@@ -29,29 +29,17 @@
         "dimension": 50,
         "children": [
           {
-            "id": "91d65d23e1e3b363",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "f533133d2df954e5"
-          },
-          {
             "id": "214a58aa98a5eb4c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
+                "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
-            }
+            },
+            "group": "aef24e68e2d20f6f"
           }
         ]
       }
@@ -111,7 +99,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 297.5
+    "width": 297.5,
+    "collapsed": true
   },
   "right": {
     "id": "c1c3ae1b57de7de1",
@@ -127,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
+                "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -144,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
+                "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -167,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md"
+                "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md"
               }
             }
           }
@@ -193,8 +182,14 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "91d65d23e1e3b363",
+  "active": "214a58aa98a5eb4c",
   "lastOpenFiles": [
+    "Technion/NUM1/NUM1_010 גזירה נומרית.md",
+    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
+    "Technion/NUM1/Pasted image 20240317170141.png",
+    "Technion/NUM1/Pasted image 20240317165622.png",
+    "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
+    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
     "Technion/NUM1/NUM1_HW006.pyg",
     "Technion/NUM1/NUM1_HW006.aex",
     "Technion/NUM1/NUM1_HW006.pdf",
@@ -205,10 +200,7 @@
     "Technion/NUM1/_minted-NUM1_HW006/26C2CD72FA8EF709127B35FE735D6D6CADA481B3BD4FA10EE56EEDEEA7520781.pygtex",
     "Technion/NUM1/_minted-NUM1_HW006/7631FEA2B2B9333361AC781197DA4BD4FEA0071ECB3356536B7ED2ABD7D4F8DD.pygtex",
     "Technion/NUM1/_minted-NUM1_HW006/tango.pygstyle",
-    "Technion/NUM1/_minted-NUM1_HW006",
     "Technion/NUM1/NUM1_HW006/error_vs_n.png",
-    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
-    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
     "Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים.md",
     "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
     "Technion/SLD2/SLD2_009 משוואות שיווי משקל דיפרנציאליות.md",
@@ -236,8 +228,6 @@
     "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 08.35.34.excalidraw.md",
     "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.45.36.excalidraw.md",
     "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-13 08.45.05.excalidraw.md",
-    "Technion/NUM1/NUM1_HW001 תרגיל בית 1.md",
-    "Technion/NUM1/NUM1_HW003 תרגיל בית 3.md",
-    "Technion/NUM1/NUM1_HW004 תרגיל בית 4.md"
+    "Technion/NUM1/NUM1_HW001 תרגיל בית 1.md"
   ]
 }
