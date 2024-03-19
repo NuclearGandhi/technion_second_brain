@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
+                "file": "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md",
                 "mode": "preview",
                 "source": false
               }
@@ -34,9 +34,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
-                "mode": "source",
-                "source": true
+                "file": "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md",
+                "mode": "preview",
+                "source": false
               }
             },
             "group": "aef24e68e2d20f6f"
@@ -70,7 +70,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "TODO",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -116,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
+                "file": "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
+                "file": "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,8 +156,24 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md"
+                "file": "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md"
               }
+            }
+          },
+          {
+            "id": "d8067f248e4ec638",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "151cc87d40b0094d",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-chat-view",
+              "state": {}
             }
           }
         ],
@@ -182,52 +198,52 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "214a58aa98a5eb4c",
+  "active": "c5ec956dbd454029",
   "lastOpenFiles": [
-    "Technion/NUM1/NUM1_010 גזירה נומרית.md",
-    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
-    "Technion/NUM1/Pasted image 20240317170141.png",
-    "Technion/NUM1/Pasted image 20240317165622.png",
-    "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
+    "Technion/THE1/THE1_007/Pasted image 20240319193053.png",
+    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
+    "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md",
+    "Technion/NUM1/NUM1_HW006.pdf",
+    "Technion/THE1/THE1_007/Pasted image 20240319220308.png",
+    "Technion/THE1/THE1_007/Pasted image 20240319220238.png",
+    "Technion/THE1/THE1_007/Pasted image 20240319210827.png",
+    "Technion/THE1/THE1_007/Pasted image 20240319210536.png",
+    "Technion/THE1/THE1_007/Pasted image 20240319205701.png",
+    "Technion/THE1/THE1_007/Pasted image 20240319193200.png",
     "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
+    "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
+    "Technion/THE1/THE1_006 אנטרופיה.md",
+    "Technion/THE1/THE1_002 חישוב תכונות מערכת.md",
+    "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
+    "Technion/THE1/THE1_005 החוק השני של התרמודינמיקה.md",
+    "Technion/THE1/THE1_004 מכונות חום.md",
+    "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
+    "Technion/SLD2/SLD2_009 משוואות שיווי משקל דיפרנציאליות.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה.md",
+    "Excalidraw/Scripts/Downloaded/Boolean Operations.md",
+    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
+    "Technion/THE1/THE1_007/Screenshot_20240319_084240_OneDrive.jpg",
+    "Technion/THE1/THE1_007",
+    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
+    "Technion/NUM1/_minted-NUM1_HW006",
+    "Technion/NUM1/NUM1_HW006.log",
+    "Technion/NUM1/NUM1_HW006.fdb_latexmk",
+    "Technion/NUM1/NUM1_HW006.aux",
+    "Technion/NUM1/NUM1_HW006.tex",
     "Technion/NUM1/NUM1_HW006.pyg",
     "Technion/NUM1/NUM1_HW006.aex",
-    "Technion/NUM1/NUM1_HW006.pdf",
-    "Technion/NUM1/NUM1_HW006.synctex(busy)",
     "Technion/NUM1/NUM1_HW006.fls",
-    "Technion/NUM1/NUM1_HW006.xdv",
-    "Technion/NUM1/NUM1_HW006.synctex.gz",
-    "Technion/NUM1/_minted-NUM1_HW006/26C2CD72FA8EF709127B35FE735D6D6CADA481B3BD4FA10EE56EEDEEA7520781.pygtex",
-    "Technion/NUM1/_minted-NUM1_HW006/7631FEA2B2B9333361AC781197DA4BD4FEA0071ECB3356536B7ED2ABD7D4F8DD.pygtex",
-    "Technion/NUM1/_minted-NUM1_HW006/tango.pygstyle",
-    "Technion/NUM1/NUM1_HW006/error_vs_n.png",
-    "Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים.md",
-    "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
-    "Technion/SLD2/SLD2_009 משוואות שיווי משקל דיפרנציאליות.md",
-    "Technion/SLD2/SLD2_009/SLD2_009 משוואות שיווי משקל דיפרנציאליות 2024-03-12 00.25.21.excalidraw.md",
-    "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
-    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
-    "Technion/BMA1/BMA1_009 זהויות טריגונומטריות.md",
-    "Technion/DEQ1/DEQ1_002 גורם אינטגרציה, משוואה פרידה.md",
-    "Technion/CAL1/CAL1_007 אינטגרל לא מסוים.md",
-    "Technion/CAL1/CAL1_010 טורי מספרים.md",
-    "Technion/DEQ1/DEQ1_001 מבוא.md",
-    "Technion/PDE1/PDE1_001 הקדמה ומשוואות מסדר ראשון.md",
-    "Technion/THE1/THE1_006 אנטרופיה.md",
-    "Technion/NUM1/NUM1_HW005 תרגיל בית 5.md",
-    "Technion/NUM1/NUM1_HW005/output.png",
-    "Technion/NUM1/NUM1_HW005/n5.png",
-    "Technion/NUM1/NUM1_HW005/n20.png",
-    "Technion/NUM1/NUM1_HW005/n2.png",
-    "Technion/NUM1/NUM1_HW005/n10.png",
-    "Technion/NUM1/NUM1_HW005/evals.png",
-    "Technion/THE1/THE1_005/Screenshot_20240217_102059_OneDrive.jpg",
-    "Technion/NUM1/NUM1_HW002 תרגיל בית 2.md",
-    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
-    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה.md",
-    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 08.35.34.excalidraw.md",
-    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-14 09.45.36.excalidraw.md",
-    "Technion/SLD2/SLD2_008/SLD2_008 מאמצי גזירה בכפיפה 2024-03-13 08.45.05.excalidraw.md",
-    "Technion/NUM1/NUM1_HW001 תרגיל בית 1.md"
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-18 14.05.22.excalidraw.md",
+    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-18 12.15.32.excalidraw 1.md",
+    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-18 12.24.47.excalidraw 1.svg",
+    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-18 13.10.58.excalidraw 1.md",
+    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-18 12.24.47.excalidraw 1.md",
+    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-18 13.18.55.excalidraw 1.md",
+    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-18 12.15.32.excalidraw 1.svg",
+    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-18 12.14.40.excalidraw.md",
+    "Technion/THE1/THE1_006/THE1_006 אנטרופיה 2024-03-14 10.39.00.excalidraw.md",
+    "Technion/NUM1/NUM1_010 גזירה נומרית.md",
+    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
+    "Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים.md"
   ]
 }

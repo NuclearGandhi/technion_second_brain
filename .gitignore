@@ -6,11 +6,4 @@
 # Ignore Smart Connections folder because embeddings file is large and updated frequently
 .smart-connections
 .obsidian/plugins/smart-connections/
-
-
-
-
-
-# Ignore Smart Connections folder
-.smart-connections
 .obsidian/workspace.json

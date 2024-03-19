@@ -3,9 +3,9 @@
   "obsidian-excalidraw-plugin",
   "dynamic-rtl",
   "darlal-switcher-plus",
-  "obsidian-rtl",
   "obsidian-languagetool-plugin",
   "templater-obsidian",
   "find-unlinked-files",
-  "obsidian-pandoc"
+  "obsidian-pandoc",
+  "obsidian-rtl"
 ]
