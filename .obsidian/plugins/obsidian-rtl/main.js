@@ -222,9 +222,16 @@ function detectCanvasElement(el, ctx, setPreviewDirection) {
     }
   }
 }
+function detectExport(el, ctx, setPreviewDirection) {
+  var _a;
+  if ((el == null ? void 0 : el.classList) && ((_a = el.classList) == null ? void 0 : _a.contains("markdown-preview-view"))) {
+    setPreviewDirection(ctx.sourcePath, el);
+  }
+}
 var autoDirectionPostProcessor = (el, ctx, setPreviewDirection) => {
   let shouldAddDir = false, addedDir = false;
   detectCanvasElement(el, ctx, setPreviewDirection);
+  detectExport(el, ctx, setPreviewDirection);
   breaksToDivs(el);
   for (let i = 0; i < el.childNodes.length; i++) {
     const n = el.childNodes[i];
@@ -363,7 +370,7 @@ var RtlPlugin = class extends import_obsidian3.Plugin {
     this.registerEditorExtension(this.autoDirectionPlugin);
     this.registerEditorExtension(import_view2.EditorView.perLineTextDirection.of(true));
     this.registerMarkdownPostProcessor((el, ctx) => {
-      autoDirectionPostProcessor(el, ctx, (path, markdownPreviewElement) => this.setCanvasPreviewDirection(path, markdownPreviewElement));
+      autoDirectionPostProcessor(el, ctx, (path, markdownPreviewElement) => this.setPreviewDirectionByFileSettings(path, markdownPreviewElement));
     });
     await this.convertLegacySettings();
     await this.loadSettings();
@@ -559,7 +566,7 @@ var RtlPlugin = class extends import_obsidian3.Plugin {
     if (newDirection !== "auto" && this.settings.setYamlDirection)
       readingDiv.classList.add("rtl-yaml");
   }
-  setCanvasPreviewDirection(path, markdownPreviewElement) {
+  setPreviewDirectionByFileSettings(path, markdownPreviewElement) {
     const file = this.app.vault.getAbstractFileByPath(path);
     const [requiredDirection, _] = this.getRequiredFileDirection(file);
     this.setDocumentDirectionForReadingDiv(markdownPreviewElement, requiredDirection);

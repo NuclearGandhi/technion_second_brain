@@ -4,40 +4,40 @@
     "type": "split",
     "children": [
       {
-        "id": "7905c0688dabb416",
+        "id": "c4065a2f91cd69d4",
         "type": "tabs",
         "children": [
           {
-            "id": "c52a06f26c8e85d8",
+            "id": "978a2b0e9573a7e7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
+                "file": "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md",
                 "mode": "preview",
                 "source": false
               }
             },
-            "group": "cdc67b1e2c8945a3"
+            "group": "e33ac9fa122c48fc"
           }
         ]
       },
       {
-        "id": "bd6b9d98656efaee",
+        "id": "1f1b0355e9273d39",
         "type": "tabs",
         "children": [
           {
-            "id": "6fc6a032eddb45d5",
+            "id": "e761a9e152ac3450",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
+                "file": "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md",
                 "mode": "source",
                 "source": true
               }
             },
-            "group": "cdc67b1e2c8945a3"
+            "group": "e33ac9fa122c48fc"
           }
         ]
       }
@@ -113,7 +113,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
+            "file": "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
+            "file": "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -142,7 +142,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md"
+            "file": "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md"
           }
         }
       }
@@ -163,11 +163,32 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "6fc6a032eddb45d5",
+  "active": "e761a9e152ac3450",
   "lastOpenFiles": [
-    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
-    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
+    "templates/Default note.md",
+    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
+    "Technion/SLD2/SLD2_HW009 תרגיל בית 9.md",
     "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md",
+    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+    "Technion/NUM1/NUM1_001 הקדמה ומושגי יסוד.md",
+    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
+    "Technion/SLD2/SLD2_009 מבוא לאלסטיות.md",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה.md",
+    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-21 08.49.53.excalidraw.md",
+    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-21 09.04.22.excalidraw.md",
+    "Technion/SLD2/SLD2_010/SLD2_010 מבוא לאלסטיות 2024-03-21 08.26.09.excalidraw.md",
+    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-21 09.04.22.excalidraw.svg",
+    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-21 08.49.53.excalidraw.svg",
+    "Technion/SLD2/SLD2_010/SLD2_010 מבוא לאלסטיות 2024-03-21 08.26.09.excalidraw.svg",
+    "Technion/SLD2/SLD2_HW009/SLD2_HW009 תרגיל בית 9 2024-03-21 08.21.05.excalidraw.md",
+    "Technion/SLD2/SLD2_HW009/SLD2_HW009 תרגיל בית 9 2024-03-21 08.21.05.excalidraw.svg",
+    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
+    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
+    "Technion/THE1/THE1_007/Screenshot_20240319_100102_OneDrive.jpg",
+    "Technion/THE1/THE1_007/Screenshot_20240319_090721_OneDrive.jpg",
+    "Technion/THE1/THE1_007/Screenshot_20240319_084240_OneDrive.jpg",
+    "Technion/THE1/THE1_007",
+    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
     "Technion/THE1/Screenshot_20240319_100102_OneDrive.jpg",
     "Technion/THE1/Screenshot_20240319_090721_OneDrive.jpg",
     "Technion/THE1/Screenshot_20240319_084240_OneDrive.jpg",
@@ -175,41 +196,20 @@
     "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
     "Technion/NUM1/NUM1_HW006.pdf",
     "Technion/CAL1/CAL1_009 אינטגרל מוכלל.md",
-    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
     "Technion/SLD2/SLD2_011 שיטות אנרגיה 2024-03-18 14.05.22.excalidraw.md",
-    "Technion/SLD2/SLD2_011 שיטות אנרגיה 2024-03-18 14.05.22.excalidraw.svg",
-    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
-    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
     "Technion/SLD1/SLD1_002 שיווי משקל.md",
     "Technion/SLD2/SLD2_010 שקיעה של קורות 2024-03-18 13.18.55.excalidraw.md",
-    "Technion/SLD2/SLD2_010 שקיעה של קורות 2024-03-18 13.18.55.excalidraw.svg",
     "Technion/SLD2/SLD2_010 שקיעה של קורות 2024-03-18 13.10.58.excalidraw.md",
     "Technion/SLD2/SLD2_010 שקיעה של קורות 2024-03-18 12.15.32.excalidraw.md",
-    "Technion/SLD2/SLD2_010 שקיעה של קורות 2024-03-18 13.10.58.excalidraw.svg",
     "Technion/SLD2/SLD2_010 שקיעה של קורות 2024-03-18 12.24.47.excalidraw.md",
-    "Technion/SLD2/SLD2_010 שקיעה של קורות 2024-03-18 12.24.47.excalidraw.svg",
-    "Technion/SLD2/SLD2_010 שקיעה של קורות 2024-03-18 12.15.32.excalidraw.svg",
     "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-18 11.30.55.excalidraw.md",
-    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-18 12.14.40.excalidraw.md",
-    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-18 12.14.40.excalidraw.svg",
-    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-18 11.30.55.excalidraw.svg",
     "Technion/SLD2/SLD2_010",
-    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
-    "Technion/NUM1/NUM1_HW001 תרגיל בית 1.md",
-    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-    "Technion/SLD2/SLD2_009 משוואות שיווי משקל דיפרנציאליות.md",
-    "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
-    "Technion/NUM1/NUM1_010 גזירה נומרית.md",
-    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
-    "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
     "Technion/NUM1/NUM1_000.pdf",
     "Technion/NUM1/NUM1_009 אינטגרציה נומרית.pdf",
     "Technion/PDE1/PDE5",
     "Technion/SLD2/SLD2_009",
     "Technion/SLD2/SLD2_008",
     "Excalidraw/Scripts",
-    "Excalidraw",
-    "Excalidraw/Scripts/Downloaded"
+    "Excalidraw"
   ]
 }
