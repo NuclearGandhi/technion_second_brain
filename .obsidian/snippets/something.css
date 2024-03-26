@@ -250,6 +250,9 @@ Local only
   --font-caption-size: 18px;
  } 
 
+ .markdown-rendered .list-bullet {
+  float: right;
+}
 
 /* Padding between numbers */
 .markdown-rendered ol > li,

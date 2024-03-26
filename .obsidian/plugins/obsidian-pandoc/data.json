@@ -10,6 +10,6 @@
   "pandoc": null,
   "pdflatex": null,
   "outputFolder": null,
-  "extraArguments": "-f markdown+wikilinks_title_after_pipe\n--pdf-engine=xelatex\n-V lang:he \n-V dir:rtl \n--mathml \n--lua-filter obsidian.lua \n-s \n--template hebrew.tex \n-V callouts",
-  "exportFrom": "md"
+  "extraArguments": "-f markdown+wikilinks_title_after_pipe\n-V lang:he \n-V dir:rtl \n--mathjax \n--lua-filter obsidian.lua -V mainfont:\"David\"",
+  "exportFrom": "html"
 }

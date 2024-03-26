@@ -16,5 +16,6 @@
   "word-count",
   "workspaces",
   "file-recovery",
-  "publish"
+  "publish",
+  "sync"
 ]
