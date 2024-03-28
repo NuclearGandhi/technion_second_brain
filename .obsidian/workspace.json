@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
+                "file": "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
                 "mode": "preview",
                 "source": false
               }
@@ -32,9 +32,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
-                "mode": "source",
-                "source": true
+                "file": "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
+                "mode": "preview",
+                "source": false
               }
             },
             "group": "cafcc51c7eab4656"
@@ -93,8 +93,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -114,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
+                "file": "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
+                "file": "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/SLD2/SLD2_010 שקיעה של קורות.md"
+                "file": "Technion/SLD2/SLD2_011 שיטות אנרגיה.md"
               }
             }
           },
@@ -198,20 +197,41 @@
   },
   "active": "a2157cfda955d5b6",
   "lastOpenFiles": [
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 08.43.04.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.18.55.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.14.37.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.18.55.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.14.37.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.13.39.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.13.39.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.03.47.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.03.47.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.02.55.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.02.55.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.32.54.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.32.54.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.16.18.excalidraw.svg",
+    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.16.18.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.10.30.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.10.30.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.09.42.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.09.42.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 08.51.33.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 08.51.33.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 08.43.04.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-27 23.38.01.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 00.12.34.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 00.00.47.excalidraw.md",
+    "Technion/SLD2/SLD2_011 שיטות אנרגיה 2024-03-28 00.00.47.excalidraw.md",
+    "Technion/SLD2/SLD2_011 שיטות אנרגיה 2024-03-28 00.12.34.excalidraw.md",
+    "Technion/SLD2/SLD2_011 שיטות אנרגיה 2024-03-27 23.38.01.excalidraw.md",
+    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
+    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
     "Technion/THE1/THE1_HW008 תרגיל בית 8.md",
     "Technion/THE1/THE1_HW008.pdf",
     "Technion/THE1/THE1_HW008.aex",
     "Technion/THE1/THE1_HW008.fls",
-    "Technion/THE1/svg-inkscape/THE1_HW008 תרגיל בית 8 2024-03-24 14.23.59.excalidraw_svg-raw.png",
-    "Technion/THE1/THE1_HW008 תרגיל בית 8 2024-03-24 14.23.59.excalidraw_svg-raw.png",
-    "Technion/THE1/svg-inkscape/THE1_HW008 תרגיל בית 8 2024-03-24 00.46.39.excalidraw_svg-raw.png",
-    "Technion/THE1/THE1_HW008 תרגיל בית 8 2024-03-24 00.46.39.excalidraw_svg-raw.png",
-    "Technion/THE1/svg-inkscape/THE1_HW008 תרגיל בית 8 2024-03-24 00.41.23.excalidraw_svg-raw.png",
-    "Technion/THE1/THE1_HW008 תרגיל בית 8 2024-03-24 00.41.23.excalidraw_svg-raw.png",
-    "Technion/THE1/svg-inkscape/THE1_HW008 תרגיל בית 8 2024-03-25 09.20.01.excalidraw_svg-raw.png",
-    "Technion/THE1/THE1_HW008 תרגיל בית 8 2024-03-25 09.20.01.excalidraw_svg-raw.png",
-    "Technion/THE1/svg-inkscape/THE1_HW008 תרגיל בית 8 2024-03-25 07.46.56.excalidraw_svg-raw.png",
-    "Technion/THE1/THE1_HW008 תרגיל בית 8 2024-03-25 07.46.56.excalidraw_svg-raw.png",
     "Technion/THE1/svg-inkscape",
     "Technion/THE1/THE1_HW008.xdv",
     "Technion/THE1/_minted-THE1_HW008",
@@ -222,26 +242,6 @@
     "Technion/PDE1/PDE1_HW010 תרגיל בית 10.md",
     "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
     "Technion/pandoc-test.md",
-    "Technion/PDE1/PDE1_000 104228 מדח מ.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-27 16.17.13.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-27 16.04.04.excalidraw.md",
-    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-27 08.39.14.excalidraw.md",
-    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-27 08.42.48.excalidraw.md",
-    "Technion/PDE1/PDE7/PDE1_007 משוואת לפלס 2024-03-26 18.50.22.excalidraw.md",
-    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
-    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-26 22.51.12.excalidraw.md",
-    "Technion/SLD2/SLD2_HW009 תרגיל בית 9.md",
-    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
-    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
-    "Technion/THE1/THE1_008 מחזורי גז.md",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-    "Technion/THE1/THE1_007/THE1_007 מחזורי קיטור 2024-03-26 20.37.55.excalidraw.md",
-    "Technion/THE1/THE1_007 מחזורי קיטור.md",
-    "Technion/THE1/THE1_007/THE1_007 מחזורי קיטור 2024-03-26 20.10.27.excalidraw.md",
-    "Technion/PDE1/PDE1_007 משוואת לפלס.md",
-    "Technion/PDE1/PDE7/PDE1_007 משוואת לפלס 2024-03-26 19.11.13.excalidraw.md",
-    "Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים.md",
-    "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
-    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md"
+    "Technion/PDE1/PDE1_000 104228 מדח מ.md"
   ]
 }

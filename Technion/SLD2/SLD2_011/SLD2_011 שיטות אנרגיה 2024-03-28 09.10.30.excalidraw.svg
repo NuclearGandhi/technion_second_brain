@@ -1,0 +1,21 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 200" width="340" height="200" filter="invert(93%) hue-rotate(180deg)" class="excalidraw-svg">
+  <!-- svg-source:excalidraw -->
+  
+  <defs>
+    <style class="style-fonts">
+      @font-face {
+        font-family: "Virgil";
+        src: url("https://excalidraw.com/Virgil.woff2");
+      }
+      @font-face {
+        font-family: "Cascadia";
+        src: url("https://excalidraw.com/Cascadia.woff2");
+      }
+      @font-face {
+        font-family: "Assistant";
+        src: url("https://excalidraw.com/Assistant-Regular.woff2");
+      }
+    </style>
+    
+  </defs>
+  <g stroke-linecap="round" transform="translate(-10 30.000000000000057) rotate(89.99999999999994 40 19.999999999999957)"><path d="M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0 M0.27 24.08 C6.91 16.44, 13.55 8.8, 21.26 -0.07 M0.27 24.08 C7.52 15.74, 14.77 7.39, 21.26 -0.07 M7.09 40.62 C18.11 27.95, 29.12 15.27, 42.52 -0.14 M7.09 40.62 C18.8 27.15, 30.51 13.68, 42.52 -0.14 M28.35 40.55 C36.63 31.03, 44.9 21.51, 63.78 -0.21 M28.35 40.55 C36.92 30.69, 45.48 20.84, 63.78 -0.21 M49.61 40.48 C59.13 29.53, 68.64 18.59, 80.45 5.01 M49.61 40.48 C60.64 27.79, 71.67 15.1, 80.45 5.01 M70.87 40.41 C74 36.81, 77.13 33.22, 80.71 29.09 M70.87 40.41 C73.57 37.31, 76.26 34.21, 80.71 29.09" stroke="#a5d8ff" stroke-width="2" fill="none"/><path d="M0 0 C29.72 0, 59.44 0, 80 0 M0 0 C22.38 0, 44.76 0, 80 0 M80 0 C80 10.5, 80 21.01, 80 40 M80 0 C80 8.22, 80 16.43, 80 40 M80 40 C49.7 40, 19.41 40, 0 40 M80 40 C50.09 40, 20.18 40, 0 40 M0 40 C0 27.81, 0 15.61, 0 0 M0 40 C0 26.9, 0 13.8, 0 0" stroke="transparent" stroke-width="4" fill="none"/></g><g stroke-linecap="round"><g transform="translate(10 50) rotate(89.99999999999994 40 4.263256414560601e-14)"><path d="M0 0 C26.09 0, 52.19 0, 80 0 M0 0 C26.64 0, 53.28 0, 80 0" stroke="#1e1e1e" stroke-width="4" fill="none"/></g></g><mask/><g stroke-linecap="round"><g transform="translate(50 50.00000000000006) rotate(0 140 0)"><path d="M0 0 C104.12 0, 208.24 0, 280 0 M0 0 C70.5 0, 140.99 0, 280 0" stroke="#1e1e1e" stroke-width="4" fill="none"/></g></g><mask/><g stroke-linecap="round"><g transform="translate(50 50) rotate(0 140 70)"><path d="M0 0 C16.67 3.33, 70 0, 100 20 C130 40, 150 100, 180 120 C210 140, 263.33 136.67, 280 140" stroke="#1e1e1e" stroke-width="4.5" fill="none" stroke-dasharray="1.5 10"/></g></g><mask/></svg>
