@@ -1,43 +1,23 @@
 {
   "main": {
-    "id": "73aa16c91a1e7949",
+    "id": "15e2d708b9fc2bcf",
     "type": "split",
     "children": [
       {
-        "id": "e9f1fb3dca593dd7",
+        "id": "4804e9c3da033fd2",
         "type": "tabs",
         "children": [
           {
-            "id": "bdeea88a7dc294c1",
+            "id": "4dff9748b790ba8d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
-                "mode": "preview",
+                "file": "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
+                "mode": "source",
                 "source": false
               }
-            },
-            "group": "cafcc51c7eab4656"
-          }
-        ]
-      },
-      {
-        "id": "57e456089de7381f",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "a2157cfda955d5b6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
-                "mode": "preview",
-                "source": false
-              }
-            },
-            "group": "cafcc51c7eab4656"
+            }
           }
         ]
       }
@@ -45,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "295b8347a6be74ca",
+    "id": "edf57361676e029e",
     "type": "split",
     "children": [
       {
-        "id": "b03358443ecad2a0",
+        "id": "6f2d4d252d9a2c10",
         "type": "tabs",
         "children": [
           {
-            "id": "717dd551d2d7a242",
+            "id": "84942cca209dd95c",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -63,7 +43,7 @@
             }
           },
           {
-            "id": "8841281c19744294",
+            "id": "7d5df1722019b5c5",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -78,15 +58,7 @@
             }
           },
           {
-            "id": "5991f67376037c55",
-            "type": "leaf",
-            "state": {
-              "type": "starred",
-              "state": {}
-            }
-          },
-          {
-            "id": "6d64ea6681bf1b49",
+            "id": "4fc80c7bd20e0e6e",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -97,47 +69,47 @@
       }
     ],
     "direction": "horizontal",
-    "width": 297.5
+    "width": 300
   },
   "right": {
-    "id": "c1c3ae1b57de7de1",
+    "id": "9aafb922f99122c6",
     "type": "split",
     "children": [
       {
-        "id": "89b21bb9455ff781",
+        "id": "959b7234fe67061f",
         "type": "tabs",
         "children": [
           {
-            "id": "81ee544417da4107",
+            "id": "372e9de5688ecc65",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
-                "collapseAll": true,
+                "file": "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "5833210f157da751",
+            "id": "a53a42a2f5afaec6",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
+                "file": "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "efe95815146e6d7e",
+            "id": "5cec550524adc00b",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -148,29 +120,13 @@
             }
           },
           {
-            "id": "9dafd58fe938f77b",
+            "id": "237b8bf4c39af771",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/SLD2/SLD2_011 שיטות אנרגיה.md"
+                "file": "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md"
               }
-            }
-          },
-          {
-            "id": "d8067f248e4ec638",
-            "type": "leaf",
-            "state": {
-              "type": "smart-connections-view",
-              "state": {}
-            }
-          },
-          {
-            "id": "151cc87d40b0094d",
-            "type": "leaf",
-            "state": {
-              "type": "smart-connections-chat-view",
-              "state": {}
             }
           }
         ],
@@ -183,65 +139,64 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false,
+      "templater-obsidian:Templater": false,
+      "workspaces:Manage workspace layouts": false,
       "publish:Publish changes...": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "workspaces:Manage workspace layouts": false,
-      "darlal-switcher-plus:Open in Headings Mode": false,
-      "darlal-switcher-plus:Open Symbols for the active editor": false,
-      "templater-obsidian:Templater": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "a2157cfda955d5b6",
+  "active": "4dff9748b790ba8d",
   "lastOpenFiles": [
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 08.43.04.excalidraw.svg",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.18.55.excalidraw.svg",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.14.37.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.18.55.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.14.37.excalidraw.svg",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.13.39.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.13.39.excalidraw.svg",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.03.47.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.03.47.excalidraw.svg",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.02.55.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.02.55.excalidraw.svg",
+    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
+    "Technion/NUM1/NUM1_011 שיטות נומריות לפתרון משוואות דיפרנציאליות.md",
+    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 21.41.13.excalidraw.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 21.41.13.excalidraw.svg",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 22.12.34.excalidraw.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-26 22.51.12.excalidraw.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 22.00.54.excalidraw.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 22.12.34.excalidraw.svg",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 22.00.54.excalidraw.svg",
+    "Technion/THE1/THE1_HW008/THE1_HW008 תרגיל בית 8 2024-03-25 09.20.01.excalidraw.md",
+    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10 2024-03-29 18.58.17.excalidraw.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 17.26.48.excalidraw.md",
+    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10 2024-03-29 18.58.17.excalidraw.svg",
+    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 17.26.48.excalidraw.svg",
+    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+    "Technion/NUM1/NUM1_010 גזירה נומרית.md",
+    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
+    "Technion/NUM1/NUM1_011/output.png",
+    "Technion/NUM1/NUM1_011/Pasted image 20240329115745.png",
+    "Technion/NUM1/NUM1_011/Pasted image 20240329111210.png",
+    "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
+    "Technion/NUM1/NUM1_002 שיטות ישירות לפתרון מערכות לינאריות.md",
+    "Technion/NUM1/NUM1_003 נורמה.md",
+    "Technion/NUM1/NUM1_004 שיטות איטרטיביות לפתרון מערכות לינאריות.md",
+    "Technion/NUM1/NUM1_011/Pasted image 20240329094801.png",
+    "Technion/THE1/THE1_HW008 תרגיל בית 8.md",
+    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
+    "פנגייה - רשימת סיכומים.md",
+    "publish.css",
+    "_config.yml",
+    "publish.js",
+    "LICENSE",
+    "CNAME",
     "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.32.54.excalidraw.svg",
     "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.32.54.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.16.18.excalidraw.svg",
-    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.16.18.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.10.30.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.10.30.excalidraw.svg",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.09.42.excalidraw.svg",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.09.42.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 08.51.33.excalidraw.svg",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 08.51.33.excalidraw.md",
     "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 08.43.04.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-27 23.38.01.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 00.12.34.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 00.00.47.excalidraw.md",
-    "Technion/SLD2/SLD2_011 שיטות אנרגיה 2024-03-28 00.00.47.excalidraw.md",
-    "Technion/SLD2/SLD2_011 שיטות אנרגיה 2024-03-28 00.12.34.excalidraw.md",
-    "Technion/SLD2/SLD2_011 שיטות אנרגיה 2024-03-27 23.38.01.excalidraw.md",
-    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
-    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
-    "Technion/THE1/THE1_HW008 תרגיל בית 8.md",
-    "Technion/THE1/THE1_HW008.pdf",
-    "Technion/THE1/THE1_HW008.aex",
-    "Technion/THE1/THE1_HW008.fls",
-    "Technion/THE1/svg-inkscape",
-    "Technion/THE1/THE1_HW008.xdv",
-    "Technion/THE1/_minted-THE1_HW008",
-    "Technion/THE1/THE1_HW008.log",
-    "Technion/THE1/THE1_HW008.fdb_latexmk",
-    "Technion/THE1/THE1_HW008.aux",
-    "Technion/THE1/THE1_HW008.tex",
-    "Technion/PDE1/PDE1_HW010 תרגיל בית 10.md",
-    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
-    "Technion/pandoc-test.md",
-    "Technion/PDE1/PDE1_000 104228 מדח מ.md"
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 08.51.33.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.09.42.excalidraw.md",
+    "Technion/PDE1/PDE7",
+    "Technion/SLD2/SLD2_HW010",
+    "Technion/THE1/THE1_008",
+    "Technion/THE1/THE1_HW008",
+    "Technion/NUM1/NUM1_011"
   ]
 }

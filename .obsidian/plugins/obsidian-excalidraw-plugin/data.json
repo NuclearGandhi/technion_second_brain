@@ -6,7 +6,7 @@
   "scriptFolderPath": "Excalidraw/Scripts",
   "compress": false,
   "autosave": true,
-  "autosaveInterval": 10000,
+  "autosaveInterval": 15000,
   "autosaveIntervalDesktop": 15000,
   "autosaveIntervalMobile": 10000,
   "drawingFilenamePrefix": "Drawing ",
@@ -16,7 +16,7 @@
   "useExcalidrawExtension": true,
   "cropPrefix": "cropped_",
   "displaySVGInPreview": true,
-  "previewImageType": "SVGIMG",
+  "previewImageType": "SVG",
   "allowImageCache": true,
   "displayExportedImageIfAvailable": false,
   "previewMatchObsidianTheme": true,
@@ -63,10 +63,10 @@
   "autoExportLightAndDark": false,
   "autoexportExcalidraw": false,
   "embedType": "SVG",
-  "embedMarkdownCommentLinks": true,
+  "embedMarkdownCommentLinks": false,
   "embedWikiLink": true,
   "syncExcalidraw": false,
-  "experimentalFileType": false,
+  "experimentalFileType": true,
   "experimentalFileTag": "✏️",
   "experimentalLivePreview": true,
   "experimentalEnableFourthFont": false,
@@ -80,6 +80,86 @@
     "version": 2,
     "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.0.25",
     "libraryItems": [
+      {
+        "status": "unpublished",
+        "elements": [
+          {
+            "type": "rectangle",
+            "version": 518,
+            "versionNonce": 1505567196,
+            "isDeleted": false,
+            "id": "sMyS8OY2ZvnIB_ThljIQ7",
+            "fillStyle": "hachure",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "angle": 1.5707963267948957,
+            "x": -280,
+            "y": -139.99999999999994,
+            "strokeColor": "transparent",
+            "backgroundColor": "#a5d8ff",
+            "width": 119.99999999999999,
+            "height": 39.99999999999994,
+            "seed": 1483282788,
+            "groupIds": [
+              "jnzKS0TUKaH81YnCLOnnk"
+            ],
+            "frameId": null,
+            "roundness": null,
+            "boundElements": [],
+            "updated": 1711737715260,
+            "link": null,
+            "locked": false
+          },
+          {
+            "type": "line",
+            "version": 506,
+            "versionNonce": 569673308,
+            "isDeleted": false,
+            "id": "sXOWGOZq8IHHgiJnHs8cM",
+            "fillStyle": "hachure",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "angle": 1.5707963267948957,
+            "x": -260.0000000000001,
+            "y": -119.99999999999996,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "#a5d8ff",
+            "width": 120.00000000000009,
+            "height": 9.947598300641403e-14,
+            "seed": 1044925668,
+            "groupIds": [
+              "jnzKS0TUKaH81YnCLOnnk"
+            ],
+            "frameId": null,
+            "roundness": null,
+            "boundElements": [],
+            "updated": 1711737715260,
+            "link": null,
+            "locked": false,
+            "startBinding": null,
+            "endBinding": null,
+            "lastCommittedPoint": null,
+            "startArrowhead": null,
+            "endArrowhead": null,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                120.00000000000009,
+                9.947598300641403e-14
+              ]
+            ]
+          }
+        ],
+        "id": "yF0t4cY7Yxcp-6Zh_V6wT",
+        "created": 1711737773593
+      },
       {
         "status": "unpublished",
         "elements": [
@@ -3636,7 +3716,7 @@
   "previousRelease": "1.8.20",
   "showReleaseNotes": false,
   "showNewVersionNotification": true,
-  "latexBoilerplate": "\\color{blue}",
+  "latexBoilerplate": "\\color{red}",
   "taskboneEnabled": false,
   "taskboneAPIkey": "",
   "pinnedScripts": [

@@ -251,7 +251,12 @@ Local only
  } 
 
  .markdown-rendered .list-bullet {
-  float: right;
+  float: inline-start;
+}
+
+.markdown-preview-view.is-auto .esm-ltr {
+  direction: rtl;
+  text-align-last: unset;
 }
 
 /* Padding between numbers */
