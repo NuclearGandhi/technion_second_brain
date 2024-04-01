@@ -1,6 +1,7 @@
 {
   "folder": "Excalidraw",
   "cropFolder": "",
+  "annotateFolder": "",
   "embedUseExcalidrawFolder": false,
   "templateFilePath": "templates/default_exca.excalidraw",
   "scriptFolderPath": "Excalidraw/Scripts",
@@ -15,6 +16,7 @@
   "drawingFilenameDateTime": "YYYY-MM-DD HH.mm.ss",
   "useExcalidrawExtension": true,
   "cropPrefix": "cropped_",
+  "annotatePrefix": "annotated_",
   "displaySVGInPreview": true,
   "previewImageType": "SVG",
   "allowImageCache": true,
@@ -30,6 +32,7 @@
   "matchThemeTrigger": true,
   "defaultMode": "normal",
   "defaultPenMode": "mobile",
+  "penModeCrosshairVisible": false,
   "allowPinchZoom": false,
   "allowWheelZoom": false,
   "zoomToFitOnOpen": true,
@@ -78,7 +81,7 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.0.25",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.1.0",
     "libraryItems": [
       {
         "status": "unpublished",
@@ -4356,5 +4359,7 @@
   },
   "slidingPanesSupport": false,
   "areaZoomLimit": 1,
+  "longPressDesktop": 500,
+  "longPressMobile": 500,
   "mathjaxSourceURL": "https://cdn.jsdelivr.net/npm/mathjax@3.2.1/es5/tex-svg.js"
 }
