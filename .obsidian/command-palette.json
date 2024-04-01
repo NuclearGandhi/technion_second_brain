@@ -1,6 +1,7 @@
 {
   "pinned": [
     "obsidian-excalidraw-plugin:excalidraw-autocreate-and-embed-new-tab",
-    "editor:attach-file"
+    "editor:attach-file",
+    "obsidian-excalidraw-plugin:open-image-excalidraw-source"
   ]
 }

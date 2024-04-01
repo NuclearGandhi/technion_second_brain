@@ -11,7 +11,7 @@
     "pageSize": "A4",
     "landscape": false,
     "margin": "0",
-    "downscalePercent": 60
+    "downscalePercent": 75
   },
   "newFileLocation": "current",
   "spellcheck": true,

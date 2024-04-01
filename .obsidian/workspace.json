@@ -8,18 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4dff9748b790ba8d",
+            "id": "022323c4dfcb3169",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
+                "file": "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8b5020e970d32638",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/THE1/THE1_HW009 תרגיל בית 9.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +82,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9aafb922f99122c6",
@@ -85,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
+                "file": "Technion/THE1/THE1_HW009 תרגיל בית 9.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
+                "file": "Technion/THE1/THE1_HW009 תרגיל בית 9.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md"
+                "file": "Technion/THE1/THE1_HW009 תרגיל בית 9.md"
               }
             }
           }
@@ -151,48 +165,49 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4dff9748b790ba8d",
+  "active": "8b5020e970d32638",
   "lastOpenFiles": [
-    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
-    "Technion/NUM1/NUM1_011 שיטות נומריות לפתרון משוואות דיפרנציאליות.md",
-    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
-    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 21.41.13.excalidraw.md",
-    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 21.41.13.excalidraw.svg",
-    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 22.12.34.excalidraw.md",
-    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-26 22.51.12.excalidraw.md",
-    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 22.00.54.excalidraw.md",
-    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 22.12.34.excalidraw.svg",
-    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 22.00.54.excalidraw.svg",
-    "Technion/THE1/THE1_HW008/THE1_HW008 תרגיל בית 8 2024-03-25 09.20.01.excalidraw.md",
-    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10 2024-03-29 18.58.17.excalidraw.md",
-    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 17.26.48.excalidraw.md",
-    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10 2024-03-29 18.58.17.excalidraw.svg",
-    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
-    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 17.26.48.excalidraw.svg",
-    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
-    "Technion/NUM1/NUM1_010 גזירה נומרית.md",
-    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
-    "Technion/NUM1/NUM1_011/output.png",
-    "Technion/NUM1/NUM1_011/Pasted image 20240329115745.png",
-    "Technion/NUM1/NUM1_011/Pasted image 20240329111210.png",
-    "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
-    "Technion/NUM1/NUM1_002 שיטות ישירות לפתרון מערכות לינאריות.md",
-    "Technion/NUM1/NUM1_003 נורמה.md",
-    "Technion/NUM1/NUM1_004 שיטות איטרטיביות לפתרון מערכות לינאריות.md",
-    "Technion/NUM1/NUM1_011/Pasted image 20240329094801.png",
-    "Technion/THE1/THE1_HW008 תרגיל בית 8.md",
     "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
-    "פנגייה - רשימת סיכומים.md",
+    "Technion/THE1/THE1_HW008 תרגיל בית 8.md",
+    "Technion/THE1/THE1_HW009 תרגיל בית 9.md",
+    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/SLD1/SLD1_009 עקרונות חשובים.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-04-01 14.20.56.excalidraw.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-04-01 14.17.21.excalidraw.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 22.00.54.excalidraw.md",
+    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10 2024-04-01 14.32.59.excalidraw.md",
+    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10 2024-04-01 15.32.03.excalidraw.md",
+    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10 2024-04-01 15.32.03.excalidraw.svg",
+    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10 2024-04-01 14.32.59.excalidraw.svg",
+    "Technion/SLD2/SLD2_HW009 תרגיל בית 9.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 22.12.34.excalidraw.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-04-01 14.20.56.excalidraw.svg",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-04-01 14.17.21.excalidraw.svg",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 22.00.54.excalidraw.svg",
+    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-30 22.02.20.excalidraw.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-04-01 11.47.02.excalidraw.md",
+    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-04-01 11.47.02.excalidraw.svg",
+    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10 2024-04-01 11.40.05.excalidraw.md",
+    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10 2024-04-01 11.40.05.excalidraw.svg",
+    "Technion/NUM1/NUM1_011 שיטות נומריות לפתרון משוואות דיפרנציאליות.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-30 19.48.38.excalidraw.md",
+    "Technion/NUM1/NUM1_010 גזירה נומרית.md",
+    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+    "Technion/NUM1/NUM1_011 פתרון נומרי למשוואות דיפרנציאליות.md",
+    "Technion/SLD1/SLD1_008 פיתול.md",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-26 22.51.12.excalidraw.md",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-30 22.02.20.excalidraw.svg",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-30 19.48.38.excalidraw.svg",
+    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-03-29 22.12.34.excalidraw.svg",
     "publish.css",
     "_config.yml",
     "publish.js",
     "LICENSE",
     "CNAME",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.32.54.excalidraw.svg",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.32.54.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 08.43.04.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 08.51.33.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 09.09.42.excalidraw.md",
     "Technion/PDE1/PDE7",
     "Technion/SLD2/SLD2_HW010",
     "Technion/THE1/THE1_008",
