@@ -7,5 +7,6 @@
   "templater-obsidian",
   "find-unlinked-files",
   "obsidian-pandoc",
-  "obsidian-rtl"
+  "obsidian-rtl",
+  "better-export-pdf"
 ]
