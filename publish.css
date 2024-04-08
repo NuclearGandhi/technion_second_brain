@@ -254,7 +254,7 @@ Publish only
   --site-name-size: 36px;
   --logo-max-height: 100px;
   --component-title-size: var(--font-ui-medium);
-  --font-caption-size: 18px;
+  --font-caption-size: 15px;
 }
 
 /* Make it rtl */

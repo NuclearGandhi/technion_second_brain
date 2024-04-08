@@ -74,7 +74,7 @@ table {
 .markdown-rendered blockquote {
   border-left: 0;
   border-right: 0;
-  font-size: var(--font-ui-medium);
+  font-size: var(--font-caption-size);
   color: var(--icon-color-hover);
   text-align: center;
 }
@@ -257,6 +257,10 @@ Local only
 .markdown-preview-view.is-auto .esm-ltr {
   direction: rtl;
   text-align-last: unset;
+}
+
+.HyperMD-list-line {
+  direction: rtl !important;
 }
 
 /* Padding between numbers */
