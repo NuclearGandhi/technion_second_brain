@@ -8,23 +8,13 @@
         "type": "tabs",
         "children": [
           {
-            "id": "085af1294e4adecb",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Technion/THE1/THE1_009/Pasted image 20240406212414.png"
-              }
-            }
-          },
-          {
-            "id": "9fb32f127586f229",
+            "id": "bc309fa5e0c2d45c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/THE1/THE1_007 מחזורי קיטור.md",
-                "mode": "preview",
+                "file": "Technion/THE1/THE1_010 מחזורי קירור.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -79,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9aafb922f99122c6",
@@ -95,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/THE1/THE1_009/Pasted image 20240406212414.png",
+                "file": "Technion/THE1/THE1_010 מחזורי קירור.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/THE1/THE1_009/Pasted image 20240406212414.png",
+                "file": "Technion/THE1/THE1_010 מחזורי קירור.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/THE1/THE1_009/Pasted image 20240406212414.png"
+                "file": "Technion/THE1/THE1_010 מחזורי קירור.md"
               }
             }
           }
@@ -161,23 +152,37 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "085af1294e4adecb",
+  "active": "bc309fa5e0c2d45c",
   "lastOpenFiles": [
+    "Technion/THE1/Pasted image 20240407195542.png",
+    "Technion/THE1/Pasted image 20240407195508.png",
     "Technion/THE1/THE1_007 מחזורי קיטור.md",
-    "Technion/THE1/THE1_009/Pasted image 20240406212414.png",
+    "Technion/THE1/THE1_008 מחזורי גז.md",
+    "Technion/THE1/THE1_010 מחזורי קירור.md",
+    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
     "Technion/THE1/THE1_009 מחזורי בעירה פנימית.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.40.21.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-18 14.05.22.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.14.37.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.18.55.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 10.48.20.excalidraw.md",
+    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.22.11.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.32.19.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.32.19.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.29.05.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.02.37.excalidraw.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.40.21.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.29.05.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.22.11.excalidraw.svg",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.02.37.excalidraw.svg",
+    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
+    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 10.48.20.excalidraw.svg",
+    "Technion/THE1/THE1_009/Pasted image 20240406212414.png",
     "Technion/THE1/THE1_009/Pasted image 20240406141027.png",
     "Technion/THE1/THE1_009",
     "Technion/THE1/THE1_009/Pasted image 20240406204908.png",
-    "Technion/THE1/THE1_009/Pasted image 20240406155119.png",
     "Technion/THE1/THE1_006 אנטרופיה.md",
-    "Technion/THE1/THE1_009/Pasted image 20240406154259.png",
-    "Technion/THE1/THE1_008 מחזורי גז.md",
-    "Technion/THE1/THE1_009/Pasted image 20240406144356.png",
-    "Technion/THE1/THE1_009/Pasted image 20240406142902.png",
-    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
-    "Technion/THE1/THE1_008/THE1_008 מחזורי גז 2024-04-05 17.03.58.excalidraw.svg",
-    "Technion/THE1/THE1_008/THE1_008 מחזורי גז 2024-04-06 12.32.22.excalidraw.svg",
     "Technion/THE1/THE1_002 חישוב תכונות מערכת.md",
     "Technion/THE1/THE1_008/THE1_008 מחזורי גז 2024-04-06 12.32.22.excalidraw.md",
     "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
@@ -186,20 +191,7 @@
     "Technion/pandoc-test.md",
     "Technion/SLD2/SLD2_HW009 תרגיל בית 9.md",
     "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
-    "Technion/THE1/THE1_HW008 תרגיל בית 8.md",
-    "Technion/THE1/THE1_005 החוק השני של התרמודינמיקה.md",
-    "Technion/THE1/THE1_HW009/THE1_HW009 תרגיל בית 9 2024-04-03 17.55.35.excalidraw.md",
-    "Technion/THE1/THE1_HW009/THE1_HW009 תרגיל בית 9 2024-04-04 12.13.56.excalidraw.md",
-    "Technion/THE1/THE1_HW009/THE1_HW009 תרגיל בית 9 2024-04-01 21.59.51.excalidraw.md",
-    "Technion/THE1/THE1_HW009/THE1_HW009 תרגיל בית 9 2024-04-04 12.13.56.excalidraw.svg",
-    "Technion/THE1/THE1_HW009/THE1_HW009 תרגיל בית 9 2024-04-01 18.34.35.excalidraw.md",
     "Technion/THE1/THE1_HW009",
-    "Technion/THE1/THE1_007/THE1_007 מחזורי קיטור 2024-03-26 20.37.55.excalidraw.md",
-    "Technion/THE1/THE1_007/THE1_007 מחזורי קיטור 2024-03-26 20.10.27.excalidraw.md",
-    "Technion/THE1/THE1_HW009 תרגיל בית 9 2024-04-01 18.33.01.excalidraw.md",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-    "Technion/SLD1/SLD1_009 עקרונות חשובים.md",
-    "Technion/SLD2/SLD2_HW010/SLD2_HW0010 תרגיל בית 10 2024-04-01 14.20.56.excalidraw.md",
     "publish.css",
     "_config.yml",
     "publish.js",
