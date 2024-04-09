@@ -11,11 +11,9 @@
             "id": "4077b9daacc1a60e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
-                "mode": "preview",
-                "source": false
+                "file": "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png"
               }
             },
             "group": "06604e38ef18bc06"
@@ -30,14 +28,24 @@
             "id": "96fd3ef745069d49",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
-                "mode": "preview",
-                "source": false
+                "file": "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png"
               }
             },
             "group": "06604e38ef18bc06"
+          },
+          {
+            "id": "b88f6db7b4525dd7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -68,7 +76,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "\"שינויי פאזה\"",
+                "query": "TODO",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,11 +93,13 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9aafb922f99122c6",
@@ -105,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
+                "file": "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
+                "file": "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md"
+                "file": "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png"
               }
             }
           }
@@ -171,8 +181,20 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "96fd3ef745069d49",
+  "active": "7d5df1722019b5c5",
   "lastOpenFiles": [
+    "Technion/NUM1/NUM1_012 אופטימיזציה.md",
+    "Technion/NUM1/NUM1_012",
+    "Technion/NUM1/NUM1_012/Pasted image 20240409120400.png",
+    "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
+    "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
+    "Technion/NUM1/NUM1_004 שיטות איטרטיביות לפתרון מערכות לינאריות.md",
+    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
+    "Technion/NUM1/NUM1_012/Pasted image 20240409094256.png",
+    "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
+    "Technion/NUM1/NUM1_005 משוואות לא לינאריות במשתנה אחד.md",
+    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+    "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png",
     "Technion/THE1/THE1_010/Pasted image 20240408221400.png",
     "Technion/THE1/THE1_010 מחזורי קירור.md",
     "Technion/THE1/THE1_010/Pasted image 20240408233206.png",
@@ -181,16 +203,12 @@
     "Technion/THE1/THE1_010/Pasted image 20240408231724.png",
     "Technion/THE1/THE1_010/Pasted image 20240408231407.png",
     "Technion/THE1/THE1_010/Pasted image 20240408230852.png",
-    "Technion/THE1/THE1_010/Pasted image 20240408221402.png",
-    "Technion/THE1/THE1_002/Pasted image 20240408210858.png",
-    "Technion/THE1/THE1_002/Pasted image 20240408212441.png",
     "Technion/THE1/THE1_002 חישוב תכונות מערכת.md",
     "Technion/THE1/THE1_010",
     "Technion/THE1/THE1_005 החוק השני של התרמודינמיקה.md",
     "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
     "Technion/THE1/THE1_007 מחזורי קיטור.md",
     "Technion/THE1/THE1_008 מחזורי גז.md",
-    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
     "Technion/THE1/THE1_009 מחזורי בעירה פנימית.md",
     "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.40.21.excalidraw.md",
     "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-18 14.05.22.excalidraw.md",
@@ -203,20 +221,12 @@
     "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.02.37.excalidraw.md",
     "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
     "Technion/THE1/THE1_009",
-    "Technion/THE1/THE1_006 אנטרופיה.md",
-    "Technion/THE1/THE1_008/THE1_008 מחזורי גז 2024-04-06 12.32.22.excalidraw.md",
-    "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
-    "Technion/THE1/THE1_008/THE1_008 מחזורי גז 2024-04-05 17.03.58.excalidraw.md",
-    "Technion/THE1/THE1_HW009 תרגיל בית 9.md",
-    "Technion/pandoc-test.md",
-    "Technion/SLD2/SLD2_HW009 תרגיל בית 9.md",
     "Technion/THE1/THE1_HW009",
     "publish.css",
     "_config.yml",
     "publish.js",
     "LICENSE",
     "CNAME",
-    "Technion/PDE1/PDE7",
-    "Technion/SLD2/SLD2_HW010"
+    "Technion/PDE1/PDE7"
   ]
 }
