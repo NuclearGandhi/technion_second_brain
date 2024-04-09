@@ -11,9 +11,11 @@
             "id": "4077b9daacc1a60e",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png"
+                "file": "Technion/NUM1/NUM1_E2021WA.md",
+                "mode": "preview",
+                "source": false
               }
             },
             "group": "06604e38ef18bc06"
@@ -28,20 +30,22 @@
             "id": "96fd3ef745069d49",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png"
+                "file": "Technion/NUM1/NUM1_E2021WA.md",
+                "mode": "source",
+                "source": true
               }
             },
             "group": "06604e38ef18bc06"
           },
           {
-            "id": "b88f6db7b4525dd7",
+            "id": "3a239f952e35d59f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
+                "file": "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
                 "mode": "source",
                 "source": false
               }
@@ -76,7 +80,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "TODO",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,13 +97,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "9aafb922f99122c6",
@@ -115,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png",
+                "file": "Technion/NUM1/NUM1_E2021WA.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png",
+                "file": "Technion/NUM1/NUM1_E2021WA.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +157,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png"
+                "file": "Technion/NUM1/NUM1_E2021WA.md"
               }
             }
           }
@@ -181,20 +183,29 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "7d5df1722019b5c5",
+  "active": "96fd3ef745069d49",
   "lastOpenFiles": [
+    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
+    "Technion/NUM1/NUM1_E2021WA.md",
+    "Technion/NUM1/NUM1_005 משוואות לא לינאריות במשתנה אחד.md",
+    "Technion/CAL1/CAL1_008/CAL1_008 אינטגרל מסוים 2023-01-10 08.36.27.excalidraw.md",
+    "Technion/NUM1/NUM1_002 שיטות ישירות לפתרון מערכות לינאריות.md",
+    "Technion/NUM1/NUM1_003 נורמה.md",
+    "Technion/NUM1/NUM1_004 שיטות איטרטיביות לפתרון מערכות לינאריות.md",
+    "Technion/NUM1/NUM1_011 שיטות נומריות לפתרון משוואות דיפרנציאליות.md",
+    "Technion/NUM1/NUM1_010 גזירה נומרית.md",
+    "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
+    "Technion/NUM1/NUM1_HW001 תרגיל בית 1.md",
+    "Technion/GCH1/GCH1_E2019WA.md",
+    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+    "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png",
     "Technion/NUM1/NUM1_012 אופטימיזציה.md",
     "Technion/NUM1/NUM1_012",
     "Technion/NUM1/NUM1_012/Pasted image 20240409120400.png",
-    "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
     "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
-    "Technion/NUM1/NUM1_004 שיטות איטרטיביות לפתרון מערכות לינאריות.md",
     "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
     "Technion/NUM1/NUM1_012/Pasted image 20240409094256.png",
     "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
-    "Technion/NUM1/NUM1_005 משוואות לא לינאריות במשתנה אחד.md",
-    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
-    "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png",
     "Technion/THE1/THE1_010/Pasted image 20240408221400.png",
     "Technion/THE1/THE1_010 מחזורי קירור.md",
     "Technion/THE1/THE1_010/Pasted image 20240408233206.png",
@@ -212,14 +223,6 @@
     "Technion/THE1/THE1_009 מחזורי בעירה פנימית.md",
     "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.40.21.excalidraw.md",
     "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-18 14.05.22.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.14.37.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-28 10.18.55.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 10.48.20.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.22.11.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.32.19.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.29.05.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.02.37.excalidraw.md",
-    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
     "Technion/THE1/THE1_009",
     "Technion/THE1/THE1_HW009",
     "publish.css",
