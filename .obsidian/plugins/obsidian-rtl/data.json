@@ -1,5 +1,7 @@
 {
-  "fileDirections": {},
+  "fileDirections": {
+    "Technion/NUM1/NUM1_E2022WA 2022 חורף מועד א.md": "auto"
+  },
   "defaultDirection": "auto",
   "rememberPerFile": true,
   "setNoteTitleDirection": true,

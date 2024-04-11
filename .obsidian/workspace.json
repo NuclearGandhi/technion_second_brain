@@ -6,6 +6,7 @@
       {
         "id": "9394a331ae7b6e24",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "4077b9daacc1a60e",
@@ -13,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_E2021WA.md",
+                "file": "Technion/NUM1/NUM1_E2022WA 2022 חורף מועד א.md",
                 "mode": "preview",
                 "source": false
               }
@@ -25,6 +26,7 @@
       {
         "id": "d010c5e020eb5a19",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
             "id": "96fd3ef745069d49",
@@ -32,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_E2021WA.md",
+                "file": "Technion/NUM1/NUM1_E2022WA 2022 חורף מועד א.md",
                 "mode": "source",
                 "source": true
               }
@@ -40,13 +42,13 @@
             "group": "06604e38ef18bc06"
           },
           {
-            "id": "3a239f952e35d59f",
+            "id": "9f21572d3424492c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
-                "mode": "source",
+                "file": "Technion/NUM1/NUM1_011 שיטות נומריות לפתרון משוואות דיפרנציאליות.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -80,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "\"מספר מצב\"",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -101,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9aafb922f99122c6",
@@ -117,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/NUM1/NUM1_E2021WA.md",
+                "file": "Technion/NUM1/NUM1_E2022WA 2022 חורף מועד א.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +137,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/NUM1/NUM1_E2021WA.md",
+                "file": "Technion/NUM1/NUM1_E2022WA 2022 חורף מועד א.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/NUM1/NUM1_E2021WA.md"
+                "file": "Technion/NUM1/NUM1_E2022WA 2022 חורף מועד א.md"
               }
             }
           }
@@ -185,44 +188,44 @@
   },
   "active": "96fd3ef745069d49",
   "lastOpenFiles": [
-    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
-    "Technion/NUM1/NUM1_E2021WA.md",
-    "Technion/NUM1/NUM1_005 משוואות לא לינאריות במשתנה אחד.md",
-    "Technion/CAL1/CAL1_008/CAL1_008 אינטגרל מסוים 2023-01-10 08.36.27.excalidraw.md",
-    "Technion/NUM1/NUM1_002 שיטות ישירות לפתרון מערכות לינאריות.md",
-    "Technion/NUM1/NUM1_003 נורמה.md",
-    "Technion/NUM1/NUM1_004 שיטות איטרטיביות לפתרון מערכות לינאריות.md",
     "Technion/NUM1/NUM1_011 שיטות נומריות לפתרון משוואות דיפרנציאליות.md",
     "Technion/NUM1/NUM1_010 גזירה נומרית.md",
+    "Technion/NUM1/NUM1_E2022WA 2022 חורף מועד א.md",
+    "Technion/NUM1/NUM1_E2021WA 2021 חורף מועד א.md",
+    "Technion/NUM1/NUM1_E2021WB 2021 חורף מועד ב.md",
+    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
+    "Technion/NUM1/NUM1_012 אופטימיזציה.md",
+    "Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים.md",
+    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
+    "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
+    "Technion/NUM1/NUM1_003 נורמה.md",
+    "Technion/CAL2/CAL2_001 וקטורים.md",
+    "Technion/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
+    "Technion/NUM1/NUM1_002 שיטות ישירות לפתרון מערכות לינאריות.md",
+    "Technion/NUM1/NUM1_004 שיטות איטרטיביות לפתרון מערכות לינאריות.md",
+    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+    "Technion/CAL1/CAL1_006 פולינום טיילור.md",
+    "Technion/NUM1/NUM1_HW003 תרגיל בית 3.md",
+    "Technion/NUM1/NUM1_HW004 תרגיל בית 4.md",
     "Technion/NUM1/NUM1_006 מערכת משוואות לא לינארית.md",
+    "Technion/NUM1/NUM1_005 משוואות לא לינאריות במשתנה אחד.md",
+    "Technion/CAL1/CAL1_008/CAL1_008 אינטגרל מסוים 2023-01-10 08.36.27.excalidraw.md",
     "Technion/NUM1/NUM1_HW001 תרגיל בית 1.md",
     "Technion/GCH1/GCH1_E2019WA.md",
-    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
     "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png",
-    "Technion/NUM1/NUM1_012 אופטימיזציה.md",
     "Technion/NUM1/NUM1_012",
     "Technion/NUM1/NUM1_012/Pasted image 20240409120400.png",
     "Technion/CAL2/CAL2_007 נגזרות מכוונות וגרדיאנט.md",
     "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
     "Technion/NUM1/NUM1_012/Pasted image 20240409094256.png",
-    "Technion/CAL2/CAL2_010 נקודות אקסטרמום.md",
     "Technion/THE1/THE1_010/Pasted image 20240408221400.png",
-    "Technion/THE1/THE1_010 מחזורי קירור.md",
     "Technion/THE1/THE1_010/Pasted image 20240408233206.png",
     "Technion/THE1/THE1_010/Pasted image 20240408233151.png",
     "Technion/THE1/THE1_010/Pasted image 20240408233110.png",
     "Technion/THE1/THE1_010/Pasted image 20240408231724.png",
     "Technion/THE1/THE1_010/Pasted image 20240408231407.png",
     "Technion/THE1/THE1_010/Pasted image 20240408230852.png",
-    "Technion/THE1/THE1_002 חישוב תכונות מערכת.md",
     "Technion/THE1/THE1_010",
-    "Technion/THE1/THE1_005 החוק השני של התרמודינמיקה.md",
-    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
-    "Technion/THE1/THE1_007 מחזורי קיטור.md",
-    "Technion/THE1/THE1_008 מחזורי גז.md",
-    "Technion/THE1/THE1_009 מחזורי בעירה פנימית.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-04-07 11.40.21.excalidraw.md",
-    "Technion/SLD2/SLD2_011/SLD2_011 שיטות אנרגיה 2024-03-18 14.05.22.excalidraw.md",
     "Technion/THE1/THE1_009",
     "Technion/THE1/THE1_HW009",
     "publish.css",
