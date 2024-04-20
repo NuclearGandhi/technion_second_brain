@@ -4242,15 +4242,16 @@ __export(main_exports, {
   default: () => BetterExportPdfPlugin
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian4 = require("obsidian");
+var import_obsidian5 = require("obsidian");
 
 // src/modal.ts
-var import_obsidian2 = require("obsidian");
+var import_obsidian3 = require("obsidian");
 
 // src/render.ts
-var import_obsidian = require("obsidian");
+var import_obsidian2 = require("obsidian");
 
 // src/utils.ts
+var import_obsidian = require("obsidian");
 var TreeNode = class {
   constructor(key, title, level) {
     this.children = [];
@@ -4294,7 +4295,7 @@ function modifyDest(doc) {
   });
   return data;
 }
-function modifyAnchors(doc, dest, basename) {
+function fixAnchors(doc, dest, basename) {
   doc.querySelectorAll("a.internal-link").forEach((el, i) => {
     var _a, _b;
     const [title, anchor] = (_b = (_a = el.dataset.href) == null ? void 0 : _a.split("#")) != null ? _b : [];
@@ -4309,27 +4310,31 @@ function modifyAnchors(doc, dest, basename) {
     }
   });
 }
-function waitFor(cond, timeout = 0) {
-  return new Promise((resolve, reject) => {
-    const startTime = Date.now();
-    const poll = () => {
-      if (cond()) {
-        resolve(true);
-      } else if (timeout > 0 && Date.now() - startTime >= timeout) {
-        reject(new Error("Timeout exceeded"));
-      } else {
-        setTimeout(poll, 500);
-      }
-    };
-    poll();
-  });
-}
 var px2mm = (px2) => {
   return Math.round(px2 * 0.26458333333719);
 };
 var mm2px = (mm) => {
   return Math.round(mm * 3.779527559);
 };
+function traverseFolder(path) {
+  if (path instanceof import_obsidian.TFile) {
+    if (path.extension == "md") {
+      return [path];
+    } else {
+      return [];
+    }
+  }
+  const arr = [];
+  for (const item of path.children) {
+    arr.push(...traverseFolder(item));
+  }
+  return arr;
+}
+function copyAttributes(node, attributes) {
+  Array.from(attributes).forEach((attr) => {
+    node.setAttribute(attr.name, attr.value);
+  });
+}
 
 // src/render.ts
 function getAllStyles() {
@@ -4424,15 +4429,16 @@ function getFrontMatter(app, file) {
 }
 async function renderMarkdown(app, file, config, extra) {
   var _a, _b, _c, _d, _e, _f, _g, _h, _i;
+  const startTime = (/* @__PURE__ */ new Date()).getTime();
   const ws = app.workspace;
   if (((_a = ws.getActiveFile()) == null ? void 0 : _a.path) != file.path) {
     const leaf = ws.getLeaf();
     await leaf.openFile(file);
   }
-  const view = ws.getActiveViewOfType(import_obsidian.MarkdownView);
+  const view = ws.getActiveViewOfType(import_obsidian2.MarkdownView);
   const data = (_e = (_c = view == null ? void 0 : view.data) != null ? _c : (_b = ws == null ? void 0 : ws.getActiveFileView()) == null ? void 0 : _b.data) != null ? _e : (_d = ws.activeEditor) == null ? void 0 : _d.data;
   if (!data) {
-    new import_obsidian.Notice("data is empty!");
+    new import_obsidian2.Notice("data is empty!");
   }
   const frontMatter = getFrontMatter(app, file);
   const cssclasses = [];
@@ -4445,9 +4451,8 @@ async function renderMarkdown(app, file, config, extra) {
       }
     }
   }
-  const comp = new import_obsidian.Component();
+  const comp = new import_obsidian2.Component();
   comp.load();
-  const promises = [];
   const printEl = document.body.createDiv("print");
   const viewEl = printEl.createDiv({
     cls: "markdown-preview-view markdown-rendered " + cssclasses.join(" ")
@@ -4468,8 +4473,9 @@ async function renderMarkdown(app, file, config, extra) {
     lines[idx] = `<span id="^${key}" class="blockid"></span>
 ` + lines[idx];
   });
-  await import_obsidian.MarkdownRenderer.render(app, lines.join("\n"), viewEl, file.path, comp);
-  import_obsidian.MarkdownRenderer.postProcess(app, {
+  const promises = [];
+  await import_obsidian2.MarkdownRenderer.render(app, lines.join("\n"), viewEl, file.path, comp);
+  await import_obsidian2.MarkdownRenderer.postProcess(app, {
     docId: generateDocId(16),
     sourcePath: file.path,
     frontmatter: {},
@@ -4493,35 +4499,52 @@ async function renderMarkdown(app, file, config, extra) {
     }
     el.removeAttribute("href");
   });
-  if (data.includes("```dataview")) {
-    try {
-      await waitFor(() => false, 2e3);
-    } catch (error2) {
-    }
+  try {
+    await fixWaitRender(data, viewEl);
+  } catch (error2) {
+    console.warn("wait timeout");
   }
+  fixCanvasToImage(viewEl);
   const doc = document.implementation.createHTMLDocument("document");
   doc.body.appendChild(printEl.cloneNode(true));
   printEl.detach();
   comp.unload();
   printEl.remove();
+  const endTime = (/* @__PURE__ */ new Date()).getTime();
+  console.log(`render time:${endTime - startTime}ms`);
   return doc;
 }
 function fixDoc(doc, title) {
   const dest = modifyDest(doc);
-  modifyAnchors(doc, dest, title);
-  modifyEmbedSpan(doc);
+  fixAnchors(doc, dest, title);
+  encodeEmbeds(doc);
 }
-function modifyEmbedSpan(doc) {
-  const spans = doc.querySelectorAll("span.markdown-embed");
-  spans.forEach((span) => {
-    var _a;
-    const newDiv = document.createElement("div");
-    Array.from(span.attributes).forEach((attr) => {
-      newDiv.setAttribute(attr.name, attr.value);
-    });
-    newDiv.innerHTML = span.innerHTML;
-    (_a = span.parentNode) == null ? void 0 : _a.replaceChild(newDiv, span);
-  });
+function encodeEmbeds(doc) {
+  const spans = Array.from(doc.querySelectorAll("span.markdown-embed")).reverse();
+  spans.forEach((span) => span.innerHTML = btoa_utf8(span.innerHTML));
+}
+function btoa_utf8(string) {
+  return btoa(String.fromCharCode(...new TextEncoder().encode(string)));
+}
+async function fixWaitRender(data, viewEl) {
+  if (data.includes("```dataview") || data.includes("```gEvent") || data.includes("![[")) {
+    await sleep(2e3);
+  }
+  try {
+    await waitForDomChange(viewEl);
+  } catch (error2) {
+    await sleep(1e3);
+  }
+}
+function fixCanvasToImage(el) {
+  for (const canvas of Array.from(el.querySelectorAll("canvas"))) {
+    const data = canvas.toDataURL();
+    const img = document.createElement("img");
+    img.src = data;
+    copyAttributes(img, canvas.attributes);
+    img.className = "__canvas__";
+    canvas.replaceWith(img);
+  }
 }
 function createWebview() {
   const webview = document.createElement("webview");
@@ -4537,6 +4560,28 @@ function createWebview() {
   );
   webview.nodeintegration = true;
   return webview;
+}
+function waitForDomChange(target, timeout = 2e3, interval = 200) {
+  return new Promise((resolve, reject) => {
+    let timer;
+    const observer = new MutationObserver((m) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        observer.disconnect();
+        resolve(true);
+      }, interval);
+    });
+    observer.observe(target, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      characterData: true
+    });
+    setTimeout(() => {
+      observer.disconnect();
+      reject(new Error(`timeout ${timeout}ms`));
+    }, timeout);
+  });
 }
 
 // src/pdf.ts
@@ -20364,8 +20409,8 @@ function setMetadata(pdfDoc, { title, author, keywords, subject, creator, create
 }
 async function exportToPDF(outputFile, config, w, doc, frontMatter) {
   var _a, _b, _c, _d, _e, _f, _g, _h, _i;
-  let pageSize = config["pageSise"];
-  if (config["pageSise"] == "Custom" && config["pageWidth"] && config["pageHeight"]) {
+  let pageSize = config["pageSize"];
+  if (config["pageSize"] == "Custom" && config["pageWidth"] && config["pageHeight"]) {
     pageSize = {
       width: parseFloat((_a = config["pageWidth"]) != null ? _a : "0") / 25.4,
       height: parseFloat((_b = config["pageHeight"]) != null ? _b : "0") / 25.4
@@ -20467,7 +20512,7 @@ function fullWidthButton(button) {
 function setInputWidth(inputEl) {
   inputEl.setAttribute("style", `width: 100px;`);
 }
-var ExportConfigModal = class extends import_obsidian2.Modal {
+var ExportConfigModal = class extends import_obsidian3.Modal {
   constructor(plugin, file, config) {
     var _a, _b, _c, _d, _e;
     super(plugin.app);
@@ -20476,7 +20521,7 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
     this.file = file;
     this.completed = false;
     this.config = {
-      pageSise: "A4",
+      pageSize: "A4",
       marginType: "1",
       showTitle: (_a = plugin.settings.showTitle) != null ? _a : true,
       open: true,
@@ -20498,12 +20543,11 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
     var _a, _b;
     const app = this.plugin.app;
     const docs = [];
-    if (this.file instanceof import_obsidian2.TFolder) {
-      for (const file of this.file.children) {
-        if (file instanceof import_obsidian2.TFile && file.extension == "md") {
-          docs.push(await renderMarkdown(app, file, this.config));
-          Object.assign(this.frontMatter, getFrontMatter(app, file));
-        }
+    if (this.file instanceof import_obsidian3.TFolder) {
+      const files = traverseFolder(this.file);
+      for (const file of files) {
+        docs.push(await renderMarkdown(app, file, this.config));
+        Object.assign(this.frontMatter, getFrontMatter(app, file));
       }
     } else {
       const doc0 = await renderMarkdown(app, this.file, this.config);
@@ -20523,7 +20567,7 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
             file: this.app.metadataCache.getFirstLinkpathDest(link, this.file.path),
             id
           };
-        }).filter((item) => item.file instanceof import_obsidian2.TFile)) != null ? _b : [];
+        }).filter((item) => item.file instanceof import_obsidian3.TFile)) != null ? _b : [];
         for (const item of files) {
           docs.push(await renderMarkdown(app, item.file, this.config, item));
           Object.assign(this.frontMatter, getFrontMatter(app, item.file));
@@ -20560,12 +20604,13 @@ var ExportConfigModal = class extends import_obsidian2.Modal {
     var _a, _b, _c, _d;
     const conf = config != null ? config : this.config;
     const el = element != null ? element : this.previewDiv;
-    console.log(conf);
-    const width = (_d = (_b = (_a = PageSize) == null ? void 0 : _a[conf["pageSise"]]) == null ? void 0 : _b[0]) != null ? _d : parseFloat((_c = conf["pageWidth"]) != null ? _c : "210");
+    const width = (_d = (_b = (_a = PageSize) == null ? void 0 : _a[conf["pageSize"]]) == null ? void 0 : _b[0]) != null ? _d : parseFloat((_c = conf["pageWidth"]) != null ? _c : "210");
     const scale2 = Math.floor(mm2px(width) / el.offsetWidth * 100) / 100;
-    this.preview.style.transform = `scale(${1 / scale2},${1 / scale2})`;
-    this.preview.style.width = `calc(${scale2} * 100%)`;
-    this.preview.style.height = `calc(${scale2} * 100%)`;
+    if (this.preview) {
+      this.preview.style.transform = `scale(${1 / scale2},${1 / scale2})`;
+      this.preview.style.width = `calc(${scale2} * 100%)`;
+      this.preview.style.height = `calc(${scale2} * 100%)`;
+    }
   }
   async calcWebviewSize() {
     await sleep(500);
@@ -20581,7 +20626,7 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
   async togglePrintSize() {
     const sizeEl = document.querySelector("#print-size");
     if (sizeEl) {
-      if (this.config["pageSise"] == "Custom") {
+      if (this.config["pageSize"] == "Custom") {
         sizeEl.style.visibility = "visible";
       } else {
         sizeEl.style.visibility = "hidden";
@@ -20610,7 +20655,40 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
         await this.preview.executeJavaScript(`
         document.body.innerHTML = decodeURIComponent(\`${encodeURIComponent(this.doc.body.innerHTML)}\`);
         document.head.innerHTML = decodeURIComponent(\`${encodeURIComponent(document.head.innerHTML)}\`);
-				
+
+        function atob_utf8(string) { 
+          const latin = atob(string); 
+          return new TextDecoder().decode(
+            Uint8Array.from({ length: latin.length },(_, index) => latin.charCodeAt(index))
+          ) 
+        }
+
+		    function decodeBase64(encodedString) {
+          try {
+            return atob_utf8(encodedString);
+          } catch (e) {
+            // If atob fails, it's likely not base64 encoded, so return the original string
+            return encodedString;
+          }
+        }
+        
+        // Function to recursively decode and replace innerHTML of span.markdown-embed elements
+        function decodeAndReplaceEmbed(element) {
+          if (element.classList.contains("markdown-embed")) {
+            // Decode the innerHTML
+            const decodedContent = decodeBase64(element.innerHTML);
+            // Replace the innerHTML with the decoded content
+            element.innerHTML = decodedContent;
+            // Check if the new content contains further span.markdown-embed elements
+            const newEmbeds = element.querySelectorAll("span.markdown-embed");
+            newEmbeds.forEach(decodeAndReplaceEmbed);
+          }
+        }
+        
+        // Start the process with all span.markdown-embed elements in the document
+        const spans = document.querySelectorAll("span.markdown-embed");
+        spans.forEach(decodeAndReplaceEmbed);
+
         document.body.setAttribute("class", \`${document.body.getAttribute("class")}\`)
         document.body.setAttribute("style", \`${document.body.getAttribute("style")}\`)
         document.body.addClass("theme-light");
@@ -20663,22 +20741,22 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
           this.close();
         }
       } else {
-        new import_obsidian2.Notice("dom not ready");
+        new import_obsidian3.Notice("dom not ready");
       }
     };
-    new import_obsidian2.Setting(contentEl).setHeading().addButton((button) => {
+    new import_obsidian3.Setting(contentEl).setHeading().addButton((button) => {
       button.setButtonText("Export").onClick(handleExport);
       button.setCta();
       fullWidthButton(button);
     });
-    new import_obsidian2.Setting(contentEl).setHeading().addButton((button) => {
+    new import_obsidian3.Setting(contentEl).setHeading().addButton((button) => {
       button.setButtonText("Refresh").onClick(async () => {
         previewDiv.empty();
         await appendWebview(previewDiv);
       });
       fullWidthButton(button);
     });
-    const debugEl = new import_obsidian2.Setting(contentEl).setHeading().addButton((button) => {
+    const debugEl = new import_obsidian3.Setting(contentEl).setHeading().addButton((button) => {
       button.setButtonText("Debug").onClick(async () => {
         var _a2;
         (_a2 = this.preview) == null ? void 0 : _a2.openDevTools();
@@ -20688,7 +20766,7 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
     debugEl.settingEl.hidden = !this.plugin.settings.debug;
   }
   generateForm(contentEl) {
-    new import_obsidian2.Setting(contentEl).setName("Include file name as title").addToggle(
+    new import_obsidian3.Setting(contentEl).setName("Include file name as title").addToggle(
       (toggle) => toggle.setTooltip("Include file name as title").setValue(this.config["showTitle"]).onChange(async (value) => {
         var _a;
         this.config["showTitle"] = value;
@@ -20714,9 +20792,9 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
       "Ledger",
       "Custom"
     ];
-    new import_obsidian2.Setting(contentEl).setName("Page size").addDropdown((dropdown) => {
-      dropdown.addOptions(Object.fromEntries(pageSizes.map((size) => [size, size]))).setValue(this.config.pageSise).onChange(async (value) => {
-        this.config["pageSise"] = value;
+    new import_obsidian3.Setting(contentEl).setName("Page size").addDropdown((dropdown) => {
+      dropdown.addOptions(Object.fromEntries(pageSizes.map((size) => [size, size]))).setValue(this.config.pageSize).onChange(async (value) => {
+        this.config["pageSize"] = value;
         if (value == "Custom") {
           sizeEl.settingEl.hidden = false;
         } else {
@@ -20727,10 +20805,10 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
         await this.calcWebviewSize();
       });
     });
-    const sizeEl = new import_obsidian2.Setting(contentEl).setName("Width/Height").addText((text) => {
+    const sizeEl = new import_obsidian3.Setting(contentEl).setName("Width/Height").addText((text) => {
       setInputWidth(text.inputEl);
       text.setPlaceholder("width").setValue(this.config["pageWidth"]).onChange(
-        (0, import_obsidian2.debounce)(
+        (0, import_obsidian3.debounce)(
           async (value) => {
             this.config["pageWidth"] = value;
             this.calcPageSize();
@@ -20746,10 +20824,10 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
         this.config["pageHeight"] = value;
       });
     });
-    if (this.config["pageSise"] != "Custom") {
+    if (this.config["pageSize"] != "Custom") {
       sizeEl.settingEl.hidden = true;
     }
-    new import_obsidian2.Setting(contentEl).setName("Margin").setDesc("The unit is millimeters.").addDropdown((dropdown) => {
+    new import_obsidian3.Setting(contentEl).setName("Margin").setDesc("The unit is millimeters.").addDropdown((dropdown) => {
       dropdown.addOption("0", "None").addOption("1", "Default").addOption("2", "Small").addOption("3", "Custom").setValue(this.config["marginType"]).onChange(async (value) => {
         this.config["marginType"] = value;
         if (value == "3") {
@@ -20761,7 +20839,7 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
         }
       });
     });
-    const topEl = new import_obsidian2.Setting(contentEl).setName("Top/Bottom").addText((text) => {
+    const topEl = new import_obsidian3.Setting(contentEl).setName("Top/Bottom").addText((text) => {
       setInputWidth(text.inputEl);
       text.setPlaceholder("margin top").setValue(this.config["marginTop"]).onChange((value) => {
         this.config["marginTop"] = value;
@@ -20773,7 +20851,7 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
       });
     });
     topEl.settingEl.hidden = this.config["marginType"] != "3";
-    const btmEl = new import_obsidian2.Setting(contentEl).setName("Left/Right").addText((text) => {
+    const btmEl = new import_obsidian3.Setting(contentEl).setName("Left/Right").addText((text) => {
       setInputWidth(text.inputEl);
       text.setPlaceholder("margin left").setValue(this.config["marginLeft"]).onChange((value) => {
         this.config["marginLeft"] = value;
@@ -20785,28 +20863,28 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
       });
     });
     btmEl.settingEl.hidden = this.config["marginType"] != "3";
-    new import_obsidian2.Setting(contentEl).setName("Downscale precent").addSlider((slider) => {
+    new import_obsidian3.Setting(contentEl).setName("Downscale precent").addSlider((slider) => {
       slider.setLimits(0, 100, 1).setValue(this.config["scale"]).onChange(async (value) => {
         this.config["scale"] = value;
         slider.showTooltip();
       });
     });
-    new import_obsidian2.Setting(contentEl).setName("Landscape").addToggle(
+    new import_obsidian3.Setting(contentEl).setName("Landscape").addToggle(
       (toggle) => toggle.setTooltip("landscape").setValue(this.config["landscape"]).onChange(async (value) => {
         this.config["landscape"] = value;
       })
     );
-    new import_obsidian2.Setting(contentEl).setName("Display header").addToggle(
+    new import_obsidian3.Setting(contentEl).setName("Display header").addToggle(
       (toggle) => toggle.setTooltip("Display header").setValue(this.config["displayHeader"]).onChange(async (value) => {
         this.config["displayHeader"] = value;
       })
     );
-    new import_obsidian2.Setting(contentEl).setName("Display footer").addToggle(
+    new import_obsidian3.Setting(contentEl).setName("Display footer").addToggle(
       (toggle) => toggle.setTooltip("Display footer").setValue(this.config["displayFooter"]).onChange(async (value) => {
         this.config["displayFooter"] = value;
       })
     );
-    new import_obsidian2.Setting(contentEl).setName("Open after export").addToggle(
+    new import_obsidian3.Setting(contentEl).setName("Open after export").addToggle(
       (toggle) => toggle.setTooltip("Open the exported file after exporting.").setValue(this.config["open"]).onChange(async (value) => {
         this.config["open"] = value;
       })
@@ -20819,7 +20897,7 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
 };
 
 // src/setting.ts
-var import_obsidian3 = require("obsidian");
+var import_obsidian4 = require("obsidian");
 function setAttributes(element, attributes) {
   for (const key in attributes) {
     element.setAttribute(key, attributes[key]);
@@ -20834,7 +20912,7 @@ var renderBuyMeACoffeeBadge = (contentEl, width = 175) => {
   imgEl.alt = "Buy me a coffee";
   imgEl.width = width;
 };
-var ConfigSettingTab = class extends import_obsidian3.PluginSettingTab {
+var ConfigSettingTab = class extends import_obsidian4.PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
     this.plugin = plugin;
@@ -20846,57 +20924,57 @@ var ConfigSettingTab = class extends import_obsidian3.PluginSettingTab {
     supportDesc.createDiv({
       text: "Support the continued development of this plugin."
     });
-    new import_obsidian3.Setting(containerEl).setDesc(supportDesc);
+    new import_obsidian4.Setting(containerEl).setDesc(supportDesc);
     renderBuyMeACoffeeBadge(containerEl);
-    new import_obsidian3.Setting(containerEl).setName("Add file name as title").addToggle(
+    new import_obsidian4.Setting(containerEl).setName("Add file name as title").addToggle(
       (toggle) => toggle.setTooltip("Add filename as title").setValue(this.plugin.settings.showTitle).onChange(async (value) => {
         this.plugin.settings.showTitle = value;
         this.plugin.saveSettings();
       })
     );
-    new import_obsidian3.Setting(containerEl).setName("Display header").addToggle(
+    new import_obsidian4.Setting(containerEl).setName("Display header").addToggle(
       (toggle) => toggle.setTooltip("Display header").setValue(this.plugin.settings.displayHeader).onChange(async (value) => {
         this.plugin.settings.displayHeader = value;
         this.plugin.saveSettings();
       })
     );
-    new import_obsidian3.Setting(containerEl).setName("Display footer").addToggle(
+    new import_obsidian4.Setting(containerEl).setName("Display footer").addToggle(
       (toggle) => toggle.setTooltip("Display footer").setValue(this.plugin.settings.displayFooter).onChange(async (value) => {
         this.plugin.settings.displayFooter = value;
         this.plugin.saveSettings();
       })
     );
-    new import_obsidian3.Setting(containerEl).setName("Print background").setDesc("Whether to print background graphics").addToggle(
+    new import_obsidian4.Setting(containerEl).setName("Print background").setDesc("Whether to print background graphics").addToggle(
       (toggle) => toggle.setValue(this.plugin.settings.printBackground).onChange(async (value) => {
         this.plugin.settings.printBackground = value;
         this.plugin.saveSettings();
       })
     );
-    new import_obsidian3.Setting(containerEl).setName("Generate tagged PDF").setDesc("Whether or not to generate a tagged (accessible) PDF. Defaults to false. As this property is experimental, the generated PDF may not adhere fully to PDF/UA and WCAG standards.").addToggle(
+    new import_obsidian4.Setting(containerEl).setName("Generate tagged PDF").setDesc("Whether or not to generate a tagged (accessible) PDF. Defaults to false. As this property is experimental, the generated PDF may not adhere fully to PDF/UA and WCAG standards.").addToggle(
       (toggle) => toggle.setValue(this.plugin.settings.generateTaggedPDF).onChange(async (value) => {
         this.plugin.settings.generateTaggedPDF = value;
         this.plugin.saveSettings();
       })
     );
-    new import_obsidian3.Setting(containerEl).setName("Max headings level of the outline").addDropdown((dropdown) => {
+    new import_obsidian4.Setting(containerEl).setName("Max headings level of the outline").addDropdown((dropdown) => {
       dropdown.addOptions(Object.fromEntries(["1", "2", "3", "4", "5", "6"].map((level) => [level, `h${level}`]))).setValue(this.plugin.settings.maxLevel).onChange(async (value) => {
         this.plugin.settings.maxLevel = value;
         this.plugin.saveSettings();
       });
     });
-    new import_obsidian3.Setting(containerEl).setName("PDF metadata").setDesc("Add frontMatter(title, author, keywords, subject creator, etc) to pdf metadata").addToggle(
+    new import_obsidian4.Setting(containerEl).setName("PDF metadata").setDesc("Add frontMatter(title, author, keywords, subject creator, etc) to pdf metadata").addToggle(
       (toggle) => toggle.setValue(this.plugin.settings.displayMetadata).onChange(async (value) => {
         this.plugin.settings.displayMetadata = value;
         this.plugin.saveSettings();
       })
     );
-    new import_obsidian3.Setting(containerEl).setName("Advanced").setHeading();
-    const headerContentAreaSetting = new import_obsidian3.Setting(containerEl);
+    new import_obsidian4.Setting(containerEl).setName("Advanced").setHeading();
+    const headerContentAreaSetting = new import_obsidian4.Setting(containerEl);
     headerContentAreaSetting.settingEl.setAttribute("style", "display: grid; grid-template-columns: 1fr;");
     headerContentAreaSetting.setName("Header Template").setDesc(
       'HTML template for the print header. Should be valid HTML markup with following classes used to inject printing values into them: date (formatted print date), title (document title), url (document location), pageNumber (current page number) and totalPages (total pages in the document). For example, <span class="title"></span> would generate span containing the title.'
     );
-    const hederContentArea = new import_obsidian3.TextAreaComponent(headerContentAreaSetting.controlEl);
+    const hederContentArea = new import_obsidian4.TextAreaComponent(headerContentAreaSetting.controlEl);
     setAttributes(hederContentArea.inputEl, {
       style: "margin-top: 12px; width: 100%; height: 6vh;"
     });
@@ -20904,10 +20982,10 @@ var ConfigSettingTab = class extends import_obsidian3.PluginSettingTab {
       this.plugin.settings.headerTemplate = value;
       this.plugin.saveSettings();
     });
-    const footerContentAreaSetting = new import_obsidian3.Setting(containerEl);
+    const footerContentAreaSetting = new import_obsidian4.Setting(containerEl);
     footerContentAreaSetting.settingEl.setAttribute("style", "display: grid; grid-template-columns: 1fr;");
     footerContentAreaSetting.setName("Footer Template").setDesc("HTML template for the print footer. Should use the same format as the headerTemplate.");
-    const footerContentArea = new import_obsidian3.TextAreaComponent(footerContentAreaSetting.controlEl);
+    const footerContentArea = new import_obsidian4.TextAreaComponent(footerContentAreaSetting.controlEl);
     setAttributes(footerContentArea.inputEl, {
       style: "margin-top: 12px; width: 100%; height: 6vh;"
     });
@@ -20915,8 +20993,8 @@ var ConfigSettingTab = class extends import_obsidian3.PluginSettingTab {
       this.plugin.settings.footerTemplate = value;
       this.plugin.saveSettings();
     });
-    new import_obsidian3.Setting(containerEl).setName("Debug").setHeading();
-    new import_obsidian3.Setting(containerEl).setName("Debug mode").setDesc("This is useful for troubleshooting.").addToggle((cb) => {
+    new import_obsidian4.Setting(containerEl).setName("Debug").setHeading();
+    new import_obsidian4.Setting(containerEl).setName("Debug mode").setDesc("This is useful for troubleshooting.").addToggle((cb) => {
       cb.setValue(this.plugin.settings.debug).onChange(async (value) => {
         this.plugin.settings.debug = value;
         await this.plugin.saveSettings();
@@ -20939,7 +21017,7 @@ var DEFAULT_SETTINGS = {
   displayMetadata: false,
   debug: false
 };
-var BetterExportPdfPlugin = class extends import_obsidian4.Plugin {
+var BetterExportPdfPlugin = class extends import_obsidian5.Plugin {
   async onload() {
     await this.loadSettings();
     this.registerCommand();
@@ -20952,7 +21030,7 @@ var BetterExportPdfPlugin = class extends import_obsidian4.Plugin {
       name: "Export current file to PDF",
       checkCallback: (checking) => {
         var _a;
-        const view = this.app.workspace.getActiveViewOfType(import_obsidian4.MarkdownView);
+        const view = this.app.workspace.getActiveViewOfType(import_obsidian5.MarkdownView);
         const file = view == null ? void 0 : view.file;
         if (!file) {
           return false;
@@ -20971,7 +21049,7 @@ var BetterExportPdfPlugin = class extends import_obsidian4.Plugin {
   registerEvents() {
     this.registerEvent(
       this.app.workspace.on("file-menu", (menu, file) => {
-        let title = file instanceof import_obsidian4.TFolder ? "Export folder to PDF" : "Better Export PDF";
+        let title = file instanceof import_obsidian5.TFolder ? "Export folder to PDF" : "Better Export PDF";
         if (isDev) {
           title = `${title} (dev)`;
         }

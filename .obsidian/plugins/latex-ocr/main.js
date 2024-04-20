@@ -19695,8 +19695,7 @@ var path2 = __toESM(require("path"));
 
 // src/utils.ts
 async function picker(message, properties) {
-  let dirPath;
-  dirPath = window.electron.remote.dialog.showOpenDialogSync({
+  const dirPath = window.electron.remote.dialog.showOpenDialogSync({
     title: message,
     properties
   });
@@ -19721,7 +19720,7 @@ var LatexOCRModal = class extends import_obsidian2.Modal {
     });
     const img = imageContainer.createEl("img");
     new import_obsidian2.Setting(contentEl).setName("Open image").addExtraButton((cb) => cb.setIcon("folder").setTooltip("Browse").onClick(async () => {
-      let file = await picker("Open image", ["openFile"]);
+      const file = await picker("Open image", ["openFile"]);
       this.imagePath = file;
       const tfile = this.app.vault.getAbstractFileByPath(path2.relative(this.plugin.vaultPath, file));
       img.setAttr("src", this.app.vault.getResourcePath(tfile));
@@ -20530,6 +20529,11 @@ var ApiModel = class {
     const file = path3.parse(filepath);
     const notice = new import_obsidian3.Notice(`\u2699\uFE0F Generating Latex for ${file.base}...`, 0);
     const data = fs.readFileSync(filepath);
+    const fetch_max_tokens = (input, init) => {
+      const image_data = (init == null ? void 0 : init.body).toString("base64");
+      const payload = { "inputs": image_data, "parameters": { "max_new_tokens": 800 } };
+      return fetch(input, { ...init, body: JSON.stringify(payload) });
+    };
     try {
       let response;
       try {
@@ -20539,11 +20543,7 @@ var ApiModel = class {
           data
         }, {
           retry_on_error: false,
-          fetch: (input, init) => {
-            const image_data = (init == null ? void 0 : init.body).toString("base64");
-            const payload = { "inputs": image_data, "parameters": { "max_new_tokens": 800 } };
-            return fetch(input, { ...init, body: JSON.stringify(payload) });
-          }
+          fetch: fetch_max_tokens
         });
       } catch (error) {
         console.error(error);
@@ -20556,7 +20556,8 @@ var ApiModel = class {
           data
         }, {
           retry_on_error: false,
-          wait_for_model: true
+          wait_for_model: true,
+          fetch: fetch_max_tokens
         });
       }
       console.log(`latex_ocr: ${JSON.stringify(response)}`);
@@ -20683,7 +20684,7 @@ var LatexOCRSettingsTab = class extends import_obsidian4.PluginSettingTab {
     }));
     const ApiSettings = [apiKeyInput.settingEl, KeyDisplay.settingEl];
     const pythonPath = new import_obsidian4.Setting(containerEl).setName("Python path").setDesc("Path to Python installation. You need to have the `latex_ocr_server` package installed, see the project's README for more information.			Note that changing the path requires a server restart in order to take effect.").addExtraButton((cb) => cb.setIcon("folder").setTooltip("Browse").onClick(async () => {
-      let file = await picker("Open Python path", ["openFile"]);
+      const file = await picker("Open Python path", ["openFile"]);
       pythonPath.components[1].setValue(file);
     })).addText((text) => text.setPlaceholder("path/to/python.exe").setValue(this.plugin.settings.pythonPath).onChange(async (value) => {
       this.plugin.settings.pythonPath = (0, import_obsidian4.normalizePath)(value);
@@ -20708,7 +20709,7 @@ var LatexOCRSettingsTab = class extends import_obsidian4.PluginSettingTab {
       await this.plugin.saveSettings();
     }));
     const cacheDir = new import_obsidian4.Setting(containerEl).setName("Cache dir").setDesc("The directory where the model is saved. By default this is in `Vault/.obsidian/plugins/obsidian-latex-ocr/model_cache`. 					Note that changing this will not delete the old cache, and require the model to be redownloaded. 					The server must be restarted for this to take effect.").addExtraButton((cb) => cb.setIcon("folder").setTooltip("Browse").onClick(async () => {
-      let folder = await picker("Open cache directory", ["openDirectory"]);
+      const folder = await picker("Open cache directory", ["openDirectory"]);
       cacheDir.components[1].setValue(folder);
     })).addText((text) => text.setValue(this.plugin.settings.cacheDirPath).onChange(async (value) => {
       const path5 = (0, import_obsidian4.normalizePath)(value);

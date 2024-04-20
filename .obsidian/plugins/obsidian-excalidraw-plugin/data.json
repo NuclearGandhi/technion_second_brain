@@ -17,6 +17,7 @@
   "useExcalidrawExtension": true,
   "cropPrefix": "cropped_",
   "annotatePrefix": "annotated_",
+  "annotatePreserveSize": false,
   "displaySVGInPreview": true,
   "previewImageType": "SVG",
   "allowImageCache": true,
@@ -33,6 +34,8 @@
   "defaultMode": "normal",
   "defaultPenMode": "mobile",
   "penModeCrosshairVisible": false,
+  "renderImageInMarkdownReadingMode": false,
+  "renderImageInMarkdownToPDF": false,
   "allowPinchZoom": false,
   "allowWheelZoom": false,
   "zoomToFitOnOpen": true,
@@ -60,6 +63,7 @@
   "exportWithTheme": true,
   "exportWithBackground": false,
   "exportPaddingSVG": 10,
+  "exportEmbedScene": false,
   "keepInSync": true,
   "autoexportSVG": true,
   "autoexportPNG": false,
@@ -82,8 +86,85 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.1.1",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.1.4",
     "libraryItems": [
+      {
+        "status": "unpublished",
+        "elements": [
+          {
+            "type": "line",
+            "version": 44,
+            "versionNonce": 1127154353,
+            "isDeleted": false,
+            "id": "mgiJL1u79lQ1RtjiybvvK",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "angle": 0,
+            "x": -80,
+            "y": 100,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "transparent",
+            "width": 120,
+            "height": 60,
+            "seed": 494316415,
+            "groupIds": [],
+            "frameId": null,
+            "roundness": null,
+            "boundElements": [],
+            "updated": 1713518893155,
+            "link": null,
+            "locked": false,
+            "startBinding": null,
+            "endBinding": null,
+            "lastCommittedPoint": null,
+            "startArrowhead": null,
+            "endArrowhead": null,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                -60
+              ],
+              [
+                20,
+                -40
+              ],
+              [
+                40,
+                -60
+              ],
+              [
+                60,
+                -40
+              ],
+              [
+                80,
+                -60
+              ],
+              [
+                100,
+                -40
+              ],
+              [
+                120,
+                -60
+              ],
+              [
+                120,
+                0
+              ]
+            ]
+          }
+        ],
+        "id": "F1H96CsHdvVbfY84B7oh-",
+        "created": 1713518901401
+      },
       {
         "status": "unpublished",
         "elements": [
