@@ -6,48 +6,26 @@
       {
         "id": "9394a331ae7b6e24",
         "type": "tabs",
-        "dimension": 50,
         "children": [
           {
-            "id": "4077b9daacc1a60e",
+            "id": "6e49635a950d813c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_E2020WB 2020 חורף מועד ב.md",
-                "mode": "preview",
+                "file": "Technion/THE1/THE1_E2022WA 2022 חורף מועד א.md",
+                "mode": "source",
                 "source": false
               }
-            },
-            "group": "06604e38ef18bc06"
-          }
-        ]
-      },
-      {
-        "id": "d010c5e020eb5a19",
-        "type": "tabs",
-        "dimension": 50,
-        "children": [
-          {
-            "id": "96fd3ef745069d49",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/NUM1/NUM1_E2020WB 2020 חורף מועד ב.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "06604e38ef18bc06"
+            }
           },
           {
-            "id": "e1b6e09b3448bd1b",
+            "id": "65bb61f3b827c457",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
+                "file": "Technion/THE1/THE1_006 אנטרופיה.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,8 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "9aafb922f99122c6",
@@ -120,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/NUM1/NUM1_E2020WB 2020 חורף מועד ב.md",
+                "file": "Technion/THE1/THE1_E2022WA 2022 חורף מועד א.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/NUM1/NUM1_E2020WB 2020 חורף מועד ב.md",
+                "file": "Technion/THE1/THE1_E2022WA 2022 חורף מועד א.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -160,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/NUM1/NUM1_E2020WB 2020 חורף מועד ב.md"
+                "file": "Technion/THE1/THE1_E2022WA 2022 חורף מועד א.md"
               }
             }
           }
@@ -186,53 +163,53 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "96fd3ef745069d49",
+  "active": "6e49635a950d813c",
   "lastOpenFiles": [
+    "Technion/THE1/THE1_006 אנטרופיה.md",
+    "Technion/THE1/THE1_E2022WA 2022 חורף מועד א.md",
+    "Technion/THE1/THE1_E2022WA 2022 חורף מועד א 2024-04-23 23.02.34.excalidraw.md",
+    "Technion/THE1/THE1_E2022WA 2022 חורף מועד א 2024-04-23 23.02.34.excalidraw.svg",
+    "Technion/THE1/THE1_E2022WA/THE1_E2022WA 2022 חורף מועד א 2024-04-23 20.09.26.excalidraw.md",
+    "Technion/THE1/THE1_003 אנליזת נפח בקרה.md",
+    "Technion/THE1/THE1_E2022WB 2022 חורף מועד ב.md",
+    "Technion/THE1/THE1_E2022WA/THE1_E2022WA 2022 חורף מועד א 2024-04-23 19.55.56.excalidraw.md",
+    "Technion/THE1/THE1_007 מחזורי קיטור.md",
+    "Technion/THE1/THE1_E2022WA/THE1_E2022WA 2022 חורף מועד א 2024-04-23 20.09.26.excalidraw.svg",
+    "Technion/THE1/THE1_E2022WA",
+    "Technion/THE1/THE1_E2022WA/THE1_E2022WA 2022 חורף מועד א 2024-04-23 19.55.56.excalidraw.svg",
+    "Technion/pandoc-test.pdf",
+    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
+    "Technion/THE1/THE1_002 חישוב תכונות מערכת.md",
+    "Technion/THE1/THE1_004 מכונות חום.md",
+    "Technion/THE1/THE1_010 מחזורי קירור.md",
+    "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 12.23.14.excalidraw.md",
+    "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 18.14.04.excalidraw.md",
+    "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 12.23.14.excalidraw.svg",
+    "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
+    "Technion/NUM1/NUM1_E2020WB 2020 חורף מועד ב.md",
     "Technion/NUM1/NUM1_E2020WA 2020 חורף מועד א.md",
     "Technion/NUM1/NUM1_E2018WB 2018 חורף מועד ב.md",
-    "Technion/THE1/THE1_E2022WB 2022 חורף מועד ב.md",
     "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 22.07.43.excalidraw.svg",
     "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 22.07.43.excalidraw.md",
     "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 18.59.28.excalidraw.svg",
     "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 18.30.39.excalidraw.svg",
     "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 18.14.04.excalidraw.svg",
-    "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 18.14.04.excalidraw.md",
     "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 18.59.28.excalidraw.md",
     "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 18.30.39.excalidraw.md",
-    "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 12.23.14.excalidraw.svg",
-    "Technion/THE1/THE1_E2022WB/THE1_E2022WB 2022 חורף מועד ב 2024-04-19 12.23.14.excalidraw.md",
     "Technion/THE1/THE1_E2022WB",
     "Technion/NUM1/NUM1_E2018WA 2018 חורף מועד א.md",
-    "Technion/NUM1/NUM1_007 אינטרפולציה פולינומית.md",
-    "Technion/NUM1/NUM1_E2020WB 2020 חורף מועד ב.md",
     "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
     "Technion/NUM1/NUM1_E2021WB 2021 חורף מועד ב.md",
     "Technion/NUM1/NUM1_E2022WA 2022 חורף מועד א.md",
     "Technion/NUM1/NUM1_011 שיטות נומריות לפתרון משוואות דיפרנציאליות.md",
-    "Technion/NUM1/NUM1_010 גזירה נומרית.md",
-    "Technion/NUM1/NUM1_E2021WA 2021 חורף מועד א.md",
-    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
-    "Technion/NUM1/NUM1_012 אופטימיזציה.md",
-    "Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים.md",
-    "Technion/NUM1/NUM1_009 אינטגרציה נומרית.md",
-    "Technion/NUM1/NUM1_003 נורמה.md",
-    "Technion/CAL2/CAL2_001 וקטורים.md",
-    "Technion/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
-    "Technion/NUM1/NUM1_002 שיטות ישירות לפתרון מערכות לינאריות.md",
-    "Technion/NUM1/NUM1_004 שיטות איטרטיביות לפתרון מערכות לינאריות.md",
     "Technion/NUM1/NUM1_012/Pasted image 20240409080747.png",
     "Technion/NUM1/NUM1_012",
     "Technion/NUM1/NUM1_012/Pasted image 20240409120400.png",
-    "Technion/NUM1/NUM1_012/Pasted image 20240409094256.png",
-    "Technion/THE1/THE1_010/Pasted image 20240408221400.png",
-    "Technion/THE1/THE1_010/Pasted image 20240408233206.png",
     "Technion/THE1/THE1_010",
     "Technion/THE1/THE1_009",
     "Technion/THE1/THE1_HW009",
     "publish.css",
     "_config.yml",
-    "publish.js",
-    "LICENSE",
-    "CNAME"
+    "publish.js"
   ]
 }
