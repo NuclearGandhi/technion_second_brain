@@ -2,29 +2,21 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[
-  a4paper,
-]{article}
+\documentclass[a4paper,]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{siunitx}
 \newcommand{\pu}[1]{\ensuremath{\si{#1}}}
 \usepackage{iftex}
-\usepackage{tikz}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
+
+\usepackage{unicode-math} % this also loads fontspec
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+
 \usepackage{xcoffins}
 \usepackage{lmodern}
 
-\ifPDFTeX\else
-% xetex/luatex font selection
-\fi
+\usepackage{tikz}
+
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \IfFileExists{microtype.sty}{% use microtype if available
@@ -71,7 +63,7 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
+% Set default figure placement to H
 \makeatletter
 \def\fps@figure{H}
 \makeatother
@@ -82,16 +74,6 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\ifPDFTeX
-  \TeXXeTstate=1
-  \newcommand{\RL}[1]{\beginR #1\endR}
-  \newcommand{\LR}[1]{\beginL #1\endL}
-  \newenvironment{RTL}{\beginR}{\endR}
-  \newenvironment{LTR}{\beginL}{\endL}
-\fi
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -121,28 +103,28 @@
 
 
 \newcommand{\SetCallout}[2]{%
-    \SetHorizontalCoffin\Output{} % It will be the reference point join the others  
-    \SetVerticalCoffin\Callout{\linewidth-20pt}{\textbf{#1} \\ #2 \leavevmode \\ \\}
+  \SetHorizontalCoffin\Output{} % It will be the reference point join the others  
+  \SetVerticalCoffin\Callout{\linewidth-20pt}{\textbf{#1} \\ #2 \leavevmode \\ \\}
 
-    %% Make both \BackFrame & SideRule heights = height of Callout + 1*baselineskip
-    \SetHorizontalCoffin\BackFrame{
-      \begingroup
-      \color{green!30!gray!15}\rule{\linewidth}{\CoffinTotalHeight\Callout}
-      \endgroup
-    }    
-    \SetHorizontalCoffin\SideRule{
-      \begingroup  
-      \color{green!50!black}\rule{3pt}{\CoffinTotalHeight\Callout}
-      \endgroup
-    } %vertical side rule 
+  %% Make both \BackFrame & SideRule heights = height of Callout + 1*baselineskip
+  \SetHorizontalCoffin\BackFrame{
+    \begingroup
+    \color{green!30!gray!15}\rule{\linewidth}{\CoffinTotalHeight\Callout}
+    \endgroup
+  }
+  \SetHorizontalCoffin\SideRule{
+    \begingroup
+    \color{green!50!black}\rule{3pt}{\CoffinTotalHeight\Callout}
+    \endgroup
+  } %vertical side rule 
 
-    %% Assembly Coffins
-    \JoinCoffins*\Output[l,t]\Callout[l,t](10pt,-\baselineskip) %attach left-top corner of Callout to idem of Output
-    \JoinCoffins*\Output[l,t]\SideRule[l,t] %attach left-top corner of  SideRule to idem of Output
-    \JoinCoffins*\Output[l,t]\BackFrame[l,t] %attach left-top corner of BackFrame  to idem of Output
-    %% Typeset ooutput
-    \noindent\TypesetCoffin\Output % at the text insertion point. It is not a float.
-    \vspace*{\CoffinTotalHeight\Callout}\bigskip %make some room for Output
+  %% Assembly Coffins
+  \JoinCoffins*\Output[l,t]\Callout[l,t](10pt,-\baselineskip) %attach left-top corner of Callout to idem of Output
+  \JoinCoffins*\Output[l,t]\SideRule[l,t] %attach left-top corner of  SideRule to idem of Output
+  \JoinCoffins*\Output[l,t]\BackFrame[l,t] %attach left-top corner of BackFrame  to idem of Output
+  %% Typeset ooutput
+  \noindent\TypesetCoffin\Output % at the text insertion point. It is not a float.
+  \vspace*{\CoffinTotalHeight\Callout}\bigskip %make some room for Output
 }
 
 \section{כותרת 1}\label{ux5dbux5d5ux5eaux5e8ux5ea-1}
@@ -163,16 +145,16 @@
 רשימה ממוספרת:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיאן
-  - פוסיליס קוויס,
-\item
-  אקווזמן לורם איפסום דולור סיט אמט, קונדימנטום קורוס בליקרה, נונסטי
-  קלובר בריקנה סטום,
-\item
-  לפריקך תצטריק לרטי.
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+        לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיאן
+        - פוסיליס קוויס,
+  \item
+        אקווזמן לורם איפסום דולור סיט אמט, קונדימנטום קורוס בליקרה, נונסטי
+        קלובר בריקנה סטום,
+  \item
+        לפריקך תצטריק לרטי.
 \end{enumerate}
 
 רשימת נקודות: - לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית
@@ -222,106 +204,106 @@ b = 6
 סתם \mintinline[]{text}{gathered}:
 
 \[\begin{gathered}
-0=-w+{h}_{1}-{h}_{2} \\
-w={h}_{1}-{h}_{2}
-\end{gathered}\]
+    0=-w+{h}_{1}-{h}_{2} \\
+    w={h}_{1}-{h}_{2}
+  \end{gathered}\]
 
 סתם טבלה (\mintinline[]{text}{array}): \[\begin{array}{c|c|c|c|c}
-\text{state} & p[\pu{kPa}] & T[^{\circ}\pu{C}] &  h[\pu{kJ/kg}]  & s[\pu{kJ/kg*K}] \\
-\hline 1  & 800 & 500  & 3480.6 & 7.8673 \\ 
-\hline 2 & 200 & 309.74 &  3091.75  & 7.9245
-\end{array}\]
+    \text{state} & p[\pu{kPa}] & T[^{\circ}\pu{C}] & h[\pu{kJ/kg}] & s[\pu{kJ/kg*K}] \\
+    \hline 1     & 800         & 500               & 3480.6        & 7.8673          \\
+    \hline 2     & 200         & 309.74            & 3091.75       & 7.9245
+  \end{array}\]
 
 \section{קולאאוס
-(Callout)}\label{ux5e7ux5d5ux5dcux5d0ux5d0ux5d5ux5e1-callout}
+  (Callout)}\label{ux5e7ux5d5ux5dcux5d0ux5d0ux5d5ux5e1-callout}
 
 \SetCallout{הערה:}{ לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית
-נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן לורם איפסום דולור סיט אמט,
-קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי.}
+  נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן לורם איפסום דולור סיט אמט,
+  קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי.}
 
 כחלק מפסקה:
 
 \SetCallout{הערה:}{לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית
-נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן לורם איפסום דולור סיט אמט,
-קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי.}
+  נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן לורם איפסום דולור סיט אמט,
+  קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי.}
 
 כחלק ממספור:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  בלה בלה בלה
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+        בלה בלה בלה
 
-  \SetCallout{הערה:}{לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית
-  נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן לורם איפסום דולור סיט אמט,
-  קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק
-  לרטי.}
+        \SetCallout{הערה:}{לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית
+          נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן לורם איפסום דולור סיט אמט,
+          קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק
+          לרטי.}
 \end{enumerate}
 
 קולאאוס מסוג אחר:
 
 \SetCallout{משפט:}{ לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית
-נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן לורם איפסום דולור סיט אמט,
-קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי.}
+  נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן לורם איפסום דולור סיט אמט,
+  קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי.}
 
 \section{תמונה}\label{ux5eaux5deux5d5ux5e0ux5d4}
 
 תמונה:
 
 \begin{figure}
-\centering
-\includegraphics[width=0.75\textwidth,height=0.4\textheight]{NUM1/NUM1_011/Screenshot_20240322_182502_OneDrive.jpg}
-\caption{}
+  \centering
+  \includegraphics[width=0.75\textwidth,height=0.4\textheight]{NUM1/NUM1_011/Screenshot_20240322_182502_OneDrive.jpg}
+  \caption{}
 \end{figure}
 
 תמונה כחלק מפסקה (\mintinline[]{text}{inline}):
 
 \begin{figure}
-\centering
-\includegraphics[width=0.75\textwidth,height=0.4\textheight]{THE1/THE1_005/Pasted image 20240223092520.png}
-\caption{}
+  \centering
+  \includegraphics[width=0.75\textwidth,height=0.4\textheight]{THE1/THE1_005/Pasted image 20240223092520.png}
+  \caption{}
 \end{figure}
 
 תמונה עם caption:
 
 \begin{figure}
-\centering
-\includegraphics[width=0.75\textwidth,height=0.4\textheight]{GCH1/GCH1_004/Screenshot_20230127_102808_Microsoft 365 (Office).jpg}
-\caption{וואו זה מאוד מעניין.}
+  \centering
+  \includegraphics[width=0.75\textwidth,height=0.4\textheight]{GCH1/GCH1_004/Screenshot_20230127_102808_Microsoft 365 (Office).jpg}
+  \caption{וואו זה מאוד מעניין.}
 \end{figure}
 
 תמונת \mintinline[]{text}{svg}:
 
 \begin{figure}
-\centering
-\includesvg[width=0.75\textwidth,height=0.4\textheight]{THE1/THE1_HW008/THE1_HW008 תרגיל בית 8 2024-03-24 00.41.23.excalidraw.svg}
-\caption{THE1/THE1\_HW008/THE1\_HW008 תרגיל בית 8 2024-03-24
-00.41.23.excalidraw.svg}
+  \centering
+  \includesvg[width=0.75\textwidth,height=0.4\textheight]{THE1/THE1_HW008/THE1_HW008 תרגיל בית 8 2024-03-24 00.41.23.excalidraw.svg}
+  \caption{THE1/THE1\_HW008/THE1\_HW008 תרגיל בית 8 2024-03-24
+    00.41.23.excalidraw.svg}
 \end{figure}
 
 תמונת \mintinline[]{text}{svg} עם caption:
 
 \begin{figure}
-\centering
-\includesvg[width=0.75\textwidth,height=0.4\textheight]{THE1/THE1_HW008/THE1_HW008 תרגיל בית 8 2024-03-24 14.23.59.excalidraw.svg}
-\caption{וואו זה מאוד מעניין.}
+  \centering
+  \includesvg[width=0.75\textwidth,height=0.4\textheight]{THE1/THE1_HW008/THE1_HW008 תרגיל בית 8 2024-03-24 14.23.59.excalidraw.svg}
+  \caption{וואו זה מאוד מעניין.}
 \end{figure}
 
 תמונה בתוך קולאאוט:
 
 \SetCallout{הערה:}{
   \begin{figure}
-  \centering
-  \begin{tikzpicture}[blend mode=multiply]
-  \node{\includegraphics[width=0.75\textwidth,height=0.4\textheight]{IMT1/IMT1_005/Pasted image 20230514202911.png}};
-  \end{tikzpicture}
-\end{figure}}
+    \centering
+    \begin{tikzpicture}[blend mode=multiply]
+      \node{\includegraphics[width=0.75\textwidth,height=0.4\textheight]{IMT1/IMT1_005/Pasted image 20230514202911.png}};
+    \end{tikzpicture}
+  \end{figure}}
 
 תמונה בתוך קולאאוט עם caption:
 
 \SetCallout{הערה:}{וואו קבלו קטע:
-\textgreater{}\includegraphics[width=0.75\textwidth,height=0.4\textheight]{DEQ1/DEQ1_001/Screenshot_20230426_235017_Chrome.jpg}
-\textgreater\textgreater וואו איזה מעניין}
+  \textgreater{}\includegraphics[width=0.75\textwidth,height=0.4\textheight]{DEQ1/DEQ1_001/Screenshot_20230426_235017_Chrome.jpg}
+  \textgreater\textgreater וואו איזה מעניין}
 
 \end{document}

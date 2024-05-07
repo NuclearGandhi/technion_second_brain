@@ -4,22 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "9394a331ae7b6e24",
+        "id": "43f1e8c364f35917",
         "type": "tabs",
         "children": [
           {
-            "id": "65bb61f3b827c457",
+            "id": "227fe4c6ab85494c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/THE1/THE1_006 אנטרופיה.md",
+                "file": "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "baf65049d622a23d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/SLD2/SLD2_E2019WA 2019 חורף מועד א.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -48,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "\"מספר מצב\"",
+                "query": "TODO",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/THE1/THE1_006 אנטרופיה.md",
+                "file": "Technion/SLD2/SLD2_E2019WA 2019 חורף מועד א.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/THE1/THE1_006 אנטרופיה.md",
+                "file": "Technion/SLD2/SLD2_E2019WA 2019 חורף מועד א.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/THE1/THE1_006 אנטרופיה.md"
+                "file": "Technion/SLD2/SLD2_E2019WA 2019 חורף מועד א.md"
               }
             }
           }
@@ -151,52 +164,53 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "65bb61f3b827c457",
+  "active": "baf65049d622a23d",
   "lastOpenFiles": [
-    "Technion/pandoc-test.pdf",
-    "Technion/SLD2/SLD2_E2023WA 2023 חורף מועד א.md",
-    "Technion/THE1/THE1_E2022WA 2022 חורף מועד א.md",
-    "Technion/THE1/THE1_E2019WA 2019 חורף מועד א.md",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-30 13.31.59.excalidraw 1.svg",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-30 13.31.59.excalidraw.md",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-30 13.44.51.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-30 13.44.51.excalidraw.md",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-30 13.31.59.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-30 11.02.36.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-30 11.17.46.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-30 11.35.06.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-30 11.02.36.excalidraw.md",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-30 11.17.46.excalidraw.md",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-30 11.35.06.excalidraw.md",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-29 19.40.59.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-04-29 19.40.59.excalidraw.md",
-    "Technion/SLD2/SLD2_E2023WA",
-    "Technion/THE1/THE1_E2020WB 2020 חורף מועד ב.md",
-    "Technion/THE1/THE1_E2019WB/THE1_E2019WB 2019 חורף מועד ב 2024-04-28 19.00.10.excalidraw.svg",
-    "Technion/THE1/THE1_E2019WB/THE1_E2019WB 2019 חורף מועד ב 2024-04-28 19.00.10.excalidraw.md",
-    "Technion/THE1/THE1_E2019WB 2019 חורף מועד ב.md",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 23.11.19.excalidraw.md",
+    "Technion/SLD2/SLD2_E2019WA 2019 חורף מועד א.md",
     "Technion/THE1/THE1_E2021WB 2021 חורף מועד ב.md",
-    "Technion/THE1/THE1_E2019WB/THE1_E2021WB 2021 חורף מועד ב 2024-04-28 13.36.48.excalidraw.md",
-    "Technion/THE1/THE1_E2019WB/THE1_E2021WB 2021 חורף מועד ב 2024-04-28 13.36.48.excalidraw.svg",
-    "Technion/THE1/THE1_E2019WB",
-    "Technion/THE1/THE1_E2020WA/THE1_E2020WA 2020 חורף מועד א 2024-04-28 10.42.47.excalidraw.svg",
-    "Technion/THE1/THE1_E2020WA/THE1_E2020WA 2020 חורף מועד א 2024-04-28 10.42.47.excalidraw.md",
-    "Technion/THE1/THE1_E2020WA 2020 חורף מועד א.md",
-    "Technion/THE1/THE1_E2020WA",
-    "Technion/THE1/THE1_E2020WB/THE1_E2020WB 2020 חורף מועד ב 2024-04-27 12.07.28.excalidraw.md",
-    "Technion/THE1/THE1_E2020WB",
-    "Technion/THE1/THE1_E2021WA/THE1_E2021WA 2021 חורף מועד א 2024-04-26 16.34.42.excalidraw.md",
-    "Technion/THE1/THE1_E2021WA 2021 חורף מועד א.md",
-    "Technion/THE1/THE1_E2021WA",
-    "Technion/THE1/THE1_E2021WB/THE1_E2021WB 2021 מועד ב 2024-04-26 10.09.36.excalidraw.md",
-    "Technion/THE1/THE1_E2021WB/THE1_E2021WB 2021 מועד ב 2024-04-24 22.43.04.excalidraw.md",
-    "Technion/THE1/THE1_E2021WB/THE1_E2021WB 2021 מועד ב 2024-04-24 21.02.56.excalidraw.md",
-    "Technion/THE1/THE1_E2021WB",
-    "Technion/THE1/THE1_E2022WA/THE1_E2022WA 2022 חורף מועד א 2024-04-24 15.32.36.excalidraw.md",
-    "Technion/THE1/THE1_E2022WA/THE1_E2022WA 2022 חורף מועד א 2024-04-24 14.33.29.excalidraw.md",
-    "Technion/THE1/THE1_E2022WA/THE1_E2022WA 2022 חורף מועד א 2024-04-23 23.02.34.excalidraw.md",
-    "Technion/THE1/THE1_E2022WA",
-    "Technion/THE1/THE1_E2022WB",
-    "Technion/NUM1/NUM1_012"
+    "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 23.07.57.excalidraw.md",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-29 08.42.40.excalidraw.md",
+    "Excalidraw/Drawing 2024-05-04 23.39.59.excalidraw.md",
+    "Excalidraw/Drawing 2024-05-04 23.39.59.excalidraw.svg",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-29 08.37.13.excalidraw.md",
+    "Technion/SLD2/SLD2_007/SLD2_007 מאמצים נורמליים בכפיפה 2024-02-29 08.32.38.excalidraw.md",
+    "Excalidraw/Drawing 2024-05-04 23.35.07.excalidraw.md",
+    "Excalidraw/Drawing 2024-05-04 23.35.07.excalidraw.svg",
+    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה.md",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 23.11.19.excalidraw.svg",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 23.07.57.excalidraw.svg",
+    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
+    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
+    "Technion/SLD2/SLD2_E2023WA 2023 חורף מועד א.md",
+    "Technion/SLD2/SLD2_009 מבוא לאלסטיות.md",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 15.13.55.excalidraw.md",
+    "Technion/SLD2/SLD2_E2019WA",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 20.20.04.excalidraw.md",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 20.20.04.excalidraw.svg",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 19.24.18.excalidraw.md",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 18.42.47.excalidraw.md",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 19.24.18.excalidraw.svg",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 19.08.56.excalidraw.md",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 19.08.56.excalidraw.svg",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 18.40.14.excalidraw.md",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 18.42.47.excalidraw.svg",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 18.40.14.excalidraw.svg",
+    "Technion/SLD2/SLD2_E2019WA/SLD2_E2019WA 2019 חורף מועד א 2024-05-04 15.13.55.excalidraw.svg",
+    "Technion/SLD2/SLD2_HW009 תרגיל בית 9.md",
+    "Technion/SLD1/SLD1_008 פיתול.md",
+    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה.md",
+    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
+    "Technion/SLD2/SLD2_E2023WA/SLD2_E2023WA 2023 חורף מועד א 2024-05-04 09.21.09.excalidraw.md",
+    "Technion/SLD2/SLD2_E2020WA",
+    "Technion/pandoc-test.fdb_latexmk",
+    "Technion/pandoc-test.fls",
+    "Technion/pandoc-test.xdv",
+    "Technion/pandoc-test.pyg",
+    "Technion/pandoc-test.aux",
+    "Technion/pandoc-test.aex",
+    "Technion/pandoc-test.synctex(busy)",
+    "Technion/pandoc-test.pdf"
   ]
 }
