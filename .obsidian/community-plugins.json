@@ -8,5 +8,6 @@
   "find-unlinked-files",
   "obsidian-pandoc",
   "obsidian-rtl",
-  "better-export-pdf"
+  "better-export-pdf",
+  "obsidian-latex-environments"
 ]

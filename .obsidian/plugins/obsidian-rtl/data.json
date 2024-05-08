@@ -1,9 +1,11 @@
 {
   "fileDirections": {
-    "Technion/NUM1/NUM1_E2022WA 2022 חורף מועד א.md": "auto"
+    "Technion/NUM1/NUM1_E2022WA 2022 חורף מועד א.md": "auto",
+    "Technion/סטנדרט SI-Fang.md": "auto",
+    "Technion/SLD2/SLD2_E2014SA 2014 אביב מועד א.md": "rtl"
   },
   "defaultDirection": "auto",
-  "rememberPerFile": true,
+  "rememberPerFile": false,
   "setNoteTitleDirection": true,
   "setYamlDirection": false,
   "statusBar": true

@@ -31,7 +31,7 @@ if(elements.length === 0) {
 const PolyBool = ea.getPolyBool();
 const polyboolAction = await utils.suggester(["union (a + b)", "intersect (a && b)", "difference (a - b)", "reversed difference (b - a)", "xor"], [
   PolyBool.union, PolyBool.intersect, PolyBool.difference, PolyBool.differenceRev, PolyBool.xor
-], "What would you like todo with the object");
+], "What would you like to do with the object");
 
 const shadowClones = elements.filter(element => element.groupIds.some(id => id.startsWith(ShadowGroupMarker)));
 shadowClones.forEach(shadowClone => {

@@ -14994,14 +14994,14 @@ var parameters = /* @__PURE__ */ new Map([
   ["Z", 0],
   ["z", 0]
 ]);
-var parse = function(path) {
+var parse = function(path2) {
   var cmd;
   var ret = [];
   var args = [];
   var curArg = "";
   var foundDecimal = false;
   var params = 0;
-  for (var _i = 0, path_1 = path; _i < path_1.length; _i++) {
+  for (var _i = 0, path_1 = path2; _i < path_1.length; _i++) {
     var c = path_1[_i];
     if (parameters.has(c)) {
       params = parameters.get(c);
@@ -15315,8 +15315,8 @@ var segmentToBezier = function(cx1, cy1, th0, th1, rx, ry, sinTh, cosTh) {
   ];
   return result;
 };
-var svgPathToOperators = function(path) {
-  return apply(parse(path));
+var svgPathToOperators = function(path2) {
+  return apply(parse(path2));
 };
 
 // node_modules/.pnpm/pdf-lib@1.17.1/node_modules/pdf-lib/es/api/operations.js
@@ -15473,7 +15473,7 @@ var drawEllipse = function(options) {
     popGraphicsState()
   ]).filter(Boolean);
 };
-var drawSvgPath = function(path, options) {
+var drawSvgPath = function(path2, options) {
   var _a, _b, _c;
   return __spreadArrays([
     pushGraphicsState(),
@@ -15487,7 +15487,7 @@ var drawSvgPath = function(path, options) {
     options.borderWidth && setLineWidth(options.borderWidth),
     options.borderLineCap && setLineCap(options.borderLineCap),
     setDashPattern((_b = options.borderDashArray) !== null && _b !== void 0 ? _b : [], (_c = options.borderDashPhase) !== null && _c !== void 0 ? _c : 0)
-  ], svgPathToOperators(path), [
+  ], svgPathToOperators(path2), [
     // prettier-ignore
     options.color && options.borderWidth ? fillAndStroke() : options.color ? fill() : options.borderColor ? stroke() : closePath(),
     popGraphicsState()
@@ -19479,12 +19479,12 @@ var PDFPage = (
         graphicsState: graphicsStateKey
       }));
     };
-    PDFPage2.prototype.drawSvgPath = function(path, options) {
+    PDFPage2.prototype.drawSvgPath = function(path2, options) {
       var _a, _b, _c, _d, _e, _f, _g, _h, _j;
       if (options === void 0) {
         options = {};
       }
-      assertIs(path, "path", ["string"]);
+      assertIs(path2, "path", ["string"]);
       assertOrUndefined(options.x, "options.x", ["number"]);
       assertOrUndefined(options.y, "options.y", ["number"]);
       assertOrUndefined(options.scale, "options.scale", ["number"]);
@@ -19513,7 +19513,7 @@ var PDFPage = (
         options.borderColor = rgb(0, 0, 0);
       }
       var contentStream = this.getContentStream();
-      contentStream.push.apply(contentStream, drawSvgPath(path, {
+      contentStream.push.apply(contentStream, drawSvgPath(path2, {
         x: (_a = options.x) !== null && _a !== void 0 ? _a : this.x,
         y: (_b = options.y) !== null && _b !== void 0 ? _b : this.y,
         scale: options.scale,
@@ -19930,16 +19930,16 @@ var px2mm = (px2) => {
 var mm2px = (mm) => {
   return Math.round(mm * 3.779527559);
 };
-function traverseFolder(path) {
-  if (path instanceof import_obsidian.TFile) {
-    if (path.extension == "md") {
-      return [path];
+function traverseFolder(path2) {
+  if (path2 instanceof import_obsidian.TFile) {
+    if (path2.extension == "md") {
+      return [path2];
     } else {
       return [];
     }
   }
   const arr = [];
-  for (const item of path.children) {
+  for (const item of path2.children) {
     arr.push(...traverseFolder(item));
   }
   return arr;
@@ -20501,6 +20501,8 @@ function waitForDomChange(target, timeout = 2e3, interval = 200) {
 }
 
 // src/modal.ts
+var import_path = __toESM(require("path"));
+var fs2 = __toESM(require("fs/promises"));
 function fullWidthButton(button) {
   button.buttonEl.setAttribute("style", `margin: "0 auto"; width: -webkit-fill-available`);
 }
@@ -20528,6 +20530,7 @@ var ExportConfigModal = class extends import_obsidian3.Modal {
       marginRight: "10",
       displayHeader: (_b = plugin.settings.displayHeader) != null ? _b : true,
       displayFooter: (_c = plugin.settings.displayHeader) != null ? _c : true,
+      cssSnippet: "0",
       ...(_e = (_d = plugin.settings) == null ? void 0 : _d.prevConfig) != null ? _e : {}
     };
   }
@@ -20628,6 +20631,55 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
       }
     }
   }
+  async appendWebview(e, render = true) {
+    if (render) {
+      await this.renderFiles();
+    }
+    const webview = createWebview();
+    this.preview = e.appendChild(webview);
+    this.preview.addEventListener("dom-ready", async (e2) => {
+      this.completed = true;
+      getAllStyles().forEach(async (css) => {
+        await this.preview.insertCSS(css);
+      });
+      if (this.config.cssSnippet && this.config.cssSnippet != "0") {
+        try {
+          const cssSnippet = await fs2.readFile(this.config.cssSnippet, { encoding: "utf8" });
+          const printCss = cssSnippet.replaceAll(/@media print\s*{([^}]+)}/g, "$1");
+          await this.preview.insertCSS(printCss);
+          await this.preview.insertCSS(cssSnippet);
+        } catch (error2) {
+          console.warn(error2);
+        }
+      }
+      await this.preview.executeJavaScript(`
+      document.body.innerHTML = decodeURIComponent(\`${encodeURIComponent(this.doc.body.innerHTML)}\`);
+      document.head.innerHTML = decodeURIComponent(\`${encodeURIComponent(document.head.innerHTML)}\`);
+      
+      // Function to recursively decode and replace innerHTML of span.markdown-embed elements
+      function decodeAndReplaceEmbed(element) {
+				// Replace the innerHTML with the decoded content
+				element.innerHTML = decodeURIComponent(element.innerHTML);
+				// Check if the new content contains further span.markdown-embed elements
+				const newEmbeds = element.querySelectorAll("span.markdown-embed");
+				newEmbeds.forEach(decodeAndReplaceEmbed);
+      }
+      
+      // Start the process with all span.markdown-embed elements in the document
+      document.querySelectorAll("span.markdown-embed").forEach(decodeAndReplaceEmbed);
+
+      document.body.setAttribute("class", \`${document.body.getAttribute("class")}\`)
+      document.body.setAttribute("style", \`${document.body.getAttribute("style")}\`)
+      document.body.addClass("theme-light");
+      document.body.removeClass("theme-dark");
+      document.title = \`${this.title}\`;
+      `);
+      getPatchStyle().forEach(async (css) => {
+        await this.preview.insertCSS(css);
+      });
+      this.calcWebviewSize();
+    });
+  }
   async onOpen() {
     var _a, _b, _c;
     this.contentEl.empty();
@@ -20638,53 +20690,15 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
     const title = (_c = (_a = this.file) == null ? void 0 : _a.basename) != null ? _c : (_b = this.file) == null ? void 0 : _b.name;
     this.frontMatter = { title };
     this.title = title;
-    const appendWebview = async (e) => {
-      await this.renderFiles();
-      const webview = createWebview();
-      this.preview = e.appendChild(webview);
-      this.preview.addEventListener("dom-ready", async (e2) => {
-        this.completed = true;
-        getAllStyles().forEach(async (css) => {
-          await this.preview.insertCSS(css);
-        });
-        await this.preview.executeJavaScript(`
-        document.body.innerHTML = decodeURIComponent(\`${encodeURIComponent(this.doc.body.innerHTML)}\`);
-        document.head.innerHTML = decodeURIComponent(\`${encodeURIComponent(document.head.innerHTML)}\`);
-
-        // Function to recursively decode and replace innerHTML of span.markdown-embed elements
-        function decodeAndReplaceEmbed(element) {
-          // Replace the innerHTML with the decoded content
-          element.innerHTML = decodeURIComponent(element.innerHTML);
-          // Check if the new content contains further span.markdown-embed elements
-          const newEmbeds = element.querySelectorAll("span.markdown-embed");
-          newEmbeds.forEach(decodeAndReplaceEmbed);
-        }
-        
-        // Start the process with all span.markdown-embed elements in the document
-        document.querySelectorAll("span.markdown-embed").forEach(decodeAndReplaceEmbed);
-
-        document.body.setAttribute("class", \`${document.body.getAttribute("class")}\`)
-        document.body.setAttribute("style", \`${document.body.getAttribute("style")}\`)
-        document.body.addClass("theme-light");
-        document.body.removeClass("theme-dark");
-        document.title = \`${title}\`;
-        `);
-        getPatchStyle().forEach(async (css) => {
-          await this.preview.insertCSS(css);
-        });
-        this.calcWebviewSize();
-      });
-    };
-    const previewDiv = wrapper.createDiv({ attr: { style: "flex:auto; position:relative;" } }, async (el) => {
+    this.previewDiv = wrapper.createDiv({ attr: { style: "flex:auto; position:relative;" } }, async (el) => {
       el.empty();
       const resizeObserver = new ResizeObserver(() => {
         this.calcPageSize(el);
       });
       resizeObserver.observe(el);
-      await appendWebview(el);
+      await this.appendWebview(el);
     });
-    this.previewDiv = previewDiv;
-    previewDiv.createDiv({
+    this.previewDiv.createDiv({
       attr: {
         id: "print-size",
         style: "position:absolute;right:8px;top:8px;z-index:99;font-size:0.75rem;white-space:pre-wrap;text-align:right;visibility:hidden;"
@@ -20725,8 +20739,8 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
     });
     new import_obsidian3.Setting(contentEl).setHeading().addButton((button) => {
       button.setButtonText("Refresh").onClick(async () => {
-        previewDiv.empty();
-        await appendWebview(previewDiv);
+        this.previewDiv.empty();
+        await this.appendWebview(this.previewDiv);
       });
       fullWidthButton(button);
     });
@@ -20798,9 +20812,7 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
         this.config["pageHeight"] = value;
       });
     });
-    if (this.config["pageSize"] != "Custom") {
-      sizeEl.settingEl.hidden = true;
-    }
+    sizeEl.settingEl.hidden = this.config["pageSize"] !== "Custom";
     new import_obsidian3.Setting(contentEl).setName("Margin").setDesc("The unit is millimeters.").addDropdown((dropdown) => {
       dropdown.addOption("0", "None").addOption("1", "Default").addOption("2", "Small").addOption("3", "Custom").setValue(this.config["marginType"]).onChange(async (value) => {
         this.config["marginType"] = value;
@@ -20863,10 +20875,31 @@ ${px2mm(width)}\xD7${px2mm(height)}mm`;
         this.config["open"] = value;
       })
     );
+    const snippets = this.cssSnippets();
+    if (Object.keys(snippets).length > 0 && this.plugin.settings.enabledCss) {
+      new import_obsidian3.Setting(contentEl).setName("CSS snippets").addDropdown((dropdown) => {
+        dropdown.addOption("0", "Not select").addOptions(snippets).setValue(this.config["cssSnippet"]).onChange(async (value) => {
+          this.config["cssSnippet"] = value;
+          this.previewDiv.empty();
+          await this.appendWebview(this.previewDiv, false);
+        });
+      });
+    }
   }
   onClose() {
     const { contentEl } = this;
     contentEl.empty();
+  }
+  cssSnippets() {
+    var _a, _b;
+    const { snippets, enabledSnippets } = (_b = (_a = this.app) == null ? void 0 : _a.customCss) != null ? _b : {};
+    const basePath = this.app.vault.adapter.basePath;
+    return Object.fromEntries(
+      snippets == null ? void 0 : snippets.filter((item) => !enabledSnippets.has(item)).map((name) => {
+        const file = import_path.default.join(basePath, ".obsidian/snippets", name + ".css");
+        return [file, name];
+      })
+    );
   }
 };
 
@@ -20973,6 +21006,12 @@ var ConfigSettingTab = class extends import_obsidian4.PluginSettingTab {
         await this.plugin.saveSettings();
       });
     });
+    new import_obsidian4.Setting(containerEl).setName("Select css snippets").setDesc("Select the css snippet that are not enabled").addToggle((cb) => {
+      cb.setValue(this.plugin.settings.enabledCss).onChange(async (value) => {
+        this.plugin.settings.enabledCss = value;
+        await this.plugin.saveSettings();
+      });
+    });
     new import_obsidian4.Setting(containerEl).setName("Debug").setHeading();
     new import_obsidian4.Setting(containerEl).setName("Debug mode").setDesc("This is useful for troubleshooting.").addToggle((cb) => {
       cb.setValue(this.plugin.settings.debug).onChange(async (value) => {
@@ -20996,7 +21035,8 @@ var DEFAULT_SETTINGS = {
   generateTaggedPDF: false,
   displayMetadata: false,
   debug: false,
-  isTimestamp: false
+  isTimestamp: false,
+  enabledCss: false
 };
 var BetterExportPdfPlugin = class extends import_obsidian5.Plugin {
   async onload() {
