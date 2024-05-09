@@ -3,7 +3,7 @@
 	גלוקוז הוא ממקורות האנרגיה העיקריים בגופנו. בשריפה מלאה של $\pu{ 1g }$ של גלוקוז ($\ce{ {C}_{6}H_{12}{O}_{6} }$ משתחרר לסביבה חום בשיעור של $\pu{ 15.56kJ }$. נתון כי:
 	$$\Delta H_{f}^{\circ}(\ce{ C{O}_{2} })=\pu{ -393.5 kJ*mol^{-1}} \quad \quad \Delta H_{f}^{\circ}(\ce{ {H}_{2}O })=\pu{ -285.8kJ*mol-1 }$$
 	על סמך נתונים אלה, מהי אנתלפיית ההיווצרות של גלוקוז?
-	**פתרון:**
+	**פתרון**:
 	[[GCH1_004 מבוא לתרמודינמיקה#תגובת היווצרות|תגובת היווצרות]] של גלוקוז:
 	$$\ce{ 6C + 6{H}_{2} + 3{O}_{2}->{C}_{6}{H}_{12}{O}_{6} } \quad \quad \Delta H_{f}^{\circ}=? $$
 	נחשב את האנתלפיה של שריפת מול גלוקוז, כאשר נשים לב כי $Q=\pu{ -15.56kJ }$ כי זוהי תגובה אקסותרמית, ונחלק את חום זה במספר המולים ב-$\pu{ 1g }$ של גלוקוז:
@@ -26,7 +26,7 @@
 14. **שאלה:**
 	לאיזה מהמולקולות הבאות קיים מומנט דיפול?
 	$$\ce{ SOCl_{2}\quad P{F}_{5}\quad Si{F}_{4}\quad S{O}_{3}\quad C{S}_{2} }$$
-	**פתרון:**
+	**פתרון**:
 	נשרטט מבני לואיס:
 	![[Technion/GCH1/GCH1_E/GCH1_E2023WA 2023-02-17 14.19.47.excalidraw.svg]]
 %%[[Technion/GCH1/GCH1_E/GCH1_E2023WA 2023-02-17 14.19.47.excalidraw|🖋 Edit in Excalidraw]], and the [[GCH1_E2023WA 2023-02-17 14.19.47.excalidraw.dark.svg|dark exported image]]%%

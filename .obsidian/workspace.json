@@ -8,18 +8,41 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b2da581c45a0a23d",
+            "id": "084e76f140f1755a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "פנגייה - רשימת סיכומים.md",
-                "mode": "preview",
-                "source": true
+                "file": "Technion/PDE1/PDE1_004 משוואת הגלים.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "10e491a86481c181",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/PDE1/PDE1_007 משוואת לפלס.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8086337d5a124fb2",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Technion/PDE1/PDE_E2022WB/PDE1_E2022WB 2022 חורף מועד ב 2024-05-09 14.55.19.excalidraw.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "פנגייה - רשימת סיכומים.md",
+                "file": "Technion/PDE1/PDE1_007 משוואת לפלס.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "פנגייה - רשימת סיכומים.md",
+                "file": "Technion/PDE1/PDE1_007 משוואת לפלס.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,11 +148,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "פנגייה - רשימת סיכומים.md"
+                "file": "Technion/PDE1/PDE1_007 משוואת לפלס.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -150,11 +174,29 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b2da581c45a0a23d",
+  "active": "10e491a86481c181",
   "lastOpenFiles": [
+    "Technion/PDE1/PDE1_E2022WB 2022 חורף מועד ב.md",
+    "Technion/PDE1/PDE_E2022WB",
+    "Technion/PDE1/PDE_E2022WB/PDE1_E2022WB 2022 חורף מועד ב 2024-05-09 14.55.19.excalidraw.md",
+    "Technion/PDE1/PDE1_004 משוואת הגלים.md",
+    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
+    "Technion/PDE1/PDE_E2022WB/PDE1_E2022WB 2022 חורף מועד ב 2024-05-09 14.55.19.excalidraw.svg",
+    "Technion/PDE1/PDE1_007 משוואת לפלס.md",
+    "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
+    "Technion/PDE1/PDE1_003 משוואות לינאריות מסדר שני.md",
+    "Technion/DEQ1/DEQ1_002 גורם אינטגרציה, משוואה פרידה.md",
+    "Technion/PDE1/PDE1_002 משוואות קוואזילינאריות.md",
+    "Technion/PDE1/PDE1_000 104228 מדח מ.md",
+    "Technion/DEQ1/DEQ1_000 104131 מדר ח.md",
+    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
+    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
+    "פנגייה - רשימת סיכומים.md",
+    "Technion/THE1/THE1_HW009 תרגיל בית 9.md",
+    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
+    "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
     "Technion/PHY2",
     "Technion/FLD1/FLD1_000 034055 תורת הזרימה 1מ.md",
-    "פנגייה - רשימת סיכומים.md",
     "Technion/PHY2/PHY2_000 114052 פיזיקה 2.md",
     "Technion/LSY1/LSY1_000 034032 מערכות לינאריות מ.md",
     "Technion/LSY1",
@@ -166,37 +208,18 @@
     "Excalidraw/Scripts/Downloaded/Boolean Operations.md",
     "Excalidraw/Scripts/Downloaded/Reverse arrows.md",
     "Excalidraw/Scripts/Downloaded/Boolean Operations.svg",
-    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
-    "Technion/SLD2/SLD2_E2014SA 2014 אביב מועד א.md",
-    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
-    "Technion/SLD1/SLD1_001/SLD1_001 הקדמה ומושגי יסוד 2024-05-08 21.00.49.excalidraw.md",
-    "Technion/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-29 09.28.04.excalidraw.md",
     "Technion/SLD1/SLD1_001/Pasted image 20240508212232.png",
-    "Technion/SLD1/SLD1_001 הקדמה ומושגי יסוד.md",
-    "Technion/SLD1/SLD1_002 שיווי משקל.md",
     "Technion/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-29 09.28.04.excalidraw.svg",
     "Technion/SLD1/SLD1_001/Pasted image 20240508212449.png",
-    "Technion/SLD1/SLD1_001 הקדמה ומושגי יסוד 2024-05-08 21.19.39.excalidraw.md",
     "Technion/SLD1/SLD1_001 הקדמה ומושגי יסוד 2024-05-08 21.19.39.excalidraw.svg",
     "Technion/SLD1/SLD1_001/SLD1_001 הקדמה ומושגי יסוד 2024-05-08 21.00.49.excalidraw.svg",
-    "Technion/SLD2/SLD2_001 טנזור המאמץ.md",
-    "Technion/SLD1/SLD1_000 034028 מכניקת מוצקים 1.md",
-    "Technion/pandoc-test.md",
-    "Technion/סטנדרט SI-Fang.md",
-    "Technion/SLD2/SLD2_E2023WA 2023 חורף מועד א.md",
     "logo.png",
-    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
-    "Technion/THE1/THE1_HW009 תרגיל בית 9.md",
     "Technion/pandoc-test.pyg",
     "Technion/pandoc-test.aex",
     "Technion/pandoc-test.synctex(busy)",
     "Technion/pandoc-test.fdb_latexmk",
     "Technion/pandoc-test.fls",
-    "Technion/pandoc-test.xdv",
-    "Technion/pandoc-test.aux",
     "Technion/IMT1/IMT1_005/Pasted image 20230514202911.png",
-    "Technion/svg-inkscape/THE1_HW008 תרגיל בית 8 2024-03-24 14.23.59.excalidraw_svg-raw.png",
-    "Technion/THE1_HW008 תרגיל בית 8 2024-03-24 14.23.59.excalidraw_svg-raw.png",
-    "Technion/THE1/THE1_007 מחזורי קיטור.md"
+    "Technion/svg-inkscape/THE1_HW008 תרגיל בית 8 2024-03-24 14.23.59.excalidraw_svg-raw.png"
   ]
 }
