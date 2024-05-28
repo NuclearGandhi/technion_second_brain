@@ -18,7 +18,7 @@
       "query": "file: GCH",
       "color": {
         "a": 1,
-        "rgb": 14725458
+        "rgb": 10518075
       }
     },
     {
@@ -67,7 +67,7 @@
       "query": "file: PHY",
       "color": {
         "a": 1,
-        "rgb": 14701138
+        "rgb": 13655389
       }
     },
     {
@@ -90,6 +90,20 @@
         "a": 1,
         "rgb": 8472713
       }
+    },
+    {
+      "query": "file: DYN",
+      "color": {
+        "a": 1,
+        "rgb": 4371985
+      }
+    },
+    {
+      "query": "file: FLD",
+      "color": {
+        "a": 1,
+        "rgb": 5226394
+      }
     }
   ],
   "collapse-display": true,
@@ -102,6 +116,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.3496597027216626,
-  "close": false
+  "scale": 0.16348370567220538,
+  "close": true
 }

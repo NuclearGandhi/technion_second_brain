@@ -1,8 +1,6 @@
 {
   "defaultEnvironment": "aligned",
   "customEnvironments": [
-    "aligned",
-    "gathered",
-    "cases"
+    "gathered"
   ]
 }

@@ -77,7 +77,7 @@ $$\begin{array}{c|c|c|c|c}
 \end{array}$$
 
 יחידות:
-$$\pu{5kJ*kg^{-1}*K^{-1}}$$
+$$\pu{5kJ.kg^{-1}.K^{-1}}$$
 
 
 # קולאאוט (Callout)

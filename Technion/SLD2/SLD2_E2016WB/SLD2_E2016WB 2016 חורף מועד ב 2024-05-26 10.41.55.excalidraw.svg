@@ -1,0 +1,21 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 169.5074479024986 140.0000000000001" width="169.5074479024986" height="140.0000000000001" filter="invert(93%) hue-rotate(180deg)" class="excalidraw-svg"><symbol id="image-c2fc32776f6e0ceb16dc7d29abe9c1e80ae6de2f"><image width="100%" height="100%" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0idmVydGljYWwtYWxpZ246IC0wLjA1ZXg7IiB3aWR0aD0iMjcuMTkiIGhlaWdodD0iMTYuNDUiIHJvbGU9ImltZyIgZm9jdXNhYmxlPSJmYWxzZSIgdmlld0JveD0iMCAtNzA1IDc2MCA3MjciPjxkZWZzPjxwYXRoIGlkPSJNSlgtMS1URVgtSS0xRDQzNiIgZD0iTTUwIDI1MlE1MCAzNjcgMTE3IDQ3M1QyODYgNjQxVDQ5MCA3MDRRNTgwIDcwNCA2MzMgNjUzUTY0MiA2NDMgNjQ4IDYzNlQ2NTYgNjI2TDY1NyA2MjNRNjYwIDYyMyA2ODQgNjQ5UTY5MSA2NTUgNjk5IDY2M1Q3MTUgNjc5VDcyNSA2OTBMNzQwIDcwNUg3NDZRNzYwIDcwNSA3NjAgNjk4UTc2MCA2OTQgNzI4IDU2MVE2OTIgNDIyIDY5MiA0MjFRNjkwIDQxNiA2ODcgNDE1VDY2OSA0MTNINjUzUTY0NyA0MTkgNjQ3IDQyMlE2NDcgNDIzIDY0OCA0MjlUNjUwIDQ0OVQ2NTEgNDgxUTY1MSA1NTIgNjE5IDYwNVQ1MTAgNjU5UTQ4NCA2NTkgNDU0IDY1MlQzODIgNjI4VDI5OSA1NzJUMjI2IDQ3OVExOTQgNDIyIDE3NSAzNDZUMTU2IDIyMlExNTYgMTA4IDIzMiA1OFEyODAgMjQgMzUwIDI0UTQ0MSAyNCA1MTIgOTJUNjA2IDI0MFE2MTAgMjUzIDYxMiAyNTVUNjI4IDI1N1E2NDggMjU3IDY0OCAyNDhRNjQ4IDI0MyA2NDcgMjM5UTYxOCAxMzIgNTIzIDU1VDMxOSAtMjJRMjA2IC0yMiAxMjggNTNUNTAgMjUyWiIvPjwvZGVmcz48ZyBzdHJva2U9ImN1cnJlbnRDb2xvciIgZmlsbD0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjAiIHRyYW5zZm9ybT0ic2NhbGUoMSwtMSkiPjxnIGRhdGEtbW1sLW5vZGU9Im1hdGgiPjxnIGRhdGEtbW1sLW5vZGU9Im1pIj48dXNlIGRhdGEtYz0iMUQ0MzYiIHhsaW5rOmhyZWY9IiNNSlgtMS1URVgtSS0xRDQzNiIvPjwvZz48L2c+PC9nPjwvc3ZnPg=="/></symbol>
+  <!-- svg-source:excalidraw -->
+  
+  <defs>
+    <style class="style-fonts">
+      @font-face {
+        font-family: "Virgil";
+        src: url("https://excalidraw.com/Virgil.woff2");
+      }
+      @font-face {
+        font-family: "Cascadia";
+        src: url("https://excalidraw.com/Cascadia.woff2");
+      }
+      @font-face {
+        font-family: "Assistant";
+        src: url("https://excalidraw.com/Assistant-Regular.woff2");
+      }
+    </style>
+    
+  </defs>
+  <g stroke-linecap="round" transform="translate(-29.99999999999997 50.00000000000004) rotate(89.99999999999994 59.99999999999999 19.99999999999997)"><path d="M0 0 C0 0, 0 0, 0 0 M0 0 C0 0, 0 0, 0 0 M0.27 24.08 C5.7 17.84, 11.12 11.59, 21.26 -0.07 M0.27 24.08 C5.91 17.59, 11.56 11.09, 21.26 -0.07 M7.09 40.62 C14.58 32, 22.07 23.39, 42.52 -0.14 M7.09 40.62 C19.56 26.27, 32.04 11.92, 42.52 -0.14 M28.35 40.55 C40.5 26.58, 52.64 12.61, 63.78 -0.21 M28.35 40.55 C40.01 27.14, 51.67 13.73, 63.78 -0.21 M49.61 40.48 C60.69 27.74, 71.76 15, 85.04 -0.28 M49.61 40.48 C56.78 32.23, 63.95 23.98, 85.04 -0.28 M70.87 40.41 C83.72 25.63, 96.57 10.85, 106.3 -0.34 M70.87 40.41 C80.78 29.01, 90.69 17.61, 106.3 -0.34 M92.13 40.34 C101.77 29.25, 111.41 18.16, 120.34 7.89 M92.13 40.34 C101.99 29, 111.84 17.67, 120.34 7.89 M113.39 40.27 C115.78 37.53, 118.17 34.78, 120.61 31.97 M113.39 40.27 C115.23 38.15, 117.07 36.04, 120.61 31.97" stroke="#a5d8ff" stroke-width="2" fill="none"/><path d="M0 0 C32.8 0, 65.59 0, 120 0 M0 0 C37.69 0, 75.39 0, 120 0 M120 0 C120 8.35, 120 16.7, 120 40 M120 0 C120 12.84, 120 25.67, 120 40 M120 40 C86.47 40, 52.93 40, 0 40 M120 40 C87.95 40, 55.9 40, 0 40 M0 40 C0 31.61, 0 23.21, 0 0 M0 40 C0 29.9, 0 19.79, 0 0" stroke="transparent" stroke-width="4" fill="none"/></g><g stroke-linecap="round"><g transform="translate(-10.000000000000085 70.00000000000003) rotate(89.99999999999994 60.00000000000004 4.973799150320701e-14)"><path d="M0 0 C38.33 0, 76.66 0, 120 0 M0 0 C28.57 0, 57.13 0, 120 0" stroke="#1e1e1e" stroke-width="4" fill="none"/></g></g><mask/><g stroke-linecap="round"><g transform="translate(50 70) rotate(0 50 0)"><path d="M0 0 C35.09 0, 70.18 0, 100 0 M0 0 C35.51 0, 71.03 0, 100 0" stroke="#1e1e1e" stroke-width="4" fill="none"/></g></g><mask/><g stroke-linecap="round"><g transform="translate(150 50) rotate(0 0 20)"><path d="M0 0 C0 15.17, 0 30.35, 0 40" stroke="#1e1e1e" stroke-width="4.5" fill="none" stroke-dasharray="1.5 10"/></g></g><mask/><g transform="translate(140.5074479024986 27.06308218617184) rotate(0 9.5 6)"><use href="#image-c2fc32776f6e0ceb16dc7d29abe9c1e80ae6de2f" width="19" height="12" opacity="1"/></g></svg>

@@ -4,40 +4,30 @@
     "type": "split",
     "children": [
       {
-        "id": "564208c633930a29",
+        "id": "6085162dba3299c7",
         "type": "tabs",
         "children": [
           {
-            "id": "084e76f140f1755a",
+            "id": "a0c400fb0dd563e9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PDE1/PDE1_004 משוואת הגלים.md",
+                "file": "Technion/SLD2/SLD2_002 מישורים ראשיים.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "10e491a86481c181",
+            "id": "709523ba6efc1460",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PDE1/PDE1_007 משוואת לפלס.md",
+                "file": "Technion/SLD2/SLD2_E2015SA 2015 אביב מועד א.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "8086337d5a124fb2",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Technion/PDE1/PDE_E2022WB/PDE1_E2022WB 2022 חורף מועד ב 2024-05-09 14.55.19.excalidraw.md"
               }
             }
           }
@@ -108,8 +98,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/PDE1/PDE1_007 משוואת לפלס.md",
-                "collapseAll": false,
+                "file": "Technion/SLD2/SLD2_E2015SA 2015 אביב מועד א.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -125,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/PDE1/PDE1_007 משוואת לפלס.md",
+                "file": "Technion/SLD2/SLD2_E2015SA 2015 אביב מועד א.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/PDE1/PDE1_007 משוואת לפלס.md"
+                "file": "Technion/SLD2/SLD2_E2015SA 2015 אביב מועד א.md"
               }
             }
           }
@@ -174,52 +164,53 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "10e491a86481c181",
+  "active": "709523ba6efc1460",
   "lastOpenFiles": [
-    "Technion/PDE1/PDE1_E2022WB 2022 חורף מועד ב.md",
-    "Technion/PDE1/PDE_E2022WB",
-    "Technion/PDE1/PDE_E2022WB/PDE1_E2022WB 2022 חורף מועד ב 2024-05-09 14.55.19.excalidraw.md",
-    "Technion/PDE1/PDE1_004 משוואת הגלים.md",
-    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
-    "Technion/PDE1/PDE_E2022WB/PDE1_E2022WB 2022 חורף מועד ב 2024-05-09 14.55.19.excalidraw.svg",
-    "Technion/PDE1/PDE1_007 משוואת לפלס.md",
-    "Technion/PDE1/PDE1_005 בעיית שטורם ליוביל.md",
-    "Technion/PDE1/PDE1_003 משוואות לינאריות מסדר שני.md",
-    "Technion/DEQ1/DEQ1_002 גורם אינטגרציה, משוואה פרידה.md",
-    "Technion/PDE1/PDE1_002 משוואות קוואזילינאריות.md",
-    "Technion/PDE1/PDE1_000 104228 מדח מ.md",
-    "Technion/DEQ1/DEQ1_000 104131 מדר ח.md",
-    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
+    "Technion/SLD2/SLD2_002 מישורים ראשיים.md",
+    "Technion/SLD2/SLD2_004 טנזור העיבור.md",
+    "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
+    "Technion/SLD2/SLD2_E2015SA 2015 אביב מועד א.md",
+    "Technion/SLD2/SLD2_006/SLD2_006 קריטריוני כניעה וכשל 2024-02-22 15.56.54.excalidraw.md",
+    "Technion/SLD2/SLD2_005 קשרי מאמץ עיבור.md",
+    "Technion/SLD2/SLD2_007 מאמצים נורמליים בכפיפה.md",
     "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
-    "פנגייה - רשימת סיכומים.md",
-    "Technion/THE1/THE1_HW009 תרגיל בית 9.md",
-    "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
-    "Technion/THE1/THE1_001 הקדמה ומושגי יסוד.md",
-    "Technion/PHY2",
-    "Technion/FLD1/FLD1_000 034055 תורת הזרימה 1מ.md",
+    "Technion/SLD2/SLD2_E2016WB 2016 חורף מועד ב.md",
+    "Technion/PHY2/PHY2_001 אלקטרוסטטיקה.md",
+    "Technion/PHY2/PHY2_001/PHY2_001 אלקטרוסטטיקה 2024-05-27 16.08.24.excalidraw.md",
+    "Technion/PHY2/PHY2_001/PHY2_001 אלקטרוסטטיקה 2024-05-27 15.50.26.excalidraw.md",
+    "Technion/PHY2/PHY2_001/PHY2_001 אלקטרוסטטיקה 2024-05-27 16.08.24.excalidraw.svg",
+    "Technion/PHY2/PHY2_001/PHY2_001 אלקטרוסטטיקה 2024-05-27 15.50.26.excalidraw.svg",
+    "Technion/PHY2/PHY2_001/Screenshot_20240527_105739_OneDrive.jpg",
+    "Technion/PHY2/PHY2_001",
     "Technion/PHY2/PHY2_000 114052 פיזיקה 2.md",
+    "Technion/PHY2/PHY2_001/Screenshot_20240527_110713_OneDrive.jpg",
+    "Technion/PHY2/PHY2_001/Screenshot_20240527_110713_OneDrive 2.jpg",
+    "Technion/PHY2/PHY2_001/Screenshot_20240527_110713_OneDrive 1.jpg",
+    "Technion/PHY2/PH2_001 חוק קולון.md",
+    "Technion/SLD2/SLD2_E2016WB/SLD2_E2016WB 2016 חורף מועד ב 2024-05-26 20.01.56.excalidraw.md",
+    "Technion/SLD2/SLD2_E2016WB/SLD2_E2016WB 2016 חורף מועד ב 2024-05-26 21.02.06.excalidraw.md",
+    "Technion/SLD2/SLD2_E2016WB/SLD2_E2016WB 2016 חורף מועד ב 2024-05-26 20.53.52.excalidraw.md",
+    "Technion/SLD2/SLD2_E2016WB 2016 חורף מועד ב 2024-05-26 21.34.29.excalidraw.md",
+    "Technion/SLD2/SLD2_E2016WB 2016 חורף מועד ב 2024-05-26 21.34.29.excalidraw.svg",
+    "Technion/SLD2/SLD2_E2016WB/SLD2_E2016WB 2016 חורף מועד ב 2024-05-26 20.21.04.excalidraw.md",
+    "Technion/SLD2/SLD2_E2016WB/SLD2_E2016WB 2016 חורף מועד ב 2024-05-26 21.02.06.excalidraw.svg",
+    "Technion/SLD2/SLD2_E2016WB/SLD2_E2016WB 2016 חורף מועד ב 2024-05-26 20.53.52.excalidraw.svg",
+    "Technion/SLD2/SLD2_E2016WB/SLD2_E2016WB 2016 חורף מועד ב 2024-05-26 20.21.04.excalidraw.svg",
+    "Technion/SLD2/SLD2_E2016WA 2016 חורף מועד א.md",
     "Technion/LSY1/LSY1_000 034032 מערכות לינאריות מ.md",
+    "Technion/FLD1/FLD1_000 034055 תורת הזרימה 1מ.md",
+    "פנגייה - רשימת סיכומים.md",
+    "Technion/SLD2/SLD2_E2016WB/SLD2_E2016WB 2016 חורף מועד ב 2024-05-26 10.41.55.excalidraw.md",
+    "Technion/SLD2/SLD2_E2016WB/SLD2_E2016WB 2016 חורף מועד ב 2024-05-26 15.29.45.excalidraw.md",
+    "Technion/SLD2/SLD2_E2016WB/SLD2_E2016WB 2016 חורף מועד ב 2024-05-26 15.27.20.excalidraw.md",
+    "Technion/SLD2/SLD2_E2016WB",
+    "Technion/SLD2/SLD2_E2016WA",
+    "Technion/FLD1/FLD1_001",
+    "Technion/DYN1/DYN1_001",
+    "Technion/PDE1/PDE_E2022WA",
+    "Technion/PDE1/PDE_E2022WB",
+    "Technion/PHY2",
     "Technion/LSY1",
-    "Technion/FLD1",
-    "Technion/DYN1/DYN1_000 034010 דינמיקה.md",
-    "Technion/DYN1",
-    "Technion/SLD2/SLD2_E2020WA 2020 חורף מועד א.md",
-    "Technion/SLD2/SLD2_E2019WA 2019 חורף מועד א.md",
-    "Excalidraw/Scripts/Downloaded/Boolean Operations.md",
-    "Excalidraw/Scripts/Downloaded/Reverse arrows.md",
-    "Excalidraw/Scripts/Downloaded/Boolean Operations.svg",
-    "Technion/SLD1/SLD1_001/Pasted image 20240508212232.png",
-    "Technion/SLD1/SLD1_001/SLD1_001 וקטורים, כוחות ומומנטים, שקול 2023-03-29 09.28.04.excalidraw.svg",
-    "Technion/SLD1/SLD1_001/Pasted image 20240508212449.png",
-    "Technion/SLD1/SLD1_001 הקדמה ומושגי יסוד 2024-05-08 21.19.39.excalidraw.svg",
-    "Technion/SLD1/SLD1_001/SLD1_001 הקדמה ומושגי יסוד 2024-05-08 21.00.49.excalidraw.svg",
-    "logo.png",
-    "Technion/pandoc-test.pyg",
-    "Technion/pandoc-test.aex",
-    "Technion/pandoc-test.synctex(busy)",
-    "Technion/pandoc-test.fdb_latexmk",
-    "Technion/pandoc-test.fls",
-    "Technion/IMT1/IMT1_005/Pasted image 20230514202911.png",
-    "Technion/svg-inkscape/THE1_HW008 תרגיל בית 8 2024-03-24 14.23.59.excalidraw_svg-raw.png"
+    "Technion/FLD1"
   ]
 }
