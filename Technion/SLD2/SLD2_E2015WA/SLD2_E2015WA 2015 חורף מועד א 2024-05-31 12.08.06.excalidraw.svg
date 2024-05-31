@@ -1,0 +1,21 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" filter="invert(93%) hue-rotate(180deg)" class="excalidraw-svg">
+  <!-- svg-source:excalidraw -->
+  
+  <defs>
+    <style class="style-fonts">
+      @font-face {
+        font-family: "Virgil";
+        src: url("https://excalidraw.com/Virgil.woff2");
+      }
+      @font-face {
+        font-family: "Cascadia";
+        src: url("https://excalidraw.com/Cascadia.woff2");
+      }
+      @font-face {
+        font-family: "Assistant";
+        src: url("https://excalidraw.com/Assistant-Regular.woff2");
+      }
+    </style>
+    
+  </defs>
+  <g stroke-linecap="round"><g transform="translate(10 10) rotate(0 100 100)"><path d="M0 0 C60.69 60.69, 121.39 121.39, 200 200 M0 0 C51.46 51.46, 102.93 102.93, 200 200" stroke="#1e1e1e" stroke-width="4" fill="none"/></g></g><mask/><g stroke-linecap="round"><g transform="translate(110.00000000000023 190) rotate(180 0 -40)"><path d="M0 0 C0 -13.33, 0 -66.67, 0 -80 M0 0 C0 -13.33, 0 -66.67, 0 -80" stroke="#1971c2" stroke-width="2" fill="none"/></g><g transform="translate(110.00000000000023 190) rotate(180 0 -40)"><path d="M0 -80 L6.34 -66.41 L-6.34 -66.41 L0 -80" stroke="none" stroke-width="0" fill="#1971c2" fill-rule="evenodd"/><path d="M0 -80 C2 -75.7, 4.01 -71.41, 6.34 -66.41 M0 -80 C2.12 -75.45, 4.24 -70.91, 6.34 -66.41 M6.34 -66.41 C1.63 -66.41, -3.09 -66.41, -6.34 -66.41 M6.34 -66.41 C2.69 -66.41, -0.95 -66.41, -6.34 -66.41 M-6.34 -66.41 C-4.32 -70.75, -2.29 -75.09, 0 -80 M-6.34 -66.41 C-3.98 -71.47, -1.62 -76.53, 0 -80 M0 -80 C0 -80, 0 -80, 0 -80 M0 -80 C0 -80, 0 -80, 0 -80" stroke="#1971c2" stroke-width="2" fill="none"/></g></g><mask/><g stroke-linecap="round"><g transform="translate(30 110.00000000000014) rotate(180 40 0)"><path d="M0 0 C13.33 0, 66.67 0, 80 0 M0 0 C13.33 0, 66.67 0, 80 0" stroke="#1971c2" stroke-width="2" fill="none"/></g><g transform="translate(30 110.00000000000014) rotate(180 40 0)"><path d="M80 0 L66.41 6.34 L66.41 -6.34 L80 0" stroke="none" stroke-width="0" fill="#1971c2" fill-rule="evenodd"/><path d="M80 0 C76.82 1.48, 73.65 2.96, 66.41 6.34 M80 0 C74.98 2.34, 69.95 4.68, 66.41 6.34 M66.41 6.34 C66.41 2.31, 66.41 -1.72, 66.41 -6.34 M66.41 6.34 C66.41 3.6, 66.41 0.85, 66.41 -6.34 M66.41 -6.34 C70.3 -4.52, 74.19 -2.71, 80 0 M66.41 -6.34 C71.4 -4.01, 76.4 -1.68, 80 0 M80 0 C80 0, 80 0, 80 0 M80 0 C80 0, 80 0, 80 0" stroke="#1971c2" stroke-width="2" fill="none"/></g></g><mask/><g stroke-linecap="round"><g transform="translate(137.72789932373078 178.4034175540363) rotate(134.99999999999994 0 -40)"><path d="M0 0 C0 -13.33, 0 -66.67, 0 -80" stroke="#1971c2" stroke-width="2.5" fill="none" stroke-dasharray="1.5 8"/></g><g transform="translate(137.72789932373078 178.4034175540363) rotate(134.99999999999994 0 -40)"><path d="M0 -80 L6.34 -66.41 L-6.34 -66.41 L0 -80" stroke="none" stroke-width="0" fill="#1971c2" fill-rule="evenodd"/><path d="M0 -80 C2.11 -75.47, 4.23 -70.93, 6.34 -66.41 M6.34 -66.41 C2.04 -66.41, -2.25 -66.41, -6.34 -66.41 M-6.34 -66.41 C-4.85 -69.61, -3.35 -72.81, 0 -80 M0 -80 C0 -80, 0 -80, 0 -80" stroke="#1971c2" stroke-width="2.5" fill="none"/></g></g><mask/><g stroke-linecap="round"><g transform="translate(41.15935682880746 138.40341755403708) rotate(134.99999999999994 40 0)"><path d="M0 0 C13.33 0, 66.67 0, 80 0" stroke="#1971c2" stroke-width="2.5" fill="none" stroke-dasharray="1.5 8"/></g><g transform="translate(41.15935682880746 138.40341755403708) rotate(134.99999999999994 40 0)"><path d="M80 0 L66.41 6.34 L66.41 -6.34 L80 0" stroke="none" stroke-width="0" fill="#1971c2" fill-rule="evenodd"/><path d="M80 0 C75.88 1.92, 71.76 3.84, 66.41 6.34 M66.41 6.34 C66.41 2.99, 66.41 -0.36, 66.41 -6.34 M66.41 -6.34 C69.91 -4.7, 73.42 -3.07, 80 0 M80 0 C80 0, 80 0, 80 0" stroke="#1971c2" stroke-width="2.5" fill="none"/></g></g><mask/><g stroke-linecap="round"><g transform="translate(65.49183619607695 115.26722430666618) rotate(0 5.8172042270592215 10.085224834510754)"><path d="M0 0 C0.31 1.99, -0.08 8.58, 1.86 11.94 C3.8 15.31, 10.01 18.8, 11.63 20.17" stroke="#1e1e1e" stroke-width="2.5" fill="none" stroke-dasharray="1.5 8"/></g></g><mask/></svg>
