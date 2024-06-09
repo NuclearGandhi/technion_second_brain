@@ -4,20 +4,52 @@
     "type": "split",
     "children": [
       {
-        "id": "6085162dba3299c7",
+        "id": "6780ba50febc35b4",
         "type": "tabs",
         "children": [
           {
-            "id": "36622a626f4e1500",
+            "id": "d2f1c72a3c931655",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
+                "file": "Technion/LSY1/LSY1_002 Signals and Convolutions.md",
                 "mode": "preview",
+                "source": true
+              }
+            },
+            "group": "801b512b7f16ef28"
+          },
+          {
+            "id": "70a1bab20a9dd12d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/DEQ1/DEQ1_010 מערכת משוואות.md",
+                "mode": "source",
                 "source": false
               }
             }
+          }
+        ]
+      },
+      {
+        "id": "7232181159e532f8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "af02020f456a0771",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/LSY1/LSY1_002 Signals and Convolutions.md",
+                "mode": "source",
+                "source": true
+              }
+            },
+            "group": "801b512b7f16ef28"
           }
         ]
       }
@@ -85,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
+                "file": "Technion/LSY1/LSY1_002 Signals and Convolutions.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
+                "file": "Technion/LSY1/LSY1_002 Signals and Convolutions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +157,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md"
+                "file": "Technion/LSY1/LSY1_002 Signals and Convolutions.md"
               }
             }
           }
@@ -139,64 +171,67 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "canvas:Create new canvas": false,
       "workspaces:Manage workspace layouts": false,
       "publish:Publish changes...": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "darlal-switcher-plus:Open in Headings Mode": false,
-      "darlal-switcher-plus:Open Symbols for the active editor": false,
+      "templater-obsidian:Templater": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
-      "templater-obsidian:Templater": false
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "36622a626f4e1500",
+  "active": "d2f1c72a3c931655",
   "lastOpenFiles": [
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 16.03.04.excalidraw.md",
-    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 16.26.58.excalidraw.md",
-    "Technion/SLD2/SLD2_E2015SA 2015 אביב מועד א.md",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 12.08.06.excalidraw.md",
-    "Technion/SLD2/SLD2_E2015WA 2015 חורף מועד א.md",
-    "Technion/SLD2/SLD2_E2015WA",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 16.26.58.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 14.22.51.excalidraw.md",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 14.15.46.excalidraw.md",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 16.03.04.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 15.40.48.excalidraw.md",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 15.40.48.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 15.21.33.excalidraw.md",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 13.29.27.excalidraw.md",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 15.21.33.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 14.22.51.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 14.15.46.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 13.29.27.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 12.57.18.excalidraw.md",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 13.12.00.excalidraw.md",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 13.12.00.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 12.57.18.excalidraw.svg",
-    "Technion/SLD2/SLD2_E2015WA/SLD2_E2015WA 2015 חורף מועד א 2024-05-31 12.08.06.excalidraw.svg",
-    "Technion/CAL2/CAL2_001 וקטורים.md",
-    "Technion/SLD2/SLD2_E2016WA 2016 חורף מועד א.md",
-    "Technion/SLD2/SLD2_E2023WA 2023 חורף מועד א.md",
-    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה.md",
-    "Technion/SLD2/SLD2_HW0010 תרגיל בית 10.md",
-    "Technion/THE1/THE1_E2022WB 2022 חורף מועד ב.md",
-    "Technion/LSY1/LSY1_000 034032 Linear Systems E.md",
-    "Technion/MNF1/MNF1_000 034030 Manufacturing Processes.md",
-    "Technion/FLD1/FLD1_001 מבוא.md",
+    "Technion/LSY1/LSY1_002/Pasted image 20240609212839.png",
+    "Technion/DYN1/DYN1_001 קינמטיקה של חלקיקים.md",
+    "Technion/LSY1/LSY1_002 Signals and Convolutions.md",
+    "Technion/סטנדרט SI-Fang.md",
+    "Technion/DYN1/DYN1_001/DYN1_001 קינמטיקה של חלקיקים 2024-06-09 13.50.45.excalidraw.svg",
+    "Technion/DYN1/DYN1_001/DYN1_001 קינמטיקה של חלקיקים 2024-06-09 13.50.45.excalidraw.md",
+    "Technion/LSY1/LSY1_002/Screenshot_20240609_111610_Samsung Notes.jpg",
+    "Technion/LSY1/LSY1_002/Screenshot_20240609_125324_Obsidian.jpg",
+    "Technion/LSY1/LSY1_002/Screenshot_20240609_095700_Samsung Notes.jpg",
+    "Technion/LSY1/LSY1_002/Screenshot_20240609_131337_Samsung Notes 1.jpg",
+    "Technion/LSY1/LSY1_002/Screenshot_20240609_114950_Samsung Notes.jpg",
+    "Technion/LSY1/LSY1_002/Screenshot_20240609_095726_Samsung Notes.jpg",
+    "Technion/LSY1/LSY1_002/Screenshot_20240609_094121_Samsung Notes.jpg",
+    "Technion/LSY1/LSY1_002/Screenshot_20240609_112515_Samsung Notes 1.jpg",
+    "Technion/LSY1/LSY1_002/Screenshot_20240609_095848_Samsung Notes.jpg",
+    "Technion/LSY1/LSY1_002",
+    "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
+    "Technion/LSY1/LSY1_001 Introduction.md",
+    "Technion/DEQ1/DEQ1_010 מערכת משוואות.md",
+    "Technion/MNF1/MNF1_002 Metal Casting.md",
+    "Technion/DEQ1/DEQ1_002 גורם אינטגרציה, משוואה פרידה.md",
     "Technion/MNF1/MNF1_001 Introduction.md",
-    "Technion/MNF1/MNF1 Metal Casting.md",
-    "Technion/MNF1/MNF1",
-    "Technion/MNF1",
-    "Technion/SLD2/SLD2_E2015SA/SLD2_E2015SA 2015 אביב מועד א 2024-05-29 20.21.27.excalidraw.md",
-    "Technion/SLD2/SLD2_E2015SA",
-    "Technion/PHY2/PHY2_001",
-    "Technion/SLD2/SLD2_E2016WB",
-    "Technion/SLD2/SLD2_E2016WA",
-    "Technion/FLD1/FLD1_001",
-    "Technion/DYN1/DYN1_001",
-    "Technion/PDE1/PDE_E2022WA"
+    "Technion/DYN1/DYN1_HW001 תרגיל בית 1.md",
+    "Technion/DYN1/DYN1_001/DYN1_001 קינמטיקה של חלקיקים 2024-06-08 12.32.51.excalidraw.md",
+    "Technion/DYN1/DYN1_001/DYN1_001 קינמטיקה של חלקיקים 2024-06-08 12.25.31.excalidraw.md",
+    "Technion/MNF1/MNF1_002/MNF1_CA1 Casting Processes.canvas",
+    "Technion/PHY2/PHY2_HW002/PHY2_HW002 גיליון בית 2 2024-06-07 16.04.29.excalidraw.md",
+    "Technion/PHY2/PHY2_HW002/PHY2_HW002 גיליון בית 2 2024-06-07 19.17.59.excalidraw.md",
+    "Technion/PHY2/PHY2_001/PHY2_001 אלקטרוסטטיקה 2024-06-07 14.18.28.excalidraw.md",
+    "Technion/PHY2/PHY2_001/PHY2_001 אלקטרוסטטיקה 2024-06-07 09.06.21.excalidraw.md",
+    "Technion/MNF1/MNF1_001",
+    "Technion/MNF1/MNF1_002",
+    "פנגייה - רשימת סיכומים.md",
+    "Technion/PHY1/PHY1_002 קינמטיקה.md",
+    "Technion/PHY1/PHY1_003 חוקי ניוטון.md",
+    "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
+    "Technion/PHY2/PHY2_001 אלקטרוסטטיקה.md",
+    "Technion/PHY2/PHY2_HW002 גיליון בית 2.md",
+    "Technion/PHY2/PHY2_HW002",
+    "Technion/PHY2/PHY2_HW002/PHY2_HW002 גיליון בית 2 2024-06-05 20.06.18.excalidraw.md",
+    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
+    "Technion/DYN1/DYN1_HW001",
+    "Technion/FLD1/FLS1_002",
+    "Technion/PHY2/PHY2_002",
+    "Technion/LSY1/LSY1_001",
+    "Technion/SLD2/Untitled",
+    "Technion/SLD2/SLD2_E2014WA"
   ]
 }

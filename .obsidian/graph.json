@@ -1,11 +1,11 @@
 {
-  "collapse-filter": false,
+  "collapse-filter": true,
   "search": "file: -.excalidraw",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
   "showOrphans": false,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "file: ALG",
@@ -104,18 +104,32 @@
         "a": 1,
         "rgb": 5226394
       }
+    },
+    {
+      "query": "file: MNF",
+      "color": {
+        "a": 1,
+        "rgb": 12034059
+      }
+    },
+    {
+      "query": "file: LSY",
+      "color": {
+        "a": 1,
+        "rgb": 6053078
+      }
     }
   ],
   "collapse-display": true,
   "showArrow": true,
   "textFadeMultiplier": -0.2,
-  "nodeSizeMultiplier": 1.26642411642412,
+  "nodeSizeMultiplier": 1.27395833333333,
   "lineSizeMultiplier": 1.347920997921,
   "collapse-forces": true,
   "centerStrength": 0.778586278586279,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.2519446552051452,
-  "close": true
+  "scale": 0.8396280850144261,
+  "close": false
 }

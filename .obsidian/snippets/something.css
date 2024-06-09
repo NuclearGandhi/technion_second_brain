@@ -264,15 +264,6 @@ Local only
   float: inline-start;
 }
 
-.markdown-preview-view.is-auto .esm-ltr {
-  direction: rtl;
-  text-align-last: unset;
-}
-
-.HyperMD-list-line {
-  direction: rtl !important;
-}
-
 /* Padding between numbers */
 .markdown-rendered ol > li,
 .markdown-rendered ul > li {
