@@ -46,6 +46,30 @@ t & t\geq  0 \\
 \text{rect}\equiv \text{rect}_{1} &  & \text{tent}\equiv \text{tent}_{1}
 \end{gathered}$$
 
+
+# Norms
+We can define signal [[../NUM1/NUM1_003 נורמה#נורמה של וקטור|norms]] in a very similar way to vector norms:
+>[!def] Definition:
+> - ${L}_{1}$-norm:
+> 	$$\left|\left|x\right|\right|_{1}=\int_{-\infty }^{\infty } \left|x(t)\right| \, \mathrm{d}t $$
+> If $\left|\left|x\right|\right|_{1}<\infty$, then we say that $x \in L_{1}$ and call **absolutely integrable**.
+> - ${L}_{2}$-norm:
+> 	$$\left|\left|x\right|\right|_{2}=\left( \int_{-\infty }^{\infty } \left|x(t)\right|^{2} \, \mathrm{d}t  \right)^{1/2}$$
+> 	If $\left|\left|x\right|\right|_{i}<\infty$, then we say that $x \in L_{i}$ and call **square integrable**.
+> - ${L}_{\infty}$-norm:
+> 	$$\left|\left|x\right|\right|_{\infty }=\underset{ t\in \mathbb{R} }{ \mathrm{sup} }\left|x(t)\right|$$
+>If $\left|\left|x\right|\right|_{\infty}<\infty$, then we say that $x \in L_{\infty}$ and call it **bounded**
+
+>[!example] Example: Standard signals' norms
+>- if $x=\exp_{\lambda}$, then
+>	$$x \notin {L}_{1},\, x \notin {L}_{2},\, x \notin L_{\infty }$$
+>- if $x=\exp_{\lambda}\mathbb{1}$ with $\lambda<0$, then
+>	$$x \notin {L}_{1},\qquad  x \in  {L}_{2}(\left|\left|x\right|\right|_{2}=\sqrt{ \pi }),\qquad  x \in L_{\infty }(\left|\left|x\right|\right|_{\infty }=1)$$
+>- if $x=\mathbb{1}$ then
+>	$$x \notin {L}_{1},\qquad x\notin {L}_{2},\qquad x \in L_{\infty }(\left|\left|x\right|\right|_{\infty }=1)$$
+
+
+
 # Operations on Signals
 ## (Amplitude) Scaling
 Given $x:\mathbb{R}\to \mathbb{F}$ and $a\in \mathbb{F}$, the signal $ax:\mathbb{R}\to \mathbb{F}$ (or $a\cdot x$) is defined as
@@ -85,8 +109,19 @@ $$(\mathbb{S}_{\tau}x)(t)\equiv x(t+\tau)\qquad t\in \mathbb{R}$$
 $$\mathbb{S}_{{\tau}_{1}}(\mathbb{S}_{{\tau}_{2}}x)=\mathbb{S}_{{\tau}_{1}+{\tau}_{2}}x=\mathbb{S}_{{\tau}_{2}}(\mathbb{S}_{{\tau}_{1}}x)$$
 
 # Periodic Signals
->[!TODO] להשלים 
- >
+A signal $f(t)$ is periodic if a $T>0$ exists such that $f(t+T)=f(t)$ for all $t\in \mathbb{R}$. A signal will be referred to as $T$-periodic if it is periodic with period $T$.
+
+>[!def] Defintion: 
+ >A real-valued signal $f(t)$ that can be written as
+ >$$f(t)=A\cos(\omega t+\phi)\qquad A>0,\, \phi \in \mathbb{R},\, t\in \mathbb{R}$$
+ >is called a **sinusoid** or real [[../PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס#תנועה הרמונית|harmonic signal]]. Then $A$ is the **amplitude**, $\omega$ the **angular frequency**, and $\phi$ the **initial phase** of the signal $f(t)$.
+ 
+ Such sinusoids have a period of $T=2\pi /\omega$.
+
+>[!theorem] Lemma: 
+ >Suppose that $f(t)$ is integrable on $[0,T]$ and that $f(t)$ is periodic with period $T>0$. Then for every $a\in \mathbb{R}$, there holds:
+ >$$\int_{a}^{a+T} f(t) \, \mathrm{d}t=\int_{0}^{T} f(t) \, \mathrm{d}t  $$
+ 
 
 # Energy and Power
 It is customary in signal analysis to use "energy" instead of norm:
@@ -100,11 +135,32 @@ The rectangular and traingular pulses are examples of energy signals. For a sign
 >[!def] Definition:
 >The **power** $P_{f}$ of a signal $f(t)$ is defined as
 >$$P_{f}=\lim_{ M \to \infty} \dfrac{1}{M}\int_{-M/2}^{M/2} \left|f(t)\right|^{2} \, \mathrm{d}t $$
->Signals that have finitie power are called **power signals**.
+>Signals that have finite power are called **power signals**.
+
+>[!example] Example: 
+> In the case of a $T$-periodic signal, the power signal $f(t)$ is finite, and it equals the average energy over one period:
+> $$\begin{aligned}
+> P_{f} & =\lim_{ M \to \infty} \dfrac{1}{M}\int_{-M/2}^{M/2} \left|f(t)\right|^{2} \, \mathrm{d}t \\[1ex]
+> \end{aligned}$$
+> Let there be $k$ such that $M=kT$:
+> $$\begin{aligned}
+> P_{f} & =\lim_{ k \to \infty} \dfrac{1}{kT}\int_{-kT/2}^{kT/2}\left|f(t)\right|^{2} \, \mathrm{d}t  \\[1ex]
+>  & =\lim_{ k \to \infty} \sum_{i=0}^{k-1} \int_{iT-kT/2}^{iT-(kT/2)+T} \left|f(t)\right|^{2} \, \mathrm{d}t \\[1ex]
+>   & =\lim_{ k \to \infty} \dfrac{1}{kT}\sum_{i=0}^{k-1}\int_{0}^{T} \left|f(t)\right|^{2} \, \mathrm{d}t \\
+>   & =\lim_{ k \to \infty} \dfrac{1}{kT}k\int_{0}^{T} \left|f(t)\right|^{2} \, \mathrm{d}t \\[1ex]
+>  & =\boxed{\dfrac{1}{T}\int_{0}^{T} \left|f(t)\right|^{2} \, \mathrm{d}x  }  
+> \end{aligned}$$
 
 
-In the case of a $T$-perioidc signal, the power signal $f(t)$ is finite, and it equals the average energy over one period:
-$$P_{f}=\dfrac{1}{T}\int_{-T/2}^{T/2} \left|f(t)\right|^{2} \, \mathrm{d}t $$
+>[!example] Example: 
+>The power of the sinusoid $f(t)=A\cos({\omega}_{0}t+\phi)$ with period $T=2\pi /{\omega}_{0}$, is:
+>$$\begin{aligned}
+P_{f} & =\dfrac{{\omega}_{0}}{2\pi}\int_{-\pi /{\omega}_{0}}^{{\pi /\omega}_{0}} A^{2}\cos ^{2}({\omega}_{0}t+\phi) \, \mathrm{d}t\underset{ x={\omega}_{0}t }{ = }\dfrac{A^{2}}{2\pi}\int_{-\pi}^{\pi} \cos ^{2}(x+\phi) \, \mathrm{d}x  \\[1ex]
+ & =\boxed {
+\dfrac{A^{2}}{2} 
+ }
+\end{aligned}$$
+
 
 # Convolution
 
@@ -219,26 +275,4 @@ $$\int_{-\infty }^{\infty} \delta(t-b)f(t) \, \mathrm{d}t=f(b),\, \qquad  (\text
 | Scaling     | $\delta(at-b)=(1/\|a\|)\delta(t-b/a)$                             |                            |
 |             | $\int_{-\infty}^{t} \delta(\tau) \, \mathrm{d}\tau=\mathbb{1}(t)$ | $t\neq 0$                  |
 >Properties and rules of calculus for the delta function
-
-
-# Norms
-We can define signal [[../NUM1/NUM1_003 נורמה#נורמה של וקטור|norms]] in a very similar way to vector norms:
->[!def] Definition:
-> - ${L}_{1}$-norm:
-> 	$$\left|\left|x\right|\right|_{1}=\int_{-\infty }^{\infty } \left|x(t)\right| \, \mathrm{d}t $$
-> If $\left|\left|x\right|\right|_{1}<\infty$, then we say that $x \in L_{1}$ and call **absolutely integrable**.
-> - ${L}_{2}$-norm:
-> 	$$\left|\left|x\right|\right|_{2}=\left( \int_{-\infty }^{\infty } \left|x(t)\right|^{2} \, \mathrm{d}t  \right)^{1/2}$$
-> 	If $\left|\left|x\right|\right|_{i}<\infty$, then we say that $x \in L_{i}$ and call **square integrable**.
-> - ${L}_{\infty}$-norm:
-> 	$$\left|\left|x\right|\right|_{\infty }=\underset{ t\in \mathbb{R} }{ \mathrm{sup} }\left|x(t)\right|$$
->If $\left|\left|x\right|\right|_{\infty}<\infty$, then we say that $x \in L_{\infty}$ and call it **bounded**
-
->[!example] Example: Standard signals' norms
->- if $x=\exp_{\lambda}$, then
->	$$x \notin {L}_{1},\, x \notin {L}_{2},\, x \notin L_{\infty }$$
->- if $x=\exp_{\lambda}\mathbb{1}$ with $\lambda<0$, then
->	$$x \notin {L}_{1},\qquad  x \in  {L}_{2}(\left|\left|x\right|\right|_{2}=\sqrt{ \pi }),\qquad  x \in L_{\infty }(\left|\left|x\right|\right|_{\infty }=1)$$
->- if $x=\mathbb{1}$ then
->	$$x \notin {L}_{1},\qquad x\notin {L}_{2},\qquad x \in L_{\infty }(\left|\left|x\right|\right|_{\infty }=1)$$
 

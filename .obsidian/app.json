@@ -14,7 +14,7 @@
     "downscalePercent": 75
   },
   "newFileLocation": "current",
-  "spellcheck": false,
+  "spellcheck": true,
   "defaultViewMode": "preview",
   "showFrontmatter": true,
   "attachmentFolderPath": "./",

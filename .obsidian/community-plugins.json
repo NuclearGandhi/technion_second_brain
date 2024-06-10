@@ -7,5 +7,6 @@
   "obsidian-pandoc",
   "better-export-pdf",
   "hot-reload",
-  "obsidian-latex-environments"
+  "obsidian-latex-environments",
+  "latex-ocr"
 ]
