@@ -44,7 +44,7 @@ We've established that signals are functions. More precisely, a signal is a func
 An example of a continuous-time domain is real number domain $\mathbb{R}$. For a discrete-time domain, a common example would be integers - $\mathbb{Z}$.
 
 ## Notation
-Signals are normally denoted by lowercase letters, $u,v,w\dots$
+Signals are normally denoted by lowercase letters, $x,u,v,w\dots$
 If we would like to talk about its domains, we would write for example:
 $$u:\mathbb{R}_{\geq  0}\to \mathbb{R}$$
 which stands for: $u$ assigns to every element of $\mathbb{R}_{\geq 0}$ (domain) an element of $\mathbb{R}$ (codomain).
@@ -106,9 +106,13 @@ We often say "system" meaning its model, and our model is a (more or less accura
 
 
 > [!attention] Attention! 
-> The following subject is talked about in the seconds lecture, but I personally think it should be here, because it introduces some concepts for the introductory for Simulink.
+> The following subject is talked about in the second lecture, but I personally think it should be here, because it introduces some concepts for the introduction for Simulink.
 
 ## State-Space Linear Systems
+
+Models allow us to reason about a system and make prediction about how a system will behave. We will mainly work in "**state-space** form.
+
+One of the triumphs of Newton's mechanics was the observation that the motion of the planets could be predicted based on the current positions and velocities of all planets. It was not necessary to know the past motion. The *state* of a dynamical system is a collection of variables that completely characterizes the motion of a system for the purpose of predicting future motion. For a system of planets the state is simply the positions and the velocities of the planets. We call the set of all possible states the **state-space**.
 
 ![[LSY1_001/Pasted image 20240610132600.png|book|400]]
 >Block diagram representation of the linear state-space equations
@@ -271,7 +275,16 @@ a & u(t)<a \\
 u(t) & a\leq  u(t)\leq  b \\
 b & u(t)>b
 \end{cases}$$
-for a given $a<b$. We use the short notation $\mathrm{sat}_{a}:=\mathrm{sat}_{-[a,a]}$ for some $a>0$.
+	for a given $a<b$. We use the short notation $\mathrm{sat}_{a}:=\mathrm{sat}_{-[a,a]}$ for some $a>0$.
 ![[LSY1_001/Pasted image 20240610152046.png|book|400]]
 - **Integrator** systems map their input $u(\cdot)\in \mathbb{R}$ to the solution $y(\cdot)\in \mathbb{R}$ of $\dot{\mathbf{y}}=\mathbf{u}$, which can also be written as:
-	$$y(t)=\int_{-\infty }^{t} u(s) \, \mathrm{d}s $$
+	$$y(t)=\int_{-\infty }^{t} u(t) \, \mathrm{d}t $$
+
+
+![[LSY1_003/Pasted image 20240611141917.png|book]]
+>Standard block diagram elements. The arrows indicate the inputs and outputs of each element, with the mathematical operation corresponding to the blocked labeled at the output.
+
+>[!notes] Notes: 
+ >Some texts defined the begining of time at $t=0$, and some at $t=-\infty$.
+ 
+ 

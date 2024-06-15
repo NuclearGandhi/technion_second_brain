@@ -117,7 +117,18 @@ In the lost was process, typical parts made are mechanical components such as ge
 >Schematic illustration of investment casting (lost wax process).
 
 # Permanent-Mold Casting Processes
-**Permanent molds** are used repeatedly and are designed so that the casting can be easily removed and the mold reused. The molds are made of metals that maintain their strength at high temperatures. Because metal molds are better heat conductors than expendable molds, described above, the solidifying casting is subjected to a higher rate of cooling. This, in turn, affect the microstructure and grain size within the casting.
+**Permanent molds** are used repeatedly and are designed so that the casting can be easily removed and the mold reused. The molds are made of metals that maintain their strength at high temperatures. Because metal molds are better heat conductors than expendable molds, described above, the solidifying casting is subjected to a higher rate of cooling. This, in turn, affects the microstructure and grain size within the casting.
 ![[MNF1_002/Pasted image 20240606121404.png]]
 >Permanent mold casting.
 
+## Low-Pressure Permanent Casting
+**Low-Pressure permanent mold (LPPM)** casting uses a gas at low pressure ($20$ to $\pu{100kPa}$) to push moltem metal in the mold cavity.
+![[MNF1_002/Pasted image 20240614105809.png|book|300]]
+>Schematic of the low-pressure permanent mold casting process
+
+The pressure is applied to the top of the pool of liquid, which forces the molten metal up a refactory pouring tube and finally into the bottom of the mold.
+
+## Die Casting (High-Pressure Casting)
+**Die casting** is a metal casting process that is characterized by forcing molten metal under high pressure into the die cavity at pressures ranging from $0.7$ to $\pu{700MPa}$. Typical parts made by die casting include transmission housings, valve bodies, motos, business machine and aplliance components, hands tools, and toys.
+![[MNF1_002/Pasted image 20240614114037.png|400]]
+>An engine block with aluminum and magnesium die castings.

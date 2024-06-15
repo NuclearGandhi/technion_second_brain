@@ -13,8 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/LSY1/LSY1_003 Causality, Time Invariance, and Linearity.md",
+                "file": "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
                 "mode": "preview",
+                "backlinks": false,
                 "source": false
               }
             },
@@ -32,9 +33,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/LSY1/LSY1_003 Causality, Time Invariance, and Linearity.md",
+                "file": "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
                 "mode": "source",
-                "source": false
+                "backlinks": false,
+                "source": true
               }
             },
             "group": "90d154462b790254"
@@ -105,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Technion/LSY1/LSY1_003 Causality, Time Invariance, and Linearity.md",
+                "file": "Technion/LSY1/LSY1_001 Introduction.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/LSY1/LSY1_003 Causality, Time Invariance, and Linearity.md",
+                "file": "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,12 +142,12 @@
             }
           },
           {
-            "id": "237b8bf4c39af771",
+            "id": "58116249b3d51a56",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/LSY1/LSY1_003 Causality, Time Invariance, and Linearity.md"
+                "file": "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md"
               }
             }
           }
@@ -175,52 +177,52 @@
   },
   "active": "af02020f456a0771",
   "lastOpenFiles": [
-    "Technion/LSY1/LSY1_001 Introduction.md",
-    "Technion/LSY1/LSY1_000 034032 Linear Systems E.md",
-    "Technion/LSY1/LSY1_003 Causality, Time Invariance, and Linearity.md",
-    "Technion/LSY1/LSY1_002 Signals and Convolutions.md",
-    "Technion/LSY1/LSY1_001/Pasted image 20240610152046.png",
-    "Technion/LSY1/LSY1_001/Pasted image 20240610151833.png",
-    "Technion/LSY1/LSY1_001/Pasted image 20240610134941.png",
-    "Technion/LSY1/LSY1_001/Pasted image 20240610134928.png",
-    "Technion/LSY1/LSY1_001/Pasted image 20240610132600.png",
-    "Technion/LSY1/LSY1_001/Pasted image 20240610124849.png",
-    "Technion/LSY1/LSY1_003 Standard Systems.md",
-    "Technion/LSY1/LSY1_002/Pasted image 20240609212839.png",
-    "Technion/DEQ1/DEQ1_010 מערכת משוואות.md",
-    "Technion/DYN1/DYN1_001 קינמטיקה של חלקיקים.md",
-    "Technion/סטנדרט SI-Fang.md",
-    "Technion/DYN1/DYN1_001/DYN1_001 קינמטיקה של חלקיקים 2024-06-09 13.50.45.excalidraw.svg",
-    "Technion/DYN1/DYN1_001/DYN1_001 קינמטיקה של חלקיקים 2024-06-09 13.50.45.excalidraw.md",
-    "Technion/LSY1/LSY1_002/Screenshot_20240609_111610_Samsung Notes.jpg",
-    "Technion/LSY1/LSY1_002/Screenshot_20240609_125324_Obsidian.jpg",
-    "Technion/LSY1/LSY1_002",
-    "Technion/PHY1/PHY1_010 תורת היחסות הפרטית.md",
     "Technion/MNF1/MNF1_002 Metal Casting.md",
-    "Technion/DEQ1/DEQ1_002 גורם אינטגרציה, משוואה פרידה.md",
-    "Technion/MNF1/MNF1_001 Introduction.md",
-    "Technion/DYN1/DYN1_HW001 תרגיל בית 1.md",
-    "Technion/DYN1/DYN1_001/DYN1_001 קינמטיקה של חלקיקים 2024-06-08 12.32.51.excalidraw.md",
-    "Technion/DYN1/DYN1_001/DYN1_001 קינמטיקה של חלקיקים 2024-06-08 12.25.31.excalidraw.md",
+    "Technion/DYN1/DYN1_002 קינמטיקה של חלקיק - מערכת צירים סובבת.md",
+    "Technion/PHY2/PHY2_001 אלקטרוסטטיקה - חוק קולון והשדה החשמלי.md",
+    "Technion/PHY2/PHY2_HW003 גיליון בית 3.md",
+    "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
+    "Technion/LSY1/LSY1_003 Classification of Systems.md",
+    "Technion/LSY1/LSY1_004 Frequency Domain Analysis.md",
+    "Technion/LSY1/LSY1_001 Introduction.md",
+    "Technion/DYN1/DYN1_002/Screenshot_20240615_111104_Samsung Notes.jpg",
+    "Technion/DYN1/DYN1_002/Screenshot_20240615_111104_Samsung Notes 1.jpg",
+    "Technion/DYN1/DYN1_002/Screenshot_20240615_110814_Samsung Notes.jpg",
+    "Technion/DYN1/DYN1_002",
+    "Technion/DYN1/DYN1_001  קינמטיקה של חלקיק - מבוא.md",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.28.47.excalidraw.svg",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.42.31.excalidraw.svg",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 09.05.30.excalidraw.svg",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-14 22.18.50.excalidraw.svg",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 09.05.30.excalidraw.md",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.42.31.excalidraw.md",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.28.47.excalidraw.md",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-14 22.18.50.excalidraw.md",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.28.57.excalidraw.md",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-14 22.18.27.excalidraw.md",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.28.57.excalidraw.svg",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-14 22.18.27.excalidraw.svg",
+    "Technion/LSY1/LSY1_003/Screenshot_20240614_135501_Obsidian.jpg",
+    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי וחוק גאוס 2024-06-14 08.20.53.excalidraw.md",
+    "Technion/PHY2/PHY2_HW003/PHY2_HW003 גיליון בית 3 2024-06-12 21.06.25.excalidraw.md",
+    "Technion/PHY2/PHY2_HW003/PHY2_HW003 גיליון בית 3 2024-06-12 18.13.38.excalidraw.md",
+    "Technion/PHY2/PHY2_HW003/PHY2_HW003 גיליון בית 3 2024-06-12 18.13.27.excalidraw.md",
+    "Technion/PHY2/PHY2_HW003",
+    "Technion/LSY1/LSY1_000 034032 Linear Systems E.md",
+    "Technion/FLD1/FLD1_003 חוקי שימור אינטגרליים.md",
+    "Technion/FLD1/FLD1_000 034055 תורת הזרימה 1מ.md",
+    "Technion/PHY2/PHY2_000 114052 פיזיקה 2.md",
+    "פנגייה - רשימת סיכומים.md",
+    "Technion/MNF1/MNF1_000 034030 Manufacturing Processes.md",
+    "Technion/DYN1/DYN1_000 034010 דינמיקה.md",
+    "Technion/LSY1/LSY1_003",
+    "Technion/LSY1/LSY1_002",
     "Technion/MNF1/MNF1_002/MNF1_CA1 Casting Processes.canvas",
-    "Technion/PHY2/PHY2_HW002/PHY2_HW002 גיליון בית 2 2024-06-07 16.04.29.excalidraw.md",
-    "Technion/PHY2/PHY2_HW002/PHY2_HW002 גיליון בית 2 2024-06-07 19.17.59.excalidraw.md",
-    "Technion/PHY2/PHY2_001/PHY2_001 אלקטרוסטטיקה 2024-06-07 14.18.28.excalidraw.md",
-    "Technion/PHY2/PHY2_001/PHY2_001 אלקטרוסטטיקה 2024-06-07 09.06.21.excalidraw.md",
     "Technion/MNF1/MNF1_001",
     "Technion/MNF1/MNF1_002",
-    "פנגייה - רשימת סיכומים.md",
-    "Technion/PHY1/PHY1_002 קינמטיקה.md",
-    "Technion/PHY1/PHY1_003 חוקי ניוטון.md",
-    "Technion/PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס.md",
-    "Technion/PHY2/PHY2_001 אלקטרוסטטיקה.md",
-    "Technion/PHY2/PHY2_HW002 גיליון בית 2.md",
     "Technion/PHY2/PHY2_HW002",
     "Technion/DYN1/DYN1_HW001",
     "Technion/FLD1/FLS1_002",
-    "Technion/PHY2/PHY2_002",
-    "Technion/LSY1/LSY1_001",
-    "Technion/SLD2/Untitled",
-    "Technion/SLD2/SLD2_E2014WA"
+    "Technion/PHY2/PHY2_002"
   ]
 }

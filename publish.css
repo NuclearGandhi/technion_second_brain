@@ -1,4 +1,11 @@
 /*
+Publish only
+============ 
+*/
+
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@700&display=swap);
+
+/*
 Publish and Local
 =================
  */
@@ -253,8 +260,6 @@ figure.testi .author h5 span {
 Publish only
 ============ 
 */
-
-@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@700&display=swap);
 
 /* Variables */
 .published-container {

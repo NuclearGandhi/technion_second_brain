@@ -83,6 +83,7 @@
   "experimentalEnableFourthFont": false,
   "experimantalFourthFont": "Virgil",
   "addDummyTextElement": false,
+  "zoteroCompatibility": false,
   "fieldSuggester": true,
   "compatibilityMode": false,
   "drawingOpenCount": 0,
@@ -90,7 +91,7 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.2.3",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.2.6",
     "libraryItems": [
       {
         "id": "-NNigxM2OTlEioOPgcAYY",
@@ -695,7 +696,7 @@
             "strokeColor": "#e03131",
             "backgroundColor": "transparent",
             "width": 30.321847432222807,
-            "height": 10.107282477407532,
+            "height": 10.10728247740753,
             "seed": 1649696147,
             "groupIds": [],
             "frameId": null,
@@ -4716,7 +4717,7 @@
             "y": -13.68851199973393,
             "strokeColor": "#1e1e1e",
             "backgroundColor": "#a5d8ff",
-            "width": 58.663961496073455,
+            "width": 58.66396149607345,
             "height": 10.518781899529877,
             "seed": 16223216,
             "groupIds": [
