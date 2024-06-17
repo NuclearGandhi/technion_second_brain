@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
+                "file": "Technion/DYN1/DYN1_HW002 תרגיל בית 2.md",
                 "mode": "preview",
                 "backlinks": false,
                 "source": false
               }
             },
-            "group": "90d154462b790254"
+            "group": "5e6b2ee30fcaa68c"
           }
         ]
       },
@@ -28,18 +28,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "af02020f456a0771",
+            "id": "e3b965d5d73d3d96",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
+                "file": "Technion/DYN1/DYN1_HW002 תרגיל בית 2.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": true
               }
             },
-            "group": "90d154462b790254"
+            "group": "5e6b2ee30fcaa68c"
+          },
+          {
+            "id": "bea83f3799824d83",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/DYN1/DYN1_001  קינמטיקה של חלקיק - מבוא.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -70,7 +83,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "TODO",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -124,7 +137,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
+                "file": "Technion/DYN1/DYN1_HW002 תרגיל בית 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md"
+                "file": "Technion/DYN1/DYN1_HW002 תרגיל בית 2.md"
               }
             }
           }
@@ -175,54 +188,53 @@
       "latex-ocr:LatexOCR": false
     }
   },
-  "active": "af02020f456a0771",
+  "active": "84942cca209dd95c",
   "lastOpenFiles": [
+    "Technion/DYN1/DYN1_HW002/DYN1_HW002 תרגיל בית 2 2024-06-17 13.48.24.excalidraw.md",
+    "Technion/DYN1/DYN1_HW002 תרגיל בית 2 2024-06-17 13.56.19.excalidraw.svg",
+    "Technion/DYN1/DYN1_HW002 תרגיל בית 2.md",
+    "Technion/DYN1/DYN1_HW002 תרגיל בית 2 2024-06-17 13.56.19.excalidraw.md",
+    "Technion/DYN1/DYN1_001  קינמטיקה של חלקיק - מבוא.md",
+    "Technion/BMA1/BMA1_009 זהויות טריגונומטריות.md",
+    "Technion/DYN1/DYN1_HW002/DYN1_HW002 תרגיל בית 2 2024-06-17 13.48.24.excalidraw.svg",
+    "Technion/DYN1/Untitled.md",
+    "Technion/DYN1/DYN1_HW002/Pasted image 20240617114854.png",
+    "Technion/DYN1/DYN1_HW002/Pasted image 20240617131530.png",
+    "Technion/DYN1/DYN1_000 034010 דינמיקה.md",
+    "Technion/DYN1/DYN1_HW002",
+    "Technion/DYN1/DYN1_HW002/Pasted image 20240617092046.png",
+    "Technion/DYN1/DYN1_HW001 תרגיל בית 1.md",
+    "Technion/LSY1/LSY1_004 Time Domain Analysis.md",
+    "Technion/PHY2/PHY2_001 אלקטרוסטטיקה - חוק קולון והשדה החשמלי.md",
+    "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
+    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
+    "Technion/CAL1/CAL1_005 נגזרות.md",
+    "Technion/LSY1/LSY1_004/Pasted image 20240616155903.png",
+    "Technion/LSY1/LSY1_004/LSY1_004 Time Domain Analysis 2024-06-16 16.23.35.excalidraw.md",
+    "Technion/LSY1/LSY1_004",
+    "Technion/LSY1/LSY1_004/LSY1_004 Time Domain Analysis 2024-06-16 16.23.35.excalidraw.svg",
+    "Technion/LSY1/LSY1_005 Frequency Domain Analysis.md",
+    "Technion/LSY1/LSY1_004 Frequency Domain Analysis.md",
+    "Technion/LSY1/LSY1_003 Classification of Systems.md",
+    "Technion/LSY1/LSY1_002 Signals and Convolutions.md",
+    "Technion/LSY1/LSY1_001 Introduction.md",
+    "templates/default_exca.excalidraw.md",
+    "External",
+    "templates/default_exca.excalidraw.svg",
     "Technion/MNF1/MNF1_002 Metal Casting.md",
     "Technion/DYN1/DYN1_002 קינמטיקה של חלקיק - מערכת צירים סובבת.md",
-    "Technion/PHY2/PHY2_001 אלקטרוסטטיקה - חוק קולון והשדה החשמלי.md",
     "Technion/PHY2/PHY2_HW003 גיליון בית 3.md",
-    "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
-    "Technion/LSY1/LSY1_003 Classification of Systems.md",
-    "Technion/LSY1/LSY1_004 Frequency Domain Analysis.md",
-    "Technion/LSY1/LSY1_001 Introduction.md",
     "Technion/DYN1/DYN1_002/Screenshot_20240615_111104_Samsung Notes.jpg",
     "Technion/DYN1/DYN1_002/Screenshot_20240615_111104_Samsung Notes 1.jpg",
-    "Technion/DYN1/DYN1_002/Screenshot_20240615_110814_Samsung Notes.jpg",
     "Technion/DYN1/DYN1_002",
-    "Technion/DYN1/DYN1_001  קינמטיקה של חלקיק - מבוא.md",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.28.47.excalidraw.svg",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.42.31.excalidraw.svg",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 09.05.30.excalidraw.svg",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-14 22.18.50.excalidraw.svg",
     "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 09.05.30.excalidraw.md",
     "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.42.31.excalidraw.md",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.28.47.excalidraw.md",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-14 22.18.50.excalidraw.md",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.28.57.excalidraw.md",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-14 22.18.27.excalidraw.md",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.28.57.excalidraw.svg",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-14 22.18.27.excalidraw.svg",
-    "Technion/LSY1/LSY1_003/Screenshot_20240614_135501_Obsidian.jpg",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי וחוק גאוס 2024-06-14 08.20.53.excalidraw.md",
-    "Technion/PHY2/PHY2_HW003/PHY2_HW003 גיליון בית 3 2024-06-12 21.06.25.excalidraw.md",
-    "Technion/PHY2/PHY2_HW003/PHY2_HW003 גיליון בית 3 2024-06-12 18.13.38.excalidraw.md",
-    "Technion/PHY2/PHY2_HW003/PHY2_HW003 גיליון בית 3 2024-06-12 18.13.27.excalidraw.md",
     "Technion/PHY2/PHY2_HW003",
-    "Technion/LSY1/LSY1_000 034032 Linear Systems E.md",
-    "Technion/FLD1/FLD1_003 חוקי שימור אינטגרליים.md",
-    "Technion/FLD1/FLD1_000 034055 תורת הזרימה 1מ.md",
-    "Technion/PHY2/PHY2_000 114052 פיזיקה 2.md",
-    "פנגייה - רשימת סיכומים.md",
-    "Technion/MNF1/MNF1_000 034030 Manufacturing Processes.md",
-    "Technion/DYN1/DYN1_000 034010 דינמיקה.md",
     "Technion/LSY1/LSY1_003",
     "Technion/LSY1/LSY1_002",
     "Technion/MNF1/MNF1_002/MNF1_CA1 Casting Processes.canvas",
     "Technion/MNF1/MNF1_001",
     "Technion/MNF1/MNF1_002",
-    "Technion/PHY2/PHY2_HW002",
-    "Technion/DYN1/DYN1_HW001",
-    "Technion/FLD1/FLS1_002",
-    "Technion/PHY2/PHY2_002"
+    "Technion/PHY2/PHY2_HW002"
   ]
 }

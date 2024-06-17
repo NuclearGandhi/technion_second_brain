@@ -1,5 +1,9 @@
 ---
 aliases:
+  - causality
+  - time-invariance
+  - memoryless system
+  - system stablitiy
 ---
 
 # Causality
@@ -58,7 +62,7 @@ x(t)={k}_{1}{x}_{1}(t)+{k}_{2}{x}_{2}(t) &  & \text{and} &  & y(t)={k}_{1}{y}_{1
 Thereforce, the system is linear.
 
 # Instanteneous and Dynamic Systems
-A system's output at any instant $t$ generally depends on the entire past inputs. However, in a special class of systems, the output at any instant $t$ depends only on its input at that instant. Such systems are said to be **instantenous** or **memoryless** systems. Otherwise, the system is said to be **dynamic**. A system whose response at $t$ is completely determined by the input signals over the past $T$ seconds is a **finite-memory system** with a memory of $T$ seconds.
+A system's output at any instant $t$ generally depends on the entire past inputs. However, in a special class of systems, the output at any instant $t$ depends only on its input at that instant. Such systems are said to be **instantenous**, **static** or **memoryless** systems. Otherwise, the system is said to be **dynamic**. A system whose response at $t$ is completely determined by the input signals over the past $T$ seconds is a **finite-memory system** with a memory of $T$ seconds.
 
 >[!example] Example: Assessing System Memory
 >Determine whether the following systems are memoryless:
@@ -75,4 +79,32 @@ A system's output at any instant $t$ generally depends on the entire past inputs
 >3. The output $y(t)$ at time $t$ is just the input $x(t)$ at the same time multiplied by the coefficient $t-1$. Since the output at a particular time depends only on the strength of the input at the same time, the system is memoryless.
 
 # Stable and Unstable Systems
-Systems can also be classified as **stable** or **unstable** systems. Stability can be **internal** or **external**. If every *bounded input* applied at the input terminal results in a *bounded output*, the system is said to be **stable externally**. External stability can be ascertained by measurements at the external terminals (inputs and output) of the system.
+Systems can also be classified as **stable** or **unstable** systems.
+
+>[!def] Definition: 
+A continuous-time system $u\to y$ is said to be **$L_{q}$-stable** if there are $\gamma,\beta \geq 0$ such that 
+$$\left \| y \right \|_{q}\leq\gamma \lVert u \rVert_{q}+\beta $$
+for $q\in \mathbb{N}$ and $\forall u\in L_{q}$.
+$L_{q}$-stability implies that $y\in L_{q}$ for all $u\in L_{q}$.
+
+>[!notes] Notes: 
+ >For the signals, $L$ stands for their [[LSY1_002 Signals and Convolutions#Norms|norms]].
+
+If every *bounded input* applied at the input terminal results in a *bounded output*, the system is said to be **stable externally**. External stability can be ascertained by measurements at the external terminals (inputs and output) of the system. This type of stability is also known as **$L_{\infty}$-stability**, or the stability in the **BIBO** (bounded-input/bounded-output) sense.
+
+For linear systems, we can always take $\beta=0$. i.e., a linear system is $L_{q}$-stable if
+$$\lVert y \rVert _{q}\leq  \gamma \lVert u \rVert _{q}$$
+
+>[!example] Example: 
+>Showing that a system is stable might not be easy. But in some cases it is:
+>If $y(t)=u(t-\tau)$ (A delay system), while $\tau=\text{const}$, then
+>$$\lVert y \rVert _{\infty }= \sup_{t\in \mathbb{R}}\left|y(t)\right|=\sup_{t\in \mathbb{R}}\left|u(t-\tau)\right|=\sup_{t\in \mathbb{R}}\left|u(t)\right|=\lVert u \rVert _{\infty }$$
+and
+$$\lVert y \rVert _{2}=\int_{-\infty }^{\infty} \left|y(t)\right|^{2} \, \mathrm{d}t =\int_{-\infty }^{\infty} \left|u(t-\tau)\right|^{2} \, \mathrm{d}t\underset{ s=t-\tau }{ = }\int_{-\infty }^{\infty} \left|u(s)\right|^{2} \, \mathrm{d}s=\lVert u \rVert _{2}  $$
+Thus, $\mathbf{D}_{\tau}$ with a constant $\tau$ is both ${L}_{2}$ and $L_{\infty}$-stable.
+
+>[!example] Example: 
+>Showing that a system is unstable may be easier. One "just" needs to dream up a destabilizing input.
+>If $u=\mathbb{1}\in L_{\infty}$, then
+>$$y(t)=\int_{-\infty }^{t} \mathbb{1}(s) \, \mathrm{d}s=\int_{0}^{t}  \, \mathrm{d}s=t\mathbb{1}(t)=\mathrm{ramp}(t)  $$
+>Because $\mathrm{ramp}\notin L_{\infty}$, the integrator is not BIBO stable.

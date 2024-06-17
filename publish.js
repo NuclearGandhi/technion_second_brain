@@ -8,22 +8,72 @@ var fontStyle = document.createElement('style');
 fontStyle.innerHTML = "@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');";
 document.body.prepend(fontStyle);
 
-// Site footer
 document.getElementsByClassName('site-footer')[0].innerHTML = 'אף אחת מהזכויות שמורות ל<a href="https://github.com/NuclearGandhi">עידו פנג בנטוב</a> ©';
-
 document.getElementsByClassName('outline-view-outer node-insert-event')[0].firstChild.lastChild.innerHTML = "תוכן עניינים"
 
-setTimeout( function(){ applyAutoDirection(); }, 1000);
-
+// -- Auto direction
 function applyAutoDirection() {
     const markdownPreviewSection = document.querySelector('.markdown-preview-section');
 
-    console.log(markdownPreviewSection);
-    if (markdownPreviewSection) {
-        const elements = markdownPreviewSection.querySelectorAll('div, p, h1, h2, h3, h4, h5, h6');
+    setTimeout(function () {
+            if (markdownPreviewSection) {
+        const elements = markdownPreviewSection.querySelectorAll('div, p, h1, h2, h3, h4, h5, h6, ol, ul');
+        if (elements.length) {
+            elements.forEach(element => {
+                element.setAttribute('dir', 'auto');
+            });
+        } else {
+            applyAutoDirection();
+        }
+    }
+    }, 1000);
+}
 
-        elements.forEach(element => {
-            element.setAttribute('dir', 'auto');
-        });
+// applyAutoDirection();
+
+// navigation.addEventListener('navigate', () => {
+//     applyAutoDirection();
+// });
+
+
+function setInnerBodyDirection(event) {
+
+    // Change the direction of markdown-preview-section. If the div wasn't found, repeat after 1 second.
+    const markdownPreviewSection = document.querySelector('.markdown-preview-section');
+      if (markdownPreviewSection) {
+        // If the url contains one of the following array of strings, the direction will be set to ltr
+        const ltrPages = ['LSY', "MNF"];
+        url = window.location.href;
+        if (event) {
+            url = event.destination.url;
+        }
+        if (ltrPages.some(page => url.includes(page))) {
+            markdownPreviewSection.style.direction = 'ltr';
+        } else {
+            markdownPreviewSection.style.direction = 'rtl';
+        }
+     } else {
+        setTimeout(() => {
+             setInnerBodyDirection();
+        }, 1000);
     }
 }
+
+function changeBacklinksTitle() {
+    const backlinks = document.getElementsByClassName('backlinks');
+    if (backlinks[0]) {
+        backlinks[0].firstChild.lastChild.innerHTML = "קישורים לעמוד זה";
+    } else {
+        setTimeout(() => {
+             changeBacklinksTitle();
+        }, 1000);
+    }
+}
+
+setInnerBodyDirection();
+changeBacklinksTitle();
+
+navigation.addEventListener('navigate', (event) => {
+    setInnerBodyDirection(event);
+    changeBacklinksTitle();
+});

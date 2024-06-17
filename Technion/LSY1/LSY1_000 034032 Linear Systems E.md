@@ -15,4 +15,5 @@ Assistant:
 - [[LSY1_001 Introduction]]
 - [[LSY1_002 Signals and Convolutions]]
 - [[LSY1_003 Classification of Systems]]
-- [[LSY1_004 Frequency Domain Analysis]]
+- [[LSY1_004 Time Domain Analysis]]
+- [[LSY1_005 Frequency Domain Analysis]]

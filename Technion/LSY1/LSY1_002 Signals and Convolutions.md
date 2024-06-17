@@ -1,5 +1,9 @@
 ---
 aliases:
+  - unit impulse
+  - delta function
+  - time shift
+  - convolution
 ---
 
 
@@ -204,7 +208,7 @@ $$(\mathbb{1}*x)(t)=\int_{-\infty }^{\infty} \mathbb{1}(t-s)x(s) \, \mathrm{d}s 
  }$$
  
 # The Delta Function
-In applications we often encounter signals that a very short duration but nevertheless have a definite impact. Such signals are called impulses. The standard are called impulses. The standard impulse is the so-called Dirac *delta function* also known as the *unit impulse*. The delta function $\delta(t)$ is introduced as the limit as $n\to \infty$ of
+In applications we often encounter signals that a very short duration but nevertheless have a definite impact. Such signals are called impulses. The standard are called impulses. The standard impulse is the so-called Dirac **delta function** also known as the **unit impulse**. The delta function $\delta(t)$ is introduced as the limit as $n\to \infty$ of
 $$r_{n}(t)\equiv \begin{cases}
 n & \left|t\right|<\dfrac{1}{2n} \\[1ex]
 0 & \left|t\right|>\dfrac{1}{2n}
@@ -232,7 +236,7 @@ $$\lim_{ n \to \infty}r_{n}(t)=\begin{cases}
 and the integral of a function that is zero everywhere except for one point, is zero.
 
 >[!theorem] Lemma: 
- >If $f(t)$ is continuous $t=0$, then
+ >If $f(t)$ is continuous at $t=0$, then
  >$$\int_{-\infty }^{\infty} \delta(t)f(t) \, \mathrm{d}t=f(0) $$
  
 ## Properties of the delta function
@@ -267,12 +271,12 @@ $$\int_{-\infty }^{\infty} \delta(t-b)f(t) \, \mathrm{d}t=f(b),\, \qquad  (\text
  >$$f(t)\delta(t-b)=f(b)\delta(t-b)$$
 
 
-| Property    | Condition                                                         |                            |
-| ----------- | ----------------------------------------------------------------- | -------------------------- |
-| Sifting     | $\int_{-\infty}^{\infty} \delta(t-b)f(t) \, \mathrm{d}t=f(b)$     | $f(t)$ continuous at $t=b$ |
-|             | $f(t)\delta(t-b)=f(b)\delta(t-b)$                                 | $f(t)$ continuous $t=b$    |
-| Convolution | $(f*\delta)(t)=f(t)$                                              |                            |
-| Scaling     | $\delta(at-b)=(1/\|a\|)\delta(t-b/a)$                             |                            |
-|             | $\int_{-\infty}^{t} \delta(\tau) \, \mathrm{d}\tau=\mathbb{1}(t)$ | $t\neq 0$                  |
+| Property    | Condition                                                             |                            |
+| ----------- | --------------------------------------------------------------------- | -------------------------- |
+| Sifting     | $\int_{-\infty}^{\infty} \delta(t-b)f(t) \, \mathrm{d}t=f(b)$         | $f(t)$ continuous at $t=b$ |
+|             | $f(t)\delta(t-b)=f(b)\delta(t-b)$                                     | $f(t)$ continuous $t=b$    |
+| Convolution | $(f*\delta)(t)=f(t)$                                                  |                            |
+| Scaling     | $\delta(at-b)=\left( \dfrac{1}{\lvert a \rvert} \right)\delta(t-b/a)$ |                            |
+|             | $\int_{-\infty}^{t} \delta(\tau) \, \mathrm{d}\tau=\mathbb{1}(t)$     | $t\neq 0$                  |
 >Properties and rules of calculus for the delta function
 

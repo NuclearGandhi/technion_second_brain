@@ -272,13 +272,8 @@ Publish only
   --font-caption-size: 15px;
 }
 
-/* Make it rtl */
-div,
-h1,
-h2,
-h3,
-h4,
-h5 {
+/* Set the whole page to rtl */
+.published-container {
   direction: rtl;
 }
 
