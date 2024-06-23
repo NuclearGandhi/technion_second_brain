@@ -37,7 +37,7 @@ A key difference between the LTV and LTI systems introduced so far is that the l
 >Time invariance: For an input $\mathbf{u}$ with output $\mathbf{y}$, for every time shifted version $\bar{\mathbf{u}}$ of $\mathbf{u}$ there must exist an output $\bar{\mathbf{y}}$ that is a time shifted version $\mathbf{y}$.
 
 # Linearity
-Both the LTV and LTI system have the property that they can be viewed as linear maps from their inputs to appropriate outputs. This justifies the qualifier *linear* in LTV and LTI.
+Both the LTV and LTI system have the property that they can be viewed as [[../ALG1/ALG1_009 טרנספורמציות לינאריות#טרנספורמציות לינאריות|linear]] maps from their inputs to appropriate outputs. This justifies the qualifier *linear* in LTV and LTI.
 
 
 >[!def] Definition: 
@@ -108,3 +108,47 @@ Thus, $\mathbf{D}_{\tau}$ with a constant $\tau$ is both ${L}_{2}$ and $L_{\inft
 >If $u=\mathbb{1}\in L_{\infty}$, then
 >$$y(t)=\int_{-\infty }^{t} \mathbb{1}(s) \, \mathrm{d}s=\int_{0}^{t}  \, \mathrm{d}s=t\mathbb{1}(t)=\mathrm{ramp}(t)  $$
 >Because $\mathrm{ramp}\notin L_{\infty}$, the integrator is not BIBO stable.
+
+## Induced Norm
+>[!def] Definition: 
+ >Let $G:u\to y$ be a stable CLTI system. The smallest $\gamma$ for which the inequality above holds true is called the **$L_{q}$-[[../NUM1/NUM1_003 נורמה#נורמה של מטריצה|induced norm]]** of $G$:
+ >$$\lVert G \rVert _{q}:=\sup_{u\neq 0} \dfrac{\lVert Gu \rVert _{q}}{\lVert u \rVert_{q} }=\sup_{\lVert u \rVert _{q}=1}\lVert Gu \rVert _{q}$$
+ 
+ >[!example] Example: 
+ >For the delay system $\mathbf{D}_{\tau}$ with constant $\tau$ from the previous example, the induced norm is:
+ >$$\lVert \mathbf{D} \rVert_{\infty }=\lVert \mathbf{D} \rVert _{2}=1 $$
+ 
+# Exercises
+
+## Question 1
+
+Classify the models $G:u\to y$ below in terms of linearity, time invariance, (except the systems in items $1$ and $2$) causality.
+1. $y(t)=t\dot{u}(t)$
+	Linear, but not time invariant:
+	$$y(t+s)=(t+s)\dot{u}(t+s)\neq t\dot{u}(t+s)$$
+2. $y(t)=u(t)\dot{u}(t)$
+	Non-linear: for $u={\alpha}_{1}{u}_{1}+{\alpha}_{2}{u}_{2}$
+	$$\begin{gathered}
+	\alpha {y}_{1}(t)+\beta {y}_{2}(t)=\alpha{u}_{1}(t){\dot{u}}_{1}(t)+\beta{u}_{2}(t)\dot{u}_{2}(t) \\
+	\neq \\
+	({\alpha}{u}_{1}(t)+\beta {u}_{2}(t))(\alpha \dot{u}_{1}(t)+\beta \dot{u}_{2}(t))=u(t)\dot{u}(t)=y(t)
+	\end{gathered}$$
+	Time invariant.
+3. $y(t)=u(t+1)$
+	Linear, time invariant and *not* causal:
+	The signal at time $t_{c}$ depends on $u$ at time $t_{c}+1$.
+4. $y(t)=2u(t)+1$
+	Non-linear: for $u=\alpha {u}_{1}+\beta {u}_{2}$
+	$$\begin{gathered}
+\alpha {y}_{1}(t)+\beta {y}_{2}(t)={\alpha}_{1}(2{u}_{1}(t)+1)+{\alpha}_{2}(2{u}_{2}(t)+1) \\
+\neq  \\
+2(\alpha {u}_{1}(t)+\beta {u}_{2}(t))+1=2u(t)+1=y(t)
+\end{gathered}$$
+	time invariant and causal.
+5. $y(t)=\begin{cases}u(t) & 0<t\leq 1 \\ 0  & \text{otherwise} \end{cases}$
+	Linear, time invariant, and causal.
+6. $y(t)=5$
+	Linear, time invariant, and causal.
+	
+	
+

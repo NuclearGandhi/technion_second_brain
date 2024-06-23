@@ -292,4 +292,7 @@ PDF only
     --font-print: "David" !important;
     --font-text-size: 14pt !important
   }
+  table {
+    direction: rtl
+  }
 }

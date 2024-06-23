@@ -4,6 +4,7 @@ aliases:
   - delta function
   - time shift
   - convolution
+  - signal norm
 ---
 
 
@@ -170,20 +171,20 @@ P_{f} & =\dfrac{{\omega}_{0}}{2\pi}\int_{-\pi /{\omega}_{0}}^{{\pi /\omega}_{0}}
 
 ![](https://youtu.be/KuXjwB4LzSA?si=cmk717AthemfPfWl)
 
-Loosley speaking a **convolution** is a linear combination of shifted copies  of signal. For intance:
+Loosely speaking a **convolution** is a linear combination of shifted copies  of signal. For instance:
 $$3g(t)-41g(t-1)+501g(t+100)$$
-Is an example of covolution of signal $g(t)$. Note that the convolution is itself a signal. More generally expression like:
+Is an example of convolution of signal $g(t)$. Note that the convolution is itself a signal. More generally expression like:
 $$\sum _{\tau}f_{\tau}g(t-\tau),\qquad f_{\tau}\in \mathbb{R}$$
-are known as convolutions, and so is its integral version which we take to be its defintion.
+are known as convolutions, and so is its integral version which we take to be its definition.
 
->[!def] Defintion: 
+>[!def] Definition: 
  >The **convolution** or **convolution product** of two signals $f(t)$ and $g(t)$ is denoted as $(f*g)(t)$ and is defined as:
  >$$(f*g)(t)=\int_{-\infty }^{\infty} f(\tau)g(t-\tau) \, \mathrm{d}\tau $$
 
 It is an interesting fact that convolution products commute:
 $$(f*g)(t)=\int_{-\infty }^{\infty } f(\tau)g(t-\tau) \, \mathrm{d}\tau \underset{ v=t-\tau }{ = }\int_{-\infty }^{\infty}g(v)f(t-v)  \, \mathrm{d}v=(g*f)(t) $$
 
-Convolutions are very common in applications, and are, for instane, useful if we want to remove noise from signals, detect edges in pictures, soften pictures, etc.
+Convolutions are very common in applications, and are, for instance, useful if we want to remove noise from signals, detect edges in pictures, soften pictures, etc.
 
 >[!example] Example: Sliding window averaging and noise reduction
 >For a given signal $f(t)$ we construct the signal $f_{\text{swa}}$ by averaging $f(t)$ around $t$ over an interval of a fixed length $P$, i.e., we consider
@@ -280,3 +281,60 @@ $$\int_{-\infty }^{\infty} \delta(t-b)f(t) \, \mathrm{d}t=f(b),\, \qquad  (\text
 |             | $\int_{-\infty}^{t} \delta(\tau) \, \mathrm{d}\tau=\mathbb{1}(t)$     | $t\neq 0$                  |
 >Properties and rules of calculus for the delta function
 
+# Exercises
+## Question 1
+Consider the continuous time signal
+$$y(t)=\begin{cases}
+t & 0\leq  t<10 \\
+60-5t & 10\leq  t\leq  12 \\
+0 & \text{otherwise}
+\end{cases}$$
+![[LSY1_004/Pasted image 20240617175116.png|book|400]]
+>Triangle signal
+
+Construct $y$ using the step function $\mathbb{1}$, and the $\mathrm{ramp}$ signal. Compute the $L_{\infty}$ and ${L}_{2}$ norms of $y$.
+
+**Solution**:
+$$\boxed {
+y(t)=\mathrm{ramp}(t)-6\mathrm{ramp}(t-10)+\mathrm{ramp}(t-12)
+ }$$
+![[LSY1_002/Pasted image 20240617192429.png|book|400]]
+>The above mentioned signal, broken down to three $\mathrm{ramp}$ signals. Try to match the $\mathrm{ramp}$ signals to their corresponding graph representation.
+
+According to [[LSY1_002 Signals and Convolutions#Norms|signal norm]]:
+$$\begin{aligned}
+ & \lVert y \rVert _{\infty }=\sup_{t\in \mathbb{R}}(y)=10 \\[1ex]
+ & \lVert y \rVert _{2}=\left( \int_{-\infty }^{\infty}\lvert y(t) \rvert^{2}  \, \mathrm{d}t \right)^{1/2}=\left( \int_{0}^{10} t^{2} \, \mathrm{d}t +\int_{10}^{12} (60-5t)^{2} \, \mathrm{d}t \right)^{1/2} \\[1ex]
+ & \phantom{\lVert y \rVert _{2}} = \left( \left[ \dfrac{1}{3}t^{3} \right]_{0}^{10}+\left[ 3600t-300t^{2}+\dfrac{25}{3}t^{3} \right]_{10}^{12} \right)^{1/2} \\[1ex]
+ & \phantom{\lVert y \rVert _{2}}=\left( 333 \dfrac{1}{3}+  66 \dfrac{2}{3}\right)^{1/2}=20
+\end{aligned}$$
+We have:
+$$\boxed {
+\begin{aligned}
+\lVert y \rVert _{\infty }=10 &  & \lVert y \rVert _{2}=20
+\end{aligned}
+ }$$
+## Question 2
+Let $y$ be the signal from [[#Question 1]]. Let $f={f}_{1}+{f}_{2}+{f}_{3}$, where:
+$$\begin{aligned}
+{f}_{1}=\delta &  & {f}_{2}=3\mathbb{S}_{-2}\delta &  & {f}_{3}=0.5\mathbb{S}_{-3}\delta
+\end{aligned}$$
+i.e.
+$$f(t)=\delta(t)+3\delta(t-2)+\dfrac{1}{2}\delta(t-3)$$
+find the convolution $y*f$.
+
+**Solution**:
+One of the properties of [[#Convolution]] is:
+$$\begin{aligned}
+y*f=y*({f}_{1}+{f}_{2}+{f}_{3})=y*{f}_{1}+y*{f}_{2}+y*{f}_{3}
+\end{aligned}$$
+We'll calculate each one individually, using the [[#The Sifting Property]]:
+$$\begin{aligned}
+ & y*{f}_{1}=\int_{-\infty }^{\infty} y(\tau){f}_{1}(t-\tau) \, \mathrm{d}\tau = \int_{-\infty }^{\infty} y(\tau)\delta(t-\tau) \, \mathrm{d}\tau=y(t)  \\[2ex]
+ & {y}*{f}_{2}=\int_{-\infty }^{\infty} y(\tau){f}_{2}(t-\tau)  \, \mathrm{d}\tau=\int_{-\infty }^{\infty} 3y(\tau)\delta(t-\tau-2) \, \mathrm{d}\tau=3y(t-2) \\[2ex]
+ & y*{f}_{3}=\int_{-\infty}^{\infty} y(\tau){f}_{3}(t-\tau)  \, \mathrm{d}\tau=\int_{-\infty }^{\infty} \dfrac{1}{2} y(\tau)\delta(t-\tau-3) \, \mathrm{d}\tau= \dfrac{1}{2}y(t-3)
+\end{aligned}$$
+and we end up with
+$$\boxed {
+(y*f)(t)=y(t)+3y(t-2)+\dfrac{1}{2}y(t-3)
+ }$$

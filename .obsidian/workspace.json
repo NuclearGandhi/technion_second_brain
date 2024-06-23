@@ -4,26 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "6780ba50febc35b4",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "d2f1c72a3c931655",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/DYN1/DYN1_HW002 תרגיל בית 2.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": false
-              }
-            },
-            "group": "5e6b2ee30fcaa68c"
-          }
-        ]
-      },
-      {
         "id": "7232181159e532f8",
         "type": "tabs",
         "children": [
@@ -33,21 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/DYN1/DYN1_HW002 תרגיל בית 2.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": true
-              }
-            },
-            "group": "5e6b2ee30fcaa68c"
-          },
-          {
-            "id": "bea83f3799824d83",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/DYN1/DYN1_001  קינמטיקה של חלקיק - מבוא.md",
+                "file": "Technion/DYN1/DYN1_HW003 תרגיל בית 3.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -83,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "TODO",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -104,7 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 298.5
   },
   "right": {
     "id": "9aafb922f99122c6",
@@ -137,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/DYN1/DYN1_HW002 תרגיל בית 2.md",
+                "file": "Technion/DYN1/DYN1_HW003 תרגיל בית 3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -160,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/DYN1/DYN1_HW002 תרגיל בית 2.md"
+                "file": "Technion/DYN1/DYN1_HW003 תרגיל בית 3.md"
               }
             }
           }
@@ -188,53 +154,55 @@
       "latex-ocr:LatexOCR": false
     }
   },
-  "active": "84942cca209dd95c",
+  "active": "e3b965d5d73d3d96",
   "lastOpenFiles": [
-    "Technion/DYN1/DYN1_HW002/DYN1_HW002 תרגיל בית 2 2024-06-17 13.48.24.excalidraw.md",
-    "Technion/DYN1/DYN1_HW002 תרגיל בית 2 2024-06-17 13.56.19.excalidraw.svg",
-    "Technion/DYN1/DYN1_HW002 תרגיל בית 2.md",
-    "Technion/DYN1/DYN1_HW002 תרגיל בית 2 2024-06-17 13.56.19.excalidraw.md",
-    "Technion/DYN1/DYN1_001  קינמטיקה של חלקיק - מבוא.md",
-    "Technion/BMA1/BMA1_009 זהויות טריגונומטריות.md",
-    "Technion/DYN1/DYN1_HW002/DYN1_HW002 תרגיל בית 2 2024-06-17 13.48.24.excalidraw.svg",
+    "Technion/DYN1/DYN1_003 קינמטיקה של גוף קשיח.md",
     "Technion/DYN1/Untitled.md",
-    "Technion/DYN1/DYN1_HW002/Pasted image 20240617114854.png",
-    "Technion/DYN1/DYN1_HW002/Pasted image 20240617131530.png",
-    "Technion/DYN1/DYN1_000 034010 דינמיקה.md",
-    "Technion/DYN1/DYN1_HW002",
-    "Technion/DYN1/DYN1_HW002/Pasted image 20240617092046.png",
-    "Technion/DYN1/DYN1_HW001 תרגיל בית 1.md",
-    "Technion/LSY1/LSY1_004 Time Domain Analysis.md",
+    "Technion/DYN1/DYN1_003/DYN1_003 קינמטיקה של גוף קשיח 2024-06-23 21.19.50.excalidraw.md",
+    "Technion/DYN1/DYN1_003/DYN1_003 קינמטיקה של גוף קשיח 2024-06-23 21.19.50.excalidraw.svg",
+    "Technion/DYN1/DYN1_003/Pasted image 20240623211931.png",
+    "Technion/DYN1/DYN1_003/Pasted image 20240623211430.png",
+    "Technion/DYN1/DYN1_001  קינמטיקה של חלקיק - מבוא.md",
+    "Technion/DYN1/DYN1_002 קינמטיקה של חלקיק - מערכת צירים סובבת.md",
+    "Technion/DYN1/DYN1_003/DYN1_003 קינמטיקה של גוף קשיח 2024-06-23 20.24.04.excalidraw.md",
+    "Technion/DYN1/DYN1_003/DYN1_003 קינמטיקה של גוף קשיח 2024-06-23 20.24.04.excalidraw.svg",
+    "Technion/DYN1/DYN1_003/DYN1_003 קינמטיקה של גוף קשיח 2024-06-22 10.55.37.excalidraw.md",
+    "Technion/FLD1/FLD1_HW001 תרגיל בית 1.md",
+    "Technion/SLD2/SLD2_HW009 תרגיל בית 9.md",
+    "Technion/FLD1/FLD1_003 חוקי שימור אינטגרליים.md",
+    "Technion/FLD1/FLD1_004 משוואות נאוויה-סטוקס.md",
+    "Technion/PHY2/PHY2_HW004 גיליון בית 4.md",
     "Technion/PHY2/PHY2_001 אלקטרוסטטיקה - חוק קולון והשדה החשמלי.md",
     "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
-    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
-    "Technion/CAL1/CAL1_005 נגזרות.md",
-    "Technion/LSY1/LSY1_004/Pasted image 20240616155903.png",
-    "Technion/LSY1/LSY1_004/LSY1_004 Time Domain Analysis 2024-06-16 16.23.35.excalidraw.md",
-    "Technion/LSY1/LSY1_004",
-    "Technion/LSY1/LSY1_004/LSY1_004 Time Domain Analysis 2024-06-16 16.23.35.excalidraw.svg",
-    "Technion/LSY1/LSY1_005 Frequency Domain Analysis.md",
-    "Technion/LSY1/LSY1_004 Frequency Domain Analysis.md",
-    "Technion/LSY1/LSY1_003 Classification of Systems.md",
-    "Technion/LSY1/LSY1_002 Signals and Convolutions.md",
+    "Technion/PHY2/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים.md",
+    "Technion/DYN1/DYN1_HW001 תרגיל בית 1.md",
+    "Technion/DYN1/DYN1_HW003 תרגיל בית 3.md",
+    "Technion/DYN1/DYN1_003/Pasted image 20240623130158.png",
+    "Technion/DYN1/DYN1_003/Pasted image 20240623130450.png",
+    "Technion/LSY1/LSY1_004 Linear Systems.md",
     "Technion/LSY1/LSY1_001 Introduction.md",
-    "templates/default_exca.excalidraw.md",
+    "Technion/CAL1/CAL1_002 גבול של פונקציה.md",
+    "Technion/CAL1/CAL1_004 רציפות.md",
+    "Technion/CAL1/CAL1_005 נגזרות.md",
+    "Technion/CAL1/CAL1_006 פולינום טיילור.md",
+    "Technion/CAL1/CAL1_003 גבולות של סדרות.md",
+    "Technion/CAL1/CAL1_001 פונקציה.md",
+    "Technion/CAL1/CAL1_000 104041 חדוא 1מ.md",
+    "Technion/DYN1/Pasted image 20240623103133.png",
+    "Technion/FLD1/FLD1_HW001/Screenshot_20240622_181917_Desmos.jpg",
+    "Technion/FLD1/FLD1_HW001/Screenshot_20240622_153749_Obsidian.jpg",
+    "Technion/FLD1/FLD1_HW001/Screenshot_20240622_120337_Samsung Notes.jpg",
+    "Technion/FLD1/FLD1_HW001",
+    "Technion/PHY2/PHY2_003",
+    "Technion/FLD1/FLD1_003",
+    "Technion/DYN1/DYN1_003",
+    "Technion/LSY1/Untitled.canvas",
+    "Technion/DYN1/DYN1_HW002",
+    "Technion/LSY1/LSY1_004",
     "External",
-    "templates/default_exca.excalidraw.svg",
-    "Technion/MNF1/MNF1_002 Metal Casting.md",
-    "Technion/DYN1/DYN1_002 קינמטיקה של חלקיק - מערכת צירים סובבת.md",
-    "Technion/PHY2/PHY2_HW003 גיליון בית 3.md",
-    "Technion/DYN1/DYN1_002/Screenshot_20240615_111104_Samsung Notes.jpg",
-    "Technion/DYN1/DYN1_002/Screenshot_20240615_111104_Samsung Notes 1.jpg",
     "Technion/DYN1/DYN1_002",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 09.05.30.excalidraw.md",
-    "Technion/PHY2/PHY2_002/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי 2024-06-15 08.42.31.excalidraw.md",
     "Technion/PHY2/PHY2_HW003",
     "Technion/LSY1/LSY1_003",
-    "Technion/LSY1/LSY1_002",
-    "Technion/MNF1/MNF1_002/MNF1_CA1 Casting Processes.canvas",
-    "Technion/MNF1/MNF1_001",
-    "Technion/MNF1/MNF1_002",
-    "Technion/PHY2/PHY2_HW002"
+    "Technion/MNF1/MNF1_002/MNF1_CA1 Casting Processes.canvas"
   ]
 }

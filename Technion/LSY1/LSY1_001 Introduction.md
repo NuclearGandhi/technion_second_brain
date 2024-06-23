@@ -148,11 +148,11 @@ When all the matrices $A(t),\,B(t),\,C(t),\,D(t)$ are constant $\forall t\geq 0$
 
 To keep formulas short, we can abbreviate $(1)$ to
 $$\begin{align}
- \dot{\mathbf{x}}=\mathbf{A}(t)\mathbf{x}+\mathbf{B}(t)\mathbf{u},\, \qquad  \mathbf{y}=\mathbf{C}(t)x+\mathbf{D}(t)\mathbf{u},\, \qquad  \mathbf{x} \in \mathbb{R}^{n},\, \mathbf{u}\in \mathbb{R}^{k},\, \mathbf{y}\in \mathbb{R}^{m} \\[1ex]\text{(CLTV)}
+ \dot{\mathbf{x}}=\mathbf{A}(t)\mathbf{x}+\mathbf{B}(t)\mathbf{u},\, \qquad  \mathbf{y}=\mathbf{C}(t)\mathbf{x}+\mathbf{D}(t)\mathbf{u},\, \qquad  \mathbf{x} \in \mathbb{R}^{n},\, \mathbf{u}\in \mathbb{R}^{k},\, \mathbf{y}\in \mathbb{R}^{m} \\[1ex]\text{(CLTV)}
 \end{align}$$
 and in the time-invariant case, we further shorten this to
 $$\begin{aligned}
-\dot{\mathbf{x}}=\mathbf{A}\mathbf{x}+\mathbf{B}\mathbf{u},\, \qquad  \mathbf{y}=\mathbf{C}x+\mathbf{D}u,\, \qquad  \mathbf{x} \in \mathbb{R}^{n},\, \mathbf{u}\in \mathbb{R}^{k},\, \mathbf{y}\in \mathbb{R}^{m} \\[1ex] (\text{CLTI})
+\dot{\mathbf{x}}=\mathbf{A}\mathbf{x}+\mathbf{B}\mathbf{u},\, \qquad  \mathbf{y}=\mathbf{C}\mathbf{x}+\mathbf{D}\mathbf{u},\, \qquad  \mathbf{x} \in \mathbb{R}^{n},\, \mathbf{u}\in \mathbb{R}^{k},\, \mathbf{y}\in \mathbb{R}^{m} \\[1ex] (\text{CLTI})
 \end{aligned}$$
 
 >[!example] Example: Mass rotating inside a cylinder

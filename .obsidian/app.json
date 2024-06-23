@@ -20,7 +20,8 @@
   "attachmentFolderPath": "./",
   "autoPairMarkdown": false,
   "userIgnoreFilters": [
-    "templates/"
+    "templates/",
+    "Excalidraw/"
   ],
   "rightToLeft": false,
   "newLinkFormat": "relative",

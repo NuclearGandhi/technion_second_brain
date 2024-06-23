@@ -18,3 +18,5 @@ Asistant:
 # Notes
 - [[MNF1_001 Introduction]]
 - [[MNF1_002 Metal Casting]]
+
+>[!TODO] להשלים תרגול והרצאה 

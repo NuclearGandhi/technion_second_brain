@@ -1,5 +1,5 @@
 {
-  "collapse-filter": true,
+  "collapse-filter": false,
   "search": "file: -.excalidraw",
   "showTags": false,
   "showAttachments": false,
@@ -11,7 +11,7 @@
       "query": "file: ALG",
       "color": {
         "a": 1,
-        "rgb": 5397472
+        "rgb": 4345855
       }
     },
     {
@@ -32,14 +32,14 @@
       "query": "file: BMA",
       "color": {
         "a": 1,
-        "rgb": 5407200
+        "rgb": 3327477
       }
     },
     {
       "query": "file: CAL",
       "color": {
         "a": 1,
-        "rgb": 4278442
+        "rgb": 2042019
       }
     },
     {
@@ -116,7 +116,7 @@
       "query": "file: LSY",
       "color": {
         "a": 1,
-        "rgb": 6053078
+        "rgb": 7105708
       }
     }
   ],
@@ -125,11 +125,11 @@
   "textFadeMultiplier": -0.2,
   "nodeSizeMultiplier": 1.27395833333333,
   "lineSizeMultiplier": 0.3201171875,
-  "collapse-forces": true,
-  "centerStrength": 0.778586278586279,
+  "collapse-forces": false,
+  "centerStrength": 0.770833333333333,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.15109441226862225,
+  "scale": 0.11660891579457372,
   "close": true
 }
