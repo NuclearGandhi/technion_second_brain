@@ -1,5 +1,5 @@
 {
-  "collapse-filter": false,
+  "collapse-filter": true,
   "search": "file: -.excalidraw",
   "showTags": false,
   "showAttachments": false,
@@ -120,16 +120,16 @@
       }
     }
   ],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": true,
   "textFadeMultiplier": -0.2,
   "nodeSizeMultiplier": 1.27395833333333,
   "lineSizeMultiplier": 0.3201171875,
   "collapse-forces": false,
-  "centerStrength": 0.770833333333333,
+  "centerStrength": 0.291666666666667,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.11660891579457372,
-  "close": true
+  "scale": 0.08317427835927683,
+  "close": false
 }

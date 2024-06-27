@@ -8,15 +8,15 @@ semester: 2024spr
 
 
 # Manufacturing Processes
-Moodle:
-Syllabus:
-Book: 
+Moodle: [link](https://moodle2324.technion.ac.il/course/view.php?id=2560)
+Syllabus: [link](https://moodle2324.technion.ac.il/pluginfile.php/397381/mod_resource/content/1/%D7%A1%D7%99%D7%9C%D7%91%D7%95%D7%A1%20%D7%94%D7%A7%D7%95%D7%A8%D7%A1%20034030.docx)
+Book: [link](https://annas-archive.org/md5/abc3a08e861b5eed7bdfbec6d45f0f9f)
 
-Teacher:
-Asistant:
+Teacher: Alexander Katz
+Assistant:
 
 # Notes
 - [[MNF1_001 Introduction]]
 - [[MNF1_002 Metal Casting]]
-
->[!TODO] להשלים תרגול והרצאה 
+- [[MNF1_003 Bulk Deformation Processes]]
+- [[MNF1_004 Machining Processes]]

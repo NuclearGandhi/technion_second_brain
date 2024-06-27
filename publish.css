@@ -263,7 +263,7 @@ Publish only
 
 /* Variables */
 .published-container {
-  --page-width: 600px;
+  --page-width: 700px;
   --sidebar-left-border-width: 2px;
   --sidebar-right-border-width: 2px;
   --site-name-size: 36px;
@@ -427,7 +427,7 @@ h5,
   border-left: 0;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
   .nav-view-outer .tree-item-self.is-clickable {
     padding: unset;
     padding-right: 16px;
@@ -448,9 +448,25 @@ h5,
   .published-container.has-navigation .site-body-left-column {
     transform: translateX(100%);
   }
+  .published-container.has-navigation .site-body-left-column {
+    display: flex;
+    position: fixed;
+    top: 0;
+    transition: transform 200ms ease-in-out;
+    z-index: var(--layer-modal);
+    left: 0;
+    width: 100vw;
+    background-color: var(--background-primary);
+    transform: translateX(-100%);
+    top: var(--header-height);
+    border-right: 0px;
+}
+}
+@media screen and (min-width: 850px) {
+
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
   .publish-renderer {
     margin-left: 0;
   }
@@ -476,7 +492,7 @@ h5,
   
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1300px) {
   body:not(.sliding-windows)
     .is-readable-line-width.has-outline.has-navigation
     .publish-renderer
