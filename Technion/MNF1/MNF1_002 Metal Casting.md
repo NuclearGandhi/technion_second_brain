@@ -4,21 +4,40 @@ aliases:
 
 # Introduction
 Several methods can be used to shape materials into useful products. **Casting** is one of the oldest methods and was first used about 4000 B.C. to make ornaments, arrowheads and various other objects. The important factors in casting operation are:
-1. **Solidication** of the metal from its molten state, and accompanying shrinkage.
+1. **Solidification** of the metal from its molten state, and accompanying shrinkage.
 2. **Flow** of the molten metal into the mold cavity.
-3. **Heat transfer** during solidication and cooling of the metal in the mold; and
+3. **Heat transfer** during solidification and cooling of the metal in the mold; and
 4. **Mold material** and its influence on the casting operation.
 
-
+| Casting Process                              | Advantages                                                    | Disadvantages                                |
+| -------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------- |
+| **[[#Sand casting]]**                        | -Low cost                                                     | - Poor surface finish                        |
+|                                              | - Versatile for complex shapes                                | - High degree of finishing required          |
+|                                              | - Large components can be cast                                | - Lower dimensional accuracy                 |
+| **[[#Shell-Mold Casting]]**                  | - Better surface finish than sand casting                     | - Higher cost than sand casting              |
+|                                              | - Higher dimensional accuracy                                 | - Limited size of castings                   |
+|                                              | - Good for thin-walled sections                               |                                              |
+| **[[#Lost Foam Process]]**                   | - Complex and intricate shapes can be cast                    | - High cost of patterns                      |
+|                                              | - Good surface finish                                         | - Longer cycle times                         |
+|                                              | - Reduced need for cores                                      | - Fragility of foam patterns                 |
+| **[[#Lost Wax Process]]**                    | - Excellent surface finish and accuracy                       | - High cost of patterns and molds            |
+|                                              | - Suitable for complex and intricate shapes                   | - Time-consuming and labor-intensive process |
+|                                              | - Minimal machining required                                  |                                              |
+| **[[#Low-Pressure Permanent Casting]]**      | - Good mechanical properties due to controlled solidification | - Limited to relatively simple shapes        |
+|                                              | - Improved surface finish and dimensional accuracy            | - Higher mold cost                           |
+|                                              | - Suitable for medium to high volume production               |                                              |
+| **[[#Die Casting (High-Pressure Casting)]]** | - High production rate                                        | - High initial cost for molds and machines   |
+|                                              | - Excellent surface finish and dimensional accuracy           | - Limited to non-ferrous metals              |
+|                                              | - Thin-walled sections can be cast                            | - High porosity levels                       |
 # Cast Structures
 The type of **cast structure** developed during solidification of metals and alloys depends on the composition of the particular ally, the rate of heat transfer, and the flow of the liquid metal during the casting process.
 
 ## Pure Metals
-The typical grain structure of pure metal that has solidified in a sqaure mold is shown in the following figure:
+The typical grain structure of pure metal that has solidified in a square mold is shown in the following figure:
 ![[MNF1_001/Screenshot_20240530_100606_Samsung Notes.jpg|book]]
 >Schematic illustration of three cast structures of metals solidified in a square mold: $(a)$ pure metals, with preferred texture at the cool mold wall. Note in the middle of the figure that only favorable oriented grains grow away the mold surface; $(b)$ solid-solution alloys; and $(c)$ structure obtained by heterogeneous nucleation of grains.
 
-At the mold walls the metal cools rapidly (**chill zone**) because the walls are at ambient or slightly elevated temprature, and as a result, the casting develops a solidified **skin** (shell) of find **equiaxed grains**. The grains grow in the direction opposite to the heat transfer from the mold. Grains that have a favorable orientation, called **columnar grains**, grow preferntially.
+At the mold walls the metal cools rapidly (**chill zone**) because the walls are at ambient or slightly elevated temperature, and as a result, the casting develops a solidified **skin** (shell) of find **equiaxed grains**. The grains grow in the direction opposite to the heat transfer from the mold. Grains that have a favorable orientation, called **columnar grains**, grow preferentially.
 
 ## Alloys
 Because pure metals have limited mechanical properties, they are often enhanced and modified by **alloying**. The vast majority of metals used in engineering applications are some form of an **alloy**, defined as two or more chemical elements, at least one of which is a metal.
@@ -43,20 +62,20 @@ The darker shading the interdendritic liquid near the dendrite shown in the foll
 ![[MNF1_002/Screenshot_20240606_085311_OneDrive.jpg]]
 >Schematic illustration of three basic types of cast structures: (a) columnar dendritic; (b) equiaxed dendritic; and (c) equiaxed nondendritic.
 
-In constrast to microsegregation, **macrosegregation** involves differences in composition througout the casting itself.
+In contrast to microsegregation, **macrosegregation** involves differences in composition throughout the casting itself.
 
 # Heat Transfer
-A major consideration in casting is the heat transfer during the complete cycle from pouring to solidfication cooling of casting to room temprature. *Heat flow* at different location in the system depends on many factors, relating to the casting material and the mold and process paramters. For instance, in casting thin section, the mteal flow rates must be high enough to avoid premature chilling and solidification. On the other hand, the flow rate must not be so high as to cause excessive turbulence.
+A major consideration in casting is the heat transfer during the complete cycle from pouring to solidification cooling of casting to room temperature. *Heat flow* at different location in the system depends on many factors, relating to the casting material and the mold and process parameters. For instance, in casting thin section, the metal flow rates must be high enough to avoid premature chilling and solidification. On the other hand, the flow rate must not be so high as to cause excessive turbulence.
 
 ## Solidification Time
-During the early states of solidifcation, a thin solidified skin begin to form at the cool mold walls; as time passes, the skin thickens. With flat mold walls, the thickness is proportional to the square root of time. Thus, doubling the time will make the skin $\sqrt{ 2 }=1.41$ times, or $41\%$, thicker.
+During the early states of solidification, a thin solidified skin begin to form at the cool mold walls; as time passes, the skin thickens. With flat mold walls, the thickness is proportional to the square root of time. Thus, doubling the time will make the skin $\sqrt{ 2 }=1.41$ times, or $41\%$, thicker.
 The **solidification time** is a function of the volume of a casting and its surface are (called **Chvorinov's rule**), and is given by:
 $$\text{Solidification time} = C\left( \dfrac{\text{Volume}}{\text{Surface area}} \right)^{n}$$
-Where $C$ is a constant the reflects the mld material and the metal properties. The parameter $n$ typically has a value between $1.5$ and $2$, and is usually taken as $2$. Thus, a large sphere solidiies and cools to amibent temperature at a much lower rate than does a msaller sphere, because the volume of a sphere is proportional to the cube of its diameter whereas the surface area is proportional to the sqaure of its diameter. Similarly, it can be shown that molten metal in a cube-shaped mold will solidify faster than in a spherical mold of the same volume.
-The effects of mold geometry and elpased time on skin thickness and its shape are shown in the following figure:
+Where $C$ is a constant the reflects the mold material and the metal properties. The parameter $n$ typically has a value between $1.5$ and $2$, and is usually taken as $2$. Thus, a large sphere solidifies and cools to ambient temperature at a much lower rate than does a smaller sphere, because the volume of a sphere is proportional to the cube of its diameter whereas the surface area is proportional to the square of its diameter. Similarly, it can be shown that molten metal in a cube-shaped mold will solidify faster than in a spherical mold of the same volume.
+The effects of mold geometry and elapsed time on skin thickness and its shape are shown in the following figure:
 
 ![[MNF1_002/Screenshot_20240606_093802_OneDrive.jpg|book|400]]
->Solidified skin on a steel casting; the remaining molten metal is poured out at the times indicated in the figure. Hollow ornamental and decorative objects are made by a process caled slush casting, which is baed on this principle.
+>Solidified skin on a steel casting; the remaining molten metal is poured out at the times indicated in the figure. Hollow ornamental and decorative objects are made by a process called slush casting, which is based on this principle.
 
 The unsolidified molten metal has been poured from the mold at different time intervals, ranging from $\pu{5s}$ to $\pu{6min}$.
 Note that the skin thickness increases with elapsed time, and that the skin is thinner at the *external angles*. Note that this operation is very similar to making hollow chocolate candies in various shapes.
@@ -73,12 +92,10 @@ Metals generally shrink during solidification and cooling to room temprature:
 
 The largest potential amount of shrinkage occurs during the phase change of the material from liquid to solid; this can be reduced or eliminated through the use of risers or pressure-feeding of molten metal.
 
-Note that some metals, such as gray cast iron, expand. The reason is that graphite has a relativley high specific volume, and when it precipitates as graphite flakes during solidification of the gray cast iron, it casues a net expansion of the metal.
+Note that some metals, such as gray cast iron, expand. The reason is that graphite has a relatively high specific volume, and when it precipitates as graphite flakes during solidification of the gray cast iron, it causes a net expansion of the metal.
 
 # Expendable-Mold, Permanent-Pattern Casting Processes
-Casting processes are generally classified according to (a) mold materials; (b) molding processes; and (c) methods of feeding the mold with the molten metal. The two major categories are **expendable-mold** and **permanent-mold** casting. Expendable-mold processes are further categorized as **parmanent pattern** and **expendable pattern** processes. Expendable molds typically are made of sand, plaster, ceramics, and similar materials, which generally are mixed with various binders or bonding agents.
-
-![[MNF1_002/MNF1_CA1 Casting Processes.canvas|MNF1_CA1 Casting Processes]]
+Casting processes are generally classified according to (a) mold materials; (b) molding processes; and (c) methods of feeding the mold with the molten metal. The two major categories are **expendable-mold** and **permanent-mold** casting. Expendable-mold processes are further categorized as **permanent pattern** and **expendable pattern** processes. Expendable molds typically are made of sand, plaster, ceramics, and similar materials, which generally are mixed with various binders or bonding agents.
 
 ## Sand casting
 
@@ -122,13 +139,28 @@ In the lost was process, typical parts made are mechanical components such as ge
 >Permanent mold casting.
 
 ## Low-Pressure Permanent Casting
-**Low-Pressure permanent mold (LPPM)** casting uses a gas at low pressure ($20$ to $\pu{100kPa}$) to push moltem metal in the mold cavity.
+**Low-Pressure permanent mold (LPPM)** casting uses a gas at low pressure ($20$ to $\pu{100kPa}$) to push molten metal in the mold cavity.
 ![[MNF1_002/Pasted image 20240614105809.png|book|300]]
 >Schematic of the low-pressure permanent mold casting process
 
-The pressure is applied to the top of the pool of liquid, which forces the molten metal up a refactory pouring tube and finally into the bottom of the mold.
+The pressure is applied to the top of the pool of liquid, which forces the molten metal up a refectory pouring tube and finally into the bottom of the mold.
 
 ## Die Casting (High-Pressure Casting)
-**Die casting** is a metal casting process that is characterized by forcing molten metal under high pressure into the die cavity at pressures ranging from $0.7$ to $\pu{700MPa}$. Typical parts made by die casting include transmission housings, valve bodies, motos, business machine and aplliance components, hands tools, and toys.
+**Die casting** is a metal casting process that is characterized by forcing molten metal under high pressure into the die cavity at pressures ranging from $0.7$ to $\pu{700MPa}$. Typical parts made by die casting include transmission housings, valve bodies, motors, business machine and appliance components, hands tools, and toys.
 ![[MNF1_002/Pasted image 20240614114037.png|400]]
 >An engine block with aluminum and magnesium die castings.
+
+
+>[!example] Example: 
+>What process should I choose for casting a large, simple-shaped component at a low cost?
+>
+>**Answer**:
+>Sand casting would be the best choice due to its low cost and versatility for large components. However, be prepared for poorer surface finish and lower dimensional accuracy.
+
+
+>[!example] Example: 
+What casting process should be used for medium to high volume production with good mechanical properties and controlled solidification?
+>
+>**Answer:**
+>Low pressure permanent mold casting is appropriate for medium to high volume production with good mechanical properties and controlled solidification. However, it is limited to relatively simple shapes and involves higher mold costs.
+

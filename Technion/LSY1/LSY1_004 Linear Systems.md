@@ -1,6 +1,7 @@
 ---
 aliases:
 ---
+
 # Impulse Response
 The **impulse response** of a dynamic system is its output when presented with a brief input signal ([[LSY1_002 Signals and Convolutions#The Delta Function|unit impulse]]) - $\delta (t)$. More generally, an impulse response is the reaction of any dynamic system in response to some external change.
 ![[LSY1_004/Pasted image 20240616155903.png|book|400]]
@@ -299,6 +300,7 @@ g(t)=D\delta(t)+\mathbf{C}e^{\mathbf{A}t}\mathbf{B}\mathbb{1}(t)
 > 	$g(t)$ look like
 > 	![[Pasted image 20240624210944.png|book]]
 > 	and is called *critical damping* - the boundary between overdamping and underdamping.
+> 	![](https://www.youtube.com/watch?v=99ZE2RGwqSM)
 
 
 

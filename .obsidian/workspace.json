@@ -4,16 +4,29 @@
     "type": "split",
     "children": [
       {
-        "id": "c4e9a0cddbef763d",
+        "id": "676f16b49f2c035c",
         "type": "tabs",
         "children": [
           {
-            "id": "66d9041d660ce641",
+            "id": "bc9edec02e336a17",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/DYN1/DYN1_HW003 תרגיל בית 3.md",
+                "file": "Technion/MNF1/MNF1_001 Introduction.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "6e9c0b19d1be19db",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/MNF1/MNF1_HW001 Homework 1.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -103,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/DYN1/DYN1_HW003 תרגיל בית 3.md",
+                "file": "Technion/MNF1/MNF1_001 Introduction.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/DYN1/DYN1_HW003 תרגיל בית 3.md"
+                "file": "Technion/MNF1/MNF1_001 Introduction.md"
               }
             }
           }
@@ -154,55 +167,55 @@
       "latex-ocr:LatexOCR": false
     }
   },
-  "active": "66d9041d660ce641",
+  "active": "bc9edec02e336a17",
   "lastOpenFiles": [
-    "Technion/DYN1/ניר.md",
-    "Technion/DYN1/DYN1_HW003 תרגיל בית 3.md",
-    "Technion/FLD1/FLD1_004 משוואות נאוויה-סטוקס.md",
-    "Technion/FLD1/FLD1_003 חוקי שימור אינטגרליים.md",
-    "Technion/LSY1/LSY1_004 Linear Systems.md",
-    "Technion/MNF1/MNF1_004 Machining Processes.md",
-    "Technion/FLD1/FLD1_005 הידרוסטטיקה.md",
-    "Technion/FLD1/FLD1_005",
-    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-06-27 14.17.59.excalidraw.md",
-    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-06-27 14.17.59.excalidraw.svg",
-    "Technion/FLD1/FLD1_001 מבוא.md",
-    "Technion/DYN1/DYN1_HW002 תרגיל בית 2.md",
-    "Technion/DYN1/DYN1_004 קינמטיקה של מערכת גופים קשיחים.md",
-    "Technion/DYN1/DYN1_004/DYN1_004 קינמטיקה של מערכת גופים קשיחים 2024-06-25 20.01.23.excalidraw.md",
-    "Technion/DYN1/DYN1_003 קינמטיקה של גוף קשיח.md",
-    "Technion/DYN1/DYN1_002 קינמטיקה של חלקיק - מערכת צירים סובבת.md",
-    "Technion/DYN1/DYN1_001  קינמטיקה של חלקיק - מבוא.md",
-    "Technion/CAL2/CAL2_001 וקטורים.md",
-    "Technion/DYN1/DYN1_004/DYN1_004 קינמטיקה של מערכת גופים קשיחים 2024-06-25 20.01.23.excalidraw.svg",
-    "Technion/DYN1/DYN1_004",
-    "Technion/DYN1/DYN1_HW003/DYN1_HW003 תרגיל בית 3 2024-06-25 14.50.40.excalidraw.md",
-    "Technion/DYN1/DYN1_HW003",
-    "Technion/DYN1/DYN1_HW003/Pasted image 20240625195739.png",
-    "Technion/DYN1/DYN1_HW003/DYN1_HW003 תרגיל בית 3 2024-06-25 15.45.18.excalidraw.md",
-    "Technion/DYN1/DYN1_HW003/DYN1_HW003 תרגיל בית 3 2024-06-25 15.45.18.excalidraw.svg",
-    "Technion/DYN1/DYN1_HW003/DYN1_HW003 תרגיל בית 3 2024-06-25 14.50.40.excalidraw.svg",
-    "Technion/DYN1/DYN1_HW003/Pasted image 20240625141850.png",
-    "Technion/DYN1/DYN1_HW003/Pasted image 20240625141812.png",
-    "Technion/FLD1/FLD1_003/FLD1_003 חוקי שימור אינטגרליים 2024-06-25 13.58.50.excalidraw.md",
-    "Technion/FLD1/FLD1_003/FLD1_003 חוקי שימור אינטגרליים 2024-06-25 14.06.50.excalidraw.md",
-    "Technion/FLD1/FLD1_003/FLD1_003 חוקי שימור אינטגרליים 2024-06-25 14.06.50.excalidraw.svg",
-    "Technion/FLD1/FLD1_003/FLD1_003 חוקי שימור אינטגרליים 2024-06-25 13.58.50.excalidraw.svg",
-    "Technion/FLD1/FLD1_HW001 תרגיל בית 1.md",
-    "Technion/FLD1/FLD1_003/Pasted image 20240624221535.png",
-    "Technion/MNF1/MNF1_000 034030 Manufacturing Processes.md",
-    "Technion/LSY1/LSY1_005 Frequency Domain Analysis.md",
+    "Technion/MNF1/MNF1_HW001 Homework 1.md",
+    "Technion/MNF1/MNF1_002 Metal Casting.md",
+    "Technion/MNF1/MNF1_001 Introduction.md",
     "Technion/MNF1/MNF1_003 Bulk Deformation Processes.md",
-    "Technion/MNF1/MNF1_003",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-    "Technion/IMT1/IMT1_007 תכונות מכניות.md",
+    "Technion/MNF1/MNF1_000 034030 Manufacturing Processes.md",
+    "Technion/MNF1/MNF1_004 Machining Processes.md",
     "Technion/MNF1/MNF1_002/MNF1_CA1 Casting Processes.canvas",
+    "Technion/DYN1/DYN1_HW003 תרגיל בית 3.md",
+    "Technion/DYN1/DYN1_HW004 תרגיל בית 4.md",
+    "Technion/DYN1/DYN1_HW004/Pasted image 20240629152457.png",
+    "Technion/DYN1/DYN1_HW004",
+    "Technion/LSY1/LSY1_004 Linear Systems.md",
+    "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-06-21 21.57.00.excalidraw.md",
+    "Technion/PHY2/PHY2_HW005 גיליון בית 5.md",
+    "Technion/DYN1/DYN1_000 034010 דינמיקה.md",
+    "Technion/DYN1/DYN1_004 קינמטיקה של מערכת גופים קשיחים.md",
+    "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
+    "Technion/PHY2/PHY2_HW004 גיליון בית 4.md",
+    "Technion/PHY2/PHY2_001 אלקטרוסטטיקה - חוק קולון והשדה החשמלי.md",
+    "Technion/PHY2/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים.md",
+    "Technion/PHY2/PHY2_HW005/PHY2_HW005 גיליון בית 5 2024-06-29 11.57.33.excalidraw.md",
+    "Technion/PHY2/PHY2_HW005/PHY2_HW005 גיליון בית 5 2024-06-29 11.57.33.excalidraw.svg",
+    "Technion/PHY2/PHY2_HW005/PHY2_HW005 גיליון בית 5 2024-06-29 11.15.10.excalidraw.md",
+    "Technion/PHY2/PHY2_HW005/PHY2_HW005 גיליון בית 5 2024-06-29 11.15.10.excalidraw.svg",
+    "Technion/PHY2/PHY2_HW005/PHY2_HW004 גיליון בית 5 2024-06-28 20.17.34.excalidraw.md",
+    "Technion/PHY2/PHY2_HW005/PHY2_HW004 גיליון בית 5 2024-06-28 20.17.34.excalidraw.svg",
+    "Technion/PHY2/PHY2_HW005",
+    "Technion/PHY2/PHY2_000 114052 פיזיקה 2.md",
+    "Technion/FLD1/FLD1_003 חוקי שימור אינטגרליים.md",
+    "Technion/PHY2/PHY2_HW004",
+    "Technion/FLD1/FLD1_003/FLD1_003 חוקי שימור אינטגרליים 2024-06-28 19.00.22.excalidraw.md",
+    "Technion/MNF1/MNF1_004/MNF1_004 Machining Processes 2024-06-27 20.07.18.excalidraw.svg",
+    "Technion/FLD1/FLD1_003/FLD1_003 חוקי שימור אינטגרליים 2024-06-28 19.00.22.excalidraw.svg",
+    "Technion/MNF1/MNF1_004/MNF1_004 Machining Processes 2024-06-27 20.07.18.excalidraw.md",
+    "Technion/MNF1/MNF1_004",
+    "Technion/MNF1/MNF1_004/Pasted image 20240627195412.png",
+    "Technion/MNF1/MNF1_004/Pasted image 20240628153921.png",
+    "Technion/LSY1/LSY1_003 Classification of Systems.md",
+    "Technion/MNF1/MNF1_004/Pasted image 20240627203834.png",
+    "Technion/MNF1/MNF1_004/Pasted image 20240627203443.png",
+    "Technion/LSY1/LSY1_005 Frequency Domain Analysis.md",
+    "Technion/FLD1/FLD1_005",
+    "Technion/DYN1/DYN1_004",
+    "Technion/DYN1/DYN1_HW003",
+    "Technion/MNF1/MNF1_003",
     "Technion/FLD1/FLD1_HW001",
     "Technion/PHY2/PHY2_003",
-    "Technion/FLD1/FLD1_003",
-    "Technion/DYN1/DYN1_003",
-    "Technion/LSY1/Untitled.canvas",
-    "Technion/DYN1/DYN1_HW002",
-    "Technion/LSY1/LSY1_004"
+    "Technion/LSY1/Untitled.canvas"
   ]
 }
