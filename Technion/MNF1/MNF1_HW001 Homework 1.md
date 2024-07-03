@@ -17,13 +17,13 @@ Make a qualitative comparison between the selected processes.
 
 **Solution**:
 
-|                          | Low Pressure Permanent Mold Casting                        | Forging                                                            |
-| ------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------ |
-| **Strength**             | Good, but generally lower than forged parts                | Excellent, due to grain alignment and deformation                  |
-| **Surface Finish**       | Better than sand casting, may still require some finishing | Usually requires machining, but can achieve good finishes          |
-| **Complexity of Shapes** | Best for relatively simple to moderately complex shapes    | Best for simple to moderately complex shapes                       |
-| **Production Volume**    | Suitable for medium to high volume production              | Applied to low and high volume, but high setup cost for low volume |
-| **Cost**                 | Moderate, with lower mold costs as compared to die casting | High initial setup cost, but lower cost per part in large volumes  |
+|                          | Low Pressure Permanent Mold Casting                               | Forging                                                            |
+| ------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------ |
+| **Strength**             | Good, but generally lower than forged parts                       | Excellent, due to grain alignment and deformation                  |
+| **Surface Finish**       | Better than sand casting, may still require some finishing        | Usually requires machining, but can achieve good finishes          |
+| **Complexity of Shapes** | Best for relatively simple to moderately complex shapes           | Best for simple to moderately complex shapes                       |
+| **Production Volume**    | Suitable for medium to high volume production                     | Applied to low and high volume, but high setup cost for low volume |
+| **Cost**                 | High initial setup cost, but lower cost per part in large volumes | High initial setup cost, and higher cost per part in large volumes |
 
 ### Part c
 Select the preferable process from the two processes you have chosen and compared previously, and justify your choice.
