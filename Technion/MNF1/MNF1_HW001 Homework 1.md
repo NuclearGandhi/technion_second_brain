@@ -1,6 +1,14 @@
 ---
 aliases:
 ---
+
+|  | סטודנט א' | סטודנט ב' |
+| ---- | ---- | ---- |
+| **שם** | עידו פנג בנטוב | ניר קרל |
+| **ת"ז** | 322869140 | 322437203 |
+| **דואר אלקטרוני** | ido.fang@campus.technion.ac.il | nir.karl@campus.technion.ac.il |
+
+
 ## Question 1
 You need to produce a pedal for aircraft steering. Choose two processes that can fit - one from the _casting_ process group and the other from the _bulk deformation_ processing group.
 
@@ -46,5 +54,32 @@ Consider an _economical_ aspect of a manufacturing. Assume that the pedal (see t
 What are the _technological_ disadvantages of each casting process from the processes you have chosen?
 
 **Solution**:
->[!TODO] להשלים 
- >
+
+1. Series of 5 Discs: Sand Casting
+	Its technological disadvantages are :
+    - Dimensional accuracy and surface finish is lower than other methods.
+    - Greater porosity and defects
+    - Large amount of post-processing like machining and finishing is required.
+
+2. Series of 100 Discs: Shell Mold Casting
+	Its technological disadvantages are :
+    - Initial cost for the metal patterns are higher.
+	- Limited to small to medium size components.
+
+3. Series of 1,000 Discs: Investment Casting
+    its technological disadvantages are:
+     - High production cost due to labor-intensive process.
+     - Time-consuming since a lot of steps are involved in preparation of wax pattern and building up the ceramic shell.
+     - Limited only to small parts since the ceramic shell used may be fragile, which limits it to making small components only.
+  
+4. **Series of 10,000 discs: Low-Pressure Casting**
+	Its technological disadvantages are: 
+    - High initial set-up cost for equipment
+    - Limited to alloy types since some alloys require a lot of pressure
+    - Needs precise control of pressure and temperature to ensure quality​.
+
+5. **Series of 100,000 discs: Die Casting**
+	its technological disadvantages: 
+    - High initial cost for dies and equipment: very high.
+    - Restricted only to non-ferrous metals like aluminum, zinc, and magnesium.
+    - Risk of air entrapment and porosity in the final product.

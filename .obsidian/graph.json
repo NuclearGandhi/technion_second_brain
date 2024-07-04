@@ -5,7 +5,7 @@
   "showAttachments": false,
   "hideUnresolved": true,
   "showOrphans": false,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "file: ALG",
@@ -126,10 +126,10 @@
   "nodeSizeMultiplier": 1.27395833333333,
   "lineSizeMultiplier": 0.3201171875,
   "collapse-forces": false,
-  "centerStrength": 0.291666666666667,
+  "centerStrength": 0.640625,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.08317427835927683,
-  "close": false
+  "scale": 0.05932617187500118,
+  "close": true
 }

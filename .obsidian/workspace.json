@@ -4,36 +4,50 @@
     "type": "split",
     "children": [
       {
-        "id": "676f16b49f2c035c",
+        "id": "6a5d88ca22296bb8",
         "type": "tabs",
         "children": [
           {
-            "id": "bc9edec02e336a17",
+            "id": "21b582da10c96e6a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/MNF1/MNF1_001 Introduction.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "6e9c0b19d1be19db",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/MNF1/MNF1_HW001 Homework 1.md",
+                "file": "Technion/LSY1/LSY1_005 Linearization.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
+          },
+          {
+            "id": "8dcae0f402b6e81d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/FLD1/FLD1_HW001 תרגיל בית 1.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ebd4abfa3aa07e5b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/MNF1/MNF1_HW001 Homework 1.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -116,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/MNF1/MNF1_001 Introduction.md",
+                "file": "Technion/MNF1/MNF1_HW001 Homework 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/MNF1/MNF1_001 Introduction.md"
+                "file": "Technion/MNF1/MNF1_HW001 Homework 1.md"
               }
             }
           }
@@ -167,55 +181,55 @@
       "latex-ocr:LatexOCR": false
     }
   },
-  "active": "bc9edec02e336a17",
+  "active": "ebd4abfa3aa07e5b",
   "lastOpenFiles": [
+    "Technion/LSY1/LSY1_005 Linearization.md",
+    "Technion/LSY1/LSY1_004 Linear State-Space Equation.md",
+    "Technion/FLD1/FLD1_HW001 תרגיל בית 1.md",
+    "Technion/LSY1/LSY1_001 Introduction.md",
+    "Technion/LSY1/LSY1_010 Frequency Domain Analysis.md",
     "Technion/MNF1/MNF1_HW001 Homework 1.md",
-    "Technion/MNF1/MNF1_002 Metal Casting.md",
-    "Technion/MNF1/MNF1_001 Introduction.md",
-    "Technion/MNF1/MNF1_003 Bulk Deformation Processes.md",
-    "Technion/MNF1/MNF1_000 034030 Manufacturing Processes.md",
+    "Technion/FLD1/FLD1_HW002 תרגיל בית 2.md",
+    "Technion/FLD1/FLD1_006 צמיגות.md",
+    "Technion/FLD1/FLD1_006/Screenshot_20240703_154109_Samsung Notes.jpg",
+    "Technion/FLD1/FLD1_006",
     "Technion/MNF1/MNF1_004 Machining Processes.md",
-    "Technion/MNF1/MNF1_002/MNF1_CA1 Casting Processes.canvas",
-    "Technion/DYN1/DYN1_HW003 תרגיל בית 3.md",
+    "Technion/MNF1/MNF1_004/Pasted image 20240703124529.png",
     "Technion/DYN1/DYN1_HW004 תרגיל בית 4.md",
-    "Technion/DYN1/DYN1_HW004/Pasted image 20240629152457.png",
-    "Technion/DYN1/DYN1_HW004",
-    "Technion/LSY1/LSY1_004 Linear Systems.md",
-    "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-06-21 21.57.00.excalidraw.md",
-    "Technion/PHY2/PHY2_HW005 גיליון בית 5.md",
-    "Technion/DYN1/DYN1_000 034010 דינמיקה.md",
+    "Technion/DYN1/DYN1_005 דינמיקה של חלקיק.md",
+    "Technion/LSY1/LSY1_000 034032 Linear Systems E.md",
     "Technion/DYN1/DYN1_004 קינמטיקה של מערכת גופים קשיחים.md",
-    "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
-    "Technion/PHY2/PHY2_HW004 גיליון בית 4.md",
-    "Technion/PHY2/PHY2_001 אלקטרוסטטיקה - חוק קולון והשדה החשמלי.md",
     "Technion/PHY2/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים.md",
-    "Technion/PHY2/PHY2_HW005/PHY2_HW005 גיליון בית 5 2024-06-29 11.57.33.excalidraw.md",
-    "Technion/PHY2/PHY2_HW005/PHY2_HW005 גיליון בית 5 2024-06-29 11.57.33.excalidraw.svg",
-    "Technion/PHY2/PHY2_HW005/PHY2_HW005 גיליון בית 5 2024-06-29 11.15.10.excalidraw.md",
-    "Technion/PHY2/PHY2_HW005/PHY2_HW005 גיליון בית 5 2024-06-29 11.15.10.excalidraw.svg",
-    "Technion/PHY2/PHY2_HW005/PHY2_HW004 גיליון בית 5 2024-06-28 20.17.34.excalidraw.md",
-    "Technion/PHY2/PHY2_HW005/PHY2_HW004 גיליון בית 5 2024-06-28 20.17.34.excalidraw.svg",
+    "Technion/ALG1/ALG1_008 הדטרמיננטה.md",
+    "Technion/LSY1/LSY1_002 Signals and Convolutions.md",
+    "Technion/FLD1/FLD1_005 הידרוסטטיקה.md",
+    "Technion/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
+    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-07-02 19.20.57.excalidraw.md",
+    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-07-02 19.20.57.excalidraw.svg",
+    "Technion/FLD1/FLD1_005/Pasted image 20240702190313.png",
+    "Technion/FLD1/FLD1_000 034055 תורת הזרימה 1מ.md",
+    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-07-02 17.07.15.excalidraw.md",
+    "Technion/DYN1/DYN1_001  קינמטיקה של חלקיק - מבוא.md",
+    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-07-02 17.07.15.excalidraw.svg",
+    "Technion/FLD1/FLD1_005/Pasted image 20240702134539.png",
+    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-07-02 15.46.22.excalidraw.md",
+    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-07-02 15.46.22.excalidraw.svg",
+    "Technion/FLD1/FLD1_005/Pasted image 20240702140104.png",
+    "Technion/FLD1/FLD1_005/Pasted image 20240702140050.png",
+    "Technion/FLD1/FLD1_005/ANIMvasicomunicanti.gif",
+    "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-06-21 21.57.00.excalidraw.md",
+    "Technion/DYN1/DYN1_005/DYN1_005 דינמיקה של חלקיק 2024-07-01 21.13.56.excalidraw.md",
+    "Technion/DYN1/DYN1_005/DYN1_005 דינמיקה של חלקיק 2024-07-01 21.10.11.excalidraw.md",
+    "Technion/DYN1/DYN1_005",
+    "Technion/MNF1/MNF1_002/MNF1_CA1 Casting Processes.canvas",
+    "Technion/DYN1/DYN1_HW004",
     "Technion/PHY2/PHY2_HW005",
-    "Technion/PHY2/PHY2_000 114052 פיזיקה 2.md",
-    "Technion/FLD1/FLD1_003 חוקי שימור אינטגרליים.md",
     "Technion/PHY2/PHY2_HW004",
-    "Technion/FLD1/FLD1_003/FLD1_003 חוקי שימור אינטגרליים 2024-06-28 19.00.22.excalidraw.md",
-    "Technion/MNF1/MNF1_004/MNF1_004 Machining Processes 2024-06-27 20.07.18.excalidraw.svg",
-    "Technion/FLD1/FLD1_003/FLD1_003 חוקי שימור אינטגרליים 2024-06-28 19.00.22.excalidraw.svg",
-    "Technion/MNF1/MNF1_004/MNF1_004 Machining Processes 2024-06-27 20.07.18.excalidraw.md",
     "Technion/MNF1/MNF1_004",
-    "Technion/MNF1/MNF1_004/Pasted image 20240627195412.png",
-    "Technion/MNF1/MNF1_004/Pasted image 20240628153921.png",
-    "Technion/LSY1/LSY1_003 Classification of Systems.md",
-    "Technion/MNF1/MNF1_004/Pasted image 20240627203834.png",
-    "Technion/MNF1/MNF1_004/Pasted image 20240627203443.png",
-    "Technion/LSY1/LSY1_005 Frequency Domain Analysis.md",
     "Technion/FLD1/FLD1_005",
     "Technion/DYN1/DYN1_004",
     "Technion/DYN1/DYN1_HW003",
     "Technion/MNF1/MNF1_003",
-    "Technion/FLD1/FLD1_HW001",
-    "Technion/PHY2/PHY2_003",
     "Technion/LSY1/Untitled.canvas"
   ]
 }

@@ -12,7 +12,7 @@ Machining processes are a critical component of manufacturing, used to shape and
 | **Machining Process** | **Description**                                                                                                                       | Notes           |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
 | **[[#Turning]]**      | Performed on a lathe, turning involves rotating the workpiece against a single-point cutting tool to produce cylindrical shapes.      |                 |
-| **Milling**           | In milling, a rotating multi-point cutting tool moves against the workpiece to remove material and create flat or contoured surfaces. |                 |
+| **[[#Milling]]**      | In milling, a rotating multi-point cutting tool moves against the workpiece to remove material and create flat or contoured surfaces. |                 |
 | **Drilling**          | Drilling creates round holes in a workpiece using a rotating drill bit.                                                               | Not in syllabus |
 | **Grinding**          | Grinding uses an abrasive wheel to remove small amounts of material and achieve high surface finish and precision.                    | Not in syllabus |
 | **Broaching**         | Broaching involves pushing or pulling a multi-tooth cutting tool (broach) through a workpiece to remove material in a single pass.    | Not in syllabus |
@@ -23,7 +23,7 @@ Machining processes are a critical component of manufacturing, used to shape and
 
 Turning is a fundamental machining process used in manufacturing to create cylindrical parts by removing material from a rotating workpiece using a cutting tool. This process is one of the most widely used and versatile methods in the manufacturing industry due to its ability to produce precise and intricate shapes with excellent surface finishes. Turning is typically performed on a lathe, which holds and rotates the workpiece against a single-point cutting tool that shapes the material.
 
-## Key Parameters
+## Key Parameters and Equations
 
 >Examples of machining operations that can be performed on a lathe and similar machine tools.
 
@@ -82,6 +82,40 @@ where $F_c$ is the cutting force; $V_{c}$ is the cutting speed;
 
 **Facing** is a machining process also performed on a lathe, where the cutting tool moves *perpendicular* to the axis of a rotating cylindrical workpiece. The goal of facing is to produce a flat surface at the end of the workpiece.
 ![[MNF1_004/Pasted image 20240627203443.png|book]]
+
+# Milling
+Milling is a machining process that involves the use of rotary cutters to remove material from a workpiece. The milling process can create a variety of features including flat surfaces, slots, and complex contours. The workpiece is usually held stationary while the cutting tool rotates and moves across the material to achieve the desired shape.
+
+Types of milling operations:
+1. **Face Milling**: Produces flat surfaces by cutting with the end of the milling cutter.
+2. **Peripheral Milling/Slab Milling**: Involves cutting along the periphery of the cutter, used for creating deep slots, threads, and gear teeth.
+3. **End Milling**: Utilizes an end mill cutter to produce complex shapes, slots, and holes.
+
+## Key Parameters and Equations
+
+![[MNF1_004/Pasted image 20240703124529.png|book]]
+>(a) Illustration showing the difference between conventional milling and climb milling. (b) Slab-milling operation, showing depth of cut, $d$; feed per tooth, $f$; chip depth of cut, $t_{c}$ and workpiece speed, $v$. (c) Schematic illustration of cutter travel distance, $l_{c}$, to reach full depth of cut.
+
+- **Cutting Speed $V_{c}$** is calculated in the same way as [[#Turning#Key Parameters and Equations|turning]]:
+	$$
+V_{c}=\pi DN
+ $$
+	where $D$ is the diameter of the workpiece and $N$ is the rotational speed.
+
+- **Feed Rate $f$**: The feed rate is the distance the tool advances during one revolution of the spindle. As opposed to turning, we like to analyze the cutting process *per teeth* - so we define $f_{t}$ - **feed per tooth**. Therefore:
+	$$\boxed{f=N f_{t} n }$$
+	where $N$ is the spindle speed ($\pu{rev.min^{-1}}$); $f_{t}$ is feed per tooth $(\pu{mm.tooth}^{-1})$; and $n$ is number of teeth on the cutter.
+
+- **Depth of Cut $d$** is the thickness of the material removed in one pass of the cutting tool, measured in millimeters $(\pu{mm})$.
+
+Note that the thickness of the chip in slab milling varies along its length, because of the relative longitudinal movement between the cutter and the workpiece.
+
+- **Chip Thickness $h$** (in the book, this is denoted with $t_{c}$) is the thickness of the material cut by a single tooth of the milling cutter. It can be influenced by several factors, including the feed per tooth $f_{t}$, the radial depth of cut, and the entry angle of the tooth into the material $\theta$.
+	$$h=f_{t}\cos\theta$$
+
+>[!TODO] להשלים
+
+
 
 # Exercises
 ## Question 1
