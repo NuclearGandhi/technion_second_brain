@@ -83,5 +83,3 @@ What are the _technological_ disadvantages of each casting process from the proc
     - High initial cost for dies and equipment: very high.
     - Restricted only to non-ferrous metals like aluminum, zinc, and magnesium.
     - Risk of air entrapment and porosity in the final product.
->[!TODO] להשלים 
- >
