@@ -19,8 +19,22 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "7efd7dd50b66791b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/DYN1/DYN1_HW004 תרגיל בית 4.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -104,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/PHY2/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים.md",
+                "file": "Technion/DYN1/DYN1_HW004 תרגיל בית 4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/PHY2/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים.md"
+                "file": "Technion/DYN1/DYN1_HW004 תרגיל בית 4.md"
               }
             }
           }
@@ -155,11 +169,13 @@
       "latex-ocr:LatexOCR": false
     }
   },
-  "active": "9a85b9f7e6250877",
+  "active": "7efd7dd50b66791b",
   "lastOpenFiles": [
+    "Technion/DYN1/DYN1_003 קינמטיקה של גוף קשיח.md",
+    "Technion/DYN1/DYN1_004 קינמטיקה של מערכת גופים קשיחים.md",
+    "Technion/PHY2/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים.md",
     "Technion/PHY2/PHY2_004 מעגלים חשמליים.md",
     "Technion/PHY2/PHY2_000 114052 פיזיקה 2.md",
-    "Technion/PHY2/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים.md",
     "Technion/PHY2/PHY2_HW003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-07-07 22.00.45.excalidraw.md",
     "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-07-07 22.17.32.excalidraw.md",
     "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-07-07 22.17.32.excalidraw.svg",
@@ -189,8 +205,6 @@
     "Technion/FLD1/FLD1_HW002/FLD1_HW002 תרגיל בית 2 2024-07-07 16.31.08.excalidraw.svg",
     "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
     "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה.md",
-    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
-    "Technion/SLD1/SLD1_002 שיווי משקל.md",
     "Technion/FLD1/FLD1_HW002/FLD1_HW002 תרגיל בית 2 2024-07-07 15.54.46.excalidraw.svg",
     "Technion/DYN1/DYN1_005/DYN1_005 דינמיקה של חלקיק 2024-07-07 15.05.54.excalidraw.svg",
     "Technion/FLD1/FLD1_HW002",
