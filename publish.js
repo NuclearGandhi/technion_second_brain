@@ -17,7 +17,7 @@ function applyAutoDirection() {
 
     setTimeout(function () {
             if (markdownPreviewSection) {
-        const elements = markdownPreviewSection.querySelectorAll('div, p, h1, h2, h3, h4, h5, h6, ol, ul');
+        const elements = markdownPreviewSection.querySelectorAll('table');
         if (elements.length) {
             elements.forEach(element => {
                 element.setAttribute('dir', 'auto');
@@ -29,11 +29,11 @@ function applyAutoDirection() {
     }, 1000);
 }
 
-// applyAutoDirection();
+applyAutoDirection();
 
-// navigation.addEventListener('navigate', () => {
-//     applyAutoDirection();
-// });
+navigation.addEventListener('navigate', () => {
+    applyAutoDirection();
+});
 
 
 function setInnerBodyDirection(event) {

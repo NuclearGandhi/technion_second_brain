@@ -1,5 +1,9 @@
 ---
 aliases:
+  - linear state-space equation
+  - impulse response
+  - matrix exponential
+  - transfer function
 ---
 
 # Impulse Response
@@ -155,9 +159,62 @@ e^{\mathbf{A}t} & =I+\begin{pmatrix}
 > We write $j$ instead of $i$ because of aliens.
 > These aliens refer to themselves as 'electrical engineers'. They use $i$ to denote their precious little electrical current. Very confusing.
 
-## Diagonalization of Matrices
+### Special Matrix Exponential
+Let
+$$\mathbf{A}=\begin{pmatrix}
+0 & \omega \\
+-\omega & 0
+\end{pmatrix}$$
+Finding its eigenvalues and eigenvectors, we get:
+$$\begin{gathered}
+\mathbf{A}=\mathbf{T}\boldsymbol{\Lambda}\mathbf{T}^{-1} \\[2ex]
+\begin{pmatrix}
+0 & \omega \\
+-\omega & 0
+\end{pmatrix}=\begin{pmatrix}
+-j & j \\
+1 & 1
+\end{pmatrix}\begin{pmatrix}
+j\omega & 0 \\
+0 & -j\omega
+\end{pmatrix}\begin{pmatrix}
+-j & j \\
+1 & 1
+\end{pmatrix}^{-1}
+\end{gathered}$$
+Which is why its exponential:
+$$\begin{aligned}
+e^{\mathbf{A}t}  & =\begin{pmatrix}
+-j & j \\
+1 & 1
+\end{pmatrix}\begin{pmatrix}
+e^{j\omega t} & 0 \\
+0 & e^{-j\omega t}
+\end{pmatrix}\begin{pmatrix}
+-j & j \\
+1 & 1
+\end{pmatrix}^{-1} \\[2ex]
+ & =\dfrac{1}{2}\begin{pmatrix}
+e^{j\omega t}+e^{-j\omega t} & -j(e^{j\omega t}-e^{-j\omega t}) \\
+j(e^{j\omega t}-e^{-j\omega t}) & e^{j\omega t}+e^{-j\omega t}
+\end{pmatrix}
+\end{aligned}$$
+Applying [[#Euler's Formula]], we get
+$$e^{\mathbf{A}t}=\begin{pmatrix}
+\cos(\omega t) & \sin(\omega t) \\
+-\sin(\omega t) & \cos(\omega t)
+\end{pmatrix}$$
+Because of the equality $e^{(\sigma \mathbf{I}+\mathbf{A})t}=e^{\sigma t}e^{\mathbf{A}t}$, we can say that:
+$$\boxed{\exp\left[ \begin{pmatrix}
+\sigma & \omega \\
+-\omega & \sigma
+\end{pmatrix} t\right] =e^{\sigma t}\begin{pmatrix}
+\cos(\omega t) & \sin(\omega t) \\
+-\sin(\omega t) & \cos(\omega t)
+\end{pmatrix}}$$
 
-### Calculating the Matrix Exponent
+
+## Calculating the Matrix Exponent
 
 It won't always be simple to calculate $e^{\mathbf{A}t}$ for any given $\mathbf{A}$ using the definition. An easier way would be to [[../ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים#לכסון|diagonalize]] $\mathbf{A}$, and then use a special property of diagonalizable matrices:
 $$\mathbf{A}=T\boldsymbol{\Lambda}T^{-1}\implies e^{\mathbf{A}t}=Te^{\boldsymbol{\Lambda}t}T^{-1}$$
@@ -203,7 +260,11 @@ $$\boldsymbol{\Lambda}=\begin{pmatrix}
 0 & 0 & 0 & {\lambda}_{3} & \dots  \\
 \vdots  & \vdots  & \vdots  & \vdots  & \ddots 
 \end{pmatrix}$$
-
+Now, we know that:
+$$e^{\mathbf{A}t}=\mathbf{T}e^{\hat{\mathbf{A}}t}\mathbf{T}^{-1}=\mathbf{T}e^{\sigma t}\begin{pmatrix}
+\cos(\omega t) & \sin(\omega t) \\
+-\sin(\omega t) & \cos(\omega t)
+\end{pmatrix}\mathbf{T}^{-1}$$
 ## Solution to State-Equation
 Consider the function
 $$x(t)=\int_{-\infty }^{t} e^{\mathbf{A}(t-s)}\mathbf{B}u(s) \, \mathrm{d}s $$
@@ -351,6 +412,58 @@ g(t)=D\delta(t)+\mathbf{C}e^{\mathbf{A}t}\mathbf{B}\mathbb{1}(t)
 > 	and is called *critical damping* - the boundary between overdamping and underdamping.
 > 	![](https://www.youtube.com/watch?v=99ZE2RGwqSM)
 
+# Transfer Function to State Space
+
+## Physical realization
+Given a system with following **transfer function**:
+$$\mathbf{y}^{(n)}+a_{n-1}\mathbf{y}^{(n-1)}+\dots +a_{2}\ddot{\mathbf{y}}+{a}_{1}\dot{\mathbf{y}}+{a}_{0}\mathbf{y}=b\mathbf{u}$$
+then its posiible state-space realization is:
+$$\left( \begin{array}{c|c}
+A & B \\
+\hline C & D
+\end{array} \right)=\left( \begin{array}{cccc|c}
+0 & 1 & \dots  & 0 & 0 \\
+\vdots  & \vdots  & \ddots  & \vdots  & \vdots \\
+0 & 0 & \dots  & 1 & 0 \\
+-{a}_{0} & -{a}_{1} & \dots  & -a_{n-1} & 1 \\
+\hline1 & 0 & \dots  & 0 & 0
+\end{array} \right)$$
+
+## Canocial Realization
+
+For the following ODE:
+$$\mathbf{y}^{(n)}+a_{n-1}\mathbf{y}^{(n-1)}+\dots +a_{2}\ddot{\mathbf{y}}+{a}_{1}\dot{\mathbf{y}}+{a}_{0}\mathbf{y}=b_{n-1}\mathbf{u}^{(n-1)}+\dots +{b}_{2}\ddot{\mathbf{u}}+{b}_{1}\dot{\mathbf{u}}+{b}_{0}\mathbf{u}$$
+
+The state-space realization discussed above, known as the **companion form**, is:
+$$\left( \begin{array}{c|c}
+A & B \\
+\hline C & D
+\end{array} \right)=\left( \begin{array}{cccc|c}
+0 & 1 & \dots  & 0 & 0 \\
+\vdots  & \vdots  & \ddots  & \vdots  & \vdots \\
+0 & 0 & \dots  & 1 & 0 \\
+-{a}_{0} & -{a}_{1} & \dots  & -a_{n-1} & b \\
+\hline {b}_{0} & {b}_{1} & \dots  & b_{n-1} & 0 
+\end{array} \right)$$
+Its space-state realization in **observer form** has
+$$\left( \begin{array}{c|c}
+A & B \\
+\hline C & D
+\end{array} \right)=\left( \begin{array}{cccc|c}
+-a_{n-1} & 1 & \dots  & 0 & b_{n-1} \\
+\vdots  & \vdots  & \ddots  & \vdots  & \vdots  \\
+-{a}_{1} & 0 & \dots  & 1 & {b}_{1} \\
+-{a}_{0} & 0 & \dots  & 0 & {b}_{0} \\
+\hline 1 & 0 & \dots  & 0 & 0
+\end{array} \right)$$
+
+If on the right side of the equation there is an $n$ derivative of $u$, that is there is a term $b_{n}u^{(n-1)}$ where $b_{n}\neq 0$, we can write the same canoncial realization as for the system with $b_{n}=0$, and simple change $D=b_{n}$.
+
+# State Space to Transfer Function
+Going from a state-space representation to a transfer function representation is very simple:
+$$\boxed {
+\mathbf{G}(s)=\mathbf{C}(s\mathbf{I}-\mathbf{A})^{-1}\mathbf{B}+D
+ }$$
 
 # Exercises
 ## Question 1
@@ -771,3 +884,162 @@ $$\begin{aligned}
 \end{aligned}$$
 and can conclude that $g\in {L}_{1}$. That is, the system is BIBO stable.
 
+## Question 3
+Given the following second-order differential equation
+$$\ddot{y}(t)+y(t)=u(t)$$
+### Part a
+Find a physical state-space realization.
+
+**Solution**:
+Define
+$$\mathbf{x}=\begin{pmatrix}
+{x}_{1} \\
+{x}_{2}
+\end{pmatrix}=\begin{pmatrix}
+y \\
+\dot{y}
+\end{pmatrix}$$
+so we can write (using [[../DEQ1/DEQ1_006 משוואות לינאריות הומוגניות מסדר גבוה#אלגוריתם שיטת הורדת הסדר|reduction of order]]):
+$$\begin{gathered} 
+\dot{x}_{2}(t)+{x}_{1}(t)=u(t) \\[1ex]
+\dot{x}_{2}=-{x}_{1}(t)+u(t) \\[1ex]
+\Updownarrow \\
+\begin{pmatrix}
+\dot{x}_{1} \\
+\dot{x}_{2}
+\end{pmatrix}=\begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix}\begin{pmatrix}
+{x}_{1} \\
+{x}_{2}
+\end{pmatrix}+\begin{pmatrix}
+0 \\
+1
+\end{pmatrix}u(t)
+\end{gathered}$$
+Or, using the [[#Physical realization|formula]]:
+$$\boxed {
+\begin{aligned}
+\mathbf{A}=\begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix}  &  & \mathbf{B}=\begin{pmatrix}
+0 \\
+1
+\end{pmatrix} &  & \mathbf{C}=\begin{pmatrix}
+1 & 0
+\end{pmatrix} &  & D=0
+\end{aligned}
+ }$$
+
+### Part b
+Use this state-space model to calculate the impulse response of the system.
+
+**Solution**:
+The impulse response can be [[#Solution to State-Equation|given]] by:
+$$g(t)=D\delta(t)+\mathbf{C}e^{\mathbf{A}t}\mathbf{B}\mathbb{1}(t)$$
+In our case:
+$$g(t)=\begin{pmatrix}
+1 & 0
+\end{pmatrix}\exp\left[ \begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix} t\right]\begin{pmatrix}
+0 \\
+1
+\end{pmatrix} \mathbb{1}(t)$$
+We have [[#Special Matrix Exponential|seen]] that
+$$\exp\left[ \begin{pmatrix}
+\sigma & \omega \\
+-\omega & \sigma
+\end{pmatrix}t \right]=e^{\sigma t}\begin{pmatrix}
+\cos(\omega t) & \sin(\omega t) \\
+-\sin(\omega t) & \cos(\omega t)
+\end{pmatrix}$$
+so in our case:
+$$\begin{gathered}
+g(t)=\begin{pmatrix}
+1 & 0
+\end{pmatrix}e^{0}\begin{pmatrix}
+\cos t & \sin t \\
+-\sin t & \cos t
+\end{pmatrix}\begin{pmatrix}
+0 \\
+1
+\end{pmatrix}\mathbb{1}(t) \\[1ex]
+\boxed {
+g(t)=\sin t\,\mathbb{1}(t)
+ }
+\end{gathered}$$
+
+
+## Question 4
+Consider the following ODE:
+$$\ddot{y}(t)+5\dot{y}(t)+6y(t)=\ddot{x}(t)+2\dot{x}(t)+x(t)$$
+
+### Part a
+Find the state-space realization in companion form.
+
+**Solution**:
+According to the [[#Canocial Realization|formula]]:
+$$\begin{aligned}
+\mathbf{A}=\begin{pmatrix}
+0 & 1 \\
+-6 & -5
+\end{pmatrix} &  & \mathbf{B}=\begin{pmatrix}
+0 \\
+1
+\end{pmatrix} &  & \mathbf{C}=\begin{pmatrix}
+1 & 2
+\end{pmatrix} &  & D=1
+\end{aligned}$$
+
+### Part b
+Use the following transformation matrix to get a similar realization:
+	$$\mathbf{T}=\begin{pmatrix}
+1 & 2 \\
+-7 & 1
+\end{pmatrix}$$
+
+What does this similar realization correspond to?
+
+**Solution**:
+The inverse of $\mathbf{T}$ (using [[../ALG1/ALG1_008 הדטרמיננטה#אלגוריתם מציאת הופכי ע"י הצמדה|adjoint]]):
+$$\mathbf{T}^{-1}=\dfrac{1}{1+14}\begin{pmatrix}
+1 & -2 \\
+7 & -1
+\end{pmatrix}=\dfrac{1}{15}\begin{pmatrix}
+1 & -2 \\
+7 & -1
+\end{pmatrix}$$
+
+So the similar realization:
+$$\begin{aligned}
+\mathbf{A}' & =\mathbf{T}\mathbf{A}\mathbf{T}^{-1}=\begin{pmatrix}
+1 & 2 \\
+-7 & 1
+\end{pmatrix}\begin{pmatrix}
+0 & 1 \\
+-6 & -5
+\end{pmatrix} \dfrac{1}{15}\begin{pmatrix}
+1 & -2 \\
+7 & 1
+\end{pmatrix} \\[2ex]
+ & =\dfrac{1}{15}\begin{pmatrix}
+-12 & -9 \\
+-6 & -12
+\end{pmatrix}\begin{pmatrix}
+1 & -2 \\
+7 & 1
+\end{pmatrix} \\[2ex]
+ & =\dfrac{1}{15}\begin{pmatrix}
+-75 & 15 \\
+-90 & 0
+\end{pmatrix} \\[2ex]
+ & =\begin{pmatrix}
+-5 & 1 \\
+-6 & 0
+\end{pmatrix}
+\end{aligned}$$
+The similar realization correspond the observer form of the canonical realization.

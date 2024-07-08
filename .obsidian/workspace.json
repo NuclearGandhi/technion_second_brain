@@ -4,50 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "6a5d88ca22296bb8",
+        "id": "f7f99dd0c97f52c0",
         "type": "tabs",
         "children": [
           {
-            "id": "21b582da10c96e6a",
+            "id": "9a85b9f7e6250877",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/LSY1/LSY1_005 Linearization.md",
+                "file": "Technion/PHY2/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
-          },
-          {
-            "id": "8dcae0f402b6e81d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/FLD1/FLD1_HW001 תרגיל בית 1.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ebd4abfa3aa07e5b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/MNF1/MNF1_HW001 Homework 1.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -97,7 +70,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 298.5
+    "width": 298.5,
+    "collapsed": true
   },
   "right": {
     "id": "9aafb922f99122c6",
@@ -130,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/MNF1/MNF1_HW001 Homework 1.md",
+                "file": "Technion/PHY2/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/MNF1/MNF1_HW001 Homework 1.md"
+                "file": "Technion/PHY2/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים.md"
               }
             }
           }
@@ -181,45 +155,47 @@
       "latex-ocr:LatexOCR": false
     }
   },
-  "active": "ebd4abfa3aa07e5b",
+  "active": "9a85b9f7e6250877",
   "lastOpenFiles": [
-    "Technion/LSY1/LSY1_005 Linearization.md",
-    "Technion/LSY1/LSY1_004 Linear State-Space Equation.md",
-    "Technion/FLD1/FLD1_HW001 תרגיל בית 1.md",
-    "Technion/LSY1/LSY1_001 Introduction.md",
-    "Technion/LSY1/LSY1_010 Frequency Domain Analysis.md",
-    "Technion/MNF1/MNF1_HW001 Homework 1.md",
-    "Technion/FLD1/FLD1_HW002 תרגיל בית 2.md",
-    "Technion/FLD1/FLD1_006 צמיגות.md",
-    "Technion/FLD1/FLD1_006/Screenshot_20240703_154109_Samsung Notes.jpg",
-    "Technion/FLD1/FLD1_006",
-    "Technion/MNF1/MNF1_004 Machining Processes.md",
-    "Technion/MNF1/MNF1_004/Pasted image 20240703124529.png",
-    "Technion/DYN1/DYN1_HW004 תרגיל בית 4.md",
-    "Technion/DYN1/DYN1_005 דינמיקה של חלקיק.md",
-    "Technion/LSY1/LSY1_000 034032 Linear Systems E.md",
-    "Technion/DYN1/DYN1_004 קינמטיקה של מערכת גופים קשיחים.md",
+    "Technion/PHY2/PHY2_004 מעגלים חשמליים.md",
+    "Technion/PHY2/PHY2_000 114052 פיזיקה 2.md",
     "Technion/PHY2/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים.md",
-    "Technion/ALG1/ALG1_008 הדטרמיננטה.md",
-    "Technion/LSY1/LSY1_002 Signals and Convolutions.md",
+    "Technion/PHY2/PHY2_HW003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-07-07 22.00.45.excalidraw.md",
+    "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-07-07 22.17.32.excalidraw.md",
+    "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-07-07 22.17.32.excalidraw.svg",
+    "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-06-22 09.21.02.excalidraw.md",
+    "Technion/PHY2/PHY2_002 אלקטרוסטטיקה - שטף חשמלי, חוק גאוס ופוטנציאל חשמלי.md",
+    "Technion/PHY2/PHY2_HW003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-07-07 22.00.45.excalidraw.svg",
+    "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-07-07 21.56.11.excalidraw.md",
+    "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-07-07 21.56.11.excalidraw.svg",
+    "Technion/FLD1/FLD1_HW001 תרגיל בית 1.md",
+    "Technion/FLD1/FLD1_HW002 תרגיל בית 2.md",
+    "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-07-07 20.17.10.excalidraw.md",
+    "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-07-07 20.17.10.excalidraw.svg",
+    "Technion/MNF1/MNF1_004 Machining Processes.md",
+    "Technion/FLD1/FLD1_006 צמיגות.md",
+    "Technion/DYN1/DYN1_005 דינמיקה של חלקיק.md",
+    "Technion/DYN1/DYN1_005/DYN1_005 דינמיקה של חלקיק 2024-07-07 20.05.17.excalidraw.md",
+    "Technion/DYN1/DYN1_005/DYN1_005 דינמיקה של חלקיק 2024-07-07 14.56.04.excalidraw.md",
+    "Technion/FLD1/FLD1_003 חוקי שימור אינטגרליים.md",
+    "Technion/DYN1/DYN1_005/DYN1_005 דינמיקה של חלקיק 2024-07-07 20.05.17.excalidraw.svg",
+    "Technion/DYN1/DYN1_005/Screenshot_20240707_133503_Samsung Notes.jpg",
+    "Technion/DYN1/DYN1_005 דינמיקה של חלקיק 2024-07-07 14.55.56.excalidraw.md",
+    "Technion/DYN1/DYN1_005/DYN1_005 דינמיקה של חלקיק 2024-07-07 14.56.04.excalidraw.svg",
+    "Technion/DYN1/DYN1_005/DYN1_005 דינמיקה של חלקיק 2024-07-07 14.02.03.excalidraw.md",
+    "Technion/FLD1/FLD1_HW002/FLD1_HW002 תרגיל בית 2 2024-07-07 10.57.55.excalidraw.md",
     "Technion/FLD1/FLD1_005 הידרוסטטיקה.md",
-    "Technion/ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים.md",
-    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-07-02 19.20.57.excalidraw.md",
-    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-07-02 19.20.57.excalidraw.svg",
-    "Technion/FLD1/FLD1_005/Pasted image 20240702190313.png",
-    "Technion/FLD1/FLD1_000 034055 תורת הזרימה 1מ.md",
-    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-07-02 17.07.15.excalidraw.md",
-    "Technion/DYN1/DYN1_001  קינמטיקה של חלקיק - מבוא.md",
-    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-07-02 17.07.15.excalidraw.svg",
-    "Technion/FLD1/FLD1_005/Pasted image 20240702134539.png",
-    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-07-02 15.46.22.excalidraw.md",
-    "Technion/FLD1/FLD1_005/FLD1_005 הידרוסטטיקה 2024-07-02 15.46.22.excalidraw.svg",
-    "Technion/FLD1/FLD1_005/Pasted image 20240702140104.png",
-    "Technion/FLD1/FLD1_005/Pasted image 20240702140050.png",
-    "Technion/FLD1/FLD1_005/ANIMvasicomunicanti.gif",
-    "Technion/PHY2/PHY2_003/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים 2024-06-21 21.57.00.excalidraw.md",
-    "Technion/DYN1/DYN1_005/DYN1_005 דינמיקה של חלקיק 2024-07-01 21.13.56.excalidraw.md",
-    "Technion/DYN1/DYN1_005/DYN1_005 דינמיקה של חלקיק 2024-07-01 21.10.11.excalidraw.md",
+    "Technion/FLD1/FLD1_HW002/FLD1_HW002 תרגיל בית 2 2024-07-07 16.31.08.excalidraw.md",
+    "Technion/FLD1/FLD1_HW002/FLD1_HW002 תרגיל בית 2 2024-07-07 16.31.08.excalidraw.svg",
+    "Technion/SLD1/SLD1_005 מהלכי כוחות ומומנטים בקורות.md",
+    "Technion/SLD1/SLD1_006 מרכז כובד ומרכז מסה.md",
+    "Technion/SLD1/SLD1_007 מאמץ ועיבור.md",
+    "Technion/SLD1/SLD1_002 שיווי משקל.md",
+    "Technion/FLD1/FLD1_HW002/FLD1_HW002 תרגיל בית 2 2024-07-07 15.54.46.excalidraw.svg",
+    "Technion/DYN1/DYN1_005/DYN1_005 דינמיקה של חלקיק 2024-07-07 15.05.54.excalidraw.svg",
+    "Technion/FLD1/FLD1_HW002",
+    "Technion/LSY1/LSY1_005",
+    "Technion/FLD1/FLD1_006",
     "Technion/DYN1/DYN1_005",
     "Technion/MNF1/MNF1_002/MNF1_CA1 Casting Processes.canvas",
     "Technion/DYN1/DYN1_HW004",
@@ -228,8 +204,6 @@
     "Technion/MNF1/MNF1_004",
     "Technion/FLD1/FLD1_005",
     "Technion/DYN1/DYN1_004",
-    "Technion/DYN1/DYN1_HW003",
-    "Technion/MNF1/MNF1_003",
     "Technion/LSY1/Untitled.canvas"
   ]
 }
