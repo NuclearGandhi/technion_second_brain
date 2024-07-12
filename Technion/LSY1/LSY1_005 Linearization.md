@@ -205,6 +205,7 @@ By dropping all but the first-order terms, we obtain a **local linearization of 
 > \end{aligned}$$
 > Because the derivatives (Jacobians) are all independent of $\mathbf{x}$ and $u$, the higher derivatives are zero, and the first-order Taylor expansion is accurate. Hence, the linearization of the system is an accurate linear decsription of the mass-spring-damper system.
 
+
 # Exercises
 
 ## Question 1
@@ -404,14 +405,3 @@ G(s)=\dfrac{1}{S}\left( s+\dfrac{R^{2}}{2S} \right)^{-1} \\[1ex]
 \boxed{G(s)=\dfrac{1}{S} \dfrac{2S}{2Ss+R^{2}} }
 \end{gathered}$$
 
-### Part e
-Given that $q_{\text{in}}(t)=1+a\sin(\omega t)$, approxiamte $y(t)$ using the linearized system.
-
-**Solution**:
-The offsetted input $\delta u$ is given by:
-$$\begin{aligned}
-\delta u & =u-u_{\text{eq}}=1+a\sin(\omega t)-1 \\[1ex]
- & =a\sin(\omega t)
-\end{aligned}$$
->[!TODO] להבין 
- >

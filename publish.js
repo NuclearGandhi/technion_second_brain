@@ -10,6 +10,7 @@ document.body.prepend(fontStyle);
 
 document.getElementsByClassName('site-footer')[0].innerHTML = 'אף אחת מהזכויות שמורות ל<a href="https://github.com/NuclearGandhi">עידו פנג בנטוב</a> ©';
 document.getElementsByClassName('outline-view-outer node-insert-event')[0].firstChild.lastChild.innerHTML = "תוכן עניינים"
+document.getElementsByClassName('nav-view')[0].setAttribute('style', 'visibility: hidden');
 
 // -- Auto direction
 function applyAutoDirection() {

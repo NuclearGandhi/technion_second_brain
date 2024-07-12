@@ -59,15 +59,13 @@ MRR=fdV_{C}=\pi fdDN
 \end{gathered}$$
 
 
-## Cutting Force
+## Cutting Force and Power
 
 The **cutting force $F_c$** is the force exerted by the cutting tool on the workpiece during a machining operation. It is calculated using the formula
 $$\boxed {
 F_{c}=K_{s}fd
  }$$
 where $K_s$ is the **specific cutting force** or **specific energy**, measured in $\pu{N.mm^{-2}}$;$f$ is the feed rate; $d$ is the depth of cut;
-
-## Power 
 
 The power $P$ required for the cutting process is calculated using the formula
 $$\boxed {
@@ -93,28 +91,46 @@ Types of milling operations:
 
 ## Key Parameters and Equations
 
-![[MNF1_004/Pasted image 20240703124529.png|book]]
->(a) Illustration showing the difference between conventional milling and climb milling. (b) Slab-milling operation, showing depth of cut, $d$; feed per tooth, $f$; chip depth of cut, $t_{c}$ and workpiece speed, $v$. (c) Schematic illustration of cutter travel distance, $l_{c}$, to reach full depth of cut.
+![[MNF1_004/Pasted image 20240712182459.png|book]]
+>(a) Illustration showing the difference between conventional milling and climb milling. (b) Slab-milling operation, showing width of cut, $w$; feed per tooth, $f$; chip depth of cut, $h$ and workpiece speed, $v$. (c) Schematic illustration of cutter travel distance, $l_{c}$, to reach full depth of cut.
 
 - **Cutting Speed $V_{c}$** is calculated in the same way as [[#Turning#Key Parameters and Equations|turning]]:
-	$$
+	$$\boxed {
 V_{c}=\pi DN
- $$
+ }$$
 	where $D$ is the diameter of the workpiece and $N$ is the rotational speed.
 
 - **Feed Rate $f$**: The feed rate is the distance the tool advances during one revolution of the spindle. As opposed to turning, we like to analyze the cutting process *per teeth* - so we define $f_{t}$ - **feed per tooth**. Therefore:
 	$$\boxed{f=N f_{t} n }$$
 	where $N$ is the spindle speed ($\pu{rev.min^{-1}}$); $f_{t}$ is feed per tooth $(\pu{mm.tooth}^{-1})$; and $n$ is number of teeth on the cutter.
 
-- **Depth of Cut $d$** is the thickness of the material removed in one pass of the cutting tool, measured in millimeters $(\pu{mm})$.
+- **Width of Cut $w$** is the thickness of the material removed in one pass of the cutting tool, measured in millimeters $(\pu{mm})$.
 
 Note that the thickness of the chip in slab milling varies along its length, because of the relative longitudinal movement between the cutter and the workpiece.
 
-- **Chip Thickness $h$** (in the book, this is denoted with $t_{c}$) is the thickness of the material cut by a single tooth of the milling cutter. It can be influenced by several factors, including the feed per tooth $f_{t}$, the radial depth of cut, and the entry angle of the tooth into the material $\theta$.
-	$$h=f_{t}\cos\theta$$
+- **Chip Thickness $h$** is the thickness of the material cut by a single tooth of the milling cutter. It can be influenced by the feed per tooth $f_{t}$, and the entry angle of the tooth into the material $\theta$.
+	$$\boxed {
+h=f_{t}\cos\theta
+ }$$
 
->[!TODO] להשלים
 
+## Cutting Force and Power
+
+The **cutting force $F_c$** is the force exerted by the cutting tool on the workpiece. It can be calculated per tooth
+$$\begin{aligned}
+\boxed {
+F_{c}=K_{s}hd=K_{s}f_{t}d\cos\theta 
+ } 
+\end{aligned}$$
+or , or its average for a whole width of cut $w$:
+$$\boxed{F_{c}=K_{s}wd }$$
+where $K_s$ is the **specific cutting force** or **specific energy**, measured in $\pu{N.mm^{-2}}$;$h$ is chip thickness; $w$ is the width of cut; $d$ is the depth of cut.
+
+The power $P$ required for the cutting process is calculated using the formula
+$$\boxed {
+P=F_{c} V_{c}
+ }$$
+where $F_c$ is the cutting force; $V_{c}$ is the cutting speed;
 
 
 # Exercises
@@ -179,3 +195,46 @@ P_{\max_{}}=F_{c,\max_{}} V_{c,\max_{}}=\pu{197925N.m.min^{-1}} \\[1ex]
 P_{\max_{}}=\pu{3298.75W}<\pu{5kW}
 \end{gathered}$$
 Therefore, cutting tool $B$ is still viable.
+
+## Question 2
+Given the following parameters:
+$$\begin{aligned}
+ & K_{s}=\pu{3920N.mm^{-2}} &  & d=\pu{5mm} &  & D=\pu{120mm} \\[1ex]
+ & f_{t}=\pu{0.18mm.rev^{-1}.tooth^{-1}} &  & V=\pu{145m.min^{-1}}
+\end{aligned}$$
+![[Pasted image 20240712184057.png|book]]
+>Schematic of the cutting tool and workpiece
+
+
+### Part a
+Find $N$.
+
+**Solution**:
+
+### Part b
+At which point will the force be maximal and at which point minimal?
+
+**Solution**:
+
+### Part c
+Calculate the minimum and maximum forces.
+
+**Solution**:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>[!TODO] להשלים

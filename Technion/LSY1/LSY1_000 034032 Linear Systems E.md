@@ -17,6 +17,7 @@ Assistant:
 - [[LSY1_003 Classification of Systems]]
 - [[LSY1_004 Linear State-Space Equation]]
 - [[LSY1_005 Linearization]]
+- [[LSY1_006 Lyapunov Stability]]
 
 
 %%
