@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "12bde913e563840b",
+        "id": "1269e8a9e94ec1b1",
         "type": "tabs",
         "children": [
           {
-            "id": "8e3d105cba7425b8",
+            "id": "1ebd96d41a735b06",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/MNF1/MNF1_004 Machining Processes.md",
+                "file": "Technion/LSY1/LSY1_006 Lyapunov Stability.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -66,13 +66,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 298.5,
-    "collapsed": true
+    "width": 298.5
   },
   "right": {
     "id": "9aafb922f99122c6",
@@ -105,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/MNF1/MNF1_004 Machining Processes.md",
+                "file": "Technion/LSY1/LSY1_006 Lyapunov Stability.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/MNF1/MNF1_004 Machining Processes.md"
+                "file": "Technion/LSY1/LSY1_006 Lyapunov Stability.md"
               }
             }
           }
@@ -156,44 +154,46 @@
       "latex-ocr:LatexOCR": false
     }
   },
-  "active": "8e3d105cba7425b8",
+  "active": "1ebd96d41a735b06",
   "lastOpenFiles": [
-    "Technion/PHY2/PHY2_HW006 גיליון בית 6.md",
-    "Technion/MNF1/MNF1_004 Machining Processes.md",
-    "Technion/MNF1/Pasted image 20240712184057.png",
-    "Technion/MNF1/MNF1_005 Manufactures vs. Functional Dimensions.md",
-    "Technion/MNF1/MNF1_004/Pasted image 20240712182459.png",
-    "Technion/MNF1/MNF1_004/Pasted image 20240628153921.png",
-    "Technion/MNF1/MNF1_004/Pasted image 20240703124529.png",
-    "Technion/MNF1/MNF1_004/Pasted Image 20240712182330_054.png",
-    "Technion/MNF1/MNF1_004/image (1).png",
-    "Technion/MNF1/MNF1_004/MNF1_004 Machining Processes 2024-06-27 20.07.18.excalidraw.md",
-    "Technion/MNF1/MNF1_004 Machining Processes 2024-07-12 18.09.31.excalidraw.md",
-    "Technion/MNF1/Pasted image 20240712182133.png",
-    "Technion/MNF1/Pasted image 20240712181414.png",
-    "Technion/MNF1/Pasted Image 20240712181224_950.png",
-    "Technion/MNF1/Pasted Image 20240712181014_072.png",
-    "Technion/MNF1/MNF1_003 Bulk Deformation Processes.md",
     "Technion/PHY2/PHY2_004 מעגלים חשמליים - זרם והתנגדות.md",
-    "Technion/LSY1/LSY1_004 Linear State-Space Equation.md",
-    "Technion/LSY1/LSY1_005 Linearization.md",
-    "Technion/PHY2/PHY2_004/PHY2_004 מעגלים חשמליים - זרם והתנגדות 2024-07-12 11.54.41.excalidraw.md",
-    "Technion/FLD1/FLD1_HW002 תרגיל בית 2.md",
-    "Technion/FLD1/FLD1_007 תכונות משוואות סטוקס ומשוואות ריינולדס.md",
-    "Technion/PHY2/PHY2_HW006/PHY2_HW006 גיליון בית 6 2024-07-12 11.15.02.excalidraw.md",
-    "Technion/PHY2/PHY2_HW006/PHY2_HW006 גיליון בית 6 2024-07-12 11.41.21.excalidraw.md",
-    "Technion/PHY2/PHY2_HW006/PHY2_HW006 גיליון בית 6 2024-07-12 11.45.14.excalidraw.md",
-    "Technion/PHY2/PHY2_HW006/PHY2_HW006 גיליון בית 6 2024-07-12 11.20.30.excalidraw.md",
-    "Technion/PHY2/PHY2_HW006/PHY2_HW006 גיליון בית 6 2024-07-12 11.22.33.excalidraw.md",
+    "Technion/DYN1/DYN1_HW005/DYN1_HW005 תרגיל בית 5 2024-07-13 17.54.08.excalidraw.md",
+    "Technion/DYN1/DYN1_HW005/DYN1_HW005 תרגיל בית 5 2024-07-13 18.03.31.excalidraw.md",
+    "Technion/DYN1/DYN1_HW005 תרגיל בית 5.md",
+    "Technion/DYN1/DYN1_HW005/Pasted image 20240713145502.png",
+    "Technion/DYN1/DYN1_HW005/Pasted image 20240713145434.png",
+    "Technion/DYN1/DYN1_HW005/Pasted image 20240713142715.png",
+    "Technion/DYN1/DYN1_HW005/Pasted image 20240713125926.png",
+    "Technion/DYN1/DYN1_003 קינמטיקה של גוף קשיח.md",
+    "Technion/DYN1/DYN1_HW005/DYN1_HW005 תרגיל בית 5 2024-07-13 18.03.31.excalidraw.svg",
+    "Technion/DYN1/DYN1_HW005/DYN1_HW005 תרגיל בית 5 2024-07-13 17.54.08.excalidraw.svg",
+    "Technion/DYN1/DYN1_004 קינמטיקה של מערכת גופים קשיחים.md",
+    "Technion/DYN1/DYN1_001  קינמטיקה של חלקיק - מבוא.md",
+    "Technion/DYN1/DYN1_000 034010 דינמיקה.md",
     "Technion/DYN1/DYN1_HW004 תרגיל בית 4.md",
-    "Technion/DYN1/DYN1_HW003 תרגיל בית 3.md",
+    "Technion/DYN1/DYN1_HW005/Pasted image 20240713110916.png",
+    "Technion/DYN1/DYN1_HW005",
     "Technion/DYN1/DYN1_006 קינטיקה של מערכת חלקיקים.md",
-    "Technion/PHY2/PHY2_HW006/PHY2_HW006 גיליון בית 6 2024-07-11 19.08.51.excalidraw.md",
-    "Technion/PHY2/PHY2_HW006/PHY2_HW006 גיליון בית 6 2024-07-11 18.06.44.excalidraw.md",
+    "Technion/FLD1/FLD1_007/Pasted image 20240713102452.png",
+    "Technion/FLD1/FLD1_006 צמיגות.md",
+    "Technion/FLD1/FLD1_007 תכונות משוואות סטוקס ומשוואות ריינולדס.md",
+    "Technion/FLD1/FLD1_006/Pasted image 20240713100351.png",
+    "Technion/FLD1/Pasted image 20240713100328.png",
+    "Technion/FLD1/FLD1_000 034055 תורת הזרימה 1מ.md",
+    "Technion/LSY1/LSY1_001 Introduction.md",
+    "Technion/LSY1/LSY1_000 034032 Linear Systems E.md",
+    "Technion/DYN1/DYN1_005 קינטיקה של חלקיק.md",
+    "Technion/DYN1/DYN1_002 קינמטיקה של חלקיק - מערכת צירים סובבת.md",
+    "Technion/SLD2/SLD2_001 טנזור המאמץ.md",
+    "Technion/SLD2/SLD2_000 034053 מכניקת מוצקים 2מ.md",
+    "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
+    "Technion/SLD2/SLD2_005 קשרי מאמץ עיבור.md",
+    "Technion/SLD2/SLD2_004 טנזור העיבור.md",
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים.md",
+    "Technion/SLD2/SLD2_002 מישורים ראשיים.md",
+    "Technion/FLD1/FLD1_004 משוואות נאוויה-סטוקס.md",
+    "Technion/FLD1/FLD1_003 חוקי שימור אינטגרליים.md",
     "Technion/PHY2/PHY2_HW006",
-    "Technion/PHY2/PHY2_003 אלקטרוסטטיקה - מוליכים, אנרגיה אלקטרוסטטית, קבלים.md",
-    "Technion/PHY2/PHY2_000 114052 פיזיקה 2.md",
-    "Technion/DYN1/DYN1_005/DYN1_005 קינטיקה של חלקיק 2024-07-11 17.12.44.excalidraw.md",
     "Technion/LSY1/LSY1_006",
     "Technion/PHY2/PHY2_004",
     "Technion/FLD1/FLD1_007",
@@ -203,7 +203,6 @@
     "Technion/FLD1/FLD1_006",
     "Technion/DYN1/DYN1_005",
     "Technion/MNF1/MNF1_002/MNF1_CA1 Casting Processes.canvas",
-    "Technion/DYN1/DYN1_HW004",
     "Technion/LSY1/Untitled.canvas"
   ]
 }

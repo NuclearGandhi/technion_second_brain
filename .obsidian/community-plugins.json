@@ -8,5 +8,6 @@
   "better-export-pdf",
   "hot-reload",
   "obsidian-latex-environments",
-  "latex-ocr"
+  "latex-ocr",
+  "obsidian-zotero-desktop-connector"
 ]

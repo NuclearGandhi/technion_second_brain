@@ -54,16 +54,16 @@ The **region of attraction** of an asymptotically stable equilibrium is the set 
 
 ## Lyapunov’s indirect method
 
+
+
 >[!theorem] Theorem: 
 > Let $\dot{\mathbf{x}}=\mathbf{f}(\mathbf{x})$ for a continuously differentiable $\mathbf{f}:\mathbb{R}^{n}\to \mathbb{R}^{n}$, $\mathbf{x}_{\text{eq}}\in \mathbb{R}^{n}$ be its equilibrium, and $\mathbf{A}=\dfrac{ \partial \mathbf{f}(\mathbf{x}) }{ \partial \mathbf{x} }$ be the corresponding [[../CAL2/CAL2_011 אינטגרל רב מימדי#מטריצת היעקוביאן|Jacobian]] matrix.
 > 
-> - If $\rho(A)\in \mathbb{C} \setminus \bar{\mathbb{C}}_{0}$ (all eigenvalues of $\mathbf{A}$ are in the the open left half-plane), then $\mathbf{x}_{\text{eq}}$ is asymptotically stable.
+> - If $\rho(A)\in \mathbb{C} \setminus \bar{\mathbb{C}}_{0}$ (all eigenvalues of $\mathbf{A}$ are in the the open left half-plane - OLHP), then $\mathbf{x}_{\text{eq}}$ is asymptotically stable.
 > - If $\mathbf{A}$ has at least one eigenvalue in $\mathbb{C}_{0}$, then $\mathbf{x}_{\text{eq}}$ is unstable.
 > 
 > If the rightmost eigenvalue of the Jacobian matrix is on the imaginary axis, then the stability conclusion is ambiguous.
 
->[!TODO] להוסיף לגבי $OLHP$ 
- >
 # Modal decomposition
 A common way to analyze initial conditions for a given linear autonomous system is **modal decomposition**.
 
@@ -71,7 +71,7 @@ Consider the autonomous state equation
 $$\begin{aligned}
 \dot{\mathbf{x}}(t)=\mathbf{A}\mathbf{x}(t) &  & \mathbf{x}(0)=\mathbf{x}_{0}
 \end{aligned}$$
-and assume that $\mathbf{A}$ is diagonalizable with real eigvenvalues. The solution is:
+and assume that $\mathbf{A}$ is diagonalizable with real eigenvalues. The solution is:
 $$\begin{aligned}
 \mathbf{x}(t) & =e^{\mathbf{A}t}{x}_{0} \\[1ex]
  & =\mathbf{T}e^{\boldsymbol{\Lambda}t}\mathbf{T}^{-1}\mathbf{x}_{0}
@@ -229,6 +229,5 @@ $$\begin{aligned}
 ![[LSY1_006/Screenshot_20240711_120635_Samsung Notes.jpg|book|400]]
 >Phase portrait for both initial conditions
 
->[!TODO] לעשות גם שאלה 2
-> 
+
  

@@ -202,7 +202,7 @@ $$\begin{aligned}
  & K_{s}=\pu{3920N.mm^{-2}} &  & d=\pu{5mm} &  & D=\pu{120mm} \\[1ex]
  & f_{t}=\pu{0.18mm.rev^{-1}.tooth^{-1}} &  & V=\pu{145m.min^{-1}}
 \end{aligned}$$
-![[Pasted image 20240712184057.png|book]]
+![[MNF1_004/Pasted image 20240712184057.png|book]]
 >Schematic of the cutting tool and workpiece
 
 
@@ -210,31 +210,76 @@ $$\begin{aligned}
 Find $N$.
 
 **Solution**:
+According to [[#Milling#Key Parameters and Equations|cutting speed]], we get:
+$$V=\pi DN\implies N=\dfrac{V}{\pi D}$$
+Substituting the given parameters:
+$$\begin{gathered}
+N=\pu {0.3846 m.min^{-1}.mm^{-1}} \\[1ex]
+\boxed{N=\pu{385rpm} }
+\end{gathered}$$
 
 ### Part b
 At which point will the force be maximal and at which point minimal?
 
 **Solution**:
+From the schematic, we can see that there will always be only one tooth in the material at any given time:
+![[MNF1_004/MNF1_004 Machining Processes 2024-07-12 21.45.26.excalidraw.svg]]
+>The dimensions of the workpiece and the cutting tool align perfectly
+
+Therefore, it is enough to use the [[#Milling#Cutting Force and Power|cutting force]] (per tooth) formula to calculate the maximum and minimum cutting force:
+$$F_{c}=K_{s}f_{t}d\cos\theta$$
+We get maximum for $\theta=0 ^{\circ}$ and minimum for $\theta=\pm 30^{\circ}$.
 
 ### Part c
 Calculate the minimum and maximum forces.
 
 **Solution**:
+$$\begin{gathered}
+F_{c,\min_{}}=K_{s}f_{t}d\cos(30^{\circ} ) \\[1ex]
+\boxed {
+F_{c,\min_{}}=\pu{3055N}
+ }
+\end{gathered} \qquad  \begin{gathered}
+F_{c,\max_{}}=K_{s}f_{t}d\cos(0^{\circ} ) \\[1ex]
+\boxed {
+F_{c,\max_{}}=\pu {3528N }
+ }
+\end{gathered}$$
+
+### Pard d
+Find the maximum power required.
+
+**Solution**:
+According to [[#Milling#Cutting Force and Power|power of cutting tool]]:
+$$\begin{gathered}
+P_{\max_{}}=F_{c,\max_{}}V \\[1ex]
+P_{\max_{}}=\pu {511560 J.min^{-1}} \\[1ex]
+P_{\max_{}}=\pu{8526W}
+\end{gathered}$$
+
+### Part e
+Find the average power required.
+
+**Solution**:
+To find the average power we can treat the entire tool as a single cutting implement with a width of $w=\pu{60mm}$ progressing through the material at a speed $v$, which is *not* the same as $V$. One is the linear speed at which the cutting tool progresses through the material, and the other is the rotation speed of the cutting tool.
+$$\begin{aligned}
+v & =f_{t}N \\[1ex]
+ & =\pu{69.3 mm.min^{-1}.tooth^{-1}} \\[1ex]
+ & =\pu {415.8 mm.min^{-1}}
+\end{aligned}$$
+
+The average [[#Milling#Cutting Force and Power|cutting force]]:
+$$\begin{aligned}
+F_{c} & =K_{s}wd \\[1ex]
+ & =\pu{117600N}
+\end{aligned}$$
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->[!TODO] להשלים
+Therefore, the average power:
+$$\begin{gathered}
+P=F_{c}v \\[1ex]
+P=\pu{488980800N.mm.min^{-1}} \\[1ex]
+\boxed {
+P=\pu{8149.68W}
+ }
+\end{gathered}$$
