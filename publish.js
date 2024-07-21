@@ -12,6 +12,21 @@ document.getElementsByClassName('site-footer')[0].innerHTML = 'אף אחת מה�
 document.getElementsByClassName('outline-view-outer node-insert-event')[0].firstChild.lastChild.innerHTML = "תוכן עניינים"
 document.getElementsByClassName('nav-view')[0].setAttribute('style', 'visibility: hidden');
 
+//Add to 'nav-vide-outer' div a custom div
+var customDiv = document.createElement('div');
+
+//Add html to the custom div
+customDiv.innerHTML = `
+<div style="
+    font-size: var(--font-ui-medium);
+    margin-left: 24px;
+    margin-right: auto;
+    margin-top: 24px;
+    ">מצאתם טעות בעמוד? תפתחו <a href="https://github.com/NuclearGandhi/technion_second_brain/discussions">discussion</a> (בבקשה).</div>
+    `
+document.getElementsByClassName('nav-view-outer')[0].prepend(customDiv);
+
+
 // -- Auto direction
 function applyAutoDirection() {
     const markdownPreviewSection = document.querySelector('.markdown-preview-section');

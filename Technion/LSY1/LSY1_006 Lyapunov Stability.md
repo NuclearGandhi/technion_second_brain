@@ -1,5 +1,9 @@
 ---
 aliases:
+  - Lyapunov stability
+  - asymptotically stable
+  - Lyapunov’s indirect method
+  - autonomous system
 ---
 # Lyapunov Stability
 
@@ -230,4 +234,5 @@ $$\begin{aligned}
 >Phase portrait for both initial conditions
 
 
- 
+ >[!TODO] לעשות עוד שאלות 
+ >

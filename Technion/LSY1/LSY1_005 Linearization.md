@@ -405,3 +405,47 @@ G(s)=\dfrac{1}{S}\left( s+\dfrac{R^{2}}{2S} \right)^{-1} \\[1ex]
 \boxed{G(s)=\dfrac{1}{S} \dfrac{2S}{2Ss+R^{2}} }
 \end{gathered}$$
 
+## Question 3
+Consider the following magentic lebitation system shown in:
+![[Screenshot_20240720_100525_Samsung Notes.jpg|book|300]]
+>Magnetic levitation system
+
+The current $i$ running through a coil, having resistance $R$ and inductance $L$, creates a magnetic field, which attracts an iron ball of mass $m$. The electromagnetic force applied by the magnetic field to the ball is
+$$F_{m}(t)=\alpha \dfrac{i^{2}(t)}{y^{2}(t)}$$
+where $y$ given the position of the ball, and $\alpha>0$ is constant. The ball is also subject to gravity, and the force of gravity is given by:
+$$F_{g}(t)=mg$$
+The dynamics of the electric RL circuit are:
+$$\dfrac{\mathrm{d}}{\mathrm{d}t}(Li(t))+Ri(t)=v(t)$$
+### Part a
+Rewrite the dynamics in the form
+$$\begin{cases}
+\dot{\mathbf{x}}(t)=f(x(t),u(t)) \\
+y(t)=h(x(t),u(t))
+\end{cases}$$
+with $\mathbf{x}=\begin{pmatrix}y\\\dot{y}\\i\end{pmatrix},\,u=v,\,y=y$.
+
+**Solution**:
+The dynamics of the ball must satisfy Newton's second law:
+$$\begin{aligned}
+m\ddot{y} & =-F_{m}+F_{g} \\[1ex]
+ & =-mg+\alpha \dfrac{i^{2}}{y^{2}}
+\end{aligned}$$
+The dyamics of the RL circuit must also satisfy:
+$$\dfrac{\mathrm{d}}{\mathrm{d}t}(Li)+Ri=v$$
+
+substituting $\mathbf{x}=\begin{pmatrix}y\\\dot{y}\\i\end{pmatrix},\,u=v,\,y=y$:
+$$\begin{aligned}
+ & {\dot{x}}_{1}={x}_{2}  \\[1ex]
+& m\dot{x}_{2}=-mg+ \dfrac{{{x}_{3}}^{2}}{{{x}_{1}}^{2}} \\[1ex]
+ & L\dot{x}_{3}+R{x}_{3}=u
+\end{aligned}$$
+In matrix form:
+$$\begin{pmatrix}
+\dot{x}_{1} \\[1ex]
+\dot{x}_{2} \\[1ex]
+\dot{x}_{3}
+\end{pmatrix}=\begin{pmatrix}
+{x}_{2} \\[1ex]
+-g+({{{x}_{3}}^{2}})/({{m{x}_{1}}^{2}}) \\[1ex]
+{(u-R{x}_{3})}/{L}
+\end{pmatrix}$$

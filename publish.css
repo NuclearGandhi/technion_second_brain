@@ -371,6 +371,10 @@ h5,
 }
 
 /* Navigation bar */
+.nav-view-outer{
+  overflow: unset
+}
+
 .nav-view-outer .tree-item-children .tree-item-children {
   padding-right: 18px;
   padding-left: 0;

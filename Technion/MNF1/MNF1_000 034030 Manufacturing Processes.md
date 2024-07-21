@@ -20,6 +20,7 @@ Assistant:
 - [[MNF1_002 Metal Casting]]
 - [[MNF1_003 Bulk Deformation Processes]]
 - [[MNF1_004 Machining Processes]]
+- [[MNF1_005 Geometric Dimensioning and Tolerancing]]
 
 # Homework
 - [[MNF1_HW001 Homework 1]]
