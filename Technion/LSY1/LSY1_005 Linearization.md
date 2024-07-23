@@ -407,7 +407,7 @@ G(s)=\dfrac{1}{S}\left( s+\dfrac{R^{2}}{2S} \right)^{-1} \\[1ex]
 
 ## Question 3
 Consider the following magentic lebitation system shown in:
-![[Screenshot_20240720_100525_Samsung Notes.jpg|book|300]]
+![[LSY1_005/Screenshot_20240720_100525_Samsung Notes.jpg|book|300]]
 >Magnetic levitation system
 
 The current $i$ running through a coil, having resistance $R$ and inductance $L$, creates a magnetic field, which attracts an iron ball of mass $m$. The electromagnetic force applied by the magnetic field to the ball is
@@ -430,13 +430,13 @@ $$\begin{aligned}
 m\ddot{y} & =-F_{m}+F_{g} \\[1ex]
  & =-mg+\alpha \dfrac{i^{2}}{y^{2}}
 \end{aligned}$$
-The dyamics of the RL circuit must also satisfy:
+The dynamics of the RL circuit must also satisfy:
 $$\dfrac{\mathrm{d}}{\mathrm{d}t}(Li)+Ri=v$$
 
 substituting $\mathbf{x}=\begin{pmatrix}y\\\dot{y}\\i\end{pmatrix},\,u=v,\,y=y$:
 $$\begin{aligned}
  & {\dot{x}}_{1}={x}_{2}  \\[1ex]
-& m\dot{x}_{2}=-mg+ \dfrac{{{x}_{3}}^{2}}{{{x}_{1}}^{2}} \\[1ex]
+& m\dot{x}_{2}=-mg+ \alpha\dfrac{{{x}_{3}}^{2}}{{{x}_{1}}^{2}} \\[1ex]
  & L\dot{x}_{3}+R{x}_{3}=u
 \end{aligned}$$
 In matrix form:
@@ -446,6 +446,92 @@ $$\begin{pmatrix}
 \dot{x}_{3}
 \end{pmatrix}=\begin{pmatrix}
 {x}_{2} \\[1ex]
--g+({{{x}_{3}}^{2}})/({{m{x}_{1}}^{2}}) \\[1ex]
+-g+(\alpha{{{x}_{3}}^{2}})/({{m{x}_{1}}^{2}}) \\[1ex]
 {(u-R{x}_{3})}/{L}
 \end{pmatrix}$$
+
+Therefore:
+$$\boxed {
+\begin{aligned}
+ & \dot{\mathbf{x}}(t)=\begin{pmatrix}
+{x}_{2} \\[1ex]
+-g+(\alpha{{{x}_{3}}^{2}})/({{m{x}_{1}}^{2}}) \\[1ex]
+{(u-R{x}_{3})}/{L}
+\end{pmatrix} \\[1ex]
+ & y(t)={x}_{1}(t)
+\end{aligned}
+ }$$
+
+
+### Part b
+Find the equilibrium points of the system.
+
+**Solution**:
+The equilibrium points are given by $f(\mathbf{x}_{\text{eq}},\,u_{\text{eq}})=0$. In our case:
+$$\begin{aligned}
+ & \mathrm{I}: &  & 0={x}_{2} \\[1ex]
+ & \mathrm{II}: &  & 0=-g+ \dfrac{\alpha}{m}\left( \dfrac{{x}_{3}}{{x}_{1}} \right)^{2}\\[1ex]
+ & \mathrm{III}: &  & 0=u-\dfrac{R{x}_{3}}{L}
+\end{aligned}$$
+from $\mathrm{II}$:
+$${x}_{3}=\sqrt{ \dfrac{mg}{\alpha}}{x}_{1}$$
+from $\mathrm{III}$:
+$$\begin{gathered}
+0=u-\dfrac{R}{L}{x}_{3}\implies u=\dfrac{R}{L}\sqrt{ \dfrac{mg}{\alpha} }{x}_{1}
+\end{gathered}$$
+We also note that ${x}_{1}$ represents the position $y$. For the system to be in equilibrium, the position $y$ must be at some constant value ${y}_{0}$, where the gravitational force is balanced by the electromagnetic force.
+
+Substituting $x_1=y_0$, we get:
+$$\boxed {
+(\mathbf{x}_{\text{eq}},\, u_{\text{eq}})=\left( {}\begin{pmatrix}
+{y}_{0} \\
+0 \\
+{y}_{0}\sqrt{ mg/\alpha }
+\end{pmatrix},R{y}_{0}\sqrt{ mg/\alpha } \right)
+ }$$
+
+
+### Part c
+Linearize the system around the equilibrium points.
+
+**Solution**:
+
+Derivatives:
+$$\begin{aligned}
+ & \mathbf{A}=\dfrac{ \partial \mathbf{f} }{ \partial \mathbf{x} }=\begin{pmatrix}
+0 & 1 & 0 \\
+(-2\alpha {{x}_{3}}^{2})/(m{x}_{1}^{3}) & 0 & (2\alpha {x}_{3})/(m{x}_{1})^{2} \\
+0 & 0 & -R/L
+\end{pmatrix}  \\[1ex]
+ & \mathbf{B}=\dfrac{ \partial \mathbf{f} }{ \partial u } =\begin{pmatrix}
+0 \\
+0 \\
+1/L
+\end{pmatrix} \\[1ex]
+ & \mathbf{C}=\dfrac{ \partial h }{ \partial \mathbf{x} }=\begin{pmatrix}
+1 & 0 & 0
+\end{pmatrix} \\[1ex]
+ & D=\dfrac{ \partial h }{ \partial u } =0 
+\end{aligned}$$
+
+Substituting the equilibrium point, and
+$$\begin{aligned}
+\delta \mathbf{x}=\mathbf{x}-\mathbf{x}_{\text{eq}} &  & \delta u=u-u_{\text{eq}}
+\end{aligned}$$
+we get:
+$$\boxed {
+\begin{aligned}
+ & \dot{(\delta \mathbf{x})}=\begin{pmatrix}
+0 & 1 & 0 \\
+2g/{y}_{0} & 0 & -(2/{y}_{0})\sqrt{ g\alpha /m } \\
+0 & 0 & -\dfrac{R}{L}
+\end{pmatrix}\delta \mathbf{x}(t)+\begin{pmatrix}
+0 \\
+0 \\
+1/L
+\end{pmatrix}\delta u(t) \\[1ex]
+ & \delta y(t)=\begin{pmatrix}
+1 & 0 & 0
+\end{pmatrix}\delta \mathbf{x}(t)
+\end{aligned}
+ }$$

@@ -4,6 +4,8 @@ aliases:
   - impulse response
   - matrix exponential
   - transfer function
+  - physical realization
+  - canonical realization
 ---
 
 # Impulse Response

@@ -1,5 +1,12 @@
 ---
 aliases:
+  - Laplace transform
+  - region of convergence
+  - ROC
+  - Laplace transform table
+  - partial fraction expansion
+  - final value theorem
+  - initial value therorem
 ---
 # Introduction
 From [[LSY1_000 034032 Linear Systems E#Bibliography|(Lathi & Green, 2018)]]:
@@ -78,15 +85,13 @@ $$\begin{aligned}
 > [!NOTEs] Note:
 > The region $\mathbb{C}_{\alpha}$ means $\{ s=a+jb \in \mathbb{C} \mid a>\alpha \}$.
 
-| property        | time domain                       | $s$-domain                                 | ROC                                                |
-| --------------- | --------------------------------- | ------------------------------------------ | -------------------------------------------------- |
-| linearity       | $x={a}_{1}{x}_{1}+{a}_{2}{x}_{2}$ | $X(s)={a}_{1}{X}_{1}(s)+{a}_{2}{X}_{2}(s)$ | $\mathbb{C}_{\alpha 1} \cap \mathbb{C}_{\alpha 2}$ |
-| time shift      | $y(t)=x(\tau+s)$                  | $Y(s)=e^{\tau s}X(s)$                      | $\mathbb{C}_{\alpha }$                             |
-| time scaling    |                                   |                                            |                                                    |
-| modulation      |                                   |                                            |                                                    |
-| $t$-modulation  |                                   |                                            |                                                    |
-| differentiation | $y=\dot{x}$                       | $Y(s)=sX(s)$                               | $\mathbb{C}_{\alpha}$                              |
-| convolution     |                                   |                                            |                                                    |
+| property        | time domain                       | $s$-domain                                 | ROC                                                   |
+| --------------- | --------------------------------- | ------------------------------------------ | ----------------------------------------------------- |
+| linearity       | $x={a}_{1}{x}_{1}+{a}_{2}{x}_{2}$ | $X(s)={a}_{1}{X}_{1}(s)+{a}_{2}{X}_{2}(s)$ | $\mathbb{C}_{\alpha 1} \cap \mathbb{C}_{\alpha 2}$    |
+| time shift      | $y(t)=x(\tau+s)$                  | $Y(s)=e^{\tau s}X(s)$                      | $\mathbb{C}_{\alpha }$                                |
+| time scaling    | $y(t)=x(at)$                      | $Y(s)=(1/a)X(s/a)$                         | $\mathbb{C}_{a\alpha}$                                |
+| differentiation | $y=\dot{x}$                       | $Y(s)=sX(s)$                               | $\mathbb{C}_{\alpha}$                                 |
+| convolution     | $z=x*y$                           | $Z(s)=X(s)Y(s)$                            | $\mathbb{C}_{\alpha_{x}}\cap \mathbb{C}_{\alpha_{y}}$ |
 
 ## Laplace Transform Table
 - [[../DEQ1/DEQ1_009 טרנספורמציית לפלס#טבלת טרנספורמציית לפלס|Laplace transform table]]
@@ -111,8 +116,8 @@ Given a ration proper $(n\geq m)$ function $F$,
 $$F(s)=\dfrac{b_{m}s^{m}+b_{m-1}s^{m-1}+\dots +{b}_{1}s+{b}_{0}}{s^{n}+a_{n-1}s^{n-1}+\dots +{a}_{1}s+{a}_{0}}:=\dfrac{N(s)}{D(s)}$$
 we can rewrite the function as
 $$F(s)=F(\infty )+\sum_{i=1}^{k}\sum_{j=1}^{n_{i}} \dfrac{c_{ij}}{(s-p_{i})^{j}}  $$
-where $p_{i}$ is the $i$th distict pole of $F$ (the $ith$ root of $D(s)$) of oeder $n_{i}$. For a simple pole (a pole $p_{i}$ with order $n_{i}=1$) we can calculate $c_{i 1}$ as:
-$$c_{i 1}=\lim_{ s \to p_{i}}F(s)$$
+where $p_{i}$ is the $i$th distinct pole of $F$ (the $ith$ root of $D(s)$) of order $n_{i}$. For a simple pole (a pole $p_{i}$ with order $n_{i}=1$) we can calculate $c_{i 1}$ as:
+$$c_{i 1}=\lim_{ s \to p_{i}}(s-p_{i})F(s)$$
 For higher order poles we need to do a few tricks like using coefficient comparison.
 # Final and Initial Values Theorems
 
@@ -192,9 +197,6 @@ Y(s)=\dfrac{(e^{s/2}-e^{-s/2})^{2}}{s}
 
 ## Question 2
 
->[!TODO] להשלים 
-
-
 Consider the following mass-spring-damper system in the following figure:
 
 ![[LSY1_007/Pasted image 20240718094741.png|book|400]]
@@ -214,7 +216,35 @@ $$m\ddot{x}(t)+c\dot{x}(t)+kx(t)=F(t)$$
 Find the solution to the problem, i.e. the position of the mass in time, for the given input force $F=\mathbb{1}$.
 
 **Solution**:
+First, we apply the Laplace transform to the ODE, using the [[#Basic Properties|differentiation property]] and [[#Laplace Transform Table|table]]:
+$$\begin{gathered}
+ms^{2}X(s)+csX(s)+kX(s)=\mathcal{L}(\mathbb{1}(t)) \\[1ex]
+(ms^{2}+cs+k)X(s)=\dfrac{1}{s} \\[1ex]
+X(s)=\dfrac{1}{s(ms^{2}+cs+k)}
+\end{gathered}$$\
+substituting the parameter values:
+$$\begin{aligned}
+X(s) & =\dfrac{1}{s(s^{2}+5s+6)} \\[1ex]
+ & =\dfrac{1}{s(s+2)(s+3)}
+\end{aligned}$$
+We want to separate this fraction to elements we can apply the inverse Laplace transform to. we can do so using [[LSY1_007 Frequency Domain Analysis#Partial Fraction Expansion|partial fraction expansion]]:
 
+$$X(s)=\sum _{i=1}^{3} \dfrac{c_{i}}{s-p_{i}}$$
+where $c_{i}=\lim_{ s \to p_{i}}(s-p_{i})X(s)$, and the poles are $p_{1}=0,\,{p}_{2}=-2,\,{p}_{3}=-3$.
+We get:
+$$\begin{aligned}
+ & c_{1}=\lim_{ s \to 0}X(s)=\lim_{ s \to 0} \dfrac{s}{s(s+2)(s+3)}=\dfrac{1}{6} \\[1ex]
+ & {c}_{2}=\lim_{ s \to -2}X(s)=\dfrac{s+2}{s(s+2)(s+3)}=-\dfrac{1}{2} \\[1ex]
+ & {c}_{3}=\lim_{ s \to -3}X(s)=\dfrac{s+3}{s(s+2)(s+3)}=\dfrac{1}{3}
+\end{aligned}$$
+Therefore:
+$$X(s)=\dfrac{1}{6s}-\dfrac{1}{2(s+2)}+\dfrac{1}{3(s+3)}$$
+Again, using the [[LSY1_007 Frequency Domain Analysis#Laplace Transform Table|Laplace transform table]] in the inverse direction, we get:
+$$\boxed {
+x(t)=\dfrac{1}{6}\mathbb{1}(t)-\dfrac{1}{2}e^{-2t}\mathbb{1}(t)+\dfrac{1}{3}e^{-3t}\mathbb{1}(t)
+ }$$
+![[Pasted image 20240723143354.png|book|400]]
+>The system response
 
 
 ### Part b
@@ -222,3 +252,12 @@ Find the solution to the problem, i.e. the position of the mass in time, for the
 What is the position of the mass after infinite time?
 
 **Solution**:
+Using the [[LSY1_007 Frequency Domain Analysis#Final and Initial Values Theorems|final value theorem]], we can find that:
+$$\begin{aligned}
+\lim_{ t \to \infty}x(t) & =\lim_{ s \to 0} sX(s) \\[1ex]
+ & =\lim_{ s \to 0} s\dfrac{1}{s(s+2)(s+3)} \\[1ex]
+ & =\lim_{ s \to 0} \dfrac{1}{(s+2)(s+3)} \\[1ex]
+ & =\dfrac{1}{6}
+\end{aligned}$$
+Therefore:
+$$\boxed{\lim_{ t \to \infty}x(t)=\dfrac{1}{6} }$$
