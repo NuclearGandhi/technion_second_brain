@@ -414,12 +414,15 @@ g(t)=D\delta(t)+\mathbf{C}e^{\mathbf{A}t}\mathbf{B}\mathbb{1}(t)
 > 	and is called *critical damping* - the boundary between overdamping and underdamping.
 > 	![](https://www.youtube.com/watch?v=99ZE2RGwqSM)
 
-# Transfer Function to State Space
+# Transfer Function
 
-## Physical realization
+A **transfer function** is a function that models the system's output for each possible input.
+## Transfer Function to State Space
+
+### Physical realization
 Given a system with following **transfer function**:
 $$\mathbf{y}^{(n)}+a_{n-1}\mathbf{y}^{(n-1)}+\dots +a_{2}\ddot{\mathbf{y}}+{a}_{1}\dot{\mathbf{y}}+{a}_{0}\mathbf{y}=b\mathbf{u}$$
-then its posiible state-space realization is:
+then its possible state-space realization is:
 $$\left( \begin{array}{c|c}
 A & B \\
 \hline C & D
@@ -431,7 +434,7 @@ A & B \\
 \hline1 & 0 & \dots  & 0 & 0
 \end{array} \right)$$
 
-## Canocial Realization
+### Canonical Realization
 
 For the following ODE:
 $$\mathbf{y}^{(n)}+a_{n-1}\mathbf{y}^{(n-1)}+\dots +a_{2}\ddot{\mathbf{y}}+{a}_{1}\dot{\mathbf{y}}+{a}_{0}\mathbf{y}=b_{n-1}\mathbf{u}^{(n-1)}+\dots +{b}_{2}\ddot{\mathbf{u}}+{b}_{1}\dot{\mathbf{u}}+{b}_{0}\mathbf{u}$$
@@ -461,7 +464,7 @@ A & B \\
 
 If on the right side of the equation there is an $n$ derivative of $u$, that is there is a term $b_{n}u^{(n-1)}$ where $b_{n}\neq 0$, we can write the same canonical realization as for the system with $b_{n}=0$, and simple change $D=b_{n}$.
 
-# State Space to Transfer Function
+## State Space to Transfer Function
 Going from a state-space representation to a transfer function representation is very simple:
 $$\boxed {
 \mathbf{G}(s)=\mathbf{C}(s\mathbf{I}-\mathbf{A})^{-1}\mathbf{B}+D

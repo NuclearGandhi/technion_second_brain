@@ -116,7 +116,7 @@ Given a ration proper $(n\geq m)$ function $F$,
 $$F(s)=\dfrac{b_{m}s^{m}+b_{m-1}s^{m-1}+\dots +{b}_{1}s+{b}_{0}}{s^{n}+a_{n-1}s^{n-1}+\dots +{a}_{1}s+{a}_{0}}:=\dfrac{N(s)}{D(s)}$$
 we can rewrite the function as
 $$F(s)=F(\infty )+\sum_{i=1}^{k}\sum_{j=1}^{n_{i}} \dfrac{c_{ij}}{(s-p_{i})^{j}}  $$
-where $p_{i}$ is the $i$th distinct pole of $F$ (the $ith$ root of $D(s)$) of order $n_{i}$. For a simple pole (a pole $p_{i}$ with order $n_{i}=1$) we can calculate $c_{i 1}$ as:
+where $p_{i}$ is the $i$th distinct **pole** of $F$ (the $ith$ root of $D(s)$) of order $n_{i}$. For a simple pole (a pole $p_{i}$ with order $n_{i}=1$) we can calculate $c_{i 1}$ as:
 $$c_{i 1}=\lim_{ s \to p_{i}}(s-p_{i})F(s)$$
 For higher order poles we need to do a few tricks like using coefficient comparison.
 # Final and Initial Values Theorems
@@ -130,12 +130,35 @@ For higher order poles we need to do a few tricks like using coefficient compari
 > 	$$\lim_{ t \to \infty}x(t)=\lim_{ s \to 0}sX(s)$$
 > 	assuming $x$ is converging.
 
+# From Laplace to Transfer Function
+If $G:u\to y$ is LTI, then
+$$y=g*u$$
+where $g=G\delta$ is the [[LSY1_004 Linear State-Space Equation#Impulse Response|impulse response]] of $G$, i.e. its response to $\delta$ applied at $t=0$. By the [[#Basic Properties|convolution]] property of the Laplace transform:
+$$Y(s)=G(s)U(s)$$
+In other words, [[LSY1_003 Classification of Systems#Instanteneous and Dynamic Systems|dynamic]] LTI systems in the Laplace act as the multiplication of the transformed impulse response and input.
+
+>[!def] Definition: 
+> The function
+> $$G(s)=(\mathcal{L}\{ g \})(s)$$
+> is called the **transfer function** of $G$. Transfer function may also be viewed as the ratio of the Laplace transforms of the output and input signals:
+> $$G(s)=\dfrac{Y(s)}{U(s)}$$
+
+In some important cases (systems described by ODEs) transfer function are of the form of a quotient of two polynomials, like
+$$G(s)=\dfrac{Y(s)}{U(s)}=\dfrac{b_{m}s^{m}+b_{m-1}s^{m-1}+\dots +{b}_{1}s+{b}_{0}}{s^{n}+a_{n-1}s^{n-1}+\dots +{a}_{1}s+{a}_{0}}$$
+
+for some $n,m \in \mathbb{Z}_{+}$, and the real coefficients $a_{i}$ and $b_{i}$. Such transfer function are said to be **rational**. Their **poles** are the roots of the denominator polynomial. The roots of the numerator are called **zeros** of $G(s)$.
+
+The system is said to be
+- **proper** if $n\geq m$,
+- **strictly proper** if $n>m$,
+- **bi-proper** if $n=m$,
+- **non-proper** if $n<m$.
 
 # Exercises
 
 ## Question 1
 Consider the signal $y$ shown in the following figure:
-![[LSY1_007/Pasted image 20240718094426.png]]
+![[LSY1_007/Pasted image 20240718094426.png|book]]
 >signal $y(t)$
 
 defined as
@@ -227,7 +250,7 @@ $$\begin{aligned}
 X(s) & =\dfrac{1}{s(s^{2}+5s+6)} \\[1ex]
  & =\dfrac{1}{s(s+2)(s+3)}
 \end{aligned}$$
-We want to separate this fraction to elements we can apply the inverse Laplace transform to. we can do so using [[LSY1_007 Frequency Domain Analysis#Partial Fraction Expansion|partial fraction expansion]]:
+We want to separate this fraction to elements we can apply the inverse Laplace transform to. we can do so using [[LSY1_007 Laplace Transform#Partial Fraction Expansion|partial fraction expansion]]:
 
 $$X(s)=\sum _{i=1}^{3} \dfrac{c_{i}}{s-p_{i}}$$
 where $c_{i}=\lim_{ s \to p_{i}}(s-p_{i})X(s)$, and the poles are $p_{1}=0,\,{p}_{2}=-2,\,{p}_{3}=-3$.
@@ -239,20 +262,19 @@ $$\begin{aligned}
 \end{aligned}$$
 Therefore:
 $$X(s)=\dfrac{1}{6s}-\dfrac{1}{2(s+2)}+\dfrac{1}{3(s+3)}$$
-Again, using the [[LSY1_007 Frequency Domain Analysis#Laplace Transform Table|Laplace transform table]] in the inverse direction, we get:
+Again, using the [[LSY1_007 Laplace Transform#Laplace Transform Table|Laplace transform table]] in the inverse direction, we get:
 $$\boxed {
 x(t)=\dfrac{1}{6}\mathbb{1}(t)-\dfrac{1}{2}e^{-2t}\mathbb{1}(t)+\dfrac{1}{3}e^{-3t}\mathbb{1}(t)
  }$$
-![[Pasted image 20240723143354.png|book|400]]
+![[LSY1_007/Pasted image 20240723143354.png|book|400]]
 >The system response
-
 
 ### Part b
 
 What is the position of the mass after infinite time?
 
 **Solution**:
-Using the [[LSY1_007 Frequency Domain Analysis#Final and Initial Values Theorems|final value theorem]], we can find that:
+Using the [[LSY1_007 Laplace Transform#Final and Initial Values Theorems|final value theorem]], we can find that:
 $$\begin{aligned}
 \lim_{ t \to \infty}x(t) & =\lim_{ s \to 0} sX(s) \\[1ex]
  & =\lim_{ s \to 0} s\dfrac{1}{s(s+2)(s+3)} \\[1ex]
@@ -261,3 +283,100 @@ $$\begin{aligned}
 \end{aligned}$$
 Therefore:
 $$\boxed{\lim_{ t \to \infty}x(t)=\dfrac{1}{6} }$$
+
+## Question 3
+Consider the system $G_{RLC}: v_{\text{in}}\to i_{R}$ shown in the following figure:
+![[LSY1_007/Pasted image 20240725155953.png|book|450]]
+>RLC circuit
+
+In other words, the input is the applied voltage $v_{\text{in}}$ and the output is the resistor's current $i_{R}$. Here $R=1,\,L= 1$, and $C=\dfrac{1}{8}$ are constants, referred to as the resistance, inductance, and capacitance, respectively.
+
+### Part a
+Write the transfer function $G_{RLC}(s)$ of the system.
+
+**Solution**:
+By [[../PHY2/PHY2_004 מעגלים חשמליים#חוקי קירכהוף|Kirchhoff's voltage law]],
+$$v_{\text{in}}(t)=v_{R}(t)+v_{L}(t)=v_{R}(t)+v_{C}(t)$$
+It is known that
+$$\begin{aligned}
+v_{R}(t)=Ri_{R}(t) &  & v_{L}(t)=L \dfrac{\mathrm{d}i_{L}(t)}{\mathrm{d}t} &  & v_{C}(t)=\dfrac{1}{C}\int_{-\infty }^{t} i_{C}(s) \, \mathrm{d}s 
+\end{aligned}$$
+Hence,
+$$\begin{aligned}
+ & v_{\text{in}}(t)=v_{R}(t)+v_{L}(t)  & & \implies v_{\text{in}}(t)=Ri_{R}(t)+L \dfrac{\mathrm{d}i_{L}}{\mathrm{d}t}(t) \\[1ex]
+ & v_{\text{in}}=v_{R}(t)+v_{C}(t) &  & \implies \dot{v}_{\text{in}}(t)=R \dfrac{\mathrm{d}i_{R}(t)}{\mathrm{d}t}+\dfrac{1}{C}i_{C}(t)
+\end{aligned}$$
+Applying Laplace to both equations:
+$$\begin{aligned}
+ & V_{\text{in}}(t)=RI_{R}(s)+sLI_{L}(s) &  & \implies I_{L}(s)=\dfrac{V_{\text{in}}(t)-RI_{R}(s)}{Ls} \\[1ex]
+ & sV_{\text{in}}(t)=RsI_{R}(t)+\dfrac{1}{C}I_{C}(s) &  & \implies I_{C}(s)=Cs(V_{\text{in}}(s)-RI_{R}(s))
+\end{aligned}$$
+By Kirchhoff's current law:
+$$\begin{aligned}
+I_{R}(s) & =I_{L}(s)+I_{C}(s) \\[1ex]
+ & =\dfrac{V_{\text{in}}(t)-RI_{R}(s)}{Ls}+Cs(V_{\text{in}}(s)-RI_{R}(s))
+\end{aligned}$$
+from which:
+$$RLCs^{2}I_{R}(s)+LsI_{R}(s)+RI_{R}(s)=LCs^{2}V(s)+V(s)$$
+Hence, the transfer function is:
+$$\begin{aligned}
+G_{RLC}(s) & = \dfrac{I_{R}(s)}{V(s)} \\[1ex]
+ & = \dfrac{LCs^{2}+1}{RLCs^{2}+Ls+R}
+\end{aligned}$$
+Substituting parameters, we get:
+$$\boxed {
+\begin{aligned}
+G_{RLC}(s) =\dfrac{s^{2}+8}{s^{2}+8s+8}
+\end{aligned}
+ }$$
+
+### Part b
+Determine if the system is proper, strictly proper, bi-proper, or non-proper.
+
+**Solution**:
+In our case, $n=m$, which is why the system is [[#From Laplace to Transfer Function|bi-proper]].
+
+
+### Part c
+Find the zeros and poles of $G_{RLC}(s)$ and associate them with parts of the complex plane $\mathbb{C}$.
+
+**Solution**:
+- The zeros:
+	$$\boxed {
+z=\pm \sqrt{ 8 }j
+ }$$
+- The poles:
+	$$\boxed {
+p=-4\pm \sqrt{ 8}
+ }$$
+
+![[LSY1_007/Screenshot_20240725_202406_Obsidian.jpg|book|400]]
+>Pole-zero map. Circles mark zeros, while crosses mark poles.
+
+### Part d
+What is the system's steady-state value for step input $v_{\text{in}}=5\cdot\mathbb{1}(t)$?
+
+**Solution**:
+By the [[#Final and Initial Values Theorems|final value theorem]]:
+$$\begin{aligned}
+y_{ss} & =\lim_{ t \to \infty} y(t)\\[1ex]
+ & =\lim_{ s \to 0}sY(s) \\[1ex]
+ & =\lim_{ s \to 0}sG(s)U(s) 
+\end{aligned}$$
+In our case:
+$$\begin{aligned}
+U(s) & =\mathcal{L}\{ u(t) \}  \\[2ex]
+ & =\mathcal{L}\{ 5\cdot \mathbb{1}(t) \} \\[1ex]
+ & =\dfrac{5}{s}
+\end{aligned}$$
+Substituting back:
+$$\begin{aligned}
+y_{ss} & =sG(s) \dfrac{5}{s} \\[1ex]
+ & =\lim_{ s \to 0}5G(s) \\[1ex]
+ & =\lim_{ s \to 0} 5\dfrac{s^{2}+8}{s^{2}+8s+8} \\[1ex]
+ & =5\cdot \dfrac{8}{8}
+\end{aligned}$$
+we get:
+$$\boxed {
+y_{ss}=5
+ }$$

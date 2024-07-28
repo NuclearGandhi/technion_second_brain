@@ -4,37 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "8bf213262d24db3b",
+        "id": "b14cce833c779fd1",
         "type": "tabs",
         "children": [
           {
-            "id": "e02b142c6da60660",
+            "id": "50a2a1521c04cf70",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/MNF1/MNF1_005 Geometric Dimensioning and Tolerancing.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b0a5930463dd4445",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Technion/FLD1/FLD1_HW003 תרגיל בית 3.md",
+                "file": "Technion/FLD1/FLD1_HW004 תרגיל בית 4.md",
                 "mode": "preview",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -63,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "TODO",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -96,29 +82,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "372e9de5688ecc65",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "Technion/LSY1/LSY1_001 Introduction.md",
-                "collapseAll": true,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
             "id": "a53a42a2f5afaec6",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/FLD1/FLD1_HW003 תרגיל בית 3.md",
+                "file": "Technion/FLD1/FLD1_HW004 תרגיל בית 4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,12 +110,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/FLD1/FLD1_HW003 תרגיל בית 3.md"
+                "file": "Technion/FLD1/FLD1_HW004 תרגיל בית 4.md"
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -169,53 +138,53 @@
       "latex-ocr:LatexOCR": false
     }
   },
-  "active": "b0a5930463dd4445",
+  "active": "50a2a1521c04cf70",
   "lastOpenFiles": [
-    "Technion/MNF1/MNF1_005 Geometric Dimensioning and Tolerancing.md",
-    "Technion/LSY1/LSY1_007 Frequency Domain Analysis.md",
-    "Technion/FLD1/FLD1_HW003 תרגיל בית 3.md",
-    "Technion/LSY1/Pasted image 20240723143354.png",
-    "Technion/LSY1/Pasted image 20240723143340.png",
-    "Technion/LSY1/LSY1_006/Pasted image 20240723131236.png",
-    "Technion/LSY1/LSY1_006 Lyapunov Stability.md",
-    "Technion/LSY1/LSY1_006/Pasted image 20240723131352.png",
-    "Technion/LSY1/LSY1_006/Pasted image 20240723131255.png",
+    "Technion/FLD1/FLD1_HW004 תרגיל בית 4.md",
+    "Technion/LSY1/LSY1_007/Screenshot_20240725_202406_Obsidian.jpg",
+    "Technion/FLD1/FLD1_HW004/Screenshot_20240727_154413_Obsidian.jpg",
+    "Technion/FLD1/FLD1_HW004",
+    "Technion/LSY1/LSY1_007/Pasted image 20240725155953.png",
+    "Technion/DYN1/DYN1_006/Pasted image 20240728105728.png",
+    "Technion/DYN1/DYN1_006/Pasted image 20240728110042.png",
+    "Technion/DYN1/DYN1_006 קינטיקה של מערכת חלקיקים.md",
+    "Technion/PHY2/PHY2_HW009/PHY2_HW009 גיליון בית 9 2024-07-27 14.52.46.excalidraw.svg",
+    "Technion/PHY2/PHY2_HW009/PHY2_HW009 גיליון בית 9 2024-07-27 14.52.46.excalidraw.md",
+    "Technion/DYN1/DYN1_HW007 תרגיל בית 7.md",
+    "Technion/PHY2/PHY2_HW009/Pasted image 20240727111641.png",
+    "Technion/PHY2/PHY2_HW009/Pasted image 20240727110150.png",
+    "Technion/PHY2/PHY2_005/PHY2_005 מגנטיות 2024-07-27 10.33.00.excalidraw.svg",
+    "Technion/LSY1/LSY1_007 Laplace Transform.md",
+    "Technion/PHY2/PHY2_005/PHY2_005 מגנטיות 2024-07-27 10.26.42.excalidraw.svg",
+    "Technion/PHY2/PHY2_005/PHY2_005 מגנטיות 2024-07-27 10.33.00.excalidraw.md",
+    "Technion/PHY2/PHY2_005/PHY2_005 מגנטיות 2024-07-27 10.26.42.excalidraw.md",
+    "Technion/PHY2/PHY2_HW009/PHY2_HW009 גיליון בית 9 2024-07-26 18.07.57.excalidraw.md",
+    "Technion/PHY2/PHY2_005/PHY2_005 מגנטיות 2024-07-26 22.00.12.excalidraw.md",
+    "Technion/PHY2/PHY2_005/PHY2_005 מגנטיות 2024-07-26 21.57.35.excalidraw.md",
+    "Technion/PHY2/PHY2_005/PHY2_005 מגנטיות 2024-07-26 21.49.39.excalidraw.md",
+    "Technion/PHY2/PHY2_HW009",
+    "Technion/DYN1/DYN1_HW007/DYN1_HW007 תרגיל בית 7 2024-07-26 10.41.50.excalidraw.md",
+    "Technion/DYN1/DYN1_HW007/DYN1_HW007 תרגיל בית 7 2024-07-26 10.41.44.excalidraw.md",
+    "Technion/DYN1/DYN1_HW007/DYN1_HW007 תרגיל בית 7 2024-07-26 10.08.54.excalidraw.md",
+    "Technion/PHY2/PHY2_005/PHY2_005 מגנטיות 2024-07-26 15.49.03.excalidraw.md",
+    "Technion/PHY2/PHY2_005/PHY2_005 מגנטיות 2024-07-26 15.02.16.excalidraw.md",
+    "Technion/PHY2/PHY2_005/PHY2_005 מגנטיות 2024-07-26 14.30.17.excalidraw.md",
+    "Technion/PHY2/PHY2_005/PHY2_005 מגנטיות 2024-07-26 14.04.08.excalidraw.md",
+    "Technion/PHY2/PHY2_005/PHY2_005 מגנטיות 2024-07-26 13.41.56.excalidraw.md",
+    "Technion/DYN1/DYN1_HW007/DYN1_HW007 תרגיל בית 7 2024-07-25 23.19.07.excalidraw.md",
     "Technion/LSY1/LSY1_004 Linear State-Space Equation.md",
     "Technion/LSY1/LSY1_003 Classification of Systems.md",
-    "Technion/NUM1/NUM1_E2022WA 2022 חורף מועד א.md",
-    "Technion/NUM1/NUM1_E2021WB 2021 חורף מועד ב.md",
-    "Technion/MNF1/MNF1_000 034030 Manufacturing Processes.md",
-    "פנגייה - רשימת סיכומים.md",
-    "Technion/FLD1/FLD1_008 אינרציה.md",
-    "Technion/FLD1/FLD1_007 תכונות משוואות סטוקס ומשוואות ריינולדס.md",
-    "Technion/FLD1/FLD1_008/FLD1_008 אינרציה 2024-07-23 09.00.20.excalidraw.md",
-    "Technion/FLD1/FLD1_008/FLD1_008 אינרציה 2024-07-23 09.00.20.excalidraw.svg",
-    "Technion/LSY1/LSY1_006/Pasted image 20240722233656.png",
-    "Technion/FLD1/FLD1_008/FLD1_008 אינרציה 2024-07-23 09.18.56.excalidraw.md",
-    "Technion/FLD1/FLD1_008/FLD1_008 אינרציה 2024-07-23 09.18.56.excalidraw.svg",
-    "Technion/LSY1/LSY1_006/Pasted image 20240722233943.png",
-    "Technion/LSY1/LSY1_006/Pasted image 20240722233728.png",
-    "Technion/DYN1/DYN1_005 קינטיקה של חלקיק.md",
-    "Technion/DYN1/DYN1_006 קינטיקה של מערכת חלקיקים.md",
-    "Technion/LSY1/LSY1_005 Linearization.md",
+    "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
+    "Technion/DYN1/DYN1_002 קינמטיקה של חלקיק - מערכת צירים סובבת.md",
+    "Technion/PHY2/PHY2_HW009 גיליון בית 9.md",
+    "Technion/DYN1/DYN1_HW007",
     "Technion/FLD1/FLD1_008",
-    "Technion/DYN1/DYN1_005/DYN1_005 קינטיקה של חלקיק 2024-07-11 17.36.49.excalidraw.md",
-    "Technion/PHY2/PHY2_HW008 גיליון בית 8.md",
     "Technion/PHY2/PHY2_HW008",
-    "Technion/PHY2/PHY2_005 מגנטיות.md",
-    "Technion/PHY1/PHY1_002 קינמטיקה.md",
-    "Technion/DYN1/DYN1_001  קינמטיקה של חלקיק - מבוא.md",
-    "Technion/PHY2/PHY2_HW008/PHY2_HW008 גיליון בית 8 2024-07-22 11.44.11.excalidraw.md",
-    "Technion/PHY2/PHY2_000 114052 פיזיקה 2.md",
-    "Technion/DYN1/DYN1_003 קינמטיקה של גוף קשיח.md",
     "Technion/DYN1/DYN1_HW006",
     "Technion/DYN1/DYN1_006",
     "general_pics",
     "Technion/PHY2/PHY2_005",
     "Technion/LSY1/LSY1_007",
-    "Technion/FLD1/FLD1_HW003",
-    "Technion/PHY2/PHY2_HW007",
-    "Technion/DYN1/DYN1_HW005",
     "Technion/MNF1/MNF1_002/MNF1_CA1 Casting Processes.canvas",
     "Technion/LSY1/Untitled.canvas"
   ]

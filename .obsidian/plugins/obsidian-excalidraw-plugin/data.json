@@ -92,8 +92,135 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.2.8",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.2.10",
     "libraryItems": [
+      {
+        "status": "unpublished",
+        "elements": [
+          {
+            "type": "ellipse",
+            "version": 38,
+            "versionNonce": 1821444284,
+            "index": "aG",
+            "isDeleted": false,
+            "id": "RwLpqg3sJGSCJ6twUkRg7",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "angle": 0,
+            "x": -40,
+            "y": -40,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "transparent",
+            "width": 20,
+            "height": 20,
+            "seed": 370550916,
+            "groupIds": [
+              "LQ3cyw2nmmnNjjw8WuHEM"
+            ],
+            "frameId": null,
+            "roundness": null,
+            "boundElements": [],
+            "updated": 1722006983898,
+            "link": null,
+            "locked": false
+          },
+          {
+            "type": "line",
+            "version": 84,
+            "versionNonce": 661516548,
+            "index": "aH",
+            "isDeleted": false,
+            "id": "0PrsNnseLoR6lwy4Ay4uS",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "angle": 0,
+            "x": -37.004651022069375,
+            "y": -37.004651022069375,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "transparent",
+            "width": 14.002807419021408,
+            "height": 14.002807419021405,
+            "seed": 60511364,
+            "groupIds": [
+              "LQ3cyw2nmmnNjjw8WuHEM"
+            ],
+            "frameId": null,
+            "roundness": null,
+            "boundElements": [],
+            "updated": 1722006983898,
+            "link": null,
+            "locked": false,
+            "startBinding": null,
+            "endBinding": null,
+            "lastCommittedPoint": null,
+            "startArrowhead": null,
+            "endArrowhead": null,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                14.002807419021408,
+                14.002807419021405
+              ]
+            ]
+          },
+          {
+            "type": "line",
+            "version": 73,
+            "versionNonce": 1130926396,
+            "index": "aI",
+            "isDeleted": false,
+            "id": "1UDXiCKlts-nQt0i4Op5Z",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "angle": 0,
+            "x": -37.03666042475429,
+            "y": -22.963339575245715,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "transparent",
+            "width": 14.054193868265523,
+            "height": 14.054193868265521,
+            "seed": 794529924,
+            "groupIds": [
+              "LQ3cyw2nmmnNjjw8WuHEM"
+            ],
+            "frameId": null,
+            "roundness": null,
+            "boundElements": [],
+            "updated": 1722006983898,
+            "link": null,
+            "locked": false,
+            "startBinding": null,
+            "endBinding": null,
+            "lastCommittedPoint": null,
+            "startArrowhead": null,
+            "endArrowhead": null,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                14.054193868265523,
+                -14.054193868265521
+              ]
+            ]
+          }
+        ],
+        "id": "eMVxvC0RmwJLXfcdcJ_3X",
+        "created": 1722006986484
+      },
       {
         "status": "unpublished",
         "elements": [

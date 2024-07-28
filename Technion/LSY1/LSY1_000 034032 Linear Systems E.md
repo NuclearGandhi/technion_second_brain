@@ -18,7 +18,7 @@ Assistant:
 - [[LSY1_004 Linear State-Space Equation]]
 - [[LSY1_005 Linearization]]
 - [[LSY1_006 Lyapunov Stability]]
-- [[LSY1_007 Frequency Domain Analysis]]
+- [[LSY1_007 Laplace Transform]]
 
 # Bibliography
 - Lathi, B.P., Green, R.A., 2018. Linear systems and signals, Third Edition. ed, The Oxford Series in Electrical and Computer Engineering. Oxford University Press, New York.
