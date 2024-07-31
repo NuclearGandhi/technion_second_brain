@@ -536,6 +536,11 @@ h5,
   padding-right: unset;
 }
 
+.outline-view-outer {
+  width: 100%;
+  padding: 32px 16px 0 0;
+}
+
 .outline-view-outer .tree-item-children {
   border-right: 1px solid var(--nav-item-border-color);
   border-left: 0;
