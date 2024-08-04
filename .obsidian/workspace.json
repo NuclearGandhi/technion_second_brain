@@ -4,37 +4,36 @@
     "type": "split",
     "children": [
       {
-        "id": "39d45447ed1daa6c",
+        "id": "2e8ddebcf92fa345",
         "type": "tabs",
         "children": [
           {
-            "id": "12ad064aa0179ab2",
+            "id": "0349e6608f2cde3c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/DYN1/DYN1_005 קינטיקה של חלקיק.md",
-                "mode": "source",
+                "file": "Technion/FLD1/FLD1_HW004 תרגיל בית 4.md",
+                "mode": "preview",
                 "backlinks": false,
                 "source": false
               }
             }
           },
           {
-            "id": "57719ac45c5984f4",
+            "id": "d0915756ded72b47",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technion/DYN1/DYN1_006 קינטיקה של מערכת חלקיקים.md",
-                "mode": "source",
+                "file": "Technion/FLD1/FLD1_006 צמיגות.md",
+                "mode": "preview",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -63,7 +62,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "TODO",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -100,7 +99,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Technion/DYN1/DYN1_006 קינטיקה של מערכת חלקיקים.md",
+                "file": "Technion/FLD1/FLD1_HW004 תרגיל בית 4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +122,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Technion/DYN1/DYN1_006 קינטיקה של מערכת חלקיקים.md"
+                "file": "Technion/FLD1/FLD1_HW004 תרגיל בית 4.md"
               }
             }
           }
@@ -151,44 +150,46 @@
       "latex-ocr:LatexOCR": false
     }
   },
-  "active": "57719ac45c5984f4",
+  "active": "0349e6608f2cde3c",
   "lastOpenFiles": [
-    "Technion/DYN1/DYN1_007 קינטיקה של גוף קשיח.md",
-    "Technion/DYN1/DYN1_006 קינטיקה של מערכת חלקיקים.md",
-    "Technion/DYN1/DYN1_005 קינטיקה של חלקיק.md",
-    "Technion/DYN1/DYN1_004 קינמטיקה של מערכת גופים קשיחים.md",
-    "Technion/FLD1/FLD1_008 תאוריית הכנף הדקה.md",
-    "Technion/FLD1/FLD1_007 אינרציה.md",
-    "Technion/DYN1/DYN1_000 034010 דינמיקה.md",
-    "Technion/PHY2/PHY2_000 114052 פיזיקה 2.md",
-    "Technion/FLD1/FLD1_000 034055 תורת הזרימה 1מ.md",
-    "Technion/FLD1/FLD1_007/Inviscid_flow_around_a_cylinder.gif",
-    "Technion/FLD1/Untitled.md",
-    "Technion/FLD1/FLD1_007/Pasted image 20240731204230.png",
-    "Technion/FLD1/FLD1_007/Pasted image 20240731201717.png",
-    "Technion/FLD1/FLD1_007/Pasted image 20240731201655.png",
-    "Technion/FLD1/FLD1_007/Pasted image 20240731201559.png",
-    "Technion/FLD1/FLD1_007/Pasted image 20240731201411.png",
-    "Technion/FLD1/FLD1_007/FLD1_007 אינרציה 2024-07-31 19.34.34.excalidraw.md",
-    "Technion/FLD1/FLD1_007/Pasted image 20240731194407.png",
-    "Technion/FLD1/FLD1_007/FLD1_007 אינרציה 2024-07-31 19.40.14.excalidraw.md",
-    "Technion/FLD1/FLD1_007/FLD1_007 אינרציה 2024-07-31 19.40.14.excalidraw.svg",
-    "Technion/FLD1/FLD1_007/FLD1_007 אינרציה 2024-07-31 19.34.34.excalidraw.svg",
-    "Technion/FLD1/FLD1_006 צמיגות.md",
-    "Technion/FLD1/FLD1_007/Screenshot_20240731_150748_Samsung Notes.jpg",
-    "Technion/FLD1/FLD1_002 קווי זרם, קווי סימון וקווי מסלול.md",
-    "Technion/PDE1/PDE1_007 משוואת לפלס.md",
-    "Technion/DYN1/DYN1_HW002 תרגיל בית 2.md",
-    "Technion/CAL2/CAL2_013 שדות משמרים.md",
-    "Technion/CAL2/CAL2_014 אינטגרלים משטחיים.md",
-    "Technion/DYN1/DYN1_HW007 תרגיל בית 7.md",
-    "פנגייה - רשימת סיכומים.md",
-    "Technion/FLD1/FLD1_HW003 תרגיל בית 3.md",
+    "Technion/FLD1/FLD1_HW004/FLD1_HW004 תרגיל בית 4 2024-08-04 21.38.32.excalidraw.svg",
     "Technion/FLD1/FLD1_HW004 תרגיל בית 4.md",
-    "Technion/FLD1/FLD1_HW004/FLD1_HW004 תרגיל בית 4 2024-07-30 17.19.26.excalidraw.md",
-    "Technion/FLD1/FLD1_004 משוואות נאוויה-סטוקס.md",
-    "Technion/FLD1/FLD1_003 חוקי שימור אינטגרליים.md",
-    "Technion/FLD1/FLD1_HW004/FLD1_HW004 תרגיל בית 4 2024-07-29 22.29.35.excalidraw.md",
+    "Technion/FLD1/FLD1_006 צמיגות.md",
+    "Technion/CAL1/CAL1_008 אינטגרל מסוים.md",
+    "Technion/FLD1/FLD1_HW004/FLD1_HW004 תרגיל בית 4 2024-08-04 21.38.32.excalidraw.md",
+    "Technion/FLD1/FLD1_007 אינרציה.md",
+    "Technion/FLD1/FLD1_008 תאוריית הכנף הדקה.md",
+    "Technion/DYN1/DYN1_006 קינטיקה של מערכת חלקיקים.md",
+    "Technion/DYN1/DYN1_HW007 תרגיל בית 7.md",
+    "Technion/DYN1/DYN1_HW008/DYN1_HW008 תרגיל בית 8 2024-08-04 15.54.39.excalidraw.md",
+    "Technion/DYN1/DYN1_HW008 תרגיל בית 8.md",
+    "Technion/DYN1/DYN1_HW008/DYN1_HW008 תרגיל בית 8 2024-08-04 18.11.28.excalidraw.md",
+    "Technion/DYN1/DYN1_007 קינטיקה של גוף קשיח.md",
+    "Technion/DYN1/DYN1_HW008/DYN1_HW008 תרגיל בית 8 2024-08-04 18.11.28.excalidraw.svg",
+    "Technion/DYN1/DYN1_HW008/Pasted image 20240804160451.png",
+    "Technion/DYN1/DYN1_HW008/DYN1_HW008 תרגיל בית 8 2024-08-04 15.54.39.excalidraw.svg",
+    "Technion/DYN1/DYN1_HW008/DYN1_HW008 תרגיל בית 8 2024-08-04 14.23.09.excalidraw.md",
+    "Technion/DYN1/DYN1_HW008/DYN1_HW008 תרגיל בית 8 2024-08-04 15.05.46.excalidraw.md",
+    "Technion/DYN1/DYN1_HW005 תרגיל בית 5.md",
+    "Technion/DYN1/DYN1_HW006 תרגיל בית 6.md",
+    "Technion/DYN1/DYN1_HW008/Pasted image 20240804154138.png",
+    "Technion/DYN1/DYN1_HW008/DYN1_HW008 תרגיל בית 8 2024-08-04 14.36.30.excalidraw.md",
+    "Technion/DYN1/DYN1_HW008/DYN1_HW008 תרגיל בית 8 2024-08-04 15.05.46.excalidraw.svg",
+    "Technion/DYN1/DYN1_HW008/DYN1_HW008 תרגיל בית 8 2024-08-04 14.36.30.excalidraw.svg",
+    "Technion/DYN1/DYN1_HW008/DYN1_HW008 תרגיל בית 8 2024-08-04 14.23.09.excalidraw.svg",
+    "Technion/DYN1/DYN1_HW008/Pasted image 20240804135352.png",
+    "Technion/DYN1/DYN1_007/Pasted image 20240803200501.png",
+    "Technion/DYN1/DYN1_005 קינטיקה של חלקיק.md",
+    "Technion/DYN1/DYN1_HW007/DYN1_HW007 תרגיל בית 7 2024-07-24 15.03.07.excalidraw.md",
+    "Technion/DYN1/DYN1_HW008",
+    "Technion/DYN1/DYN1_HW008/DYN1_HW008 תרגיל בית 8 2024-08-03 18.17.07.excalidraw.md",
+    "Technion/DYN1/DYN1_000 034010 דינמיקה.md",
+    "Technion/LSY1/LSY1_007 Laplace Transform.md",
+    "Technion/LSY1/LSY1_008 Fourier Transform.md",
+    "Technion/LSY1/LSY1_006 Lyapunov Stability.md",
+    "Technion/LSY1/LSY1_008",
+    "Technion/LSY1/LSY1_000 034032 Linear Systems E.md",
+    "Technion/DYN1/DYN1_007",
     "Technion/FLD1/FLD1_HW004",
     "Technion/PHY2/PHY2_HW009",
     "Technion/DYN1/DYN1_HW007",
@@ -196,9 +197,6 @@
     "Technion/PHY2/PHY2_HW008",
     "Technion/DYN1/DYN1_HW006",
     "Technion/DYN1/DYN1_006",
-    "general_pics",
-    "Technion/PHY2/PHY2_005",
-    "Technion/LSY1/LSY1_007",
     "Technion/MNF1/MNF1_002/MNF1_CA1 Casting Processes.canvas",
     "Technion/LSY1/Untitled.canvas"
   ]

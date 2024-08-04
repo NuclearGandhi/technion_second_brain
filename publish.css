@@ -560,6 +560,14 @@ h5,
   right: auto;
 }
 
+@supports selector(:dir(rtl)) {
+  :dir(rtl) .external-link {
+      background-position: center left;
+      background-image: linear-gradient(transparent, transparent), url(https://publish.obsidian.md/public/images/874d8b8e340f75575caa.svg) !important;
+      background-repeat: no-repeat;
+  }
+}
+
 /* Edit in Github */
 /* .edit-in-github {
   max-width: var(--page-width);

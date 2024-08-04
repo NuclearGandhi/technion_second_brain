@@ -7,6 +7,9 @@ aliases:
 ---
 # Lyapunov Stability
 
+
+![](https://www.youtube.com/watch?v=KPoeNZZ6H4s)
+
 ## Autonomous System
 >[!def] Definition: 
  >A system of ODE's which does not explicitly depend on the independent variable is called an **autonomous system**.

@@ -21,7 +21,7 @@ We can also separate the input into exponentials of the form $e^{j\omega t}$ ins
 ![](https://www.youtube.com/watch?v=n2y7n6jw5d0)
 
 >[!def] Definition: 
-For a signal $x(t)$, its Laplace transform $X(s)$ is defined by
+For a signal $x(t)$, its **Laplace transform** $X(s)$ is defined by
 $$X(s)=\int_{-\infty }^{\infty } x(t)e^{-st} \, \mathrm{d}t $$
 The signal $x(t)$ is said to be the **inverse Laplace transform** of $X(s)$. It can be shown that
 $$x(t)=\dfrac{1}{2\pi j}\int_{c-j\infty }^{c+j\infty } X(s) e^{st}\, \mathrm{d}s $$
@@ -153,6 +153,80 @@ The system is said to be
 - **strictly proper** if $n>m$,
 - **bi-proper** if $n=m$,
 - **non-proper** if $n<m$.
+
+# Causality and Stability
+>[!theorem] Theorem:
+>A continuous-time LTI system with rational transfer function $G(s)$ is causal and I/O stable iff
+>- $G(s)$ is proper and
+>- $G(s)$ has all its poles in the open left half plane $\mathbb{C}\setminus \bar{\mathbb{C}}_{0}=\{ s \in \mathbb{C}\mid \mathrm{Re}(s)<0 \}$
+
+## Categorizing Polynomials
+In the case that our LTI system is represented by a rational function, the stability is determined by the locations of the roots of the denominator. It is not always easy to calculate these, but there are ways to test whether all the roots lie the open left half plane, or in the open unit disk $\mathbb{D}_{1}$ (which will be useful to know in future subjects).
+
+>[!def] Definition: 
+ >A polynomial is said to be
+ >- **Hurwitz** if all its roots are in the open left half plane.
+ >- **Schur** if all its roots are in $\mathbb{D}_{1}$.
+ >- **Monic** if the leading coefficient $a_{n}=1$, like
+>	$$D(s)=s^{n}+a_{n-1}s^{n-1}+\dots +{a}_{1}s+{a}_{0}$$
+
+## Routh Table
+
+>[!def] Definition: 
+> Given the polynomial
+> $$D(s)=a_{n}s^{n}+a_{n-1}s^{n-1}+\dots +{a}_{1}s+{a}_{0}$$
+> the associated **Routh table** is
+> 
+> $$\begin{array}{c|ccc}
+> 0 & {r}_{0,1}=a_{n} & {r}_{0,2}=a_{n-2} & r_{0,3}=a_{n-4}  & \cdots  \\[1ex]
+> 1 & r_{1,1}=a_{n-1} & r_{1,2}=a_{n-3} & r_{1,3}=a_{n-5} & \cdots  \\[1ex]
+> 2 & r_{2,1} & r_{2,2} & r_{2,3} & \cdots  \\[1ex]
+> \vdots  & \vdots  & \vdots  & \vdots  & \cdots  \\[1ex]
+> n-2 & r_{n-2,1} & r_{n-2,2} & r_{n-2,3}  & \cdots  \\[1ex]
+> n-1 & r_{n-1,1} & r_{n-1,2}  & \ \\[1ex]
+> n & r_{n,1} & 
+> \end{array}$$
+> where for each $i=2,3,\dots,n$:
+> $$[r_{i,1},\, r_{i,2},\dots ]=[r_{i-2,2},\, r_{i-2,3} ,\dots ]-\dfrac{r_{i-2,1}}{r_{i-1,1}}[r_{i-1,2},\, r_{i-1,3},\, \dots ]$$
+> and if the last required column of an involved row is empty, $0$ is taken.
+> According to what happens to the elements in the first column, we say that the Routh table is
+> - **singular** if there exists an $i$ where: $r_{i,1}=0$
+> - **regular** if for every $i$: $r_{i,1}\neq 0$
+
+## Necessary Condition for Stability
+
+>[!theorem] Theorem: 
+> The polynomial
+> $$D(s)=s^{n}+a_{n-1}s^{n-1}+\dots +{a}_{1}s+{a}_{0}$$
+> is [[#Categorizing Polynomials|Hurwitz]] only if $a_{i}>0$ for all $i=0,1,\dots n-1$. In general, for polynomials that are not monic, we require that all coefficients are non zero and have the same sign.
+
+## Necessary and Sufficient Condition for Stability
+
+>[!theorem] Theorem: 
+> Consider a polynomial
+> $$D(s)=s^{n}+a_{n-1}s^{n-1}+\dots +{a}_{1}s+{a}_{0}$$
+> - $D(s)$ is Hurwitz iff the associated [[#Routh Table]] is regular and all the elements of the first column have the same sign.
+> - If the Routh table is regular, then $D(s)$ has no imaginary roots, and the number of poles in $\mathbb{C}_{0}$ equals the number of sign changes in the first column of the table.
+> - If the Routh table is singular, then $D(s)$ is not Hurwitz. In this case, we cannot say anything about the location of the poles, except that there is at least one pole on the imaginary axis, or in $\mathbb{C}_{0}$.
+
+**Second order polynomial**: The Routh table for a second order polynomial $D(s)={{a}_{2}}^{2}+{a}_{1}s+{a}_{0}$ is:
+$$\begin{array}{c|cc}
+0 & {a}_{2} & {a}_{0} \\
+1 & {a}_{1} \\
+2 & {a}_{0}
+\end{array}$$
+Thus, for $D(s)$ to be Hurwitz, we must have that ${a}_{2},{a}_{1}$ and ${a}_{0}$ are nonzero and have the same sign. Therefore, the [[#Necessary Condition for Stability]] is in this case a sufficient condition as well.
+
+**Third order polynomial**: The Routh table for a third order polynomial $D(s)={a}_{3}s^{3}+{a}_{2}s^{2}+{a}_{1}s+{a}_{0}$ is:
+$$\begin{array}{c|cc}
+0 & {a}_{3} & {a}_{1} \\
+a & {a}_{2} & {a}_{0} \\
+2 & {a}_{1}-({a}_{3}/{a}_{2}){a}_{0} \\
+3 & {a}_{0}
+\end{array}$$
+Requiring that all elements in the first column have the same sign leads to the following condition for $D(s)$ to be Hurwitz:
+- ${a}_{0},{a}_{1},{a}_{2},{a}_{3}$ are nonzero and have the same sign and
+- ${a}_{1}{a}_{2}>{a}_{0}{a}_{3}$.
 
 # Exercises
 
@@ -380,3 +454,35 @@ we get:
 $$\boxed {
 y_{ss}=5
  }$$
+
+## Question 4
+Consider the continuous-time LTI system with transfer function $G(s)$:
+$$G(s)=\dfrac{1}{s^{3}+7s^{2}-4s+2}$$
+
+Is this system I/O stable?
+
+**Solution**:
+According to [[#Necessary and Sufficient Condition]], We need to make sure that the Denominator's coefficient satisfy $a_{i}>0$. Since $a_{1}<0$, $D(s)$ isn't Hurwitz, which means it has roots in the right hand plane.  [[#Causality and Stablity|Therefore]] (even though it is proper), it is not stable.
+
+## Question 5
+Consider the continuous-time LTI system with transfer function $G(s)$:
+$$G(s)=\dfrac{1}{s^{5}+4s^{4}+2s^{3}+2s^{2}+s+10}$$
+Is this system I/O stable? If not, then where are the poles placed?
+
+**Solution**:
+All the coefficients of the denominator have the same sign, which means the system *might* be stable. The associated Routh table:
+$$\begin{array}{c|cc}
+0 & 1 & 2 & 1  \\
+1 & 4 & 2 & 10 \\
+2 & 1.5  & -1.5 & 0  \\
+3 & 6 & 10 & 0  \\
+4 & -4 & 0 & 0 \\
+5 & 10 & 0 & 0
+\end{array}$$
+Since one of its elements in the first column doesn't have the same sign as the rest, $D(s)$ is not Horwitz, and the system is not stable.
+Because the Routh table is regular, there are no poles on the imaginary axis, and because there are two sign changes in the first column, we must have two poles in the right half plane $\mathbb{C}_{0}$. Using MATLAB, we get:
+
+![[LSY1_007/Screenshot_20240801_120007_Samsung Notes.jpg|book|350]]
+>Pole-zero map of $G(s)$
+
+
