@@ -26,3 +26,4 @@ Assistant:
 >[!TODO] להשלים תרגול
 # Homework
 - [[MNF1_HW001 Homework 1]]
+- [[MNF1_HW002 Homework 2]]

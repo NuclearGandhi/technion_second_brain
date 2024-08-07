@@ -101,8 +101,8 @@ V_{c}=\pi DN
 	where $D$ is the diameter of the workpiece and $N$ is the rotational speed.
 
 - **Feed Rate $f$**: The feed rate is the distance the tool advances during one revolution of the spindle. As opposed to turning, we like to analyze the cutting process *per teeth* - so we define $f_{t}$ - **feed per tooth**. Therefore:
-	$$\boxed{f=N f_{t} n }$$
-	where $N$ is the spindle speed ($\pu{rev.min^{-1}}$); $f_{t}$ is feed per tooth $(\pu{mm.tooth}^{-1})$; and $n$ is number of teeth on the cutter.
+	$$\boxed{f=f_{t}z }$$
+	where $f_{t}$ is feed per tooth $(\pu{mm.tooth}^{-1})$; and $z$ is number of teeth on the cutter.
 
 - **Width of Cut $w$** is the thickness of the material removed in one pass of the cutting tool, measured in millimeters $(\pu{mm})$.
 
@@ -112,7 +112,13 @@ Note that the thickness of the chip in slab milling varies along its length, bec
 	$$\boxed {
 h=f_{t}\cos\theta
  }$$
+- **Workpiece Speed** $v$ is the speed of the workpiece. It is given by
+	$$\boxed {
+v=f_{t}zN
+ }$$
 
+- **Cutting Time $t$** is the time it takes to cut an $L$ long workpiece. It is given by
+	$$\boxed{t=\dfrac{L+D}{v} }$$
 
 ## Cutting Force and Power
 
@@ -122,17 +128,15 @@ $$\begin{aligned}
 F_{c}=K_{s}hd=K_{s}f_{t}d\cos\theta 
  } 
 \end{aligned}$$
-or , or its average for a whole width of cut $w$:
+or, its average for a whole width of cut $w$:
 $$\boxed{F_{c}=K_{s}wd }$$
 where $K_s$ is the **specific cutting force** or **specific energy**, measured in $\pu{N.mm^{-2}}$;$h$ is chip thickness; $w$ is the width of cut; $d$ is the depth of cut.
 
 The power $P$ required for the cutting process is calculated using the formula
 $$\boxed {
-P=F_{c} V_{c}
+P=F_{c} v
  }$$
-where $F_c$ is the cutting force; $V_{c}$ is the cutting speed;
-
-
+where $F_c$ is the cutting force; $v$ is the speed of the workpiece.
 # Exercises
 ## Question 1
 A $\pu{121mm}$ long, round, hollow workpiece is going under a facing operation to straighten its face. To do this, only a $\pu{1mm}$ depth of cut is needed, which reduces it to a length of $\pu{120mm}$. The feed rate is $\pu{0.7mm.rev^{-1}}$, and the possible rotational speeds of the machine are:
