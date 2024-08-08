@@ -464,11 +464,6 @@ A & B \\
 
 If on the right side of the equation there is an $n$ derivative of $u$, that is there is a term $b_{n}u^{(n-1)}$ where $b_{n}\neq 0$, we can write the same canonical realization as for the system with $b_{n}=0$, and simple change $D=b_{n}$.
 
-## State Space to Transfer Function
-Going from a state-space representation to a transfer function representation is very simple:
-$$\boxed {
-\mathbf{G}(s)=\mathbf{C}(s\mathbf{I}-\mathbf{A})^{-1}\mathbf{B}+D
- }$$
 
 # Exercises
 ## Question 1

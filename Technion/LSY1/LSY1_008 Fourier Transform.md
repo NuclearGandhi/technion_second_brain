@@ -184,3 +184,5 @@ $$\boxed {
 
 ![[LSY1_008/Pasted image 20240803142518.png|book]]
 >The Fourier spectrum
+
+
