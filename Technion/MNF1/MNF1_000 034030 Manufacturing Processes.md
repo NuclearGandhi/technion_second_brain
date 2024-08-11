@@ -22,8 +22,6 @@ Assistant:
 - [[MNF1_004 Machining Processes]]
 - [[MNF1_005 Geometric Dimensioning and Tolerancing]]
 
-
->[!TODO] להשלים תרגול
 # Homework
 - [[MNF1_HW001 Homework 1]]
 - [[MNF1_HW002 Homework 2]]

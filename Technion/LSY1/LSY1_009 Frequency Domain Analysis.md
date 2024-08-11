@@ -43,16 +43,16 @@ $$\begin{aligned}
 \end{aligned}$$
 The transfer function ${G}_{0}(s)=k$ is static, whose magnitude bode diagram is the straight horizontal line at the level $20\log k$ (because on the Bode diagram, the amplitude is shown in $\pu{dB}$).
 
-![[Screenshot_20240808_110631_Samsung Notes.jpg|book|500]]
+![[LSY1_009/Screenshot_20240808_110631_Samsung Notes.jpg|book|500]]
 >Bode diagram for ${G}_{0}$
 
 The two other transfer functions are first-order transfer functions with the unit static gain of the form $\dfrac{1}{(\tau s+1)}$. The asymptotic magnitude Bode plot of these kinds of transfer functions comprises two straight lines: A horizontal one at $\pu{0dB}$ in the low-frequency range, up to the cutoff frequency $\omega_{c}=\dfrac{1}{\tau}$, and a straight line starting at $\omega_{c}$ and decaying with the slope of $\pu{-20deg/dec}$.
 
-![[Screenshot_20240808_111720_Samsung Notes 2.jpg|book|500]]
+![[LSY1_009/Screenshot_20240808_111720_Samsung Notes 2.jpg|book|500]]
 >Bode diagram for $G(s)=1/(\tau s+1)$.
 
 Because we are in a logarithmic graph, the magnitude plot of $G={G}_{0}\cdot {G}_{1}\cdot {G}_{2}$ (a **cascade**) is simply the superposition of their individual Body magnitude plots. So, if $\dfrac{1}{{\tau}_{1}}<\dfrac{1}{{\tau}_{2}}$:
-![[Screenshot_20240808_112158_Samsung Notes 1.jpg|book|500]]
+![[LSY1_009/Screenshot_20240808_112158_Samsung Notes 1.jpg|book|500]]
 >Bode diagram for $G(s)$; dotted lines correspond to actual Bode plots.
 
 ## Question 2

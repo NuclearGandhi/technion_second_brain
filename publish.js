@@ -22,7 +22,7 @@ customDiv.innerHTML = `
     margin-left: 24px;
     margin-right: auto;
     margin-top: 24px;
-    ">מצאתם טעות בעמוד? תפתחו <a href="https://github.com/NuclearGandhi/technion_second_brain/discussions">discussion</a> (בבקשה).</div>
+    ">מצאתם טעות בעמוד? תפתחו <a href="https://github.com/NuclearGandhi/technion_second_brain/discussions">discussion</a> (בבקשה). שימו לב, רק אם תפתחו משתמש תוכלו לפתוח discussion. די מבאס.</div>
     `
 document.getElementsByClassName('nav-view-outer')[0].prepend(customDiv);
 
