@@ -8,7 +8,6 @@
   "compress": true,
   "decompressForMDView": false,
   "onceOffCompressFlagReset": true,
-  "onceOffGPTVersionReset": false,
   "autosave": true,
   "autosaveIntervalDesktop": 15000,
   "autosaveIntervalMobile": 10000,
@@ -35,7 +34,7 @@
   "matchThemeAlways": true,
   "matchThemeTrigger": true,
   "defaultMode": "normal",
-  "defaultPenMode": "mobile",
+  "defaultPenMode": "never",
   "penModeCrosshairVisible": false,
   "renderImageInMarkdownReadingMode": false,
   "renderImageInHoverPreviewForMDNotes": false,
@@ -93,7 +92,7 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.3.0",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.2.10",
     "libraryItems": [
       {
         "status": "unpublished",
@@ -8351,7 +8350,7 @@
   "mdCSS": "",
   "scriptEngineSettings": {},
   "defaultTrayMode": true,
-  "previousRelease": "1.8.20",
+  "previousRelease": "2.2.10",
   "showReleaseNotes": false,
   "showNewVersionNotification": true,
   "latexBoilerplate": "\\color{red}",
@@ -8997,6 +8996,7 @@
   "longPressDesktop": 500,
   "longPressMobile": 500,
   "isDebugMode": false,
+  "onceOffGPTVersionReset": false,
   "rank": "Silver",
   "autosaveInterval": 15000,
   "mathjaxSourceURL": "https://cdn.jsdelivr.net/npm/mathjax@3.2.1/es5/tex-svg.js"
