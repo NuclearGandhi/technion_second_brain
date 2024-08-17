@@ -15,13 +15,17 @@ Book: [link](https://annas-archive.org/md5/abc3a08e861b5eed7bdfbec6d45f0f9f)
 Teacher: Alexander Katz
 Assistant:
 
-# Notes
+## Notes
 - [[MNF1_001 Introduction]]
 - [[MNF1_002 Metal Casting]]
 - [[MNF1_003 Bulk Deformation Processes]]
 - [[MNF1_004 Machining Processes]]
 - [[MNF1_005 Geometric Dimensioning and Tolerancing]]
+- [[MNF1_006 Joining and Fastening Processes]]
 
-# Homework
+## Homework
 - [[MNF1_HW001 Homework 1]]
 - [[MNF1_HW002 Homework 2]]
+
+## Bibliography
+- Kalpakjian, S., Schmid, S.R., 2016. Manufacturing processes for engineering materials, Sixth edition. ed. Pearson Education, Boston.
