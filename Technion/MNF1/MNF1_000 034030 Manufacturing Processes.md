@@ -27,5 +27,11 @@ Assistant:
 - [[MNF1_HW001 Homework 1]]
 - [[MNF1_HW002 Homework 2]]
 
+# Exams
+
+לצערי אני נאלץ לרשום גם את השאלות עצמן במבחן כי סגל הקורס כותב ומצייר כמו יד שמאל של סבתא שלי.
+
+- [[MNF1_E2020SA 2020 אביב מועד א']]
+
 ## Bibliography
 - Kalpakjian, S., Schmid, S.R., 2016. Manufacturing processes for engineering materials, Sixth edition. ed. Pearson Education, Boston.

@@ -86,7 +86,7 @@ p=S_{y}'e^{2\mu(a-x)/h}
  Where $\mu$ is the coefficient of friction.
  Thus, the average pressure will be:
  $$\boxed {
-p_{\text{av}}=S'_{y}\left( 1+\dfrac{\mu a}{h} \right)
+p_{\text{avg}}=S'_{y}\left( 1+\dfrac{\mu a}{h} \right)
  }$$
 
 ![[MNF1_003/Pasted image 20240624110130.png|book]]
@@ -98,7 +98,7 @@ p_{\text{av}}=S'_{y}\left( 1+\dfrac{\mu a}{h} \right)
 p=S_{y}e^{2\mu(R-r)/h}
  }$$
 and the average pressure:
-$$\boxed{p_{\text{av}}=S_{y}\left( 1+\dfrac{2\mu R}{3h} \right)}$$
+$$\boxed{p_{\text{avg}}=S_{y}\left( 1+\dfrac{2\mu R}{3h} \right)}$$
 >[!example] Example: Upsetting Force 
 >A cylindrical specimen made of annealed 4135 steel has a diameter of $\pu{150mm}$ and is $\pu{100mm}$ high. It is upset, at room temperature, by open-die forging with flat dies to a height of $\pu{50mm}$
 > Assuming that the coefficient of friction is $0.2$, calculate the upsetting force required at the end of the stroke. Use the average-pressure formula.
@@ -143,7 +143,7 @@ The basic flat-rolling process is shown schematically in the following figure:
 ![[MNF1_003/Pasted image 20240624124907.png|book]]
 >Schematic illustration of the flat-rolling process (Note that the top roll has been removed for clarity).
 
-A strip of thickness ${h}_{o}$ enters the roll gap and is reduced to a thickness of $h_{f}$ by the powered rotating rolls at a surface speed $V_{r}$ of the roll. rate of metal flow is constant, the velocity of the strip must increase as it moves through the roll gap. At the exit of the roll gap, the velocity of the strip is $V_{f}$.
+A strip of thickness ${h}_{o}$ enters the roll gap and is reduced to a thickness of $h_{f}$ by the powered rotating rolls at a surface speed $V_{r}$ of the roll. Rate of metal flow is constant, the velocity of the strip must increase as it moves through the roll gap. At the exit of the roll gap, the velocity of the strip is $V_{f}$.
 ![[MNF1_003/Pasted image 20240624125102.png|book]]
 >Relative velocity distribution between roll and strip surfaces. The arrows represent the frictional forces acting along the strip-roll interfaces. Note the difference in their direction in the left and right regions.
 
@@ -165,68 +165,46 @@ It can be shown, that similar to upsetting, we can assume that $p$ and $\sigma_{
 $$\boxed {
 p-\sigma_{x}=\dfrac{2}{\sqrt{ 3 }}\sigma_{f}=\sigma_{f}'
  }$$
-It can also be shown that pressure distribution is given by:
-$$\boxed {
-p=C\sigma_{f}' \dfrac{h}{{h}_{f}}e^{\mp \mu H}
- }$$
- Where
- $$\boxed {
-H=2\sqrt{ \dfrac{R}{h_{f}} }\tan^{-1}\left( \sqrt{ \dfrac{R}{h_{f}} }\phi \right)
- }$$
+If we assume that the pressure distribution is symmetric,  It can be shown that pressure distribution is given by
 
-and $C$ is determined from boundary conditions (No need to understand the boundary condition in the scope of this course). 
+$$\boxed {
+p(x)=\sigma_{f}'\exp\left( \dfrac{2\mu(L/2-x)}{h} \right)
+ }$$
+where $x$ is the position along the contact length, with $x=0$ at the neutral point.
+The average pressure distribution is given by:
+$$\boxed{p_{\text{avg}}=\sigma_{f}'\left( 1+\dfrac{\mu L}{h_{o}+h_{f}} \right)}$$
 
 ![[MNF1_003/Pasted image 20240624131616.png|book]]
 >Pressure distribution in the roll gap as a function of the coefficient of friction. Note that as friction increases, the neutral point shifts toward the entry. Without friction, the rolls will slip, and the neutral point shifts completely to the exit.
 
-At the the entry zone, $\phi=\alpha$; hence, we denote $H={H}_{o}$ ($o$ for 'original') with $\phi$ replaced by $\alpha$. From boundary condition, $C=\dfrac{R}{h_{f}}e^{\mu H_{o}}$. Thus:
-$$\boxed {
-p=\sigma_{f}' \dfrac{h}{{h}_{o}}e^{\mu(H_{o}-H)}
- }$$
- In the exit zone, $C=\dfrac{R}{h_{f}}$, and, hence:
- $$\boxed {
-p=\sigma_{f}' \dfrac{h}{h_{f}}e^{\mu H}
- }$$
-Note that the pressure p at any location in the roll gap is a function of $h$ and its angular position $\phi$ along the arc of contact.
-
 ## Neutral Point Location
-The neutral point can be determined by equation the above equations. thus, at the neutral point,
-$$\dfrac{h_{o}}{h_{f}}=\dfrac{e^{\mu H_{o}}}{e^{2\mu}H_{n}}=e^{\mu(H_{o}-2H_{n})}$$
-or
-$$
-H_{n}=\dfrac{1}{2}\left( H_{o}-\dfrac{1}{\mu}\ln\left( \dfrac{h_{o}}{h_{f}} \right) \right)
- $$
- substituting $H$ from its definition:
- $$\boxed{\phi_{n}=\sqrt{ \dfrac{h_{f}}{R} }\tan\left( \dfrac{H_{n}}{2}\sqrt{ \dfrac{h_{f}}{R} } \right) }$$
+The **neutral point** (as explained in [[#Rolling]]) is where the surface speed of the rolls matches the speed of the workpiece. The position of the neutral point depends on the balance of forward and backward friction forces. When friction increases, the force helping to move the workpiece through the rolls increases on the entry side. This enhanced frictional force shifts the neutral point toward the entry side because less force is needed to accelerate the workpiece to the roll speed.
 
-
-where the subscript '$n$' stands for 'neutral point'.
+>[!TODO] למצוא נוסחה
 
 ## Roll Forces
-The **roll force**, $F$, (also called the **roll-sparating force**) on the strip is the product of the area under the pressure vs. contact-length curve and the strip wide, $w$. The roll force can then be calculated from the expression,
-$$\boxed{F=\int_{0}^{\phi_{n}} wpR \, \mathrm{d}\phi+\int_{\phi_{n}}^{\alpha} wpR \, \mathrm{d}\phi   }$$
+The **roll force**, $F$, (also called the **roll-sparating force**) on the strip is the product of the area under the pressure vs. contact-length curve and the strip width, $w$. 
 
-A simple method of calculating the roll force is to multiply the contact area by an average contact stress, $p_{\text{av}}$,
-$$F=Lwp_{\text{av}}$$
+A simple method of calculating the roll force is to multiply the contact area by an average contact stress, $p_{\text{avg}}$,
+$$\boxed {
+F=Lwp_{\text{avg}}
+ }$$
 where $L$ is the length of contact and can be approximated as the projected length; thus
-$$L=\sqrt{ R\Delta h }$$
+$$\boxed {
+L=\sqrt{ R\Delta h }
+ }$$
 where $R$ is the roll radius and $\Delta h$ is the difference between the original and final thicknesses of the strip.
 
-As an approximation and for low frictional conditions, the expression for $F$ and be simplified to
-$$F=Lw \bar{\sigma}_{f}'$$
-where $\bar{\sigma}_{f}'$ is the average flow stress in plane strain of the material in the roll gap.
-For higher frictional conditions, an expression for $F$ can be written as
-$$F=Lw\bar{\sigma}'_{f}\left( 1+\dfrac{\mu L}{2h_{\text{av}}} \right)$$
-
 ## Roll Torque and Power
-The **roll torque**, $T$, for each roll can calculated from the expression
-$$T=\underbrace{ \int_{\phi_{n}}^{\alpha} w\mu pR^{2} \, \mathrm{d}\phi }_{ \text{entry zone} }-\underbrace{ \int_{\vphantom{\phi_{n}}0}^{\phi_{n}}wmpR^{2}  \, \mathrm{d}\phi }_{ \text{exit zone} }  $$The torque in rolling can also be estimated by assuming that the roll force, $F$, acts in the middle of the arc of contact (that is, a length of action of $0.5L$), and that this force is perpendicular to the plane of the strip.
+The **roll torque**, $T$, can be estimated by assuming that the roll force, $F$, acts in the middle of the arc of contact (that is, a length of action of $0.5L$), and that this force is perpendicular to the plane of the strip.
 
 The torque per roll is then
-$$T=\dfrac{FL}{2}$$
-The power required per roll is
-$$\text{Power}=T\omega=\dfrac{FL\omega}{2}=\dfrac{\pi FLN}{60}$$
-where $N$ is the roll speed in $\pu{rpm}$.
+$$\boxed {
+T=\dfrac{FL}{2}
+ }$$
+The power required *per roll* (usually there are 2 rolls, so just multiply by $2$) is
+$$P=T\omega=\dfrac{FL\omega}{2}=\dfrac{\pi FLN}{60}$$
+where $\omega$ is the roller's angular velocity, and $N$ is the roll speed in $\pu{rpm}$.
 
 >[!example] Example: Power Required in Rolling
 > A $\pu{225mm}$-wide 6061-O aluminum strip is rolled from a thickness of $\pu{25mm}$ to $\pu{20mm}$. The roll radius is $\pu{300mm}$ and the roll speed is $N=\pu{100rpm}$.
@@ -244,8 +222,8 @@ where $N$ is the roll speed in $\pu{rpm}$.
 > $$F=Lw\bar{\sigma}_{f}'=0.03873\cdot 0.225\cdot(145\cdot 10^{6})=\pu{1.26MN}$$
 > so that the power per roll is
 > $$\begin{gathered}
-> \text{Power}=\dfrac{\pi(1.26\cdot 10^{6})\cdot 0.03873\cdot 100}{60} \\[1ex]
-> \text{Power}=\pu{255kW}
+> P=\dfrac{\pi(1.26\cdot 10^{6})\cdot 0.03873\cdot 100}{60} \\[1ex]
+> P=\pu{255kW}
 > \end{gathered}$$
 > Therefore, the power needed for both rolls is $\boxed {\pu{510kW}}$.
 
