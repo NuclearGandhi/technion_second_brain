@@ -165,7 +165,7 @@ It can be shown, that similar to upsetting, we can assume that $p$ and $\sigma_{
 $$\boxed {
 p-\sigma_{x}=\dfrac{2}{\sqrt{ 3 }}\sigma_{f}=\sigma_{f}'
  }$$
-If we assume that the pressure distribution is symmetric,  It can be shown that pressure distribution is given by
+If we assume that the pressure distribution is symmetric,  It can be shown that pressure distribution is given by (similar to [[#Slab Method of Analysis]] in forging):
 
 $$\boxed {
 p(x)=\sigma_{f}'\exp\left( \dfrac{2\mu(L/2-x)}{h} \right)
@@ -174,13 +174,12 @@ where $x$ is the position along the contact length, with $x=0$ at the neutral po
 The average pressure distribution is given by:
 $$\boxed{p_{\text{avg}}=\sigma_{f}'\left( 1+\dfrac{\mu L}{h_{o}+h_{f}} \right)}$$
 
+If we don't assume pressure distribution is symmetric, we get the following graph:
 ![[MNF1_003/Pasted image 20240624131616.png|book]]
 >Pressure distribution in the roll gap as a function of the coefficient of friction. Note that as friction increases, the neutral point shifts toward the entry. Without friction, the rolls will slip, and the neutral point shifts completely to the exit.
 
 ## Neutral Point Location
 The **neutral point** (as explained in [[#Rolling]]) is where the surface speed of the rolls matches the speed of the workpiece. The position of the neutral point depends on the balance of forward and backward friction forces. When friction increases, the force helping to move the workpiece through the rolls increases on the entry side. This enhanced frictional force shifts the neutral point toward the entry side because less force is needed to accelerate the workpiece to the roll speed.
-
->[!TODO] למצוא נוסחה
 
 ## Roll Forces
 The **roll force**, $F$, (also called the **roll-sparating force**) on the strip is the product of the area under the pressure vs. contact-length curve and the strip width, $w$. 

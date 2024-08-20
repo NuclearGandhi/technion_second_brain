@@ -120,6 +120,18 @@ v=f_{t}zN
 - **Cutting Time $t$** is the time it takes to cut an $L$ long workpiece. It is given by
 	$$\boxed{t=\dfrac{L+D}{v} }$$
 
+Some other common parameters are related to the number of teeth in the milling cutter:
+- **Engagement angle $\alpha$** is the arc of the cutter that is in contact with the workpiece, measured between the entry and exit points of the cutter during the milling operation.
+- **Tooth pitch angle** $\beta$ is the angle between the cutting edges of two adjacent teeth on the circumference of the milling cutter. This angle is related to the number of teeth on the cutter.
+- **Number of teeth $z$** is the number of teeth in the milling cutter, and is simply given by:
+	$$\boxed {
+z=\dfrac{360^{\circ}}{\beta}
+ }$$
+- **Number of effective teeth** $n$ is the number of teeth engaged with the workpiece at any given time during milling, and its average is given by:
+  $$\boxed {
+n=\dfrac{\alpha}{\beta}
+ }$$
+
 ## Cutting Force and Power
 
 The **cutting force $F_c$** is the force exerted by the cutting tool on the workpiece. It can be calculated per tooth

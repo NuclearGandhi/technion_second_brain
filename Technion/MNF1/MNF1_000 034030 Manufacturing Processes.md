@@ -22,6 +22,7 @@ Assistant:
 - [[MNF1_004 Machining Processes]]
 - [[MNF1_005 Geometric Dimensioning and Tolerancing]]
 - [[MNF1_006 Joining and Fastening Processes]]
+- [[MNF1_007 Heat Treatment]]
 
 ## Homework
 - [[MNF1_HW001 Homework 1]]
