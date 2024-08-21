@@ -169,7 +169,9 @@ P_{c} & =F_{c}v \\[1ex]
  & =F_{c}f_{t}z \dfrac{V_{c}}{\pi D}
 \end{aligned}$$
 Therefore:
-$$P_{c}=\pu{2.83kW}$$
+$$\boxed {
+P_{c}=\pu{2.83kW}
+ }$$
 
 ### Part h
 The [[MNF1_004 Machining Processes#Milling#Key Parameters and Equations|total milling time]] (if $L=\pu{200mm}$) is given by:

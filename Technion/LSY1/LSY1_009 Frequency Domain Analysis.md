@@ -27,6 +27,8 @@ where $x:=\mathrm{Re}\,G(j\omega)$ and $y:= \mathrm{}\,G(j\omega)$.
 
 # Bode Diagram
 
+>[!TODO] להשלים
+
 # Exercises
 
 ## Question 1

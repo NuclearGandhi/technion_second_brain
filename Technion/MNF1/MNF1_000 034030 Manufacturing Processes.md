@@ -23,12 +23,17 @@ Assistant:
 - [[MNF1_005 Geometric Dimensioning and Tolerancing]]
 - [[MNF1_006 Joining and Fastening Processes]]
 - [[MNF1_007 Heat Treatment]]
+- [[MNF1_008 Surface Treatments, Coatings, and Cleaning]]
+- [[MNF1_009 Powder Metallurgy and Processing of Ceramics and Glasses]]
 
 ## Homework
 - [[MNF1_HW001 Homework 1]]
 - [[MNF1_HW002 Homework 2]]
 
-# Exams
+## Exams
+
+חומר פתוח למבחן:
+- [[MNF1_OB Everything Everywhere All at Once]]
 
 לצערי אני נאלץ לרשום גם את השאלות עצמן במבחן כי סגל הקורס כותב ומצייר כמו יד שמאל של סבתא שלי.
 
@@ -36,3 +41,4 @@ Assistant:
 
 ## Bibliography
 - Kalpakjian, S., Schmid, S.R., 2016. Manufacturing processes for engineering materials, Sixth edition. ed. Pearson Education, Boston.
+- Callister, W.D., 2007. Materials science and engineering: an introduction, 7th ed. ed. J. Wiley, New York.

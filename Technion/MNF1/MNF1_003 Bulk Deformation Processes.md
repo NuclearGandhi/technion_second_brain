@@ -2,6 +2,8 @@
 aliases:
 ---
 # Introduction
+From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
+
 In this chapter we will go over metalworking processes where the workpiece is subjected to *plastic deformation*, under forces applied through dies and tooling. Deformation processes generally are classified by type of operation as either primary working or secondary working; they are further divided into three categories of cold (room temperature), warm, and hot working.
 
 **Primary-working** operation involve taking a solid piece of metal (generally from a cast state) and breaking it down successively into *wrought* material of various shapes by the basic processes of **forging**, **rolling**, **extrusion**, and **drawing**.
@@ -70,8 +72,8 @@ There are several methods of analysis to theoretically determine stresses, strai
 
 The slab method is one of the earlier and simpler methods of analyzing the stresses and loads in bulk-deformation processes. This method requires the selection of an element in the workpiece and identification of all the normal and frictional stresses acting on that element.
 ![[MNF1_003/Pasted image 20240624105311.png|book]]
->Stresses on an element in plane-strain compression (forging) between flat dies with friction.
-
+>Stresses on an element in plane-strain compression (forging) between flat dies with friction. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
+	
 After a lot of math, [[../SLD1/SLD1_002 שיווי משקל#שיווי משקל במרחב|balancing forces]], assuming $\sigma_{x}$ and $\sigma_{y}$ are [[../SLD2/SLD2_002 מישורים ראשיים#מאמצים מישוריים|principal stresses]], plastic deformation equations, [[../SLD2/SLD2_006 קריטריוני כניעה וכשל#קריטריון פון מיזס|distortion-energy criterion]], we get
 $$\boxed {
 \sigma_{y}-\sigma_{x}=\dfrac{2}{\sqrt{ 3 }}S_{y}=S_{y}'
@@ -182,7 +184,7 @@ If we don't assume pressure distribution is symmetric, we get the following grap
 The **neutral point** (as explained in [[#Rolling]]) is where the surface speed of the rolls matches the speed of the workpiece. The position of the neutral point depends on the balance of forward and backward friction forces. When friction increases, the force helping to move the workpiece through the rolls increases on the entry side. This enhanced frictional force shifts the neutral point toward the entry side because less force is needed to accelerate the workpiece to the roll speed.
 
 ## Roll Forces
-The **roll force**, $F$, (also called the **roll-sparating force**) on the strip is the product of the area under the pressure vs. contact-length curve and the strip width, $w$. 
+The **roll force**, $F$, (also called the **roll-sparating force**) on the strip is the product of the area under the pressure vs. contact-length curve and the strip width, $w$.
 
 A simple method of calculating the roll force is to multiply the contact area by an average contact stress, $p_{\text{avg}}$,
 $$\boxed {

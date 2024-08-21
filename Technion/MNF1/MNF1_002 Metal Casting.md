@@ -3,6 +3,8 @@ aliases:
 ---
 
 # Introduction
+From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
+
 Several methods can be used to shape materials into useful products. **Casting** is one of the oldest methods and was first used about 4000 B.C. to make ornaments, arrowheads and various other objects. The important factors in casting operation are:
 1. **Solidification** of the metal from its molten state, and accompanying shrinkage.
 2. **Flow** of the molten metal into the mold cavity.

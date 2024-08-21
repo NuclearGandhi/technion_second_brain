@@ -3,6 +3,7 @@ aliases:
 ---
 
 # What is manufacturing?
+From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
 **Manufacturing** is the process of converting raw materials into products; it encompasses the design an manufacturing of goods using various production methods and techniques.
 
 Manufacturing may produce *discrete products*, meaning individual parts, such as nails, rivets, bolts, and steel balls. On the other hand, wire, sheet metal, tubing, and pipe are *continuous products*, that may then be cut into individual pieces and thus become discrete products.
@@ -40,7 +41,7 @@ An increasingly wide variety of materials is now available, each having its own 
 ## Material substitution
 As new or improved materials continue to be developed, there are improtant trends in their selection and application. For example, by demonstrating steel's technical and economics advantages, steel producers are countering the increased use of plastics in automobiles and aluminum in beverage cans. Likewise, aluminum producers are countering the use of various materials in automobiles.
 
-![[MNF1_001/Screenshot_20240530_095101_Samsung Notes.jpg|book]]
+![[MNF1_001/Screenshot_20240530_095101_Samsung Notes.jpg]]
 >$(a)$ The C7 Corvette sports car, using an all-aluminum chassis which is $\pu{45kg}$ lighter and $57\%$ stiffer than the C6 Corvette; $(b)$ The aluminum body structure, showing various components made by extrusion, sheet forming and casting processes.
 
 # Selecting Manufacturing Processes
