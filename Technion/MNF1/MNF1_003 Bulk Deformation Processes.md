@@ -3,22 +3,22 @@ aliases:
 ---
 # Introduction
 From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
-
 In this chapter we will go over metalworking processes where the workpiece is subjected to *plastic deformation*, under forces applied through dies and tooling. Deformation processes generally are classified by type of operation as either primary working or secondary working; they are further divided into three categories of cold (room temperature), warm, and hot working.
 
 **Primary-working** operation involve taking a solid piece of metal (generally from a cast state) and breaking it down successively into *wrought* material of various shapes by the basic processes of **forging**, **rolling**, **extrusion**, and **drawing**.
 
 **Secondary-working** operation typically involve further processing of the products from primary working into final or semifinal products, such as bolts, gears, and sheet metal parts.
 
+>[!TODO] להוסיף על extrusion
 
-| Process      |       | General characteristics                                                                                                                                                                                                                                                                                          | Notes               |
-| ------------ | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| [[#Forging]] |       | production of discrete parts with a set of dies; some finishing operations usually necessary; similar parts can be made by casting or powser-metallurgy techniques; usually performed at elevated temperatures; dies and equipment costs are high; moderate to high labor costs; moderate to high operator skill |                     |
-| [[#Rolling]] | Flat  | Production of flat plate, sheet, ad foil at high speeds, and with good surface finish, especially in cold rolling; requires very high capital investment; low to moderate labor cost                                                                                                                             |                     |
-|              | Shape | Production of various structural shapes, such as $\mathrm{I}$-beams and rails, at high speeds; includes thread and ring rolling; requires shaped rolls and expensive equipment; low to moderate labor cost; moderate operator skill;                                                                             |                     |
-| Extrusion    |       |                                                                                                                                                                                                                                                                                                                  | Not in the syllabus |
-| Drawing      |       |                                                                                                                                                                                                                                                                                                                  | Not in the syllabus |
-| Swaging      |       |                                                                                                                                                                                                                                                                                                                  | Not in the syllabus |
+| Process        |       | General characteristics                                                                                                                                                                                                                                                                                          | Notes               |
+| -------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| [[#Forging]]   |       | production of discrete parts with a set of dies; some finishing operations usually necessary; similar parts can be made by casting or powser-metallurgy techniques; usually performed at elevated temperatures; dies and equipment costs are high; moderate to high labor costs; moderate to high operator skill |                     |
+| [[#Rolling]]   | Flat  | Production of flat plate, sheet, ad foil at high speeds, and with good surface finish, especially in cold rolling; requires very high capital investment; low to moderate labor cost                                                                                                                             |                     |
+|                | Shape | Production of various structural shapes, such as $\mathrm{I}$-beams and rails, at high speeds; includes thread and ring rolling; requires shaped rolls and expensive equipment; low to moderate labor cost; moderate operator skill;                                                                             |                     |
+| [[#Extrusion]] |       |                                                                                                                                                                                                                                                                                                                  |                     |
+| Drawing        |       |                                                                                                                                                                                                                                                                                                                  | Not in the syllabus |
+| Swaging        |       |                                                                                                                                                                                                                                                                                                                  | Not in the syllabus |
 
 # Forging
 **Forging** denotes a family of processes used to make discrete parts, in which plastic deformation is caused by compressive stresses applied through various dies and tooling. Forging is one of the oldest metalworking operations, dating back to 5000 B.C.  
@@ -48,16 +48,18 @@ In actual practice the specimen develops a barrel shape during upsetting, as sho
 Barreling is caused primarily by frictional forces that oppose the radially outward flow of the material at the die-workpiece interfaces.
 A result of barreling is that the deformation throughout the specimen becomes *nonuniform* or *inhomogeneous*
 ### Forces under ideal conditions
-If friction at the workpiece-die interfaces is zero and the material is perfectly plastic, with yield strength of $S_{y}$, the normal compressive stress on the cylindrical specimen is uniform and at the level of $S_{y}$. The force at any height ${h}_{1}$ is
+If friction at the workpiece-die interfaces is zero and the material is perfectly plastic, with **yield strength** of $S_{y}$, the normal compressive stress on the cylindrical specimen is uniform and at the level of $S_{y}$. The force at any height ${h}_{1}$ is
 $$F=S_{y}{A}_{1}$$
 where ${A}_{1}$ is the cross-sectional area and is obtained from volume constancy:
 $${A}_{1}=\dfrac{{A}_{o}{h}_{o}}{{h}_{1}}$$
 A typical true stress-true strain curve is shown in the following figure:
 ![[MNF1_003/Pasted image 20240624104418.png|book]]
->(a) True stress–true strain curve in tension. Note that, unlike in an engineering stress–strain curve, the slope is always positive and the slope decreases with increasing strain. Although in the elastic range stress and strain are proportional, the total curve can be approximated by the power expression shown. On this curve, Sy is the yield strength and σf is the flow stress. (b) True stress–true strain curve plotted on a log-log scale.
+>(a) True stress–true strain curve in tension. Note that, unlike in an engineering stress–strain curve, the slope is always positive and the slope decreases with increasing strain. Although in the elastic range stress and strain are proportional, the total curve can be approximated by the power expression shown. On this curve, $S_{y}$ is the yield strength and $\sigma_{f}$ is the flow stress. (b) True stress–true strain curve plotted on a log-log scale.
 
 For convenience, such a curve is often approximated by the equation:
 $$\sigma=K\varepsilon^{n}$$
+where the slope $n$ is the **strain-hardening exponent**, and $K$ is the **strength coefficient**. Note that $K$ is the true stress at a true strain of unity.
+
 If the material's true stress-true strain curve is given by this equation, then the force at any stage during deformation becomes
 $$F=\sigma_{f}{A}_{1}$$
 where $\sigma_{f}$ is the **flow stress** of the material - the true stress required to continue plastic deformation at a particular true strain, ${\varepsilon}_{1}$.
@@ -67,10 +69,19 @@ $$\boxed {
 \bar{\sigma}_{f}=\dfrac{K{{\varepsilon}_{1}}^{n}}{n+1}
  }$$
 
+We will sometimes assume the the material is rigid and perfectly plastic. For such material, once the stress reaches the yield strength $S_{y}$, it continues to undergo deformation at the same stress level; that is, there is no strain hardening - $\sigma_{f}=S_{y}$.
+
+![[MNF1_003/Pasted image 20240822174523.png|book]]
+>Schematic illustration of a rigid, perfectly plastic, idealized stress–strain curves.
+
+>[!notes] Notes: 
+ >In the official course notes, there is no differentiation between $\sigma_{f}$ and $S_{y}$, and denotes both of them with $Y$.
+
 ### Slab Method of Analysis
 There are several methods of analysis to theoretically determine stresses, strains, strain rates and forces in deformation processing. We will focus on the **Slab method**.
 
 The slab method is one of the earlier and simpler methods of analyzing the stresses and loads in bulk-deformation processes. This method requires the selection of an element in the workpiece and identification of all the normal and frictional stresses acting on that element.
+
 ![[MNF1_003/Pasted image 20240624105311.png|book]]
 >Stresses on an element in plane-strain compression (forging) between flat dies with friction. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 	
@@ -229,3 +240,6 @@ where $\omega$ is the roller's angular velocity, and $N$ is the roll speed in $\
 > Therefore, the power needed for both rolls is $\boxed {\pu{510kW}}$.
 
 
+## Extrusion
+
+>[!TODO] להשלים

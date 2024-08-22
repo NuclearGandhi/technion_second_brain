@@ -25,6 +25,7 @@ Assistant:
 - [[MNF1_007 Heat Treatment]]
 - [[MNF1_008 Surface Treatments, Coatings, and Cleaning]]
 - [[MNF1_009 Powder Metallurgy and Processing of Ceramics and Glasses]]
+- [[MNF1_010 Additive Manufacturing]]
 
 ## Homework
 - [[MNF1_HW001 Homework 1]]

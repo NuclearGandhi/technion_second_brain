@@ -22,6 +22,7 @@ Assistant:
 - [[LSY1_008 Fourier Transform]]
 - [[LSY1_009 Frequency Domain Analysis]]
 - [[LSY1_010 Discrete-Time System Analysis]]
+- [[LSY1_011 Fourier Analysis of Discrete Time Signals]]
 
 # Bibliography
 - Lathi, B.P., Green, R.A., 2018. Linear systems and signals, Third Edition. ed, The Oxford Series in Electrical and Computer Engineering. Oxford University Press, New York.

@@ -2,14 +2,10 @@
 aliases:
 ---
 ---
-# Metal Casting - Introduction
-From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
 
-Several methods can be used to shape materials into useful products. **Casting** is one of the oldest methods and was first used about 4000 B.C. to make ornaments, arrowheads and various other objects. The important factors in casting operation are:
-1. **Solidification** of the metal from its molten state, and accompanying shrinkage.
-2. **Flow** of the molten metal into the mold cavity.
-3. **Heat transfer** during solidification and cooling of the metal in the mold; and
-4. **Mold material** and its influence on the casting operation.
+>[!TODO] לסדר, המון דברים לא חשובים, לא כל החומר והנוסאות
+
+# Metal Casting - Introduction
 
 | Casting Process                              | Advantages                                                    | Disadvantages                                |
 | -------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------- |
@@ -157,13 +153,6 @@ The pressure is applied to the top of the pool of liquid, which forces the molte
 # Introduction - Bulk Deformation Processes
 From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
 
-In this chapter we will go over metalworking processes where the workpiece is subjected to *plastic deformation*, under forces applied through dies and tooling. Deformation processes generally are classified by type of operation as either primary working or secondary working; they are further divided into three categories of cold (room temperature), warm, and hot working.
-
-**Primary-working** operation involve taking a solid piece of metal (generally from a cast state) and breaking it down successively into *wrought* material of various shapes by the basic processes of **forging**, **rolling**, **extrusion**, and **drawing**.
-
-**Secondary-working** operation typically involve further processing of the products from primary working into final or semifinal products, such as bolts, gears, and sheet metal parts.
-
-
 | Process      |       | General characteristics                                                                                                                                                                                                                                                                                          | Notes               |
 | ------------ | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
 | [[#Forging]] |       | production of discrete parts with a set of dies; some finishing operations usually necessary; similar parts can be made by casting or powser-metallurgy techniques; usually performed at elevated temperatures; dies and equipment costs are high; moderate to high labor costs; moderate to high operator skill |                     |
@@ -174,11 +163,9 @@ In this chapter we will go over metalworking processes where the workpiece is su
 | Swaging      |       |                                                                                                                                                                                                                                                                                                                  | Not in the syllabus |
 
 # Forging
-**Forging** denotes a family of processes used to make discrete parts, in which plastic deformation is caused by compressive stresses applied through various dies and tooling. Forging is one of the oldest metalworking operations, dating back to 5000 B.C.  
 
 ## Open-Die Forging
 
-<center><iframe src="https://mediaplayer.pearsoncmg.com/assets/secs-open-die-forging-operations" width=600 height=400></iframe></center>
 
 **Open-die forging** typically involves hot working and large deformations using simple tools such as flat dies, rounded sections, punches, or saddles.
 A common process, known as **upsetting**, involves placing a solid cylindrical workpiece (the blank) between two flat dies (platens) and reducing its height.
@@ -219,6 +206,13 @@ For a work hardening material, the average flow stress is given by
 $$\boxed {
 \bar{\sigma}_{f}=\dfrac{K{{\varepsilon}_{1}}^{n}}{n+1}
  }$$
+We will sometimes assume the the material is rigid and perfectly plastic. For such material, once the stress reaches the yield strength $S_{y}$, it continues to undergo deformation at the same stress level; that is, there is no strain hardening - $\sigma_{f}=S_{y}$.
+
+![[MNF1_003/Pasted image 20240822174523.png|book]]
+>Schematic illustration of a rigid, perfectly plastic, idealized stress–strain curves.
+
+>[!notes] Notes: 
+ >In the official course notes, there is no differentiation between $\sigma_{f}$ and $S_{y}$, and denotes both of them with $Y$.
 
 ### Slab Method of Analysis
 There are several methods of analysis to theoretically determine stresses, strains, strain rates and forces in deformation processing. We will focus on the **Slab method**.
@@ -257,10 +251,6 @@ $$\boxed{p_{\text{avg}}=S_{y}\left( 1+\dfrac{2\mu R}{3h} \right)}$$
 # Rolling
 **Rolling** is the process of reducing the thickness or changing the cross section of a long workpiece by compressive forces applied through a set of rolls.
 Rolling, which accounts for about $90\%$ of all metals produced by metalworking operations, was first developed in the late 1500s. The basic rolling operation is called flat rolling, or simply rolling, where the rolled products are flat plate and sheet.
-
-![[MNF1_003/Pasted image 20240624112348.png|book]]
->Schematic outline of various flat-rolling and shape-rolling operations.
-
 
 Rolling is first carried out at elevated temperatures (hot rolling), wherein the coarse-grained, brittle, and porous cast structure of the ingot or continuously cast metal is broken down into a wrought structure, with finer grain size and improved properties
 
@@ -340,8 +330,6 @@ where $\omega$ is the roller's angular velocity, and $N$ is the roll speed in $\
 # Introduction - Machining Processes
 From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
 
-Machining processes are a critical component of manufacturing, used to shape and finish materials into precise and functional components. These processes involve removing material from a workpiece using various cutting tools and techniques to achieve desired dimensions, tolerances, and surface finishes. Machining is fundamental to the production of parts for a wide range of industries, including automotive, aerospace, electronics, and medical devices.
-
 | **Machining Process** | **Description**                                                                                                                       | Notes           |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
 | **[[#Turning]]**      | Performed on a lathe, turning involves rotating the workpiece against a single-point cutting tool to produce cylindrical shapes.      |                 |
@@ -351,8 +339,6 @@ Machining processes are a critical component of manufacturing, used to shape and
 | **Broaching**         | Broaching involves pushing or pulling a multi-tooth cutting tool (broach) through a workpiece to remove material in a single pass.    | Not in syllabus |
 | **Sawing**            | Sawing cuts material into smaller pieces using a saw blade with teeth.                                                                | Not in syllabus |
 # Turning
-
-![](https://www.youtube.com/watch?v=-J3wN1ruDZM)
 
 Turning is a fundamental machining process used in manufacturing to create cylindrical parts by removing material from a rotating workpiece using a cutting tool. This process is one of the most widely used and versatile methods in the manufacturing industry due to its ability to produce precise and intricate shapes with excellent surface finishes. Turning is typically performed on a lathe, which holds and rotates the workpiece against a single-point cutting tool that shapes the material.
 
@@ -630,7 +616,7 @@ Several processes are used for surface treatments, based on mechanical, chemical
 | **Hot dipping**                                             | The workpiece (usually steel or iron) is dipped into a bath of molten metal, such as zinc, tin, aluminum (aluminizing), and terne. Hot-dipped coatings on discrete parts or sheet metal provide galvanized pipe, plumbing supplies, and numerous other products with long-term resistance to corrosion.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **Anodizing**                                               | Anodizing is an oxidation process whereby the workpiece surfaces are converted to a hard and porous oxide layer that provides corrosion resistance and a decorative finish.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Diffusion coating**                                       | In this process, an alloying element is diffused into the surface, thus altering its properties; the elements can be in solid, liquid, or gaseous states.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|                                                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+
 
 
 ![[MNF1_008/Pasted image 20240821140028.png|book]]
@@ -653,19 +639,8 @@ Several processes are used for surface treatments, based on mechanical, chemical
 
 # Introduction - Powder Metallurgy and Processing of Ceramics and Glasses
 From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
-In the manufacturing processes described in the preceding chapters, the raw materials used were either in a molten state or in solid form. This chapter describes groups of operations whereby metal powders, ceramics, and glasses are processed into products, as well as those involved in processing composite materials and superconductors. 
-
-The **powder metallurgy (PM)** process is capable of making complex parts by compacting metal powders in dies and sintering them (heating without melting) to net- or near-net-shape products.
 
 # Powder Metallurgy
-One of the first uses of powder metallurgy was the tungsten filaments for incandescent light bulbs in the early 1900s.
-
-Powder metallurgy has become competitive with processes such as casting, forging, and machining, particularly for relatively complex parts made of high-strength and hard alloys.
-
-![[MNF1_009/Pasted image 20240821165637.png]]
-
-![[MNF1_009/Pasted image 20240821165657.png]]
->(top) Examples of typical parts made by powder-metallurgy processes. (bottom) Upper trip lever for a commercial irrigation sprinkler, made by PM. Made of unleaded brass alloy, it replaces a die-cast part, at a 60% cost savings. Source: Metal Powder Industries Federation.
 
 ## Production of Metal Powders
 Metal powders can be produced by several methods, the choice of which depends on the particular requirements of the end product. Sources for metals generally are their bulk form, ores, salts, and other compounds. These forms are then produced, by various methods, into powders.
@@ -754,4 +729,67 @@ $$\boxed {
 k={k}_{0}(1-P)
  }$$
  where ${k}_{0}$ is the conductivity at zero porosity.
+
+---
+
+# Introduction - Additive Manufacturing
+From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]
+## Stereolithography
+The **stereolithography (STL)** or **vat photopolymerization** process is based on the principle of curing (hardening) a liquid photopolymer into a specific shape. Consider what happens when a laser beam is focused on and translated across the surface of a liquid photopolymer. The laser serves to cure the photopolymer by providing the energy necessary for polymerization.
+
+![[MNF1_010/Pasted image 20240822185707.png|book]]
+>Schematic illustration of the stereolithography process. Source: 3D Systems.
+
+## Powder Bed Processes
+**Powder bed processes** involve a number of processes that utilize powder as the workpiece material, and where the powder is deposited layer-by-layer in a bed or build chamber or cylinder.
+
+**Selective laser melting (SLM)**:
+is a process based on selectively sintering of polymeric or metallic powders into an individual object; The basic components in this process are illustrated in the following figure:
+
+![[MNF1_010/Pasted image 20240822185945.png|book]]
+>Schematic illustration of the selective-laser-sintering process. Source: C. Deckard and P.F. McClure.
+
+In this process, a thin layer of powder is first deposited in the part-build cylinder. A laser beam, guided by a computer (using instructions generated by the 3D CAD program of the desired part), is then focused on that layer, tracing and melting a particular cross section, which then rapidly resolidifies into a solid mass (after the laser beam is moved to another section). The powder in other areas remains loose, but supports the solid portion. Another layer of powder is then deposited, and this cycle is repeated until the entire three-dimensional part has been produced.
+
+**Electron beam melting (EBM)**:
+A process similar to [[MNF1_006 Joining and Fastening Processes#Introduction|selective laser sintering and electron-beam welding]], electron-beam melting uses the energy source associated with an electron beam to melt metal powder (such as titanium, stainless steel, or cobalt-chrome) to make metal prototypes.
+
+### Diffusion in Powder Bed Processes
+The diffusion processes in Electron Beam Melting (EBM) and Selective Laser Melting (SLM) can be described using equations from thermodynamics and materials science. We will focus on **Arrhenius Equation**:
+
+>[!theorem] Theorem: 
+> The diffusion coefficient $D$ is temperature-dependent and follows the **Arrhenius relationship**:
+> $$D={D}_{0}\exp\left( -\dfrac{E_{a}}{RT} \right)$$
+> where ${D}_{0}$ is called the pre-exponential factor (related to the material); $E_{a}$ is the **activation energy** for diffusion (also related to the material); $R$ is the [[../THE1/THE1_002 חישוב תכונות מערכת#קבוע הגז האוניברסלי|universal gas constant]]; and $T$ is the absolute temperature (in Kelvin).
+
+This equation shows that diffusion rates increase exponentially with temperature, which is particularly relevant in high-temperature processes like EBM and SLM.
+
+Another important concept is called the **characteristic length of diffusion**. it is Used to estimate the distance over which diffusion occurs within a certain period of time. It provides insight into how far particles, atoms, or molecules can move through a medium due to diffusion over a given timescale.
+
+>[!def] Definition: 
+ >The characteristic length $L$ of diffusion is typically defined as the distance over which a diffusing species spreads in a material over a certain time $t$. It is derived from the solution to Fick's Second Law of Diffusion for certain boundary conditions. For a simple diffusion process in one dimension, the characteristic length $L$ can be estimated using the following relationship:
+ >$$L=\sqrt{ Dt }$$
+ >where $D$ is the Diffusion coefficient (rate of diffusion); and $t$ is the time over which diffusion occurs.
+
+## Energy Balance Equation for Powder Bed Processes
+
+The energy balance equation is essential in understanding the thermal processes during Electron Beam Melting (EBM) in an ARCAM machine. This equation ensures that the energy supplied by the electron beam is correctly accounted for, influencing the melting, solidification, and cooling phases of the process.
+
+The general form of the energy balance equation in an EBM system can be described as:
+
+$$Q_{\text{in}}=Q_{\text{melting}}+Q_{\text{heating}} $$
+
+- $Q_{\text{in}}$ is the energy input from the electron beam:
+	$$Q_{\text{in}}=Pt$$
+	where $P$ is the beam power (given in $\pu{W}$), and $t$ is length of time the beam was powered.
+- $Q_{\text{melting}}$ is the energy required to melt the powder from a solid to a liquid phase. It can be calculated as:
+	$$Q_{\text{melting}}=mL_{f}$$
+	where $m$ is the mass of the material being melted, and $L_{f}$ is the **Latent heat of fusion** of the material, usually given in $\pu{kJ.kg^{-1}}$.
+
+- $Q_{\text{heating}}$ includes the energy required to heat the material to its melting point. It can be calculated using the specific heat capacity $c_{p}$​ of the material:
+	$$Q_{\text{heating}}=mc_{p}\Delta T$$
+	where $\Delta T$ is the temperature change (in Kelvin or Celsius).
+	Sometimes we also pass the boiling point of the material. In that case, we need to use two different specific heat capacities; $c_{s}$ for solid, and $c_{\ell}$ for liquid. $Q_{\text{heating}}$ is then given by:
+	$$Q_{\text{heating}}=m[c_{s}(T_{m}-{T}_{0})+c_{\ell}(T_{b}-T_{m})]$$
+	where ${T}_{0}$ is the initial temperature; $T_{m}$ is the melting point temperature; and $T_{b}$ is the boiling point temperature.
 

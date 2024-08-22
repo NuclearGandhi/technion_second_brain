@@ -6,6 +6,8 @@ aliases:
   - straight turning
   - facing
 ---
+>[!TODO] להוסיף על טיב פני שטח
+
 # Introduction
 From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
 

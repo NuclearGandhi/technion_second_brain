@@ -30,11 +30,11 @@ where $c$ is a constant chosen to ensure the convergence of the integral.
 
 This pair of equations is known as the **bilateral Laplace transform pair**, where $X(s)$ is the direct Laplace transform of $x(t)$ and $x(t)$ is the inverse Laplace transform $X(s)$. Symbolically,
 $$\begin{aligned}
-X(s)=\mathcal{L}[x(t)] &  & \text{and} &  & x(t)=\mathcal{L}^{-1}[X(s)]
+X(s)=\mathcal{L}\{ x(t) \} &  & \text{and} &  & x(t)=\mathcal{L}^{-1}\{ X(s) \}
 \end{aligned}$$
 Note that
 $$\begin{aligned}
-\mathcal{L}^{-1}\{ \mathcal{L}[x(t)] \}=x(t) &  & \text{and} &  & \mathcal{L}\{ \mathcal{L}^{-1}[X(s)] \}=X(s)
+\mathcal{L}^{-1}\{ \mathcal{L}\{x(t)\} \}=x(t) &  & \text{and} &  & \mathcal{L}\{ \mathcal{L}^{-1}\{ X(s)\} \}=X(s)
 \end{aligned}$$
 
 

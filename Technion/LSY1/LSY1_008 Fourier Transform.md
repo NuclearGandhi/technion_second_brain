@@ -186,3 +186,4 @@ $$\boxed {
 >The Fourier spectrum
 
 
+>[!TODO] לעשות עוד שאלות
