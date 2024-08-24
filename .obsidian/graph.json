@@ -2,7 +2,7 @@
   "collapse-filter": false,
   "search": "file: -.excalidraw",
   "showTags": false,
-  "showAttachments": false,
+  "showAttachments": true,
   "hideUnresolved": true,
   "showOrphans": true,
   "collapse-color-groups": false,
@@ -130,6 +130,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.11660891579457348,
+  "scale": 0.321336386050361,
   "close": true
 }

@@ -28,5 +28,4 @@
 	**פתרון**:
 	נשרטט מבני לואיס:
 	![[Technion/GCH1/GCH1_E/GCH1_E2023WA 2023-02-17 14.19.47.excalidraw.svg]]
-%%[[Technion/GCH1/GCH1_E/GCH1_E2023WA 2023-02-17 14.19.47.excalidraw|🖋 Edit in Excalidraw]], and the [[GCH1_E2023WA 2023-02-17 14.19.47.excalidraw.dark.svg|dark exported image]]%%
 	קל לראות מהמבנים האלו ש-$\ce{ SOC{l}_{2} }$ הוא היחיד שפולארי ולכן רק לו יש מומנט דיפול.

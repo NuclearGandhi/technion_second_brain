@@ -43,7 +43,6 @@
 	$$\ce{ 2{H}_{2}(g) + {O}_{2}(g)->2{H}_{2}O(g) }$$
 	נשרטט מבני לואיס:
 	![[Technion/GCH1/GCH1_E/GCH1_E01 תרגילים ממבחנים 2023-02-15 09.49.23.excalidraw.svg|center]]
-	%%[[Technion/GCH1/GCH1_E/GCH1_E01 תרגילים ממבחנים 2023-02-15 09.49.23.excalidraw|🖋 Edit in Excalidraw]], and the [[GCH1_E01 תרגילים ממבחנים 2023-02-15 09.49.23.excalidraw.dark.svg|dark exported image]]%%
 	נסיק כי בתגובה הנ"ל, 2 קשרי $\ce{ H-H }$ וקשר 1 של $\ce{ O=O }$ התפרקו, ונוצרו 4 קשרי $\ce{ O-H }$. נחשב ונקבל:
 	$$\begin{aligned}
 \Delta H(\ce{ 2{H}_{2}O })&=2\times\pu{ 432kJ*mol-1}+ \pu{ 498kJ*mol^{-1} }-(4\times \pu{ 467kJ*mol-1 }) \\
@@ -93,7 +92,6 @@ E_{k}&=E_{\text{photon}}-E_{0}=h\nu-E_{0}\\
 	**פתרון**:
 	נשרטט מבני לואיס:
 	![[Technion/GCH1/GCH1_E/GCH1_E01 תרגילים ממבחנים 2023-02-15 09.50.52.excalidraw.svg|center]]
-	%%[[Technion/GCH1/GCH1_E/GCH1_E01 תרגילים ממבחנים 2023-02-15 09.50.52.excalidraw|🖋 Edit in Excalidraw]], and the [[GCH1_E01 תרגילים ממבחנים 2023-02-15 09.50.52.excalidraw.dark.svg|dark exported image]]%%
 קל לראות כי מתקיים:
 	$$\ce{ S{O}_{3} < S{O}_{4}^{2-} < S{O}_{3}^{2-} }$$
 1. **שאלה:**
@@ -132,7 +130,6 @@ h\nu&=\Delta E_{3\to 2}=z^{2}R_H\left( \frac{1}{2^{2}}-\frac{1}{3^{2}} \right)=z
 	**פתרון**:
 	נשרטט לואיס:
 	![[Technion/GCH1/GCH1_E/GCH1_E01 תרגילים ממבחנים 2023-02-15 10.02.52.excalidraw.svg|center]]
-	%%[[Technion/GCH1/GCH1_E/GCH1_E01 תרגילים ממבחנים 2023-02-15 10.02.52.excalidraw|🖋 Edit in Excalidraw]], and the [[GCH1_E01 תרגילים ממבחנים 2023-02-15 10.02.52.excalidraw.dark.svg|dark exported image]]%%
 	מכך נסיק כי המטען הפורמאלי על האטום המרכזי הוא $0$, מבנה הוא זוויתי, ומומנט הדיפול שלו לא אפסי (הוא לא סימטרי לאורך כל הצירים).
 1. **שאלה:**
 	בשריפה של 2 גרם של החומר הנפיץ הידרזין ($\ce{ {N}_{2}{H}_{4} }$), בקלורימטר פצצה (מערכת סגורה ומבודדת חום) עולה הטמפרטורה של הקלורימטר מ-$\pu{ 21.08^{\circ}C }$ עד ל-$\pu{ 28.16^{\circ}C }$. קיבול החום של הקלורימטר הינו $\pu{ 5860J*^{\circ}C-1 }$. מהו חום השריפה ($\Delta H$) של הידרזין?
