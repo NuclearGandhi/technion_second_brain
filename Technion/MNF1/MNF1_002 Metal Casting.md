@@ -47,19 +47,19 @@ Because pure metals have limited mechanical properties, they are often enhanced 
 In [[Technion/IMT1/IMT1_004 דיאגרמת פאזות#דיאגרמת פאזות בינארית|Introduction to Material Engineering]] we have seen that solidification in alloys begins when the temprature drops below the **liquidus**, $T_{L}$, and is complete when it reaches the **solidus**, $T_{S}$. Within this temprature range, the alloy is in a mushy or pasty state, with **columnar dendrites**.
 
 ![[MNF1_001/Screenshot_20240530_105030_Obsidian.jpg|book]]
->Schematic illustration of alloy solidification and temprature distribution in the solidifying metal. Note the formation of dendrites in the semi-solid (mushy) zone.
+>Schematic illustration of alloy solidification and temperature distribution in the solidifying metal. Note the formation of dendrites in the semi-solid (mushy) zone.
 
 Note in the lower right of the figure the presence of liquid metal between the dendrite arms. Dendrites have three-dimensional arms and branches, which eventaully interlock, as shown in the next figure:
 ![[MNF1_001/Screenshot_20240530_110033_Samsung Notes.jpg|book]]
->$(a)$ Solidification patterns for gray cast iron in a $\pu{180mm}$ sqaure casting. Note that after $\pu{11\min_{}}$ of cooling, dendrites reach other, but the casting is still mushy throught. It takes about two hours for this casting so solidify completely. $(b)$ Solidification of carbon steels in sand and chill (metal) molds. Note the difference in solidification patterns as the carbon content increases.
+>$(a)$ Solidification patterns for gray cast iron in a $\pu{180mm}$ square casting. Note that after $\pu{11\min_{}}$ of cooling, dendrites reach other, but the casting is still mushy throught. It takes about two hours for this casting so solidify completely. $(b)$ Solidification of carbon steels in sand and chill (metal) molds. Note the difference in solidification patterns as the carbon content increases.
 
 Slow cooling rate (on the order of $\pu{e2K.s^{-1}}$) result in a coarse dendritic structures, with large spacing between the dendrite arms. for higher cooling rates (on the order of $\pu{e4K.s^{-1}}$ the structure becomes finer , with smaller dendrite arm spacing. For still higher cooling rate (on the order of $\pu{e6}$ to $\pu{e8K.s^{-1}}$), the structures developed are **amorphous** (meaning without any ordered crystalline structure.
 
 ## Structure-Property Relationships
 Because all castings must possess certain specific properties to meet design and service requirements, the relationships between the properties and the structures developed during solidification are important considerations.
-The compositions of dendrties and of the liquid metal in casting are given by the [[../IMT1/IMT1_004 דיאגרמת פאזות#דיאגרמת פאזות בינארית|phase diagram]] of the particular alloy. Under normal cooling rates typically encountered in parctice, **cored dendrites** are formed, which have a surface composition that is different from that  at their centers. The surface has a higher concentraition of alloying elements that at the core the dendrite, due to solute rejection ffrom the core toward the surface during solidification of the dendrite (called **microsegregation**).
+The compositions of dendrites and of the liquid metal in casting are given by the [[../IMT1/IMT1_004 דיאגרמת פאזות#דיאגרמת פאזות בינארית|phase diagram]] of the particular alloy. Under normal cooling rates typically encountered in practice, **cored dendrites** are formed, which have a surface composition that is different from that  at their centers. The surface has a higher concentration of alloying elements that at the core the dendrite, due to solute rejection from the core toward the surface during solidification of the dendrite (called **microsegregation**).
 
-The darker shading the interdendritic liquid near the dendrite shown in the following figure indicates that these regions have a higher solute concentration; consequently, microsegregation in these regions is much more pronounced than in others.
+The darker shading in the interdendritic liquid near the dendrite shown in the following figure indicates that these regions have a higher solute concentration; consequently, microsegregation in these regions is much more pronounced than in others.
 
 ![[MNF1_002/Screenshot_20240606_085311_OneDrive.jpg]]
 >Schematic illustration of three basic types of cast structures: (a) columnar dendritic; (b) equiaxed dendritic; and (c) equiaxed nondendritic.
@@ -90,7 +90,7 @@ Metals generally shrink during solidification and cooling to room temprature:
 *Shrinkage* in a casting causes dimensional changes and sometimes cracking and is a result of of the following phenomena:
 1. Contraction of the molten metal as it cools before it begins to solidify.
 2. Contraction of the metal during phase change from liquid to solid (latent heat of fusion).
-3. Contraction of the solidified metal (the casting) as its temprature drops to ambient temprature.
+3. Contraction of the solidified metal (the casting) as its temperature drops to ambient temperature.
 
 The largest potential amount of shrinkage occurs during the phase change of the material from liquid to solid; this can be reduced or eliminated through the use of risers or pressure-feeding of molten metal.
 
@@ -114,7 +114,7 @@ The **sand casting** process consists of (a) placing a pattern, having the shape
 >Two sets of castings (bronze and aluminum) from the above sand mold.
 
 ## Shell-Mold Casting
-**Shell-mold casting** has grown siginificanttly because it can produce many types of castings with close dimensional tolerances, good surface finish, and at a low cost. In this process, a mounted pattern, made of a ferrous metal or aluminum, is heated to $175^{\circ}\pu{C}$ to $370^{\circ}\pu{C}$, coated with a parting agent, such as silicone, and clamped to a box or chanber containing a fine sand. The sand mixture is then turn over the heated pattern, coating it evenly. The assembly is often placed in an oven for a short period of time to complete the curing of the resin. The shell hardens around the pattern and is then removed, using built-in ejector pins. Two half-shells are made in this manner and are bonded or clamped together in preparation for pouring.
+**Shell-mold casting** has grown significantly because it can produce many types of castings with close dimensional tolerances, good surface finish, and at a low cost. In this process, a mounted pattern, made of a ferrous metal or aluminum, is heated to $175^{\circ}\pu{C}$ to $370^{\circ}\pu{C}$, coated with a parting agent, such as silicone, and clamped to a box or chamber containing a fine sand. The sand mixture is then turn over the heated pattern, coating it evenly. The assembly is often placed in an oven for a short period of time to complete the curing of the resin. The shell hardens around the pattern and is then removed, using built-in ejector pins. Two half-shells are made in this manner and are bonded or clamped together in preparation for pouring.
 ![[MNF1_002/Screenshot_20240606_105846_OneDrive.jpg|book]]
 >Schematic illustration of the shell-molding process, also called the *dump-box* technique.
 
@@ -123,7 +123,7 @@ Application include small mechanical parts requiring high precision, gear housin
 
 # Expendable-Mold, Expendable-Pattern Casting Processes
 ### Lost Foam Process
-The *expendable-pattern casting process* uses a ploystyrene pattern, which evaporates upon contact with the molten metal, to form a cavity for the casting.
+The *expendable-pattern casting process* uses a polystyrene pattern, which evaporates upon contact with the molten metal, to form a cavity for the casting.
 
 ![[MNF1_002/Screenshot_20240606_115252_OneDrive.jpg|book]]
 >Schematic illustration of the expendable-pattern casting process, also known as lost-foam or evaporative-pattern casting.
@@ -131,7 +131,7 @@ The *expendable-pattern casting process* uses a ploystyrene pattern, which evapo
 Typical parts made are aluminum engine blocks, cylinder heads, crank-shafts, brake components, manifolds, and machine bases.
 
 ## Lost Wax Process
-In the lost was process, typical parts made are mechanical components such as gears, cams, valves, and ratchets; The pattern is made by injecting semisolid or liquid wax or plastic into a metal die in the shape of the pattern, or is made through addive manufacturnig methods. The pattern is then removed and dipped into a slurry of refractory material. Afther this initial coating has dried, the pattern is coated repeatedly to increase its thickness. The one-piece mold is dried in air and heated to a temperature of $90^{\circ}\pu{C}$ to $175^{\circ}\pu{C}$ for about $\pu{4hrs}$ (depending on the metal to be cast), to drive off the water crystallization (chemically combined water). After the metal has been poured and has solidified the mold is broken up and the casting is removed.
+In the lost was process, typical parts made are mechanical components such as gears, cams, valves, and ratchets; The pattern is made by injecting semisolid or liquid wax or plastic into a metal die in the shape of the pattern, or is made through ad dive manufacturing methods. The pattern is then removed and dipped into a slurry of refractory material. After this initial coating has dried, the pattern is coated repeatedly to increase its thickness. The one-piece mold is dried in air and heated to a temperature of $90^{\circ}\pu{C}$ to $175^{\circ}\pu{C}$ for about $\pu{4hrs}$ (depending on the metal to be cast), to drive off the water crystallization (chemically combined water). After the metal has been poured and has solidified the mold is broken up and the casting is removed.
 ![[MNF1_002/Screenshot_20240606_120422_Obsidian.jpg|book]]
 >Schematic illustration of investment casting (lost wax process).
 

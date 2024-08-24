@@ -41,7 +41,7 @@ $$x[t]=\begin{cases}
 \end{cases}$$
 
 
-![[Screenshot_20240822_112925_Samsung Notes.jpg|book|400]]
+![[LSY1_011/Screenshot_20240822_112925_Samsung Notes.jpg|book|400]]
 >Discrete-time signal $x[i]$, for $N=10$.
 
 **Solution**:
@@ -74,7 +74,7 @@ X(e^{j\theta})=\dfrac{\sin[\theta(N+1/2)]}{\sin(\theta /2)}
  }$$
 
 
-![[Screenshot_20240822_115831_Samsung Notes.jpg|book|400]]
+![[LSY1_011/Screenshot_20240822_115831_Samsung Notes.jpg|book|400]]
 >The plot of $X(e^{j\theta})$ for $N=10$.
 
 ## Question 2

@@ -287,12 +287,24 @@ Local only
   padding-bottom: var(--list-spacing);
 }
 
+div.page-break::after {
+	content: "Break page. Need at least 1 blank line after.";
+	display: block;
+	font-style: italic;
+	color: gray;
+}
 
 /*
 PDF only
 ==========
  */
 
+
+@media print {
+	div.page-break::after {
+		display: none;
+	}
+}
 
 
 @media print {

@@ -79,3 +79,21 @@ Because of its past history of thermal cycling and the attendant microstructural
 6. **Residual stresses**. Because of localized heating and cooling during welding, expansion and contraction of the weld area develop residual stresses.
 	![[MNF1_006/Pasted image 20240820185206.png|book]]
 	>Distortion and warping of parts after welding, caused by differential thermal expansion and contraction of different regions of the welded assembly. Warping can be reduced or eliminated by proper weld design and fixturing prior to welding.
+	
+
+## Weldability
+Weldability is generally defined as (a) a metal’s capability to be welded into a specific structure with specific properties and characteristics and (b) the ability of the welded structure to satisfactorily meet service requirements.
+The following list, in alphabetical order, briefly summarizes the weldability of specific groups of metals. Their weldability can vary significantly, with some requiring special welding techniques and proper control of all processing parameters.
+
+1. Aluminum alloys: weldable at a high rate of heat input; alloys containing zinc or copper generally are considered unweldable.
+2. Cast irons: generally weldable.
+3. Copper alloys: similar to that of aluminum alloys.
+4. Lead: weldable.
+5. Nickel alloys: weldable.
+6. Stainless steels: weldable.
+7. Steels, plain-carbon: (a) excellent weldability for low-carbon steels; (b) fair to good weldability for medium-carbon steels; and (c) poor weldability for high-carbon steels. 
+8. Steels, low-alloy: fair to good weldability.
+9. Steels, high-alloy: generally good weldability under well-controlled
+10. Tin: weldable.
+11. Titanium alloys: weldable with the use of proper shielding gases.
+12. Zinc: difficult to weld; soldering preferred.

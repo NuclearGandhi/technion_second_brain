@@ -9,16 +9,12 @@ In this chapter we will go over metalworking processes where the workpiece is su
 
 **Secondary-working** operation typically involve further processing of the products from primary working into final or semifinal products, such as bolts, gears, and sheet metal parts.
 
->[!TODO] להוסיף על extrusion
+| **Process**        | **Description**                                                                                                                                                                | **Advantages**                                                                                                                                                    | **Applications**                                                                 |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **[[#Forging]]**   | Deformation of metal using localized compressive forces, typically by hammering or pressing. It can be performed hot or cold, leading to different mechanical properties.      | Produces parts with superior mechanical properties<br>High strength due to grain refinement<br>Less material waste                                                | Crankshafts, gears, aerospace components, high-strength fasteners                |
+| **[[#Rolling]]**   | Metal is passed through a pair of rollers to reduce thickness or change cross-sectional shape. It can be done hot (hot rolling) or cold (cold rolling).                        | High production rate<br>Good surface finish<br>Can handle large pieces of metal<br>Economical for mass production                                                 | Sheets, plates, I-beams, rails, automotive body panels                           |
+| **[[#Extrusion]]** | Metal is forced through a die to produce a continuous cross-sectional shape. Can be done hot or cold, and includes direct (forward) and indirect (backward) extrusion methods. | Ability to create complex cross-sections<br>High material utilization<br>Produces long lengths of uniform cross-sections<br>Suitable for both metals and plastics | Pipes, tubing, structural shapes, window frames, heat sinks, electrical conduits |
 
-| Process        |       | General characteristics                                                                                                                                                                                                                                                                                          | Notes               |
-| -------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| [[#Forging]]   |       | production of discrete parts with a set of dies; some finishing operations usually necessary; similar parts can be made by casting or powser-metallurgy techniques; usually performed at elevated temperatures; dies and equipment costs are high; moderate to high labor costs; moderate to high operator skill |                     |
-| [[#Rolling]]   | Flat  | Production of flat plate, sheet, ad foil at high speeds, and with good surface finish, especially in cold rolling; requires very high capital investment; low to moderate labor cost                                                                                                                             |                     |
-|                | Shape | Production of various structural shapes, such as $\mathrm{I}$-beams and rails, at high speeds; includes thread and ring rolling; requires shaped rolls and expensive equipment; low to moderate labor cost; moderate operator skill;                                                                             |                     |
-| [[#Extrusion]] |       |                                                                                                                                                                                                                                                                                                                  |                     |
-| Drawing        |       |                                                                                                                                                                                                                                                                                                                  | Not in the syllabus |
-| Swaging        |       |                                                                                                                                                                                                                                                                                                                  | Not in the syllabus |
 
 # Forging
 **Forging** denotes a family of processes used to make discrete parts, in which plastic deformation is caused by compressive stresses applied through various dies and tooling. Forging is one of the oldest metalworking operations, dating back to 5000 B.C.  
@@ -138,6 +134,20 @@ $$\boxed{p_{\text{avg}}=S_{y}\left( 1+\dfrac{2\mu R}{3h} \right)}$$
 >  }
 > \end{gathered}$$
 
+## Impression-die forging
+In impression-die forging, the workpiece acquires the shape of the die cavity (hence the term impression) while it is being deformed between the two closing dies.
+
+![[MNF1_003/Pasted image 20240823111837.png|book]]
+>Schematic illustrations of stages in impression-die forging. Note the formation of a flash, or excess material that subsequently has to be trimmed off.
+
+Forces in impression-die forging can be difficult to predict, because of the generally complex shapes involved and the fact that each location within the workpiece is typically subjected to different strains, strain rates, and temperatures, as well as variations in coefficient of friction along the die-workpiece contact area. Certain empirical pressure-multiplying factors, $K_{p}$, have been developed for use with the expression:
+$$\boxed {
+F=K_{p}\sigma_{f}A
+ }$$
+ where $F$ is the forging force; $A$ is the projected area of the forging (including the flash), $\sigma_{f}$ is the flow stress of the material at the strain, the strain rate, and temperature to which the material is subjected. Typical values of $K_{p}$ are given in the following table:
+ ![[MNF1_003/Pasted image 20240823112056.png|book]]
+ >Range of $K_{p}$ values for impression-die forging.
+
 # Rolling
 **Rolling** is the process of reducing the thickness or changing the cross section of a long workpiece by compressive forces applied through a set of rolls.
 Rolling, which accounts for about $90\%$ of all metals produced by metalworking operations, was first developed in the late 1500s. The basic rolling operation is called flat rolling, or simply rolling, where the rolled products are flat plate and sheet.
@@ -240,6 +250,47 @@ where $\omega$ is the roller's angular velocity, and $N$ is the roll speed in $\
 > Therefore, the power needed for both rolls is $\boxed {\pu{510kW}}$.
 
 
-## Extrusion
+# Extrusion
 
->[!TODO] להשלים
+In the extrusion process  developed in the late 1700s for producing lead pipe, a billet is placed in a chamber and forced through a die opening by a ram. The die may be round or of various shapes. Typical parts made are railings for sliding doors, window frames, aluminum ladders, tubing, and structural and architectural shapes.
+
+![[MNF1_003/Pasted image 20240824134659.png|book]]
+>Schematic illustration of the direct-extrusion process. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
+
+Two types of extrusions are direct and indirect extrusion:
+1. **Direct extrusion** (forward extrusion) is similar to forcing toothpaste through the opening of a tube. Note that the billet in this process moves relative to the container wall in the same direction as the extruded product.
+2. In **indirect extrusion** (reverse, inverted, or backward extrusion), the die moves toward the billet and there is no relative motion at the billet-container interface. Indirect extrusion is often used when the workpiece has a high level of friction with the billet, such as hot extrusion of steel.
+
+Another important differentiation is between hot and cold extrusion processes:
+1. **Hot extrusion**: For metals and alloys that do not have sufficient ductility at room temperature, or in order to reduce the forces required, extrusion can be carried out at elevated temperatures.
+2. **Cold extrusion**: Developed in the 1940s, cold extrusion is a general term often denoting a combination of operations, such as a combination of direct and indirect extrusion and forging. The cold-extrusion process uses slugs cut from cold-finished or hot-rolled bars, wire, or plates.
+
+![[MNF1_003/Pasted image 20240824140122.png|book]]
+>Two examples of cold extrusion; the arrows indicate the direction of metal flow during extrusion.
+
+## Mechanics of Extrusion
+
+The force required for extrusion depends on (a) the strength of the billet material, (b) extrusion ratio, (c) friction between the billet, container, and die surfaces, and (d) process variables.
+
+
+![[MNF1_003/Pasted image 20240824135117.png|book]]
+>Process variables in direct extrusion; the die angle, reduction in cross-section, extrusion speed, billet temperature, and lubrication all affect the extrusion pressure. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
+
+For a small die angle, $\alpha$, it has been shown that the extrusion force can then be approximated by:
+$$\boxed {
+F=A_{o}k\ln\left( \dfrac{A_{o}}{A_{f}} \right)
+ }$$
+where $k$ is the extrusion constant, determined experimentally;
+
+## Extrusion Defects
+
+**Surface Cracking**:
+If extrusion temperature, friction, or speed is too high, surface temperatures can become excessive, which may cause surface cracking and tearing.
+These cracks are intergranular (along the grain boundaries).
+Surface cracking also may occur at lower temperatures, attributed to periodic sticking of the extruded part along the die land. Because of its similarity in appearance to the surface of a bamboo stem, it is known as a **bamboo defect**.
+
+**Internal Cracking**:
+The center of the extruded product can develop cracks, called center cracking, center-burst, arrowhead fracture, or chevron cracking:
+![[MNF1_003/Pasted image 20240824141248.png]]
+>Chevron cracking (central burst) in extruded round steel bars; unless the products are inspected, such internal defects may remain undetected and later cause failure of the part in service. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
+

@@ -36,10 +36,11 @@ Assistant:
 חומר פתוח למבחן:
 - [[MNF1_OB Everything Everywhere All at Once]]
 
-לצערי אני נאלץ לרשום גם את השאלות עצמן במבחן כי סגל הקורס כותב ומצייר כמו יד שמאל של סבתא שלי.
-
+מבחנים:
 - [[MNF1_E2020SA 2020 אביב מועד א']]
+- [[MNF1_E2023SA 2023 אביב מועד א']]
 
 ## Bibliography
 - Kalpakjian, S., Schmid, S.R., 2016. Manufacturing processes for engineering materials, Sixth edition. ed. Pearson Education, Boston.
 - Callister, W.D., 2007. Materials science and engineering: an introduction, 7th ed. ed. J. Wiley, New York.
+- Kalpakjian, S., Schmid, S.R., Sekar, K.S.V., 2014. Manufacturing engineering and technology, 7. ed. in SI units. ed, Always learning. Pearson Education South Asia, Singapore.

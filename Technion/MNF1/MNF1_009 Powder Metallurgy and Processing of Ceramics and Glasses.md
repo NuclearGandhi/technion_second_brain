@@ -25,6 +25,9 @@ Metal powders can be produced by several methods, the choice of which depends on
 ![[MNF1_009/Pasted image 20240821170101.png]]
 >(top) Scanning-electron microscope image of iron powder particles made by atomization. (bottom) Nickelbased superalloy (Udimet 700) powder particles made by the rotating electrode process; Source: P.G Nash. 
 
+One method of powder production is **Atomization**:
+Atomization produces a liquid-metal stream by injecting molten metal through a small orifice. The stream is broken up by jets of inert gas, air, or water, known as gas or water atomization, respectively.
+
 
 ![[MNF1_009/Pasted image 20240821170220.png|book]]
 >Particle shapes and characteristics of metal powders and the processes by which they are produced. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
@@ -52,7 +55,7 @@ For improved compaction, PM parts may be subjected to a number of additional ope
 
 In **cold isostatic pressing (CIP)**, the assembly is pressurized hydrostatically in a chamber, usually filled with water. The most common pressure is $\pu {400 MPa }$, although pressures of up to $\pu {1000 MPa }$ may be used.
 
-In **hot isostatic pressing (HIP)**, the container is usually made of a high melting-point sheet metal.  typical operating condition for HIP is $\pu {100 MPa }$ at $1100^{\circ}\pu{C}$, although the trend is toward higher pressures and temperatures. The main advantage of HIP is its ability to produce compacts with essentially $100\%$ density, high bond strength among the particles, and good mechanical properties.
+In **hot isostatic pressing (HIP)**, the container is usually made of a high melting-point sheet metal, and the pressurizing medium is inert gas or vitreous (glasslike) fluid. typical operating condition for HIP is $\pu {100 MPa }$ at $1100^{\circ}\pu{C}$, although the trend is toward higher pressures and temperatures. The main advantage of HIP is its ability to produce compacts with essentially $100\%$ density, high bond strength among the particles, and good mechanical properties.
 
 In **Pressure-less compaction**, the die is filled with metal powder by gravity, and the powder is sintered directly in the die. Because of the resulting low density, pressure-less compaction is used principally for porous parts, such as filters.
 

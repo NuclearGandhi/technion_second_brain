@@ -6,8 +6,6 @@ aliases:
   - straight turning
   - facing
 ---
->[!TODO] להוסיף על טיב פני שטח
-
 # Introduction
 From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
 
@@ -32,7 +30,7 @@ Turning is a fundamental machining process used in manufacturing to create cylin
 >Examples of machining operations that can be performed on a lathe and similar machine tools.
 
 ![[MNF1_004/Pasted image 20240627203834.png|book]]
->(a) Schematic illustration of a turning operation, showing depth of cut, $d$, and feed, $f$. Cutting speed is the surface speed of the workpiece at the tool tip. (b) Forces acting on a cutting tool in turning. $F_{c}$ is the cutting force; $F_{t}$ is the thrust or feed force (in the direction of feed); and $F_{r}$ is the radial force that tends to push the tool away from the workpiece being machined.
+>(a) Schematic illustration of a turning operation, showing depth of cut, $d$, and feed, $f$. Cutting speed is the surface speed of the workpiece at the tool tip. (b) Forces acting on a cutting tool in turning. $F_{c}$ is the cutting force; $F_{t}$ is the thrust or feed force (in the direction of feed); and $F_{r}$ is the radial force that tends to push the tool away from the workpiece being machined. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 - **Cutting Speed $V_{c}$** is the speed at which the *outer surface* of the workpiece moves past the cutting tool, measured in meters per minute (m/min). It can be calculated as
 	$$\boxed {
@@ -47,21 +45,24 @@ V_{c}=\pi DN
 	$$\boxed {
 t=\dfrac{L}{fN}
  }$$
+	 If $N$ is dynamic, we would need to integrate:
+	 $$\boxed {
+t=\int_{D_{\min_{}}}^{D_{\max_{}}} \dfrac{\pi D}{2fV_{c}} \, \mathrm{d}D
+ }$$
+
 
 >[!example] Example: 
 For a workpiece with a diameter of $0.1$ meters rotating at $\pu{600rpm}$:
 $$V_{c}=\pi \cdot 0.1 \cdot 600 \approx  \pu{188.4m.min^{-1}}$$
 
-## Material Removal Rate
 
-**Material Removal Rate ($MR R$)** quantifies the volume of material removed from a workpiece per unit time. A higher MRR indicates a more efficient process, but it must be balanced with considerations of tool wear, surface finish, and accuracy.
+- **Material Removal Rate ($MR R$)** quantifies the volume of material removed from a workpiece per unit time. A higher MRR indicates a more efficient process, but it must be balanced with considerations of tool wear, surface finish, and accuracy.
 $$\begin{gathered}
 \boxed {
-MRR=fdV_{C}=\pi fdDN 
+\mathrm{MRR}=fdV_{C}=\pi fdDN 
  }\\[1ex]
-[M R R]=\pu{mm^{3}.min^{-1}}
+[\mathrm{MRR}]=\pu{mm^{3}.min^{-1}}
 \end{gathered}$$
-
 
 ## Cutting Force and Power
 
@@ -82,8 +83,40 @@ where $F_c$ is the cutting force; $V_{c}$ is the cutting speed;
 
 ![[MNF1_004/Pasted image 20240627203436.png|book]]
 
+
 **Facing** is a machining process also performed on a lathe, where the cutting tool moves *perpendicular* to the axis of a rotating cylindrical workpiece. The goal of facing is to produce a flat surface at the end of the workpiece.
 ![[MNF1_004/Pasted image 20240627203443.png|book]]
+
+## Surface Finish and Surface Integrity
+
+Surface finish describes the geometric features of surfaces, whereas surface integrity pertains to properties that are strongly influenced by the type of surface produced.
+Built-up edge and depth of cut can adversely affect surface finish and integrity. A shallow depth of cut (or dull tool) can also compromise surface finish. A dull cutting tool has a larger radius along its edges, just as a dull pencil or knife does.
+
+![[MNF1_004/Pasted image 20240824130527.png|book]]
+>Schematic illustration of a dull tool in orthogonal cutting (exaggerated). Note that at small depths of cut, the rake angle can effectively become negative. In such cases, the tool may simply ride over the workpiece surface, burnishing it, instead of cutting. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
+
+If the radius is large in relation to the depth of cut, the tool will rub over the machined surface, generating frictional heat, inducing surface residual stresses, and causing surface damage, such as tearing and cracking.
+In practice, the depth of cut should generally be greater than the radius on the cutting edge.
+
+**Feed marks**:
+In turning, as in some other machining operations, the cutting tool leaves a spiral profile (feed marks) on the machined surface as it moves across the workpiece.
+
+![[MNF1_004/Pasted image 20240824131343.png|book]]
+>Terminology used in a turning operation on a lathe, where f is the feed (in mm/rev) and d is the depth of cut. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
+
+As expected, the higher the feed, $f$, and the smaller the radius $R$, the more prominent are these marks.
+The **total roughness height**, $R_{t}$, in turning can be expressed as
+$$\boxed {
+R_{t}=\dfrac{f^{2}}{8R}
+ }$$
+where $f$ is the feed and $R$ is the nose radius of the tool.
+The **Arithmetic Mean Roughness**, $R_{a}$, can be approximated using the following formula:
+$$\boxed {
+R_{a}=\dfrac{f^{2}}{32R}
+ }$$
+
+$R_{t}$ is useful when you need to understand the worst-case scenario in terms of surface roughness, whereas $R_{a}$​ provides a more balanced average measure.
+
 
 # Milling
 Milling is a machining process that involves the use of rotary cutters to remove material from a workpiece. The milling process can create a variety of features including flat surfaces, slots, and complex contours. The workpiece is usually held stationary while the cutting tool rotates and moves across the material to achieve the desired shape.
@@ -96,7 +129,7 @@ Types of milling operations:
 ## Key Parameters and Equations
 
 ![[MNF1_004/Pasted image 20240712182459.png|book]]
->(a) Illustration showing the difference between conventional milling and climb milling. (b) Slab-milling operation, showing width of cut, $w$; feed per tooth, $f$; chip depth of cut, $h$ and workpiece speed, $v$. (c) Schematic illustration of cutter travel distance, $l_{c}$, to reach full depth of cut.
+>(a) Illustration showing the difference between conventional milling and climb milling. (b) Slab-milling operation, showing width of cut, $w$; feed per tooth, $f$; chip depth of cut, $h$ and workpiece speed, $v$. (c) Schematic illustration of cutter travel distance, $l_{c}$, to reach full depth of cut. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 - **Cutting Speed $V_{c}$** is calculated in the same way as [[#Turning#Key Parameters and Equations|turning]]:
 	$$\boxed {
@@ -136,6 +169,15 @@ z=\dfrac{360^{\circ}}{\beta}
 n=\dfrac{\alpha}{\beta}
  }$$
 
+- **Material Removal Rate ($\mathrm{MRR}$)** for milling is given by:
+$$\begin{gathered}
+\boxed {
+\mathrm{MRR}=wdv
+ }
+\end{gathered}$$
+	where $w$ is the width of the cut, which is the same the workpiece width if is narrower than the cutter. $v$ is the linear speed of the workpiece, and $d$ is the depth of cut.
+
+
 ## Cutting Force and Power
 
 The **cutting force $F_c$** is the force exerted by the cutting tool on the workpiece. It can be calculated per tooth
@@ -153,6 +195,7 @@ $$\boxed {
 P=F_{c} v
  }$$
 where $F_c$ is the cutting force; $v$ is the speed of the workpiece.
+
 # Exercises
 ## Question 1
 A $\pu{121mm}$ long, round, hollow workpiece is going under a facing operation to straighten its face. To do this, only a $\pu{1mm}$ depth of cut is needed, which reduces it to a length of $\pu{120mm}$. The feed rate is $\pu{0.7mm.rev^{-1}}$, and the possible rotational speeds of the machine are:

@@ -1,11 +1,29 @@
 ---
 aliases:
 ---
----
+# תרגומי מונחים מקצועיים
 
->[!TODO] לסדר, המון דברים לא חשובים, לא כל החומר והנוסאות
 
-# Metal Casting - Introduction
+| עברית                 | אנגלית                                        |     | עברית | אנגלית    |
+| --------------------- | --------------------------------------------- | --- | ----- | --------- |
+| מטיל                  | bar, ingot                                    |     | סנטור | sintering |
+| חישול, כבישה          | forging                                       |     | פילט  | fillet    |
+| חישול בטבעים (סגורים) | impression-die forging,<br>closed-die forging |     | פלאש  | flash     |
+| חישול חופשי           | open-die forging                              |     |       |           |
+| ערגול                 | rolling                                       |     |       |           |
+| שיחול                 | extrusion                                     |     |       |           |
+| משיכה                 | drawing                                       |     |       |           |
+
+
+
+# Metal Casting
+From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
+
+Several methods can be used to shape materials into useful products. **Casting** is one of the oldest methods and was first used about 4000 B.C. to make ornaments, arrowheads and various other objects. The important factors in casting operation are:
+1. **Solidification** of the metal from its molten state, and accompanying shrinkage.
+2. **Flow** of the molten metal into the mold cavity.
+3. **Heat transfer** during solidification and cooling of the metal in the mold; and
+4. **Mold material** and its influence on the casting operation.
 
 | Casting Process                              | Advantages                                                    | Disadvantages                                |
 | -------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------- |
@@ -32,7 +50,7 @@ The type of **cast structure** developed during solidification of metals and all
 
 ## Pure Metals
 The typical grain structure of pure metal that has solidified in a square mold is shown in the following figure:
-![[MNF1_001/Screenshot_20240530_100606_Samsung Notes.jpg|book]]
+![[MNF1_001/Screenshot_20240530_100606_Samsung Notes.jpg|book|500]]
 >Schematic illustration of three cast structures of metals solidified in a square mold: $(a)$ pure metals, with preferred texture at the cool mold wall. Note in the middle of the figure that only favorable oriented grains grow away the mold surface; $(b)$ solid-solution alloys; and $(c)$ structure obtained by heterogeneous nucleation of grains.
 
 At the mold walls the metal cools rapidly (**chill zone**) because the walls are at ambient or slightly elevated temperature, and as a result, the casting develops a solidified **skin** (shell) of find **equiaxed grains**. The grains grow in the direction opposite to the heat transfer from the mold. Grains that have a favorable orientation, called **columnar grains**, grow preferentially.
@@ -42,22 +60,22 @@ Because pure metals have limited mechanical properties, they are often enhanced 
 
 In [[Technion/IMT1/IMT1_004 דיאגרמת פאזות#דיאגרמת פאזות בינארית|Introduction to Material Engineering]] we have seen that solidification in alloys begins when the temprature drops below the **liquidus**, $T_{L}$, and is complete when it reaches the **solidus**, $T_{S}$. Within this temprature range, the alloy is in a mushy or pasty state, with **columnar dendrites**.
 
-![[MNF1_001/Screenshot_20240530_105030_Obsidian.jpg|book]]
->Schematic illustration of alloy solidification and temprature distribution in the solidifying metal. Note the formation of dendrites in the semi-solid (mushy) zone.
+![[MNF1_001/Screenshot_20240530_105030_Obsidian.jpg|book|500]]
+>Schematic illustration of alloy solidification and temperature distribution in the solidifying metal. Note the formation of dendrites in the semi-solid (mushy) zone.
 
 Note in the lower right of the figure the presence of liquid metal between the dendrite arms. Dendrites have three-dimensional arms and branches, which eventaully interlock, as shown in the next figure:
-![[MNF1_001/Screenshot_20240530_110033_Samsung Notes.jpg|book]]
->$(a)$ Solidification patterns for gray cast iron in a $\pu{180mm}$ sqaure casting. Note that after $\pu{11\min_{}}$ of cooling, dendrites reach other, but the casting is still mushy throught. It takes about two hours for this casting so solidify completely. $(b)$ Solidification of carbon steels in sand and chill (metal) molds. Note the difference in solidification patterns as the carbon content increases.
+![[MNF1_001/Screenshot_20240530_110033_Samsung Notes.jpg|book|500]]
+>$(a)$ Solidification patterns for gray cast iron in a $\pu{180mm}$ square casting. Note that after $\pu{11\min_{}}$ of cooling, dendrites reach other, but the casting is still mushy throught. It takes about two hours for this casting so solidify completely. $(b)$ Solidification of carbon steels in sand and chill (metal) molds. Note the difference in solidification patterns as the carbon content increases.
 
 Slow cooling rate (on the order of $\pu{e2K.s^{-1}}$) result in a coarse dendritic structures, with large spacing between the dendrite arms. for higher cooling rates (on the order of $\pu{e4K.s^{-1}}$ the structure becomes finer , with smaller dendrite arm spacing. For still higher cooling rate (on the order of $\pu{e6}$ to $\pu{e8K.s^{-1}}$), the structures developed are **amorphous** (meaning without any ordered crystalline structure.
 
 ## Structure-Property Relationships
 Because all castings must possess certain specific properties to meet design and service requirements, the relationships between the properties and the structures developed during solidification are important considerations.
-The compositions of dendrties and of the liquid metal in casting are given by the [[../IMT1/IMT1_004 דיאגרמת פאזות#דיאגרמת פאזות בינארית|phase diagram]] of the particular alloy. Under normal cooling rates typically encountered in parctice, **cored dendrites** are formed, which have a surface composition that is different from that  at their centers. The surface has a higher concentraition of alloying elements that at the core the dendrite, due to solute rejection ffrom the core toward the surface during solidification of the dendrite (called **microsegregation**).
+The compositions of dendrites and of the liquid metal in casting are given by the [[../IMT1/IMT1_004 דיאגרמת פאזות#דיאגרמת פאזות בינארית|phase diagram]] of the particular alloy. Under normal cooling rates typically encountered in practice, **cored dendrites** are formed, which have a surface composition that is different from that  at their centers. The surface has a higher concentration of alloying elements that at the core the dendrite, due to solute rejection from the core toward the surface during solidification of the dendrite (called **microsegregation**).
 
-The darker shading the interdendritic liquid near the dendrite shown in the following figure indicates that these regions have a higher solute concentration; consequently, microsegregation in these regions is much more pronounced than in others.
+The darker shading in the interdendritic liquid near the dendrite shown in the following figure indicates that these regions have a higher solute concentration; consequently, microsegregation in these regions is much more pronounced than in others.
 
-![[MNF1_002/Screenshot_20240606_085311_OneDrive.jpg]]
+![[MNF1_002/Screenshot_20240606_085311_OneDrive.jpg|500]]
 >Schematic illustration of three basic types of cast structures: (a) columnar dendritic; (b) equiaxed dendritic; and (c) equiaxed nondendritic.
 
 In contrast to microsegregation, **macrosegregation** involves differences in composition throughout the casting itself.
@@ -80,13 +98,13 @@ Note that the skin thickness increases with elapsed time, and that the skin is t
 
 
 ## Shrinkage
-Metals generally shrink during solidification and cooling to room temprature:
+Metals generally shrink during solidification and cooling to room temperature:
 ![[MNF1_002/Screenshot_20240606_102102_OneDrive.jpg|book|350]]
 
 *Shrinkage* in a casting causes dimensional changes and sometimes cracking and is a result of of the following phenomena:
 1. Contraction of the molten metal as it cools before it begins to solidify.
 2. Contraction of the metal during phase change from liquid to solid (latent heat of fusion).
-3. Contraction of the solidified metal (the casting) as its temprature drops to ambient temprature.
+3. Contraction of the solidified metal (the casting) as its temperature drops to ambient temperature.
 
 The largest potential amount of shrinkage occurs during the phase change of the material from liquid to solid; this can be reduced or eliminated through the use of risers or pressure-feeding of molten metal.
 
@@ -110,8 +128,8 @@ The **sand casting** process consists of (a) placing a pattern, having the shape
 >Two sets of castings (bronze and aluminum) from the above sand mold.
 
 ## Shell-Mold Casting
-**Shell-mold casting** has grown siginificanttly because it can produce many types of castings with close dimensional tolerances, good surface finish, and at a low cost. In this process, a mounted pattern, made of a ferrous metal or aluminum, is heated to $175^{\circ}\pu{C}$ to $370^{\circ}\pu{C}$, coated with a parting agent, such as silicone, and clamped to a box or chanber containing a fine sand. The sand mixture is then turn over the heated pattern, coating it evenly. The assembly is often placed in an oven for a short period of time to complete the curing of the resin. The shell hardens around the pattern and is then removed, using built-in ejector pins. Two half-shells are made in this manner and are bonded or clamped together in preparation for pouring.
-![[MNF1_002/Screenshot_20240606_105846_OneDrive.jpg|book]]
+**Shell-mold casting** has grown significantly because it can produce many types of castings with close dimensional tolerances, good surface finish, and at a low cost. In this process, a mounted pattern, made of a ferrous metal or aluminum, is heated to $175^{\circ}\pu{C}$ to $370^{\circ}\pu{C}$, coated with a parting agent, such as silicone, and clamped to a box or chamber containing a fine sand. The sand mixture is then turn over the heated pattern, coating it evenly. The assembly is often placed in an oven for a short period of time to complete the curing of the resin. The shell hardens around the pattern and is then removed, using built-in ejector pins. Two half-shells are made in this manner and are bonded or clamped together in preparation for pouring.
+![[MNF1_002/Screenshot_20240606_105846_OneDrive.jpg|book|500]]
 >Schematic illustration of the shell-molding process, also called the *dump-box* technique.
 
 The shells are light and thin, usually $5-10\,\pu{mm}$, and thus their thermal characteristics are different from those for thicker molds. The thin shells allow gases to escape during solidification of the metal. The mold walls are relativley smooth, resulting in low resistance to molten metal flow and producing castings with sharper corners, thinner sections, and smaller projections than are possible in green-sand molds.
@@ -119,50 +137,52 @@ Application include small mechanical parts requiring high precision, gear housin
 
 # Expendable-Mold, Expendable-Pattern Casting Processes
 ### Lost Foam Process
-The *expendable-pattern casting process* uses a ploystyrene pattern, which evaporates upon contact with the molten metal, to form a cavity for the casting.
+The *expendable-pattern casting process* uses a polystyrene pattern, which evaporates upon contact with the molten metal, to form a cavity for the casting.
 
-![[MNF1_002/Screenshot_20240606_115252_OneDrive.jpg|book]]
+![[MNF1_002/Screenshot_20240606_115252_OneDrive.jpg|book|500]]
 >Schematic illustration of the expendable-pattern casting process, also known as lost-foam or evaporative-pattern casting.
 
 Typical parts made are aluminum engine blocks, cylinder heads, crank-shafts, brake components, manifolds, and machine bases.
 
 ## Lost Wax Process
-In the lost was process, typical parts made are mechanical components such as gears, cams, valves, and ratchets; The pattern is made by injecting semisolid or liquid wax or plastic into a metal die in the shape of the pattern, or is made through addive manufacturnig methods. The pattern is then removed and dipped into a slurry of refractory material. Afther this initial coating has dried, the pattern is coated repeatedly to increase its thickness. The one-piece mold is dried in air and heated to a temperature of $90^{\circ}\pu{C}$ to $175^{\circ}\pu{C}$ for about $\pu{4hrs}$ (depending on the metal to be cast), to drive off the water crystallization (chemically combined water). After the metal has been poured and has solidified the mold is broken up and the casting is removed.
-![[MNF1_002/Screenshot_20240606_120422_Obsidian.jpg|book]]
+In the lost was process, typical parts made are mechanical components such as gears, cams, valves, and ratchets; The pattern is made by injecting semisolid or liquid wax or plastic into a metal die in the shape of the pattern, or is made through ad dive manufacturing methods. The pattern is then removed and dipped into a slurry of refractory material. After this initial coating has dried, the pattern is coated repeatedly to increase its thickness. The one-piece mold is dried in air and heated to a temperature of $90^{\circ}\pu{C}$ to $175^{\circ}\pu{C}$ for about $\pu{4hrs}$ (depending on the metal to be cast), to drive off the water crystallization (chemically combined water). After the metal has been poured and has solidified the mold is broken up and the casting is removed.
+![[MNF1_002/Screenshot_20240606_120422_Obsidian.jpg|book|500]]
 >Schematic illustration of investment casting (lost wax process).
 
 # Permanent-Mold Casting Processes
 **Permanent molds** are used repeatedly and are designed so that the casting can be easily removed and the mold reused. The molds are made of metals that maintain their strength at high temperatures. Because metal molds are better heat conductors than expendable molds, described above, the solidifying casting is subjected to a higher rate of cooling. This, in turn, affects the microstructure and grain size within the casting.
-![[MNF1_002/Pasted image 20240606121404.png]]
+
 >Permanent mold casting.
 
 ## Low-Pressure Permanent Casting
 **Low-Pressure permanent mold (LPPM)** casting uses a gas at low pressure ($20$ to $\pu{100kPa}$) to push molten metal in the mold cavity.
-![[MNF1_002/Pasted image 20240614105809.png|book|300]]
->Schematic of the low-pressure permanent mold casting process
 
 The pressure is applied to the top of the pool of liquid, which forces the molten metal up a refectory pouring tube and finally into the bottom of the mold.
 
 ## Die Casting (High-Pressure Casting)
 **Die casting** is a metal casting process that is characterized by forcing molten metal under high pressure into the die cavity at pressures ranging from $0.7$ to $\pu{700MPa}$. Typical parts made by die casting include transmission housings, valve bodies, motors, business machine and appliance components, hands tools, and toys.
-![[MNF1_002/Pasted image 20240614114037.png|400]]
->An engine block with aluminum and magnesium die castings.
 
---- 
 
-# Introduction - Bulk Deformation Processes
+<div class="page-break" style="page-break-before: always;"></div>
+
+
+# Bulk Deformation Processes
 From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
+In this chapter we will go over metalworking processes where the workpiece is subjected to *plastic deformation*, under forces applied through dies and tooling. Deformation processes generally are classified by type of operation as either primary working or secondary working; they are further divided into three categories of cold (room temperature), warm, and hot working.
 
-| Process      |       | General characteristics                                                                                                                                                                                                                                                                                          | Notes               |
-| ------------ | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| [[#Forging]] |       | production of discrete parts with a set of dies; some finishing operations usually necessary; similar parts can be made by casting or powser-metallurgy techniques; usually performed at elevated temperatures; dies and equipment costs are high; moderate to high labor costs; moderate to high operator skill |                     |
-| [[#Rolling]] | Flat  | Production of flat plate, sheet, ad foil at high speeds, and with good surface finish, especially in cold rolling; requires very high capital investment; low to moderate labor cost                                                                                                                             |                     |
-|              | Shape | Production of various structural shapes, such as $\mathrm{I}$-beams and rails, at high speeds; includes thread and ring rolling; requires shaped rolls and expensive equipment; low to moderate labor cost; moderate operator skill;                                                                             |                     |
-| Extrusion    |       |                                                                                                                                                                                                                                                                                                                  | Not in the syllabus |
-| Drawing      |       |                                                                                                                                                                                                                                                                                                                  | Not in the syllabus |
-| Swaging      |       |                                                                                                                                                                                                                                                                                                                  | Not in the syllabus |
+**Primary-working** operation involve taking a solid piece of metal (generally from a cast state) and breaking it down successively into *wrought* material of various shapes by the basic processes of **forging**, **rolling**, **extrusion**, and **drawing**.
+
+**Secondary-working** operation typically involve further processing of the products from primary working into final or semifinal products, such as bolts, gears, and sheet metal parts.
+
+| **Process**        | **Description**                                                                                                                                                                | **Advantages**                                                                                                                                                    | **Applications**                                                                 |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **[[#Forging]]**   | Deformation of metal using localized compressive forces, typically by hammering or pressing. It can be performed hot or cold, leading to different mechanical properties.      | Produces parts with superior mechanical properties<br>High strength due to grain refinement<br>Less material waste                                                | Crankshafts, gears, aerospace components, high-strength fasteners                |
+| **[[#Rolling]]**   | Metal is passed through a pair of rollers to reduce thickness or change cross-sectional shape. It can be done hot (hot rolling) or cold (cold rolling).                        | High production rate<br>Good surface finish<br>Can handle large pieces of metal<br>Economical for mass production                                                 | Sheets, plates, I-beams, rails, automotive body panels                           |
+| **[[#Extrusion]]** | Metal is forced through a die to produce a continuous cross-sectional shape. Can be done hot or cold, and includes direct (forward) and indirect (backward) extrusion methods. | Ability to create complex cross-sections<br>High material utilization<br>Produces long lengths of uniform cross-sections<br>Suitable for both metals and plastics | Pipes, tubing, structural shapes, window frames, heat sinks, electrical conduits |
+
 
 # Forging
+**Forging** denotes a family of processes used to make discrete parts, in which plastic deformation is caused by compressive stresses applied through various dies and tooling. Forging is one of the oldest metalworking operations, dating back to 5000 B.C.  
 
 ## Open-Die Forging
 
@@ -188,16 +208,18 @@ In actual practice the specimen develops a barrel shape during upsetting, as sho
 Barreling is caused primarily by frictional forces that oppose the radially outward flow of the material at the die-workpiece interfaces.
 A result of barreling is that the deformation throughout the specimen becomes *nonuniform* or *inhomogeneous*
 ### Forces under ideal conditions
-If friction at the workpiece-die interfaces is zero and the material is perfectly plastic, with yield strength of $S_{y}$, the normal compressive stress on the cylindrical specimen is uniform and at the level of $S_{y}$. The force at any height ${h}_{1}$ is
+If friction at the workpiece-die interfaces is zero and the material is perfectly plastic, with **yield strength** of $S_{y}$, the normal compressive stress on the cylindrical specimen is uniform and at the level of $S_{y}$. The force at any height ${h}_{1}$ is
 $$F=S_{y}{A}_{1}$$
 where ${A}_{1}$ is the cross-sectional area and is obtained from volume constancy:
 $${A}_{1}=\dfrac{{A}_{o}{h}_{o}}{{h}_{1}}$$
 A typical true stress-true strain curve is shown in the following figure:
 ![[MNF1_003/Pasted image 20240624104418.png|book]]
->(a) True stress–true strain curve in tension. Note that, unlike in an engineering stress–strain curve, the slope is always positive and the slope decreases with increasing strain. Although in the elastic range stress and strain are proportional, the total curve can be approximated by the power expression shown. On this curve, Sy is the yield strength and σf is the flow stress. (b) True stress–true strain curve plotted on a log-log scale.
+>(a) True stress–true strain curve in tension. Note that, unlike in an engineering stress–strain curve, the slope is always positive and the slope decreases with increasing strain. Although in the elastic range stress and strain are proportional, the total curve can be approximated by the power expression shown. On this curve, $S_{y}$ is the yield strength and $\sigma_{f}$ is the flow stress. (b) True stress–true strain curve plotted on a log-log scale.
 
 For convenience, such a curve is often approximated by the equation:
 $$\sigma=K\varepsilon^{n}$$
+where the slope $n$ is the **strain-hardening exponent**, and $K$ is the **strength coefficient**. Note that $K$ is the true stress at a true strain of unity.
+
 If the material's true stress-true strain curve is given by this equation, then the force at any stage during deformation becomes
 $$F=\sigma_{f}{A}_{1}$$
 where $\sigma_{f}$ is the **flow stress** of the material - the true stress required to continue plastic deformation at a particular true strain, ${\varepsilon}_{1}$.
@@ -206,6 +228,7 @@ For a work hardening material, the average flow stress is given by
 $$\boxed {
 \bar{\sigma}_{f}=\dfrac{K{{\varepsilon}_{1}}^{n}}{n+1}
  }$$
+
 We will sometimes assume the the material is rigid and perfectly plastic. For such material, once the stress reaches the yield strength $S_{y}$, it continues to undergo deformation at the same stress level; that is, there is no strain hardening - $\sigma_{f}=S_{y}$.
 
 ![[MNF1_003/Pasted image 20240822174523.png|book]]
@@ -218,6 +241,7 @@ We will sometimes assume the the material is rigid and perfectly plastic. For su
 There are several methods of analysis to theoretically determine stresses, strains, strain rates and forces in deformation processing. We will focus on the **Slab method**.
 
 The slab method is one of the earlier and simpler methods of analyzing the stresses and loads in bulk-deformation processes. This method requires the selection of an element in the workpiece and identification of all the normal and frictional stresses acting on that element.
+
 ![[MNF1_003/Pasted image 20240624105311.png|book]]
 >Stresses on an element in plane-strain compression (forging) between flat dies with friction. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 	
@@ -225,8 +249,6 @@ After a lot of math, [[../SLD1/SLD1_002 שיווי משקל#שיווי משקל 
 $$\boxed {
 \sigma_{y}-\sigma_{x}=\dfrac{2}{\sqrt{ 3 }}S_{y}=S_{y}'
  }$$
->[!Question]- Isn't it supposed to be $\sqrt{ 2 }$?
- >No Roma, it involves some assumptions about *plastic* deformation. Read the book, they explain everything in detail.
  
  It can also be shown that the pressure $p=\sigma_{y}$ for a rectangular $h\times 2a$ cross-section is given by:
  $$\boxed {
@@ -248,13 +270,29 @@ p=S_{y}e^{2\mu(R-r)/h}
  }$$
 and the average pressure:
 $$\boxed{p_{\text{avg}}=S_{y}\left( 1+\dfrac{2\mu R}{3h} \right)}$$
+
+
+## Impression-die forging
+In impression-die forging, the workpiece acquires the shape of the die cavity (hence the term impression) while it is being deformed between the two closing dies.
+
+![[MNF1_003/Pasted image 20240823111837.png|book]]
+>Schematic illustrations of stages in impression-die forging. Note the formation of a flash, or excess material that subsequently has to be trimmed off.
+
+Forces in impression-die forging can be difficult to predict, because of the generally complex shapes involved and the fact that each location within the workpiece is typically subjected to different strains, strain rates, and temperatures, as well as variations in coefficient of friction along the die-workpiece contact area. Certain empirical pressure-multiplying factors, $K_{p}$, have been developed for use with the expression:
+$$\boxed {
+F=K_{p}\sigma_{f}A
+ }$$
+ where $F$ is the forging force; $A$ is the projected area of the forging (including the flash), $\sigma_{f}$ is the flow stress of the material at the strain, the strain rate, and temperature to which the material is subjected. Typical values of $K_{p}$ are given in the following table:
+ ![[MNF1_003/Pasted image 20240823112056.png|book]]
+ >Range of $K_{p}$ values for impression-die forging.
+
 # Rolling
 **Rolling** is the process of reducing the thickness or changing the cross section of a long workpiece by compressive forces applied through a set of rolls.
 Rolling, which accounts for about $90\%$ of all metals produced by metalworking operations, was first developed in the late 1500s. The basic rolling operation is called flat rolling, or simply rolling, where the rolled products are flat plate and sheet.
 
 Rolling is first carried out at elevated temperatures (hot rolling), wherein the coarse-grained, brittle, and porous cast structure of the ingot or continuously cast metal is broken down into a wrought structure, with finer grain size and improved properties
 
-![[MNF1_003/Pasted image 20240624122903.png|book]]
+![[MNF1_003/Pasted image 20240624122903.png|book|500]]
 >Changes in the grain structure of metals during hot rolling. This is an effective method to reduce grain size and refine the microstructure in metals, resulting in improved strength and good ductility.
 
 ## Mechanics of Flat Rolling
@@ -325,10 +363,59 @@ $$P=T\omega=\dfrac{FL\omega}{2}=\dfrac{\pi FLN}{60}$$
 where $\omega$ is the roller's angular velocity, and $N$ is the roll speed in $\pu{rpm}$.
 
 
---- 
 
-# Introduction - Machining Processes
+# Extrusion
+
+In the extrusion process  developed in the late 1700s for producing lead pipe, a billet is placed in a chamber and forced through a die opening by a ram. The die may be round or of various shapes. Typical parts made are railings for sliding doors, window frames, aluminum ladders, tubing, and structural and architectural shapes.
+
+![[MNF1_003/Pasted image 20240824134659.png|book|500]]
+>Schematic illustration of the direct-extrusion process. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
+
+Two types of extrusions are direct and indirect extrusion:
+1. **Direct extrusion** (forward extrusion) is similar to forcing toothpaste through the opening of a tube. Note that the billet in this process moves relative to the container wall in the same direction as the extruded product.
+2. In **indirect extrusion** (reverse, inverted, or backward extrusion), the die moves toward the billet and there is no relative motion at the billet-container interface. Indirect extrusion is often used when the workpiece has a high level of friction with the billet, such as hot extrusion of steel.
+
+Another important differentiation is between hot and cold extrusion processes:
+1. **Hot extrusion**: For metals and alloys that do not have sufficient ductility at room temperature, or in order to reduce the forces required, extrusion can be carried out at elevated temperatures.
+2. **Cold extrusion**: Developed in the 1940s, cold extrusion is a general term often denoting a combination of operations, such as a combination of direct and indirect extrusion and forging. The cold-extrusion process uses slugs cut from cold-finished or hot-rolled bars, wire, or plates.
+
+![[MNF1_003/Pasted image 20240824140122.png|book|200]]
+>Two examples of cold extrusion; the arrows indicate the direction of metal flow during extrusion.
+
+## Mechanics of Extrusion
+
+The force required for extrusion depends on (a) the strength of the billet material, (b) extrusion ratio, (c) friction between the billet, container, and die surfaces, and (d) process variables.
+
+
+![[MNF1_003/Pasted image 20240824135117.png|book]]
+>Process variables in direct extrusion; the die angle, reduction in cross-section, extrusion speed, billet temperature, and lubrication all affect the extrusion pressure. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
+
+For a small die angle, $\alpha$, it has been shown that the extrusion force can then be approximated by:
+$$\boxed {
+F=A_{o}k\ln\left( \dfrac{A_{o}}{A_{f}} \right)
+ }$$
+where $k$ is the extrusion constant, determined experimentally;
+
+## Extrusion Defects
+
+**Surface Cracking**:
+If extrusion temperature, friction, or speed is too high, surface temperatures can become excessive, which may cause surface cracking and tearing.
+These cracks are intergranular (along the grain boundaries).
+Surface cracking also may occur at lower temperatures, attributed to periodic sticking of the extruded part along the die land. Because of its similarity in appearance to the surface of a bamboo stem, it is known as a **bamboo defect**.
+
+**Internal Cracking**:
+The center of the extruded product can develop cracks, called center cracking, center-burst, arrowhead fracture, or chevron cracking:
+![[MNF1_003/Pasted image 20240824141248.png]]
+>Chevron cracking (central burst) in extruded round steel bars; unless the products are inspected, such internal defects may remain undetected and later cause failure of the part in service. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
+
+
+<div class="page-break" style="page-break-before: always;"></div>
+
+
+# Machining Processes
 From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
+
+Machining processes are a critical component of manufacturing, used to shape and finish materials into precise and functional components. These processes involve removing material from a workpiece using various cutting tools and techniques to achieve desired dimensions, tolerances, and surface finishes. Machining is fundamental to the production of parts for a wide range of industries, including automotive, aerospace, electronics, and medical devices.
 
 | **Machining Process** | **Description**                                                                                                                       | Notes           |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
@@ -340,6 +427,7 @@ From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid
 | **Sawing**            | Sawing cuts material into smaller pieces using a saw blade with teeth.                                                                | Not in syllabus |
 # Turning
 
+
 Turning is a fundamental machining process used in manufacturing to create cylindrical parts by removing material from a rotating workpiece using a cutting tool. This process is one of the most widely used and versatile methods in the manufacturing industry due to its ability to produce precise and intricate shapes with excellent surface finishes. Turning is typically performed on a lathe, which holds and rotates the workpiece against a single-point cutting tool that shapes the material.
 
 ## Key Parameters and Equations
@@ -347,7 +435,7 @@ Turning is a fundamental machining process used in manufacturing to create cylin
 >Examples of machining operations that can be performed on a lathe and similar machine tools.
 
 ![[MNF1_004/Pasted image 20240627203834.png|book]]
->(a) Schematic illustration of a turning operation, showing depth of cut, $d$, and feed, $f$. Cutting speed is the surface speed of the workpiece at the tool tip. (b) Forces acting on a cutting tool in turning. $F_{c}$ is the cutting force; $F_{t}$ is the thrust or feed force (in the direction of feed); and $F_{r}$ is the radial force that tends to push the tool away from the workpiece being machined.
+>(a) Schematic illustration of a turning operation, showing depth of cut, $d$, and feed, $f$. Cutting speed is the surface speed of the workpiece at the tool tip. (b) Forces acting on a cutting tool in turning. $F_{c}$ is the cutting force; $F_{t}$ is the thrust or feed force (in the direction of feed); and $F_{r}$ is the radial force that tends to push the tool away from the workpiece being machined. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 - **Cutting Speed $V_{c}$** is the speed at which the *outer surface* of the workpiece moves past the cutting tool, measured in meters per minute (m/min). It can be calculated as
 	$$\boxed {
@@ -362,17 +450,20 @@ V_{c}=\pi DN
 	$$\boxed {
 t=\dfrac{L}{fN}
  }$$
+	 If $N$ is dynamic, we would need to integrate:
+	 $$\boxed {
+t=\int_{D_{\min_{}}}^{D_{\max_{}}} \dfrac{\pi D}{2fV_{c}} \, \mathrm{d}D
+ }$$
 
-## Material Removal Rate
 
-**Material Removal Rate ($MR R$)** quantifies the volume of material removed from a workpiece per unit time. A higher MRR indicates a more efficient process, but it must be balanced with considerations of tool wear, surface finish, and accuracy.
+
+- **Material Removal Rate ($MR R$)** quantifies the volume of material removed from a workpiece per unit time. A higher MRR indicates a more efficient process, but it must be balanced with considerations of tool wear, surface finish, and accuracy.
 $$\begin{gathered}
 \boxed {
-MRR=fdV_{C}=\pi fdDN 
+\mathrm{MRR}=fdV_{C}=\pi fdDN 
  }\\[1ex]
-[M R R]=\pu{mm^{3}.min^{-1}}
+[\mathrm{MRR}]=\pu{mm^{3}.min^{-1}}
 \end{gathered}$$
-
 
 ## Cutting Force and Power
 
@@ -393,8 +484,40 @@ where $F_c$ is the cutting force; $V_{c}$ is the cutting speed;
 
 ![[MNF1_004/Pasted image 20240627203436.png|book]]
 
+
 **Facing** is a machining process also performed on a lathe, where the cutting tool moves *perpendicular* to the axis of a rotating cylindrical workpiece. The goal of facing is to produce a flat surface at the end of the workpiece.
 ![[MNF1_004/Pasted image 20240627203443.png|book]]
+
+## Surface Finish and Surface Integrity
+
+Surface finish describes the geometric features of surfaces, whereas surface integrity pertains to properties that are strongly influenced by the type of surface produced.
+Built-up edge and depth of cut can adversely affect surface finish and integrity. A shallow depth of cut (or dull tool) can also compromise surface finish. A dull cutting tool has a larger radius along its edges, just as a dull pencil or knife does.
+
+![[MNF1_004/Pasted image 20240824130527.png|book]]
+>Schematic illustration of a dull tool in orthogonal cutting (exaggerated). Note that at small depths of cut, the rake angle can effectively become negative. In such cases, the tool may simply ride over the workpiece surface, burnishing it, instead of cutting. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
+
+If the radius is large in relation to the depth of cut, the tool will rub over the machined surface, generating frictional heat, inducing surface residual stresses, and causing surface damage, such as tearing and cracking.
+In practice, the depth of cut should generally be greater than the radius on the cutting edge.
+
+**Feed marks**:
+In turning, as in some other machining operations, the cutting tool leaves a spiral profile (feed marks) on the machined surface as it moves across the workpiece.
+
+![[MNF1_004/Pasted image 20240824131343.png|book]]
+>Terminology used in a turning operation on a lathe, where f is the feed (in mm/rev) and d is the depth of cut. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
+
+As expected, the higher the feed, $f$, and the smaller the radius $R$, the more prominent are these marks.
+The **total roughness height**, $R_{t}$, in turning can be expressed as
+$$\boxed {
+R_{t}=\dfrac{f^{2}}{8R}
+ }$$
+where $f$ is the feed and $R$ is the nose radius of the tool.
+The **Arithmetic Mean Roughness**, $R_{a}$, can be approximated using the following formula:
+$$\boxed {
+R_{a}=\dfrac{f^{2}}{32R}
+ }$$
+
+$R_{t}$ is useful when you need to understand the worst-case scenario in terms of surface roughness, whereas $R_{a}$​ provides a more balanced average measure.
+
 
 # Milling
 Milling is a machining process that involves the use of rotary cutters to remove material from a workpiece. The milling process can create a variety of features including flat surfaces, slots, and complex contours. The workpiece is usually held stationary while the cutting tool rotates and moves across the material to achieve the desired shape.
@@ -407,7 +530,7 @@ Types of milling operations:
 ## Key Parameters and Equations
 
 ![[MNF1_004/Pasted image 20240712182459.png|book]]
->(a) Illustration showing the difference between conventional milling and climb milling. (b) Slab-milling operation, showing width of cut, $w$; feed per tooth, $f$; chip depth of cut, $h$ and workpiece speed, $v$. (c) Schematic illustration of cutter travel distance, $l_{c}$, to reach full depth of cut.
+>(a) Illustration showing the difference between conventional milling and climb milling. (b) Slab-milling operation, showing width of cut, $w$; feed per tooth, $f$; chip depth of cut, $h$ and workpiece speed, $v$. (c) Schematic illustration of cutter travel distance, $l_{c}$, to reach full depth of cut. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 - **Cutting Speed $V_{c}$** is calculated in the same way as [[#Turning#Key Parameters and Equations|turning]]:
 	$$\boxed {
@@ -447,6 +570,15 @@ z=\dfrac{360^{\circ}}{\beta}
 n=\dfrac{\alpha}{\beta}
  }$$
 
+- **Material Removal Rate ($\mathrm{MRR}$)** for milling is given by:
+$$\begin{gathered}
+\boxed {
+\mathrm{MRR}=wdv
+ }
+\end{gathered}$$
+	where $w$ is the width of the cut, which is the same the workpiece width if is narrower than the cutter. $v$ is the linear speed of the workpiece, and $d$ is the depth of cut.
+
+
 ## Cutting Force and Power
 
 The **cutting force $F_c$** is the force exerted by the cutting tool on the workpiece. It can be calculated per tooth
@@ -466,9 +598,33 @@ P=F_{c} v
 where $F_c$ is the cutting force; $v$ is the speed of the workpiece.
 
 
----
+<div class="page-break" style="page-break-before: always;"></div>
 
-# Introduction - Joining and Fastening Processes
+# Geometric Dimensioning and Tolerancing
+
+# סיבולות
+
+- הסיבולת (Tolerance) של מידה פונקציונלית היא הסכום (תמיד תוספת ללא חיסור) של המידות המיוצרות שבהם הוא תלוי.
+
+# מדיד GO/NO GO
+
+**גל**:
+- עבור גל, מד No Go בודק את הגבול התחתון. אם החלק יכול להיכנס אז הוא קטן מהגבול התחתון.
+- מד ה-Go  בודק את הגבול העליון. אם החלק לא יכול להיכנס אז הוא גדול מהגבול העליון.
+
+**חור**:
+- עבור חור, מד No Go בודק את הגבול העליון. אם החלק יכול להיכנס אז החור גדול מהגבול העליון.
+- מד ה-Go בודק את הגבול התחתון. אם החלק לא יכול להיכנס אז החור קטן מהגבול התחתון.
+
+
+# RSS
+אם המידה הפונקציונלית $X$ תלויה במידות $A,B$ המיוצרות בדיוקים $\sigma(A)$ ו-$\sigma(B)$, אז הדיוק $\sigma(X)$ נתון ע"י:
+$$\sigma(X)=\sqrt{ \sigma(A)^{2}+\sigma(B)^{2} }$$
+בהנחה ש-$A$ ו-$B$ בלתי תלויים.
+
+<div class="page-break" style="page-break-before: always;"></div>
+
+# Joining and Fastening Processes
 From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
 Joining is a general, all-inclusive term covering numerous processes that are important in manufacturing. Joining may be preferred or necessary for one or more of the following reasons:
 - The product is impossible or uneconomical to manufacture as a single piece;
@@ -548,12 +704,8 @@ Because of its past history of thermal cycling and the attendant microstructural
 	>Distortion and warping of parts after welding, caused by differential thermal expansion and contraction of different regions of the welded assembly. Warping can be reduced or eliminated by proper weld design and fixturing prior to welding.
 	
 
-
+<div class="page-break" style="page-break-before: always;"></div>
 # Introduction - Heat Treatment
-From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
-The various microstructures developed during metal processing can be modified by heat treatment techniques, involving controlled heating and cooling of the alloys at various rates.
-
-The relevant chapters in Intro to Material Engineering are [[../IMT1/IMT1_004 דיאגרמת פאזות|IMT1_004]], [[../IMT1/IMT1_005 דיאגרמת ברזל-פחמן|IMT1_005]] and [[../IMT1/IMT1_006 דאגרמות TTT ו-CTT|IMT1_006]].
 
 ## Heat Treating Ferrous Alloys
 
@@ -587,10 +739,10 @@ Because the precipitation process is one of time and temperature, it is also cal
 These alloys are first quenched and then, if required, are formed at room temperature into various shapes, and allowed to develop strength and hardness by natural aging. Natural aging can be slowed by refrigerating the quenched alloy.
 In the precipitation process, as the reheated alloy is held at that temperature for an extended period of time, the precipitates begin to coalesce and grow. They become larger but fewer, as shown by the larger dots in $C$ in (b) in the figure above. This process is called **overaging**, which makes the alloy *softer* and *less strong*, although the part treated has *better dimensional stability* over time.
 
----
 
+<div class="page-break" style="page-break-before: always;"></div>
 
-# Introduction - Surface Treatments, Coatings, and Cleaning
+# Surface Treatments, Coatings, and Cleaning
 From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
 After a part or a component is manufactured, all or specific areas of its surfaces may have to be further processed in order to impart certain specific properties and characteristics. Surface treatments may be necessary to:
 
@@ -635,10 +787,9 @@ Several processes are used for surface treatments, based on mechanical, chemical
 
 
 
----
+<div class="page-break" style="page-break-before: always;"></div>
 
-# Introduction - Powder Metallurgy and Processing of Ceramics and Glasses
-From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
+# Powder Metallurgy and Processing of Ceramics and Glasses
 
 # Powder Metallurgy
 
@@ -657,9 +808,6 @@ Metal powders can be produced by several methods, the choice of which depends on
 # Compaction of Metal Powders
 
 Compaction is the step in which the blended powders are pressed into specific shapes using dies and presses that are either hydraulically or mechanically actuated.
-
-![[MNF1_009/Pasted image 20240821215020.png|book]]
->(a) Compaction of metal powder to produce a bushing. (b) A typical tool and die set for compacting a spur gear. Source: Metal Powder Industries Federation.
 
 The purposes of compaction are to obtain the required shape, density, and particle-to-particle contact, and to make the part sufficiently strong to be handled and processed further.
 
@@ -730,24 +878,18 @@ k={k}_{0}(1-P)
  }$$
  where ${k}_{0}$ is the conductivity at zero porosity.
 
----
+<div class="page-break" style="page-break-before: always;"></div>
 
-# Introduction - Additive Manufacturing
-From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]
+# Additive Manufacturing
 ## Stereolithography
 The **stereolithography (STL)** or **vat photopolymerization** process is based on the principle of curing (hardening) a liquid photopolymer into a specific shape. Consider what happens when a laser beam is focused on and translated across the surface of a liquid photopolymer. The laser serves to cure the photopolymer by providing the energy necessary for polymerization.
 
-![[MNF1_010/Pasted image 20240822185707.png|book]]
->Schematic illustration of the stereolithography process. Source: 3D Systems.
 
 ## Powder Bed Processes
 **Powder bed processes** involve a number of processes that utilize powder as the workpiece material, and where the powder is deposited layer-by-layer in a bed or build chamber or cylinder.
 
 **Selective laser melting (SLM)**:
-is a process based on selectively sintering of polymeric or metallic powders into an individual object; The basic components in this process are illustrated in the following figure:
-
-![[MNF1_010/Pasted image 20240822185945.png|book]]
->Schematic illustration of the selective-laser-sintering process. Source: C. Deckard and P.F. McClure.
+is a process based on selectively sintering of polymeric or metallic powders into an individual object.
 
 In this process, a thin layer of powder is first deposited in the part-build cylinder. A laser beam, guided by a computer (using instructions generated by the 3D CAD program of the desired part), is then focused on that layer, tracing and melting a particular cross section, which then rapidly resolidifies into a solid mass (after the laser beam is moved to another section). The powder in other areas remains loose, but supports the solid portion. Another layer of powder is then deposited, and this cycle is repeated until the entire three-dimensional part has been produced.
 
