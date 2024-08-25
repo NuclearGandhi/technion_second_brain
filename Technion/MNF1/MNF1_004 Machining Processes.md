@@ -7,6 +7,9 @@ aliases:
   - facing
 ---
 # Introduction
+
+![](https://www.youtube.com/watch?v=YinS03voTwc)
+
 From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
 
 Machining processes are a critical component of manufacturing, used to shape and finish materials into precise and functional components. These processes involve removing material from a workpiece using various cutting tools and techniques to achieve desired dimensions, tolerances, and surface finishes. Machining is fundamental to the production of parts for a wide range of industries, including automotive, aerospace, electronics, and medical devices.
@@ -170,11 +173,11 @@ n=\dfrac{\alpha}{\beta}
  }$$
 
 - **Material Removal Rate ($\mathrm{MRR}$)** for milling is given by:
-$$\begin{gathered}
-\boxed {
-\mathrm{MRR}=wdv
- }
-\end{gathered}$$
+	$$\begin{gathered}
+	\boxed {
+	\mathrm{MRR}=wdv
+	 }
+	\end{gathered}$$
 	where $w$ is the width of the cut, which is the same the workpiece width if is narrower than the cutter. $v$ is the linear speed of the workpiece, and $d$ is the depth of cut.
 
 

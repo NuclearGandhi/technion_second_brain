@@ -571,11 +571,11 @@ n=\dfrac{\alpha}{\beta}
  }$$
 
 - **Material Removal Rate ($\mathrm{MRR}$)** for milling is given by:
-$$\begin{gathered}
-\boxed {
-\mathrm{MRR}=wdv
- }
-\end{gathered}$$
+	$$\begin{gathered}
+	\boxed {
+	\mathrm{MRR}=wdv
+	 }
+	\end{gathered}$$
 	where $w$ is the width of the cut, which is the same the workpiece width if is narrower than the cutter. $v$ is the linear speed of the workpiece, and $d$ is the depth of cut.
 
 
