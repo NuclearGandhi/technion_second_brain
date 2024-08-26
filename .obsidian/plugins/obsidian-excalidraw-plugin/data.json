@@ -99,6 +99,78 @@
         "elements": [
           {
             "type": "line",
+            "version": 284,
+            "versionNonce": 1297148170,
+            "index": "a0",
+            "isDeleted": false,
+            "id": "0xaMvfL6eBOJvRq5swaiX",
+            "fillStyle": "solid",
+            "strokeWidth": 2,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "angle": 0,
+            "x": 320,
+            "y": -100,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "#a5d8ff",
+            "width": 320,
+            "height": 40,
+            "seed": 1354857558,
+            "groupIds": [],
+            "frameId": null,
+            "roundness": {
+              "type": 2
+            },
+            "boundElements": [],
+            "updated": 1724682105254,
+            "link": null,
+            "locked": false,
+            "startBinding": null,
+            "endBinding": null,
+            "lastCommittedPoint": null,
+            "startArrowhead": null,
+            "endArrowhead": null,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                -220,
+                -20
+              ],
+              [
+                -300,
+                -20
+              ],
+              [
+                -320,
+                0
+              ],
+              [
+                -300,
+                20
+              ],
+              [
+                -220,
+                20
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          }
+        ],
+        "id": "BT-KMCOdZlDGeXnrOybHX",
+        "created": 1724682116772
+      },
+      {
+        "status": "unpublished",
+        "elements": [
+          {
+            "type": "line",
             "version": 446,
             "versionNonce": 1990303856,
             "index": "a7",
