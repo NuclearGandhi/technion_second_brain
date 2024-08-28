@@ -19185,7 +19185,7 @@ var StatusBar = class {
   // ❌: LatexOCR isn't reachable
   async updateStatusBar() {
     const status = await this.plugin.model.status();
-    console.log(`latex_ocr: sent status check to ${this.plugin.model.constructor.name}, got ${JSON.stringify(status)}`);
+    this.plugin.debug(`latex_ocr: sent status check to ${this.plugin.model.constructor.name}, got ${JSON.stringify(status)}`);
     switch (status.status) {
       case 0 /* Ready */:
         this.span.setText("LatexOCR \u2705");
@@ -19203,7 +19203,7 @@ var StatusBar = class {
         this.span.setText("LatexOCR \u274C");
         break;
       default:
-        console.error(status);
+        this.plugin.debug(status, true);
         break;
     }
     return false;
@@ -19570,7 +19570,7 @@ var LocalModel = class {
         if (err) {
           reject(`Error getting response from latex_ocr_server: ${err}`);
         } else {
-          console.log(`latex_ocr_server: ${latex == null ? void 0 : latex.latex}`);
+          this.plugin.debug(`latex_ocr_server: ${latex == null ? void 0 : latex.latex}`);
           if (latex) {
             const result = `${d}${latex.latex}${d}`;
             resolve2(result);
@@ -19613,10 +19613,14 @@ var LocalModel = class {
         const pythonProcess = (0, import_child_process.spawn)(this.plugin_settings.pythonPath, ["-m", "latex_ocr_server", "--version"]);
         pythonProcess.stdout.on("data", (data) => {
           const [prog, version] = data.toString().split(" ");
-          console.log(`${prog} version ${version} (required version: ${SCRIPT_VERSION})`);
+          if (this.plugin_settings.debug) {
+            console.log(`${prog} version ${version} (required version: ${SCRIPT_VERSION})`);
+          }
         });
         pythonProcess.stderr.on("data", (data) => {
-          console.error(data.toString());
+          if (this.plugin_settings.debug) {
+            console.error(data.toString());
+          }
         });
         pythonProcess.on("close", (code) => {
           if (code === 0) {
@@ -19661,13 +19665,17 @@ var LocalModel = class {
         if (data.toString().toLowerCase().includes("downloading")) {
           this.last_download_update = data.toString();
         }
-        console.log(`latex_ocr_server: ${data.toString()}`);
+        if (this.plugin_settings.debug) {
+          console.log(`latex_ocr_server: ${data.toString()}`);
+        }
       });
       pythonProcess.stderr.on("data", (data) => {
         if (data.toString().toLowerCase().includes("downloading")) {
           this.last_download_update = data.toString();
         }
-        console.error(`latex_ocr_server: ${data.toString()}`);
+        if (this.plugin_settings.debug) {
+          console.error(`latex_ocr_server: ${data.toString()}`);
+        }
       });
       pythonProcess.on("close", (code) => {
         console.log(`latex_ocr_server: closed (${code})`);
@@ -19684,6 +19692,7 @@ var LocalModel = class {
         new import_obsidian.Notice(`\u274C ${err}`, 1e4);
       }).catch((pythonErr) => {
         new import_obsidian.Notice(`\u274C ${pythonErr}`, 1e4);
+        console.error(pythonErr);
       });
     }
   }
@@ -20560,7 +20569,9 @@ var ApiModel = class {
           fetch: fetch_max_tokens
         });
       }
-      console.log(`latex_ocr: ${JSON.stringify(response)}`);
+      if (this.settings.debug) {
+        console.log(`latex_ocr: ${JSON.stringify(response)}`);
+      }
       setTimeout(() => notice.hide(), 1e3);
       const latex = response.generated_text;
       if (latex) {
@@ -20622,16 +20633,18 @@ var LatexOCRSettingsTab = class extends import_obsidian4.PluginSettingTab {
       this.plugin.settings.showStatusBar = value;
       await this.plugin.saveSettings();
     }));
-    new import_obsidian4.Setting(containerEl).setName("Use local model").setDesc("Use local model with python. 			See the project's README for installation instructions").addToggle((toggle) => toggle.setValue(this.plugin.settings.useLocalModel).onChange(async (value) => {
+    new import_obsidian4.Setting(containerEl).setName("Use local model").setDesc("Use local model with python. 			See the project's README for installation instructions.").addToggle((toggle) => toggle.setValue(this.plugin.settings.useLocalModel).onChange(async (value) => {
       if (this.plugin.model) {
         this.plugin.model.unload();
       }
       if (value) {
         this.plugin.model = new LocalModel(this.plugin.settings);
+        configuration_text.setText(LOCAL_CONF_TEXT);
         ApiSettings.forEach((e) => e.hide());
         LocalSettings.forEach((e) => e.show());
       } else {
         this.plugin.model = new ApiModel(this.plugin.settings);
+        configuration_text.setText(API_CONF_TEXT);
         ApiSettings.forEach((e) => e.show());
         LocalSettings.forEach((e) => e.hide());
       }
@@ -20661,7 +20674,18 @@ var LatexOCRSettingsTab = class extends import_obsidian4.PluginSettingTab {
         }
       });
     };
-    containerEl.createEl("h5", { text: "Configuration" });
+    new import_obsidian4.Setting(containerEl).setName("Debug mode").setDesc("Enables debug logging in the console.").addToggle((toggle) => toggle.setValue(this.plugin.settings.debug).onChange(
+      async (value) => {
+        this.plugin.settings.debug = value;
+        await this.plugin.saveSettings();
+      }
+    ));
+    const API_CONF_TEXT = "HuggingFace API Configuration";
+    const LOCAL_CONF_TEXT = "Local Python Model Configuration";
+    const configuration_text = containerEl.createEl("h5", { text: API_CONF_TEXT });
+    if (this.plugin.settings.useLocalModel) {
+      configuration_text.setText(LOCAL_CONF_TEXT);
+    }
     const KeyDisplay = new import_obsidian4.Setting(containerEl).setName("Current API Key").addText((text) => text.setPlaceholder(this.plugin.settings.obfuscatedKey).setDisabled(true));
     const apiKeyDesc = new DocumentFragment();
     apiKeyDesc.textContent = "Hugging face API key. See the ";
@@ -20729,6 +20753,7 @@ var LatexOCRSettingsTab = class extends import_obsidian4.PluginSettingTab {
 
 // src/main.ts
 var DEFAULT_SETTINGS = {
+  debug: false,
   pythonPath: "python3",
   cacheDirPath: "",
   delimiters: "$$",
@@ -20777,7 +20802,7 @@ var LatexOCR = class extends import_obsidian5.Plugin {
                   try {
                     await browser_default.write(latex);
                   } catch (err) {
-                    console.error(err);
+                    this.debug(err, true);
                     new import_obsidian5.Notice(`\u26A0\uFE0F Couldn't copy to clipboard because document isn't focused`);
                   }
                   new import_obsidian5.Notice(`\u{1FA84} Latex copied to clipboard`);
@@ -20828,7 +20853,7 @@ var LatexOCR = class extends import_obsidian5.Plugin {
     let filetype = null;
     for (const ext of IMG_EXTS2) {
       if (file[0].types.includes(`image/${ext}`)) {
-        console.log(`latex_ocr: found image in clipboard with mimetype image/${ext}`);
+        this.debug(`latex_ocr: found image in clipboard with mimetype image/${ext}`);
         filetype = ext;
         break;
       }
@@ -20841,7 +20866,7 @@ var LatexOCR = class extends import_obsidian5.Plugin {
       throw new Error(status.msg);
     }
     const from = editor.getCursor("from");
-    console.log(`latex_ocr: recieved paste command at line ${from.line}`);
+    this.debug(`latex_ocr: recieved paste command at line ${from.line}`);
     const waitMessage = `\\LaTeX \\text{ is being generated... } \\vphantom{${from.line}}`;
     const fullMessage = `${this.settings.delimiters}${waitMessage}${this.settings.delimiters}`;
     editor.replaceSelection(fullMessage);
@@ -20886,6 +20911,15 @@ var LatexOCR = class extends import_obsidian5.Plugin {
       currLine -= 1;
     }
     throw new Error("Couldn't find paste target");
+  }
+  debug(message, error = false) {
+    if (this.settings.debug) {
+      if (error) {
+        console.error(message);
+      } else {
+        console.log(message);
+      }
+    }
   }
 };
 /*! Bundled license information:
