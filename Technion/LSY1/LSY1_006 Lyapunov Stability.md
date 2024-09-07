@@ -330,6 +330,10 @@ There are 2 modes in this system, ${\lambda}_{1}$ and ${\lambda}_{2}$, with ${\l
 
 ## Question 3
 
+>[!TODO] TODO: להשלים
+
+## Question 4
+
 ![[LSY1_006/Pasted image 20240722233943.png|book|400]]
 >Mass damper system
 
@@ -443,3 +447,8 @@ It is important to understand that a system of this type is “stable” only fo
 >Phase portrait for both many initial conditions
 
 
+## Question 5
+![[LSY1_005/Pasted image 20240907214539.png|book]]
+>Pendulum system
+
+>[!TODO] TODO: להשלים

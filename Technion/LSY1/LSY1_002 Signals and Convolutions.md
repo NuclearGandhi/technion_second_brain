@@ -30,7 +30,7 @@ t & t\geq  0 \\
 	![[LSY1_002/Screenshot_20240609_093920_Samsung Notes.jpg|book|200]]
 - **triangular pulse (of width $a$)**:
 	$$\text{tent}_{a}(t)=\begin{cases}
-1-\dfrac{\left|t\right|}{a} & t\leq  a \\
+1-\dfrac{\left|t\right|}{a} & \lvert t \rvert\leq  a \\
 0 & \left|t\right|>a
 \end{cases}\qquad a>0$$
 	![[LSY1_002/Screenshot_20240609_094121_Samsung Notes.jpg|book|200]]

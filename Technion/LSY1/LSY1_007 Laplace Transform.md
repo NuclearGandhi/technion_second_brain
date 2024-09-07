@@ -154,6 +154,25 @@ The system is said to be
 - **bi-proper** if $n=m$,
 - **non-proper** if $n<m$.
 
+## First Order System Transfer Function
+The transfer function of a general first-order system takes the form
+$$G(s)=\dfrac{k_{\text{st}}}{\tau s+1}$$
+where $k_{\text{st}}$ is the static gain and $\tau$ is the time constant. The single pole of the system is $p=-1/\tau \in \mathbb{R}$.
+The step response of such a system is:
+$$y_{\text{step}}(t)=k_{\text{st}}(1-e^{-t/\tau})\mathbb{1}(t)$$
+Just like [[../PHY2/PHY2_004 מעגלים חשמליים#מעגלי RC|RC circuits]].
+The static gain $k_{\text{st}}$ scales the response amplitude. When $t=\tau$ and $t=3\tau$ we get
+$$\begin{aligned}
+y_{\text{step}}(\tau)=k_{\text{st}}(1-e^{-1})\approx 0.63k_{\text{st}}\qquad  \text{and} \qquad  y_{\text{step}}(3\tau)=k_{\text{st}}(1-e^{-3})\approx 0.95k_{\text{st}}
+\end{aligned}$$
+respectively. The time constant $\tau$ dictates the responsiveness of the system. 
+
+![[LSY1_009/Pasted image 20240906225244.png|bookhue]]
+>Characteristics of a first order system.
+
+## Second Order System Transfer Function
+>[!TODO] TODO: להשלים
+
 # Causality and Stability
 >[!theorem] Theorem:
 >A continuous-time LTI system with rational transfer function $G(s)$ is causal and I/O stable iff
@@ -318,8 +337,10 @@ $$\begin{gathered}
 ms^{2}X(s)+csX(s)+kX(s)=\mathcal{L}(\mathbb{1}(t)) \\[1ex]
 (ms^{2}+cs+k)X(s)=\dfrac{1}{s} \\[1ex]
 X(s)=\dfrac{1}{s(ms^{2}+cs+k)}
-\end{gathered}$$\
+\end{gathered}$$
+
 substituting the parameter values:
+
 $$\begin{aligned}
 X(s) & =\dfrac{1}{s(s^{2}+5s+6)} \\[1ex]
  & =\dfrac{1}{s(s+2)(s+3)}
@@ -485,4 +506,22 @@ Because the Routh table is regular, there are no poles on the imaginary axis, an
 ![[LSY1_007/Screenshot_20240801_120007_Samsung Notes.jpg|book|350]]
 >Pole-zero map of $G(s)$
 
+
+## Question 6
+Consider the following system:
+![[LSY1_008/LSY1_008 Fourier Transform 2024-09-04 20.24.26.excalidraw.svg]]
+>Inverted pendulum with torsion spring.
+
+An inverted pendulum with length $L$ is held in place by a torsion spring with constant $k$, as can be seen in the figure. A mass $m$ is placed at the end of the rod. In addition, a torsion damper is set in place with constant $c$. Finally, an external force is acting on the mass perpendicularly to the rod.
+
+The transfer function of the linearized system is given by
+$$G(s)=\dfrac{L}{mL^{2}s^{2}+cs+(k-mgL)}$$When is this system I/O stable?
+
+**Solution**:
+The transfer function is [[LSY1_007 Laplace Transform#From Laplace to Transfer Function|proper]]. Because we are working with a second degree polynomial, the criterion for stability is that all coefficients of the numerator have the same sign. In this case, all coefficients must be positive:
+$$mL^{2}>0\qquad  c>0\qquad  k-mgL>0$$
+The first two conditions are always met. Therefore, the condition for stability becomes:
+$$\boxed{k>mgL }$$
+What this means intuitively is that the force of the spring ($k\theta$) should be larger than the moment produced by the weight of the mass ($mgL\sin\theta$).
+$$k\theta>mgL\sin\theta\approx mgL\theta$$
 

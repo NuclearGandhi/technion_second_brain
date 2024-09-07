@@ -94,7 +94,7 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.3.0",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.4.0",
     "libraryItems": [
       {
         "status": "unpublished",
@@ -8555,7 +8555,12 @@
   "mdFontColor": "Black",
   "mdBorderColor": "Black",
   "mdCSS": "",
-  "scriptEngineSettings": {},
+  "scriptEngineSettings": {
+    "Downloaded/ExcaliAI": {
+      "Agent's Task": "Wireframe to code",
+      "User Prompt": ""
+    }
+  },
   "defaultTrayMode": true,
   "previousRelease": "2.2.10",
   "showReleaseNotes": false,

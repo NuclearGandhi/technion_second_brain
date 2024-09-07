@@ -6,6 +6,7 @@ aliases:
   - transfer function
   - physical realization
   - canonical realization
+  - Euler's formula
 ---
 
 # Impulse Response
@@ -161,6 +162,12 @@ e^{\mathbf{A}t} & =I+\begin{pmatrix}
 > We write $j$ instead of $i$ because of aliens.
 > These aliens refer to themselves as 'electrical engineers'. They use $i$ to denote their precious little electrical current. Very confusing.
 
+Some important identities derived from this definition are:
+$$\boxed {
+\begin{aligned}
+ & \sin\theta=\dfrac{e^{j\theta}-e^{-j\theta}}{2j} &  &  \cos\theta=\dfrac{e^{j\theta}+e^{-j\theta}}{2}
+\end{aligned}
+ }$$
 ### Special Matrix Exponential
 Let
 $$\mathbf{A}=\begin{pmatrix}
@@ -475,7 +482,7 @@ $$\mathbf{A}=\begin{pmatrix}
 \end{pmatrix}$$
 
 ### Part a
-Find the diagonzalizing transformation of $\mathbf{A}$ (if the real form if it exists).
+Find the diagonalizing transformation of $\mathbf{A}$ (if the real form if it exists).
 
 **Solution**:
 First, calculate the characteristic polynomial:
@@ -885,6 +892,106 @@ $$\begin{aligned}
 and can conclude that $g\in {L}_{1}$. That is, the system is BIBO stable.
 
 ## Question 3
+Let $A$ be the matrix:
+$$A=\begin{pmatrix}
+1 & 2 & -8 \\[1ex]
+0 & -1 & 4 \\
+0 & -1 & -1
+\end{pmatrix}$$
+
+### Part a
+Find the diagonalizing transformation (in the real form if it exists).
+
+**Solution**:
+>[!TODO] TODO: להשלים
+
+We first find the eigenvectors and eigenvalues:
+$$\begin{vmatrix}
+\lambda-1 & -2 & 8 \\
+0 & \lambda+1 & -4 \\
+0 & 1 & \lambda+1
+\end{vmatrix}=(\lambda-1)\begin{vmatrix}\lambda+1 & -4 \\
+1 & \lambda+1
+\end{vmatrix}=(\lambda-1)(\lambda ^{2}+2\lambda+5)$$
+Therefore, the eigenvalues are:
+$${\lambda}_{1}=1,\, {\lambda}_{2}=-1+2j,\, {\lambda}_{3}=-1-2j$$
+Now, to find the eigenvectors:
+- For ${\lambda}_{1}=1$:
+	$$\left(\begin{array}{ccc|c}
+0 & -2 & 8  & 0\\
+0 & 2 & -4  & 0\\
+0 & 1 & 2 & 0
+\end{array}\right)\xrightarrow[]{}\left(\begin{array}{ccc|c}
+0 & -2 & 8 & 0 \\
+0 & 0 & 4 & 0 \\
+0 & 0 & 6 & 0
+\end{array}\right)\xrightarrow[]{}\left(\begin{array}{ccc|c}
+0 & 1 & -4 & 0 \\
+0 & 0 & 1 & 0
+\end{array}\right)$$
+	which means $\boldsymbol{\eta}_{1}=\begin{pmatrix}1\\0\\0\end{pmatrix}$
+- For ${\lambda}_{2}=-1+2j$:
+	$$\begin{aligned}
+	 & \left(\begin{array}{ccc|c}
+	-2+2j & -2 & 8 & 0 \\
+	0 & 2j & -4  & 0\\
+	0 & 1 & 2j & 0
+	\end{array}\right) \xrightarrow[]{}\left(\begin{array}{ccc|c}
+	-2+2j & -2 & 8 & 0 \\
+	0 & 2j & -4 & 0 \\
+	0 & 0 & 0 & 0
+	\end{array}\right) \\[3ex]
+	 & \qquad  \xrightarrow[]{}\left(\begin{array}{ccc|c}
+	-1+1j & -1 & 4 & 0 \\
+	0 & j & -2 & 0 \\
+	0 & 0 & 0  & 0
+	\end{array}\right)
+	\end{aligned}$$
+	which means $\boldsymbol{\eta}_{2}=\begin{pmatrix}1+3j\\-2j\\1\end{pmatrix}$
+- For ${\lambda}_{3}=-1-2j$, we know that $\boldsymbol{\eta}_3$ is the complex conjugate of $\boldsymbol{\eta}_{2}$, which means $\boldsymbol{\eta}_{3}=\begin{pmatrix}1-3j\\2j\\1\end{pmatrix}$.
+
+The [[#Real Diagonalization of a Matrix with Complex Eigenvalues|real diagonal]] matrix is:
+$$\boxed {
+\boldsymbol{\Lambda}=\begin{pmatrix}
+1 & 0 & 0 \\
+0 & -1 & 2 \\
+0 & -2 & -1
+\end{pmatrix}
+ }$$
+And the transformation matrix is:
+$$\boxed {
+\mathbf{T}=\begin{pmatrix}
+1 & 1 & 3 \\
+0  & 0 & -2\\
+0 & 1 & 0
+\end{pmatrix}
+ }$$
+
+### Part b
+Find the matrix exponential $e^{At}$.
+
+**Solution**:
+Now we can find the [[#Calculating the Matrix Exponent|matrix exponent]]:
+$$\begin{aligned}
+e^{\mathbf{A}t} &=\mathbf{T}e^{\boldsymbol{\Lambda}t}\mathbf{T}^{-1} \\[1ex]
+ & =\begin{pmatrix}
+1 &  1 & 3 \\
+0 & 0 & -2 \\
+0 & 1 & 0
+\end{pmatrix}\begin{pmatrix}
+e^{t} & 0 & 0 \\
+0 & e^{-t}\cos(2t) & e^{-t}\sin(2t) \\
+ & -e^{-t}\sin(2t) & e^{-t}\cos(2t)
+\end{pmatrix}\begin{pmatrix}
+1 & 1 & 3 \\
+0 & 0 & -2 \\
+0 & 1 & 0
+\end{pmatrix}^{-1}
+\end{aligned}$$
+
+No real point in developing this any further.
+
+## Question 4
 Given the following second-order differential equation
 $$\ddot{y}(t)+y(t)=u(t)$$
 ### Part a
@@ -974,7 +1081,7 @@ g(t)=\sin t\,\mathbb{1}(t)
 \end{gathered}$$
 
 
-## Question 4
+## Question 5
 Consider the following ODE:
 $$\ddot{y}(t)+5\dot{y}(t)+6y(t)=\ddot{x}(t)+2\dot{x}(t)+x(t)$$
 
