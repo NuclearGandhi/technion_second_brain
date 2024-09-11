@@ -264,7 +264,9 @@ We can now generalize the previous Lemma:
 An immediate special case is that
 $$\int_{-\infty }^{\infty} \delta(t-b)f(t) \, \mathrm{d}t=f(b),\, \qquad  (\text{if } f(t) \text{ is continuous at } t=b) $$
  This property is known as the **sifting property** of the delta function. It is the property that out of all values $\{ f(t)\mid t\in \mathbb{R} \}$ that $f(t)$ can take, the value at $t=b$ is sifted out. It is also possible to determine the convolution product $(f*\delta)(t)$ of a signal $f(t)$ and the delta function $\delta(t)$.
- $$(f*\delta)(t)=\int_{-\infty }^{\infty} \delta(t-\tau)f(\tau) \, \mathrm{d}\tau=f(t) $$
+ $$\boxed {
+(f*\delta)(t)=\int_{-\infty }^{\infty} \delta(t-\tau)f(\tau) \, \mathrm{d}\tau=f(t) 
+ }$$
  
 ### Products with delta functions
 >[!theorem] Lemma: 
@@ -272,7 +274,7 @@ $$\int_{-\infty }^{\infty} \delta(t-b)f(t) \, \mathrm{d}t=f(b),\, \qquad  (\text
  >$$f(t)\delta(t-b)=f(b)\delta(t-b)$$
 
 
-| Property    | Condition                                                             |                            |
+| Property    | Condition                                                             | Notes                      |
 | ----------- | --------------------------------------------------------------------- | -------------------------- |
 | Sifting     | $\int_{-\infty}^{\infty} \delta(t-b)f(t) \, \mathrm{d}t=f(b)$         | $f(t)$ continuous at $t=b$ |
 |             | $f(t)\delta(t-b)=f(b)\delta(t-b)$                                     | $f(t)$ continuous $t=b$    |

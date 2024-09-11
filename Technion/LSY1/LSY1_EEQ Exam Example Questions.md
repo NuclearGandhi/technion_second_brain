@@ -141,9 +141,7 @@ A discrete-time signal $\bar{x}$, with sample time $h$, has been converted to an
 What's $\bar{x}$ in terms of elementary signals (pulse, step...)?
 
 **Solution**:
->[!TODO] TODO: להוסיף על החזקה באפס
-
-From the definition of zero-order hold we see that the discrete time signal is of the form:
+From the definition of [[LSY1_011 Fourier Analysis of Discrete Time Signals#Digital to Analog|zero-order hold]] we see that the discrete time signal is of the form:
 ![[LSY1_EEQ/LSY1_EEQ Exam Example Questions 2024-09-10 10.50.17.excalidraw.svg]]
 >The discrete-time signal $\bar{x}$.
 
@@ -604,7 +602,7 @@ $$y_{\text{ss}}=\alpha+\beta \sin({\omega}_{0}t)$$
 Meaning:
 $$\alpha+\beta \sin({\omega}_{0}t)=k_{\text{st}}+\lvert G(j{\omega}_{0}) \rvert \sin({\omega}_{0}t-90^{\circ} +\arg G(j{\omega}_{0}))$$
 
->[!TODO] TODO: להשלים
+From here I don't really know how to explain. I want to thank from the deepness of my heart to the course instructors that provide clear and coherent explanations to what the fuck is going on with this course.
 
 ## Question 51
 Given the Routh table of the polynomial $D(s)=s^{4}+4s^{3}+4s^{2}+8s+6$:
