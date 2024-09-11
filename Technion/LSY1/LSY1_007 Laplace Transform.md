@@ -6,7 +6,20 @@ aliases:
   - Laplace transform table
   - partial fraction expansion
   - final value theorem
-  - initial value therorem
+  - initial value theorem
+  - transfer function
+  - steady-state
+  - transient response
+  - transient characteristics
+  - overshoot
+  - undershoot
+  - first-order system transfer function
+  - second-order system transfer function
+  - routh table
+  - causality and stability in CLTI
+  - Hurwitz
+  - Schur
+  - monic
 ---
 # Introduction
 From [[LSY1_000 034032 Linear Systems E#Bibliography|(Lathi & Green, 2018)]]:
@@ -154,12 +167,68 @@ The system is said to be
 - **bi-proper** if $n=m$,
 - **non-proper** if $n<m$.
 
+## Steady-State and Transients
+Consider a continuous-time LTI $G$ with a rational transfer function. If $G$ is stable, all poles of $G(s)$ are in $\{ s \in \mathbb{C}\mid \mathrm{Re}(s)<0 \}$, so that it **holomorphic** (differentiable, but for complex functions) and bounded at $s=0$.
+
+The Laplace transform of the **step response** (response to $u=\mathbb{1}$) is
+$$Y(s)=G(s)\cdot \dfrac{1}{s}$$
+Which we can also write as:
+$$Y(s)=\underbrace{ \dfrac{G(s)-G(0)}{s} }_{ Y_{\text{tr}} }+\underbrace{ \dfrac{G(0)}{s} }_{ Y_{\text{ss}} }$$
+- The signal $y_{\text{tr}}$ is called the **transient response**. It Laplace transform $Y_{\text{tr}}$ is rational, proper, and its singularity at $s=0$ is removable, as in:
+	$$\lim_{ s \to 0}Y_{\text{tr}}(s)=\lim_{ s \to 0} \dfrac{G(s)-G(0)}{s}=G'(0)$$
+	Hence, $y_{\text{tr}}$ is a superposition of *decaying* exponents and $\lim_{ t \to \infty}y_{\text{tr}}(t)=0$, meaning that the transient response vanishes asymptotically.
+- The signal $y_{\text{st}}=G(0)\mathbb{1}$ is called the **steady-state response**, where $G(0)$ is called the **static gain** of $G$.
+	Thus, the step response of a stable LTI system $G$ converges asymptotically to the step signal scaled by its static gain $G(0)$:
+	$$\lim_{ t \to \infty }y(t)=\lim_{ s \to 0} s \dfrac{G(s)}{s}=G(0)$$
+>[!notes] Note: 
+ >We refer to ${G}_{0}$ as the static gain of $G$ in the unstable case as well. If $G(0)$ is finite, then we may still think of $y_{\text{ss}}=G(0)\mathbb{1}$ as the steady-state response of an unstable system. However, the transients do not decay then (might even diverge).
+
+Practically:
+1. Steady-state response shows *what* the response will eventually be, i.e:
+	- what is the temperature in a thermometer,
+	- what floor an elevator reaches,
+	- what position the pointer of a spring scale stops.
+2. Transient response shows *how* the steady state is reached.
+	- how fast a thermometer catches the ambient temperature,
+	- how fast and smooth an elevator moves between floors,
+	- how fast the pointer of a spring scale stops.
+
+### Characteristics of Transients
+
+![[LSY1_007/Pasted image 20240908152545.png|book]]
+>General step response of a stable LTI system
+
+Smoothness of transients may be measured by the:
+- **overshoot**,
+	$$\mathrm{OS}=\dfrac{y_{\text{peak}}-y_{\text{ss}}}{y_{\text{ss}}}>0 \qquad  (\text{in} \, \pu{\%})$$
+	where $y_{\text{peak}}$ is the highest peak in the direction of $y_{\text{ss}}$.
+- **undershoot**,
+	$$\mathrm{US}=-\dfrac{y_{\text{us}}}{y_{\text{ss}}}>0 \qquad  (\text{in}\,\%)$$
+	where $y_{\text{us}}$ is the highest peak against the direction of $y_{\text{ss}}$.
+
+
+Speed of transients may be measured by the
+- **rise time**, $t_{r}$ - time that takes $y$ to rise from $0.1y_{\text{ss}}$ to $0.9y_{\text{ss}}$.
+- **peak time**, $t_{p}$ - time that takes $y$ to reach its highest peak.
+
+Duration of transients may be measured by the
+- **settling time**, $t_{s}$ - the smallest $t_{s}$ such that $\left\lvert  \dfrac{y(t)-y_{\text{ss}}}{y_{\text{ss}}}  \right\rvert\leq\delta,\,\forall t\geq t_{s}$,
+	for a given **settling level** $\delta=\left\lvert  \dfrac{y_{\delta}}{y_{\text{ss}}}  \right\rvert$, which is usually $2\%$ or $5\%$.
+
 ## First Order System Transfer Function
 The transfer function of a general first-order system takes the form
 $$G(s)=\dfrac{k_{\text{st}}}{\tau s+1}$$
 where $k_{\text{st}}$ is the static gain and $\tau$ is the time constant. The single pole of the system is $p=-1/\tau \in \mathbb{R}$.
-The step response of such a system is:
-$$y_{\text{step}}(t)=k_{\text{st}}(1-e^{-t/\tau})\mathbb{1}(t)$$
+
+For an step signal input $u=\mathbb{1}(t)$, the response would be:
+$$\begin{aligned}
+Y_{\text{step}}(s) & =\dfrac{k_{\text{st}}}{\tau s+1} \cdot \dfrac{1}{s} \\[1ex]
+ & =k_{\text{st}}\left( \dfrac{1}{s}-\dfrac{1}{s+1/\tau} \right)
+\end{aligned}$$
+Taking the inverse Laplace transform of it would yield:
+$$\boxed {
+y_{\text{step}}(t)=k_{\text{st}}(1-e^{-t/\tau})\mathbb{1}(t)
+ }$$
 Just like [[../PHY2/PHY2_004 מעגלים חשמליים#מעגלי RC|RC circuits]].
 The static gain $k_{\text{st}}$ scales the response amplitude. When $t=\tau$ and $t=3\tau$ we get
 $$\begin{aligned}
@@ -168,10 +237,84 @@ y_{\text{step}}(\tau)=k_{\text{st}}(1-e^{-1})\approx 0.63k_{\text{st}}\qquad  \t
 respectively. The time constant $\tau$ dictates the responsiveness of the system. 
 
 ![[LSY1_009/Pasted image 20240906225244.png|bookhue]]
->Characteristics of a first order system.
+>Characteristics of a first-order system.
+
+In steady-state, the response becomes constant:
+$$y_{\text{ss}}=k_{\text{st}}$$
+The transient response is shaped mainly by $\tau$, $k_{\text{st}}$ only scales is:
+$$y_{\text{tr}}=-k_{\text{st}}e^{-t/\tau}$$
+By the [[LSY1_007 Laplace Transform#Final and Initial Values Theorems|initial value theorem]], the slope in the beginning is:
+$$\begin{aligned}
+\dot{y}(0) & =\lim_{ s \to \infty} s\cdot sY(s) \\[1ex]
+ & =\lim_{ s \to \infty} \dfrac{k_{\text{st}}s}{\tau s+1}
+\end{aligned}$$
+which means:
+$$\boxed{\dot{y}(0)=\dfrac{k_{\text{st}}}{\tau} }$$
+
 
 ## Second Order System Transfer Function
->[!TODO] TODO: להשלים
+
+The transfer function of a general second-order system takes the form
+$$G(s)=\dfrac{k_{\text{st}}{\omega_{n}}^{2}}{s^{2}+2\zeta\omega_{n}s+{\omega_{n}}^{2}}$$
+where $k_{\text{st}}$ is the static gain, $\zeta$ is the **damping ratio**, and $\omega_{n}$ is the **natural frequency**. 
+$$s_{1,2}=\omega_{n}(-\zeta\pm \sqrt{ \zeta ^{2}-1 })$$
+
+
+Its step response would be:
+$$Y(s)=\dfrac{k_{\text{st}}{\omega_{n}}^{2}}{s^{2}+2\zeta\omega_{n}s+{\omega_{n}}^{2}} \cdot \dfrac{1}{s}$$
+and the roots of its denominator are
+$${s}_{1}=0\qquad  \text{and}\qquad  s_{2,3}=(-\zeta\pm \sqrt{ \zeta ^{2}-1 })\omega_{n}$$
+Three cases shall be studied separately:
+1. if $\zeta>1$, then $s_{2,3}$ are real and simple, which we will call **overdamped**.
+2. if $\zeta=1$, then $s_{2,3}$ are real and equal, which we will call **critically damped**.
+3. if $\zeta<1$, then $s_{2,3}$ and complex conjugate, , which we will call **underdamped**.
+
+>[!notes] Note: 
+ >If $\zeta=0$, then we say that system is undamped; on need in a separate analysis.
+
+In all cases the initial slope is (by the [[LSY1_007 Laplace Transform#Final and Initial Values Theorems|initial value theorem]]):
+$$\dot{y}(0)=\lim_{ s \to \infty }s\cdot sY(s)=\lim_{ s \to \infty } \dfrac{k_{\text{st}}{{\omega}_{n}}^{2}s}{s^{2}+2\zeta\omega_{n}s+{\omega_{n}}^{2}}$$
+which means:
+$$\boxed{\dot{y}(0)=0 }$$
+
+**Step response of an overdamped second order system**:
+The step response in this case is
+$$y(t)=k_{\text{st}}(1-\beta e^{{s}_{1}t}+(\beta-1)e^{{s}_{2}t})\mathbb{1}(t)$$
+where $\beta=\dfrac{1}{2}\left( \dfrac{\zeta}{\sqrt{ \zeta ^{2} }-1} +1\right)>1$.
+
+Increasing $\omega_{n}$ will cause a fast response. Increasing $\zeta$ will cause a slower response.
+
+![[LSY1_007/Pasted image 20240908154539.png|bookhue]]
+>Overdamped second-order system.
+
+**Step response of a critically damped second order system**:
+In this case the poles $s_{1,2}=-\omega_{n}$ and the step response is
+$$y(t)=k_{\text{st}}(1-(1+\omega_{n}t)e^{-\omega_{n}t})\mathbb{1}(t)$$
+Increasing $\omega_{n}$ will cause a faster response (as in overdamped system).
+
+**Step response of an underdamped second order system**:
+In this case the poles ${s}_{1},{s}_{2}\in \mathbb{C}$ are:
+$$s_{1,2}=-\zeta\omega_{n}\pm j\omega_{n}\sqrt{ 1-\zeta ^{2} }=-\zeta\omega_{n}\pm j\omega_{d}$$
+where $\omega_{d}=\omega_{n}\sqrt{ 1-\zeta ^{2} }$ is the **damped natural frequency**. The step response in this case is
+$$y(t)=k_{\text{st}}\left( 1-\dfrac{1}{\sqrt{ 1-\zeta ^{2} }}e^{-\zeta\omega_{n}t}\sin(\omega_{d}t+\arccos \zeta) \right)\mathbb{1}(t)$$
+
+We can notice that the response is composed of an exponential decay with $-\zeta\omega_{n}$ and an oscillation with the frequency $\omega_{d}$ (and thus the period $2\pi /\omega_{d}$).
+
+![[LSY1_007/Pasted image 20240908165910.png|bookhue]]
+>Upper plots: underdamped second order system $\zeta=0.3$. Lower plots: Underdamped ($\zeta=0.3$), critically damped ($\zeta=1$), and overdamped ($\zeta=2.6$) systems, where $\omega_{n}=4$.
+
+**Step response of underdamped system - effect of zeros**:
+Let
+$$G_{\alpha}(s)=\dfrac{k_{\text{st}}(\alpha\omega_{n}s+{{\omega}_{n}}^{2})}{s^{2}+2\zeta\omega_{n}s+{{\omega}_{n}}^{2}}$$
+for $\alpha \in \mathbb{R}$. $G(s)$ is said to have a zero at $s=-\omega_{n}/a$ since $G_{\alpha}(-\omega_{n}/\alpha)=0$. In this case:
+![[LSY1_007/Pasted image 20240910192824.png|bookhue|500]]
+>Effect of zero on an underdamped system.
+
+As $\alpha$ grows:
+- the overshoot $\mathrm{OS}$ increases: $y_{\alpha}(t)>{y}_{0}(t)$ for $t\leq \pi /\omega_{d}$, since $\dot{y}_{0}(t)>0$ for $t\leq \dfrac{\pi}{\omega_{d}}$,
+- the raise time $t_{r}$ decreases,
+- the settling time $t_{s}$ increases.
+
 
 # Causality and Stability
 >[!theorem] Theorem:
@@ -180,7 +323,7 @@ respectively. The time constant $\tau$ dictates the responsiveness of the system
 >- $G(s)$ has all its poles in the open left half plane $\mathbb{C}\setminus \bar{\mathbb{C}}_{0}=\{ s \in \mathbb{C}\mid \mathrm{Re}(s)<0 \}$
 
 ## Categorizing Polynomials
-In the case that our LTI system is represented by a rational function, the stability is determined by the locations of the roots of the denominator. It is not always easy to calculate these, but there are ways to test whether all the roots lie the open left half plane, or in the open unit disk $\mathbb{D}_{1}$ (which will be useful to know in future subjects).
+In the case that our LTI system is represented by a rational function, the stability is determined by the locations of the roots of the denominator. It is not always easy to calculate these, but there are ways to test whether all the roots lie in the open left half plane, or in the open unit disk $\mathbb{D}_{1}$ (which will be useful to know in future subjects).
 
 >[!def] Definition: 
  >A polynomial is said to be
@@ -476,7 +619,177 @@ $$\boxed {
 y_{ss}=5
  }$$
 
+
 ## Question 4
+
+Consider the system $G_{T}:q_{\text{in}}\to h$ shown in the following figure:
+
+![[LSY1_007/Pasted image 20240908155645.png|book|250]]
+>Tank system
+
+Its input is the volumetric flow $q_{\text{in}}$ to a tank with cross-section $A$ and the output $h(t)$ is the liquid level in the tank. Assume that $q_{\text{out}}(t)=\dfrac{h(t)}{R}$, where $q_{\text{out}}$ is the outlet volumetric flow and $R$ is the flow resistance.
+
+### Part a
+Derive the transfer function $G_{T}(s)$ of the system and determine if it is proper, strictly proper, bi-proper, non-proper.
+
+**Solution**:
+The liquid level at any point in the tank is simply the volume of the liquid per cross section area:
+$$h(t)=\dfrac{V}{A}$$
+We know that $\dot{V}=q_{\text{in}}-q_{\text{out}}$, which means:
+$$\begin{aligned}
+\dot{h}(t) & =\dfrac{\dot{V}}{A} \\[1ex]
+ & =\dfrac{1}{A}(q_{\text{in}}-q_{\text{out}}) \\[1ex]
+ & =\dfrac{1}{A}\left( q_{\text{in}}-\dfrac{h(t)}{R} \right)
+\end{aligned}$$
+We can rearrange this equation to a standard form:
+$$\dot{h}(t)+\dfrac{1}{RA}h(t)=\dfrac{1}{A}q_{\text{in}}$$
+Applying the [[LSY1_007 Laplace Transform#The Laplace Transform|Laplace transform]], we get:
+$$\begin{gathered}
+sH(s)+\dfrac{1}{RA}H(s)=\dfrac{1}{A}Q(s) \\[1ex]
+\left( s+\dfrac{1}{RA} \right)H(s)=\dfrac{1}{A}Q(s) \\[1ex]
+\boxed {
+G_{T}(s)=\dfrac{H(s)}{Q(s)}=\dfrac{R}{RAs+1}
+ }
+\end{gathered}$$
+This transfer function is [[#From Laplace to Transfer Function|strictly proper]].
+
+### Part b
+Find the zeros and poles of $G_{T}(s)$ and associate them with specific parts of the complex plane $\mathbb{C}$.
+
+**Solution**:
+The system has no zeros, and we can see that $s=-\dfrac{1}{RA}\in \mathbb{R}$ is a pole. Since $R,A$ are positive, we know that $s$ is on the open left complex plane:
+![[LSY1_007/Pasted image 20240908204341.png|bookhue|500]]
+>Pole-zero map of the tank system.
+
+
+
+### Part c
+Calculate the plot and response of the step input $q_{\text{in}}=\mathbb{1}(t)$. Find the steady-state value, initial slope , time it takes to reach $\approx63\%$ and $\approx 99\%$ from its steady-state value. Assume that $R=2$ and $A=3$.
+
+**Solution**:
+Using the assumptions, we can write our transfer function as:
+$$G_{T}(s)=\dfrac{2}{6s+1}$$
+We know from [[#First Order System Transfer Function|steady-state of a first-order system]] that:
+$$\begin{gathered}
+y_{\text{ss}}=k_{\text{st}} \\[1ex]
+\boxed {
+y_{\text{ss}}=2
+ }
+\end{gathered}$$
+ And the initial slope is:
+ $$\begin{gathered}
+\dot{y}(0)=\dfrac{k_{\text{st}}}{\tau} \\[1ex]
+\boxed {
+\dot{y}(0)=\dfrac{1}{3}
+ }
+\end{gathered}$$
+In general, the step response is:
+$$\begin{gathered}
+y_{\text{step}}=k_{\text{st}}(1-e^{-t/\tau}) \\[1ex]
+y_{\text{step}}=2(1-e^{-t/6})
+\end{gathered}$$
+To find when it reaches $\approx63\%$ of its steady state value, we can simply substitute:
+$$\begin{gathered}
+\dfrac{63}{100}k_{\text{st}}=k_{\text{st}}(1-e^{-t/\tau}) \\[1ex]
+e^{-t/\tau}=-\dfrac{37}{100} \\[1ex]
+t\approx \tau
+\end{gathered}$$
+In the same way, for $99 \%$, we get $t\approx 5\tau$.
+
+![[LSY1_007/Pasted image 20240908204404.png|bookhue|500]]
+>Step response of the tank system.
+
+## Question 5
+Consider the system $G_{R}:\tau \to\theta$ shown in the following figure:
+![[LSY1_007/Pasted image 20240908155713.png|book|200]]
+>Rotational mass-spring-damper system
+
+The mass whose moment of inertia, $J$, is attached to a torsion spring, whose torsion coefficient is $k_{T}$. An external torque $\tau$ acts on the mass and friction between the mass and the cylinder is assumed to generate a viscous friction torque $\tau_{c}=-c_{T}\dot{\theta}$.
+
+### Part a
+Derive the transfer function $G_{R}(s)$ of the system.
+
+**Solution**:
+By [[../DYN1/DYN1_007 קינטיקה של גוף קשיח#מאזן תנע זוויתי יחסי של גק"ש מישורי|angular momentum balance equation]]:
+$$\begin{gathered}
+\sum  M= J\ddot{\theta}  \\[1ex]
+\tau-k_{T}\theta+\tau_{c}=J\ddot{\theta} \\[1ex]
+J\ddot{\theta}-k_{T}\theta+c_{T}\dot{\theta}=\tau
+\end{gathered}$$
+Applying the [[LSY1_007 Laplace Transform#The Laplace Transform|Laplace transform]] to both sides of the equation yields:
+$$\begin{gathered}
+s^{2}J\Theta+sc_{T}\Theta+k_{T}\Theta=T \\[1ex]
+G_{R}(s)=\dfrac{\Theta(s)}{T(s)}=\dfrac{1}{Js^{2}+c_{T}s+k_{T}}
+\end{gathered}$$
+We can rewrite it to fit the [[LSY1_007 Laplace Transform#Second Order System Transfer Function|known form]]:
+$$\boxed {
+G_{R}(s)=\dfrac{1/J}{s^{2}+(c_{T}/J)s+(k_{T}/J)}
+ }$$
+
+### Part b
+Determine if the system is strictly proper, bi-proper, non-proper.
+
+**Solution**:
+The system is [[#From Laplace to Transfer Function|strictly proper]].
+### Part c
+Find $k_{\text{st}},\,\omega_{n},\,\zeta,\,\omega_{d},\,t_{r},\,t_{p},\,\mathrm{OS}$ and $t_{s}$ for $\delta=5\%$. Assume that $J=2,\,c_{T}=3$ and $k_{T}=10$.
+
+**Solution**:
+We know that:
+
+$$G_{R}(s)=\dfrac{1/J}{s^{2}+(c_{T}/J)s+(k_{T}/J)s}=\dfrac{k_{\text{st}}{\omega_{n}}^{2}}{s^{2}+2\zeta\omega_{n}s+{\omega_{n}}^{2}}$$
+Therefore, the natural frequency:
+$$\begin{gathered}
+\omega_{n}=\sqrt{ \dfrac{k_{T}}{J} } \\[1ex]
+\boxed {
+\omega_{n}=\sqrt{ 5 }
+ }
+\end{gathered}$$
+And the static gain:
+$$\begin{gathered}
+\dfrac{1}{J}=k_{\text{st}}{\omega_{n}}^{2} \\[1ex]
+\boxed {
+k_{\text{st}}=10
+ }
+\end{gathered}$$
+The damping ratio:
+$$\begin{gathered}
+\dfrac{c_{T}}{J}=2\zeta\omega_{n} \\[1ex]
+\boxed {
+\zeta\approx 0.33<1
+ }
+\end{gathered}$$
+Since $\zeta<1$, the system is [[#Second Order System Transfer Function|underdamped]], and has a damping frequency:
+$$\begin{gathered}
+\omega_{d}=\omega_{n}\sqrt{ 1-\zeta ^{2} } \\[1ex]
+\omega_{d}\approx 2.11
+\end{gathered}$$
+Its poles:
+$$\begin{aligned}
+s_{1,2} & =\dfrac{-c_{T}/J\pm \sqrt{ (c_{T}/J)^{2}-4k_{T}/J }}{2} \\[1ex]
+ & =\dfrac{-3/2\pm \sqrt{ (3/2)^{2}-20 }}{2} \\[1ex]
+ & =-\dfrac{3}{4}\pm \sqrt{ \dfrac{9/4-20}{4} } \\[1ex]
+ & \approx -3/4\pm 4.44j
+\end{aligned}$$
+These poles are on the open left half plane, which means the system is stable:
+![[LSY1_007/Pasted image 20240908155801.png|book|500]]
+>Pole-zero map of the rotational system.
+
+
+Using super powers like MATLAB we can also plot the step response:
+![[LSY1_007/Pasted image 20240908155813.png|book|500]]
+>Step response of the rotational system.
+
+From the plot, we can calculate the characteristics of the transient response:
+$$\begin{aligned}
+ & t_{r}=0.825-0.213=0.612 \\[1ex]
+ & t_{p}=1.491 \\[1ex]
+ & \mathrm{OS}=\dfrac{0.133-0.1}{0.1}=33\% \\[1ex]
+ & t_{s}=3.542
+\end{aligned}$$
+
+
+## Question 8
 Consider the continuous-time LTI system with transfer function $G(s)$:
 $$G(s)=\dfrac{1}{s^{3}+7s^{2}-4s+2}$$
 
@@ -485,7 +798,7 @@ Is this system I/O stable?
 **Solution**:
 According to [[#Necessary and Sufficient Condition]], We need to make sure that the Denominator's coefficient satisfy $a_{i}>0$. Since $a_{1}<0$, $D(s)$ isn't Hurwitz, which means it has roots in the right hand plane.  [[#Causality and Stablity|Therefore]] (even though it is proper), it is not stable.
 
-## Question 5
+## Question 9
 Consider the continuous-time LTI system with transfer function $G(s)$:
 $$G(s)=\dfrac{1}{s^{5}+4s^{4}+2s^{3}+2s^{2}+s+10}$$
 Is this system I/O stable? If not, then where are the poles placed?
@@ -507,7 +820,7 @@ Because the Routh table is regular, there are no poles on the imaginary axis, an
 >Pole-zero map of $G(s)$
 
 
-## Question 6
+## Question 10
 Consider the following system:
 ![[LSY1_008/LSY1_008 Fourier Transform 2024-09-04 20.24.26.excalidraw.svg]]
 >Inverted pendulum with torsion spring.

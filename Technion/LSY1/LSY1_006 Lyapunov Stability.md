@@ -328,11 +328,8 @@ x_{0,1}e^{-t}+(-{x}_{0,1}+x_{0,2})e^{-2t}
 
 There are 2 modes in this system, ${\lambda}_{1}$ and ${\lambda}_{2}$, with ${\lambda}_{2}$ faster than ${\lambda}_{1}$. Therefore, the exponent $e^{{\lambda}_{2}t}=e^{-2t}$ tends to $0$ faster than the exponent $e^{{\lambda}_{1}t}=e^{-t}$.
 
+
 ## Question 3
-
->[!TODO] TODO: להשלים
-
-## Question 4
 
 ![[LSY1_006/Pasted image 20240722233943.png|book|400]]
 >Mass damper system
@@ -447,8 +444,3 @@ It is important to understand that a system of this type is “stable” only fo
 >Phase portrait for both many initial conditions
 
 
-## Question 5
-![[LSY1_005/Pasted image 20240907214539.png|book]]
->Pendulum system
-
->[!TODO] TODO: להשלים

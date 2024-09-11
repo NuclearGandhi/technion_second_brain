@@ -2,6 +2,7 @@
 aliases:
   - z-transform
   - ROC
+  - causality and stability in DLTI
 ---
 # Introduction
 From [[LSY1_000 034032 Linear Systems E#Bibliography|(Lathi & Green, 2018)]]:
@@ -30,7 +31,7 @@ $$\begin{aligned}
  
 # Final and Initial Values Theorems
 
->[!theorem] theorem: 
+>[!theorem] Theorem: 
 > Given a discrete signal $x:\mathbb{Z}\to \mathbb{F}$ with $\mathrm{supp}(x) \subset \mathbb{Z}_{+}$, the initial and final value theorems are as follows:
 > 1. **Initial value theorem**:
 > 	$$x[0]=\lim_{ z\in \mathbb{R},\, z \to \infty}X(z)$$
@@ -39,14 +40,20 @@ $$\begin{aligned}
 > 	$$\lim_{ t \to \infty}x[n]=\lim_{ z \to 1}X(n)$$
 > 	assuming $x$ is converging.
 
-
 # Causality and Stability
+>[!theorem] Theorem: 
+ >If the transfer function $G(z)$ of a DLTI system $G$ is rational, then
+ >- $G$ is causal iff $G(z)$ is proper and
+ >- $G$ is $\ell_{2}$-stable iff $G(z)$ has no poles in $\mathbb{C}\setminus \mathbb{D}_{1}$.
+ 
+>[!example] Example:
+>The system $G(z)=z^{4}-1$ is non-proper. Hence $G$ is not causal, but it is stable.
 
 ## Jury table
 
 
 >[!warning] Attention: 
- >For the exam, we won't need to use this table, Christian specifically said that using Routh table will be enough. This is why it's not in the cheat sheet.
+ >For the exam, we won't need to use the Jury table approach. Christian has instead provided the [[#Bilinear Transformation]] in the cheat sheet, since it is a much nicer to work with Routh table.
 
 >[!def] Definition: 
 > Given the polynomial $D(z)=a_{n}z^{n}+a_{n-1}z^{n-1}+\dots+{a}_{1}z+{a}_{0}$, the associated Jury table is
@@ -87,9 +94,12 @@ $$\begin{aligned}
 > 1. for a given transfer function $D(z)$, ${s}_{0}$ is a root of $\tilde{D}(s)$ iff ${z}_{0}=(1+{s}_{0})/(1-{s}_{0})$ is a root of $D(z)$.
 > 2. $D(z)$ is Schur iff $\tilde{D}(s)$ is Hurwitz.
 
-
-# Exercises
-
-## Question 1
-
->[!TODO] להשלים
+This transformation basically means:
+$$\begin{gathered}
+\lvert z \rvert<1 \iff \mathrm{Re}(s)<0, \\[1ex]
+\lvert z \rvert>1\iff \mathrm{Re}(s)>0, \\[1ex]
+\lvert z \rvert=1\iff \mathrm{Re}(s)=0
+\end{gathered}$$
+i.e:
+![[LSY1_010/Pasted image 20240910190604.png|bookhue|500]]
+>Demonstration of the Bilinear transformation.

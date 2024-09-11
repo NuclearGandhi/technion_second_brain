@@ -519,5 +519,3 @@ $$\boxed {
 \end{cases}
  }$$
 
-## Question 8
->[!TODO] TODO: להשלים

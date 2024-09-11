@@ -11,7 +11,7 @@ Book: [Hespanha](https://annas-archive.org/md5/f7037d2144916d28f40c1be4394f25c3)
 Teacher: Christian Grussler
 Assistant:
 
-# Notes
+## Notes
 - [[LSY1_001 Introduction]]
 - [[LSY1_002 Signals and Convolutions]]
 - [[LSY1_003 Classification of Systems]]
@@ -24,5 +24,9 @@ Assistant:
 - [[LSY1_010 Discrete-Time System Analysis]]
 - [[LSY1_011 Fourier Analysis of Discrete Time Signals]]
 
-# Bibliography
+## Exams
+- [[LSY1_EEQ Exam Example Questions]]
+
+
+## Bibliography
 - Lathi, B.P., Green, R.A., 2018. Linear systems and signals, Third Edition. ed, The Oxford Series in Electrical and Computer Engineering. Oxford University Press, New York.

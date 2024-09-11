@@ -8,10 +8,12 @@ aliases:
 
 
 From [[LSY1_000 034032 Linear Systems E#Bibliography|(Lathi & Green, 2018)]]:
-In [[LSY1_008 Fourier Transform#Introduction|Fourier transform]] and [[LSY1_007 Laplace Transform#Introduction|Laplace transform]] we studies the ways of reprenting a continuous-time signal as a sum of sinusoids or excponentials. In this chapter we shall discuss similar development for discrete-time signals. Our approach is parallel to that used for a continous-time signals. We first represent a periodic $x[n]$ as a Fourier series formed by a discrete-time exponential (or sinusoid) and its harmonics.
+In [[LSY1_008 Fourier Transform#Introduction|Fourier transform]] and [[LSY1_007 Laplace Transform#Introduction|Laplace transform]] we studies the ways of representing a continuous-time signal as a sum of sinusoids or exponentials. In this chapter we shall discuss similar development for discrete-time signals. Our approach is parallel to that used for a continous-time signals. We first represent a periodic $x[n]$ as a Fourier series formed by a discrete-time exponential (or sinusoid) and its harmonics.
 
-# Discrete-Time Fourier Series (DTFS)
-A continuous-time sinusoid $\cos(\omega t)$ is a periodic signal regardless of the values of $\omega$. Such is not the case for a discrete-time sinusoid $\cos(\theta n)$ (which is the same $e^{j\theta n}$). A sinusoid $\cos(\theta n)$ is peiodic only in $\dfrac{\theta}{2\pi}$ is a rational number.
+The signal $\alpha[t]=ae^{j\theta t}:\mathbb{Z}\to \mathbb{C}$, for $\alpha \in \mathbb{C}$ and $\theta \in \mathbb{R}$ is called a discrete harmonic signal with frequency $\theta$, amplitude $\lvert a \rvert$, and initial phase $\arg(a)$:
+
+![[LSY1_011/Pasted image 20240910194422.png|bookhue|500]]
+>A general discrete harmonic signal.
 
 # Discrete-Time Fourier Transform
 
@@ -25,12 +27,38 @@ A continuous-time sinusoid $\cos(\omega t)$ is a periodic signal regardless of t
 
 Symbolically:
 $$\begin{aligned}
-X(j\omega)=\mathcal{F}\{ x[n] \} &  & \text{and} &  & x[n]=\mathcal{F}^{-1}\{ X[e^{j\theta}] \}
+X(e^{j\theta})=\mathcal{F}\{ x[n] \} &  & \text{and} &  & x[n]=\mathcal{F}^{-1}\{ X[e^{j\theta}] \}
 \end{aligned}$$
 
-# Periodic Summation
->[!TODO] להשלים
+## Basic Properties
 
+| property      | time domain                       | frequency domain                                                         |
+| ------------- | --------------------------------- | ------------------------------------------------------------------------ |
+| linearity     | $x={a}_{1}{x}_{1}+{a}_{2}{x}_{2}$ | $X(e^{j\theta})={a}_{1}{X}_{1}(e^{j\theta})+{a}_{2}{X}_{2}(e^{j\theta})$ |
+| time shift    | $y=x(\tau+x)$                     | $Y(e^{j\theta})=e^{j\theta \tau }X(e^{j\theta})$                         |
+| time reversal | $y=x(-t)$                         | $X\left(e^{-j\theta} \right)$                                            |
+| conjugation   | $y=\bar{x}$                       | $Y(e^{j\theta})=\overline{X(e^{-j\theta})}$                              |
+| modulation    | $y=xe^{j{\theta}_{0}t}$           | $Y(e^{j\theta})=X(e^{j(\theta-{\theta}_{0})})$                           |
+| convolution   | $z=x*y$                           | $Z(e^{j\theta})=X(e^{j\theta})Y(e^{j\theta})$                            |
+
+# Periodic Summation
+
+The ideal sampler maps continuous-time signals $x:\mathbb{R}\to \mathbb{R}$ to discrete signals $\bar{x}:\mathbb{Z}\to \mathbb{R}$ as
+$$\bar{x}[i]=x(ih),\, \qquad  \forall i$$
+for a given sampling period $h>0$ (we assume periodic sampling hereafter). We may also think in terms of the sampling frequency $\omega_{s}=2\pi /h$.
+
+**A key question**: What is lost by transforming the signal domain from $\mathbb{R}$ to $\mathbb{Z}$?
+
+![[LSY1_011/Pasted image 20240910195542.png|bookhue|400]]
+>Sampling $y$ with a general sampling period h.
+
+![[LSY1_011/Pasted image 20240910195525.png|bookhue|400]]
+>Sampling $x$ with a general sampling period $h$. We got that exact same sampled function even though the original continuous-time function isn't the same.
+
+
+
+
+>[!TODO] TODO: להשלים
 # Exercises
 
 ## Question 1
@@ -77,5 +105,3 @@ X(e^{j\theta})=\dfrac{\sin[\theta(N+1/2)]}{\sin(\theta /2)}
 ![[LSY1_011/Screenshot_20240822_115831_Samsung Notes.jpg|book|400]]
 >The plot of $X(e^{j\theta})$ for $N=10$.
 
-## Question 2
->[!TODO] להשלים

@@ -18,7 +18,7 @@ The output of a CLTI system is completely determined by the input and the system
 ![[LSY1_004/LSY1_004 Time Domain Analysis 2024-06-16 16.23.35.excalidraw.svg]]
 >We can determine the system's output $y(t)$ if we know the system's impulse response $g(t)$ and the input $f(t)$.
 
-In fact, we can show that by *convolving* the input $u(t)$ with the impulse reponse of the system $g(t)$ we get the system's output $y(t)$:
+In fact, we can show that by *convolving* the input $u(t)$ with the impulse response of the system $g(t)$ we get the system's output $y(t)$:
 $$y(t)=(g*u)(t)$$
 
 
@@ -35,7 +35,7 @@ $$y(t)=(g*u)(t)$$
 ## Causality via Impulse Responses
 
 > [!theorem] Theorem
->A CLTI system with the impulse response $g$ is causal iff $\sup(g)\geq 0$
+>A CLTI system with the impulse response $g$ is causal iff $\mathrm{supp}(g)\subset \mathbb{R}_{+}$.
 
 **Proof**:
 The response $y=g*t$ reads at every $t$ as
@@ -44,9 +44,10 @@ y(t) & =\int_{-\infty }^{\infty } g(t-s)u(s) \, \mathrm{d}s \\[1ex]
  & =\underbrace{ \int_{-\infty }^{t} g(t-s)u(s) \, \mathrm{d}s }_{ \text{past and present} }+\underbrace{ \int_{t}^{\infty} g(t-s)u(s) \, \mathrm{d}s }_{ \text{future} }
 \end{aligned}$$
 
-The future term zeros out iff $g(t-s)=0$ for all $s>t$. i.e., $g(t)=0$ for all $t<0$, which is equivalent to saying $\sup(g)\geq 0$.
-Thus, $y(t)$ cannot depend on $u(s)$ for $s>t$ iff $\sup(g)\geq 0$ - the system is causal.
+The future term zeros out iff $g(t-s)=0$ for all $s>t$. i.e., $g(t)=0$ for all $t<0$, which is equivalent to saying $\mathrm{supp}(g)\subset \mathbb{R}_{+}$.
+Thus, $y(t)$ cannot depend on $u(s)$ for $s>t$ iff $\mathrm{supp}(g)\subset \mathbb{R}_{+}$ - the system is causal.
 $$\tag*{$\blacksquare$}$$
+
 
 ## Stability via Impulse Responses
  
@@ -469,7 +470,7 @@ A & B \\
 \hline 1 & 0 & \dots  & 0 & 0
 \end{array} \right)$$
 
-If on the right side of the equation there is an $n$ derivative of $u$, that is there is a term $b_{n}u^{(n-1)}$ where $b_{n}\neq 0$, we can write the same canonical realization as for the system with $b_{n}=0$, and simple change $D=b_{n}$.
+If on the right side of the equation there is an $n$ derivative of $u$, that is there is a term $b_{n}u^{(n)}$ where $b_{n}\neq 0$, we can write the same canonical realization as for the system with $b_{n}=0$, and simple change $D=b_{n}$.
 
 
 # Exercises
@@ -903,7 +904,6 @@ $$A=\begin{pmatrix}
 Find the diagonalizing transformation (in the real form if it exists).
 
 **Solution**:
->[!TODO] TODO: להשלים
 
 We first find the eigenvectors and eigenvalues:
 $$\begin{vmatrix}

@@ -1,13 +1,17 @@
 ---
 aliases:
   - frequency domain analysis
+  - bode diagram
+  - polar diagram
+  - Nyquist diagram
+  - guidelines for asymptotic Bode
 ---
 # Frequency Response
 >[!theorem] Theorem: 
 > Let $G:u\to y$ be a stable [[LSY1_001 Introduction#State-Space Linear Systems|CLTI]] system. Its response to the *sinusoidal* test input $u$ such that
 > $$u(t)=a\sin(\omega t+\phi)\mathbb{1}(t)$$
 > in steady state, is also sinusoidal. Specifically:
-> $$y_{ss}(t)=a \lvert G(j\omega) \rvert\sin(\omega t+\phi+\mathrm{arg}G(j\omega))$$
+> $$y_{\text{ss}}(t)=a \lvert G(j\omega) \rvert\sin(\omega t+\phi+\mathrm{arg}G(j\omega))$$
 > where $\lvert G(j\omega) \rvert$ is the gain (magnitude), and $\mathrm{arg}G(j\omega)$ is the phase of the frequency response $G(j\omega)$ of $G$.
 
 The gain and the phase of the frequency response of $G$ can be calculated as:
@@ -69,6 +73,15 @@ We also define $\pu{dec}$, **decade**, which is the distance of $10$ units ($10$
 	![[LSY1_009/Pasted image 20240906224020.png|book|500]]
 	>Bode diagram for $G(s)=\tau s+1$. The magnitude is constant at $\pu{0dB}$ until the corner frequency of $\omega_{p}=\dfrac{1}{\tau}$, after which it is a straight line with slope $\pu{20dB/dec}$.
 	>The phase is constant at $0^{\circ}$ until $0.1\omega_{p}$, after which it is a straight line that crosses $45^{\circ}$ at frequency $\omega_{p}$, and at $10\omega_{p}$ again constant at $90^{\circ}$.
+
+
+### General Guidelines for Asymptotic Bode
+- Each pole adds $\pu{-20dB/dec}$ to the magnitude's slope (over high frequencies).
+- Each zero adds $\pu{+20dB/dec}$ to the magnitude's slope (over high frequencies).
+- Each pole in $\mathbb{C}\setminus \mathbb{C}_{0}$ adds a phase lag of $-90^{\circ}$.
+- Each pole in $\mathbb{C}_{0}$ adds a phase lag of $+90^{\circ}$.
+- Each zero in $\mathbb{C}\setminus \mathbb{C}_{0}$ adds a phase lag of $+90^{\circ}$.
+- Each zero in $\mathbb{C}_{0}$ adds a phase lag of $-90^{\circ}$.
 
 # Polar Diagram
 
@@ -329,7 +342,7 @@ $$y(t)=y_{\delta}(t)+y_{\text{step}}(t)+y_{\text{sin}}(t)$$
 
 - The system is stable, so in steady state the [[LSY1_004 Linear State-Space Equation#Impulse Response|impulse response]] decays to zero:
 	$$y_{\delta}(t)=0$$
-- For the same reason, the response converges to the static gain:
+- For the same reason, the [[LSY1_007 Laplace Transform#Steady-State and Transients|step response]] converges to the static gain:
 	$$\begin{aligned}
 y_{\text{step}}(t) & =G(0) \\[1ex]
  & =2
