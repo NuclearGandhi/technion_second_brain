@@ -9210,7 +9210,7 @@
   "longPressDesktop": 500,
   "longPressMobile": 500,
   "isDebugMode": false,
-  "rank": "Silver",
+  "rank": "Gold",
   "modifierKeyOverrides": [
     {
       "modifiers": [
@@ -9232,6 +9232,11 @@
     }
   ],
   "showSplashscreen": true,
+  "gridSettings": {
+    "DYNAMIC_COLOR": true,
+    "COLOR": "#000000",
+    "OPACITY": 50
+  },
   "autosaveInterval": 15000,
   "mathjaxSourceURL": "https://cdn.jsdelivr.net/npm/mathjax@3.2.1/es5/tex-svg.js"
 }
