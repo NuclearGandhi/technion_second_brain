@@ -3,5 +3,6 @@
   "enabledCssSnippets": [
     "something"
   ],
-  "baseFontSize": 20
+  "baseFontSize": 20,
+  "theme": "system"
 }

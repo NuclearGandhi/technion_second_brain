@@ -42,6 +42,45 @@ img[alt*="bmult"] {
   --figure-background-color: var(--color-base-00);
 }
 
+/* transparent background, black themed */
+.theme-dark img[alt*="book"] {
+  mix-blend-mode: screen;
+  filter: invert(1);
+}
+
+.theme-light img[alt*="book"] {
+  mix-blend-mode: multiply;
+}
+
+/* transparent background, black themed, with hue filter */
+.theme-dark img[alt*="bookhue"] {
+  mix-blend-mode: screen;
+  filter: hue-rotate(180deg) invert(1);
+}
+
+.theme-light img[alt*="bookhue"] {
+  mix-blend-mode: multiply;
+}
+
+/* Vector art also need to have a transparent background */
+.theme-light img[alt*="svg"] {
+  filter: invert(1);
+}
+
+.theme-light img[alt*="ignore"] {
+  filter: unset !important;
+}
+
+/* Dark theme for GeoGebra applets */
+.theme-dark .geo {
+  mix-blend-mode: screen;
+  filter: invert(1);
+}
+
+.theme-light .geo {
+  mix-blend-mode: multiply;
+}
+
 
 /* Not code blocks */
 .markdown-rendered code {
@@ -100,45 +139,6 @@ table {
 
 .markdown-rendered blockquote p {
   text-align: center !important;
-}
-
-/* transparent background, black themed */
-.theme-dark img[alt*="book"] {
-  mix-blend-mode: screen;
-  filter: invert(1);
-}
-
-.theme-light img[alt*="book"] {
-  mix-blend-mode: multiply;
-}
-
-/* transparent background, black themed, with hue filter */
-.theme-dark img[alt*="bookhue"] {
-  mix-blend-mode: screen;
-  filter: hue-rotate(180deg) invert(1);
-}
-
-.theme-light img[alt*="bookhue"] {
-  mix-blend-mode: multiply;
-}
-
-/* Vector art also need to have a transparent background */
-.theme-light img[alt*="svg"] {
-  filter: invert(1);
-}
-
-.theme-light img[alt*="ignore"] {
-  filter: unset !important;
-}
-
-/* Dark theme for GeoGebra applets */
-.theme-dark .geo {
-  mix-blend-mode: screen;
-  filter: invert(1);
-}
-
-.theme-light .geo {
-  mix-blend-mode: multiply;
 }
 
 /* Center iframes */
