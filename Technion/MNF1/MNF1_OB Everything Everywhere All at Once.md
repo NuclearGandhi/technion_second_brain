@@ -4,15 +4,15 @@ aliases:
 # תרגומי מונחים מקצועיים
 
 
-| עברית                 | אנגלית                                        |     | עברית | אנגלית    |
-| --------------------- | --------------------------------------------- | --- | ----- | --------- |
-| מטיל                  | bar, ingot                                    |     | סנטור | sintering |
-| חישול, כבישה          | forging                                       |     | פילט  | fillet    |
-| חישול בטבעים (סגורים) | impression-die forging,<br>closed-die forging |     | פלאש  | flash     |
-| חישול חופשי           | open-die forging                              |     |       |           |
-| ערגול                 | rolling                                       |     |       |           |
-| שיחול                 | extrusion                                     |     |       |           |
-| משיכה                 | drawing                                       |     |       |           |
+| עברית                 | אנגלית                                        |     | עברית                 | אנגלית                         |
+| --------------------- | --------------------------------------------- | --- | --------------------- | ------------------------------ |
+| מטיל                  | bar, ingot                                    |     | סנטור                 | sintering                      |
+| חישול, כבישה          | forging                                       |     | פילט                  | fillet                         |
+| חישול בטבעים (סגורים) | impression-die forging,<br>closed-die forging |     | פלאש                  | flash                          |
+| חישול חופשי           | open-die forging                              |     | חריטת מצח, חריטת אורך | face turning, straight turning |
+| ערגול                 | rolling                                       |     |                       |                                |
+| שיחול                 | extrusion                                     |     |                       |                                |
+| משיכה                 | drawing                                       |     |                       |                                |
 
 
 

@@ -193,12 +193,15 @@ or, its average for a whole width of cut $w$:
 $$\boxed{F_{c}=K_{s}wd }$$
 where $K_s$ is the **specific cutting force** or **specific energy**, measured in $\pu{N.mm^{-2}}$;$h$ is chip thickness; $w$ is the width of cut; $d$ is the depth of cut.
 
-The power $P$ required for the cutting process is calculated using the formula
+The average power $P$ required for the cutting process is calculated using the formula
 $$\boxed {
 P=F_{c} v
  }$$
 where $F_c$ is the cutting force; $v$ is the speed of the workpiece.
-
+The power at any given time can be calculated using:
+$$\boxed {
+P=F_{c}V_{c}
+ }$$
 # Exercises
 ## Question 1
 A $\pu{121mm}$ long, round, hollow workpiece is going under a facing operation to straighten its face. To do this, only a $\pu{1mm}$ depth of cut is needed, which reduces it to a length of $\pu{120mm}$. The feed rate is $\pu{0.7mm.rev^{-1}}$, and the possible rotational speeds of the machine are:

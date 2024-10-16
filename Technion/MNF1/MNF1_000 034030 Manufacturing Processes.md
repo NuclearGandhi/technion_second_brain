@@ -36,6 +36,9 @@ Assistant:
 חומר פתוח למבחן:
 - [[MNF1_OB Everything Everywhere All at Once]]
 
+שאלות לתרגול:
+- [[MNF1_PB שאלות לתרגול]]
+
 מבחנים:
 - [[MNF1_E2020SA 2020 אביב מועד א']]
 - [[MNF1_E2023SA 2023 אביב מועד א']]
