@@ -94,7 +94,7 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.4.0",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.5.2",
     "libraryItems": [
       {
         "status": "unpublished",
@@ -8894,6 +8894,11 @@
   "pdfNumRows": 1,
   "pdfDirection": "right",
   "pdfImportScale": 0.3,
+  "gridSettings": {
+    "DYNAMIC_COLOR": true,
+    "COLOR": "#000000",
+    "OPACITY": 50
+  },
   "laserSettings": {
     "DECAY_LENGTH": 50,
     "DECAY_TIME": 1000,
@@ -9232,11 +9237,6 @@
     }
   ],
   "showSplashscreen": true,
-  "gridSettings": {
-    "DYNAMIC_COLOR": true,
-    "COLOR": "#000000",
-    "OPACITY": 50
-  },
   "autosaveInterval": 15000,
   "mathjaxSourceURL": "https://cdn.jsdelivr.net/npm/mathjax@3.2.1/es5/tex-svg.js"
 }

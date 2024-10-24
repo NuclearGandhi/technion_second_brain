@@ -5,7 +5,7 @@
   "showAttachments": false,
   "hideUnresolved": true,
   "showOrphans": true,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
       "query": "file: ALG",
@@ -118,6 +118,13 @@
         "a": 1,
         "rgb": 7105708
       }
+    },
+    {
+      "query": "file: HTF",
+      "color": {
+        "a": 1,
+        "rgb": 10704655
+      }
     }
   ],
   "collapse-display": true,
@@ -130,6 +137,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.08317427835927663,
-  "close": true
+  "scale": 0.08317427835927664,
+  "close": false
 }

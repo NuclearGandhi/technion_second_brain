@@ -19566,11 +19566,14 @@ var LocalModel = class {
       }
       const notice = new import_obsidian.Notice(`\u2699\uFE0F Generating Latex for ${file.base}...`, 0);
       const d = this.plugin_settings.delimiters;
+      const debug = this.plugin_settings.debug;
       this.client.generateLatex({ imagePath: filepath }, async function(err, latex) {
         if (err) {
           reject(`Error getting response from latex_ocr_server: ${err}`);
         } else {
-          this.plugin.debug(`latex_ocr_server: ${latex == null ? void 0 : latex.latex}`);
+          if (debug) {
+            console.log(`latex_ocr_server: ${latex == null ? void 0 : latex.latex}`);
+          }
           if (latex) {
             const result = `${d}${latex.latex}${d}`;
             resolve2(result);
@@ -19614,7 +19617,7 @@ var LocalModel = class {
         pythonProcess.stdout.on("data", (data) => {
           const [prog, version] = data.toString().split(" ");
           if (this.plugin_settings.debug) {
-            console.log(`${prog} version ${version} (required version: ${SCRIPT_VERSION})`);
+            console.log(`${prog} version ${version} (min version: ${SCRIPT_VERSION})`);
           }
         });
         pythonProcess.stderr.on("data", (data) => {
@@ -19653,6 +19656,10 @@ var LocalModel = class {
         "--cache_dir",
         this.plugin_settings.cacheDirPath
       ];
+      if (this.plugin_settings.debug) {
+        console.log(`Starting server with the following command: 
+${this.plugin_settings.pythonPath, args}`);
+      }
       const pythonProcess = (0, import_child_process.spawn)(this.plugin_settings.pythonPath, args);
       pythonProcess.on("spawn", () => {
         console.log(`latex_ocr_server: spawned`);
@@ -20523,10 +20530,16 @@ var ApiModel = class {
   }
   reloadSettings(settings) {
     this.settings = settings;
-    if (safeStorage_default.isEncryptionAvailable()) {
-      this.apiKey = safeStorage_default.decryptString(Buffer.from(settings.hfApiKey));
-    } else {
-      this.apiKey = settings.hfApiKey;
+    try {
+      if (safeStorage_default.isEncryptionAvailable()) {
+        this.apiKey = safeStorage_default.decryptString(Buffer.from(settings.hfApiKey));
+      } else {
+        this.apiKey = settings.hfApiKey;
+      }
+    } catch (error) {
+      new import_obsidian3.Notice(`\u274C There was an error loading your API key`);
+      console.error("Error loading API key:", error);
+      this.apiKey = "";
     }
   }
   load() {
@@ -20710,6 +20723,8 @@ var LatexOCRSettingsTab = class extends import_obsidian4.PluginSettingTab {
     const pythonPath = new import_obsidian4.Setting(containerEl).setName("Python path").setDesc("Path to Python installation. You need to have the `latex_ocr_server` package installed, see the project's README for more information.			Note that changing the path requires a server restart in order to take effect.").addExtraButton((cb) => cb.setIcon("folder").setTooltip("Browse").onClick(async () => {
       const file = await picker("Open Python path", ["openFile"]);
       pythonPath.components[1].setValue(file);
+      this.plugin.settings.pythonPath = (0, import_obsidian4.normalizePath)(file);
+      await this.plugin.saveSettings();
     })).addText((text) => text.setPlaceholder("path/to/python.exe").setValue(this.plugin.settings.pythonPath).onChange(async (value) => {
       this.plugin.settings.pythonPath = (0, import_obsidian4.normalizePath)(value);
       await this.plugin.saveSettings();
@@ -20735,6 +20750,8 @@ var LatexOCRSettingsTab = class extends import_obsidian4.PluginSettingTab {
     const cacheDir = new import_obsidian4.Setting(containerEl).setName("Cache dir").setDesc("The directory where the model is saved. By default this is in `Vault/.obsidian/plugins/obsidian-latex-ocr/model_cache`. 					Note that changing this will not delete the old cache, and require the model to be redownloaded. 					The server must be restarted for this to take effect.").addExtraButton((cb) => cb.setIcon("folder").setTooltip("Browse").onClick(async () => {
       const folder = await picker("Open cache directory", ["openDirectory"]);
       cacheDir.components[1].setValue(folder);
+      this.plugin.settings.cacheDirPath = (0, import_obsidian4.normalizePath)(folder);
+      await this.plugin.saveSettings();
     })).addText((text) => text.setValue(this.plugin.settings.cacheDirPath).onChange(async (value) => {
       const path5 = (0, import_obsidian4.normalizePath)(value);
       if (path5 !== "") {
@@ -20831,7 +20848,8 @@ var LatexOCR = class extends import_obsidian5.Plugin {
     this.statusBar = new StatusBar(this);
   }
   onunload() {
-    this.model.unload();
+    var _a;
+    (_a = this.model) == null ? void 0 : _a.unload();
     this.statusBar.stop();
   }
   async loadSettings() {
@@ -20983,3 +21001,5 @@ long/umd/index.js:
    *
    *)
 */
+
+/* nosourcemap */
