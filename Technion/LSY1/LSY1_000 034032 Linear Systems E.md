@@ -4,8 +4,9 @@ semester: 2024spr
 ---
 # Linear Systems E 034032
 
-Moodle: [קישור](https://moodle2324.technion.ac.il/course/view.php?id=2561)
-Syllabus:
+Moodle: [link](https://moodle2324.technion.ac.il/course/view.php?id=2561)
+Syllabus: Available in the course site.
+Course site: [link](https://leo.technion.ac.il/Courses/LS/)
 Book: [Hespanha](https://annas-archive.org/md5/f7037d2144916d28f40c1be4394f25c3), [Aström, Murray](https://www.cds.caltech.edu/%7Emurray/books/AM08/pdf/am08-complete_22Feb09.pdf)
 
 Teacher: Christian Grussler

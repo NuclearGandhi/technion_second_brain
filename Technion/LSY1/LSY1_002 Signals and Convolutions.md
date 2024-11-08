@@ -5,6 +5,8 @@ aliases:
   - time shift
   - convolution
   - signal norm
+  - step function
+  - ramp function
 ---
 
 

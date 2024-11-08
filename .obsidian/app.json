@@ -21,11 +21,10 @@
   "autoPairMarkdown": false,
   "userIgnoreFilters": [
     "templates/",
-    "Excalidraw/",
-    "External/"
+    "Excalidraw/"
   ],
   "rightToLeft": false,
-  "newLinkFormat": "relative",
+  "newLinkFormat": "shortest",
   "mobilePullAction": "",
   "focusNewTab": false
 }

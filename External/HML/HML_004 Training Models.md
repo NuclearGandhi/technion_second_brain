@@ -7,6 +7,7 @@ aliases:
   - stochastic gradient descent
   - mini-batch gradient descent
   - polynomial regression
+  - logistic regression
 ---
 # Introduction
 From [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:

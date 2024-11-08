@@ -125,6 +125,13 @@
         "a": 1,
         "rgb": 10704655
       }
+    },
+    {
+      "query": "file: HML",
+      "color": {
+        "a": 1,
+        "rgb": 6003129
+      }
     }
   ],
   "collapse-display": true,
@@ -137,6 +144,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.08317427835927664,
-  "close": false
+  "scale": 0.16348370567220832,
+  "close": true
 }

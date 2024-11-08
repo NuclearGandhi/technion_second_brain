@@ -10,5 +10,6 @@
   "obsidian-latex-environments",
   "latex-ocr",
   "obsidian-zotero-desktop-connector",
-  "find-unlinked-files"
+  "find-unlinked-files",
+  "math-in-callout"
 ]
