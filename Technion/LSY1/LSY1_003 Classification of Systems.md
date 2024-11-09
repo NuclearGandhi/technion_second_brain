@@ -16,12 +16,12 @@ All state-space systems introduced so far (both LTV and LTI) have the property t
 >$$\bar{y}(t)=y(t),\qquad  \forall 0\leq  t<T$$
 
 
-![[LSY1_003/Pasted image 20240611131750.png|book]]
+![[Pasted image 20240611131750.png|book]]
 >Causality: For two inputs $\mathbf{u}$ and $\bar{\mathbf{u}}$ that are equal to each other up to some $T$, there must exist two outputs that are also equal to each other up to the same time $T$.
 
 Any practical system that operates in real time must necessarily be causal. We do not yet know how to build a system that can respond to future inputs. A noncausal system is prphetic system that knows the future input and acts on it in the present. Thus, if we apply an input starting at $t=0$ to a noncausal system, the output would begin even before $t=0$.
 
-![[LSY1_003/Screenshot_20240614_135501_Obsidian.jpg]]
+![[Screenshot_20240614_135501_Obsidian.jpg]]
 
 The foregoing discussion may suggest that noncausal systems have no practical purpose. This is not the case; they are valuable in the study of systems for several reasons. Noncausal systems *are* realizable when the independent variable is other than "time" (e.g., *space*). Consider, for example, an electric field $\mathbf{E}(x)$ that is present at every point on the $x$ axis from $x=-\infty$ to $\infty$. In this case the input (i.e., the charge density $q(x)$) starts at $x=0$, but its output (the electric field $E(x)$) begins before $x=0$. Clearly, this space-charge system is noncausal.
 # Time Invariance
@@ -33,11 +33,11 @@ A key difference between the LTV and LTI systems introduced so far is that the l
  >for some time $T>0$, if $u\to y$ then there exists an output $\bar{\mathbf{y}}$ such that $\bar{\mathbf{u}}\to \bar{\mathbf{y}}$ and
  >$$\bar{\mathbf{y}}(t)=y(t+T),\, \qquad  \forall t\geq  0$$
  
-![[LSY1_003/Pasted image 20240611142852.png|book]]
+![[Pasted image 20240611142852.png|book]]
 >Time invariance: For an input $\mathbf{u}$ with output $\mathbf{y}$, for every time shifted version $\bar{\mathbf{u}}$ of $\mathbf{u}$ there must exist an output $\bar{\mathbf{y}}$ that is a time shifted version $\mathbf{y}$.
 
 # Linearity
-Both the LTV and LTI system have the property that they can be viewed as [[../ALG1/ALG1_009 טרנספורמציות לינאריות#טרנספורמציות לינאריות|linear]] maps from their inputs to appropriate outputs. This justifies the qualifier *linear* in LTV and LTI.
+Both the LTV and LTI system have the property that they can be viewed as [[ALG1_009 טרנספורמציות לינאריות#טרנספורמציות לינאריות|linear]] maps from their inputs to appropriate outputs. This justifies the qualifier *linear* in LTV and LTI.
 
 
 >[!def] Definition: 
@@ -111,7 +111,7 @@ Thus, $\mathbf{D}_{\tau}$ with a constant $\tau$ is both ${L}_{2}$ and $L_{\inft
 
 ## Induced Norm
 >[!def] Definition: 
- >Let $G:u\to y$ be a stable CLTI system. The smallest $\gamma$ for which the inequality above holds true is called the **$L_{q}$-[[../NUM1/NUM1_003 נורמה#נורמה של מטריצה|induced norm]]** of $G$:
+ >Let $G:u\to y$ be a stable CLTI system. The smallest $\gamma$ for which the inequality above holds true is called the **$L_{q}$-[[NUM1_003 נורמה#נורמה של מטריצה|induced norm]]** of $G$:
  >$$\lVert G \rVert _{q}:=\sup_{u\neq 0} \dfrac{\lVert Gu \rVert _{q}}{\lVert u \rVert_{q} }=\sup_{\lVert u \rVert _{q}=1}\lVert Gu \rVert _{q}$$
  
  >[!example] Example: 

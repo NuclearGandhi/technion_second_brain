@@ -60,7 +60,7 @@ save_fig("some_digit_plot")  # extra code
 plt.show()
 ```
 
-![[HML_003/Pasted image 20240930225934.png]]
+![[Pasted image 20240930225934.png]]
 >Example of an MNIST image
 
 ```python
@@ -158,7 +158,7 @@ $$\text{recall}=\dfrac{TP}{TP+FN}$$
 where $FN$ is the number of false negatives.
 
 If you are confused about the confusion matrix, the following figure may help:
-![[HML_003/{53A5B5E9-7B79-456B-8CD4-BB369698E050}.png|bookhue]]
+![[{53A5B5E9-7B79-456B-8CD4-BB369698E050}.png|bookhue]]
 >An illustrated confusion matrix showing examples of true negatives (top left), false positives (top right), false negatives (lower left), and true positives (lower right). [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 ## Precision and Recall
@@ -172,7 +172,7 @@ Scikit-Learn provides several functions to compute classifier metrics, including
 0.6511713705958311
 ```
 
-Now our 5-detector does not look as shiny as it did when we looked at its accuracy. When it claims an image represents a 5, it is correct only 83.7% of the time. Moreover, it only detects 65.1% of the 5s. It is often convenient to combine precision and recall into a single metric called the ${F}_{1}$ score, especially when you need a single metric to compare two classifiers. The ${F}_{1}$ score is the [[../../Technion/BMA1/BMA1_006 ממוצעים#ממוצע הרמוני|harmonic mean]] of precision and recall. 
+Now our 5-detector does not look as shiny as it did when we looked at its accuracy. When it claims an image represents a 5, it is correct only 83.7% of the time. Moreover, it only detects 65.1% of the 5s. It is often convenient to combine precision and recall into a single metric called the ${F}_{1}$ score, especially when you need a single metric to compare two classifiers. The ${F}_{1}$ score is the [[BMA1_006 ממוצעים#ממוצע הרמוני|harmonic mean]] of precision and recall. 
 Whereas the regular mean treats all values equally, the harmonic mean gives much more weight to low values. As a result, the classifier will only get a high ${F}_{1}$ score if both recall and precision are high.
 $${F}_{1}=\dfrac{2}{\dfrac{1}{\mathrm{precision}}+\dfrac{1}{\mathrm{reca\ll}}}=\dfrac{TP}{TP+\dfrac{FN+FP}{2}}$$
 
@@ -192,7 +192,7 @@ To understand this trade-off, let’s look at how the `SGDClassifier` makes its 
 
 The following figure shows a few digits positioned from the lowest score on the left to the highest score on the right.
 
-![[HML_003/{3BF7A508-9247-4321-8919-B5D38CB33B8F}.png|book]]
+![[{3BF7A508-9247-4321-8919-B5D38CB33B8F}.png|book]]
 >The precision/recall trade-off: images are ranked by their classifier score, and those above the chosen decision threshold are considered positive; the higher the threshold, the lower the recall, but (in general) the higher the precision.
 
 Suppose the decision threshold is positioned at the central arrow (between the two 5s): you will find 4 true positives (actual 5s) on the right of that threshold, and 1 false positive (actually a 6). Therefore, with that threshold, the precision is 80% (4 out of 5). But out of 6 actual 5s, the classifier only detects 4, so the recall is 67% (4 out of 6). If you raise the threshold (move it to the arrow on the right), the false positive (the 6) becomes a true negative, thereby increasing the precision (up to 100% in this case), but one true positive becomes a false negative, decreasing recall down to 50%. Conversely, lowering the threshold increases recall and reduces precision.
@@ -244,13 +244,13 @@ plt.vlines(threshold, 0, 1.0, "k", "dotted", label="threshold")
 plt.show()
 ```
 
-![[HML_003/Pasted image 20241001180928.png|bookhue|500]]
+![[Pasted image 20241001180928.png|bookhue|500]]
 >Precision and recall versus the decision threshold.
 
 At this threshold value, precision is near 90% and recall is around 50%.
 Another way to select a good precision/recall trade-off is to plot precision directly against recall, as shown in the following figure (the same threshold is shown):
 
-![[HML_003/Pasted image 20241001181100.png|bookhue|500]]
+![[Pasted image 20241001181100.png|bookhue|500]]
 >Precision versus recall
 
 You can see that precision really starts to fall sharply at around 80% recall. You will probably want to select a precision/recall trade-off just before that drop - for example, at around 60% recall. But of course, the choice depends on your project.
@@ -291,7 +291,7 @@ tpr_90, fpr_90 = tpr[idx_for_threshold_at_90], fpr[idx_for_threshold_at_90]
 plt.show()
 ```
 
-![[HML_003/Pasted image 20241001183252.png|bookhue]]
+![[Pasted image 20241001183252.png|bookhue]]
 >A ROC curve plotting the false positive rate against the true positive rate for all possible thresholds; the black circle highlights the chosen ratio (at 90% precision and 48% recall)
 
 Once again there is a trade-off: the higher the recall (TPR), the more false positives (FPR) the classifier produces. The dotted line represents the ROC curve of a purely random classifier; a good classifier stays as far away from that line as possible (toward the top-left corner).
@@ -346,7 +346,7 @@ plt.plot(recalls, precisions, "--", linewidth=2, label="SGD")
 plt.show()
 ```
 
-![[HML_003/Pasted image 20241001191547.png|bookhue|500]]
+![[Pasted image 20241001191547.png|bookhue|500]]
 >Comparing PR curves: the random forest classifier is superior to the SGD classifier because its PR curve is much closer to the top-right corner, and it has a greater AUC.
 
 As you can see in the figure, the `RandomForestClassifier`’s PR curve looks much better than the `SGDClassifier`’s: it comes much closer to the top-right corner. Its ${F}_{1}$ score and ROC AUC score are also significantly better:
@@ -423,7 +423,7 @@ ConfusionMatrixDisplay.from_predictions(y_train, y_train_pred)
 plt.show()
 ```
 
-![[HML_003/Pasted image 20241005113944.png|bscreen|500]]
+![[Pasted image 20241005113944.png|bscreen|500]]
 >Confusion matrix
 
 This confusion matrix looks pretty good: most images are on the main diagonal, which means that they were classified correctly. Notice that the cell on the diagonal in row #5 and column #5 looks slightly darker than the other digits. This could be because the model made more errors on 5s, or because there are fewer 5s in the dataset than the other digits. That’s why it’s important to normalize the confusion matrix by dividing each value by the total number of images in the corresponding (true) class (i.e., divide by the row’s sum). This can be done simply by setting `normalize="true"`. We can also specify the `values_format=".0%"` argument to show percentages with no decimals.
@@ -435,7 +435,7 @@ ConfusionMatrixDisplay.from_predictions(y_train, y_train_pred,
 plt.show()
 ```
 
-![[HML_003/Pasted image 20241005114011.png|bscreen|500]]
+![[Pasted image 20241005114011.png|bscreen|500]]
 >The same CM normalized by row
 
 Now we can easily see that only 82% of the images of 5s were classified correctly. The most common error the model made with images of 5s was to misclassify them as 8s: this happened for 10% of all 5s. But only 2% of 8s got misclassified as 5s; confusion matrices are generally not symmetrical! If you look carefully, you will notice that many digits have been misclassified as 8s, but this is not immediately obvious from this diagram. If you want to make the errors stand out more, you can try putting zero weight on the correct predictions:
@@ -450,7 +450,7 @@ plt.show()
 ```
 
 
-![[HML_003/Pasted image 20241005114432.png|bscreen|500]]
+![[Pasted image 20241005114432.png|bscreen|500]]
 >Confusion matrix with errors only, normalized by row.
 
 The column for class 8 is now really bright, which confirms that many images got misclassified as 8s. In fact this is the most common misclassification for almost all classes. But be careful how you interpret the percentages in this diagram: remember that we’ve excluded the correct predictions. For example, the 36% in row #7, column #9 does *not* mean that 36% of all images of 7s were misclassified as 9s. It means that 36% of the errors the model made on images of 7s were misclassifications as 9s. In reality, only 3% of images of 7s were misclassified as 9s.
@@ -458,7 +458,7 @@ The column for class 8 is now really bright, which confirms that many images got
 It is also possible to normalize the confusion matrix by column rather than by row: if you set `normalize="pred"`, you get the following diagram:
 
 
-![[HML_003/confusion_matrix_plot_2.png|bscreen|500]]
+![[confusion_matrix_plot_2.png|bscreen|500]]
 >Confusion matrix with errors only, normalized by column
 
 For example, you can see that 56% of misclassified 7s are actually 9s.
@@ -473,7 +473,7 @@ X_ba = X_train[(y_train == cl_b) & (y_train_pred == cl_a)]
 X_bb = X_train[(y_train == cl_b) & (y_train_pred == cl_b)]
 ```
 
-![[HML_003/{B3A2C10E-DFB1-414B-9F90-CFFD231A42F5}.png|book|500]]
+![[{B3A2C10E-DFB1-414B-9F90-CFFD231A42F5}.png|book|500]]
 >Some images of 3s and 5s organized like a confusion matrix.
 
 As you can see, some of the digits that the classifier gets wrong (i.e., in the bottom-left and top-right blocks) are so badly written that even a human would have trouble classifying them. However, most misclassified images seem like obvious errors to us.

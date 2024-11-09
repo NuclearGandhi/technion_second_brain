@@ -43,9 +43,9 @@ and use $(5.1)$ to conclude that
 $$\begin{aligned}
 \delta \mathbf{y}=\mathbf{h}(\mathbf{x},\, \mathbf{u})-\mathbf{y}_{\text{eq}}=\mathbf{h}(\mathbf{x}_{\text{eq}}+\delta \mathbf{x},\, \mathbf{u}_{\text{eq}}+\delta \mathbf{u})-\mathbf{h}(\mathbf{x}_{\text{eq}},\, \mathbf{u}_{\text{eq}})
 \end{aligned}$$
-Expanding $\mathbf{h}(\cdot)$ as a [[../CAL2/CAL2_008 טיילור 2.0#טיילור של פונקציה בשני משתנים|Taylor]] series around $(\mathbf{x}_{\text{eq}},\,\mathbf{u}_{\text{eq}})$, we obtain
+Expanding $\mathbf{h}(\cdot)$ as a [[CAL2_008 טיילור 2.0#טיילור של פונקציה בשני משתנים|Taylor]] series around $(\mathbf{x}_{\text{eq}},\,\mathbf{u}_{\text{eq}})$, we obtain
 $$\delta \mathbf{y}=\dfrac{ \partial \mathbf{h}(\mathbf{x}_{\text{eq}},\, \mathbf{u}_{\text{eq}}) }{ \partial \mathbf{x} } \delta \mathbf{x}+\dfrac{ \partial \mathbf{h}(\mathbf{x}_{\text{eq}},\, \mathbf{u}_{\text{eq}}) }{ \partial \mathbf{u} }\delta\mathbf{u}+\mathcal{O}(\lVert \delta\mathbf{x} \rVert ^{2}) + \mathcal{O}(\lVert \delta\mathbf{u} \rVert ^{2}) $$
-where the partial derivatives are actually the [[../CAL2/CAL2_011 אינטגרל רב מימדי#מטריצת היעקוביאן|Jacobian]] of the corresponding vector:
+where the partial derivatives are actually the [[CAL2_011 אינטגרל רב מימדי#מטריצת היעקוביאן|Jacobian]] of the corresponding vector:
 $$\begin{aligned}
  & \dfrac{ \partial \mathbf{h}(\mathbf{x},\mathbf{u}) }{ \partial \mathbf{x} } :=\left[ \left( \dfrac{ \partial h_{i}(\mathbf{x},\mathbf{u}) }{ \partial x_{j}}  \right)_{ij} \right]\in \mathbb{R}^{m\times n} \\[2ex]
   & \dfrac{ \partial \mathbf{h}(\mathbf{x},\, \mathbf{u})\ }{ \partial \mathbf{u} } :=\left[ \left( \dfrac{ \partial h_{i}(\mathbf{x},\mathbf{u}) }{ \partial u_{j} }  \right)_{ij} \right]\in \mathbb{R}^{m\times k}
@@ -75,14 +75,14 @@ By dropping all but the first-order terms, we obtain a **local linearization of 
 > around equilibrium point $(\mathbf{x}_{\text{eq}},\,\mathbf{u}_{\text{eq}})$.
 > 
 
-![[LSY1_005/Pasted image 20240704162910.png|book]]
+![[Pasted image 20240704162910.png|book]]
 >Nonlinear system (a) and its local approximation (b) obtained from a local linearization.
 
 
 >[!example] Example: 
 > The following mass-spring-damper system
 > ![[Screenshot_20240705_134757_Samsung Notes.jpg|book]]
-> [](LSY1_005/Screenshot_20240705_134757_Samsung%20Notes.jpg)ss)
+> [Screenshot_20240705_134757_Samsung Notes](Screenshot_20240705_134757_Samsung%20Notes.jpg)ss)
 > $$\begin{aligned}
 >  & {m}_{1}\ddot{y}_{1}(t)+({c}_{1}+{c}_{2})\dot{y}_{1}(t)-{c}_{2}\dot{y}_{2}(t)+({k}_{1}+{k}_{2}){y}_{1}(t)-{k}_{2}{y}_{2}(t)=-{k}_{2}\xi \\[1ex]
 >  & {m}_{2}\ddot{y}_{2}(t)-{c}_{2}\dot{y}_{1}(t)+{c}_{2}\dot{y}_{2}(t)-{k}_{2}{y}_{1}(t)+{k}_{2}{y}_{2}(t)=u(t)+{k}_{2}\xi
@@ -211,7 +211,7 @@ By dropping all but the first-order terms, we obtain a **local linearization of 
 ## Question 1
 Consider the system shown in the following figure:
 
-![[LSY1_005/Screenshot_20240705_145613_Samsung Notes.jpg|bookhue]]
+![[Screenshot_20240705_145613_Samsung Notes.jpg|bookhue]]
 >Seesaw system
 
 We will take the following parameters:
@@ -323,7 +323,7 @@ $$\boxed {
 
 ## Question 2
 Consider the tank system shown in the following figure:
-![[LSY1_005/Screenshot_20240705_161516_Obsidian.jpg|book|300]]
+![[Screenshot_20240705_161516_Obsidian.jpg|book|300]]
 >Tank system
 
 The state of the system is given by the height of the liquid level $y$. The flow rate of the entering liquid is $q_{\text{in}}$ and the flow of the exiting liquid is $q_{\text{out}}$. The dynamics are given by the equation
@@ -407,7 +407,7 @@ G(s)=\dfrac{1}{S}\left( s+\dfrac{R^{2}}{2S} \right)^{-1} \\[1ex]
 
 ## Question 3
 Consider the following magentic lebitation system shown in:
-![[LSY1_005/Screenshot_20240720_100525_Samsung Notes.jpg|book|300]]
+![[Screenshot_20240720_100525_Samsung Notes.jpg|book|300]]
 >Magnetic levitation system
 
 The current $i$ running through a coil, having resistance $R$ and inductance $L$, creates a magnetic field, which attracts an iron ball of mass $m$. The electromagnetic force applied by the magnetic field to the ball is

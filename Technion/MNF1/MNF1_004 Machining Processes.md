@@ -32,7 +32,7 @@ Turning is a fundamental machining process used in manufacturing to create cylin
 
 >Examples of machining operations that can be performed on a lathe and similar machine tools.
 
-![[MNF1_004/Pasted image 20240627203834.png|book]]
+![[Pasted image 20240627203834.png|book]]
 >(a) Schematic illustration of a turning operation, showing depth of cut, $d$, and feed, $f$. Cutting speed is the surface speed of the workpiece at the tool tip. (b) Forces acting on a cutting tool in turning. $F_{c}$ is the cutting force; $F_{t}$ is the thrust or feed force (in the direction of feed); and $F_{r}$ is the radial force that tends to push the tool away from the workpiece being machined. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 - **Cutting Speed $V_{c}$** is the speed at which the *outer surface* of the workpiece moves past the cutting tool, measured in meters per minute (m/min). It can be calculated as
@@ -84,18 +84,18 @@ where $F_c$ is the cutting force; $V_{c}$ is the cutting speed;
 ## Straight Turning and Facing
 **Straight turning** is a machining process performed on a lathe where a single-point cutting tool moves *parallel* to the axis of a rotating cylindrical workpiece. The primary purpose of straight turning is to reduce the diameter of the workpiece to achieve a desired dimension and surface finish.
 
-![[MNF1_004/Pasted image 20240627203436.png|book]]
+![[Pasted image 20240627203436.png|book]]
 
 
 **Facing** is a machining process also performed on a lathe, where the cutting tool moves *perpendicular* to the axis of a rotating cylindrical workpiece. The goal of facing is to produce a flat surface at the end of the workpiece.
-![[MNF1_004/Pasted image 20240627203443.png|book]]
+![[Pasted image 20240627203443.png|book]]
 
 ## Surface Finish and Surface Integrity
 
 Surface finish describes the geometric features of surfaces, whereas surface integrity pertains to properties that are strongly influenced by the type of surface produced.
 Built-up edge and depth of cut can adversely affect surface finish and integrity. A shallow depth of cut (or dull tool) can also compromise surface finish. A dull cutting tool has a larger radius along its edges, just as a dull pencil or knife does.
 
-![[MNF1_004/Pasted image 20240824130527.png|book]]
+![[Pasted image 20240824130527.png|book]]
 >Schematic illustration of a dull tool in orthogonal cutting (exaggerated). Note that at small depths of cut, the rake angle can effectively become negative. In such cases, the tool may simply ride over the workpiece surface, burnishing it, instead of cutting. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 If the radius is large in relation to the depth of cut, the tool will rub over the machined surface, generating frictional heat, inducing surface residual stresses, and causing surface damage, such as tearing and cracking.
@@ -104,7 +104,7 @@ In practice, the depth of cut should generally be greater than the radius on the
 **Feed marks**:
 In turning, as in some other machining operations, the cutting tool leaves a spiral profile (feed marks) on the machined surface as it moves across the workpiece.
 
-![[MNF1_004/Pasted image 20240824131343.png|book]]
+![[Pasted image 20240824131343.png|book]]
 >Terminology used in a turning operation on a lathe, where f is the feed (in mm/rev) and d is the depth of cut. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 As expected, the higher the feed, $f$, and the smaller the radius $R$, the more prominent are these marks.
@@ -131,7 +131,7 @@ Types of milling operations:
 
 ## Key Parameters and Equations
 
-![[MNF1_004/Pasted image 20240712182459.png|book]]
+![[Pasted image 20240712182459.png|book]]
 >(a) Illustration showing the difference between conventional milling and climb milling. (b) Slab-milling operation, showing width of cut, $w$; feed per tooth, $f$; chip depth of cut, $h$ and workpiece speed, $v$. (c) Schematic illustration of cutter travel distance, $l_{c}$, to reach full depth of cut. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 - **Cutting Speed $V_{c}$** is calculated in the same way as [[#Turning#Key Parameters and Equations|turning]]:
@@ -206,7 +206,7 @@ P=F_{c}V_{c}
 ## Question 1
 A $\pu{121mm}$ long, round, hollow workpiece is going under a facing operation to straighten its face. To do this, only a $\pu{1mm}$ depth of cut is needed, which reduces it to a length of $\pu{120mm}$. The feed rate is $\pu{0.7mm.rev^{-1}}$, and the possible rotational speeds of the machine are:
 $$N=100,\, 350,\, 450,\, 600,\, 800,\, 950,\, 1100,\, 1300,\, \pu {1500 rpm }$$
-![[MNF1_004/Pasted image 20240628153921.png|book]]
+![[Pasted image 20240628153921.png|book]]
 >Schematic of the workpiece after the desired facing cut
 
 In addition, the outer diameter is $D_{o}=\pu{60mm}$, while the inner one is $D_{i}=\pu{30mm}$.
@@ -271,7 +271,7 @@ $$\begin{aligned}
  & K_{s}=\pu{3920N.mm^{-2}} &  & d=\pu{5mm} &  & D=\pu{120mm} \\[1ex]
  & f_{t}=\pu{0.18mm.rev^{-1}.tooth^{-1}} &  & V=\pu{145m.min^{-1}}
 \end{aligned}$$
-![[MNF1_004/Pasted image 20240712184057.png|book]]
+![[Pasted image 20240712184057.png|book]]
 >Schematic of the cutting tool and workpiece
 
 
@@ -292,7 +292,7 @@ At which point will the force be maximal and at which point minimal?
 
 **Solution**:
 From the schematic, we can see that there will always be only one tooth in the material at any given time:
-![[MNF1_004/MNF1_004 Machining Processes 2024-07-12 21.45.26.excalidraw.svg]]
+![[MNF1_004 Machining Processes 2024-07-12 21.45.26.excalidraw.svg]]
 >The dimensions of the workpiece and the cutting tool align perfectly
 
 Therefore, it is enough to use the [[#Milling#Cutting Force and Power|cutting force]] (per tooth) formula to calculate the maximum and minimum cutting force:

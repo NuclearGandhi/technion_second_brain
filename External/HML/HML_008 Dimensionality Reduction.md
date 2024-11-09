@@ -30,23 +30,23 @@ Before we dive into specific dimensionality reduction algorithms, let’s take a
 
 ## Projection
 In most real-world problems, training instances are not spread out uniformly across all dimensions. Many features are almost constant, while others are highly correlated (as discussed earlier for MNIST). As a result, all training instances lie within (or close to) a much lower-dimensional subspace of the high-dimensional space. This sounds very abstract, so let’s look at an example. In the following figure you can see a 3D dataset represented by small spheres:
-![[HML_008/Pasted image 20241012181441.png|bscreen|500]]
+![[Pasted image 20241012181441.png|bscreen|500]]
 >A 3D dataset lying close to a 2D subspace
 
 Notice that all training instances lie close to a plane: this is a lower dimensional (2D) subspace of the higher-dimensional (3D) space. If we project every training instance perpendicularly onto this subspace (as represented by the short dashed lines connecting the instances to the plane), we get the new 2D dataset shown in the following figure:
 
-![[HML_008/Pasted image 20241012181536.png|bscreen|500]]
+![[Pasted image 20241012181536.png|bscreen|500]]
 > The new 2D dataset after projection
 
 We have just reduced the dataset’s dimensionality from 3D to 2D. Note that the axes correspond to new features ${z}_{1}$ and ${z}_{2}$ : they are the coordinates of the projections on the plane.
 
 ## Manifold Learning
 However, projection is not always the best approach to dimensionality reduction. In many cases the subspace may twist and turn, such as in the famous Swiss roll toy dataset represented in the following figure:
-![[HML_008/Pasted image 20241012180325.png|bscreen|500]]
+![[Pasted image 20241012180325.png|bscreen|500]]
 >Swiss roll dataset
 
 Simply projecting onto a plane (e.g., by dropping $x3$) would squash different layers of the Swiss roll together, as shown on the left side of the following figure. What you probably want instead is to unroll the Swiss roll to obtain the 2D dataset on the right side:
-![[HML_008/Pasted image 20241012180429.png|bscreen]]
+![[Pasted image 20241012180429.png|bscreen]]
 >Squashing by projecting onto a plane (left) versus unrolling the Swiss roll (right)
 
 The Swiss roll is an example of a 2D manifold. Put simply, a 2D manifold is a 2D shape that can be bent and twisted in a higher-dimensional space. More generally, a $d$-dimensional manifold is a part of an $n$-dimensional space (where $d < n$) that locally resembles a $d$-dimensional hyperplane. In the case of the Swiss roll, $d = 2$ and $n = 3$: it locally resembles a 2D plane, but it is rolled in the third dimension.
@@ -54,7 +54,7 @@ The Swiss roll is an example of a 2D manifold. Put simply, a 2D manifold is a 2D
 Many dimensionality reduction algorithms work by modeling the manifold on which the training instances lie; this is called **manifold learning**. It relies on the **manifold assumption**, also called the manifold hypothesis, which holds that most real-world high-dimensional datasets lie close to a much lower-dimensional manifold. This assumption is very often empirically observed.
 
 The manifold assumption is often accompanied by another implicit assumption: that the task at hand (e.g., classification or regression) will be simpler if expressed in the lower-dimensional space of the manifold. For example, in the top row of the following figure, the Swiss roll is split into two classes:
-![[HML_008/Pasted image 20241012200150.png|bscreen]]
+![[Pasted image 20241012200150.png|bscreen]]
 >The decision boundary may not always be simpler with lower dimensions
 
 In the 3D space (on the left) the decision boundary would be fairly complex, but in the 2D unrolled manifold space (on the right) the decision boundary is a straight line.
@@ -68,7 +68,7 @@ Principal component analysis (PCA) is by far the most popular dimensionality red
 
 ## Preserving the Variance
 Before you can project the training set onto a lower-dimensional hyperplane, you first need to choose the right hyperplane. For example, a simple 2D dataset is represented on the left in the following figure, along with three different axes (i.e., 1D hyperplanes).
-![[HML_008/Pasted image 20241013113125.png|bscreen]]
+![[Pasted image 20241013113125.png|bscreen]]
 >Selecting the subspace on which to project
 
 On the right is the result of the projection of the dataset onto each of these axes. As you can see, the projection onto the solid line preserves the maximum variance (top), while the projection onto the dotted line preserves very little variance (bottom) and the projection onto the dashed line preserves an intermediate amount of variance (middle).
@@ -154,7 +154,7 @@ The actual number of components is determined during training, and it is stored 
 
 Yet another option is to plot the explained variance as a function of the number of dimensions (simply plot `cumsum`):
 
-![[HML_008/Pasted image 20241013121843.png|bscreen|500]]
+![[Pasted image 20241013121843.png|bscreen|500]]
 >Explained variance as a function of the number of dimensions
 
 There will usually be an elbow in the curve, where the explained variance stops growing fast. In this case, you can see that reducing the dimensionality down to about 100 dimensions wouldn’t lose too much explained variance.

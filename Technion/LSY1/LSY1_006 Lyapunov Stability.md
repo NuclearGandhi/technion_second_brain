@@ -51,9 +51,9 @@ The **region of attraction** of an asymptotically stable equilibrium is the set 
 
 >[!theorem] Theorem: 
 > An equilibrium of the autonomous linear system $\dot{\mathbf{x}}=\mathbf{A}\mathbf{x}$ is
-> - Lyapunov stable iff its [[../NUM1/NUM1_003 נורמה#נורמה-$2$ - רדיוס ספקטרלי|spectral radius]] is non-positive:
+> - Lyapunov stable iff its [[NUM1_003 נורמה#נורמה-$2$ - רדיוס ספקטרלי|spectral radius]] is non-positive:
 >   $$\rho(A)\in \{ s \in \mathbb{C}\mid\mathrm{Re}(s)\leq  0 \}$$
->   and every imaginary eigenvalue is simple (the [[../ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים#ריבוי גיאומטרי|geometric multiplicity]] of every pure imaginary eigenvalue equals its [[../ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים#פולינום אופייני וריבוי אלגברי|algebraic multiplicity]]).
+>   and every imaginary eigenvalue is simple (the [[ALG1_010 וקטורים עצמיים וערכים עצמיים#ריבוי גיאומטרי|geometric multiplicity]] of every pure imaginary eigenvalue equals its [[ALG1_010 וקטורים עצמיים וערכים עצמיים#פולינום אופייני וריבוי אלגברי|algebraic multiplicity]]).
 > - asymptotically stable iff its spectral radius is negative:
 > 	$$\rho(A)\in \{ s \in \mathbb{C}\mid\mathrm{Re}(s)<  0 \}$$
 > 
@@ -64,7 +64,7 @@ The **region of attraction** of an asymptotically stable equilibrium is the set 
 
 
 >[!theorem] Theorem: 
-> Let $\dot{\mathbf{x}}=\mathbf{f}(\mathbf{x})$ for a continuously differentiable $\mathbf{f}:\mathbb{R}^{n}\to \mathbb{R}^{n}$, $\mathbf{x}_{\text{eq}}\in \mathbb{R}^{n}$ be its equilibrium, and $\mathbf{A}=\dfrac{ \partial \mathbf{f}(\mathbf{x}) }{ \partial \mathbf{x} }$ be the corresponding [[../CAL2/CAL2_011 אינטגרל רב מימדי#מטריצת היעקוביאן|Jacobian]] matrix.
+> Let $\dot{\mathbf{x}}=\mathbf{f}(\mathbf{x})$ for a continuously differentiable $\mathbf{f}:\mathbb{R}^{n}\to \mathbb{R}^{n}$, $\mathbf{x}_{\text{eq}}\in \mathbb{R}^{n}$ be its equilibrium, and $\mathbf{A}=\dfrac{ \partial \mathbf{f}(\mathbf{x}) }{ \partial \mathbf{x} }$ be the corresponding [[CAL2_011 אינטגרל רב מימדי#מטריצת היעקוביאן|Jacobian]] matrix.
 > 
 > - If $\rho(A)\in \mathbb{C} \setminus \bar{\mathbb{C}}_{0}$ (all eigenvalues of $\mathbf{A}$ are in the the open left half-plane - OLHP), then $\mathbf{x}_{\text{eq}}$ is asymptotically stable.
 > - If $\mathbf{A}$ has at least one eigenvalue in $\mathbb{C}_{0}$, then $\mathbf{x}_{\text{eq}}$ is unstable.
@@ -233,7 +233,7 @@ Therefore, the response is:
 \end{pmatrix}
  }$$
 
-![[LSY1_006/Screenshot_20240711_120635_Samsung Notes.jpg|book|400]]
+![[Screenshot_20240711_120635_Samsung Notes.jpg|book|400]]
 >Phase portrait for both initial conditions
 
 
@@ -323,7 +323,7 @@ x_{0,1}e^{-t}+(-{x}_{0,1}+x_{0,2})e^{-2t}
  }$$
 
 
-![[LSY1_006/Pasted image 20240722233728.png|book|400]]
+![[Pasted image 20240722233728.png|book|400]]
 >Phase portrait for initial conditions
 
 There are 2 modes in this system, ${\lambda}_{1}$ and ${\lambda}_{2}$, with ${\lambda}_{2}$ faster than ${\lambda}_{1}$. Therefore, the exponent $e^{{\lambda}_{2}t}=e^{-2t}$ tends to $0$ faster than the exponent $e^{{\lambda}_{1}t}=e^{-t}$.
@@ -331,7 +331,7 @@ There are 2 modes in this system, ${\lambda}_{1}$ and ${\lambda}_{2}$, with ${\l
 
 ## Question 3
 
-![[LSY1_006/Pasted image 20240722233943.png|book|400]]
+![[Pasted image 20240722233943.png|book|400]]
 >Mass damper system
 
 The system is a mass damper system without a spring. The parameter values are $m=1,\,c=2$. Also, the state variables are defined
@@ -437,10 +437,10 @@ It can be seen that the stable mode, $\lambda=-2$, decays along the vector $\beg
 In general, when the system has modes with a real part 0, whose algebraic multiplicity is equal to the multiplicity geometrically, we will get a stable (non-asymptotic) system, i.e. a system that does not diverge from some initial condition but also does not converge.
 It is important to understand that a system of this type is “stable” only for the reaction of initial conditions, and when the system will receive any input (even if it is bounded), it can diverge.
 
-![[LSY1_006/Pasted image 20240723131255.png|book|400]]
+![[Pasted image 20240723131255.png|book|400]]
 >Phase portrait for a single initial condition
 
-![[LSY1_006/Pasted image 20240723131352.png|book|400]]
+![[Pasted image 20240723131352.png|book|400]]
 >Phase portrait for both many initial conditions
 
 

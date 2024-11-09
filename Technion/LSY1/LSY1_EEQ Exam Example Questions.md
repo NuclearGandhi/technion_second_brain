@@ -57,7 +57,7 @@ $$\boxed {
 
 ## Question 4
 Is the continuous signal, that its spectrum is shown in the following figure, real? (Assume that $X(j\omega)$ is real).
-![[LSY1_EEQ/Pasted image 20240909182345.png|book|400]]
+![[Pasted image 20240909182345.png|book|400]]
 >The relevant figure for questions 4, 5.
 
 **Solution**:
@@ -74,7 +74,7 @@ The frequencies of a periodic signal are represented as impulses in its spectrum
 ## Question 6
 Is the continuous signal, that its spectrum is shown in the following figure, real? (Assume that $X(j\omega)$ is real).
 
-![[LSY1_EEQ/Pasted image 20240909182952.png|book|500]]
+![[Pasted image 20240909182952.png|book|500]]
 >The relevant figure for questions 6, 7.
 
 **Solution**:
@@ -87,7 +87,7 @@ The frequencies of a periodic signal are represented as impulses in its spectrum
 
 ## Question 8
 Four continuous signals $x_{i}$ and their (*not corresponding*) spectrums $y_{j}$ are shown in the following figure:
-![[LSY1_EEQ/Pasted image 20240909220151.png|book]]
+![[Pasted image 20240909220151.png|book]]
 >Signals in time and frequency domain
 
 Match $x_{i}$ to $y_{j}$.
@@ -106,7 +106,7 @@ $$\begin{gathered}
 
 ## Question 9
 The spectrum of an analog signal $x$ is shown in the following figure:
-![[LSY1_EEQ/Pasted image 20240909221359.png|book|500]]
+![[Pasted image 20240909221359.png|book|500]]
 >Spectrum of an analog signal.
 
 Draw the spectrum of the sampled signal $\bar{x}$ such that $\bar{x}[i]=x(ih)$ for sampling period $h=\dfrac{\pi}{4}$.
@@ -115,13 +115,13 @@ Draw the spectrum of the sampled signal $\bar{x}$ such that $\bar{x}[i]=x(ih)$ f
 Because the sampling period is $h=\dfrac{\pi}{4}$, the Nyquist frequency is:
 $$\omega_{n}=\dfrac{\pi}{h}=4$$
 which means we need to fold around $\omega_{n}=4$:
-![[LSY1_EEQ/LSY1_EEQ Exam Example Questions 2024-09-09 22.26.02.excalidraw.svg|bookhue]]
+![[LSY1_EEQ Exam Example Questions 2024-09-09 22.26.02.excalidraw.svg|bookhue]]
 >Spectrum of the corresponding sampled signal.
 
 ## Question 10
 The spectrum of an analog signal $x$ and its sampled signal $\bar{x}[i]=x(ih)$ are shown in the following figure:
 
-![[LSY1_EEQ/Pasted image 20240910104132.png|book]]
+![[Pasted image 20240910104132.png|book]]
 >Spectrum of an analog signal and its sampled form.
 
 **Solution**:
@@ -135,14 +135,14 @@ h=\dfrac{\pi}{2}
 
 ## Question 11
 A discrete-time signal $\bar{x}$, with sample time $h$, has been converted to an analog signal by zero-order hold:
-![[LSY1_EEQ/Pasted image 20240910104826.png|book|300]]
+![[Pasted image 20240910104826.png|book|300]]
 >Analog signal $x$.
 
 What's $\bar{x}$ in terms of elementary signals (pulse, step...)?
 
 **Solution**:
 From the definition of [[LSY1_011 Fourier Analysis of Discrete Time Signals#Digital to Analog|zero-order hold]] we see that the discrete time signal is of the form:
-![[LSY1_EEQ/LSY1_EEQ Exam Example Questions 2024-09-10 10.50.17.excalidraw.svg]]
+![[LSY1_EEQ Exam Example Questions 2024-09-10 10.50.17.excalidraw.svg]]
 >The discrete-time signal $\bar{x}$.
 
 From the figure:
@@ -152,7 +152,7 @@ $$\bar{x}[t]=3\mathbb{S}_{-2h}\mathrm{rect}_{2h}$$
 ## Question 12
 A discrete-time signal $\bar{x}$, with sample time $h$, has been converted to an analog signal by $\mathrm{sinc}$-interpolator:
 
-![[LSY1_EEQ/Pasted image 20240910110228.png|book|300]]
+![[Pasted image 20240910110228.png|book|300]]
 >Analog signal $x$.
 
 What's $\bar{x}$ in terms of elementary signals (pulse, step...)?
@@ -164,7 +164,7 @@ $$\bar{x}[t]=2\delta[t-2]$$
 
 ## Question 13
 Can the following graph be the spectrum of a discrete-time signal?
-![[LSY1_EEQ/Pasted image 20240910111400.png|book|300]]
+![[Pasted image 20240910111400.png|book|300]]
 >A  general curve.
 
 **Solution**:
@@ -278,7 +278,7 @@ $$\begin{aligned}
  & =\int_{-\infty }^{\infty } \dfrac{1}{t}\mathbb{1}(t-2) \, \mathrm{d}t \\[1ex]
   & =\int_{2}^{\infty } \dfrac{1}{t} \, \mathrm{d}t
 \end{aligned}$$
-Which by [[../CAL1/CAL1_009 אינטגרל מוכלל#אינטגרלים מיוחדים|special integrals]], we know isn't bounded. Therefore, the system isn't BIBO stable.
+Which by [[CAL1_009 אינטגרל מוכלל#אינטגרלים מיוחדים|special integrals]], we know isn't bounded. Therefore, the system isn't BIBO stable.
 
 ## Question 25
 Is a system that its impulse response $g$ satisfies $g(t)=\dfrac{1}{1+t^{2}}\mathbb{1}(t+1)$ causal?
@@ -296,7 +296,7 @@ $$\begin{aligned}
  & =\int_{-\infty }^{\infty } \dfrac{1}{1+t^{2}}\mathbb{1}(t-3) \, \mathrm{d}t \\[1ex]
   & =\int_{3}^{\infty } \dfrac{1}{1+t^{2}} \, \mathrm{d}t
 \end{aligned}$$
-Which by [[../CAL1/CAL1_009 אינטגרל מוכלל#אינטגרלים מיוחדים|special integrals]], we know is bounded. Therefore, the system is BIBO stable.
+Which by [[CAL1_009 אינטגרל מוכלל#אינטגרלים מיוחדים|special integrals]], we know is bounded. Therefore, the system is BIBO stable.
 
 ## Question 27
 What's the transfer function of $G:v\to w$ that is described by:
@@ -452,7 +452,7 @@ $$\begin{aligned}
 
 ## Question 40
 What's the overshoot and undershoot response for the following step response, in $\%$?
-![[LSY1_EEQ/Pasted image 20240910142336.png|book|300]]
+![[Pasted image 20240910142336.png|book|300]]
 >Step response.
 
 **Solution**:
@@ -466,7 +466,7 @@ $$\begin{aligned}
 What's the overshoot and undershoot response for the following step response, in $\%$?
 
 **Solution**:
-![[LSY1_EEQ/Pasted image 20240910142807.png|book|300]]
+![[Pasted image 20240910142807.png|book|300]]
 >Step response.
 
 By [[LSY1_007 Laplace Transform#Characteristics of Transients|definition]]:
@@ -502,12 +502,12 @@ $$P(s)=\dfrac{10}{(10s+1)(s+1)}$$
 
 **Solution**:
 By [[LSY1_009 Frequency Domain Analysis#Bode Diagram|Bode diagrams]]:
-![[LSY1_EEQ/LSY1_EEQ Exam Example Questions 2024-09-10 14.54.40.excalidraw.svg|bookhue|500]]
+![[LSY1_EEQ Exam Example Questions 2024-09-10 14.54.40.excalidraw.svg|bookhue|500]]
 >The magnitude of the frequency response
 
 ## Question 45
 Given a linear system with the transform function $G(s)=\dfrac{\alpha s+1}{\beta s+1}$ and a Bode diagram:
-![[LSY1_EEQ/Pasted image 20240910151552.png|book|500]]
+![[Pasted image 20240910151552.png|book|500]]
 >Bode diagram
 
 Find $\alpha$ and $\beta$.
@@ -519,7 +519,7 @@ $$\alpha=-\beta=-1$$
 ## Question 46
 Given a linear system with the transform function $G(s)=\dfrac{\alpha s+1}{s+1}$ and a Bode diagram:
 
-![[LSY1_EEQ/Pasted image 20240910152634.png|book|500]]
+![[Pasted image 20240910152634.png|book|500]]
 >Bode diagram
 
 Find $\alpha$.
@@ -532,7 +532,7 @@ $$\boxed{\alpha=10 }$$
 ## Question 47
 Given a linear system with the transform function $G(s)=\dfrac{\alpha s+1}{s+\beta}$ and a Bode diagram:
 
-![[LSY1_EEQ/Pasted image 20240910152748.png|book|500]]
+![[Pasted image 20240910152748.png|book|500]]
 >Bode diagram
 
 Find $\alpha$ and $\beta$
@@ -547,7 +547,7 @@ $$\boxed {
 
 ## Question 48
 In the following figure are 3 Bode diagrams and 3 polar diagrams. Match them.
-![[LSY1_EEQ/Pasted image 20240911094851.png|book]]
+![[Pasted image 20240911094851.png|book]]
 >Bode and polar diagrams.
 
 **Solution**:
@@ -561,11 +561,11 @@ $$\begin{array}{c|c}
 
 ## Question 49
 In the following figure are represented an input an output signal of a system - $F:u\to y$:
-![[LSY1_EEQ/{56120750-6109-412F-8BD6-91C464254C4E}.png|book|500]]
+![[{56120750-6109-412F-8BD6-91C464254C4E}.png|book|500]]
 >Signals $u,y$.
 
 Match the correct Bode diagram:
-![[LSY1_EEQ/{A2F428D2-3BEC-4623-AA36-61CB2ECCFD46}.png|book]]
+![[{A2F428D2-3BEC-4623-AA36-61CB2ECCFD46}.png|book]]
 >Bode diagrams ${G}_{1},{G}_{2},{G}_{3},{G}_{4}$.
 
 **Solution**:
@@ -578,7 +578,7 @@ The corresponding frequency of that is $\omega=\dfrac{2\pi}{T}=2\pi\approx6.28$,
 ## Question 50
 The following graph is a polar description of a linear, time-invariant, and stable system. Its steady-state response to the input $u(t)=1+\cos({\omega}_{0}t)$ for a general ${\omega}_{0}$ is $y_{\text{ss}}(t)=\alpha+\beta \sin({\omega}_{0}t)$. Find $\alpha$ and $\beta$.
 
-![[LSY1_EEQ/{94DAA750-D93D-4C86-AB39-529ADC88C9B2}.png|book|500]]
+![[{94DAA750-D93D-4C86-AB39-529ADC88C9B2}.png|book|500]]
 >Polar description of a linear system.
 
 **Solution**:
@@ -663,7 +663,7 @@ $$\begin{aligned}
 \end{vmatrix} \\[1ex]
  & =(\lambda-1)^{4}
 \end{aligned}$$
-By [[../ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים#משפט קיילי המילטון|Cayley–Hamilton]] we know that $A$ satisfies its own characteristic equation, meaning:
+By [[ALG1_010 וקטורים עצמיים וערכים עצמיים#משפט קיילי המילטון|Cayley–Hamilton]] we know that $A$ satisfies its own characteristic equation, meaning:
 $$(A-I)^{4}=0$$
 $$\tag*{$\blacksquare$}$$
 
@@ -829,7 +829,7 @@ Therefore the equilibrium point is $\boxed {\mathbf{x}_{\text{eq}}=\begin{pmatri
 
 ## Question 61
 An autonomous response of a second order linear system is shown in the following figure:
-![[LSY1_EEQ/{9B7A4E29-F3EE-44FF-9497-D91B3267A8A6}.png|book|250]]
+![[{9B7A4E29-F3EE-44FF-9497-D91B3267A8A6}.png|book|250]]
 >Autonomous response of the system.
 
 Is the equilibrium point of the system asymptotically stable?
@@ -840,7 +840,7 @@ No, we see from the figure that for that initial condition, the state of the sys
 ## Question 62
 An autonomous response of a second order linear system is shown in the following figure:
 
-![[LSY1_EEQ/{CF0529B1-75E7-45C3-84C1-EBF584E6B1E4}.png|book|250]]
+![[{CF0529B1-75E7-45C3-84C1-EBF584E6B1E4}.png|book|250]]
 >Autonomous response of the system.
 
 Is the equilibrium point of the system asymptotically stable?
@@ -851,7 +851,7 @@ For a second-oder system to be asymptotically stable, [[LSY1_006 Lyapunov Stabil
 ## Question 63
 An autonomous response of a second order linear system is shown in the following figure:
 
-![[LSY1_EEQ/{C5F34E17-B9A4-44B2-960B-7F12C08ABD5F}.png|book|250]]
+![[{C5F34E17-B9A4-44B2-960B-7F12C08ABD5F}.png|book|250]]
 >Autonomous response of the system.
 
 Is the equilibrium point of the system asymptotically stable?
@@ -863,7 +863,7 @@ Yes, we can see from the figure that there exists a circle around the equilibriu
 
 An autonomous response of a second order linear system is shown in the following figure:
 
-![[LSY1_EEQ/{E3F3AF10-0E51-41F7-B80A-823CD13508B9}.png|book|250]]
+![[{E3F3AF10-0E51-41F7-B80A-823CD13508B9}.png|book|250]]
 >Autonomous response of the system.
 
 Is the equilibrium point of the system asymptotically stable?

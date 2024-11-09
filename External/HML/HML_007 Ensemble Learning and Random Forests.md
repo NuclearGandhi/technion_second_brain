@@ -9,12 +9,12 @@ Suppose you pose a complex question to thousands of random people, then aggregat
 # Voting Classifiers
 Suppose you have trained a few classifiers, each one achieving about 80% accuracy. You may have a logistic regression classifier, an SVM classifier, a random forest classifier, a k-nearest neighbors classifier, and perhaps a few more.
 
-![[HML_007/{AC3F2F18-CA0E-4D18-BE00-605111C12A51}.png|bookhue|500]]
+![[{AC3F2F18-CA0E-4D18-BE00-605111C12A51}.png|bookhue|500]]
 >Training diverse classifiers. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 A very simple way to create an even better classifier is to aggregate the predictions of each classifier: the class that gets the most votes is the ensemble’s prediction. This majority-vote classifier is called a **hard voting** classifier.
 
-![[HML_007/{A1BF8B75-BA08-4CC7-8E8C-5B0191A6816B}.png|bookhue|500]]
+![[{A1BF8B75-BA08-4CC7-8E8C-5B0191A6816B}.png|bookhue|500]]
 >Hard voting classifier predictions. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Somewhat surprisingly, this voting classifier often achieves a higher accuracy than the best classifier in the ensemble. In fact, even if each classifier is a **weak learner** (meaning it does only slightly better than random guessing), the ensemble can still be a **strong learner** (achieving high accuracy), provided there are a sufficient number of weak learners in the ensemble and they are sufficiently diverse.
@@ -22,7 +22,7 @@ Somewhat surprisingly, this voting classifier often achieves a higher accuracy t
 How is this possible? The following analogy can help shed some light on this mystery. Suppose you have a slightly biased coin that has a 51% chance of coming up heads and 49% chance of coming up tails. If you toss it 1,000 times, you will generally get more or less 510 heads and 490 tails, and hence a majority of heads. If you do the math, you will find that the probability of obtaining a majority of heads after 1,000 tosses is close to 75%. The more you toss the coin, the higher the probability (e.g., with 10,000 tosses, the probability climbs over 97%). This is due to the law of large numbers: as you keep tossing the coin, the ratio of heads gets closer and closer to the probability of heads (51%).
 The following figure shows 10 series of biased coin tosses. 
 
-![[HML_007/Pasted image 20241011154043.png|bscreen]]
+![[Pasted image 20241011154043.png|bscreen]]
 >The law of large numbers
 
 You can see that as the number of tosses increases, the ratio of heads approaches 51%. Eventually all 10 series end up so close to 51% that they are consistently above 50%.
@@ -89,7 +89,7 @@ One way to get a diverse set of classifiers is to use very different training al
 
 In other words, both bagging and pasting allow training instances to be sampled several times across multiple predictors, but only bagging allows training instances to be sampled several times for the same predictor. This sampling and training process is represented in the following figure:
 
-![[HML_007/{842153AA-7E5E-4B19-A290-768EFA7589D2}.png|bookhue|500]]
+![[{842153AA-7E5E-4B19-A290-768EFA7589D2}.png|bookhue|500]]
 >Bagging and pasting involve training several predictors on different random samples of the training set. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Once all predictors are trained, the ensemble can make a prediction for a new instance by simply aggregating the predictions of all predictors. The aggregation function is typically the **statistical mode** for classification (i.e., the most frequent prediction, just like with a hard voting classifier), or the average for regression. Each individual predictor has a higher bias than if it were trained on the original training set, but aggregation reduces both bias and variance. Generally, the net result is that the ensemble has a similar bias but a lower variance than a single predictor trained on the original training set.
@@ -112,7 +112,7 @@ bag_clf.fit(X_train, y_train)
  
 The following figure compares the decision boundary of a single decision tree with the decision boundary of a bagging ensemble of 500 trees (from the preceding code), both trained on the moons dataset.
 
-![[HML_007/Pasted image 20241011181951.png|bscreen]]
+![[Pasted image 20241011181951.png|bscreen]]
 >A single decision tree (left) versus a bagging ensemble of 500 trees (right).
 
 As you can see, the ensemble’s predictions will likely generalize much better than the single decision tree’s predictions: the ensemble has a comparable bias but a smaller variance (it makes roughly the same number of errors on the training set, but the decision boundary is less irregular).
@@ -201,7 +201,7 @@ You can access the result using the `feature_importances_` variable. For example
 ```
 
 Similarly, if you train a random forest classifier on the MNIST dataset and plot each pixel’s importance, you get the the following image:
-![[HML_007/Pasted image 20241011232804.png|bscreen|500]]
+![[Pasted image 20241011232804.png|bscreen|500]]
 >MNIST pixel importance (according to a random forest classifier)
 
 # Boosting
@@ -212,12 +212,12 @@ One way for a new predictor to correct its predecessor is to pay a bit more atte
 
 For example, when training an AdaBoost classifier, the algorithm first trains a base classifier (such as a decision tree) and uses it to make predictions on the training set. The algorithm then increases the relative weight of misclassified training instances. Then it trains a second classifier, using the updated weights, and again makes predictions on the training set, updates the instance weights, and so on.
 
-![[HML_007/{897F83FF-6C03-4F8D-9BAF-53347BF16C6B}.png|bookhue|500]]
+![[{897F83FF-6C03-4F8D-9BAF-53347BF16C6B}.png|bookhue|500]]
 >AdaBoost sequential training with instance weight updates
 
 The following figure shows the decision boundaries of five consecutive predictors on the moons dataset (in this example, each predictor is a highly regularized SVM classifier with an RBF kernel).
 
-![[HML_007/Pasted image 20241012123129.png|bscreen]]
+![[Pasted image 20241012123129.png|bscreen]]
 >AdaBoost sequential training with instance weight updates
 
 The first classifier gets many instances wrong, so their weights get boosted. The second classifier therefore does a better job on these instances, and so on. The plot on the right represents the same sequence of predictors, except that the learning rate is halved (i.e., the misclassified instance weights are boosted much less at every iteration). As you can see, this sequential learning technique has some similarities with gradient descent, except that instead of tweaking a single predictor’s parameters to minimize a cost function, AdaBoost adds predictors to the ensemble, gradually making it better.

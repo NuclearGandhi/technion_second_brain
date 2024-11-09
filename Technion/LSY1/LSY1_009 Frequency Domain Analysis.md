@@ -32,7 +32,7 @@ where $x:=\mathrm{Re}\,G(j\omega)$ and $y:= \mathrm{}\,G(j\omega)$.
 The Bode diagram is a way of visualizing $\lvert G(j\omega) \rvert$ and $\arg(G(j\omega))$. In order to draw the Bode diagram by hand we actually draw the asymptotic diagram. For example, the following figure shows the Bode diagram of the transfer function:
 $$G(s)=\dfrac{1}{s+1}$$
 
-![[LSY1_009/Pasted image 20240906172408.png|book|500]]
+![[Pasted image 20240906172408.png|book|500]]
 >Real and Asymptotic Bode Diagram
 
 The Bode diagram's horizontal axis is the frequency $\omega$ in logarithmic scale. The magnitude part represented in $\pu{dB}$ and the phase part in $\pu{deg}$. $\pu{dB}$ is the unit **decibel** and is defined as:
@@ -57,20 +57,20 @@ We also define $\pu{dec}$, **decade**, which is the distance of $10$ units ($10$
 	$$G(s)=k\cdot \mathcal{G}_{1}(s)\cdot \mathcal{G}_{2}(s)\cdots \mathcal{G}_{m}(s)$$
 	Where $\mathcal{G}_{i}(s)$ are the standard transfer functions.
 4. Using the figures below, we draw the asymptotic Bode diagram of the system as a combination of the Bodes of the standard systems.
-	![[LSY1_009/Pasted image 20240906173733.png|book|500]]
+	![[Pasted image 20240906173733.png|book|500]]
 	>Bode diagram for $G(s)=k$. The magnitude is a straight horizontal line with a constant gain of $k_{\pu{(dB)}}=20\log k$. The phase is $0^{\circ}$.
 	
-	![[LSY1_009/Pasted image 20240906181533.png|book|500]]
+	![[Pasted image 20240906181533.png|book|500]]
 	>Bode diagram for $G(s)=\dfrac{1}{s}$. The magnitude is a straight line that crosses the horizontal axis at $\pu{1 rad /sec}$ and has a slope of $\pu{-20dB/dec}$. The phase is constant at $-90^{\circ}$.
 	
-	![[LSY1_009/Pasted image 20240906222634.png|book|500]]
+	![[Pasted image 20240906222634.png|book|500]]
 	>Bode diagram for $G(s)=s$. The magnitude is a straight line that crosses the horizontal axis at $\pu{1 rad/sec}$ and has a slope of $\pu{20dB/dec}$. The phase is constant at $90^{\circ}$.
 	
-	![[LSY1_009/Pasted image 20240906222832.png|book|500]]
+	![[Pasted image 20240906222832.png|book|500]]
 	>Bode diagram for $G(s)=\dfrac{1}{\tau s+1}$. The magnitude is constant at $\pu{0dB}$ until the corner frequency of $\omega_{p}=\dfrac{1}{\tau}$, after which it is a straight line with slope $\pu{-20dB/dec}$.
 	>The phase is constant at $0^{\circ}$ until $0.1\omega_{p}$ after which it is a straight line that crosses $-45^{\circ}$ at a frequency $\omega_{p}$, and at $10\omega_{p}$ again constant at $-90^{\circ}$.
 	
-	![[LSY1_009/Pasted image 20240906224020.png|book|500]]
+	![[Pasted image 20240906224020.png|book|500]]
 	>Bode diagram for $G(s)=\tau s+1$. The magnitude is constant at $\pu{0dB}$ until the corner frequency of $\omega_{p}=\dfrac{1}{\tau}$, after which it is a straight line with slope $\pu{20dB/dec}$.
 	>The phase is constant at $0^{\circ}$ until $0.1\omega_{p}$, after which it is a straight line that crosses $45^{\circ}$ at frequency $\omega_{p}$, and at $10\omega_{p}$ again constant at $90^{\circ}$.
 
@@ -88,7 +88,7 @@ We also define $\pu{dec}$, **decade**, which is the distance of $10$ units ($10$
 The polar diagram is another way to represent the frequency response of the system. Similarly to the Bode diagram, the polar diagram shows $G(j\omega)$. But, unlike the Bode diagram which is comprised of two parts (magnitude and phase), the polar diagram is comprised of only one graph where we can see the real and imaginary parts $\mathrm{{Re}}G(j\omega),\,\mathrm{Im} G(j\omega)$ as a function of the frequency which **isn't** shown directly on the graph.
 
 
-![[LSY1_009/Pasted image 20240907151022.png|book|500]]
+![[Pasted image 20240907151022.png|book|500]]
 >Polar diagram of $G(s)=\dfrac{1}{s+1}$.
 
 
@@ -123,16 +123,16 @@ $$\begin{aligned}
 \end{aligned}$$
 The transfer function ${G}_{0}(s)=k$ is static, whose magnitude bode diagram is the straight horizontal line at the level $20\log k$ (because on the Bode diagram, the amplitude is shown in $\pu{dB}$).
 
-![[LSY1_009/Screenshot_20240808_110631_Samsung Notes.jpg|book|500]]
+![[Screenshot_20240808_110631_Samsung Notes.jpg|book|500]]
 >Bode diagram for ${G}_{0}$
 
 The two other transfer functions are first-order transfer functions with the unit static gain of the form $\dfrac{1}{(\tau s+1)}$. The asymptotic magnitude Bode plot of these kinds of transfer functions comprises two straight lines: A horizontal one at $\pu{0dB}$ in the low-frequency range, up to the cutoff frequency $\omega_{c}=\dfrac{1}{\tau}$, and a straight line starting at $\omega_{c}$ and decaying with the slope of $\pu{-20deg/dec}$.
 
-![[LSY1_009/Screenshot_20240808_111720_Samsung Notes 2.jpg|book|500]]
+![[Screenshot_20240808_111720_Samsung Notes 2.jpg|book|500]]
 >Bode diagram for $G(s)=1/(\tau s+1)$.
 
 Because we are in a logarithmic graph, the magnitude plot of $G={G}_{0}\cdot {G}_{1}\cdot {G}_{2}$ (a **cascade**) is simply the superposition of their individual Body magnitude plots. So, if $\dfrac{1}{{\tau}_{1}}<\dfrac{1}{{\tau}_{2}}$:
-![[LSY1_009/Screenshot_20240808_112158_Samsung Notes 1.jpg|book|500]]
+![[Screenshot_20240808_112158_Samsung Notes 1.jpg|book|500]]
 >Bode diagram for $G(s)$; dotted lines correspond to actual Bode plots.
 
 ## Question 2
@@ -160,13 +160,13 @@ $$\begin{array}{c|c}
 \end{array}$$
 
 
-![[LSY1_009/Pasted image 20240906231510.png|book|500]]
+![[Pasted image 20240906231510.png|book|500]]
 >Asymptotic Bode diagram of ${G}_{1}(s)$. 
 
-![[LSY1_009/Pasted image 20240906231612.png|book|500]]
+![[Pasted image 20240906231612.png|book|500]]
 >Several points of polar plot of ${G}_{1}(s)$
 
-![[LSY1_009/Pasted image 20240906231748.png|book|500]]
+![[Pasted image 20240906231748.png|book|500]]
 >Actual polar plot of ${G}_{1}(s)$
 
 ### Part b
@@ -192,13 +192,13 @@ $$\begin{array}{c|c}
 \hline \mathrm{arg}({G}_{2}(j\omega)) & 0^{\circ}  & \approx -95^{\circ}  & -135^{\circ}  & \approx -161^{\circ}  & -180^{\circ} 
 \end{array}$$
 
-![[LSY1_009/Pasted image 20240907105319.png|book|500]]
+![[Pasted image 20240907105319.png|book|500]]
 >Asymptotic Bode diagram of ${G}_{2}(s)$
 
-![[LSY1_009/Pasted image 20240907105440.png|book|500]]
+![[Pasted image 20240907105440.png|book|500]]
 >Several point of polar plot of ${G}_{2}(s)$
 
-![[LSY1_009/Pasted image 20240907105518.png|book|500]]
+![[Pasted image 20240907105518.png|book|500]]
 >Actual polar plot of ${G}_{2}(s)$
 
 ### Part c
@@ -210,7 +210,7 @@ This transfer function can be presented as
 $${G}_{3}(s)=({\tau}_{2}s+1)\cdot \dfrac{1}{{\tau}_{1}s+1}$$
 which is the cascade of a first-order system and the inverse of another first-order system. Their asymptotic plots of the former are in shown [[#Steps to Create an Asymptotic Diagram]]. The form of the convolution of such plots depends on the relation between ${\tau}_{1}$ and ${\tau}_{2}$.
 - If $\dfrac{1}{3}={\tau}_{1}<{\tau}_{2}=\dfrac{5}{3}$, the effect of the zero precedes that of the pole (as $\omega$ increases). Hence, the magnitude start at $\pu{0dB}$ (this is the static gain), then get up at $\omega_{c 2}=\dfrac{1}{{\tau}_{2}}=\dfrac{3}{5}$, and then becomes flat again at $\omega_{c 1}=\dfrac{1}{{\tau}_{1}}=3$.
-	![[LSY1_009/Pasted image 20240907112030.png|book|500]]
+	![[Pasted image 20240907112030.png|book|500]]
 	>Asymptotic Bode diagram of ${G}_{3}(s)$ for $\dfrac{1}{3}={\tau}_{1}<{\tau}_{2}=\dfrac{5}{3}$.
 	
 	To construct the polar plot:
@@ -227,27 +227,27 @@ which is the cascade of a first-order system and the inverse of another first-or
 	\hline \lvert {G}_{3}(j\omega) \rvert  & 0  & \approx 1.11 & \approx 3.61 & \approx 4.75 & 5 \\[1ex]
 	\hline \mathrm{arg}({G}_{3}(j\omega)) & 0^{\circ}  & \approx 21^{\circ}  & \approx 33^{\circ}  & \approx 15 ^{\circ}  & 0^{\circ} 
 	\end{array}$$
-	![[LSY1_009/Pasted image 20240907114434.png|book|500]]
+	![[Pasted image 20240907114434.png|book|500]]
 	>Several points of polar plot of ${G}_{3}(s)$ for $\dfrac{1}{3}={\tau}_{1}<{\tau}_{2}=\dfrac{5}{3}$.
 
-	![[LSY1_009/Pasted image 20240907114454.png|book|500]]
+	![[Pasted image 20240907114454.png|book|500]]
 	>Actual polar plot for ${G}_{3}$ for $\dfrac{1}{3}={\tau}_{1}<{\tau}_{2}=\dfrac{5}{3}$
 	
 - If $\dfrac{5}{3}={\tau}_{1}>{\tau}_{2}=\dfrac{1}{3}$, the effect of the pole precedes that of the zero (as $\omega$ increase). Hence, the magnitude starts at $\pu{0dB}$ (this is the static gain), then gets down at $\omega_{c 1}=\dfrac{1}{{\tau}_{1}}=0.6$ and then become flat again at $\omega_{c 2}=\dfrac{1}{{\tau}_{2}}=3$.
-	![[LSY1_009/Pasted image 20240907112638.png|book|500]]
+	![[Pasted image 20240907112638.png|book|500]]
 	>Asymptotic Bode diagram of ${G}_{3}(s)$ for $\dfrac{5}{3}={\tau}_{1}>{\tau}_{2}=\dfrac{1}{3}$.
 	
 	We can construct the polar plot in a similar manner to the previous case.
-	![[LSY1_009/Pasted image 20240907114940.png|book|500]]
+	![[Pasted image 20240907114940.png|book|500]]
 	>Several points of polar plot of ${G}_{3}(s)$ for $\dfrac{5}{3}={\tau}_{1}>{\tau}_{2}=\dfrac{1}{3}$.
 	
-	![[LSY1_009/Pasted image 20240907114953.png|book|500]]
+	![[Pasted image 20240907114953.png|book|500]]
 	>Actual polar plot for ${G}_{3}$ for $\dfrac{5}{3}={\tau}_{1}>{\tau}_{2}=\dfrac{1}{3}$.
 	
 
 ## Question 3
 A signal $u$ passes a stable system $F(s)$, whose frequency response is presented by its polar plot in the following figure:
-![[LSY1_009/Pasted image 20240907115205.png|book|500]]
+![[Pasted image 20240907115205.png|book|500]]
 >Polar plot of $F(j\omega)$.
 
 The magnitude $\lvert F(j\omega) \rvert$ is a monotonically decreasing function of $\omega$. Denote by $y$ the resulting output signal, i.e. $y=F(s)u$.
@@ -295,16 +295,16 @@ For the harmonic $u$'s to be attenuated by at least a factor of $5$, the followi
 
 ## Question 4
 Three sensors, ${H}_{1}(s),\,{H}_{2}(s)$ and ${H}_{3}(s)$, were tested on the same signal:
-![[LSY1_009/Pasted image 20240907153452.png|bookhue|500]]
+![[Pasted image 20240907153452.png|bookhue|500]]
 >Block diagram of the systems.
 
 The results (measurements) were saved, see parts of them, in the time interval $t\in[20,30]$, in the following figure:
-![[LSY1_009/Pasted image 20240907153615.png|bookhue]]
+![[Pasted image 20240907153615.png|bookhue]]
 >Measurements in the time interval $t\in[20,30]$.
 
 )Unfortunately, the information about what sensor each measurement belo 17 to got lost. Fortunately, we still have frequency response plots of each sensor:
 
-![[LSY1_009/Pasted image 20240907153730.png|bookhue|500]]
+![[Pasted image 20240907153730.png|bookhue|500]]
 >Sensor frequency responses.
 
 Use it to reconstruct the lost information.
@@ -359,7 +359,7 @@ y_{\sin}(t) & =a \lvert G(j\omega) \rvert\sin(\omega t+\phi+\mathrm{arg}G(j\omeg
 
 Summing all the responses, we get:
 $$\boxed{y(t)=2+\dfrac{4\sqrt{ 5 }}{2}\sin(2t-1.49) }$$
-![[LSY1_009/Pasted image 20240907172621.png|book|500]]
+![[Pasted image 20240907172621.png|book|500]]
 >Plots for the different responses that make up $y(t)$.
 
 
@@ -386,12 +386,12 @@ We can now analyze each of the subsystems separately:
 - The first system is a static gain:
 	$$\lvert {G}_{1}(j\omega) \rvert=2$$
 	Its magnitude is ${M}_{1(\pu{dB})}=20\log 2\approx 6$.
-	![[LSY1_009/Pasted image 20240907183933.png|book|400]]
+	![[Pasted image 20240907183933.png|book|400]]
 	>Asymptotic Bode diagram of ${G}_{1}(s)$.
 - The second system is a differentiator:
 	$$\lvert {G}_{2}(j\omega) \rvert=\omega$$
 	thus the magnitude is ${M}_{2\pu{(dB)}}=20\log\omega$ and we get a straight line with slope $\pu{20dB}$.
-	![[LSY1_009/Pasted image 20240907184129.png|book|400]]
+	![[Pasted image 20240907184129.png|book|400]]
 	>Asymptotic bode diagram of ${G}_{2}(s)$.
 - The third system ${G}_{3}(s)$ is a [[#Filters|Low-pass Filter]]:
 	  $$\begin{aligned}
@@ -407,13 +407,13 @@ We can now analyze each of the subsystems separately:
 	 & =-10\log(0.25\omega ^{2}+1)
 	\end{aligned}$$
 	It has a slope of $\pu{-20dB/dec}$ after the corner frequency of $\omega_{p}=\pu{2dB/dec}$.
-	![[LSY1_009/Pasted image 20240907185924.png|book|500]]
+	![[Pasted image 20240907185924.png|book|500]]
 	>Asymptotic (and real) Bode diagram of ${G}_{3}(s)$.
 	
 - The fourth system is also a Low-pass filter but of order $2$. Similarly, we get a gain of:
 	$${M}_{4(\pu{dB})}=-20\log(0.015\omega ^{2}+1)$$
 	The slope of the system after the corner frequency of $\omega_{p}=\pu{8rad/sec}$, is $\pu{-40dB/dec}$.
-	![[LSY1_009/Pasted image 20240907191144.png|book|400]]
+	![[Pasted image 20240907191144.png|book|400]]
 	>Asymptotic (and real) Bode diagram of ${G}_{4}(s)$.
 	
 
@@ -423,7 +423,7 @@ $$\mathrm{slope}\,[\pu{dB/dec]}=\begin{cases}
 0 & 2\leq  \omega\leq  8 \\
 -40 & \omega\geq  8
 \end{cases}$$
-![[LSY1_009/Pasted image 20240907191406.png|book|500]]
+![[Pasted image 20240907191406.png|book|500]]
 >Asymptotic (and real) Bode plot of the $G(s)$.
 
 

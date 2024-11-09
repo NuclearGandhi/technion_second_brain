@@ -15,7 +15,7 @@ In [[LSY1_008 Fourier Transform#Introduction|Fourier transform]] and [[LSY1_007 
 
 The signal $\alpha[t]=ae^{j\theta t}:\mathbb{Z}\to \mathbb{C}$, for $\alpha \in \mathbb{C}$ and $\theta \in \mathbb{R}$ is called a discrete harmonic signal with frequency $\theta$, amplitude $\lvert a \rvert$, and initial phase $\arg(a)$:
 
-![[LSY1_011/Pasted image 20240910194422.png|bookhue|500]]
+![[Pasted image 20240910194422.png|bookhue|500]]
 >A general discrete harmonic signal.
 
 # A/D and D/A Conversion
@@ -28,14 +28,14 @@ then the term **ideal sampling** is used. If $s_{i}=ih$ for some $h>0$, we say t
 
 Sampling frequently (but not always) a **lossy process**, meaning some information about the analog signal $x$ is lost. For example:
 
-![[LSY1_011/{618A7062-F644-4678-944F-E805DAC1953E}.png|book]]
+![[{618A7062-F644-4678-944F-E805DAC1953E}.png|book]]
 >Information loss on an analog signal.
 
 ## Digital to Analog
 A conversion of a discrete-time (digital) signal, say $\bar{x}$, to a continuous-time (analog) signal, say $x$, is known a **hold** (interpolation). We will mainly deal with **zero-order hold**, which acts as:
 $$x(t)=\bar{x}[i],\, \qquad  \forall t\in (s_{i},\, s_{i+1})$$
 For example:
-![[LSY1_011/Pasted image 20240911172913.png|bookhue]]
+![[Pasted image 20240911172913.png|bookhue]]
 
 
 # Discrete-Time Fourier Transform
@@ -72,10 +72,10 @@ for a given sampling period $h>0$ (we assume periodic sampling hereafter). We ma
 
 **A key question**: What is lost by transforming the signal domain from $\mathbb{R}$ to $\mathbb{Z}$?
 
-![[LSY1_011/Pasted image 20240910195542.png|bookhue|400]]
+![[Pasted image 20240910195542.png|bookhue|400]]
 >Sampling $y$ with a general sampling period h.
 
-![[LSY1_011/Pasted image 20240910195525.png|bookhue|400]]
+![[Pasted image 20240910195525.png|bookhue|400]]
 >Sampling $x$ with a general sampling period $h$. We got that exact same sampled function even though the original continuous-time function isn't the same.
 
 ![](https://www.youtube.com/watch?v=A-19SxqZ8Qs)
@@ -94,15 +94,15 @@ for a given sampling period $h>0$ (we assume periodic sampling hereafter). We ma
 
 >[!example] Example: 
 >If $x=\mathrm{tent}$, then:
->![[LSY1_011/{E225BD95-1285-4C0D-9645-FEA29F63986A}.png|bookhue]]
+>![[{E225BD95-1285-4C0D-9645-FEA29F63986A}.png|bookhue]]
 
 Let $x$ be a continuous-time signal with the frequency response $X$, say:
-![[LSY1_011/{528FFE1C-9E4D-47F3-9176-3B1D9C59860A}.png|bookhue|400]]
+![[{528FFE1C-9E4D-47F3-9176-3B1D9C59860A}.png|bookhue|400]]
 >Frequency response $X(j\omega)$.
 
 And consider its periodic summation with the period $T=2\pi /h$:
 $$X_{2\pi /h}(j\omega)=\sum_{i\in \mathbb{Z}}^{}X\left( j\left( \omega+\dfrac{2\pi}{h}i \right) \right) $$
-![[LSY1_011/{36A61FD2-1CD1-450F-9984-9AF02C8FCD7F}.png|bookhue|400]]
+![[{36A61FD2-1CD1-450F-9984-9AF02C8FCD7F}.png|bookhue|400]]
 >Periodic summation $X_{2\pi /h}(j\omega)$.
 
 Because this function is periodic, it can be expanded into a [[LSY1_008 Fourier Transform#Fourier Series|Fourier series]] with fundamental frequency ${\omega}_{0}=\dfrac{2\pi}{T}=h$. After some algebra, we conclude that the Fourier coefficients are:
@@ -119,12 +119,12 @@ Hence, the DTFT of the sampled signal $\bar{x}$ satisfies
 $$\bar{X}(e^{j\theta})=\dfrac{1}{h}X_{2\pi /h}\left( j  \dfrac{\theta}{h} \right)=\dfrac{1}{h}\sum_{i\in \mathbb{Z}}^{}X\left( j \dfrac{\theta+2\pi i}{h} \right) $$
 Which is the periodic summation, whose period equals the sampling frequency $\omega_{s}=2\pi /h$, of the spectrum of the continuous-time $x$, scaled by the factor $1/h$ both in amplitude and in frequency.
 
-![[LSY1_011/{32BE35E0-EA82-4C1B-BEF1-A39556B7DC7E}.png|bookhue]]
+![[{32BE35E0-EA82-4C1B-BEF1-A39556B7DC7E}.png|bookhue]]
 >Method of finding $\bar{X}(e^{j\omega h})$.
 
 Meaning that spectrum of a sampled signal will always be periodic. Because it is periodic, we usually focus on the range $\theta \in[-\pi,\pi]$, where $\theta=\omega h$:
 
-![[LSY1_011/{5911FAD0-FCFD-4234-BD97-DF45017D97C7}.png|bookhue|300]]
+![[{5911FAD0-FCFD-4234-BD97-DF45017D97C7}.png|bookhue|300]]
 >Change of variables $\theta=\omega h$ for convenience.
 
 >[!notes] Note: 
@@ -132,7 +132,7 @@ Meaning that spectrum of a sampled signal will always be periodic. Because it is
 
 We define the **Nyquist frequency** $\omega_{n}=\dfrac{\pi}{h}=\dfrac{\omega_{s}}{2}$, where we can think of it as the frequency at which the spectrum of the original signal "folds" upon:
 
-![[LSY1_011/{0F874A3D-4E41-4166-BCFE-6383A1834CF0}.png|bookhue]]
+![[{0F874A3D-4E41-4166-BCFE-6383A1834CF0}.png|bookhue]]
 >Demonstration of frequency folding.
 
 # Exercises
@@ -145,7 +145,7 @@ $$x[t]=\begin{cases}
 \end{cases}$$
 
 
-![[LSY1_011/Screenshot_20240822_112925_Samsung Notes.jpg|book|400]]
+![[Screenshot_20240822_112925_Samsung Notes.jpg|book|400]]
 >Discrete-time signal $x[i]$, for $N=10$.
 
 **Solution**:
@@ -178,6 +178,6 @@ X(e^{j\theta})=\dfrac{\sin[\theta(N+1/2)]}{\sin(\theta /2)}
  }$$
 
 
-![[LSY1_011/Screenshot_20240822_115831_Samsung Notes.jpg|book|400]]
+![[Screenshot_20240822_115831_Samsung Notes.jpg|book|400]]
 >The plot of $X(e^{j\theta})$ for $N=10$.
 

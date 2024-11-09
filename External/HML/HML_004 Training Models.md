@@ -35,7 +35,7 @@ Recall that training a model means setting its parameters so that the model best
 The $\mathrm{MSE}$ of a linear regression hypothesis $h_{\theta}$ on a training set $\mathbf{X}$ is calculated using:
 $$\mathrm{MSE}(\mathbf{X},\, h_{\theta})=\dfrac{1}{m}\sum_{i=1}^{m}(\boldsymbol{\theta}^{T}\mathbf{x}^{(i)}-y^{(i)})^{2}$$
 ## The Normal Equation
-To find the value of $\theta$ that minimizes the $\mathrm{MSE}$, there exists a closed-form solution  - in other words, a mathematical equation that gives the result directly. This is called the [[../../Technion/NUM1/NUM1_008 בעיית הריבועים הפחותים#ריבועים פחותים|Normal equation]]:
+To find the value of $\theta$ that minimizes the $\mathrm{MSE}$, there exists a closed-form solution  - in other words, a mathematical equation that gives the result directly. This is called the [[NUM1_008 בעיית הריבועים הפחותים#ריבועים פחותים|Normal equation]]:
 $$\hat{\boldsymbol{\theta}}=(\mathbf{X}^{T}\mathbf{X})^{-1}\mathbf{X}^{T}\mathbf{y}$$
 where $\hat{\boldsymbol{\theta}}$ is the values of $\boldsymbol{\theta}$ that minimizes the cost function, and $\mathbf{y}$ is the vector of target values containing $y^{(1)}$ to $y^{(m)}$.
 
@@ -49,7 +49,7 @@ X = 2 * np.random.rand(m,1) # column vector
 y = 4 + 3 * X + np.random.rand(m,1) # column vector
 ```
 
-![[HML_004/Pasted image 20241007114820.png|bscreen|500]]
+![[Pasted image 20241007114820.png|bscreen|500]]
 > A randomly generated linear dataset.
 
 Now let's compute $\hat{\boldsymbol{\theta}}$ using the Normal equation. We will the `inv()` function from NumPy’s linear algebra module (`np.linalg`) to compute the inverse of a matrix, and the `dot()` method for matrix multiplication:
@@ -95,7 +95,7 @@ plt.plot(X_new, y_predict, "-", label="Predictions")
 plt.show()
 ```
 
-![[HML_004/Pasted image 20241007114837.png|bscreen|500]]
+![[Pasted image 20241007114837.png|bscreen|500]]
 >Linear regression model predictions
 
 Performing linear regression using Scikit-Learn is relatively straightforward:
@@ -137,7 +137,7 @@ The SVD approach used by Scikit-Learn's `LinearRegression` class is about $O(n^{
 Also, once you have trained your linear regression model (using the Normal equation or any other algorithm), predictions are very fast: the computational complexity is linear with regard to both the number of instances you want to make predictions on and the number of features. In other words, making predictions on twice as many instances (or twice as many features) will take roughly twice as much time.
 
 # Gradient Descent
-- See also [[../../Technion/NUM1/NUM1_012 אופטימיזציה#ירידת גרדיאנט (gradient descent)|gradient descent in introduction to numerical methods]].
+- See also [[NUM1_012 אופטימיזציה#ירידת גרדיאנט (gradient descent)|gradient descent in introduction to numerical methods]].
 
 **Gradient descent** is a generic optimization algorithm capable of finding optimal solutions to a wide range of problems. The general idea of gradient descent is to tweak parameters iteratively in order to minimize a cost function.
 
@@ -145,24 +145,24 @@ Suppose you are lost in the mountains in a dense fog, and you can only feel the 
 
 In practice, you start by filling $\boldsymbol{\theta}$ with random values (this is called **random initialization**). Then you improve it gradually, taking one baby step at a time, each step attempting to decrease the cost function (e.g., the $\mathrm{MSE}$), until the algorithm **converges** to a minimum.
 
-![[HML_004/{169624AC-E142-45F2-B450-368FE0790C90}.png|bookhue|500]]
+![[{169624AC-E142-45F2-B450-368FE0790C90}.png|bookhue|500]]
 >In this depiction of gradient descent, the model parameters are initialized randomly and get tweaked repeatedly to minimize the cost function; the learning step size is proportional to the slope of the cost function, so the steps gradually get smaller as the cost approaches the minimum. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 An important parameter in gradient descent is the size of the steps, determined by the **learning rate** hyperparameter. If the learning rate is too small, then the algorithm will have to go through many iterations to converge, which will take a long time:
 
-![[HML_004/{F10C1F75-FA17-481F-9E4F-A4D08364DD62}.png|bookhue|500]]
+![[{F10C1F75-FA17-481F-9E4F-A4D08364DD62}.png|bookhue|500]]
 >Learning rate too small. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 On the other hand, if the learning rate is too high, you might jump across the valley and end up on the other side, possibly even higher up than you were before. This might make the algorithm diverge, with larger and larger values, failing to find a good solution:
 
-![[HML_004/{EDC3FBF1-ECB7-42C8-977C-7A9D2D9F0576} 1.png|bookhue|500]]
+![[{EDC3FBF1-ECB7-42C8-977C-7A9D2D9F0576} 1.png|bookhue|500]]
 >Learning rate too high. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Additionally, not all cost functions look like nice, regular bowls. There may be holes, ridges, plateaus, and all sorts of irregular terrain, making convergence to the minimum difficult. Fortunately, the $\mathrm{MSE}$ cost function for a linear regression model happens to be a convex function, which means that if you pick any two points on the curve, the line segment joining them is never below the curve. This implies that there are no local minima, just one global minimum. It is also a continuous function with a slope that never changes abruptly. These two facts have a great consequence: gradient descent is guaranteed to approach arbitrarily closely the global minimum (if you wait long enough and if the learning rate is not too high).
 
 While the cost function has the shape of a bowl, it can be an elongated bowl if the features have very different scales.
 
-![[HML_004/{1F0FEC1A-E9AC-4495-92BE-386DB97495D8}.png|bookhue|500]]
+![[{1F0FEC1A-E9AC-4495-92BE-386DB97495D8}.png|bookhue|500]]
 >Gradient descent with (left) and without (right) feature scaling. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 The graph above shows gradient descent on a training set where features 1 and 2 have the same scale (on the left), and on a training set where feature 1 has much smaller values than feature 2 (on the right).
@@ -176,7 +176,7 @@ This diagram also illustrates the fact that training a model means searching for
 ## Batch Gradient Descent
 To implement gradient descent, you need to compute the gradient of the cost function with regard to each model parameter $\theta_{j}$. In other words, you need to calculate how much the cost function will change if you change $\theta_{j}$ just a little bit.
 
-The following equation computes the [[../../Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים#נגזרת חלקית|partial derivative]] of the $\mathrm{MSE}$ with regard to parameter $\theta_{j}$ noted $\dfrac{\partial}{\theta_{j}}\mathrm{MSE}(\boldsymbol{\theta})$:
+The following equation computes the [[CAL2_006 נגזרות של פונקציות בשני משתנים#נגזרת חלקית|partial derivative]] of the $\mathrm{MSE}$ with regard to parameter $\theta_{j}$ noted $\dfrac{\partial}{\theta_{j}}\mathrm{MSE}(\boldsymbol{\theta})$:
 $$\dfrac{ \partial  }{ \partial \theta_{j} }\mathrm{MSE}(\boldsymbol{\theta})=\dfrac{2}{m}\sum_{i=1}^{m}(\boldsymbol{\theta}^{T}\mathbf{x}^{(i)}-y^{(i)})x_{j}^{(i)}  $$
 Instead of computing these partial derivatives individually, you can use the following equation to compute them all in one go:
 $$\nabla_{\theta}\mathrm{MSE}(\boldsymbol{\theta})=\begin{pmatrix}
@@ -217,7 +217,7 @@ array([[4.21509616],
 That’s exactly what the Normal equation found! Gradient descent worked perfectly. But what if you had used a different learning rate (`eta`)?
 The following figure shows the first 20 steps of gradient descent using three different learning rates. The line at the bottom of each plot represents the random starting point, then each epoch is represented by a darker and darker line.
 
-![[HML_004/Pasted image 20241007162237.png|bscreen]]
+![[Pasted image 20241007162237.png|bscreen]]
 >Gradient descent with various learning rates.
 
 On the left, the learning rate is too low: the algorithm will eventually reach the solution, but it will take a long time. In the middle, the learning rate looks pretty good: in just a few epochs, it has already converged to the solution. On the right, the learning rate is too high: the algorithm diverges, jumping all over the place and actually getting further and further away from the solution at every step.
@@ -232,7 +232,7 @@ Obviously, working on a single instance at a time makes the algorithm much faste
 
 On the other hand, due to its stochastic (i.e., random) nature, this algorithm is much less regular than batch gradient descent: instead of gently decreasing until it reaches the minimum, the cost function will bounce up and down, decreasing only on average. Over time it will end up very close to the minimum, but once it gets there it will continue to bounce around, never settling down:
 
-![[HML_004/{8A1590B3-3BFA-44B2-AF7C-17674C0A3897}.png|bookhue|500]]
+![[{8A1590B3-3BFA-44B2-AF7C-17674C0A3897}.png|bookhue|500]]
 >With stochastic gradient descent, each training step is much faster but also much more stochastic than when using batch gradient descent. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 When the cost function is very irregular, this can actually help the algorithm jump out of local minima, so stochastic gradient descent has a better chance of finding the global minimum than batch gradient descent does.
@@ -270,7 +270,7 @@ array([[4.21076011],
        [2.74856079]])
 ```
 
-![[HML_004/Pasted image 20241007164952.png|bscreen|500]]
+![[Pasted image 20241007164952.png|bscreen|500]]
 >The first 20 steps of stochastic gradient descent.
 
 Note that since instances are picked randomly, some instances may be picked several times per epoch, while others may not be picked at all. If you want to be sure that the algorithm goes through every instance at each epoch, another approach is to shuffle the training set (making sure to shuffle the input features and the labels jointly), then go through it instance by instance, then shuffle it again, and so on. However, this approach is more complex, and it generally does not improve the result.
@@ -302,7 +302,7 @@ The last gradient descent algorithm we will look at is called **mini-batch gradi
 The algorithm’s progress in parameter space is less erratic than with stochastic GD, especially with fairly large mini-batches. As a result, mini-batch GD will end up walking around a bit closer to the minimum than stochastic GD - but it may be harder for it to escape from local minima (in the case of problems that suffer from local minima, unlike linear regression with the MSE cost function).
 
 The following figure shows the paths taken by the three gradient descent algorithms in parameter space during training:
-![[HML_004/Pasted image 20241007170100.png|bscreen|500]]
+![[Pasted image 20241007170100.png|bscreen|500]]
 >Gradient descent paths in parameter space.
 
 They all end up near the minimum, but batch GD’s path actually stops at the minimum, while both stochastic GD and mini-batch GD continue to walk around. However, don’t forget that batch GD takes a lot of time to take each step, and stochastic GD and mini-batch GD would also reach the minimum if you used a good learning schedule.
@@ -330,7 +330,7 @@ X = 6 * np.random.rand(m, 1) - 3
 y = 0.5 * X ** 2 + X + 2 + np.random.randn(m, 1)
 ```
 
-![[HML_004/Pasted image 20241007200057.png|bscreen|500]]
+![[Pasted image 20241007200057.png|bscreen|500]]
 >Generated nonlinear and noisy dataset.
 
 Clearly, a straight line will never fit this data properly. So let’s use Scikit-Learn’s `PolynomialFeatures` class to transform our training data, adding the square (second-degree polynomial) of each feature in the training set as a new feature (in this case there is just one feature):
@@ -354,7 +354,7 @@ array([-0.75275929, 0.56664654])
 (array([1.78134581]), array([[0.93366893, 0.56456263]]))
 ```
 
-![[HML_004/Pasted image 20241007200754.png|bscreen|500]]
+![[Pasted image 20241007200754.png|bscreen|500]]
 >Polynomial regression model predictions.
 
 The model estimates $\hat{y}=0.56{{x}_{1}}^{2}+0.93{x}_{1}+1.78$ when in fact the original function was $y=0.5{{x}_{1}}^{2}+1.0{x}_{1}+2.0+\text{Gaussian noise}$.
@@ -364,7 +364,7 @@ Note that when there are multiple features, polynomial regression is capable of 
 # Learning Curves
 If you perform high-degree polynomial regression, you will likely fit the training data much better than with plain linear regression. For example, in the following figure, a 300-degree polynomial model is applied to the preceding training data, and compares the result with a pure linear model and a quadratic model. Notice how the 300-degree polynomial model wiggles around to get as close as possible to the training instances:
 
-![[HML_004/Pasted image 20241007201229.png|bscreen|500]]
+![[Pasted image 20241007201229.png|bscreen|500]]
 >High-degree polynomial regression.
 
 This high-degree polynomial regression model is severely overfitting the training data, while the linear model is underfitting it. The model that will generalize best in this case is the quadratic model, which makes sense because the data was generated using a quadratic model. But in general you won’t know what function generated the data, so how can you decide how complex your model should be? How can you tell that your model is overfitting or underfitting the data?
@@ -390,7 +390,7 @@ plt.plot(train_sizes, valid_errors, "-", linewidth=3, label="valid")
 plt.show()
 ```
 
-![[HML_004/Pasted image 20241007201858.png|bscreen|500]]
+![[Pasted image 20241007201858.png|bscreen|500]]
 >Learning curves.
 
 This model is underfitting. To see why, first let’s look at the training error. When there are just one or two instances in the training set, the model can fit them perfectly, which is why the curve starts at zero. But as new instances are added to the training set, it becomes impossible for the model to fit the training data perfectly, both because the data is noisy and because it is not linear at all. So the error on the training data goes up until it reaches a plateau, at which point adding new instances to the training set doesn’t make the average error much better or worse. Now let’s look at the validation error. When the model is trained on very few training instances, it is incapable of generalizing properly, which is why the validation error is initially quite large. Then, as the model is shown more training examples, it learns, and thus the validation error slowly goes down. However, once again a straight line cannot do a good job of modeling the data, so the error ends up at a plateau, very close to the other curve. 
@@ -411,7 +411,7 @@ train_sizes, train_scores, valid_scores = learning_curve(
     scoring="neg_root_mean_squared_error")
 ```
 
-![[HML_004/Pasted image 20241007202559.png|bscreen|500]]
+![[Pasted image 20241007202559.png|bscreen|500]]
 >Learning curves for the $10$th-degree polynomial model.
 
 These learning curves look a bit like the previous ones, but there are two very important differences:
@@ -439,7 +439,7 @@ Note that the bias term ${\theta}_{0}$ is not regularized (the sum starts at $i=
 
 The following figure shows several ridge models that were trained on some very noisy linear data using different $\alpha$ values:
 
-![[HML_004/Pasted image 20241007215918.png|bscreen]]
+![[Pasted image 20241007215918.png|bscreen]]
 >Linear (left) and a polynomial (right) models, both with various levels of ridge regularization.
 
 On the left, plain ridge models are used, leading to linear predictions. On the right, the data is first expanded using `PolynomialFeatures(degree=10)`, then it is scaled using a `StandardScaler`, and finally the ridge models are applied to the resulting features: this is polynomial regression with ridge regularization. Note how increasing $\alpha$ leads to flatter (i.e., less extreme, more reasonable) predictions, thus reducing the model’s variance but increasing its bias.
@@ -447,7 +447,7 @@ On the left, plain ridge models are used, leading to linear predictions. On the 
 As with linear regression, we can perform ridge regression either by computing a closed-form equation or by performing gradient descent. The pros and cons are the same. The following equation shows the closed-form solution, where $A$ is the $(n+1)\times(n+1)$ **identity matrix**, except with a $0$ in the top-left cell, corresponding to the bias term:
 $$\hat{\boldsymbol{\theta}}=(\mathbf{X}^{T}\mathbf{X}+\alpha \mathbf{A})^{-1}\mathbf{X}^{T}\mathbf{y}$$
 
-Here is how to perform ridge regression with Scikit-Learn using a closed-form solution (a variant of the equation above that uses a matrix factorization technique by André-Louis [[../../Technion/NUM1/NUM1_002 שיטות ישירות לפתרון מערכות לינאריות#אלגוריתם פירוק שולסקי|Cholesky]]):
+Here is how to perform ridge regression with Scikit-Learn using a closed-form solution (a variant of the equation above that uses a matrix factorization technique by André-Louis [[NUM1_002 שיטות ישירות לפתרון מערכות לינאריות#אלגוריתם פירוק שולסקי|Cholesky]]):
 ```python
 >>> from sklearn.linear_model import Ridge
 >>> ridge_reg = Ridge(alpha=0.1, solver="cholesky")
@@ -476,13 +476,13 @@ $$J(\boldsymbol{\theta})=\mathrm{MRE}(\boldsymbol{\theta})+2\alpha \sum_{i=1}^{n
 Notice that the $\ell$ norm is multiplied by $2\alpha$, whereas the $\ell_{2}$ norm was multiplied by $\alpha/m$ in ridge regression.
 
 The following figure shows the same thing as the previous figure but replaces the ridge models with lasso models and uses different $\alpha$ values:
-![[HML_004/Pasted image 20241008105835.png|bscreen]]
+![[Pasted image 20241008105835.png|bscreen]]
 >Linear (left) and polynomial (right) models, both using various levels of lasso regularization.
 
 An important characteristic of lasso regression is that it tends to eliminate the weights of the least important features (i.e., set them to zero). For example, the dashed line in the righthand plot in the figure (with $\alpha = 0.01$) looks roughly cubic: all the weights for the high-degree polynomial features are equal to zero. In other words, lasso regression automatically performs feature selection and outputs a sparse model with few nonzero feature weights.
 
 You can get a sense of why this is the case by looking at the the following figure:
-![[HML_004/Pasted image 20241008110008.png|bscreen]]
+![[Pasted image 20241008110008.png|bscreen]]
 >Lasso versus ridge regularization.
 
 The axes represent two model parameters, and the background contours represent different loss functions.
@@ -502,7 +502,7 @@ $$\hat{p}=h_{\theta}(\mathbf{x})=\sigma(\boldsymbol{\theta}^{T}\mathbf{x})$$
 The logistic - noted $\sigma(\cdot)$ is a **sigmoid function** (i.e., S-shaped) that outputs a number between $0$ and $1$. It is defined as shown in the following equation and figure:
 $$\sigma(t)=\dfrac{1}{1+\exp(-t)}$$
 
-![[HML_004/Pasted image 20241008133455.png|bscreen|500]]
+![[Pasted image 20241008133455.png|bscreen|500]]
 >Logistic function
 
 Once the logistic regression model has estimated the probability $\hat{p}=h_{\theta}(\mathbf{x})$ that an instance $\mathbf{x}$ belongs to the positive class, it can make its prediction $\hat{y}$ easily:
@@ -528,7 +528,7 @@ This equation computes for each instance the prediction error and multiplies it 
 ## Decision Boundaries
 We can use the iris dataset to illustrate logistic regression. This is a famous dataset that contains the sepal and petal length and width of 150 iris flowers of three different species: Iris setosa, Iris versicolor, and Iris virginica.
 
-![[HML_004/{80A5FCA1-9CAA-49D3-9CBF-1E9952F88518}.png]]
+![[{80A5FCA1-9CAA-49D3-9CBF-1E9952F88518}.png]]
 >Flowers of three iris plant species.
 
 Let’s try to build a classifier to detect the Iris virginica type based only on the petal width feature. The first step is to load the data and take a quick peek:
@@ -599,14 +599,14 @@ plt.plot([decision_boundary, decision_boundary], [0, 1], ":", linewidth=2,
 plt.show()
 ```
 
-![[HML_004/Pasted image 20241008150124.png|bscreen]]
+![[Pasted image 20241008150124.png|bscreen]]
 >Estimated probabilities and decision boundary
 
 The petal width of *Iris virginica* flowers (represented as triangles) ranges from $\pu{1.4cm}$ to $\pu{2.5cm}$, while the other iris flowers (represented by squares) generally have a smaller petal width, ranging from $\pu{0.1cm}$ to $\pu{1.8cm}$. Notice that there is a bit of overlap. Above about $\pu{2cm}$ the classifier is highly confident that the flower is an *Iris virginica* (it outputs a high probability for that class), while below $\pu {1cm}$ it is highly confident that it is not an *Iris virginica* (high probability for the “Not Iris virginica” class). In between these extremes, the classifier is unsure. However, if you ask it to predict the class (using the `predict()` method rather than the `predict_proba()` method), it will return whichever class is the most likely. Therefore, there is a **decision boundary** at around $\pu{1.6cm}$ where both probabilities are equal to 50%: if the petal width is greater than $\pu{1.6cm}$ the classifier will predict that the flower is an *Iris virginica*, and otherwise it will predict that it is not (even if it is not very confident).
 
 The following figure shows the same dataset, but this time displaying two features: petal width and length.
 
-![[HML_004/Pasted image 20241008150515.png|bscreen]]
+![[Pasted image 20241008150515.png|bscreen]]
 >Linear decision boundary
 
 Once trained, the logistic regression classifier can, based on these two features, estimate the probability that a new flower is an *Iris virginica*. The dashed line represents the points where the model estimates a 50% probability: this is the model’s decision boundary. Note that it is a linear boundary. Each parallel line represents the points where the model outputs a specific probability, from 15% (bottom left) to 90% (top right). All the flowers beyond the top-right line have over 90% chance of being *Iris virginica*, according to the model.

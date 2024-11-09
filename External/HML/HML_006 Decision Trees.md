@@ -47,7 +47,7 @@ from graphviz import Source
 Source.from_file("iris_tree.dot")
 ```
 
-![[HML_006/iris_tree.png|bookhue|500]]
+![[iris_tree.png|bookhue|500]]
 >Iris decision tree
 
 # Making Predictions
@@ -72,7 +72,7 @@ The depth-2 left node has a Gini impurity equal to $1-(0/54)^{2}-(49/54)^{2}-(5/
 
 The following figure shows this decision tree’s decision boundaries:
 
-![[HML_006/Pasted image 20241010125543.png|bscreen]]
+![[Pasted image 20241010125543.png|bscreen]]
 >Decision tree decision boundaries.
 
 The thick vertical line represents the decision boundary of the root node (depth 0): petal length = $\pu{2.45cm}$. Since the lefthand area is pure (only *Iris setosa*), it cannot be split any further. However, the righthand area is impure, so the depth-1 right node splits it at petal width = $\pu{1.75cm}$ (represented by the dashed line). Since `max_depth` was set to 2, the decision tree stops right there. If you set `max_depth` to 3, then the two depth-2 nodes would each add another decision boundary (represented by the two vertical dotted lines).
@@ -137,7 +137,7 @@ tree_clf1.fit(X_moons, y_moons)
 tree_clf2.fit(X_moons, y_moons)
 ```
 
-![[HML_006/Pasted image 20241011133930.png|bscreen]]
+![[Pasted image 20241011133930.png|bscreen]]
 >Decision boundaries of an unregularized tree (left) and a regularized tree (right)
 
 The unregularized model on the left is clearly overfitting, and the regularized model on the right will probably generalize better. We can verify this by evaluating both trees on a test set generated using a different random seed:
@@ -167,14 +167,14 @@ y_quad = X_quad ** 2 + 0.025 * np.random.randn(200, 1)
 tree_reg = DecisionTreeRegressor(max_depth=2, random_state=42)
 tree_reg.fit(X_quad, y_quad)
 ```
-![[HML_006/regression_tree.png|bookhue]]
+![[regression_tree.png|bookhue]]
 >A decision tree for regression
 
 This tree looks very similar to the classification tree you built earlier. The main difference is that instead of predicting a class in each node, it predicts a value.
 
 This model’s predictions are represented on the left in the following figure. If you set `max_depth=3`, you get the predictions represented on the right.
 
-![[HML_006/Pasted image 20241011120543.png|bscreen]]
+![[Pasted image 20241011120543.png|bscreen]]
 >Predictions of two decision tree regression models
 
 Notice how the predicted value for each region is always the average target value of the instances in that region. The algorithm splits each region in a way that makes most training instances as close as possible to that predicted value.
@@ -184,7 +184,7 @@ The CART algorithm works as described earlier, except that instead of trying to 
 # Sensitivity to Axis Orientation
 Hopefully by now you are convinced that decision trees have a lot going for them: they are relatively easy to understand and interpret, simple to use, versatile, and powerful. However, they do have a few limitations. First, as you may have noticed, decision trees love orthogonal decision boundaries (all splits are perpendicular to an axis), which makes them sensitive to the data’s orientation. For example, the following figure shows a simple linearly separable dataset: on the left, a decision tree can split it easily, while on the right, after the dataset is rotated by 45°, the decision boundary looks unnecessarily convoluted.
 
-![[HML_006/Pasted image 20241011134006.png|bscreen]]
+![[Pasted image 20241011134006.png|bscreen]]
 
 Although both decision trees fit the training set perfectly, it is very likely that the model on the right will not generalize well.
 
@@ -203,12 +203,12 @@ tree_clf_pca = DecisionTreeClassifier(max_depth=2, random_state=42)
 tree_clf_pca.fit(X_iris_rotated, y_iris)
 ```
 
-![[HML_006/Pasted image 20241011134546.png|bscreen]]
+![[Pasted image 20241011134546.png|bscreen]]
 >A tree’s decision boundaries on the scaled and PCA-rotated iris dataset
 
 # Decision Trees Have a High Variance
 More generally, the main issue with decision trees is that they have quite a high variance: small changes to the hyperparameters or to the data may produce very different models. In fact, since the training algorithm used by Scikit-Learn is stochastic —it randomly selects the set of features to evaluate at each node—even retraining the same decision tree on the exact same data may produce a very different model, such as the one represented in the following figure (unless you set the `random_state` hyperparameter):
-![[HML_006/Pasted image 20241011140907.png|bscreen]]
+![[Pasted image 20241011140907.png|bscreen]]
 >Retraining the same model on the same data may produce a very different model
 
 As you can see, it looks very different from the [[#Making Predictions|previous decision tree]]. Luckily, by averaging predictions over many trees, it’s possible to reduce variance significantly. Such an ensemble of trees is called a *random forest*, and it’s one of the most powerful types of models available today, as you will see in the [[HML_007 Ensemble Learning and Random Forests|HML_007]].

@@ -15,31 +15,31 @@ aliases:
 
 ## Continuos-Time and Discrete-Time Signals
 Signals may describe a wide variety of physical phenomena. For example, consider the following simple figure:
-![[LSY1_001/Screenshot_20240602_101319_Samsung Notes.jpg|book|300]]
+![[Screenshot_20240602_101319_Samsung Notes.jpg|book|300]]
 >A simple RC circuit.
 
  In this case, the patterns of variation over time in the source and capacitor voltages, $v_{s}$ and $v_{c}$, are examples of signals.
 As another example, consider the human vocal mechanism, which produces speech by creating fluctuations in acoustic pressure.
-![[LSY1_001/Screenshot_20240602_101744_Samsung Notes.jpg|book|400]]
+![[Screenshot_20240602_101744_Samsung Notes.jpg|book|400]]
 >Example of a recording of speech. The signal represents acoustic pressure variations as a function of time the spoken word "should".
 
 Signals are represented mathematically as functions of one or more independent variables. The following figure depicts a typical example of annual average vertical wind profile as a function of height:
 
-![[LSY1_001/Screenshot_20240602_103523_Samsung Notes.jpg|book|400]]
+![[Screenshot_20240602_103523_Samsung Notes.jpg|book|400]]
 >Typical annual vertical wind profile.
 
 Throughout this book we will be considering two basic types of signals: **continuos-time signals** and **discrete-time signals**. In the case of continuous-time signals the independent variable is continuous, and thus these signals are denied for a continuum of values of independent variables. On the other hand, discrete-time signals are defined only at discrete times, and consequently, for these signals, the independent variable takes on only a discrete set of values.
 
-![[LSY1_001/Screenshot_20240602_104334_Samsung Notes.jpg|book]]
+![[Screenshot_20240602_104334_Samsung Notes.jpg|book]]
 >An example of a discrete-time signal: The weekly Dow-Jones stock market index from January 5, 1929 to January 4, 1930.
 
 We will have frequent occasions when it will be useful to represent signals graphically. Illustration of a continuous-time signal $x(t)$ and a discrete-time signal $x[n]$ are shown in the following figure:
 
-![[LSY1_001/Screenshot_20240602_104822_Samsung Notes.jpg|book]]
+![[Screenshot_20240602_104822_Samsung Notes.jpg|book]]
 >Graphical represntations of (a) continuous-time and (b) discrete-time signals. Note that the discrete-time signal $x[n]$ is defied *only* for integer values of the independent variable.
 
 ## Domains and Codomains
-We've established that signals are functions. More precisely, a signal is a function that assigns each element from its **domain** ([[../CAL1/CAL1_001 פונקציה#פונקציה|מקור]]) one element from its **codomain** ([[../CAL1/CAL1_001 פונקציה#פונקציה|תמונה]])
+We've established that signals are functions. More precisely, a signal is a function that assigns each element from its **domain** ([[CAL1_001 פונקציה#פונקציה|מקור]]) one element from its **codomain** ([[CAL1_001 פונקציה#פונקציה|תמונה]])
 
 An example of a continuous-time domain is real number domain $\mathbb{R}$. For a discrete-time domain, a common example would be integers - $\mathbb{Z}$.
 
@@ -75,7 +75,7 @@ We often say "system" meaning its model, and our model is a (more or less accura
 
 >[!example] Example - first principle modeling
  >For the following system, we would like to find a mathematical model that describes the relation between the forces and the position of the mass:
- >![[LSY1_001/Screenshot_20240602_112034_Samsung Notes.jpg|book|300]]
+ >![[Screenshot_20240602_112034_Samsung Notes.jpg|book|300]]
  >We will make the following simplifying assumptions:
  >- spring force is proportional to position differences (Hooke's law).
  >- damper force is propportional to velocity differences (viscous damping).
@@ -114,7 +114,7 @@ Models allow us to reason about a system and make prediction about how a system 
 
 One of the triumphs of Newton's mechanics was the observation that the motion of the planets could be predicted based on the current positions and velocities of all planets. It was not necessary to know the past motion. The *state* of a dynamical system is a collection of variables that completely characterizes the motion of a system for the purpose of predicting future motion. For a system of planets the state is simply the positions and the velocities of the planets. We call the set of all possible states the **state-space**.
 
-![[LSY1_001/Pasted image 20240610132600.png|book|400]]
+![[Pasted image 20240610132600.png|book|400]]
 >Block diagram representation of the linear state-space equations
 
 A state-space representation is a mathematical model of a physical system specified as a set of input, output, and variables related by first-order differential equations or difference equations.
@@ -158,7 +158,7 @@ $$\begin{aligned}
 >[!example] Example: Mass rotating inside a cylinder
 >Consider a mass rotating inside a cylinder depicted in the following figure:
 >![[Pasted image 20240610134941.png|book|200]]
->[](LSY1_001/Pasted%20image%2020240610134941.png)e moment of inertia $J$, is attached to a torsion spring, whose torsion coefficient is $k_{T}$. An external torque $\tau$ acts on the mass and friction between the mass and the cylinder is assumed to generate a viscous friction torque $\tau_{c}=-c_{T}\dot{\theta}$.
+>[Pasted image 20240610134941](Pasted%20image%2020240610134941.png)e moment of inertia $J$, is attached to a torsion spring, whose torsion coefficient is $k_{T}$. An external torque $\tau$ acts on the mass and friction between the mass and the cylinder is assumed to generate a viscous friction torque $\tau_{c}=-c_{T}\dot{\theta}$.
 >
 >The Newtonian motion equation of the mass is $J\ddot{\theta}=\tau_{\text{net}}$, where $\tau_{\text{net}}$ is the net torque applied to it. In our case,
 >$$\tau_{\text{net}}=\tau-k_{T}\theta-c_{T}\dot{\theta}$$
@@ -167,7 +167,7 @@ $$\begin{aligned}
 \tau(t)=J\ddot{\theta}(t)+c_{T}\dot{\theta}(t)+k_{T}\theta(t)
  }$$
  >which is the relation describing the system $\tau \to\theta$.
- >This is a system of second-order differential equations. To get a state-space representation of the system, we can write a system of first order differential equation which represent the same dynamics of the system as the second order differential equation. After [[../DEQ1/DEQ1_006 משוואות לינאריות הומוגניות מסדר גבוה#אלגוריתם שיטת הורדת הסדר|order reduction]] using the state vector
+ >This is a system of second-order differential equations. To get a state-space representation of the system, we can write a system of first order differential equation which represent the same dynamics of the system as the second order differential equation. After [[DEQ1_006 משוואות לינאריות הומוגניות מסדר גבוה#אלגוריתם שיטת הורדת הסדר|order reduction]] using the state vector
  >$$\mathbf{x}=\begin{pmatrix}
 {x}_{1} \\
 {x}_{2}
@@ -197,7 +197,7 @@ Our input to the system is $u=\tau$, and we can define the output of system $y$ 
 ## Block Diagrams
 
 It is convenient to represent systems by block diagrams:
-![[LSY1_001/Pasted image 20240610124849.png|book]]
+![[Pasted image 20240610124849.png|book]]
 >Block diagrams.
 
 The two-port blocks in the figure represent a system with input $u(\cdot)$ and output $y(\cdot)$, where the directions of the arrows specify which is which.
@@ -268,7 +268,7 @@ $$\begin{aligned}
 
 ## Standard Systems
 - **Gain**  systems map their input $u(\cdot)\in \mathbb{R}$ to the output $y(t)=k\,u(t)\in \mathbb{R},\,\forall t\geq 0$, for some $k\in \mathbb{R}$.
-	![[LSY1_001/Pasted image 20240610151833.png|book|400]]
+	![[Pasted image 20240610151833.png|book|400]]
 - **Saturation** system map their input $u(\cdot)\in \mathbb{R}$ to the output
 	$$y(t)=\begin{cases}
 a & u(t)<a \\
@@ -276,12 +276,12 @@ u(t) & a\leq  u(t)\leq  b \\
 b & u(t)>b
 \end{cases}$$
 	for a given $a<b$. We use the short notation $\mathrm{sat}_{a}:=\mathrm{sat}_{-[a,a]}$ for some $a>0$.
-![[LSY1_001/Pasted image 20240610152046.png|book|400]]
+![[Pasted image 20240610152046.png|book|400]]
 - **Integrator** systems map their input $u(\cdot)\in \mathbb{R}$ to the solution $y(\cdot)\in \mathbb{R}$ of $\dot{\mathbf{y}}=\mathbf{u}$, which can also be written as:
 	$$y(t)=\int_{-\infty }^{t} u(t) \, \mathrm{d}t $$
 
 
-![[LSY1_003/Pasted image 20240611141917.png|book]]
+![[Pasted image 20240611141917.png|book]]
 >Standard block diagram elements. The arrows indicate the inputs and outputs of each element, with the mathematical operation corresponding to the blocked labeled at the output.
 
 >[!notes] Notes: 

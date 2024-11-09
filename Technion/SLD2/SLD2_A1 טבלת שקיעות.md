@@ -4,4 +4,4 @@ aliases:
 ---
 # טבלת שקיעות
 מ[[SLD2_000 034053 מכניקת מוצקים 2מ#ביבליוגרפיה|(Beer, 2020)]]:
-![[SLD2_A1/Pasted image 20241027130058.png|bookhue]]
+![[Pasted image 20241027130058.png|bookhue]]

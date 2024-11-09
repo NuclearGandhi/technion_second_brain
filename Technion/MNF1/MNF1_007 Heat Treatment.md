@@ -5,11 +5,11 @@ aliases:
 From [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]]:
 The various microstructures developed during metal processing can be modified by heat treatment techniques, involving controlled heating and cooling of the alloys at various rates.
 
-The relevant chapters in Intro to Material Engineering are [[../IMT1/IMT1_004 דיאגרמת פאזות|IMT1_004]], [[../IMT1/IMT1_005 דיאגרמת ברזל-פחמן|IMT1_005]] and [[../IMT1/IMT1_006 דאגרמות TTT ו-CTT|IMT1_006]].
+The relevant chapters in Intro to Material Engineering are [[IMT1_004 דיאגרמת פאזות|IMT1_004]], [[IMT1_005 דיאגרמת ברזל-פחמן|IMT1_005]] and [[IMT1_006 דאגרמות TTT ו-CTT|IMT1_006]].
 
 ## Heat Treating Ferrous Alloys
 
-![[MNF1_007/Pasted image 20240821095612.png|book]]
+![[Pasted image 20240821095612.png|book]]
 >(a) Austenite to pearlite transformation of iron-carbon alloys as a function of time and temperature. (b) Isothermal transformation diagram obtained from (a) for a transformation temperature of $675^{\circ}\pu{C}$. (c) Microstructures obtained for a eutectoid iron-carbon alloy as a function of cooling rate.
 
 **Tempered martensite**:
@@ -26,7 +26,7 @@ Quenching may be carried out in water, brine (saltwater), oils, molten salts, or
 
 Nonferrous alloys and some stainless steels generally cannot be heat treated by the techniques for ferrous alloys, because nonferrous alloys do not undergo phase transformations as steels do. Heat-treatable aluminum alloys, copper alloys, and martensitic and precipitation-hardening stainless steels are hardened and strengthened by **precipitation hardening**. This is a technique in which small particles of a different phase (called **precipitates**) are uniformly dispersed in the matrix of the original phase. Precipitates form because the solid solubility of one element (one component of the alloy) in the other is exceeded.
 
-![[MNF1_007/Pasted image 20240821092338.png|book]]
+![[Pasted image 20240821092338.png|book]]
 >(a) Phase diagram for the aluminum-copper alloy system. (b) Various microstructures obtained during the age-hardening process [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 **Solution treatment**:
@@ -50,7 +50,7 @@ Consider the following microstructures  and conclude about:
 4. If the following bulk forming is impossible, how to make it possible.
 
 ### Part a
-![[MNF1_007/Pasted image 20240821091952.png]]
+![[Pasted image 20240821091952.png]]
 >Aluminum based alloy 6061: intermetallic precipitates
 
 **Solution**:
@@ -61,9 +61,9 @@ According to [[#Heat Treating Nonferrous Alloys and Stainless Steels]]:
 4. To perform bulk forming, precipitates should be dissolved in the matrix, so the material should be re-heated up to $500^{\circ}\pu{C}$ and then subjected to solution treatment prior to a bulk forming
 
 ### Part b
-![[MNF1_007/Pasted image 20240821100019.png|300]]
+![[Pasted image 20240821100019.png|300]]
 
-![[MNF1_007/Pasted image 20240821100033.png|300]]
+![[Pasted image 20240821100033.png|300]]
 >Low carbon steel 1020: (top) non-deformed grains structure; (bottom) plastic formed strongly elongated grains.
 
 **Solution**:
@@ -75,11 +75,11 @@ According to [[#Heat Treating Ferrous Alloys]]:
 
 ## Question 2
 Given the following diagrams
-![[MNF1_007/image-removebg-preview (3).png|book]]
+![[image-removebg-preview (3).png|book]]
 >Isothermal transformation diagram for an iron–carbon alloy of eutectoid composition and the isothermal heat treatments for different treatments [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Callister, 2007)]].
 
 
-![[MNF1_007/Pasted image 20240821101305.png|book]]
+![[Pasted image 20240821101305.png|book]]
 >Iron-carbon phase diagram
 
 Define which phases will compose the eutectoid steel's microstructure if it will be heated to $760^{\circ}\pu{C}$ until microstructural stabilization of austenite and then will be cooled by various regimes, as follows:

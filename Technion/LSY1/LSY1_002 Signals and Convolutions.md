@@ -17,35 +17,35 @@ The following definition introduces basic signals that play a prominent role in 
 1 & t\geq  0 \\
 0 & t<0
 \end{cases}$$
-	![[LSY1_002/Screenshot_20240609_093549_Samsung Notes.jpg|book|200]]
+	![[Screenshot_20240609_093549_Samsung Notes.jpg|book|200]]
 - **ramp**:
 	$$\text{ramp}(t)=t\mathbb{1}(t)=\begin{cases}
 t & t\geq  0 \\
 0 & t<0
 \end{cases}$$
-	![[LSY1_002/Screenshot_20240609_093653_Samsung Notes.jpg|book|200]]
+	![[Screenshot_20240609_093653_Samsung Notes.jpg|book|200]]
 - **rectangular pulse (of width $a$)**:
 	$$\text{rect}_{a}(t)=\begin{cases}
 1 & \left|t\right|<a/2 \\
 0 & \left|t\right|>a/2
 \end{cases}\qquad a>0$$
-	![[LSY1_002/Screenshot_20240609_093920_Samsung Notes.jpg|book|200]]
+	![[Screenshot_20240609_093920_Samsung Notes.jpg|book|200]]
 - **triangular pulse (of width $a$)**:
 	$$\text{tent}_{a}(t)=\begin{cases}
 1-\dfrac{\left|t\right|}{a} & \lvert t \rvert\leq  a \\
 0 & \left|t\right|>a
 \end{cases}\qquad a>0$$
-	![[LSY1_002/Screenshot_20240609_094121_Samsung Notes.jpg|book|200]]
+	![[Screenshot_20240609_094121_Samsung Notes.jpg|book|200]]
 - **sinusodial**:
 	$$\sin(\omega t+\phi)$$
-	![[LSY1_002/Screenshot_20240609_095700_Samsung Notes.jpg|book|200]]
+	![[Screenshot_20240609_095700_Samsung Notes.jpg|book|200]]
 	
 - **sinc (sine cardinal)**:
 	$$\mathrm{sinc} (t)=\dfrac{\sin t}{t}$$
-	![[LSY1_002/Screenshot_20240609_095726_Samsung Notes.jpg|book|200]]
+	![[Screenshot_20240609_095726_Samsung Notes.jpg|book|200]]
 - **exponential**:
 	$$\exp_{\lambda}(t)=\exp(\lambda t)=e^{\lambda t}$$
-	![[LSY1_002/Screenshot_20240609_095848_Samsung Notes.jpg|book|200]]
+	![[Screenshot_20240609_095848_Samsung Notes.jpg|book|200]]
 
 >[!notes] Notes: 
  >Common abbreviations are:
@@ -55,7 +55,7 @@ t & t\geq  0 \\
 
 
 # Norms
-We can define signal [[../NUM1/NUM1_003 נורמה#נורמה של וקטור|norms]] in a very similar way to vector norms:
+We can define signal [[NUM1_003 נורמה#נורמה של וקטור|norms]] in a very similar way to vector norms:
 >[!def] Definition:
 > - ${L}_{1}$-norm:
 > 	$$\left|\left|x\right|\right|_{1}=\int_{-\infty }^{\infty } \left|x(t)\right| \, \mathrm{d}t $$
@@ -121,7 +121,7 @@ A signal $f(t)$ is periodic if a $T>0$ exists such that $f(t+T)=f(t)$ for all $t
 >[!def] Defintion: 
  >A real-valued signal $f(t)$ that can be written as
  >$$f(t)=A\cos(\omega t+\phi)\qquad A>0,\, \phi \in \mathbb{R},\, t\in \mathbb{R}$$
- >is called a **sinusoid** or real [[../PHY1/PHY1_004 תנועה הרמונית ומערכות ייחוס#תנועה הרמונית|harmonic signal]]. Then $A$ is the **amplitude**, $\omega$ the **angular frequency**, and $\phi$ the **initial phase** of the signal $f(t)$.
+ >is called a **sinusoid** or real [[PHY1_004 תנועה הרמונית ומערכות ייחוס#תנועה הרמונית|harmonic signal]]. Then $A$ is the **amplitude**, $\omega$ the **angular frequency**, and $\phi$ the **initial phase** of the signal $f(t)$.
  
  Such sinusoids have a period of $T=2\pi /\omega$.
 
@@ -193,14 +193,14 @@ Convolutions are very common in applications, and are, for instance, useful if w
 >$$f_{\text{swa}}(t)=\dfrac{1}{P}\int_{t-P/2}^{t+P/2}f(\tau)  \, \mathrm{d}\tau $$
 Averaging $f(t)$ this way filters out highly fluctuating noise. It is to be expected then, that $f_{\text{swa}}(t)$ is somewhat smoother that $f(t)$, but as long as $P$ is not too large the graph of the averagd $f_{\text{swa}}(t)$ should retain roughly the same shape as the graph of $f(t)$.
  >![[Screenshot_20240609_111610_Samsung Notes.jpg|book]]
->[](LSY1_002/Screenshot_20240609_111610_Samsung%20Notes.jpg)veraged with $P=0.1$
+>[Screenshot_20240609_111610_Samsung Notes](Screenshot_20240609_111610_Samsung%20Notes.jpg)veraged with $P=0.1$
 >
 > The signal $f_{\text{swa}}$ can be written as the convolution of $f$ with a suitable function $g$:
 > $$f_{\text{swa}}(t)=\dfrac{1}{P}\int_{t-P/2}^{t+P/2} f(\tau)  \, \mathrm{d}\tau\underset{ v=t-\tau }{ = } \dfrac{1}{P}\int_{-P/2}^{P/2}f(t-v)  \, \mathrm{d}v=(f*g)(t)  $$
 > for
 > $$g(t)=\dfrac{1}{P}\mathrm{rect}_{P}(t)$$
 > ![[Screenshot_20240609_112515_Samsung Notes 1.jpg|book|200]]
-[](LSY1_002/Screenshot_20240609_112515_Samsung%20Notes%201.jpg)
+[Screenshot_20240609_112515_Samsung Notes 1](Screenshot_20240609_112515_Samsung%20Notes%201.jpg)
 
 >[!example] Example: Convolution with step:
 >Convolution with the unit step amount to integration:
@@ -216,11 +216,11 @@ $$r_{n}(t)\equiv \begin{cases}
 n & \left|t\right|<\dfrac{1}{2n} \\[1ex]
 0 & \left|t\right|>\dfrac{1}{2n}
 \end{cases}$$
-![[LSY1_002/Screenshot_20240609_114536_Samsung Notes.jpg|book|200]]
+![[Screenshot_20240609_114536_Samsung Notes.jpg|book|200]]
 
 As $n$ goes to infinity, the rectangular pulses $r_{n}(t)$ become spikier and spikier, with spike around $t=0$.
 
-![[LSY1_002/Screenshot_20240609_114950_Samsung Notes.jpg|book|450]]
+![[Screenshot_20240609_114950_Samsung Notes.jpg|book|450]]
 >A series of $r_{n}(t)$ for $n=1,\,n=2,\,n=3$ and $n=4$
 
 However, the area enclosed by the spike and the $x$-axis, $\int_{-\infty}^{\infty} r_{n}(t) \, \mathrm{d}t$, equals $1$ independent of $n$. We now naively define **delta function** $\delta(t)$ as the limit
@@ -228,7 +228,7 @@ $$\delta(t)=\lim_{ n \to \infty}r_{n}(t)$$
 and we think of the delta function as a "function" that is zero everywhere except at $t=0$ where it has a spike so large that
 $$\int_{0-}^{0+} \delta(t) \, \mathrm{d}t=1 $$
 The delta function is usually depicted as
-![[LSY1_002/Screenshot_20240609_123456_Samsung Notes.jpg|book|200]]
+![[Screenshot_20240609_123456_Samsung Notes.jpg|book|200]]
 >The delta function $\delta(t)$
 
 The idea to see the function as a pike in this sense is helpful, but mathematically it is far from sound. After all,
@@ -251,11 +251,11 @@ $$\delta(at-b)=\lim_{ n \to \infty}r_{n}(at-b)$$
 
 For $t=b/a$ the argument $at-b$ is zero, so $r_{n}(at-b)$ as a function of $t$ is centered around $t=b/a$.
 
-![[LSY1_002/Screenshot_20240609_125324_Obsidian.jpg|book|400]]
+![[Screenshot_20240609_125324_Obsidian.jpg|book|400]]
 >Shifted and scaled $r_{n}(t)$
 
 This is very much like a shifted copy of $r_{n}(t)$ with the difference that the spike does not have a unit area:
-![[LSY1_002/Screenshot_20240609_125453_Obsidian 1.jpg|book|200]]
+![[Screenshot_20240609_125453_Obsidian 1.jpg|book|200]]
 >Shifted delta function $\delta(t-b)$
 
 We can now generalize the previous Lemma:
@@ -293,7 +293,7 @@ t & 0\leq  t<10 \\
 60-5t & 10\leq  t\leq  12 \\
 0 & \text{otherwise}
 \end{cases}$$
-![[LSY1_004/Pasted image 20240617175116.png|book|400]]
+![[Pasted image 20240617175116.png|book|400]]
 >Triangle signal
 
 Construct $y$ using the step function $\mathbb{1}$, and the $\mathrm{ramp}$ signal. Compute the $L_{\infty}$ and ${L}_{2}$ norms of $y$.
@@ -302,7 +302,7 @@ Construct $y$ using the step function $\mathbb{1}$, and the $\mathrm{ramp}$ sign
 $$\boxed {
 y(t)=\mathrm{ramp}(t)-6\mathrm{ramp}(t-10)+\mathrm{ramp}(t-12)
  }$$
-![[LSY1_002/Pasted image 20240617192429.png|book|400]]
+![[Pasted image 20240617192429.png|book|400]]
 >The above mentioned signal, broken down to three $\mathrm{ramp}$ signals. Try to match the $\mathrm{ramp}$ signals to their corresponding graph representation.
 
 According to [[LSY1_002 Signals and Convolutions#Norms|signal norm]]:

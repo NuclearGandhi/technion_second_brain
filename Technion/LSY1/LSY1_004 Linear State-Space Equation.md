@@ -11,11 +11,11 @@ aliases:
 
 # Impulse Response
 The **impulse response** of a dynamic system is its output when presented with a brief input signal ([[LSY1_002 Signals and Convolutions#The Delta Function|unit impulse]]) - $\delta (t)$. More generally, an impulse response is the reaction of any dynamic system in response to some external change.
-![[LSY1_004/Pasted image 20240616155903.png|book|400]]
+![[Pasted image 20240616155903.png|book|400]]
 >The impulse response from a simple audio system. Showing, from top to bottom, the original impulse, the response after high frequency boosting, and the response after low frequency boosting.
 
 The output of a CLTI system is completely determined by the input and the system's response to a unit impulse.
-![[LSY1_004/LSY1_004 Time Domain Analysis 2024-06-16 16.23.35.excalidraw.svg]]
+![[LSY1_004 Time Domain Analysis 2024-06-16 16.23.35.excalidraw.svg]]
 >We can determine the system's output $y(t)$ if we know the system's impulse response $g(t)$ and the input $f(t)$.
 
 In fact, we can show that by *convolving* the input $u(t)$ with the impulse response of the system $g(t)$ we get the system's output $y(t)$:
@@ -147,9 +147,9 @@ e^{\mathbf{A}t} & =I+\begin{pmatrix}
 
 ### Properties of the Matrix Exponential
 - $(e^{\mathbf{A}t})^{T}=e^{\mathbf{A}^{T}t}$
-- $e^{\mathbf{A}t}$ is [[../ALG1/ALG1_009 טרנספורמציות לינאריות#סינגולריות|nonsingular]] for every $\mathbf{A}$, with $(e^{\mathbf{A}t})^{-1}=e^{-\mathbf{A}t}$
+- $e^{\mathbf{A}t}$ is [[ALG1_009 טרנספורמציות לינאריות#סינגולריות|nonsingular]] for every $\mathbf{A}$, with $(e^{\mathbf{A}t})^{-1}=e^{-\mathbf{A}t}$
 - $e^{\mathbf{A}_{1}t}e^{\mathbf{A}_{2}t}=e^{(\mathbf{A}_{1}+\mathbf{A}_{2})t}$ iff $\mathbf{A}_{1}$ and $\mathbf{A}_{2}$ commute
-- If $\mathbf{A}$ is [[../ALG1/ALG1_003 מטריצות#מטריצה אלכסונית|diagonal]]/[[../ALG1/ALG1_003 מטריצות#מטריצה משולשת עליונה ותחתונה|triangular]], then so is $e^{\mathbf{A}t}$, with diagonal elements $e^{a_{ii}t}$.
+- If $\mathbf{A}$ is [[ALG1_003 מטריצות#מטריצה אלכסונית|diagonal]]/[[ALG1_003 מטריצות#מטריצה משולשת עליונה ותחתונה|triangular]], then so is $e^{\mathbf{A}t}$, with diagonal elements $e^{a_{ii}t}$.
 - $\dfrac{\mathrm{d}}{\mathrm{d}t}e^{\mathbf{A}t}=\mathbf{A}e^{\mathbf{A}t}=e^{\mathbf{A}t}A$
 
 ## Euler's Formula
@@ -226,10 +226,10 @@ $$\boxed{\exp\left[ \begin{pmatrix}
 
 ## Calculating the Matrix Exponent
 
-It won't always be simple to calculate $e^{\mathbf{A}t}$ for any given $\mathbf{A}$ using the definition. An easier way would be to [[../ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים#לכסון|diagonalize]] $\mathbf{A}$, and then use a special property of diagonalizable matrices:
+It won't always be simple to calculate $e^{\mathbf{A}t}$ for any given $\mathbf{A}$ using the definition. An easier way would be to [[ALG1_010 וקטורים עצמיים וערכים עצמיים#לכסון|diagonalize]] $\mathbf{A}$, and then use a special property of diagonalizable matrices:
 $$\mathbf{A}=T\boldsymbol{\Lambda}T^{-1}\implies e^{\mathbf{A}t}=Te^{\boldsymbol{\Lambda}t}T^{-1}$$
 which would simple entail the calculation of multiplying 3 matrices.
-Another way would be to do it via [[../ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים#משפט קיילי המילטון|Cayley-Hamilton]]:
+Another way would be to do it via [[ALG1_010 וקטורים עצמיים וערכים עצמיים#משפט קיילי המילטון|Cayley-Hamilton]]:
 $$e^{\mathbf{A}t}=\sum_{i=0}^{n-1}g_{i}A^{i} $$
 where
 $$\begin{gathered}
@@ -240,11 +240,11 @@ g_{i}=e^{\lambda_{i}}V^{-1} &  & V^{}=\begin{pmatrix}
 {\lambda}_{1}^{n-1} & {\lambda}_{2}^{n-1} & \dots & \lambda_{n}^{n-1}
 \end{pmatrix}
 \end{gathered}$$
-The matrix $V$ is called the [[../ALG1/ALG1_008 הדטרמיננטה#דטרמיננטת ונדרמונד|Vandermonde matrix]]. We won't go about how the Cayley-Hamilton method is derived, but be assured, it has something to do with Cayley-Hamilton theorem.
+The matrix $V$ is called the [[ALG1_008 הדטרמיננטה#דטרמיננטת ונדרמונד|Vandermonde matrix]]. We won't go about how the Cayley-Hamilton method is derived, but be assured, it has something to do with Cayley-Hamilton theorem.
 
 ### Real Diagonalization of a Matrix with Complex Eigenvalues
 
-In both cases we need to find the [[../ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים#ערכים עצמיים ווקטורים עצמיים|eigenvalues]] of $\mathbf{A}$. If it has only real-valued eigenvalues, we're good - we already know how to approach such [[../ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים#לכסון|cases]].
+In both cases we need to find the [[ALG1_010 וקטורים עצמיים וערכים עצמיים#ערכים עצמיים ווקטורים עצמיים|eigenvalues]] of $\mathbf{A}$. If it has only real-valued eigenvalues, we're good - we already know how to approach such [[ALG1_010 וקטורים עצמיים וערכים עצמיים#לכסון|cases]].
 But, if there is a pair of complex eigenvalues $\lambda_{i},\,\bar{\lambda}_{i}=\sigma\pm\omega j$, then we also have two complex conjugate eigenvectors $\mathbf{v}_{i},\bar{\mathbf{v}}_{i}=\boldsymbol{\alpha} \pm j\boldsymbol{\beta}$ where $\boldsymbol{\alpha},\boldsymbol{\beta}\in \mathbb{R}^{n}$ are real valued vectors.
 
 We now show a special representation of the matrix called **real diagonalization** of a matrix with complex eigenvalues. We first define two linear combinations of our eigenvectors:
@@ -279,7 +279,7 @@ $$e^{\mathbf{A}t}=\mathbf{T}e^{\hat{\mathbf{A}}t}\mathbf{T}^{-1}=\mathbf{T}e^{\s
 Consider the function
 $$x(t)=\int_{-\infty }^{t} e^{\mathbf{A}(t-s)}\mathbf{B}u(s) \, \mathrm{d}s $$
 
-According to the [[../CAL1/CAL1_008 אינטגרל מסוים#נוסחת ניוטון-לייבניץ|Liebniz integral rule]], and the [[../CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים#כלל השרשרת|chain rule]],
+According to the [[CAL1_008 אינטגרל מסוים#נוסחת ניוטון-לייבניץ|Liebniz integral rule]], and the [[CAL2_006 נגזרות של פונקציות בשני משתנים#כלל השרשרת|chain rule]],
 $$\dfrac{\mathrm{d}}{\mathrm{d}t}\int_{a(t)}^{b(t)} f(s,t) \, \mathrm{d}s=\int_{a(t)}^{b(t)} \dfrac{ \partial  }{ \partial t } f(s,t) \, \mathrm{d}s+\dfrac{\mathrm{d}b(t)}{\mathrm{d}t}f(b(t),\, t)-\dfrac{\mathrm{d}a(t)}{\mathrm{d}t}f(a(t),t)  $$
 and the relation $\dfrac{ \partial  }{ \partial t }e^{\mathbf{A}(t-s)}=\mathbf{A}e^{\mathbf{A}(t-s)}$, we have that
 $$\begin{aligned}
@@ -298,7 +298,7 @@ g(t)=D\delta(t)+\mathbf{C}e^{\mathbf{A}t}\mathbf{B}\mathbb{1}(t)
 > >mass-spring-damper system. The mass is connected to a spring with stiffness $k$ and a *viscous* damper with damping coefficient $c$.
 > 
 > The input $u(t)$ to this system is the force applied to the mass, and the output is the position of the mass.
-> Supposing zero spring and damper forces at $y=0$, by [[../PHY1/PHY1_003 חוקי ניוטון#חוק ניוטון השני|Newton's second law]]:
+> Supposing zero spring and damper forces at $y=0$, by [[PHY1_003 חוקי ניוטון#חוק ניוטון השני|Newton's second law]]:
 > $$m\ddot{y}(t)=u(t)-c\dot{y}(t)-c\dot{y}(t)$$
 > Introducing the vector $x(t)=\begin{pmatrix}y(t)\\\dot{y}(t)\end{pmatrix}$ allows to describe the system by state-space representation:
 > $$\begin{aligned}
@@ -327,7 +327,7 @@ g(t)=D\delta(t)+\mathbf{C}e^{\mathbf{A}t}\mathbf{B}\mathbb{1}(t)
 > \end{pmatrix}\mathbf{x}(t)
 > \end{aligned}$$
 > We would like to find the impulse response of this system. Therefore, we need to look at $\mathbf{A}$:
-> [[../ALG1/ALG1_010 וקטורים עצמיים וערכים עצמיים#ערכים עצמיים ווקטורים עצמיים|Eigenvalues]] of $\mathbf{A}$:
+> [[ALG1_010 וקטורים עצמיים וערכים עצמיים#ערכים עצמיים ווקטורים עצמיים|Eigenvalues]] of $\mathbf{A}$:
 > 	$$\begin{gathered}
 > \begin{vmatrix}
 > \lambda \mathbf{I}-\mathbf{A}
@@ -653,7 +653,7 @@ e^{-t}
 -6 & 5 & -1 \\
 36 & 25 & 1
 \end{pmatrix}^{-1}$$
-Remember the obscure matrix operation to find its inverse, the [[../ALG1/ALG1_008 הדטרמיננטה#אלגוריתם מציאת הופכי ע"י הצמדה|adjoint matrix]]? Here you go:
+Remember the obscure matrix operation to find its inverse, the [[ALG1_008 הדטרמיננטה#אלגוריתם מציאת הופכי ע"י הצמדה|adjoint matrix]]? Here you go:
 $$\begin{pmatrix}
 {g}_{0} \\
 {g}_{1} \\
@@ -817,7 +817,7 @@ e^{\mathbf{A}t} & =\begin{pmatrix}
 1 & 0
 \end{pmatrix}^{-1}
 \end{aligned}$$
-For a $2\times 2$ matrix, we can calculate the inverse using [[../ALG1/ALG1_008 הדטרמיננטה#אלגוריתם מציאת הופכי ע"י הצמדה|adjoint matrix]]:
+For a $2\times 2$ matrix, we can calculate the inverse using [[ALG1_008 הדטרמיננטה#אלגוריתם מציאת הופכי ע"י הצמדה|adjoint matrix]]:
 $$\begin{aligned}
 e^{\mathbf{A}t} & =\begin{pmatrix}
 -1/5 & -2/5 \\
@@ -1006,7 +1006,7 @@ $$\mathbf{x}=\begin{pmatrix}
 y \\
 \dot{y}
 \end{pmatrix}$$
-so we can write (using [[../DEQ1/DEQ1_006 משוואות לינאריות הומוגניות מסדר גבוה#אלגוריתם שיטת הורדת הסדר|reduction of order]]):
+so we can write (using [[DEQ1_006 משוואות לינאריות הומוגניות מסדר גבוה#אלגוריתם שיטת הורדת הסדר|reduction of order]]):
 $$\begin{gathered} 
 \dot{x}_{2}(t)+{x}_{1}(t)=u(t) \\[1ex]
 \dot{x}_{2}=-{x}_{1}(t)+u(t) \\[1ex]
@@ -1112,7 +1112,7 @@ Use the following transformation matrix to get a similar realization:
 What does this similar realization correspond to?
 
 **Solution**:
-The inverse of $\mathbf{T}$ (using [[../ALG1/ALG1_008 הדטרמיננטה#אלגוריתם מציאת הופכי ע"י הצמדה|adjoint]]):
+The inverse of $\mathbf{T}$ (using [[ALG1_008 הדטרמיננטה#אלגוריתם מציאת הופכי ע"י הצמדה|adjoint]]):
 $$\mathbf{T}^{-1}=\dfrac{1}{1+14}\begin{pmatrix}
 1 & -2 \\
 7 & -1

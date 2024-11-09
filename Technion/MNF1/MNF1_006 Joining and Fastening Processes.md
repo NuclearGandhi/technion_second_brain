@@ -38,7 +38,7 @@ Fusion welding is a process where the workpieces are joined by melting their edg
 
 
 A typical fusion welded joint is shown in the following figure:
-![[MNF1_006/Pasted image 20240820182419.png|book|400]]
+![[Pasted image 20240820182419.png|book|400]]
 >Characteristics of a typical fusion weld zone in oxyfuel gas welding and arc welding processes [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 Three distinct zones are identified:
@@ -47,7 +47,7 @@ Three distinct zones are identified:
 3. The **fusion zone**, the region that melts during welding.
 
 After heat has been applied and the filler metal (if any) has been introduced into the weld zone, the molten weld begins to solidify and cool. The solidification process is similar to that in [[MNF1_002 Metal Casting#Cast Structures|casting]] and begins with the formation of columnar (dendritic) grains; These grains are relatively long and form parallel to heat flow. Because metals are much better heat conductors than the surrounding air, the grains lie parallel to the plane of the two plates or sheets being welded.
-![[MNF1_006/Pasted image 20240820183057.png|book]]
+![[Pasted image 20240820183057.png|book]]
 >Grain structure in (a) a deep weld and (b) a shallow weld. Note that the grains in the solidified weld metal are perpendicular to their interface with the base metal.
 
 The grains developed in a shallow weld are shown in the figure above (b).
@@ -60,24 +60,24 @@ Because of its past history of thermal cycling and the attendant microstructural
 1. **Porosity** in welds may be caused by (a) trapped gases that are released during melting of the weld zone but trapped during solidification of the weld zone; (b) chemical reactions that occur during welding; or (c) contaminants present in the weld zone.
 2. **Slag inclusions**. These inclusions may be trapped in the weld zone. If the shielding gases used are not effective, contamination from the environment may contribute to slag inclusions.
 3. **Incomplete fusion and incomplete penetration**. Incomplete fusion (lack of fusion) produces poor weld beads, such as those shown in the following figure:
-	![[MNF1_006/Pasted image 20240820184259.png|book]]
+	![[Pasted image 20240820184259.png|book]]
 	>Examples of various incomplete fusion in welds.
 	
 
 4. **Weld profile**. Weld profile is important not only because of its effects on the strength and appearance of the weld but also because it can indicate incomplete fusion or the presence of slag inclusions in multiplayer welds.
-	![[MNF1_006/Pasted image 20240820184802.png|book]]
+	![[Pasted image 20240820184802.png|book]]
 	>Examples of various defects in fusion welds.
 	
 5. **Cracks**. Cracks may develop at various locations and directions in the weld zone. Cracks generally result from a combination of the following factors:
 	- Temperature gradients, causing thermal stresses in the weld zone;
 	- Variations in the composition of the weld zone, causing different contractions;
 	
-	![[MNF1_006/Pasted image 20240820184945.png|book]]
+	![[Pasted image 20240820184945.png|book]]
 	>Types of cracks in welded joints. The cracks are caused by thermal stresses that develop during solidification and contraction of the weld bead and the welded structure.
 	
 	Cracks are classified as **hot cracks**, developing while the joint is still at elevated temperatures, and cold cracks, that develop after the weld metal has solidified.
 6. **Residual stresses**. Because of localized heating and cooling during welding, expansion and contraction of the weld area develop residual stresses.
-	![[MNF1_006/Pasted image 20240820185206.png|book]]
+	![[Pasted image 20240820185206.png|book]]
 	>Distortion and warping of parts after welding, caused by differential thermal expansion and contraction of different regions of the welded assembly. Warping can be reduced or eliminated by proper weld design and fixturing prior to welding.
 	
 

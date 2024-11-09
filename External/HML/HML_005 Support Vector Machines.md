@@ -12,7 +12,7 @@ A support vector machine (SVM) is a powerful and versatile machine learning mode
 
 # Linear SVM Classification
 The fundamental idea behind SVMs is best explained with some visuals. The following figure shows part of the iris dataset that was introduced at the end of the [[HML_004 Training Models#Decision Boundaries|previous chapter]].
-![[HML_005/Pasted image 20241008214504.png|bscreen]]
+![[Pasted image 20241008214504.png|bscreen]]
 >Large margin classification
 
 The two classes can clearly be separated easily with a straight line (they are linearly separable). The left plot shows the decision boundaries of three possible linear classifiers. The model whose decision boundary is represented by the dashed line is so bad that it does not even separate the classes properly. The other two models work perfectly on this training set, but their decision boundaries come so close to the instances that these models will probably not perform as well on new instances. In contrast, the solid line in the plot on the right represents the decision boundary of an SVM classifier; this line not only separates the two classes but also stays as far away from the closest training instances as possible. You can think of an SVM classifier as fitting the widest possible street (represented by the parallel dashed lines) between the classes. This is called large margin classification.
@@ -22,13 +22,13 @@ Notice that adding more training instances “off the street” will not affect 
 
 > [!warning] Warning:
 > SVMs are sensitive to the feature scales, as can be seen in the following figure:
-> ![[HML_005/Pasted image 20241008214856.png|bscreen]]
+> ![[Pasted image 20241008214856.png|bscreen]]
 > In the left plot, the vertical scale is much larger than the horizontal scale, so the widest possible street is close to horizontal. After feature scaling (e.g., using Scikit-Learn’s `StandardScaler`), the decision boundary in the right plot looks much better.
 
 ## Soft Margin Classification
 If we strictly impose that all instances must be off the street and on the correct side, this is called hard margin classification. There are two main issues with hard margin classification. First, it only works if the data is linearly separable. Second, it is sensitive to outliers. The following figure shows the iris dataset with just one additional outlier:
 
-![[HML_005/Pasted image 20241008215219.png|bscreen]]
+![[Pasted image 20241008215219.png|bscreen]]
 >Hard margin sensitivity to outliers
 
 on the left, it is impossible to find a hard margin; on the right, the decision boundary ends up very different from the one we saw in the first figure without the outlier, and the model will probably not generalize as well.
@@ -37,7 +37,7 @@ To avoid these issues, we need to use a more flexible model. The objective is to
 
 When creating an SVM model using Scikit-Learn, you can specify several hyperparameters, including the regularization hyperparameter `C`. If you set it to a low value, then you end up with the model on the left of the following figure. With a high value, you get the model on the right:
 
-![[HML_005/Pasted image 20241008215600.png|bscreen]]
+![[Pasted image 20241008215600.png|bscreen]]
 >Large margin (left) versus fewer margin violations (right)
 
 As you can see, reducing `C` makes the street larger, but it also leads to more margin violations. In other words, reducing `C` results in more instances supporting the street, so there's less risk of overfitting. But if you reduce it too much, then the model ends up underfitting, as seems to be the case here: the model with `C=100` looks like it will generalize better than the one with `C=1`.
@@ -84,7 +84,7 @@ Unlike `LogisticRegression`, `LinearSVC` doesn’t have a `predict_proba()` meth
 # Nonlinear SVM Classification
 Although linear SVM classifiers are efficient and often work surprisingly well, many datasets are not even close to being linearly separable. One approach to handling nonlinear datasets is to add more features, such as polynomial features (as we did in [[HML_004 Training Models#Polynomial Regression|HML_004]]); in some cases this can result in a linearly separable dataset. Consider the lefthand plot in the following figure:
 
-![[HML_005/Pasted image 20241009111650.png|bscreen]]
+![[Pasted image 20241009111650.png|bscreen]]
 >Adding features to make a dataset linearly separable
 
 it represents a simple dataset with just one feature, ${x}_{1}$ . This dataset is not linearly separable, as you can see. But if you add a second feature ${x}_{2}=({x}_{1})^{2}$ , the resulting 2D dataset is perfectly linearly separable.
@@ -105,7 +105,7 @@ polynomial_svm_clf = make_pipeline(
 polynomial_svm_clf.fit(X, y)
 ```
 
-![[HML_005/Pasted image 20241009114832.png|bscreen|500]]
+![[Pasted image 20241009114832.png|bscreen|500]]
 >Linear SVM classifier using polynomial features
 
 ## Polynomial Kernel
@@ -125,12 +125,12 @@ This code trains an SVM classifier using a third-degree polynomial kernel, repre
 
 Obviously, if your model is overfitting, you might want to reduce the polynomial degree. Conversely, if it is underfitting, you can try increasing it. The hyperparameter coef0 controls how much the model is influenced by high-degree terms versus low-degree terms.
 
-![[HML_005/Pasted image 20241009114844.png|bscreen]]
+![[Pasted image 20241009114844.png|bscreen]]
 >SVM classifiers with a polynomial kernel
 
 ## Similarity Features
 Another technique to tackle nonlinear problems is to add features computed using a similarity function, which measures how much each instance resembles a particular *landmark*. For example, For example, let’s take the 1D dataset from earlier and add two landmarks to it at ${x}_{1} = –2$ and ${x}_{1} = 1$:
-![[HML_005/Pasted image 20241009113539.png|bscreen]]
+![[Pasted image 20241009113539.png|bscreen]]
 >Similarity features using the Gaussian RBF
 
 Next, we’ll define the similarity function to be the Gaussian RBF with $\gamma = 0.3$. This is a bell-shaped function varying from $0$ (very far away from the landmark) to $1$ (at the landmark).
@@ -148,7 +148,7 @@ rbf_kernel_svm_clf = make_pipeline(StandardScaler(),
 rbf_kernel_svm_clf.fit(X, y)
 ```
 
-![[HML_005/Pasted image 20241009114902.png|bscreen]]
+![[Pasted image 20241009114902.png|bscreen]]
 >SVM classifiers using an RBF kernel
 
 This model is represented at the bottom left the figure above. The other plots show models trained with different values of hyperparameters gamma ($\gamma$) and `C`. Increasing gamma makes the bell-shaped curve narrower. As a result, each instance’s range of influence is smaller: the decision boundary ends up being more irregular, wiggling around individual instances. Conversely, a small gamma value makes the bell-shaped curve wider: instances have a larger range of influence, and the decision boundary ends up smoother. So $\gamma$
@@ -174,7 +174,7 @@ The `SGDClassifier` class also performs large margin classification by default, 
 # SVM Regression
 To use SVMs for regression instead of classification, the trick is to tweak the objective: instead of trying to fit the largest possible street between two classes while limiting margin violations, SVM regression tries to fit as many instances as possible on the street while limiting margin violations (i.e., instances off the street). The width of the street is controlled by a hyperparameter, $\varepsilon$. The following figure shows two linear SVM regression models trained on some linear data, one with a small margin ($\epsilon=0.5$) and the other with a larger margin ($\epsilon=1.2$).
 
-![[HML_005/Pasted image 20241009142428.png|bscreen]]
+![[Pasted image 20241009142428.png|bscreen]]
 >SVM regression
 
 Reducing $\epsilon$ increases the number of support vectors, which regularizes the model. Moreover, if you add more training instances within the margin, it will not affect the model’s predictions; thus, the model is said to be *$\epsilon$-insensitive*.
@@ -191,7 +191,7 @@ svm_reg.fit(X, y)
 
 To tackle nonlinear regression tasks, you can use a kernelized SVM model. The following figure shows SVM regression on a random quadratic training set, using a second-degree polynomial kernel. There is some regularization in the left plot (i.e., a small `C` value), and much less in the right plot (i.e., a large `C` value).
 
-![[HML_005/Pasted image 20241009143355.png|bscreen]]
+![[Pasted image 20241009143355.png|bscreen]]
 >SVM regression using a second-degree polynomial kernel
 
 The `SVR` class is the regression equivalent of the `SVC` class, and the `LinearSVR` class is the regression equivalent of the `LinearSVC` class. The `LinearSVR` class scales linearly with the size of the training set (just like the `LinearSVC` class), while the `SVR` class gets much too slow when the training set grows very large (just like the `SVC` class).
@@ -203,7 +203,7 @@ A linear SVM classifier predicts the class of a new instance $\mathbf{x}$ by fir
  >Up to now, I have used the convention of putting all the model parameters in one vector $\boldsymbol{\theta}$, including the bias term $\theta_{0}$ and the input feature weights $\theta_{1}$ to $\boldsymbol{\theta}_{n}$ . This required adding a bias input ${x}_{0}=1$ to all instances. Another very common convention is to separate the bias term $b$ (equal to ${\theta}_{0}$) and the feature weights vector $\mathbf{w}$ (containing ${\theta}_{1}$ to $\theta_{n}$ ). In this case, no bias feature needs to be added to the input feature vectors, and the linear SVM’s decision function is equal to $\mathbf{w}^{T}\mathbf{x}+b={w}_{1}{x}_{1}+\dots+w_{n}x_{n}+b$. I will use this convention throughout the rest of this course.
 
 How about training? This requires finding the weights vector $\mathbf{w}$ and the bias term $b$ that make the street, or margin, as wide as possible while limiting the number of margin violations. Let’s start with the width of the street: to make it larger, we need to make $\mathbf{w}$ smaller. This may be easier to visualize in 2D, as shown in the following figure:
-![[HML_005/Pasted image 20241009144257.png|bscreen]]
+![[Pasted image 20241009144257.png|bscreen]]
 >A smaller weight vector results in a larger margin
 
 Let’s define the borders of the street as the points where the decision function is equal to $–1$ or $+1$. In the left plot the weight ${w}_{1}$ is $1$, so the points at which ${w}_{1}{x}_{1} = –1$ or $+1$ are ${x}_{1} = –1$ and $+1$: therefore the margin’s size is $2$. In the right plot the weight is $0.5$, so the points at which ${w}_{1}{x}_{1} = –1$ or $+1$ are $x = –2$ and $+2$: the margin’s size is $4$.
@@ -231,7 +231,7 @@ The hard margin and soft margin problems are both convex quadratic optimization 
 
 Using a QP solver is one way to train an SVM. Another is to use gradient descent to minimize the hinge loss or the **squared hinge loss**:
 
-![[HML_005/Pasted image 20241009171040.png|bscreen]]
+![[Pasted image 20241009171040.png|bscreen]]
 >The hinge loss (left) and the squared hinge loss (right)
 
 Given an instance of $\mathbf{x}$ of the positive class (i.e., with $t=1$), the loss is $0$ if the output $s$ of the decision function ($s=\mathbf{w}^{T}\mathbf{x}+b$) is greater than or equal to $1$. This happens when the instance is off the street and on the positive side. Given an instance on the negative side (i.e., with $t=-1$), the loss is $0$ if $s\leq-1$. This happens when the instance is off the street and on the negative side. The further away an instance is from the correct side of the margin, the higher the loss: it grows linearly for the hinge loss, and quadratically for the squared hinge loss. This makes the squared hinge loss more sensitive to outliers. However, if the dataset is clean, it tends to converge faster. By default, `LinearSVC` uses the squared hinge loss, while `SGDClassifier` uses the hinge loss. Both classes let you choose the loss by setting the `loss` hyperparameter to `"hinge"` or `"squared_hinge"`. The `SVC` class's optimization algorithm finds a similar solution as minimizing the hinge loss.

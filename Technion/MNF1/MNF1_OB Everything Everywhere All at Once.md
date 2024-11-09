@@ -50,7 +50,7 @@ The type of **cast structure** developed during solidification of metals and all
 
 ## Pure Metals
 The typical grain structure of pure metal that has solidified in a square mold is shown in the following figure:
-![[MNF1_001/Screenshot_20240530_100606_Samsung Notes.jpg|book|500]]
+![[Screenshot_20240530_100606_Samsung Notes.jpg|book|500]]
 >Schematic illustration of three cast structures of metals solidified in a square mold: $(a)$ pure metals, with preferred texture at the cool mold wall. Note in the middle of the figure that only favorable oriented grains grow away the mold surface; $(b)$ solid-solution alloys; and $(c)$ structure obtained by heterogeneous nucleation of grains.
 
 At the mold walls the metal cools rapidly (**chill zone**) because the walls are at ambient or slightly elevated temperature, and as a result, the casting develops a solidified **skin** (shell) of find **equiaxed grains**. The grains grow in the direction opposite to the heat transfer from the mold. Grains that have a favorable orientation, called **columnar grains**, grow preferentially.
@@ -58,24 +58,24 @@ At the mold walls the metal cools rapidly (**chill zone**) because the walls are
 ## Alloys
 Because pure metals have limited mechanical properties, they are often enhanced and modified by **alloying**. The vast majority of metals used in engineering applications are some form of an **alloy**, defined as two or more chemical elements, at least one of which is a metal.
 
-In [[Technion/IMT1/IMT1_004 דיאגרמת פאזות#דיאגרמת פאזות בינארית|Introduction to Material Engineering]] we have seen that solidification in alloys begins when the temprature drops below the **liquidus**, $T_{L}$, and is complete when it reaches the **solidus**, $T_{S}$. Within this temprature range, the alloy is in a mushy or pasty state, with **columnar dendrites**.
+In [[IMT1_004 דיאגרמת פאזות#דיאגרמת פאזות בינארית|Introduction to Material Engineering]] we have seen that solidification in alloys begins when the temprature drops below the **liquidus**, $T_{L}$, and is complete when it reaches the **solidus**, $T_{S}$. Within this temprature range, the alloy is in a mushy or pasty state, with **columnar dendrites**.
 
-![[MNF1_001/Screenshot_20240530_105030_Obsidian.jpg|book|500]]
+![[Screenshot_20240530_105030_Obsidian.jpg|book|500]]
 >Schematic illustration of alloy solidification and temperature distribution in the solidifying metal. Note the formation of dendrites in the semi-solid (mushy) zone.
 
 Note in the lower right of the figure the presence of liquid metal between the dendrite arms. Dendrites have three-dimensional arms and branches, which eventaully interlock, as shown in the next figure:
-![[MNF1_001/Screenshot_20240530_110033_Samsung Notes.jpg|book|500]]
+![[Screenshot_20240530_110033_Samsung Notes.jpg|book|500]]
 >$(a)$ Solidification patterns for gray cast iron in a $\pu{180mm}$ square casting. Note that after $\pu{11\min_{}}$ of cooling, dendrites reach other, but the casting is still mushy throught. It takes about two hours for this casting so solidify completely. $(b)$ Solidification of carbon steels in sand and chill (metal) molds. Note the difference in solidification patterns as the carbon content increases.
 
 Slow cooling rate (on the order of $\pu{e2K.s^{-1}}$) result in a coarse dendritic structures, with large spacing between the dendrite arms. for higher cooling rates (on the order of $\pu{e4K.s^{-1}}$ the structure becomes finer , with smaller dendrite arm spacing. For still higher cooling rate (on the order of $\pu{e6}$ to $\pu{e8K.s^{-1}}$), the structures developed are **amorphous** (meaning without any ordered crystalline structure.
 
 ## Structure-Property Relationships
 Because all castings must possess certain specific properties to meet design and service requirements, the relationships between the properties and the structures developed during solidification are important considerations.
-The compositions of dendrites and of the liquid metal in casting are given by the [[../IMT1/IMT1_004 דיאגרמת פאזות#דיאגרמת פאזות בינארית|phase diagram]] of the particular alloy. Under normal cooling rates typically encountered in practice, **cored dendrites** are formed, which have a surface composition that is different from that  at their centers. The surface has a higher concentration of alloying elements that at the core the dendrite, due to solute rejection from the core toward the surface during solidification of the dendrite (called **microsegregation**).
+The compositions of dendrites and of the liquid metal in casting are given by the [[IMT1_004 דיאגרמת פאזות#דיאגרמת פאזות בינארית|phase diagram]] of the particular alloy. Under normal cooling rates typically encountered in practice, **cored dendrites** are formed, which have a surface composition that is different from that  at their centers. The surface has a higher concentration of alloying elements that at the core the dendrite, due to solute rejection from the core toward the surface during solidification of the dendrite (called **microsegregation**).
 
 The darker shading in the interdendritic liquid near the dendrite shown in the following figure indicates that these regions have a higher solute concentration; consequently, microsegregation in these regions is much more pronounced than in others.
 
-![[MNF1_002/Screenshot_20240606_085311_OneDrive.jpg|500]]
+![[Screenshot_20240606_085311_OneDrive.jpg|500]]
 >Schematic illustration of three basic types of cast structures: (a) columnar dendritic; (b) equiaxed dendritic; and (c) equiaxed nondendritic.
 
 In contrast to microsegregation, **macrosegregation** involves differences in composition throughout the casting itself.
@@ -90,7 +90,7 @@ $$\text{Solidification time} = C\left( \dfrac{\text{Volume}}{\text{Surface area}
 Where $C$ is a constant the reflects the mold material and the metal properties. The parameter $n$ typically has a value between $1.5$ and $2$, and is usually taken as $2$. Thus, a large sphere solidifies and cools to ambient temperature at a much lower rate than does a smaller sphere, because the volume of a sphere is proportional to the cube of its diameter whereas the surface area is proportional to the square of its diameter. Similarly, it can be shown that molten metal in a cube-shaped mold will solidify faster than in a spherical mold of the same volume.
 The effects of mold geometry and elapsed time on skin thickness and its shape are shown in the following figure:
 
-![[MNF1_002/Screenshot_20240606_093802_OneDrive.jpg|book|400]]
+![[Screenshot_20240606_093802_OneDrive.jpg|book|400]]
 >Solidified skin on a steel casting; the remaining molten metal is poured out at the times indicated in the figure. Hollow ornamental and decorative objects are made by a process called slush casting, which is based on this principle.
 
 The unsolidified molten metal has been poured from the mold at different time intervals, ranging from $\pu{5s}$ to $\pu{6min}$.
@@ -99,7 +99,7 @@ Note that the skin thickness increases with elapsed time, and that the skin is t
 
 ## Shrinkage
 Metals generally shrink during solidification and cooling to room temperature:
-![[MNF1_002/Screenshot_20240606_102102_OneDrive.jpg|book|350]]
+![[Screenshot_20240606_102102_OneDrive.jpg|book|350]]
 
 *Shrinkage* in a casting causes dimensional changes and sometimes cracking and is a result of of the following phenomena:
 1. Contraction of the molten metal as it cools before it begins to solidify.
@@ -115,21 +115,21 @@ Casting processes are generally classified according to (a) mold materials; (b) 
 
 ## Sand casting
 
-![[MNF1_002/Screenshot_20240606_093158_OneDrive.jpg|book|400]]
+![[Screenshot_20240606_093158_OneDrive.jpg|book|400]]
 >Cross section of a typical sand mold showing various features.
 
 The **sand casting** process consists of (a) placing a pattern, having the shape of the desired casting, in sand to make an imprint; (b) incorporating a gating system; (c) filling the resuultin cavity with molten metal; (d) allowing the metal to solidify; (e) breaking away the sand mold; and (f) removing the casting and finishing it. Examples of parts made by sand casting are engine block, cylinder heads, machine-tool bases, and housings for pumps and motors.
 
-![[MNF1_002/Pasted image 20240606105100.png]]
+![[Pasted image 20240606105100.png]]
 >The *cope* and *drag* (top and bottom halves, respectively) of a sand mold, with cores in place on the drag.
 
 
-![[MNF1_002/Pasted image 20240606105156.png]]
+![[Pasted image 20240606105156.png]]
 >Two sets of castings (bronze and aluminum) from the above sand mold.
 
 ## Shell-Mold Casting
 **Shell-mold casting** has grown significantly because it can produce many types of castings with close dimensional tolerances, good surface finish, and at a low cost. In this process, a mounted pattern, made of a ferrous metal or aluminum, is heated to $175^{\circ}\pu{C}$ to $370^{\circ}\pu{C}$, coated with a parting agent, such as silicone, and clamped to a box or chamber containing a fine sand. The sand mixture is then turn over the heated pattern, coating it evenly. The assembly is often placed in an oven for a short period of time to complete the curing of the resin. The shell hardens around the pattern and is then removed, using built-in ejector pins. Two half-shells are made in this manner and are bonded or clamped together in preparation for pouring.
-![[MNF1_002/Screenshot_20240606_105846_OneDrive.jpg|book|500]]
+![[Screenshot_20240606_105846_OneDrive.jpg|book|500]]
 >Schematic illustration of the shell-molding process, also called the *dump-box* technique.
 
 The shells are light and thin, usually $5-10\,\pu{mm}$, and thus their thermal characteristics are different from those for thicker molds. The thin shells allow gases to escape during solidification of the metal. The mold walls are relativley smooth, resulting in low resistance to molten metal flow and producing castings with sharper corners, thinner sections, and smaller projections than are possible in green-sand molds.
@@ -139,14 +139,14 @@ Application include small mechanical parts requiring high precision, gear housin
 ### Lost Foam Process
 The *expendable-pattern casting process* uses a polystyrene pattern, which evaporates upon contact with the molten metal, to form a cavity for the casting.
 
-![[MNF1_002/Screenshot_20240606_115252_OneDrive.jpg|book|500]]
+![[Screenshot_20240606_115252_OneDrive.jpg|book|500]]
 >Schematic illustration of the expendable-pattern casting process, also known as lost-foam or evaporative-pattern casting.
 
 Typical parts made are aluminum engine blocks, cylinder heads, crank-shafts, brake components, manifolds, and machine bases.
 
 ## Lost Wax Process
 In the lost was process, typical parts made are mechanical components such as gears, cams, valves, and ratchets; The pattern is made by injecting semisolid or liquid wax or plastic into a metal die in the shape of the pattern, or is made through ad dive manufacturing methods. The pattern is then removed and dipped into a slurry of refractory material. After this initial coating has dried, the pattern is coated repeatedly to increase its thickness. The one-piece mold is dried in air and heated to a temperature of $90^{\circ}\pu{C}$ to $175^{\circ}\pu{C}$ for about $\pu{4hrs}$ (depending on the metal to be cast), to drive off the water crystallization (chemically combined water). After the metal has been poured and has solidified the mold is broken up and the casting is removed.
-![[MNF1_002/Screenshot_20240606_120422_Obsidian.jpg|book|500]]
+![[Screenshot_20240606_120422_Obsidian.jpg|book|500]]
 >Schematic illustration of investment casting (lost wax process).
 
 # Permanent-Mold Casting Processes
@@ -189,20 +189,20 @@ In this chapter we will go over metalworking processes where the workpiece is su
 
 **Open-die forging** typically involves hot working and large deformations using simple tools such as flat dies, rounded sections, punches, or saddles.
 A common process, known as **upsetting**, involves placing a solid cylindrical workpiece (the blank) between two flat dies (platens) and reducing its height.
-![[MNF1_003/Pasted image 20240624101435.png|book]]
+![[Pasted image 20240624101435.png|book]]
 >(a) Ideal deformation of a solid cylindrical specimen compressed between flat frictionless dies (platens), an operation known as upsetting. (b) Deformation in upsetting with friction at the die-workpiece interfaces. Note barreling of the billet caused by friction.
 
 Because the *volume of the cylinder remains constant* in plastic deformation, any reduction in its height causes an increase in diameter. The reduction in height is defined as
 $$\text{Reduction in height}=\dfrac{{h}_{o}-{h}_{1}}{{h}_{o}}\times 100\%$$
 where the subscript '$o$' stands for 'original'.
-The [[../SLD1/SLD1_007 מאמץ ועיבור#עיבור|engineering strain]] is
+The [[SLD1_007 מאמץ ועיבור#עיבור|engineering strain]] is
 $$e_{1}=\dfrac{{h}_{o}-{h}_{1}}{{h}_{o}}$$
-and the [[../SLD1/SLD1_007 מאמץ ועיבור#מאמץ ועיבור אמיתיים|true strain]]
+and the [[SLD1_007 מאמץ ועיבור#מאמץ ועיבור אמיתיים|true strain]]
 $${\varepsilon}_{1}=\ln\left( \dfrac{{h}_{o}}{{h}_{1}} \right)$$
 ### Barreling
 In actual practice the specimen develops a barrel shape during upsetting, as shown in the following figure:
 
-![[MNF1_003/Pasted image 20240624103652.png|book]]
+![[Pasted image 20240624103652.png|book]]
 >Schematic illustration of grid deformation in upsetting; (a) original grid pattern; (b) after deformation, without friction; and (c) after deformation, with friction. Such deformation patterns can be used to calculate the strains within a deforming body.
 
 Barreling is caused primarily by frictional forces that oppose the radially outward flow of the material at the die-workpiece interfaces.
@@ -213,7 +213,7 @@ $$F=S_{y}{A}_{1}$$
 where ${A}_{1}$ is the cross-sectional area and is obtained from volume constancy:
 $${A}_{1}=\dfrac{{A}_{o}{h}_{o}}{{h}_{1}}$$
 A typical true stress-true strain curve is shown in the following figure:
-![[MNF1_003/Pasted image 20240624104418.png|book]]
+![[Pasted image 20240624104418.png|book]]
 >(a) True stress–true strain curve in tension. Note that, unlike in an engineering stress–strain curve, the slope is always positive and the slope decreases with increasing strain. Although in the elastic range stress and strain are proportional, the total curve can be approximated by the power expression shown. On this curve, $S_{y}$ is the yield strength and $\sigma_{f}$ is the flow stress. (b) True stress–true strain curve plotted on a log-log scale.
 
 For convenience, such a curve is often approximated by the equation:
@@ -231,7 +231,7 @@ $$\boxed {
 
 We will sometimes assume the the material is rigid and perfectly plastic. For such material, once the stress reaches the yield strength $S_{y}$, it continues to undergo deformation at the same stress level; that is, there is no strain hardening - $\sigma_{f}=S_{y}$.
 
-![[MNF1_003/Pasted image 20240822174523.png|book]]
+![[Pasted image 20240822174523.png|book]]
 >Schematic illustration of a rigid, perfectly plastic, idealized stress–strain curves.
 
 >[!notes] Notes: 
@@ -242,10 +242,10 @@ There are several methods of analysis to theoretically determine stresses, strai
 
 The slab method is one of the earlier and simpler methods of analyzing the stresses and loads in bulk-deformation processes. This method requires the selection of an element in the workpiece and identification of all the normal and frictional stresses acting on that element.
 
-![[MNF1_003/Pasted image 20240624105311.png|book]]
+![[Pasted image 20240624105311.png|book]]
 >Stresses on an element in plane-strain compression (forging) between flat dies with friction. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 	
-After a lot of math, [[../SLD1/SLD1_002 שיווי משקל#שיווי משקל במרחב|balancing forces]], assuming $\sigma_{x}$ and $\sigma_{y}$ are [[../SLD2/SLD2_002 מישורים ראשיים#מאמצים מישוריים|principal stresses]], plastic deformation equations, [[../SLD2/SLD2_006 קריטריוני כניעה וכשל#קריטריון פון מיזס|distortion-energy criterion]], we get
+After a lot of math, [[SLD1_002 שיווי משקל#שיווי משקל במרחב|balancing forces]], assuming $\sigma_{x}$ and $\sigma_{y}$ are [[SLD2_002 מישורים ראשיים#מאמצים מישוריים|principal stresses]], plastic deformation equations, [[SLD2_006 קריטריוני כניעה וכשל#קריטריון פון מיזס|distortion-energy criterion]], we get
 $$\boxed {
 \sigma_{y}-\sigma_{x}=\dfrac{2}{\sqrt{ 3 }}S_{y}=S_{y}'
  }$$
@@ -260,7 +260,7 @@ p=S_{y}'e^{2\mu(a-x)/h}
 p_{\text{avg}}=S'_{y}\left( 1+\dfrac{\mu a}{h} \right)
  }$$
 
-![[MNF1_003/Pasted image 20240624110130.png|book]]
+![[Pasted image 20240624110130.png|book]]
 >Distribution of die pressure, in dimensionless form of $p /S_{y}'$, in plane-strain compression with sliding friction. Note that the pressure at the left and right boundaries is equal to the yield strength of the material in plane strain, $S_{y}'$.
 
  
@@ -275,7 +275,7 @@ $$\boxed{p_{\text{avg}}=S_{y}\left( 1+\dfrac{2\mu R}{3h} \right)}$$
 ## Impression-die forging
 In impression-die forging, the workpiece acquires the shape of the die cavity (hence the term impression) while it is being deformed between the two closing dies.
 
-![[MNF1_003/Pasted image 20240823111837.png|book]]
+![[Pasted image 20240823111837.png|book]]
 >Schematic illustrations of stages in impression-die forging. Note the formation of a flash, or excess material that subsequently has to be trimmed off.
 
 Forces in impression-die forging can be difficult to predict, because of the generally complex shapes involved and the fact that each location within the workpiece is typically subjected to different strains, strain rates, and temperatures, as well as variations in coefficient of friction along the die-workpiece contact area. Certain empirical pressure-multiplying factors, $K_{p}$, have been developed for use with the expression:
@@ -283,7 +283,7 @@ $$\boxed {
 F=K_{p}\sigma_{f}A
  }$$
  where $F$ is the forging force; $A$ is the projected area of the forging (including the flash), $\sigma_{f}$ is the flow stress of the material at the strain, the strain rate, and temperature to which the material is subjected. Typical values of $K_{p}$ are given in the following table:
- ![[MNF1_003/Pasted image 20240823112056.png|book]]
+ ![[Pasted image 20240823112056.png|book]]
  >Range of $K_{p}$ values for impression-die forging.
 
 # Rolling
@@ -292,16 +292,16 @@ Rolling, which accounts for about $90\%$ of all metals produced by metalworking 
 
 Rolling is first carried out at elevated temperatures (hot rolling), wherein the coarse-grained, brittle, and porous cast structure of the ingot or continuously cast metal is broken down into a wrought structure, with finer grain size and improved properties
 
-![[MNF1_003/Pasted image 20240624122903.png|book|500]]
+![[Pasted image 20240624122903.png|book|500]]
 >Changes in the grain structure of metals during hot rolling. This is an effective method to reduce grain size and refine the microstructure in metals, resulting in improved strength and good ductility.
 
 ## Mechanics of Flat Rolling
 The basic flat-rolling process is shown schematically in the following figure:
-![[MNF1_003/Pasted image 20240624124907.png|book]]
+![[Pasted image 20240624124907.png|book]]
 >Schematic illustration of the flat-rolling process (Note that the top roll has been removed for clarity).
 
 A strip of thickness ${h}_{o}$ enters the roll gap and is reduced to a thickness of $h_{f}$ by the powered rotating rolls at a surface speed $V_{r}$ of the roll. Rate of metal flow is constant, the velocity of the strip must increase as it moves through the roll gap. At the exit of the roll gap, the velocity of the strip is $V_{f}$.
-![[MNF1_003/Pasted image 20240624125102.png|book]]
+![[Pasted image 20240624125102.png|book]]
 >Relative velocity distribution between roll and strip surfaces. The arrows represent the frictional forces acting along the strip-roll interfaces. Note the difference in their direction in the left and right regions.
 
 At one location along the arc of contact, however, the two velocities are the same; for this reason, this point is called the **neutral point** , **neutral plane**, or **no-slip point**. To the left of this point, the roll moves faster than the workpiece, and to the right, the workpiece moves faster than the roll.
@@ -315,7 +315,7 @@ and is a measure of the relative velocities at the exit of the work rolls.
 ### Roll Pressure Distribution
 It can be noted that the deformation zone in the roll gap is subjected to a state of stress similar to that in [[#Slab Method of Analysis|upsetting]]. However, the calculation of forces and stress distribution in rolling is more involved because the contact surfaces are curved. Also, in cold rolling, the material at the exit is strain hardened, and thus the flow stress at the exit is higher than that at the entry.
 
-![[MNF1_003/Pasted image 20240624130725.png|book]]
+![[Pasted image 20240624130725.png|book]]
 >Stresses acting on an element in rolling: (a) entry zone and (b) exit zone.
 
 It can be shown, that similar to upsetting, we can assume that $p$ and $\sigma_{x}$ are principal stresses, and that the relationship between these two principal stresses and the flow stress, $\sigma_{f}$, of the material is given by:
@@ -332,7 +332,7 @@ The average pressure distribution is given by:
 $$\boxed{p_{\text{avg}}=\sigma_{f}'\left( 1+\dfrac{\mu L}{h_{o}+h_{f}} \right)}$$
 
 If we don't assume pressure distribution is symmetric, we get the following graph:
-![[MNF1_003/Pasted image 20240624131616.png|book]]
+![[Pasted image 20240624131616.png|book]]
 >Pressure distribution in the roll gap as a function of the coefficient of friction. Note that as friction increases, the neutral point shifts toward the entry. Without friction, the rolls will slip, and the neutral point shifts completely to the exit.
 
 ## Neutral Point Location
@@ -368,7 +368,7 @@ where $\omega$ is the roller's angular velocity, and $N$ is the roll speed in $\
 
 In the extrusion process  developed in the late 1700s for producing lead pipe, a billet is placed in a chamber and forced through a die opening by a ram. The die may be round or of various shapes. Typical parts made are railings for sliding doors, window frames, aluminum ladders, tubing, and structural and architectural shapes.
 
-![[MNF1_003/Pasted image 20240824134659.png|book|500]]
+![[Pasted image 20240824134659.png|book|500]]
 >Schematic illustration of the direct-extrusion process. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
 
 Two types of extrusions are direct and indirect extrusion:
@@ -379,7 +379,7 @@ Another important differentiation is between hot and cold extrusion processes:
 1. **Hot extrusion**: For metals and alloys that do not have sufficient ductility at room temperature, or in order to reduce the forces required, extrusion can be carried out at elevated temperatures.
 2. **Cold extrusion**: Developed in the 1940s, cold extrusion is a general term often denoting a combination of operations, such as a combination of direct and indirect extrusion and forging. The cold-extrusion process uses slugs cut from cold-finished or hot-rolled bars, wire, or plates.
 
-![[MNF1_003/Pasted image 20240824140122.png|book|200]]
+![[Pasted image 20240824140122.png|book|200]]
 >Two examples of cold extrusion; the arrows indicate the direction of metal flow during extrusion.
 
 ## Mechanics of Extrusion
@@ -387,7 +387,7 @@ Another important differentiation is between hot and cold extrusion processes:
 The force required for extrusion depends on (a) the strength of the billet material, (b) extrusion ratio, (c) friction between the billet, container, and die surfaces, and (d) process variables.
 
 
-![[MNF1_003/Pasted image 20240824135117.png|book]]
+![[Pasted image 20240824135117.png|book]]
 >Process variables in direct extrusion; the die angle, reduction in cross-section, extrusion speed, billet temperature, and lubrication all affect the extrusion pressure. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
 
 For a small die angle, $\alpha$, it has been shown that the extrusion force can then be approximated by:
@@ -405,7 +405,7 @@ Surface cracking also may occur at lower temperatures, attributed to periodic st
 
 **Internal Cracking**:
 The center of the extruded product can develop cracks, called center cracking, center-burst, arrowhead fracture, or chevron cracking:
-![[MNF1_003/Pasted image 20240824141248.png]]
+![[Pasted image 20240824141248.png]]
 >Chevron cracking (central burst) in extruded round steel bars; unless the products are inspected, such internal defects may remain undetected and later cause failure of the part in service. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
 
 
@@ -434,7 +434,7 @@ Turning is a fundamental machining process used in manufacturing to create cylin
 
 >Examples of machining operations that can be performed on a lathe and similar machine tools.
 
-![[MNF1_004/Pasted image 20240627203834.png|book]]
+![[Pasted image 20240627203834.png|book]]
 >(a) Schematic illustration of a turning operation, showing depth of cut, $d$, and feed, $f$. Cutting speed is the surface speed of the workpiece at the tool tip. (b) Forces acting on a cutting tool in turning. $F_{c}$ is the cutting force; $F_{t}$ is the thrust or feed force (in the direction of feed); and $F_{r}$ is the radial force that tends to push the tool away from the workpiece being machined. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 - **Cutting Speed $V_{c}$** is the speed at which the *outer surface* of the workpiece moves past the cutting tool, measured in meters per minute (m/min). It can be calculated as
@@ -482,18 +482,18 @@ where $F_c$ is the cutting force; $V_{c}$ is the cutting speed;
 ## Straight Turning and Facing
 **Straight turning** is a machining process performed on a lathe where a single-point cutting tool moves *parallel* to the axis of a rotating cylindrical workpiece. The primary purpose of straight turning is to reduce the diameter of the workpiece to achieve a desired dimension and surface finish.
 
-![[MNF1_004/Pasted image 20240627203436.png|book]]
+![[Pasted image 20240627203436.png|book]]
 
 
 **Facing** is a machining process also performed on a lathe, where the cutting tool moves *perpendicular* to the axis of a rotating cylindrical workpiece. The goal of facing is to produce a flat surface at the end of the workpiece.
-![[MNF1_004/Pasted image 20240627203443.png|book]]
+![[Pasted image 20240627203443.png|book]]
 
 ## Surface Finish and Surface Integrity
 
 Surface finish describes the geometric features of surfaces, whereas surface integrity pertains to properties that are strongly influenced by the type of surface produced.
 Built-up edge and depth of cut can adversely affect surface finish and integrity. A shallow depth of cut (or dull tool) can also compromise surface finish. A dull cutting tool has a larger radius along its edges, just as a dull pencil or knife does.
 
-![[MNF1_004/Pasted image 20240824130527.png|book]]
+![[Pasted image 20240824130527.png|book]]
 >Schematic illustration of a dull tool in orthogonal cutting (exaggerated). Note that at small depths of cut, the rake angle can effectively become negative. In such cases, the tool may simply ride over the workpiece surface, burnishing it, instead of cutting. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 If the radius is large in relation to the depth of cut, the tool will rub over the machined surface, generating frictional heat, inducing surface residual stresses, and causing surface damage, such as tearing and cracking.
@@ -502,7 +502,7 @@ In practice, the depth of cut should generally be greater than the radius on the
 **Feed marks**:
 In turning, as in some other machining operations, the cutting tool leaves a spiral profile (feed marks) on the machined surface as it moves across the workpiece.
 
-![[MNF1_004/Pasted image 20240824131343.png|book]]
+![[Pasted image 20240824131343.png|book]]
 >Terminology used in a turning operation on a lathe, where f is the feed (in mm/rev) and d is the depth of cut. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 As expected, the higher the feed, $f$, and the smaller the radius $R$, the more prominent are these marks.
@@ -529,7 +529,7 @@ Types of milling operations:
 
 ## Key Parameters and Equations
 
-![[MNF1_004/Pasted image 20240712182459.png|book]]
+![[Pasted image 20240712182459.png|book]]
 >(a) Illustration showing the difference between conventional milling and climb milling. (b) Slab-milling operation, showing width of cut, $w$; feed per tooth, $f$; chip depth of cut, $h$ and workpiece speed, $v$. (c) Schematic illustration of cutter travel distance, $l_{c}$, to reach full depth of cut. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 - **Cutting Speed $V_{c}$** is calculated in the same way as [[#Turning#Key Parameters and Equations|turning]]:
@@ -661,7 +661,7 @@ Fusion welding is a process where the workpieces are joined by melting their edg
 
 
 A typical fusion welded joint is shown in the following figure:
-![[MNF1_006/Pasted image 20240820182419.png|book|400]]
+![[Pasted image 20240820182419.png|book|400]]
 >Characteristics of a typical fusion weld zone in oxyfuel gas welding and arc welding processes [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 Three distinct zones are identified:
@@ -670,7 +670,7 @@ Three distinct zones are identified:
 3. The **fusion zone**, the region that melts during welding.
 
 After heat has been applied and the filler metal (if any) has been introduced into the weld zone, the molten weld begins to solidify and cool. The solidification process is similar to that in [[MNF1_002 Metal Casting#Cast Structures|casting]] and begins with the formation of columnar (dendritic) grains; These grains are relatively long and form parallel to heat flow. Because metals are much better heat conductors than the surrounding air, the grains lie parallel to the plane of the two plates or sheets being welded.
-![[MNF1_006/Pasted image 20240820183057.png|book]]
+![[Pasted image 20240820183057.png|book]]
 >Grain structure in (a) a deep weld and (b) a shallow weld. Note that the grains in the solidified weld metal are perpendicular to their interface with the base metal.
 
 The grains developed in a shallow weld are shown in the figure above (b).
@@ -683,24 +683,24 @@ Because of its past history of thermal cycling and the attendant microstructural
 1. **Porosity** in welds may be caused by (a) trapped gases that are released during melting of the weld zone but trapped during solidification of the weld zone; (b) chemical reactions that occur during welding; or (c) contaminants present in the weld zone.
 2. **Slag inclusions**. These inclusions may be trapped in the weld zone. If the shielding gases used are not effective, contamination from the environment may contribute to slag inclusions.
 3. **Incomplete fusion and incomplete penetration**. Incomplete fusion (lack of fusion) produces poor weld beads, such as those shown in the following figure:
-	![[MNF1_006/Pasted image 20240820184259.png|book]]
+	![[Pasted image 20240820184259.png|book]]
 	>Examples of various incomplete fusion in welds.
 	
 
 4. **Weld profile**. Weld profile is important not only because of its effects on the strength and appearance of the weld but also because it can indicate incomplete fusion or the presence of slag inclusions in multiplayer welds.
-	![[MNF1_006/Pasted image 20240820184802.png|book]]
+	![[Pasted image 20240820184802.png|book]]
 	>Examples of various defects in fusion welds.
 	
 5. **Cracks**. Cracks may develop at various locations and directions in the weld zone. Cracks generally result from a combination of the following factors:
 	- Temperature gradients, causing thermal stresses in the weld zone;
 	- Variations in the composition of the weld zone, causing different contractions;
 	
-	![[MNF1_006/Pasted image 20240820184945.png|book]]
+	![[Pasted image 20240820184945.png|book]]
 	>Types of cracks in welded joints. The cracks are caused by thermal stresses that develop during solidification and contraction of the weld bead and the welded structure.
 	
 	Cracks are classified as **hot cracks**, developing while the joint is still at elevated temperatures, and cold cracks, that develop after the weld metal has solidified.
 6. **Residual stresses**. Because of localized heating and cooling during welding, expansion and contraction of the weld area develop residual stresses.
-	![[MNF1_006/Pasted image 20240820185206.png|book]]
+	![[Pasted image 20240820185206.png|book]]
 	>Distortion and warping of parts after welding, caused by differential thermal expansion and contraction of different regions of the welded assembly. Warping can be reduced or eliminated by proper weld design and fixturing prior to welding.
 	
 
@@ -709,7 +709,7 @@ Because of its past history of thermal cycling and the attendant microstructural
 
 ## Heat Treating Ferrous Alloys
 
-![[MNF1_007/Pasted image 20240821095612.png|book]]
+![[Pasted image 20240821095612.png|book]]
 >(a) Austenite to pearlite transformation of iron-carbon alloys as a function of time and temperature. (b) Isothermal transformation diagram obtained from (a) for a transformation temperature of $675^{\circ}\pu{C}$. (c) Microstructures obtained for a eutectoid iron-carbon alloy as a function of cooling rate.
 
 **Tempered martensite**:
@@ -725,7 +725,7 @@ Quenching may be carried out in water, brine (saltwater), oils, molten salts, or
 
 Nonferrous alloys and some stainless steels generally cannot be heat treated by the techniques for ferrous alloys, because nonferrous alloys do not undergo phase transformations as steels do. Heat-treatable aluminum alloys, copper alloys, and martensitic and precipitation-hardening stainless steels are hardened and strengthened by **precipitation hardening**. This is a technique in which small particles of a different phase (called **precipitates**) are uniformly dispersed in the matrix of the original phase. Precipitates form because the solid solubility of one element (one component of the alloy) in the other is exceeded.
 
-![[MNF1_007/Pasted image 20240821092338.png|book]]
+![[Pasted image 20240821092338.png|book]]
 >(a) Phase diagram for the aluminum-copper alloy system. (b) Various microstructures obtained during the age-hardening process [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 **Solution treatment**:
@@ -771,18 +771,18 @@ Several processes are used for surface treatments, based on mechanical, chemical
 
 
 
-![[MNF1_008/Pasted image 20240821140028.png|book]]
+![[Pasted image 20240821140028.png|book]]
 >Examples of roller burnishing of (a) the fillet of a stepped shaft, (b) an internal conical surface, and (c) a flat surface [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 
-![[MNF1_008/Pasted image 20240821141509.png|book]]
+![[Pasted image 20240821141509.png|book]]
 >Schematic illustration of thermal wire spraying [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 
-![[MNF1_008/Pasted image 20240821142036.png|book]]
+![[Pasted image 20240821142036.png|book]]
 >Schematic illustration of the chemical vapor deposition process [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
-![[MNF1_008/Pasted image 20240821142827.png|book]]
+![[Pasted image 20240821142827.png|book]]
 >(a) Schematic illustration of the electroplating process. (b) Examples of electroplated parts. (Shutterstock/Osipov Petr) [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 
@@ -796,13 +796,13 @@ Several processes are used for surface treatments, based on mechanical, chemical
 ## Production of Metal Powders
 Metal powders can be produced by several methods, the choice of which depends on the particular requirements of the end product. Sources for metals generally are their bulk form, ores, salts, and other compounds. These forms are then produced, by various methods, into powders.
 
-![[MNF1_009/Pasted image 20240821170000.png]]
+![[Pasted image 20240821170000.png]]
 
-![[MNF1_009/Pasted image 20240821170101.png]]
+![[Pasted image 20240821170101.png]]
 >(top) Scanning-electron microscope image of iron powder particles made by atomization. (bottom) Nickelbased superalloy (Udimet 700) powder particles made by the rotating electrode process; Source: P.G Nash. 
 
 
-![[MNF1_009/Pasted image 20240821170220.png|book]]
+![[Pasted image 20240821170220.png|book]]
 >Particle shapes and characteristics of metal powders and the processes by which they are produced. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 # Compaction of Metal Powders
@@ -817,7 +817,7 @@ Density is relevant during three different stages in PM processing: (a) as loose
 
 The particle shape, average size, and size distribution all affect the packing density of loose powder. An important factor in density is the size distribution of the particles. If all of the particles are of the same size, there will always be some porosity when packed together. Theoretically, the porosity is at least $24\%$ by volume. (Observe, for example, a box filled with small balls; there are always open spaces between the individual balls.) Introducing smaller particles into the powder mix will fill the spaces between the larger powder particles, and thus result in a higher density of the compact.
 
-![[MNF1_009/Pasted image 20240821215355.png|book]]
+![[Pasted image 20240821215355.png|book]]
 >Compaction of metal powders: at low pressures, the powder rearranges without deforming, leading to a high rate of density increase. Once the powders are more closely packed, plastic deformation occurs at their interfaces, leading to further density increases but at lower rates. At very high densities, the powder behaves like a bulk solid.
 
 ## Isostatic Pressing
@@ -836,7 +836,7 @@ In **Pressure-less compaction**, the die is filled with metal powder by gravity,
 
 Sintering mechanisms are complex and depend on the composition of the metal particles as well as the processing parameters. As the temperature increases, two adjacent particles begin to form or strengthen a bond by **diffusion** (solid-state bonding), as shown in the following figure:
 
-![[MNF1_009/Pasted image 20240821172718.png|book]]
+![[Pasted image 20240821172718.png|book]]
 >Schematic illustration of two basic mechanisms in sintering metal powders: (a) solid-state material transport and (b) liquid-phase material transport. $R$ is the particle radius, $r$ is the neck radius, and $\rho$ is the neck profile radius.
 
 As a result, the strength, density, ductility, and thermal and electrical conductivities of the compact increase. At the same time, however, the compact shrinks, hence allowances should be made for shrinkage, as is done in casting.
@@ -847,7 +847,7 @@ Ceramics are compounds of metallic and nonmetallic elements. The term ceramics r
 Some properties of ceramics are significantly better than those of metals, particularly their hardness and thermal and electrical resistance. Ceramics are available as single crystal or in polycrystalline form.
 Grain size has a major influence on the properties of ceramics; the finer the size, the higher is the strength and the toughness (**fine ceramics**).
 
-![[MNF1_009/Pasted image 20240821164750.png|book]]
+![[Pasted image 20240821164750.png|book]]
 >The crystal structure of kaolinite, commonly known as clay. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 ## General Properties and Applications of Ceramics
@@ -863,7 +863,7 @@ $$\boxed {
 where $P$ is the volume fraction of pores in the solid; $\sigma_{\text{UTS},0}$ is the tensile strength at zero porosity; and the exponent $n$ ranges between $4$ and $7$.
 
 **Modulus of elasticity**:
-The [[../SLD1/SLD1_007 מאמץ ועיבור#מודול יאנג|modulus of elasticity]] of polycrystalline ceramic is affected by porosity, as given by:
+The [[SLD1_007 מאמץ ועיבור#מודול יאנג|modulus of elasticity]] of polycrystalline ceramic is affected by porosity, as given by:
 $$\boxed {
 E\approx {E}_{0}(1-1.P+0.9P^{2})
  }$$
@@ -902,7 +902,7 @@ The diffusion processes in Electron Beam Melting (EBM) and Selective Laser Melti
 >[!theorem] Theorem: 
 > The diffusion coefficient $D$ is temperature-dependent and follows the **Arrhenius relationship**:
 > $$D={D}_{0}\exp\left( -\dfrac{E_{a}}{RT} \right)$$
-> where ${D}_{0}$ is called the pre-exponential factor (related to the material); $E_{a}$ is the **activation energy** for diffusion (also related to the material); $R$ is the [[../THE1/THE1_002 חישוב תכונות מערכת#קבוע הגז האוניברסלי|universal gas constant]]; and $T$ is the absolute temperature (in Kelvin).
+> where ${D}_{0}$ is called the pre-exponential factor (related to the material); $E_{a}$ is the **activation energy** for diffusion (also related to the material); $R$ is the [[THE1_002 חישוב תכונות מערכת#קבוע הגז האוניברסלי|universal gas constant]]; and $T$ is the absolute temperature (in Kelvin).
 
 This equation shows that diffusion rates increase exponentially with temperature, which is particularly relevant in high-temperature processes like EBM and SLM.
 

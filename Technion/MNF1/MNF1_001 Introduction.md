@@ -18,7 +18,7 @@ Manufacturing must be responsive to several demands and trends:
 7. A manufacturer must work with the customer for timely feedback for **continuous product improvement**.
 
 # Product Design
-![[MNF1_001/Screenshot_20240530_091626_Samsung Notes.jpg|book|200]]
+![[Screenshot_20240530_091626_Samsung Notes.jpg|book|200]]
 >General product flow, from market analysis to selling the product and depicting concurrent engineering.
 
 **Product design** is a critical activity because it has been estimated that, generally, $70$ to $80\%$ of the cost of product development and manufacture, as well environmental impact and energy consumption, are determined at the *initial* stages of product design.
@@ -27,7 +27,7 @@ Manufacturing must be responsive to several demands and trends:
 
 Design and manufacturing should never be viewed as separate disciplines and activities. Each part or component of a product must be designed so that it not only meets design requirements and specifications but also so it can be manufactured economically and with relative ease. This broad concept is called **design for manufacture** (DFM).
 
-![[MNF1_001/Screenshot_20240530_093819_Samsung Notes.jpg|book|250]]
+![[Screenshot_20240530_093819_Samsung Notes.jpg|book|250]]
 >Redesign of parts to facilitate automated assembly.
 
 # Selecting materials
@@ -41,12 +41,12 @@ An increasingly wide variety of materials is now available, each having its own 
 ## Material substitution
 As new or improved materials continue to be developed, there are improtant trends in their selection and application. For example, by demonstrating steel's technical and economics advantages, steel producers are countering the increased use of plastics in automobiles and aluminum in beverage cans. Likewise, aluminum producers are countering the use of various materials in automobiles.
 
-![[MNF1_001/Screenshot_20240530_095101_Samsung Notes.jpg]]
+![[Screenshot_20240530_095101_Samsung Notes.jpg]]
 >$(a)$ The C7 Corvette sports car, using an all-aluminum chassis which is $\pu{45kg}$ lighter and $57\%$ stiffer than the C6 Corvette; $(b)$ The aluminum body structure, showing various components made by extrusion, sheet forming and casting processes.
 
 # Selecting Manufacturing Processes
 A wide range of manufacturing processes are available to produce a wide variety of parts, shapes, and sizes. Note also that there is often more than one method of manufacturing a particular part from a given material.
 
-![[MNF1_001/Screenshot_20240530_095641_Samsung Notes.jpg|book]]
+![[Screenshot_20240530_095641_Samsung Notes.jpg|book]]
 >Various methods of making a simple part: $(a)$ casting or powder metallurgy; $(b)$ forging or upsetting; $(c)$ extrusion; $(d)$ machining; and $(e)$ joining two pieces.
 

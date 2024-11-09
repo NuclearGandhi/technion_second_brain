@@ -101,5 +101,5 @@ $$\begin{gathered}
 \lvert z \rvert=1\iff \mathrm{Re}(s)=0
 \end{gathered}$$
 i.e:
-![[LSY1_010/Pasted image 20240910190604.png|bookhue|500]]
+![[Pasted image 20240910190604.png|bookhue|500]]
 >Demonstration of the Bilinear transformation.

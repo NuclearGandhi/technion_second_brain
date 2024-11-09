@@ -27,7 +27,7 @@ We are now witnessing yet another wave of interest in ANNs. Will this wave die o
 ## Logical Computations with Neurons
 McCulloch and Pitts proposed a very simple model of the biological neuron, which later became known as an **artificial neuron**: it has one or more binary (on/off) inputs and one binary output. The artificial neuron activates its output when more than a certain number of its inputs are active. In their paper, McCulloch and Pitts showed that even with such a simplified model it is possible to build a network of artificial neurons that can compute any logical proposition you want. To see how such a network works, let’s build a few ANNs that perform various logical computations, assuming that a neuron is activated when at least two of its input connections are active.
 
-![[HML_010/{B7F509AC-1E2B-47A3-AE98-7197C2B9A2B5}.png|bookhue|500]]
+![[{B7F509AC-1E2B-47A3-AE98-7197C2B9A2B5}.png|bookhue|500]]
 >ANNs performing simple logical computations. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Let’s see what these networks do:
@@ -38,12 +38,12 @@ Let’s see what these networks do:
 ## The Perceptron
 The **perceptron** is one of the simplest ANN architectures, invented in 1957 by Frank Rosenblatt. It is based on a slightly different artificial neuron called a **threshold logic unit (TLU)**, or sometimes a **linear threshold unit (LTU)**.
 
-![[HML_010/{8ED4D1B0-03FF-41F0-A38D-B868608E5908}.png|bookhue|500]]
+![[{8ED4D1B0-03FF-41F0-A38D-B868608E5908}.png|bookhue|500]]
 >LU: an artificial neuron that computes a weighted sum of its inputs $\mathbf{w}^{T}\mathbf{x}$, plus a bias term $b$, then applies a step function.
 
 The inputs and output are numbers (instead of binary on/off values), and each input connection is associated with a weight. The TLU first computes a linear function of its inputs:
 $$z={w}_{1}{x}_{1}+{w}_{2}{x}_{2}+\dots +w_{n}x_{n}+b=\mathbf{w}^{T}\mathbf{x}+b$$
-Then it applies a [[../../Technion/LSY1/LSY1_002 Signals and Convolutions#Standard signals|step function]] to the result:
+Then it applies a [[LSY1_002 Signals and Convolutions#Standard signals|step function]] to the result:
 $$h_{\mathbf{w}}(\mathbf{x})=\mathrm{step}(\mathbf{z})$$
 So it’s almost like [[HML_004 Training Models#Logistic Regression|logistic regression]], except it uses a step function instead of the logistic function. Just like in logistic regression, the model parameters are the input weights $\mathbf{w}$ and the bias term $b$.
 
@@ -59,7 +59,7 @@ $$\mathrm{heaviside}(z)=\begin{cases}
 A single TLU can be used for simple linear binary classification. It computes a linear function of its inputs, and if the result exceeds a threshold, it outputs the positive class. Otherwise, it outputs the negative class. This may remind you of logistic regression or linear SVM classification. You could, for example, use a single TLU to classify iris flowers based on petal length and width. Training such a TLU would require finding the right values for ${w}_{1}$, ${w}_{2}$ and $b$ (the training algorithm is discussed shortly).
 
 A perceptron is composed of one or more TLUs organized in a single layer, where every TLU is connected to every input. Such a layer is called a **fully connected layer**, or a **dense layer**. The inputs constitute the **input layer**. And since the layer of TLUs produces the final outputs, it is called the **output layer**. For example, a perceptron with two inputs and three outputs is represented in the following figure:
-![[HML_010/{B4CCDC49-EF32-4A18-B552-FF2B989CBF9B}.png|bookhue|450]]
+![[{B4CCDC49-EF32-4A18-B552-FF2B989CBF9B}.png|bookhue|450]]
 >Architecture of a perceptron with two inputs and three output neurons. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 This perceptron can classify instances simultaneously into three different binary classes, which makes it a multilabel classifier. It may also be used for multiclass classification.
@@ -108,7 +108,7 @@ y_pred = per_clf.predict(X_new) # predicts True and False
 You may have noticed that the perceptron learning algorithm strongly resembles [[HML_004 Training Models#Stochastic Gradient Descent|stochastic gradient descent]]. In fact, Scikit-Learn’s Perceptron class is equivalent to using an `SGDClassifier` with the following hyperparameters: `loss="perceptron"`, `learning_rate="constant"`, `eta0=1` (the learning rate), and `penalty=None` (no regularization).
 
 In their 1969 monograph *Perceptrons*, Marvin Minsky and Seymour Papert highlighted a number of serious weaknesses of perceptrons- in particular, the fact that they are incapable of solving some trivial problems (e.g., the exclusive OR (XOR) classification problem; see the left side of the following figure:
-![[HML_010/{ACEAD8B4-6337-47FC-8A12-684C9F084F0C}.png|bookhue|500]]
+![[{ACEAD8B4-6337-47FC-8A12-684C9F084F0C}.png|bookhue|500]]
 >XOR classification problem and an MLP that solves it. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 This is true of any other linear classification model (such as logistic regression classifiers), but researchers had expected much more from perceptrons, and some were so disappointed that they dropped neural networks altogether in favor of higher-level problems such as logic, problem solving, and search. The lack of practical applications also didn’t help.
@@ -117,7 +117,7 @@ It turns out that some of the limitations of perceptrons can be eliminated by st
 
 ## The Multilayer Perceptron and Backpropagation
 An MLP is composed of one input layer, one or more layers of TLUs called *hidden layers*, and one final layer of TLUs called the output layer:
-![[HML_010/{B1499862-AD4D-468E-A186-B5935D7DE708}.png|bookhue|450]]
+![[{B1499862-AD4D-468E-A186-B5935D7DE708}.png|bookhue|450]]
 >Architecture of a multilayer perceptron with two inputs, one hidden layer of four neurons, and three output neurons.
 
 The layers close to the input layer are usually called the lower layers, and the ones close to the outputs are usually called the upper layers.
@@ -137,7 +137,7 @@ Let’s run through how backpropagation works again in a bit more detail:
 - It handles one mini-batch at a time (for example, containing 32 instances each), and it goes through the full training set multiple times. Each pass is called an **epoch**.
 - Each mini-batch enters the network through the input layer. The algorithm then computes the output of all the neurons in the first hidden layer, for every instance in the mini-batch. The result is passed on to the next layer, its output is computed and passed to the next layer, and so on until we get the output of the last layer, the output layer. This is the forward pass: it is exactly like making predictions, except all intermediate results are preserved since they are needed for the backward pass.
 - Next, the algorithm measures the network’s output error (i.e., it uses a loss function that compares the desired output and the actual output of the network, and returns some measure of the error).
-- Then it computes how much each output bias and each connection to the output layer contributed to the error. This is done analytically by applying the [[../../Technion/CAL2/CAL2_006 נגזרות של פונקציות בשני משתנים|chain rule]] (perhaps the most fundamental rule in calculus), which makes this step fast and precise.
+- Then it computes how much each output bias and each connection to the output layer contributed to the error. This is done analytically by applying the [[CAL2_006 נגזרות של פונקציות בשני משתנים|chain rule]] (perhaps the most fundamental rule in calculus), which makes this step fast and precise.
 - The algorithm then measures how much of these error contributions came from each connection in the layer below, again using the chain rule, working backward until it reaches the input layer. As explained earlier, this reverse pass efficiently measures the error gradient across all the connection weights and biases in the network by propagating the error gradient backward through the network (hence the name of the algorithm).
 - Finally, the algorithm performs a gradient descent step to tweak all the connection weights in the network, using the error gradients it just computed.
 
@@ -150,7 +150,7 @@ In short, backpropagation makes predictions for a mini-batch (forward pass), mea
 In order for backprop to work properly, Rumelhart and his colleagues made a key change to the MLP’s architecture: they replaced the step function with the **logistic function**
 $$\sigma(z)=\dfrac{1}{1+e^{-z}}$$
 also called the sigmoid function. This was essential because the step function contains only flat segments, so there is no gradient to work with (gradient descent cannot move on a flat surface), while the sigmoid function has a well-defined nonzero derivative everywhere, allowing gradient descent to make some progress at every step. In fact, the backpropagation algorithm works well with many other activation functions, not just the sigmoid function. Here are two other popular choices:
-![[HML_010/Pasted image 20241026202654.png|bscreen]]
+![[Pasted image 20241026202654.png|bscreen]]
 >Activation functions (left) and their derivatives (right).
 
 Why do we need activation functions in the first place? Well, if you chain several linear transformations, all you get is a linear transformation. For example, if $f(x) = 2x + 3$ and $g(x) = 5x - 1$, then chaining these two linear functions gives you another linear function: $f(g(x)) = 2(5x - 1) + 3 = 10x + 1$. So if you don’t have some nonlinearity between layers, then even a deep stack of layers is equivalent to a single layer, and you can’t solve very complex problems with that. Conversely, a large enough DNN with nonlinear activations can theoretically approximate any continuous function.

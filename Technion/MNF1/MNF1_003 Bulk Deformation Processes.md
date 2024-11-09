@@ -25,20 +25,20 @@ In this chapter we will go over metalworking processes where the workpiece is su
 
 **Open-die forging** typically involves hot working and large deformations using simple tools such as flat dies, rounded sections, punches, or saddles.
 A common process, known as **upsetting**, involves placing a solid cylindrical workpiece (the blank) between two flat dies (platens) and reducing its height.
-![[MNF1_003/Pasted image 20240624101435.png|book]]
+![[Pasted image 20240624101435.png|book]]
 >(a) Ideal deformation of a solid cylindrical specimen compressed between flat frictionless dies (platens), an operation known as upsetting. (b) Deformation in upsetting with friction at the die-workpiece interfaces. Note barreling of the billet caused by friction.
 
 Because the *volume of the cylinder remains constant* in plastic deformation, any reduction in its height causes an increase in diameter. The reduction in height is defined as
 $$\text{Reduction in height}=\dfrac{{h}_{o}-{h}_{1}}{{h}_{o}}\times 100\%$$
 where the subscript '$o$' stands for 'original'.
-The [[../SLD1/SLD1_007 מאמץ ועיבור#עיבור|engineering strain]] is
+The [[SLD1_007 מאמץ ועיבור#עיבור|engineering strain]] is
 $$e_{1}=\dfrac{{h}_{o}-{h}_{1}}{{h}_{o}}$$
-and the [[../SLD1/SLD1_007 מאמץ ועיבור#מאמץ ועיבור אמיתיים|true strain]]
+and the [[SLD1_007 מאמץ ועיבור#מאמץ ועיבור אמיתיים|true strain]]
 $${\varepsilon}_{1}=\ln\left( \dfrac{{h}_{o}}{{h}_{1}} \right)$$
 ### Barreling
 In actual practice the specimen develops a barrel shape during upsetting, as shown in the following figure:
 
-![[MNF1_003/Pasted image 20240624103652.png|book]]
+![[Pasted image 20240624103652.png|book]]
 >Schematic illustration of grid deformation in upsetting; (a) original grid pattern; (b) after deformation, without friction; and (c) after deformation, with friction. Such deformation patterns can be used to calculate the strains within a deforming body.
 
 Barreling is caused primarily by frictional forces that oppose the radially outward flow of the material at the die-workpiece interfaces.
@@ -49,7 +49,7 @@ $$F=S_{y}{A}_{1}$$
 where ${A}_{1}$ is the cross-sectional area and is obtained from volume constancy:
 $${A}_{1}=\dfrac{{A}_{o}{h}_{o}}{{h}_{1}}$$
 A typical true stress-true strain curve is shown in the following figure:
-![[MNF1_003/Pasted image 20240624104418.png|book]]
+![[Pasted image 20240624104418.png|book]]
 >(a) True stress–true strain curve in tension. Note that, unlike in an engineering stress–strain curve, the slope is always positive and the slope decreases with increasing strain. Although in the elastic range stress and strain are proportional, the total curve can be approximated by the power expression shown. On this curve, $S_{y}$ is the yield strength and $\sigma_{f}$ is the flow stress. (b) True stress–true strain curve plotted on a log-log scale.
 
 For convenience, such a curve is often approximated by the equation:
@@ -67,7 +67,7 @@ $$\boxed {
 
 We will sometimes assume the the material is rigid and perfectly plastic. For such material, once the stress reaches the yield strength $S_{y}$, it continues to undergo deformation at the same stress level; that is, there is no strain hardening - $\sigma_{f}=S_{y}$.
 
-![[MNF1_003/Pasted image 20240822174523.png|book]]
+![[Pasted image 20240822174523.png|book]]
 >Schematic illustration of a rigid, perfectly plastic, idealized stress–strain curves.
 
 >[!notes] Notes: 
@@ -78,10 +78,10 @@ There are several methods of analysis to theoretically determine stresses, strai
 
 The slab method is one of the earlier and simpler methods of analyzing the stresses and loads in bulk-deformation processes. This method requires the selection of an element in the workpiece and identification of all the normal and frictional stresses acting on that element.
 
-![[MNF1_003/Pasted image 20240624105311.png|book]]
+![[Pasted image 20240624105311.png|book]]
 >Stresses on an element in plane-strain compression (forging) between flat dies with friction. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 	
-After a lot of math, [[../SLD1/SLD1_002 שיווי משקל#שיווי משקל במרחב|balancing forces]], assuming $\sigma_{x}$ and $\sigma_{y}$ are [[../SLD2/SLD2_002 מישורים ראשיים#מאמצים מישוריים|principal stresses]], plastic deformation equations, [[../SLD2/SLD2_006 קריטריוני כניעה וכשל#קריטריון פון מיזס|distortion-energy criterion]], we get
+After a lot of math, [[SLD1_002 שיווי משקל#שיווי משקל במרחב|balancing forces]], assuming $\sigma_{x}$ and $\sigma_{y}$ are [[SLD2_002 מישורים ראשיים#מאמצים מישוריים|principal stresses]], plastic deformation equations, [[SLD2_006 קריטריוני כניעה וכשל#קריטריון פון מיזס|distortion-energy criterion]], we get
 $$\boxed {
 \sigma_{y}-\sigma_{x}=\dfrac{2}{\sqrt{ 3 }}S_{y}=S_{y}'
  }$$
@@ -98,7 +98,7 @@ p=S_{y}'e^{2\mu(a-x)/h}
 p_{\text{avg}}=S'_{y}\left( 1+\dfrac{\mu a}{h} \right)
  }$$
 
-![[MNF1_003/Pasted image 20240624110130.png|book]]
+![[Pasted image 20240624110130.png|book]]
 >Distribution of die pressure, in dimensionless form of $p /S_{y}'$, in plane-strain compression with sliding friction. Note that the pressure at the left and right boundaries is equal to the yield strength of the material in plane strain, $S_{y}'$.
 
  
@@ -137,7 +137,7 @@ $$\boxed{p_{\text{avg}}=S_{y}\left( 1+\dfrac{2\mu R}{3h} \right)}$$
 ## Impression-die forging
 In impression-die forging, the workpiece acquires the shape of the die cavity (hence the term impression) while it is being deformed between the two closing dies.
 
-![[MNF1_003/Pasted image 20240823111837.png|book]]
+![[Pasted image 20240823111837.png|book]]
 >Schematic illustrations of stages in impression-die forging. Note the formation of a flash, or excess material that subsequently has to be trimmed off.
 
 Forces in impression-die forging can be difficult to predict, because of the generally complex shapes involved and the fact that each location within the workpiece is typically subjected to different strains, strain rates, and temperatures, as well as variations in coefficient of friction along the die-workpiece contact area. Certain empirical pressure-multiplying factors, $K_{p}$, have been developed for use with the expression:
@@ -145,29 +145,29 @@ $$\boxed {
 F=K_{p}\sigma_{f}A
  }$$
  where $F$ is the forging force; $A$ is the projected area of the forging (including the flash), $\sigma_{f}$ is the flow stress of the material at the strain, the strain rate, and temperature to which the material is subjected. Typical values of $K_{p}$ are given in the following table:
- ![[MNF1_003/Pasted image 20240823112056.png|book]]
+ ![[Pasted image 20240823112056.png|book]]
  >Range of $K_{p}$ values for impression-die forging.
 
 # Rolling
 **Rolling** is the process of reducing the thickness or changing the cross section of a long workpiece by compressive forces applied through a set of rolls.
 Rolling, which accounts for about $90\%$ of all metals produced by metalworking operations, was first developed in the late 1500s. The basic rolling operation is called flat rolling, or simply rolling, where the rolled products are flat plate and sheet.
 
-![[MNF1_003/Pasted image 20240624112348.png|book]]
+![[Pasted image 20240624112348.png|book]]
 >Schematic outline of various flat-rolling and shape-rolling operations.
 
 
 Rolling is first carried out at elevated temperatures (hot rolling), wherein the coarse-grained, brittle, and porous cast structure of the ingot or continuously cast metal is broken down into a wrought structure, with finer grain size and improved properties
 
-![[MNF1_003/Pasted image 20240624122903.png|book]]
+![[Pasted image 20240624122903.png|book]]
 >Changes in the grain structure of metals during hot rolling. This is an effective method to reduce grain size and refine the microstructure in metals, resulting in improved strength and good ductility.
 
 ## Mechanics of Flat Rolling
 The basic flat-rolling process is shown schematically in the following figure:
-![[MNF1_003/Pasted image 20240624124907.png|book]]
+![[Pasted image 20240624124907.png|book]]
 >Schematic illustration of the flat-rolling process (Note that the top roll has been removed for clarity).
 
 A strip of thickness ${h}_{o}$ enters the roll gap and is reduced to a thickness of $h_{f}$ by the powered rotating rolls at a surface speed $V_{r}$ of the roll. Rate of metal flow is constant, the velocity of the strip must increase as it moves through the roll gap. At the exit of the roll gap, the velocity of the strip is $V_{f}$.
-![[MNF1_003/Pasted image 20240624125102.png|book]]
+![[Pasted image 20240624125102.png|book]]
 >Relative velocity distribution between roll and strip surfaces. The arrows represent the frictional forces acting along the strip-roll interfaces. Note the difference in their direction in the left and right regions.
 
 At one location along the arc of contact, however, the two velocities are the same; for this reason, this point is called the **neutral point** , **neutral plane**, or **no-slip point**. To the left of this point, the roll moves faster than the workpiece, and to the right, the workpiece moves faster than the roll.
@@ -181,7 +181,7 @@ and is a measure of the relative velocities at the exit of the work rolls.
 ### Roll Pressure Distribution
 It can be noted that the deformation zone in the roll gap is subjected to a state of stress similar to that in [[#Slab Method of Analysis|upsetting]]. However, the calculation of forces and stress distribution in rolling is more involved because the contact surfaces are curved. Also, in cold rolling, the material at the exit is strain hardened, and thus the flow stress at the exit is higher than that at the entry.
 
-![[MNF1_003/Pasted image 20240624130725.png|book]]
+![[Pasted image 20240624130725.png|book]]
 >Stresses acting on an element in rolling: (a) entry zone and (b) exit zone.
 
 It can be shown, that similar to upsetting, we can assume that $p$ and $\sigma_{x}$ are principal stresses, and that the relationship between these two principal stresses and the flow stress, $\sigma_{f}$, of the material is given by:
@@ -198,7 +198,7 @@ The average pressure distribution is given by:
 $$\boxed{p_{\text{avg}}=\sigma_{f}'\left( 1+\dfrac{\mu L}{h_{o}+h_{f}} \right)}$$
 
 If we don't assume pressure distribution is symmetric, we get the following graph:
-![[MNF1_003/Pasted image 20240624131616.png|book]]
+![[Pasted image 20240624131616.png|book]]
 >Pressure distribution in the roll gap as a function of the coefficient of friction. Note that as friction increases, the neutral point shifts toward the entry. Without friction, the rolls will slip, and the neutral point shifts completely to the exit.
 
 ## Neutral Point Location
@@ -254,7 +254,7 @@ where $\omega$ is the roller's angular velocity, and $N$ is the roll speed in $\
 
 In the extrusion process  developed in the late 1700s for producing lead pipe, a billet is placed in a chamber and forced through a die opening by a ram. The die may be round or of various shapes. Typical parts made are railings for sliding doors, window frames, aluminum ladders, tubing, and structural and architectural shapes.
 
-![[MNF1_003/Pasted image 20240824134659.png|book]]
+![[Pasted image 20240824134659.png|book]]
 >Schematic illustration of the direct-extrusion process. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
 
 Two types of extrusions are direct and indirect extrusion:
@@ -265,7 +265,7 @@ Another important differentiation is between hot and cold extrusion processes:
 1. **Hot extrusion**: For metals and alloys that do not have sufficient ductility at room temperature, or in order to reduce the forces required, extrusion can be carried out at elevated temperatures.
 2. **Cold extrusion**: Developed in the 1940s, cold extrusion is a general term often denoting a combination of operations, such as a combination of direct and indirect extrusion and forging. The cold-extrusion process uses slugs cut from cold-finished or hot-rolled bars, wire, or plates.
 
-![[MNF1_003/Pasted image 20240824140122.png|book]]
+![[Pasted image 20240824140122.png|book]]
 >Two examples of cold extrusion; the arrows indicate the direction of metal flow during extrusion.
 
 ## Mechanics of Extrusion
@@ -273,7 +273,7 @@ Another important differentiation is between hot and cold extrusion processes:
 The force required for extrusion depends on (a) the strength of the billet material, (b) extrusion ratio, (c) friction between the billet, container, and die surfaces, and (d) process variables.
 
 
-![[MNF1_003/Pasted image 20240824135117.png|book]]
+![[Pasted image 20240824135117.png|book]]
 >Process variables in direct extrusion; the die angle, reduction in cross-section, extrusion speed, billet temperature, and lubrication all affect the extrusion pressure. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
 
 For a small die angle, $\alpha$, it has been shown that the extrusion force can then be approximated by:
@@ -291,6 +291,6 @@ Surface cracking also may occur at lower temperatures, attributed to periodic st
 
 **Internal Cracking**:
 The center of the extruded product can develop cracks, called center cracking, center-burst, arrowhead fracture, or chevron cracking:
-![[MNF1_003/Pasted image 20240824141248.png]]
+![[Pasted image 20240824141248.png]]
 >Chevron cracking (central burst) in extruded round steel bars; unless the products are inspected, such internal defects may remain undetected and later cause failure of the part in service. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
 

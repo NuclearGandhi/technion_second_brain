@@ -27,7 +27,7 @@ When you are learning about machine learning, it is best to experiment with real
    - [The datasets subreddit](https://reddit.com/r/datasets)
 
 In this chapter we'll use the California Housing Prices dataset from the StatLib repository:
-![[HML_002/{0A80E032-BCCC-46C1-A750-589D0CE0A5D5}.png|bookhue|500]]
+![[{0A80E032-BCCC-46C1-A750-589D0CE0A5D5}.png|bookhue|500]]
 >California housing prices
 
 This dataset is based from the 1990 California census. 
@@ -42,7 +42,7 @@ The first question to ask your boss is what exactly the business objective is. B
 
 Your boss answers that your model’s output (a prediction of a district’s median housing price) will be fed to another machine learning system, along with many other signals. This downstream system will determine whether it is worth investing in a given area. Getting this right is critical, as it directly affects revenue.
 
-![[HML_002/{06250006-E9ED-4D21-B57F-59CEB35F0D42}.png|bookhue|500]]
+![[{06250006-E9ED-4D21-B57F-59CEB35F0D42}.png|bookhue|500]]
 >A machine learning pipeline for real estate investments. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 
@@ -55,7 +55,7 @@ The next question to ask your boss is what the current solution looks like (if a
 With all this information, you are now ready to start designing your system. First, determine what kind of training supervision the model will need. This is clearly a typical [[HML_001 The Machine Learning Landscape#Supervised Learning|supervised learning]] task, since the model can be trained with labeled examples (each instance comes with the expected output, i.e., the district’s median housing price). It is a typical [[HML_001 The Machine Learning Landscape#Supervised Learning|regression]] task, since the model will be asked to predict a value. More specifically, this is a multiple regression problem, since the system will use multiple features to make a prediction (the district’s population, the median income, etc.). It is also a univariate regression problem, since we are only trying to predict a single value for each district. If we were trying to predict multiple values per district, it would be a multivariate regression problem. Finally, there is no continuous flow of data coming into the system, there is no particular need to adjust to changing data rapidly, and the data is small enough to fit in memory, so plain [[HML_001 The Machine Learning Landscape#Batch Learning|batch learning]] should do just fine.
 
 ## Select a Performance Measure
-A typical performance measure for regression problems is the **root mean square error** ($\mathrm{RMSE}$) - basically an $L_{2}$-[[../../Technion/NUM1/NUM1_003 נורמה#נורמה של וקטור|norm]]. It gives an idea of how much error the system typically makes in its predictions, with higher weight given to large errors.
+A typical performance measure for regression problems is the **root mean square error** ($\mathrm{RMSE}$) - basically an $L_{2}$-[[NUM1_003 נורמה#נורמה של וקטור|norm]]. It gives an idea of how much error the system typically makes in its predictions, with higher weight given to large errors.
 $$\mathrm{RMSE}(\mathbf{X},h)=\sqrt{ \dfrac{1}{m}\sum_{i=1}^{m}(h(\mathbf{x}^{(i)})-y^{(i)})^{2}  }$$
 This equation introduces several very common machine learning notations:
 - $m$ is the number of instances in the dataset you are measuring $\mathrm{RMSE}$ on.
@@ -130,7 +130,7 @@ plt.show()
 ```
 
 
-![[HML_002/Pasted image 20240925175425.png|bookhue]]
+![[Pasted image 20240925175425.png|bookhue]]
 >A histogram for each numerical attribute. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Looking at these histograms, you notice a few things:
@@ -236,7 +236,7 @@ save_fig("housing_income_cat_bar_plot")  # extra code
 plt.show()
 ```
 
-![[HML_002/Pasted image 20240925210928.png|bookhue|500]]
+![[Pasted image 20240925210928.png|bookhue|500]]
 >Histogram of income categories. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Now you are ready to do stratified sampling based on the income category. Scikit-Learn provides a number of splitter classes in the `sklearn.model_selection` package that implement various strategies to split your dataset into a training set and a test set. Each splitter has a `split()` method that returns an iterator over different training/test splits of the same data.
@@ -307,7 +307,7 @@ save_fig("better_visualization_plot")  # extra code
 plt.show()
 ```
 
-![[HML_002/Pasted image 20240926164912.png|bookhue|400]]
+![[Pasted image 20240926164912.png|bookhue|400]]
 >A geographical scatterplot of the data. Setting the `alpha` option to $0.2$ makes it much easier to visualize the places where there is a high density of data points. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Next, you look at the housing prices:
@@ -321,7 +321,7 @@ save_fig("housing_prices_scatterplot")  # extra code
 plt.show()
 ```
 
-![[HML_002/Pasted image 20240926165031.png|bookhue|500]]
+![[Pasted image 20240926165031.png|bookhue|500]]
 >California housing prices: red is expensive, blue is cheap, larger circles indicate areas with a larger population. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 The radius of each circle represents the district's population (options `s`), and the color represents the price (option `c`). Here you use a predefined color map (option `cmap`) called `jet`, which ranges from blue (low values) to red (high prices).
@@ -368,7 +368,7 @@ save_fig("scatter_matrix_plot")  # extra code
 plt.show()
 ```
 
-![[HML_002/Pasted image 20240926170502.png|bookhue]]
+![[Pasted image 20240926170502.png|bookhue]]
 >This scatter matrix plots every numerical attribute against every other numerical attribute, plus a histogram of each numerical attribute’s values on the main diagonal (top left to bottom right). [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 
@@ -383,7 +383,7 @@ save_fig("income_vs_house_value_scatterplot")  # extra code
 plt.show()
 ```
 
-![[HML_002/Pasted image 20240926170604.png|bookhue|500]]
+![[Pasted image 20240926170604.png|bookhue|500]]
 >Median income versus median house value. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 This plot reveals a few things. First, the correlation is indeed quite strong; you can clearly see the upward trend, and the points are not too dispersed. Second, the price cap you noticed earlier is clearly visible as a horizontal line at $\$500,000$. But the plot also reveals other less obvious straight lines: a horizontal line around $\$450,000$, another around $\$350,000$, perhaps one around $\$280,000$, and a few more below that. You may want to try removing the corresponding districts to prevent your algorithms from learning to reproduce these data quirks.
@@ -392,7 +392,7 @@ This plot reveals a few things. First, the correlation is indeed quite strong; y
 > The correlation coefficient only measures linear correlations (“as $x$ goes up, $y$ generally goes up/down”).
 >It may completely miss out on nonlinear relationships (e.g., “as $x$ approaches 0, $y$ generally goes up”). The figure below shows a variety of datasets along with their correlation coefficient. Note how all the plots of the bottom row have a correlation coefficient equal to $0$, despite the fact that their axes are clearly not independent: these are examples of nonlinear relationships.
 >
-> ![[HML_002/Pasted image 20240926174034.png|bookhue]]
+> ![[Pasted image 20240926174034.png|bookhue]]
 > >Standard correlation coefficient of various datasets. [[HML_000 Hands-On Machine Learning#Bibliography|(“Correlation,” 2024)]]
 >
 >Also, the second row shows examples where the correlation coefficient is equal to $1$ or $–1$; notice that this has nothing to do with the slope. For example, your height in inches has a correlation coefficient of $1$ with your height in feet or in nanometers.
@@ -610,7 +610,7 @@ housing_num_std_scaled = std_scaler.fit_transform(housing_num)
 
 When a feature’s distribution has a *heavy tail* (i.e., when values far from the mean are not exponentially rare), both min-max scaling and standardization will squash most values into a small range. Machine learning models generally don’t like this at all. So *before* you scale the feature, you should first transform it to shrink the heavy tail, and if possible to make the distribution roughly symmetrical. For example, a common way to do this for positive features with a heavy tail to the right is to replace the feature with its square root (or raise the feature to a power between 0 and 1). If the feature has a really long and heavy tail, such as a **power law distribution**, then replacing the feature with its logarithm may help. For example, the population feature roughly follows a power law: districts with $\pu {10,000}$ inhabitants are only $10$ times less frequent than districts with $\pu{1,000}$ inhabitants, not exponentially less frequent.
 
-![[HML_002/Pasted image 20240927225351.png|book|500]]
+![[Pasted image 20240927225351.png|book|500]]
 >Transforming a feature to make it closer to a **Gaussian distribution**. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 So far we’ve only looked at the input features, but the target values may also need to be transformed. For example, if the target distribution has a heavy tail, you may choose to replace the target with its logarithm. But if you do, the regression model will now predict the log of the median house value, not the median house value itself. You will need to compute the exponential of the model’s prediction if you want the predicted median house value.
@@ -715,7 +715,7 @@ array([[0.08, 0.  , 0.6 , 0.  , 0.  , 0.99, 0.  , 0.  , 0.  , 0.14],
 
 The following figure shows the 10 cluster centers found by k-means. The districts are colored according to their geographic similarity to their closest cluster center. As you can see, most clusters are located in highly populated and expensive areas.
 
-![[HML_002/Pasted image 20240928161858.png|bookhue]]
+![[Pasted image 20240928161858.png|bookhue]]
 >Gaussian RBF similarity to the nearest cluster center. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 ## Transformation Pipelines
@@ -1085,11 +1085,11 @@ Resulting in:
 * `scipy.stats.expon(scale)`: this is the continuous equivalent of `geom`. Just set `scale` to the most likely value.
 * `scipy.stats.loguniform(a, b)`: when you have almost no idea what the optimal hyperparameter value's scale is. If you set `a=0.01` and `b=100`, then you're just as likely to sample a value between 0.01 and 0.1 as a value between 10 and 100.
 
-![[HML_002/Pasted image 20240929175100.png|bookhue]]
+![[Pasted image 20240929175100.png|bookhue]]
 >Plots of the probability mass functions (for discrete variables), and probability density functions (for continuous variables) for `randint()`, `uniform()`, `geom()` and `expon()`.
 
 
-![[HML_002/Pasted image 20240929175239.png|bookhue]]
+![[Pasted image 20240929175239.png|bookhue]]
 >PDF for `expon()` and `loguniform()` (left column), as well as the PDF of `log(X)` (right column). The right column shows the distribution of hyperparameter _scales_. You can see that `expon()` favors hyperparameters with roughly the desired scale, with a longer tail towards the smaller scales. But `loguniform()` does not favor any scale, they are all equally likely.
 
 ## Analyzing the Best Models and Their Errors

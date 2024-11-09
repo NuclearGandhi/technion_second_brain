@@ -30,16 +30,16 @@ Several processes are used for surface treatments, based on mechanical, chemical
 
 
 
-![[MNF1_008/Pasted image 20240821140028.png|book]]
+![[Pasted image 20240821140028.png|book]]
 >Examples of roller burnishing of (a) the fillet of a stepped shaft, (b) an internal conical surface, and (c) a flat surface [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 
-![[MNF1_008/Pasted image 20240821141509.png|book]]
+![[Pasted image 20240821141509.png|book]]
 >Schematic illustration of thermal wire spraying [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
 
-![[MNF1_008/Pasted image 20240821142036.png|book]]
+![[Pasted image 20240821142036.png|book]]
 >Schematic illustration of the chemical vapor deposition process [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
 
-![[MNF1_008/Pasted image 20240821142827.png|book]]
+![[Pasted image 20240821142827.png|book]]
 >(a) Schematic illustration of the electroplating process. (b) Examples of electroplated parts. (Shutterstock/Osipov Petr) [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].

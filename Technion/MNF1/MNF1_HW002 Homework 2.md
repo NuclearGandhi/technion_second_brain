@@ -105,11 +105,11 @@ $$\begin{gathered}
 \end{gathered}$$
 
 ### Part b
-![[MNF1_HW002/MNF1_HW002 Homework 2 2024-08-05 15.27.31.excalidraw.svg]]
+![[MNF1_HW002 Homework 2 2024-08-05 15.27.31.excalidraw.svg]]
 >Definition of $\alpha$ - the total arc angle that the tooth is in the material
 
 Some trigonometry:
-![[MNF1_HW002/MNF1_HW002 Homework 2 2024-08-05 15.30.35.excalidraw.svg]]
+![[MNF1_HW002 Homework 2 2024-08-05 15.30.35.excalidraw.svg]]
 >Geometry of the problem
 
 From the figure above, we can see that:
@@ -140,7 +140,7 @@ $$-\dfrac{\pi}{2}\leq  \theta,\theta-\beta,\theta-2\beta\leq  -\dfrac{\pi}{2}+\a
 or, in short:
 $$0\leq  \theta\leq  \dfrac{\pi}{4}$$
 
-![[MNF1_HW002/MNF1_HW002 Homework 2 2024-08-05 19.37.59.excalidraw.svg]]
+![[MNF1_HW002 Homework 2 2024-08-05 19.37.59.excalidraw.svg]]
 >The angle of each tooth in the material
 
 We can see that the maximum will be at $\theta=\dfrac{\pi}{4}$. Substituting the given parameters, we get:

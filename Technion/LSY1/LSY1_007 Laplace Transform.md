@@ -24,7 +24,7 @@ aliases:
 # Introduction
 From [[LSY1_000 034032 Linear Systems E#Bibliography|(Lathi & Green, 2018)]]:
 Because of the linearity property of linear time-invaraint systems, we can find the response of these systems by breaking the input $x(t)$ into several components and then summing the system response to all the components of $x(t)$. In **frequency domain analysis** we are breaking up the input $x(t)$ into exponentials of the form $e^{st}$, where the parameter $s$ is the complex frequency of the signal $e^{st}$.
-The tool that makes it possible to represent arbitrary input $x(t)$ in terms of exponential components is the [[../DEQ1/DEQ1_009 טרנספורמציית לפלס#טרנספורמציית לפלס|Laplace transform]].
+The tool that makes it possible to represent arbitrary input $x(t)$ in terms of exponential components is the [[DEQ1_009 טרנספורמציית לפלס#טרנספורמציית לפלס|Laplace transform]].
 
 We can also separate the input into exponentials of the form $e^{j\omega t}$ instead of $e^{st}$. This is accomplished the Fourier transform. In a sense, the Fourier transform may be considered to be a special case of the Laplace transform with $s=j\omega$. Although this view is true most of the time, it does not always hold because of the nature of convergence of the Laplace and Fourier integrals.
 # The Laplace Transform
@@ -88,7 +88,7 @@ $$\begin{aligned}
 > \end{aligned}$$
 > The ROC of $X(s)$ is $\mathrm{Re}(s)>-a$, as shown in the shaded area in the following figure:
 > ![[Pasted image 20240718093739.png|book]]
->[](LSY1_007/Pasted%20image%2020240718093739.png)b) $-e^{-at}\mathbb{1}(-t)$ have the same Laplace transform but different regions of convergence.
+>[Pasted image 20240718093739](Pasted%20image%2020240718093739.png)b) $-e^{-at}\mathbb{1}(-t)$ have the same Laplace transform but different regions of convergence.
 > 
 > This face means that the integral defining $X(s)$ exists only for the values of $s$ in the shaded region. For other values of $s$, the integral does not converge.
 
@@ -107,7 +107,7 @@ $$\begin{aligned}
 | convolution     | $z=x*y$                           | $Z(s)=X(s)Y(s)$                            | $\mathbb{C}_{\alpha_{x}}\cap \mathbb{C}_{\alpha_{y}}$ |
 
 ## Laplace Transform Table
-- [[../DEQ1/DEQ1_009 טרנספורמציית לפלס#טבלת טרנספורמציית לפלס|Laplace transform table]]
+- [[DEQ1_009 טרנספורמציית לפלס#טבלת טרנספורמציית לפלס|Laplace transform table]]
 
 Some more common Laplace transforms:
  $$\displaystyle {\begin{array}{c|c|c}
@@ -123,7 +123,7 @@ Some more common Laplace transforms:
 # Partial Fraction Expansion
 
 > [!notes] Note:
-> This is a generlization of [[../BMA1/BMA1_004 אלגוריתמים נפוצים#אלגוריתם פירוק לשברים חלקיים|פירוק לשברים חלקיים]].
+> This is a generlization of [[BMA1_004 אלגוריתמים נפוצים#אלגוריתם פירוק לשברים חלקיים|פירוק לשברים חלקיים]].
 
 Given a ration proper $(n\geq m)$ function $F$,
 $$F(s)=\dfrac{b_{m}s^{m}+b_{m-1}s^{m-1}+\dots +{b}_{1}s+{b}_{0}}{s^{n}+a_{n-1}s^{n-1}+\dots +{a}_{1}s+{a}_{0}}:=\dfrac{N(s)}{D(s)}$$
@@ -195,7 +195,7 @@ Practically:
 
 ### Characteristics of Transients
 
-![[LSY1_007/Pasted image 20240908152545.png|book]]
+![[Pasted image 20240908152545.png|book]]
 >General step response of a stable LTI system
 
 Smoothness of transients may be measured by the:
@@ -229,14 +229,14 @@ Taking the inverse Laplace transform of it would yield:
 $$\boxed {
 y_{\text{step}}(t)=k_{\text{st}}(1-e^{-t/\tau})\mathbb{1}(t)
  }$$
-Just like [[../PHY2/PHY2_004 מעגלים חשמליים#מעגלי RC|RC circuits]].
+Just like [[PHY2_004 מעגלים חשמליים#מעגלי RC|RC circuits]].
 The static gain $k_{\text{st}}$ scales the response amplitude. When $t=\tau$ and $t=3\tau$ we get
 $$\begin{aligned}
 y_{\text{step}}(\tau)=k_{\text{st}}(1-e^{-1})\approx 0.63k_{\text{st}}\qquad  \text{and} \qquad  y_{\text{step}}(3\tau)=k_{\text{st}}(1-e^{-3})\approx 0.95k_{\text{st}}
 \end{aligned}$$
 respectively. The time constant $\tau$ dictates the responsiveness of the system. 
 
-![[LSY1_009/Pasted image 20240906225244.png|bookhue]]
+![[Pasted image 20240906225244.png|bookhue]]
 >Characteristics of a first-order system.
 
 In steady-state, the response becomes constant:
@@ -284,7 +284,7 @@ where $\beta=\dfrac{1}{2}\left( \dfrac{\zeta}{\sqrt{ \zeta ^{2} }-1} +1\right)>1
 
 Increasing $\omega_{n}$ will cause a fast response. Increasing $\zeta$ will cause a slower response.
 
-![[LSY1_007/Pasted image 20240908154539.png|bookhue]]
+![[Pasted image 20240908154539.png|bookhue]]
 >Overdamped second-order system.
 
 **Step response of a critically damped second order system**:
@@ -300,14 +300,14 @@ $$y(t)=k_{\text{st}}\left( 1-\dfrac{1}{\sqrt{ 1-\zeta ^{2} }}e^{-\zeta\omega_{n}
 
 We can notice that the response is composed of an exponential decay with $-\zeta\omega_{n}$ and an oscillation with the frequency $\omega_{d}$ (and thus the period $2\pi /\omega_{d}$).
 
-![[LSY1_007/Pasted image 20240908165910.png|bookhue]]
+![[Pasted image 20240908165910.png|bookhue]]
 >Upper plots: underdamped second order system $\zeta=0.3$. Lower plots: Underdamped ($\zeta=0.3$), critically damped ($\zeta=1$), and overdamped ($\zeta=2.6$) systems, where $\omega_{n}=4$.
 
 **Step response of underdamped system - effect of zeros**:
 Let
 $$G_{\alpha}(s)=\dfrac{k_{\text{st}}(\alpha\omega_{n}s+{{\omega}_{n}}^{2})}{s^{2}+2\zeta\omega_{n}s+{{\omega}_{n}}^{2}}$$
 for $\alpha \in \mathbb{R}$. $G(s)$ is said to have a zero at $s=-\omega_{n}/a$ since $G_{\alpha}(-\omega_{n}/\alpha)=0$. In this case:
-![[LSY1_007/Pasted image 20240910192824.png|bookhue|500]]
+![[Pasted image 20240910192824.png|bookhue|500]]
 >Effect of zero on an underdamped system.
 
 As $\alpha$ grows:
@@ -394,7 +394,7 @@ Requiring that all elements in the first column have the same sign leads to the 
 
 ## Question 1
 Consider the signal $y$ shown in the following figure:
-![[LSY1_007/Pasted image 20240718094426.png|book]]
+![[Pasted image 20240718094426.png|book]]
 >signal $y(t)$
 
 defined as
@@ -458,7 +458,7 @@ Y(s)=\dfrac{(e^{s/2}-e^{-s/2})^{2}}{s}
 
 Consider the following mass-spring-damper system in the following figure:
 
-![[LSY1_007/Pasted image 20240718094741.png|book|400]]
+![[Pasted image 20240718094741.png|book|400]]
 >mass-spring-damper system
 
 with:
@@ -504,7 +504,7 @@ Again, using the [[LSY1_007 Laplace Transform#Laplace Transform Table|Laplace tr
 $$\boxed {
 x(t)=\dfrac{1}{6}\mathbb{1}(t)-\dfrac{1}{2}e^{-2t}\mathbb{1}(t)+\dfrac{1}{3}e^{-3t}\mathbb{1}(t)
  }$$
-![[LSY1_007/Pasted image 20240723143354.png|book|400]]
+![[Pasted image 20240723143354.png|book|400]]
 >The system response
 
 ### Part b
@@ -524,7 +524,7 @@ $$\boxed{\lim_{ t \to \infty}x(t)=\dfrac{1}{6} }$$
 
 ## Question 3
 Consider the system $G_{RLC}: v_{\text{in}}\to i_{R}$ shown in the following figure:
-![[LSY1_007/Pasted image 20240725155953.png|book|450]]
+![[Pasted image 20240725155953.png|book|450]]
 >RLC circuit
 
 In other words, the input is the applied voltage $v_{\text{in}}$ and the output is the resistor's current $i_{R}$. Here $R=1,\,L= 1$, and $C=\dfrac{1}{8}$ are constants, referred to as the resistance, inductance, and capacitance, respectively.
@@ -533,7 +533,7 @@ In other words, the input is the applied voltage $v_{\text{in}}$ and the output 
 Write the transfer function $G_{RLC}(s)$ of the system.
 
 **Solution**:
-By [[../PHY2/PHY2_004 מעגלים חשמליים#חוקי קירכהוף|Kirchhoff's voltage law]],
+By [[PHY2_004 מעגלים חשמליים#חוקי קירכהוף|Kirchhoff's voltage law]],
 $$v_{\text{in}}(t)=v_{R}(t)+v_{L}(t)=v_{R}(t)+v_{C}(t)$$
 It is known that
 $$\begin{aligned}
@@ -588,7 +588,7 @@ z=\pm \sqrt{ 8 }j
 p=-4\pm \sqrt{ 8}
  }$$
 
-![[LSY1_007/Screenshot_20240725_202406_Obsidian.jpg|book|400]]
+![[Screenshot_20240725_202406_Obsidian.jpg|book|400]]
 >Pole-zero map. Circles mark zeros, while crosses mark poles.
 
 ### Part d
@@ -624,7 +624,7 @@ y_{ss}=5
 
 Consider the system $G_{T}:q_{\text{in}}\to h$ shown in the following figure:
 
-![[LSY1_007/Pasted image 20240908155645.png|book|250]]
+![[Pasted image 20240908155645.png|book|250]]
 >Tank system
 
 Its input is the volumetric flow $q_{\text{in}}$ to a tank with cross-section $A$ and the output $h(t)$ is the liquid level in the tank. Assume that $q_{\text{out}}(t)=\dfrac{h(t)}{R}$, where $q_{\text{out}}$ is the outlet volumetric flow and $R$ is the flow resistance.
@@ -658,7 +658,7 @@ Find the zeros and poles of $G_{T}(s)$ and associate them with specific parts of
 
 **Solution**:
 The system has no zeros, and we can see that $s=-\dfrac{1}{RA}\in \mathbb{R}$ is a pole. Since $R,A$ are positive, we know that $s$ is on the open left complex plane:
-![[LSY1_007/Pasted image 20240908204341.png|bookhue|500]]
+![[Pasted image 20240908204341.png|bookhue|500]]
 >Pole-zero map of the tank system.
 
 
@@ -696,12 +696,12 @@ t\approx \tau
 \end{gathered}$$
 In the same way, for $99 \%$, we get $t\approx 5\tau$.
 
-![[LSY1_007/Pasted image 20240908204404.png|bookhue|500]]
+![[Pasted image 20240908204404.png|bookhue|500]]
 >Step response of the tank system.
 
 ## Question 5
 Consider the system $G_{R}:\tau \to\theta$ shown in the following figure:
-![[LSY1_007/Pasted image 20240908155713.png|book|200]]
+![[Pasted image 20240908155713.png|book|200]]
 >Rotational mass-spring-damper system
 
 The mass whose moment of inertia, $J$, is attached to a torsion spring, whose torsion coefficient is $k_{T}$. An external torque $\tau$ acts on the mass and friction between the mass and the cylinder is assumed to generate a viscous friction torque $\tau_{c}=-c_{T}\dot{\theta}$.
@@ -710,7 +710,7 @@ The mass whose moment of inertia, $J$, is attached to a torsion spring, whose to
 Derive the transfer function $G_{R}(s)$ of the system.
 
 **Solution**:
-By [[../DYN1/DYN1_007 קינטיקה של גוף קשיח#מאזן תנע זוויתי יחסי של גק"ש מישורי|angular momentum balance equation]]:
+By [[DYN1_007 קינטיקה של גוף קשיח#מאזן תנע זוויתי יחסי של גק"ש מישורי|angular momentum balance equation]]:
 $$\begin{gathered}
 \sum  M= J\ddot{\theta}  \\[1ex]
 \tau-k_{T}\theta+\tau_{c}=J\ddot{\theta} \\[1ex]
@@ -772,12 +772,12 @@ s_{1,2} & =\dfrac{-c_{T}/J\pm \sqrt{ (c_{T}/J)^{2}-4k_{T}/J }}{2} \\[1ex]
  & \approx -3/4\pm 4.44j
 \end{aligned}$$
 These poles are on the open left half plane, which means the system is stable:
-![[LSY1_007/Pasted image 20240908155801.png|book|500]]
+![[Pasted image 20240908155801.png|book|500]]
 >Pole-zero map of the rotational system.
 
 
 Using super powers like MATLAB we can also plot the step response:
-![[LSY1_007/Pasted image 20240908155813.png|book|500]]
+![[Pasted image 20240908155813.png|book|500]]
 >Step response of the rotational system.
 
 From the plot, we can calculate the characteristics of the transient response:
@@ -816,13 +816,13 @@ $$\begin{array}{c|cc}
 Since one of its elements in the first column doesn't have the same sign as the rest, $D(s)$ is not Horwitz, and the system is not stable.
 Because the Routh table is regular, there are no poles on the imaginary axis, and because there are two sign changes in the first column, we must have two poles in the right half plane $\mathbb{C}_{0}$. Using MATLAB, we get:
 
-![[LSY1_007/Screenshot_20240801_120007_Samsung Notes.jpg|book|350]]
+![[Screenshot_20240801_120007_Samsung Notes.jpg|book|350]]
 >Pole-zero map of $G(s)$
 
 
 ## Question 10
 Consider the following system:
-![[LSY1_008/LSY1_008 Fourier Transform 2024-09-04 20.24.26.excalidraw.svg]]
+![[LSY1_008 Fourier Transform 2024-09-04 20.24.26.excalidraw.svg]]
 >Inverted pendulum with torsion spring.
 
 An inverted pendulum with length $L$ is held in place by a torsion spring with constant $k$, as can be seen in the figure. A mass $m$ is placed at the end of the rod. In addition, a torsion damper is set in place with constant $c$. Finally, an external force is acting on the mass perpendicularly to the rod.

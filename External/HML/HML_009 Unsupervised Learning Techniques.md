@@ -18,7 +18,7 @@ This will generally require human experts to sit down and manually go through al
 As you enjoy a hike in the mountains, you stumble upon a plant you have never seen before. You look around and you notice a few more. They are not identical, yet they are sufficiently similar for you to know that they most likely belong to the same species (or at least the same genus). You may need a botanist to tell you what species that is, but you certainly don’t need an expert to identify groups of similar-looking objects. This is called **clustering**: it is the task of identifying similar instances and assigning them to **clusters**, or groups of similar instances.
 
 Just like in classification, each instance gets assigned to a group. However, unlike classification, clustering is an unsupervised task. Consider the following figure:
-![[HML_009/Pasted image 20241013213116.png|bscreen]]
+![[Pasted image 20241013213116.png|bscreen]]
 >Classification (left) versus clustering (right)
 
 On the left is the iris dataset, where each instance’s species (i.e., its class) is represented with a different marker. It is a labeled dataset, for which classification algorithms such as logistic regression, SVMs, or random forest classifiers are well suited. On the right is the same dataset, but without the labels, so you cannot use a classification algorithm anymore.
@@ -28,7 +28,7 @@ There is no universal definition of what a cluster is: it really depends on the 
 
 ## k-means
 Consider the unlabeled dataset represented in the following figure:
-![[HML_009/Pasted image 20241013213425.png|bscreen]]
+![[Pasted image 20241013213425.png|bscreen]]
 >An unlabeled dataset composed of five blobs of instances
 
 You can clearly see five blobs of instances. The $k$-means algorithm is a simple algorithm capable of clustering this kind of dataset very quickly and efficiently, often in just a few iterations. It was proposed by Stuart Lloyd at Bell Labs in 1957 as a technique for pulse-code modulation, but it was only published outside of the company in 1982. In 1965, Edward W. Forgy had published virtually the same algorithm, so $k$-means is sometimes referred to as the Lloyd–Forgy algorithm.
@@ -79,7 +79,7 @@ array([1, 1, 2, 2], dtype=int32)
 ```
 
 If you plot the cluster’s decision boundaries, you get a Voronoi tessellation:
-![[HML_009/Pasted image 20241014114306.png|bscreen]]
+![[Pasted image 20241014114306.png|bscreen]]
 >$k$-means decision boundaries (Voronoi tessellation)
 
 The vast majority of the instances were clearly assigned to the appropriate cluster, but a few instances were probably mislabeled, especially near the boundary between the top-left cluster and the central cluster. Indeed, the $k$-means algorithm does not behave very well when the blobs have very different diameters because all it cares about when assigning an instance to a cluster is the distance to the centroid.
@@ -103,13 +103,13 @@ In this example, the first instance in `X_new` is located at a distance of about
 So, how does the algorithm work? Well, suppose you were given the centroids. You could easily label all the instances in the dataset by assigning each of them to the cluster whose centroid is closest. Conversely, if you were given all the instance labels, you could easily locate each cluster’s centroid by computing the mean of the instances in that cluster. But you are given neither the labels nor the centroids, so how can you proceed? Start by placing the centroids randomly (e.g., by picking $k$ instances at random from the dataset and using their locations as centroids). Then label the instances, update the centroids, label the instances, update the centroids, and so on until the centroids stop moving. The algorithm is guaranteed to converge in a finite number of steps (usually quite small). That’s because the mean squared distance between the instances and their closest centroids can only go down at each step, and since it cannot be negative, it’s guaranteed to converge.
 
 You can see the algorithm in action in the following figure:
-![[HML_009/Pasted image 20241014114406.png|bscreen]]
+![[Pasted image 20241014114406.png|bscreen]]
 >The k-means algorithm
 
 the centroids are initialized randomly (top left), then the instances are labeled (top right), then the centroids are updated (center left), the instances are relabeled (center right), and so on. As you can see, in just three iterations the algorithm has reached a clustering that seems close to optimal.
 
 Although the algorithm is guaranteed to converge, it may not converge to the right solution (i.e., it may converge to a local optimum): whether it does or not depends on the centroid initialization. The following figure shows two suboptimal solutions that the algorithm can converge to if you are not lucky with the random initialization step:
-![[HML_009/Pasted image 20241014114616.png|bscreen]]
+![[Pasted image 20241014114616.png|bscreen]]
 >Suboptimal solutions due to unlucky centroid initializations
 ### Centroid initialization methods
 If you happen to know approximately where the centroids should be (e.g., if you ran another clustering algorithm earlier), then you can set the `init` hyperparameter to a NumPy array containing the list of centroids, and set `n_init` to 1:
@@ -127,7 +127,7 @@ Another solution is to run the algorithm multiple times with different random in
 Despite its many merits, most notably being fast and scalable, k-means is not perfect. As we saw, it is necessary to run the algorithm several times to avoid suboptimal solutions, plus you need to specify the number of clusters, which can be quite a hassle. Moreover, $k$-means does not behave very well when the clusters have varying sizes, different densities, or non-spherical shapes.
 For example, the following figure shows how $k$-means clusters a dataset containing three ellipsoidal clusters of different dimensions, densities, and orientations.
 
-![[HML_009/Pasted image 20241014140243.png|bscreen]]
+![[Pasted image 20241014140243.png|bscreen]]
 >$k$-means fails to cluster these ellipsoidal blobs properly.
 
 As you can see, neither of these solutions is any good. The solution on the left is better, but it still chops off 25% of the middle cluster and assigns it to the cluster on the right. The solution on the right is just terrible, even though its inertia is lower. So, depending on the data, different clustering algorithms may perform better. On these types of elliptical clusters, Gaussian mixture models work great.
@@ -154,7 +154,7 @@ We’ll start by importing the Pillow package (successor to the Python Imaging L
 (533, 800, 3)
 ```
 
-![[HML_009/Pasted image 20241014162719.png|bscreen]]
+![[Pasted image 20241014162719.png|bscreen]]
 >Image segmentation using $k$-means with various numbers of color clusters
 
 The image is represented as a 3D array. The first dimension’s size is the height; the second is the width; and the third is the number of color channels, in this case red, green, and blue (RGB). In other words, for each pixel there is a 3D vector containing the intensities of red, green, and blue as unsigned 8-bit integers between 0 and 255. Some images may have fewer channels (such as grayscale images, which only have one), and some images may have more channels (such as images with an additional alpha channel for transparency, or satellite images, which often contain channels for additional light frequencies (like infrared).
@@ -203,7 +203,7 @@ X_representative_digits = X_train[representative_digit_idx]
 ```
 
 The following figure shows the 50 representative images:
-![[HML_009/Pasted image 20241018211059.png|book]]
+![[Pasted image 20241018211059.png|book]]
 >Fifty representative digit images (one per cluster).
 
 Let's look at each image and manually label them:
@@ -321,7 +321,7 @@ array([[-0.02137124,  0.40618608],
 
 This clustering is represented in the lefthand plot of the following figure:
 
-![[HML_009/Pasted image 20241018213541.png|bscreen]]
+![[Pasted image 20241018213541.png|bscreen]]
 >DBSCAN clustering using two different neighborhood radiuses.
 
 As you can see, it identified quite a lot of anomalies, plus seven different clusters. How disappointing! Fortunately, if we widen each instance’s neighborhood by increasing `eps` to 0.2, we get the clustering on the right, which looks perfect. Let’s continue with this model.
@@ -352,7 +352,7 @@ array([[0.18, 0.82],
 Note that we only trained the classifier on the core instances, but we could also have chosen to train it on all the instances, or all but the anomalies: this choice depends on the final task.
 
 The decision boundary is represented in the following figure (the crosses represent the four instances in `X_new`):
-![[HML_009/Pasted image 20241018223917.png|bscreen]]
+![[Pasted image 20241018223917.png|bscreen]]
 >Decision boundary between two clusters.
 
 Notice that since there is no anomaly in the training set, the classifier always chooses a cluster, even when that cluster is far away. It is fairly straightforward to introduce a maximum distance, in which case the two instances that are far away from both clusters are classified as anomalies. To do this, use the `kneighbors()` method of the `KNeighborsClassifier`. Given a set of instances, it returns the distances and the indices of the $k$-nearest neighbors in the training set (two matrices, each with $k$ columns):
@@ -371,7 +371,7 @@ In short, DBSCAN is a very simple yet powerful algorithm capable of identifying 
 # Gaussian Mixtures
 A **Gaussian mixture model (GMM)** is a probabilistic model that assumes that the instances were generated from a mixture of several Gaussian distributions whose parameters are unknown. All the instances generated from a single Gaussian distribution form a cluster that typically looks like an ellipsoid. Each cluster can have a different ellipsoidal shape, size, density, and orientation, just like in the following figure:
 
-![[HML_009/Pasted image 20241014140243.png|bscreen]]
+![[Pasted image 20241014140243.png|bscreen]]
 >$k$-means fails to cluster these ellipsoidal blobs properly.
 
 When you observe an instance, you know it was generated from one of the Gaussian distributions, but you are not told which one, and you do not know what the parameters of these distributions are.
@@ -450,7 +450,7 @@ array([0, 0, 1, 2, 2, 2])
 ```
 
 The following figure shows the cluster means, the decision boundaries (dashed lines), and the density contours of this model:
-![[HML_009/Pasted image 20241019103229.png|bscreen]]
+![[Pasted image 20241019103229.png|bscreen]]
 >Cluster means, decision boundaries, and density contours of a trained Gaussian mixture model.
 
 

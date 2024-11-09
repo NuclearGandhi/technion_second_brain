@@ -11,11 +11,11 @@ In this chapter we show that a periodic signal can be represented as a sum of si
 
 ![](https://www.youtube.com/watch?v=r6sGWTCMz2k)
 
-A [[../CAL1/CAL1_001 פונקציה#פונקציה מחזורית|periodic signal]] $x(t)$ with period ${T}$ has the property
+A [[CAL1_001 פונקציה#פונקציה מחזורית|periodic signal]] $x(t)$ with period ${T}$ has the property
 $$x(t)=x(t+{T})$$
 for all $t$. The *smallest* values of ${T}$ that satisfies this periodicity condition is the *fundamental period* of $x(t)$.
 
-![[LSY1_008/Pasted image 20240802175436.png|book]]
+![[Pasted image 20240802175436.png|book]]
 >A periodic signal of period ${T}_{0}$
 
 It can be shown that:
@@ -88,7 +88,7 @@ There are several consequences to this property:
 ## Question 1
 Consider the signal $x$ defined as
 $$x(t)=\lvert \sin(\omega_{x}t+\phi) \rvert$$
-![[LSY1_008/Pasted image 20240802182658.png|book]]
+![[Pasted image 20240802182658.png|book]]
 ### Part a
 Identify the period $T$ and the fundamental frequency ${\omega}_{0}$.
 
@@ -159,7 +159,7 @@ $$\boxed {
 x(t)=\sum _{k=-\infty }^{\infty } \dfrac{2e^{j\phi k}}{(1-4k^{2})\pi}e^{j\omega _{0}kt}
  }$$
 
-![[LSY1_008/Pasted image 20240803103050.png|book]]
+![[Pasted image 20240803103050.png|book]]
 >Partial Fourier series - $x_{N}(t)=\sum_{k=-N}^{N}X[k]e^{j{\omega}_{0}kt}$
 
 ### Part c
@@ -181,15 +181,15 @@ $$\boxed {
 \mathcal{X}(j\omega)=4\sum_{k=-\infty }^{\infty } \dfrac{e^{2j\phi k}}{1-4k^{2}}\delta(\omega-k{\omega}_{0}) 
  } $$
 
-![[LSY1_008/Pasted image 20240803142518.png|book]]
+![[Pasted image 20240803142518.png|book]]
 >The Fourier spectrum
 
 ## Question 2
 Match the signals in the time domain to their corresponding magnitude Fourier spectrum:
-![[LSY1_008/Pasted image 20240904204111.png|book]]
+![[Pasted image 20240904204111.png|book]]
 >Signals in the time domain.
 
-![[LSY1_008/Pasted image 20240904204133.png|book]]
+![[Pasted image 20240904204133.png|book]]
 >Signals in the frequency domain.
 
 **Solution**:
@@ -221,7 +221,7 @@ $$\mathrm{rect}(t)=\begin{cases}
 0 & \text{otherwise}
 \end{cases}$$
 shown in the following figure:
-![[LSY1_008/Pasted image 20240905104612.png|book]]
+![[Pasted image 20240905104612.png|book]]
 >The signal $y$
 
 ### Part a
