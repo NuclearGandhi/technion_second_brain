@@ -9,11 +9,11 @@ In this chapter we will go over metalworking processes where the workpiece is su
 
 **Secondary-working** operation typically involve further processing of the products from primary working into final or semifinal products, such as bolts, gears, and sheet metal parts.
 
-| **Process**        | **Description**                                                                                                                                                                | **Advantages**                                                                                                                                                    | **Applications**                                                                 |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| **[[#Forging]]**   | Deformation of metal using localized compressive forces, typically by hammering or pressing. It can be performed hot or cold, leading to different mechanical properties.      | Produces parts with superior mechanical properties<br>High strength due to grain refinement<br>Less material waste                                                | Crankshafts, gears, aerospace components, high-strength fasteners                |
-| **[[#Rolling]]**   | Metal is passed through a pair of rollers to reduce thickness or change cross-sectional shape. It can be done hot (hot rolling) or cold (cold rolling).                        | High production rate<br>Good surface finish<br>Can handle large pieces of metal<br>Economical for mass production                                                 | Sheets, plates, I-beams, rails, automotive body panels                           |
-| **[[#Extrusion]]** | Metal is forced through a die to produce a continuous cross-sectional shape. Can be done hot or cold, and includes direct (forward) and indirect (backward) extrusion methods. | Ability to create complex cross-sections<br>High material utilization<br>Produces long lengths of uniform cross-sections<br>Suitable for both metals and plastics | Pipes, tubing, structural shapes, window frames, heat sinks, electrical conduits |
+| **Process**   | **Description**                                                                                                                                                                | **Advantages**                                                                                                                                                    | **Applications**                                                                 |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Forging**   | Deformation of metal using localized compressive forces, typically by hammering or pressing. It can be performed hot or cold, leading to different mechanical properties.      | Produces parts with superior mechanical properties<br>High strength due to grain refinement<br>Less material waste                                                | Crankshafts, gears, aerospace components, high-strength fasteners                |
+| **Rolling**   | Metal is passed through a pair of rollers to reduce thickness or change cross-sectional shape. It can be done hot (hot rolling) or cold (cold rolling).                        | High production rate<br>Good surface finish<br>Can handle large pieces of metal<br>Economical for mass production                                                 | Sheets, plates, I-beams, rails, automotive body panels                           |
+| **Extrusion** | Metal is forced through a die to produce a continuous cross-sectional shape. Can be done hot or cold, and includes direct (forward) and indirect (backward) extrusion methods. | Ability to create complex cross-sections<br>High material utilization<br>Produces long lengths of uniform cross-sections<br>Suitable for both metals and plastics | Pipes, tubing, structural shapes, window frames, heat sinks, electrical conduits |
 
 
 # Forging
@@ -29,12 +29,18 @@ A common process, known as **upsetting**, involves placing a solid cylindrical w
 >(a) Ideal deformation of a solid cylindrical specimen compressed between flat frictionless dies (platens), an operation known as upsetting. (b) Deformation in upsetting with friction at the die-workpiece interfaces. Note barreling of the billet caused by friction.
 
 Because the *volume of the cylinder remains constant* in plastic deformation, any reduction in its height causes an increase in diameter. The reduction in height is defined as
-$$\text{Reduction in height}=\dfrac{{h}_{o}-{h}_{1}}{{h}_{o}}\times 100\%$$
+$$
+\text{Reduction in height}=\dfrac{{h}_{o}-{h}_{1}}{{h}_{o}}\times 100\%
+$$
 where the subscript '$o$' stands for 'original'.
 The [[SLD1_007 מאמץ ועיבור#עיבור|engineering strain]] is
-$$e_{1}=\dfrac{{h}_{o}-{h}_{1}}{{h}_{o}}$$
+$$
+e_{1}=\dfrac{{h}_{o}-{h}_{1}}{{h}_{o}}
+$$
 and the [[SLD1_007 מאמץ ועיבור#מאמץ ועיבור אמיתיים|true strain]]
-$${\varepsilon}_{1}=\ln\left( \dfrac{{h}_{o}}{{h}_{1}} \right)$$
+$$
+{\varepsilon}_{1}=\ln\left( \dfrac{{h}_{o}}{{h}_{1}} \right)
+$$
 ### Barreling
 In actual practice the specimen develops a barrel shape during upsetting, as shown in the following figure:
 
@@ -45,25 +51,35 @@ Barreling is caused primarily by frictional forces that oppose the radially outw
 A result of barreling is that the deformation throughout the specimen becomes *nonuniform* or *inhomogeneous*
 ### Forces under ideal conditions
 If friction at the workpiece-die interfaces is zero and the material is perfectly plastic, with **yield strength** of $S_{y}$, the normal compressive stress on the cylindrical specimen is uniform and at the level of $S_{y}$. The force at any height ${h}_{1}$ is
-$$F=S_{y}{A}_{1}$$
+$$
+F=S_{y}{A}_{1}
+$$
 where ${A}_{1}$ is the cross-sectional area and is obtained from volume constancy:
-$${A}_{1}=\dfrac{{A}_{o}{h}_{o}}{{h}_{1}}$$
+$$
+{A}_{1}=\dfrac{{A}_{o}{h}_{o}}{{h}_{1}}
+$$
 A typical true stress-true strain curve is shown in the following figure:
 ![[Pasted image 20240624104418.png|book]]
 >(a) True stress–true strain curve in tension. Note that, unlike in an engineering stress–strain curve, the slope is always positive and the slope decreases with increasing strain. Although in the elastic range stress and strain are proportional, the total curve can be approximated by the power expression shown. On this curve, $S_{y}$ is the yield strength and $\sigma_{f}$ is the flow stress. (b) True stress–true strain curve plotted on a log-log scale.
 
 For convenience, such a curve is often approximated by the equation:
-$$\sigma=K\varepsilon^{n}$$
+$$
+\sigma=K\varepsilon^{n}
+$$
 where the slope $n$ is the **strain-hardening exponent**, and $K$ is the **strength coefficient**. Note that $K$ is the true stress at a true strain of unity.
 
 If the material's true stress-true strain curve is given by this equation, then the force at any stage during deformation becomes
-$$F=\sigma_{f}{A}_{1}$$
+$$
+F=\sigma_{f}{A}_{1}
+$$
 where $\sigma_{f}$ is the **flow stress** of the material - the true stress required to continue plastic deformation at a particular true strain, ${\varepsilon}_{1}$.
 
 For a work hardening material, the average flow stress is given by
-$$\boxed {
+$$
+\boxed {
 \bar{\sigma}_{f}=\dfrac{K{{\varepsilon}_{1}}^{n}}{n+1}
- }$$
+ }
+$$
 
 We will sometimes assume the the material is rigid and perfectly plastic. For such material, once the stress reaches the yield strength $S_{y}$, it continues to undergo deformation at the same stress level; that is, there is no strain hardening - $\sigma_{f}=S_{y}$.
 
@@ -80,59 +96,81 @@ The slab method is one of the earlier and simpler methods of analyzing the stres
 
 ![[Pasted image 20240624105311.png|book]]
 >Stresses on an element in plane-strain compression (forging) between flat dies with friction. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian & Schmid, 2016)]].
-	
+
 After a lot of math, [[SLD1_002 שיווי משקל#שיווי משקל במרחב|balancing forces]], assuming $\sigma_{x}$ and $\sigma_{y}$ are [[SLD2_002 מישורים ראשיים#מאמצים מישוריים|principal stresses]], plastic deformation equations, [[SLD2_006 קריטריוני כניעה וכשל#קריטריון פון מיזס|distortion-energy criterion]], we get
-$$\boxed {
+$$
+\boxed {
 \sigma_{y}-\sigma_{x}=\dfrac{2}{\sqrt{ 3 }}S_{y}=S_{y}'
- }$$
+ }
+$$
 >[!Question]- Isn't it supposed to be $\sqrt{ 2 }$?
  >No Roma, it involves some assumptions about *plastic* deformation. Read the book, they explain everything in detail.
  
  It can also be shown that the pressure $p=\sigma_{y}$ for a rectangular $h\times 2a$ cross-section is given by:
- $$\boxed {
+ $$
+\boxed {
 p=S_{y}'e^{2\mu(a-x)/h}
- }$$
+ }
+$$
  Where $\mu$ is the coefficient of friction.
  Thus, the average pressure will be:
- $$\boxed {
+ $$
+\boxed {
 p_{\text{avg}}=S'_{y}\left( 1+\dfrac{\mu a}{h} \right)
- }$$
+ }
+$$
 
 ![[Pasted image 20240624110130.png|book]]
 >Distribution of die pressure, in dimensionless form of $p /S_{y}'$, in plane-strain compression with sliding friction. Note that the pressure at the left and right boundaries is equal to the yield strength of the material in plane strain, $S_{y}'$.
 
  
  For a disc-shaped cross section, $p$ is given by:
- $$\boxed {
+ $$
+\boxed {
 p=S_{y}e^{2\mu(R-r)/h}
- }$$
+ }
+$$
 and the average pressure:
-$$\boxed{p_{\text{avg}}=S_{y}\left( 1+\dfrac{2\mu R}{3h} \right)}$$
+$$
+\boxed{p_{\text{avg}}=S_{y}\left( 1+\dfrac{2\mu R}{3h} \right)}
+$$
 >[!example] Example: Upsetting Force 
 >A cylindrical specimen made of annealed 4135 steel has a diameter of $\pu{150mm}$ and is $\pu{100mm}$ high. It is upset, at room temperature, by open-die forging with flat dies to a height of $\pu{50mm}$
 > Assuming that the coefficient of friction is $0.2$, calculate the upsetting force required at the end of the stroke. Use the average-pressure formula.
 > 
 > **Solution**:
 > The average-pressure formula is given by
-> $$p_{\text{av}}=\sigma_{f}\left( 1+\dfrac{2\mu R}{3h} \right)$$
+> $$
+> p_{\text{av}}=\sigma_{f}\left( 1+\dfrac{2\mu R}{3h} \right)
+> $$
 > where $S_{y}$ is replaced by $\sigma_{f}$ because the workpiece material is strain hardening. For annealed 4135 steel, $K=\pu{1015MPa}$ and $n=0.17$. The absolute value of the true strain is
-> $${\varepsilon}_{1}=\ln\left( \dfrac{100}{50} \right)=0.693$$
+> $$
+> {\varepsilon}_{1}=\ln\left( \dfrac{100}{50} \right)=0.693
+> $$
 > and therefore
-> $$\sigma_{f}=K{{\varepsilon}_{1}}^{n}=\pu{953.6MPa}$$
+> $$
+> \sigma_{f}=K{{\varepsilon}_{1}}^{n}=\pu{953.6MPa}
+> $$
 > The final height of the specimen, ${h}_{1}$, is $\pu{50mm}$. The radius $r$ at the end of the stroke is found from volume constancy:
-> $$\begin{gathered}
+> $$
+> \begin{gathered}
 > \left( \dfrac{\pi 150^{2}}{4} \right)100=(\pi {{r}_{1}}^{2})\cdot 50 \\[1ex]
 > {r}_{1}=\pu{106.1mm}
-> \end{gathered}$$
+> \end{gathered}
+> $$
 > Thus,
-> $$p_{\text{av}}=963.6\left[ 1+\dfrac{2\cdot 0.2\cdot 106.1}{3\cdot 50} \right]=\pu{1223MPa}$$
+> $$
+> p_{\text{av}}=963.6\left[ 1+\dfrac{2\cdot 0.2\cdot 106.1}{3\cdot 50} \right]=\pu{1223MPa}
+> $$
 > The upsetting force is
-> $$\begin{gathered}
+> $$
+> \begin{gathered}
 > F=\pi(1223)(0.1061)^{2} \\[1ex]
 > \boxed {
 > F=\pu {43.25MN }
 >  }
-> \end{gathered}$$
+> \end{gathered}
+> $$
 
 ## Impression-die forging
 In impression-die forging, the workpiece acquires the shape of the die cavity (hence the term impression) while it is being deformed between the two closing dies.
@@ -141,9 +179,11 @@ In impression-die forging, the workpiece acquires the shape of the die cavity (h
 >Schematic illustrations of stages in impression-die forging. Note the formation of a flash, or excess material that subsequently has to be trimmed off.
 
 Forces in impression-die forging can be difficult to predict, because of the generally complex shapes involved and the fact that each location within the workpiece is typically subjected to different strains, strain rates, and temperatures, as well as variations in coefficient of friction along the die-workpiece contact area. Certain empirical pressure-multiplying factors, $K_{p}$, have been developed for use with the expression:
-$$\boxed {
+$$
+\boxed {
 F=K_{p}\sigma_{f}A
- }$$
+ }
+$$
  where $F$ is the forging force; $A$ is the projected area of the forging (including the flash), $\sigma_{f}$ is the flow stress of the material at the strain, the strain rate, and temperature to which the material is subjected. Typical values of $K_{p}$ are given in the following table:
  ![[Pasted image 20240823112056.png|book]]
  >Range of $K_{p}$ values for impression-die forging.
@@ -175,7 +215,9 @@ At one location along the arc of contact, however, the two velocities are the sa
 Because of the relative motion at the interfaces, the frictional forces (which oppose motion) act on the strip surfaces in the directions shown in the last figure. In rolling, the frictional force on the left of the neutral point must be greater than the frictional force on the right. This difference results in a *net frictional force* to the right, making the rolling operation possible by pulling the strip into the roll gap.
 
 **Forward slip** in rolling is defined as
-$$\text{Forward slip}=\dfrac{V_{f}-V_{r}}{V_{r}}$$
+$$
+\text{Forward slip}=\dfrac{V_{f}-V_{r}}{V_{r}}
+$$
 and is a measure of the relative velocities at the exit of the work rolls.
 
 ### Roll Pressure Distribution
@@ -185,17 +227,23 @@ It can be noted that the deformation zone in the roll gap is subjected to a stat
 >Stresses acting on an element in rolling: (a) entry zone and (b) exit zone.
 
 It can be shown, that similar to upsetting, we can assume that $p$ and $\sigma_{x}$ are principal stresses, and that the relationship between these two principal stresses and the flow stress, $\sigma_{f}$, of the material is given by:
-$$\boxed {
+$$
+\boxed {
 p-\sigma_{x}=\dfrac{2}{\sqrt{ 3 }}\sigma_{f}=\sigma_{f}'
- }$$
+ }
+$$
 If we assume that the pressure distribution is symmetric,  It can be shown that pressure distribution is given by (similar to [[#Slab Method of Analysis]] in forging):
 
-$$\boxed {
+$$
+\boxed {
 p(x)=\sigma_{f}'\exp\left( \dfrac{2\mu(L/2-x)}{h} \right)
- }$$
+ }
+$$
 where $x$ is the position along the contact length, with $x=0$ at the neutral point.
 The average pressure distribution is given by:
-$$\boxed{p_{\text{avg}}=\sigma_{f}'\left( 1+\dfrac{\mu L}{h_{o}+h_{f}} \right)}$$
+$$
+\boxed{p_{\text{avg}}=\sigma_{f}'\left( 1+\dfrac{\mu L}{h_{o}+h_{f}} \right)}
+$$
 
 If we don't assume pressure distribution is symmetric, we get the following graph:
 ![[Pasted image 20240624131616.png|book]]
@@ -208,24 +256,32 @@ The **neutral point** (as explained in [[#Rolling]]) is where the surface speed 
 The **roll force**, $F$, (also called the **roll-sparating force**) on the strip is the product of the area under the pressure vs. contact-length curve and the strip width, $w$.
 
 A simple method of calculating the roll force is to multiply the contact area by an average contact stress, $p_{\text{avg}}$,
-$$\boxed {
+$$
+\boxed {
 F=Lwp_{\text{avg}}
- }$$
+ }
+$$
 where $L$ is the length of contact and can be approximated as the projected length; thus
-$$\boxed {
+$$
+\boxed {
 L=\sqrt{ R\Delta h }
- }$$
+ }
+$$
 where $R$ is the roll radius and $\Delta h$ is the difference between the original and final thicknesses of the strip.
 
 ## Roll Torque and Power
 The **roll torque**, $T$, can be estimated by assuming that the roll force, $F$, acts in the middle of the arc of contact (that is, a length of action of $0.5L$), and that this force is perpendicular to the plane of the strip.
 
 The torque per roll is then
-$$\boxed {
+$$
+\boxed {
 T=\dfrac{FL}{2}
- }$$
+ }
+$$
 The power required *per roll* (usually there are 2 rolls, so just multiply by $2$) is
-$$P=T\omega=\dfrac{FL\omega}{2}=\dfrac{\pi FLN}{60}$$
+$$
+P=T\omega=\dfrac{FL\omega}{2}=\dfrac{\pi FLN}{60}
+$$
 where $\omega$ is the roller's angular velocity, and $N$ is the roll speed in $\pu{rpm}$.
 
 >[!example] Example: Power Required in Rolling
@@ -233,20 +289,32 @@ where $\omega$ is the roller's angular velocity, and $N$ is the roll speed in $\
 > Estimate the total power required for this operation.
 > 
 > **Solution**: The length of the arc of contact, $L$ is obtained by
-> $$L=\sqrt{ R\Delta h }=\sqrt{ 300(25-20) }=\pu{38.73mm}$$
+> $$
+> L=\sqrt{ R\Delta h }=\sqrt{ 300(25-20) }=\pu{38.73mm}
+> $$
 > For 6061-O aluminum, $K=\pu{205MPa}$ and $n=0.2$. The true strain in this operation is
-> $${\varepsilon}_{1}=\ln\left( \dfrac{25}{25} \right)=0.223$$
+> $$
+> {\varepsilon}_{1}=\ln\left( \dfrac{25}{25} \right)=0.223
+> $$
 > Thus,
-> $$\bar{\sigma}_{f}=\dfrac{K\varepsilon^{n}}{n+1}=\dfrac{205(0.223)^{0.2}}{1.2}=\pu{126MPa}$$
+> $$
+> \bar{\sigma}_{f}=\dfrac{K\varepsilon^{n}}{n+1}=\dfrac{205(0.223)^{0.2}}{1.2}=\pu{126MPa}
+> $$
 > and,
-> $$\bar{\sigma}_{f}'=\dfrac{2}{\sqrt{ 3 }}\cdot 126=\pu{145MPa}$$
+> $$
+> \bar{\sigma}_{f}'=\dfrac{2}{\sqrt{ 3 }}\cdot 126=\pu{145MPa}
+> $$
 > Therefore, noting the width is $w=\pu{225mm}$, [[#Roll Forces]] yields
-> $$F=Lw\bar{\sigma}_{f}'=0.03873\cdot 0.225\cdot(145\cdot 10^{6})=\pu{1.26MN}$$
+> $$
+> F=Lw\bar{\sigma}_{f}'=0.03873\cdot 0.225\cdot(145\cdot 10^{6})=\pu{1.26MN}
+> $$
 > so that the power per roll is
-> $$\begin{gathered}
+> $$
+> \begin{gathered}
 > P=\dfrac{\pi(1.26\cdot 10^{6})\cdot 0.03873\cdot 100}{60} \\[1ex]
 > P=\pu{255kW}
-> \end{gathered}$$
+> \end{gathered}
+> $$
 > Therefore, the power needed for both rolls is $\boxed {\pu{510kW}}$.
 
 
@@ -277,9 +345,11 @@ The force required for extrusion depends on (a) the strength of the billet mater
 >Process variables in direct extrusion; the die angle, reduction in cross-section, extrusion speed, billet temperature, and lubrication all affect the extrusion pressure. [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Kalpakjian et al., 2014)]].
 
 For a small die angle, $\alpha$, it has been shown that the extrusion force can then be approximated by:
-$$\boxed {
+$$
+\boxed {
 F=A_{o}k\ln\left( \dfrac{A_{o}}{A_{f}} \right)
- }$$
+ }
+$$
 where $k$ is the extrusion constant, determined experimentally;
 
 ## Extrusion Defects

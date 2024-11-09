@@ -87,25 +87,31 @@ Because of their sensitivity to cracks, impurities, and porosity, ceramics' stre
 
 **Tensile strength**:
 The tensile strength of polycrystalline ceramic parts increases with decreasing grain size and increasing porosity. Common earthenware, for example, has a porosity of $10-15\%$, whereas the porosity of hard porcelain (a white ceramic, composed of kaolin, quartz, and feldspar) is about $3\%$. An empirical relationship is given by:
-$$\boxed {
+$$
+\boxed {
 \sigma_{\text{UTS}}=\sigma_{\text{UTS},0}\, e^{-nP}
- }$$
+ }
+$$
 where $P$ is the volume fraction of pores in the solid; $\sigma_{\text{UTS},0}$ is the tensile strength at zero porosity; and the exponent $n$ ranges between $4$ and $7$.
 
 **Modulus of elasticity**:
 The [[SLD1_007 מאמץ ועיבור#מודול יאנג|modulus of elasticity]] of polycrystalline ceramic is affected by porosity, as given by:
-$$\boxed {
+$$
+\boxed {
 E\approx {E}_{0}(1-1.P+0.9P^{2})
- }$$
+ }
+$$
  where ${E}_{0}$ is the modulus at zero porosity. This equation is valid up to 50% porosity.
 
 **Thermal conductivity**
 Ceramics' thermal conductivity varies by as much as three orders of magnitude, depending on composition, whereas the thermal conductivity of metals varies by one order of magnitude. Also, as with other materials, thermal conductivity decreases with increasing temperature and porosity (because air is a very poor thermal conductor).
 
 The thermal conductivity, k, is related to porosity by
-$$\boxed {
+$$
+\boxed {
 k={k}_{0}(1-P)
- }$$
+ }
+$$
  where ${k}_{0}$ is the conductivity at zero porosity.
 
 # Exercises
@@ -116,11 +122,13 @@ Completely dense ceramic material has a tensile strength $\sigma_{\text{UTS}}=\p
 
 **Solution**:
 According to [[#General Properties and Applications of Ceramics]]:
-$$\begin{aligned}
+$$
+\begin{aligned}
  & 5\%: &  & E=\pu{226.8GPa} &  & \sigma_{\text{UTS}}=\pu{155.8MPa} \\[1ex]
  & 10\%: &  & E=\pu {204.8GPa } &  & \sigma_{\text{UTS}}=\pu{121.3MPa} \\[1ex]
  & 20\%: &  & E=\pu {164.0GPa } &  & \sigma_{\text{UTS}}=\pu{73.6MPa}
-\end{aligned}$$
+\end{aligned}
+$$
 
 ## Question 2
 Consider the following microstructures of sintered cemented carbide (Co/WC) used as a machining tool and discuss on:

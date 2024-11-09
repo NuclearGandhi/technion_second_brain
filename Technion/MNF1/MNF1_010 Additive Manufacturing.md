@@ -38,7 +38,9 @@ The diffusion processes in Electron Beam Melting (EBM) and Selective Laser Melti
 
 >[!theorem] Theorem: 
 > The diffusion coefficient $D$ is temperature-dependent and follows the **Arrhenius relationship**:
-> $$D={D}_{0}\exp\left( -\dfrac{E_{a}}{RT} \right)$$
+> $$
+> D={D}_{0}\exp\left( -\dfrac{E_{a}}{RT} \right)
+> $$
 > where ${D}_{0}$ is called the pre-exponential factor (related to the material); $E_{a}$ is the **activation energy** for diffusion (also related to the material); $R$ is the [[THE1_002 חישוב תכונות מערכת#קבוע הגז האוניברסלי|universal gas constant]]; and $T$ is the absolute temperature (in Kelvin).
 
 This equation shows that diffusion rates increase exponentially with temperature, which is particularly relevant in high-temperature processes like EBM and SLM.
@@ -47,7 +49,9 @@ Another important concept is called the **characteristic length of diffusion**. 
 
 >[!def] Definition: 
  >The characteristic length $L$ of diffusion is typically defined as the distance over which a diffusing species spreads in a material over a certain time $t$. It is derived from the solution to Fick's Second Law of Diffusion for certain boundary conditions. For a simple diffusion process in one dimension, the characteristic length $L$ can be estimated using the following relationship:
- >$$L=\sqrt{ Dt }$$
+ >$$
+> L=\sqrt{ Dt }
+> $$
  >where $D$ is the Diffusion coefficient (rate of diffusion); and $t$ is the time over which diffusion occurs.
 
 ## Energy Balance Equation for Powder Bed Processes
@@ -56,20 +60,30 @@ The energy balance equation is essential in understanding the thermal processes 
 
 The general form of the energy balance equation in an EBM system can be described as:
 
-$$Q_{\text{in}}=Q_{\text{melting}}+Q_{\text{heating}} $$
+$$
+Q_{\text{in}}=Q_{\text{melting}}+Q_{\text{heating}} 
+$$
 
 - $Q_{\text{in}}$ is the energy input from the electron beam:
-	$$Q_{\text{in}}=Pt$$
+	$$
+	Q_{\text{in}}=Pt
+	$$
 	where $P$ is the beam power (given in $\pu{W}$), and $t$ is length of time the beam was powered.
 - $Q_{\text{melting}}$ is the energy required to melt the powder from a solid to a liquid phase. It can be calculated as:
-	$$Q_{\text{melting}}=mL_{f}$$
+	$$
+	Q_{\text{melting}}=mL_{f}
+	$$
 	where $m$ is the mass of the material being melted, and $L_{f}$ is the **Latent heat of fusion** of the material, usually given in $\pu{kJ.kg^{-1}}$.
 
 - $Q_{\text{heating}}$ includes the energy required to heat the material to its melting point. It can be calculated using the specific heat capacity $c_{p}$​ of the material:
-	$$Q_{\text{heating}}=mc_{p}\Delta T$$
+	$$
+	Q_{\text{heating}}=mc_{p}\Delta T
+	$$
 	where $\Delta T$ is the temperature change (in Kelvin or Celsius).
 	Sometimes we also pass the boiling point of the material. In that case, we need to use two different specific heat capacities; $c_{s}$ for solid, and $c_{\ell}$ for liquid. $Q_{\text{heating}}$ is then given by:
-	$$Q_{\text{heating}}=m[c_{s}(T_{m}-{T}_{0})+c_{\ell}(T_{b}-T_{m})]$$
+	$$
+	Q_{\text{heating}}=m[c_{s}(T_{m}-{T}_{0})+c_{\ell}(T_{b}-T_{m})]
+	$$
 	where ${T}_{0}$ is the initial temperature; $T_{m}$ is the melting point temperature; and $T_{b}$ is the boiling point temperature.
 
 # Exercises
@@ -79,56 +93,78 @@ Austenitic stainless steel 316 made pre-alloyed powder with particles size $\pu{
 If a layer of the material is exposed to a temperature of $300-400^{\circ}\pu{C}$ for more than $\pu{10\min_{}}$, a formation of undesirable carbides occurs.
 
 The diffusion data of gamma-$\ce{ Fe }$ is as follows:
-$$\begin{aligned}
+$$
+\begin{aligned}
 {D}_{0}=\pu{0.5cm^{2}.s^{-1}} &  & E_{a}=\pu{67900cal.mol^{-1}}
-\end{aligned}$$
+\end{aligned}
+$$
 
 The diffusion data of carbon atoms in gamma-$\ce{ Fe }$ is as follows:
-$$\begin{aligned}
+$$
+\begin{aligned}
 {D}_{0}=\pu{0.1cm^{2}.s^{-1}} &  & E_{a}=\pu{32400cal.mol^{-1}}
-\end{aligned}$$
+\end{aligned}
+$$
 
 ### Part a
 Estimate the expected minimal and maximal grain size in as-printed material through assumption that each particle size is a single-crystal.
 
 **Solution**:
 To find the grain size, we need to find the distance in which the diffusion occurred. We can do that using [[#Diffusion in Powder Bed Processes|characteristic length]] of diffusion:
-$$L=\sqrt{ Dt }$$
+$$
+L=\sqrt{ Dt }
+$$
 Do find $D$, we simple use [[#Diffusion in Powder Bed Processes|Arrhenius' relationship]]:
-$$L=\sqrt{ {D}_{0}\exp\left( -\dfrac{E_{a}}{RT} \right)t }$$
+$$
+L=\sqrt{ {D}_{0}\exp\left( -\dfrac{E_{a}}{RT} \right)t }
+$$
 Substituting known parameters :
-$$\begin{aligned}
+$$
+\begin{aligned}
  & {D}_{0}=\pu{0.5cm^{2}.s^{-1}} &  & E_{a}=\pu{67900cal.mol^{-1}}, \\[1ex]
  & R=\pu {1.987 cal.K^{-1}.mol^{-1}} &  & T=\pu{1473K} \\[1ex]
  & t=\pu {10s }
-\end{aligned}$$we get:
-$$\begin{aligned}
+\end{aligned}
+$$
+we get:
+$$
+\begin{aligned}
 L & =\pu {20 \mu cm} \\[1ex]
  & =\pu{0.2\mu m}
-\end{aligned}$$
+\end{aligned}
+$$
+
 
 Therefore, the boundary of particle moved by $\pu {0.2\mu m }$, which means that its diameter increased by $\pu{0.4\mu m}$. So, the minimal and maximal grain sizes are:
-$$\boxed {
+$$
+\boxed {
 \pu {20.4\mu m }\leq  d\leq  \pu {50.4\mu m }
- }$$
+ }
+$$
 
 ### Part b
 Estimate the expected size of undesired carbide precipitates which may be formed in the printed material through the process mentioned above.
 
 **Solution**:
 Just like the previous part, the increase in diameter $d$ is given by:
-$$d=2\sqrt{ {D}_{0}\exp\left( -\dfrac{E_{a}}{RT} \right)t }$$
+$$
+d=2\sqrt{ {D}_{0}\exp\left( -\dfrac{E_{a}}{RT} \right)t }
+$$
 But now, we substitute the parameters for carbon:
 
-$$\begin{aligned}
+$$
+\begin{aligned}
  & {D}_{0}=\pu{0.1cm^{2}.s^{-1}} &  & E_{a}=\pu{32400cal.mol^{-1}}, \\[1ex]
  & R=\pu {1.987 cal.K^{-1}.mol^{-1}} &  & T=\pu{673K} \\[1ex]
  & t=\pu {600s }
-\end{aligned}$$
+\end{aligned}
+$$
 We get that the characteristic length of an undesired carbide precipitate is:
-$$\boxed {
+$$
+\boxed {
 L=\pu {0.4\mu m }
- }$$
+ }
+$$
 
 
 
@@ -137,37 +173,49 @@ Based on energy balance equation, estimate the depth of the heat affected zone u
 Assume that heat affected zone is in the shape of cylinder with diameter $d$.
 
 Parameters:
-$$\begin{aligned}
+$$
+\begin{aligned}
  & P=\pu{1250W} &  & d=\pu {80\mu m } \\[1ex]
  &  {T}_{0}=\pu{973K} &  & T_{m}=\pu{1941K} &  & T_{b}=\pu{3650K} \\[1ex]
  & c_{s}=\pu {544.3 J.kg^{-1}.K^{-1}} &  & c_{\ell}=\pu{830J.kg^{-1}.K^{-1}} \\[1ex]
  & L_{f}=\pu {322.7 kJ.kg-1} &  & \rho=\pu{4500kg.m^{-3}}
-\end{aligned}$$
+\end{aligned}
+$$
 
 **Solution**:
 We can find the depth $\ell$ using the [[#Energy Balance Equation for Powder Bed Processes|energy balance equation]]:
 
-$$\begin{gathered}
+$$
+\begin{gathered}
 Q_{\text{in}}=Q_{\text{melting}}+Q_{\text{heating}}  \\[1ex]
 Pt=mL_{f}+m[c_{s}(T_{m}-{T}_{0})+c_{\ell}(T_{b}-T_{m})]
-\end{gathered}$$
+\end{gathered}
+$$
 
 The unknowns are $t$ and $m$, which we can find using $d,\rho$ and the given $v$.
 The total time can be given by:
-$$t=\dfrac{d}{v}$$
+$$
+t=\dfrac{d}{v}
+$$
 And the mass is simply volume times density:
-$$\begin{aligned}
+$$
+\begin{aligned}
 m & =V\rho \\[1ex]
  & =\dfrac{\pi d^{2}}{4}\ell \rho
-\end{aligned}$$
+\end{aligned}
+$$
 Substituting into the energy balance equation:
-$$\begin{gathered}
+$$
+\begin{gathered}
 P \dfrac{d}{v}=m\cdot \dfrac{\pi d^{2}}{4}\ell \rho [L_{f}+[c_{s}(T_{m}-{T}_{0})+c_{\ell}(T_{b}-T_{m})]] \\[1ex]
 \boxed {
 \ell=\dfrac{4P}{\pi vd\rho[c_{s}(T_{m}-{T}_{0})+c_{\ell}(T_{b}-T_{m})+L_{f}]}
  }
-\end{gathered}$$
+\end{gathered}
+$$
 Using the given parameters, we get:
-$$\boxed {
+$$
+\boxed {
 \ell=\pu{0.48mm}
- }$$
+ }
+$$

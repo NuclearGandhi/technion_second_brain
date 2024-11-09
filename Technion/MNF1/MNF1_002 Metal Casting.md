@@ -13,22 +13,22 @@ Several methods can be used to shape materials into useful products. **Casting**
 
 | Casting Process                              | Advantages                                                    | Disadvantages                                |
 | -------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------- |
-| **[[#Sand casting]]**                        | -Low cost                                                     | - Poor surface finish                        |
+| **Sand casting**                             | -Low cost                                                     | - Poor surface finish                        |
 |                                              | - Versatile for complex shapes                                | - High degree of finishing required          |
 |                                              | - Large components can be cast                                | - Lower dimensional accuracy                 |
-| **[[#Shell-Mold Casting]]**                  | - Better surface finish than sand casting                     | - Higher cost than sand casting              |
+| **Shell-Mold Casting**                       | - Better surface finish than sand casting                     | - Higher cost than sand casting              |
 |                                              | - Higher dimensional accuracy                                 | - Limited size of castings                   |
 |                                              | - Good for thin-walled sections                               |                                              |
-| **[[#Lost Foam Process]]**                   | - Complex and intricate shapes can be cast                    | - High cost of patterns                      |
+| **Lost Foam Process**                   | - Complex and intricate shapes can be cast                    | - High cost of patterns                      |
 |                                              | - Good surface finish                                         | - Longer cycle times                         |
 |                                              | - Reduced need for cores                                      | - Fragility of foam patterns                 |
-| **[[#Lost Wax Process]]**                    | - Excellent surface finish and accuracy                       | - High cost of patterns and molds            |
+| **Lost Wax Process**                    | - Excellent surface finish and accuracy                       | - High cost of patterns and molds            |
 |                                              | - Suitable for complex and intricate shapes                   | - Time-consuming and labor-intensive process |
 |                                              | - Minimal machining required                                  |                                              |
-| **[[#Low-Pressure Permanent Casting]]**      | - Good mechanical properties due to controlled solidification | - Limited to relatively simple shapes        |
+| **Low-Pressure Permanent Casting**      | - Good mechanical properties due to controlled solidification | - Limited to relatively simple shapes        |
 |                                              | - Improved surface finish and dimensional accuracy            | - Higher mold cost                           |
 |                                              | - Suitable for medium to high volume production               |                                              |
-| **[[#Die Casting (High-Pressure Casting)]]** | - High production rate                                        | - High initial cost for molds and machines   |
+| **Die Casting (High-Pressure Casting)** | - High production rate                                        | - High initial cost for molds and machines   |
 |                                              | - Excellent surface finish and dimensional accuracy           | - Limited to non-ferrous metals              |
 |                                              | - Thin-walled sections can be cast                            | - High porosity levels                       |
 # Cast Structures
@@ -72,7 +72,9 @@ A major consideration in casting is the heat transfer during the complete cycle 
 ## Solidification Time
 During the early states of solidification, a thin solidified skin begin to form at the cool mold walls; as time passes, the skin thickens. With flat mold walls, the thickness is proportional to the square root of time. Thus, doubling the time will make the skin $\sqrt{ 2 }=1.41$ times, or $41\%$, thicker.
 The **solidification time** is a function of the volume of a casting and its surface are (called **Chvorinov's rule**), and is given by:
-$$\text{Solidification time} = C\left( \dfrac{\text{Volume}}{\text{Surface area}} \right)^{n}$$
+$$
+\text{Solidification time} = C\left( \dfrac{\text{Volume}}{\text{Surface area}} \right)^{n}
+$$
 Where $C$ is a constant the reflects the mold material and the metal properties. The parameter $n$ typically has a value between $1.5$ and $2$, and is usually taken as $2$. Thus, a large sphere solidifies and cools to ambient temperature at a much lower rate than does a smaller sphere, because the volume of a sphere is proportional to the cube of its diameter whereas the surface area is proportional to the square of its diameter. Similarly, it can be shown that molten metal in a cube-shaped mold will solidify faster than in a spherical mold of the same volume.
 The effects of mold geometry and elapsed time on skin thickness and its shape are shown in the following figure:
 
@@ -161,7 +163,7 @@ The pressure is applied to the top of the pool of liquid, which forces the molte
 
 
 >[!example] Example: 
-What casting process should be used for medium to high volume production with good mechanical properties and controlled solidification?
+> What casting process should be used for medium to high volume production with good mechanical properties and controlled solidification?
 >
 >**Answer:**
 >Low pressure permanent mold casting is appropriate for medium to high volume production with good mechanical properties and controlled solidification. However, it is limited to relatively simple shapes and involves higher mold costs.

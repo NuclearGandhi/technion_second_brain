@@ -18,15 +18,15 @@ aliases:
 	ראשית, נחתוך את הגל לאורך הדרוש (כדי לקבל את מידת הייצור $B$):
 	![[{13759D00-69A9-462B-93FF-FAD9B1418C25}.png|book]]
 	>הגדרת מידות הייצור $A$ ו-$B$.
-	
-	לאחר מכן, בעזרת חריטת אורך נוריד (ביחס לפאה הימנית) את הקוטר למידת ייצור $A$.
+
+לאחר מכן, בעזרת חריטת אורך נוריד (ביחס לפאה הימנית) את הקוטר למידת ייצור $A$.
 2. חלק $B$:
 	ראשית, נחתוך את הגל לאורך מידת הייצור $c$:
 	![[{44F3F219-FCE2-4504-84B5-A7339FEAC39C}.png|book]]
 	>הגדרת מידות הייצור $a,b$ ו-$c$.
-	
-	לאחר מכן נקדח לאורך כל הגל חור במידה הפנימית (קוטר 7 מ"מ). מצד ימין נרחיב את החור לקוטר 10 מ"מ לפי מידת הייצור $b$.
-	לבסוף, נבצע הברזה בצד ימין לפי מידת הייצור $a$.
+
+לאחר מכן נקדח לאורך כל הגל חור במידה הפנימית (קוטר 7 מ"מ). מצד ימין נרחיב את החור לקוטר 10 מ"מ לפי מידת הייצור $b$.
+לבסוף, נבצע הברזה בצד ימין לפי מידת הייצור $a$.
 
 ### סעיף ב'
 מצא את מידות האורך הדרושות לייצור.
@@ -34,73 +34,99 @@ aliases:
 **פתרון**:
 1. חלק $A$:
 	נמיר למידות סימטריות:
-	$$y=20.1\pm 0.2$$
+	$$
+	y=20.1\pm 0.2
+	$$
 	מידת ייצור $A$ תהיה פשוט המידה הפונקציונלית הנתונה $x$:
-	$$\boxed {
-A=30\pm 0.1
- }$$
+	$$
+	\boxed {
+	A=30\pm 0.1
+	 }
+	$$
 	המידה הפונקציונלית $y$ תלויה במידות הייצור $A$ ו-$B$, ולכן:
-	$$\begin{gathered}
-y=B-A \\[1ex]
-B=y+A
-\end{gathered}$$
+	$$
+	\begin{gathered}
+	y=B-A \\[1ex]
+	B=y+A
+	\end{gathered}
+	$$
 	כך שמבחינת מידה נומינלית:
-	$$\begin{gathered}
-B=50.1
-\end{gathered}$$
+	$$
+	\begin{gathered}
+	B=50.1
+	\end{gathered}
+	$$
 	מבחינת טולרנסים:
-	$$\begin{gathered}
-T(y)=T(B)+T(A) \\[1ex]
-T(B)=T(y)-T(A) \\[1ex]
-T(B)=0.4-0.2 \\[1ex]
-T(B)=0.2
-\end{gathered}$$
+	$$
+	\begin{gathered}
+	T(y)=T(B)+T(A) \\[1ex]
+	T(B)=T(y)-T(A) \\[1ex]
+	T(B)=0.4-0.2 \\[1ex]
+	T(B)=0.2
+	\end{gathered}
+	$$
 	ולכן:
-	$$\boxed{B=50.1\pm 0.1 }$$
+	$$
+	\boxed{B=50.1\pm 0.1 }
+	$$
 
 2. חלק $B$:
 	נמיר למידות סימטריות:
-	$$\begin{aligned}
- & x=20.05\pm 0.05 \\[1ex]
- & z=29.85\pm 0.15
-\end{aligned}$$
+	$$
+	\begin{aligned}
+	 & x=20.05\pm 0.05 \\[1ex]
+	 & z=29.85\pm 0.15
+	\end{aligned}
+	$$
 	המידה הפונקציונלית $x$ תלויה רק ב-$a$, ולכן:
-	$$\boxed {
-a=20.05\pm 0.05
- }$$
+	$$
+	\boxed {
+	a=20.05\pm 0.05
+	 }
+	$$
 	עבור $y,z$, מבחינת מידות נומינליות:
-	$$\begin{aligned}
-  & \mathrm{I}: & & y=c-b-a \\[1ex]
-  & \mathrm{II}: & & z=c-a
-\end{aligned}$$
+	$$
+	\begin{aligned}
+	  & \mathrm{I}: & & y=c-b-a \\[1ex]
+	  & \mathrm{II}: & & z=c-a
+	\end{aligned}
+	$$
 	מהמשוואה השנייה:
-	$$\begin{aligned}
-c & =z+a \\[1ex]
- & =29.9+20 \\[1ex]
- & =49.9
-\end{aligned}$$
+	$$
+	\begin{aligned}
+	c & =z+a \\[1ex]
+	 & =29.9+20 \\[1ex]
+	 & =49.9
+	\end{aligned}
+	$$
 	נוכל להציב במשוואה הראשונה:
-	$$\begin{aligned}
-b & =c-a-y \\[1ex]
- & =49.9-20.05-10 \\[1ex]
- & =19.85
-\end{aligned}$$
+	$$
+	\begin{aligned}
+	b & =c-a-y \\[1ex]
+	 & =49.9-20.05-10 \\[1ex]
+	 & =19.85
+	\end{aligned}
+	$$
 	מבחינת טולרנסים:
-	$$\begin{aligned}
- & \mathrm{I}: &  & T(z)=T(c)+T(a) \\[1ex]
- &  &  & T(c)=T(z)-T(a) \\[1ex]
- &  &  & T(c)=0.3-0.1 \\[1ex]
- &  &  & T(c)=0.2  \\[2ex]
- & \mathrm{II}: &  & T(y)=T(a)+T(b)+T(c) \\[1ex]
- &  &  & T(b)=T(y)-T(a)-T(c) \\[1ex]
- &  &  & T(b)=0.4-0.1-0.2 \\[1ex]
- &  &  & T(b)=0.1
-\end{aligned}$$
+	$$
+	\begin{aligned}
+	 & \mathrm{I}: &  & T(z)=T(c)+T(a) \\[1ex]
+	 &  &  & T(c)=T(z)-T(a) \\[1ex]
+	 &  &  & T(c)=0.3-0.1 \\[1ex]
+	 &  &  & T(c)=0.2  \\[2ex]
+	 & \mathrm{II}: &  & T(y)=T(a)+T(b)+T(c) \\[1ex]
+	 &  &  & T(b)=T(y)-T(a)-T(c) \\[1ex]
+	 &  &  & T(b)=0.4-0.1-0.2 \\[1ex]
+	 &  &  & T(b)=0.1
+	\end{aligned}
+	$$
 	ולכן:
-	$$\boxed{\begin{aligned}
- & b=19.85\pm 0.05 \\[1ex]
- & c=49.9\pm 0.1
-\end{aligned} }$$
+	$$
+	\boxed{\begin{aligned}
+	 & b=19.85\pm 0.05 \\[1ex]
+	 & c=49.9\pm 0.1
+	\end{aligned} }
+	$$
 
 
 # חריטה
@@ -111,13 +137,19 @@ b & =c-a-y \\[1ex]
 יש לבצע חריטת מצח (בכוון הרדיאלי) ולהקטין את אורך החלק ל-$\pu{118mm}$ (עם סכין ברוחב של $\pu{2mm}$), באחת משתי המכונות הבאות:
 
 1. מחרטה קונבנציונלית בעלת מהירות סיבוב:
-	$$n=500,\, 1000,\, 2000,\, 3000,\, 4000 \,\pu{rpm}$$
+	$$
+	n=500,\, 1000,\, 2000,\, 3000,\, 4000 \,\pu{rpm}
+	$$
 	עם קדמה מקסימלית אפשרית של $f=\pu{0.3mm/rev}$.
 2. מחרטת N.C. אשר מהירות הסיבוב שלה נינת לבקרה בתאום עם תנועת הגררה.
 	מהירות הסיבוב המקסימלית:
-	$$N_{\max_{}}=\pu{3000rpm}$$
+	$$
+	N_{\max_{}}=\pu{3000rpm}
+	$$
 	עם קדמה מקסימלית אפשרי:
-	$$f=\pu{0.3mm/rev}$$
+	$$
+	f=\pu{0.3mm/rev}
+	$$
 
 הכלי הוא שימה משולשת, עם רדיוס פינה $R=\pu{0.8mm}$, מהירות חיתוך מקסימלית מותרת של $V=\pu{200m/\min_{}}$, וקידמה מקסימלית מותרת של $f=\pu{0.4mm/rev}$.
 
@@ -125,27 +157,37 @@ b & =c-a-y \\[1ex]
 
 **פתרון**:
 אנו יודעים ש[[MNF1_004 Machining Processes#Turning#Key Parameters and Equations|מהירות החיתוך]] נתונה ע"י:
-$$\begin{gathered}
+$$
+\begin{gathered}
 V_{c}=\pi DN \\[1ex]
 N=\dfrac{V_{c}}{\pi D}
-\end{gathered}$$
+\end{gathered}
+$$
 נרצה למצוא עבור שתי המחרטות את המהירות הסיבוב המקסימלית/האידיאלית עבורה זמן החריטה הוא מינימלי. עבור המחרטה הראשונה, המהירות הכי גבוהה שמותר לנו להגיע אליה תתקבל עבור $D$ מינימלי ו-$V_{c}$ מקסימלי:
-$${N}_{1}=\dfrac{\pu{200m/\min_{}}}{\pi\cdot \pu{59mm}}=\pu {1079.02 rpm}$$
+$$
+{N}_{1}=\dfrac{\pu{200m/\min_{}}}{\pi\cdot \pu{59mm}}=\pu {1079.02 rpm}
+$$
 ולכן קצב הסיבוב הכי מתאים הוא ${N}_{1}=\pu{1000rpm}$. [[MNF1_004 Machining Processes#Turning#Key Parameters and Equations|זמן החריטה]] עבור קצב זה:
-$$\begin{gathered}
+$$
+\begin{gathered}
 t=\dfrac{L}{f{N}_{1}}=\dfrac{0.5\cdot(60-20)\,\pu{mm}}{\pu{0.3mm/rev}\cdot \pu{1000rpm}} \\[1ex]
 \boxed{t=\pu{4s} }
-\end{gathered}$$
+\end{gathered}
+$$
 עבור המחרטה השנייה, מאחר ו-$N$ האופטימלי יכל להשתנות, חישוב זמן החריטה הוא אינטגרלי:
-$$\begin{aligned}
+$$
+\begin{aligned}
 t & =\int_{D_{\min_{}}}^{D_{\max_{}}} \dfrac{\pi D}{2fV_{c}}  \, \mathrm{d}D  \\[1ex]
  & =\dfrac{\pi}{2fV_{c}}\int_{20}^{60}D  \, \mathrm{d}D \\[1ex]
  & =\dfrac{\pi}{2fV_{c}}\cdot \dfrac{1}{2}D^{2}\bigg|_{20}^{60}  \\[1ex]
  & =\dfrac{\pi}{2\cdot \pu{0.3mm/rev}\cdot \pu{200m/\min_{}}}\cdot \dfrac{1}{2}(\pu{3600mm^{2}}-\pu{400mm^{2}}) \\[1ex]
  & =\dfrac{\pi}{75}\,\pu{\min_{}} 
-\end{aligned}$$
+\end{aligned}
+$$
 ולכן:
-$$\boxed{t=\pu {2.51s } }$$
+$$
+\boxed{t=\pu {2.51s } }
+$$
 
 ## שאלה 2
 זהה לשאלה מ[[MNF1_HW002 Homework 2#Question 1|שיעורי בית]].
@@ -158,7 +200,9 @@ $$\boxed{t=\pu {2.51s } }$$
 ## שאלה 2
 נתון חלק באורך $\pu{380mm}$ כמתואר בציור. יש להגדיל את המדרגה למידות רצויות: גובה $\pu{6mm}$ ורוחב $\pu{17mm}$, בעזרת כרסום בקוטר $\pu{80mm}$ בשבב אחד. לכרסום יש $6$ שיניים (שימות) בהיקף. חומר העובד הוא פלדה מסוגסגת עם התנגדות סגולית לשיבוב $K_{s}=\pu{350kgf/mm^{2}}$ (ללא תלות בקדמה). הספק המכונה הוא $\pu{8Hp}$ ומכונה בעלת נצילות 85%.
 מהירויות סיבוב המותרות של המכונה הם:
-$$N=100,200,400,600,700,800$$
+$$
+N=100,200,400,600,700,800
+$$
 קדמה מומלצת לשן היא $f_{t}=\pu{0.25\dfrac{mm}{rev\cdot tooth}}$ ומהירות חיתוך מקסימלית המותרת היא $\pu{105\dfrac{m}{\min_{}}}$.
 ![[{520835CD-9CFE-44D7-99FC-9629D2808703}.png|book]]
 >צורה התחלתית של החלק
@@ -177,13 +221,17 @@ $$N=100,200,400,600,700,800$$
 >סכימה של אופן פעולת הכרסום
 
 מגיאומטרית הכרסום, הזווית $\alpha$ היא:
-$$\begin{gathered}
+$$
+\begin{gathered}
 w=R-R\cos\alpha \\[1ex]
 R\cos\alpha=R-w \\[1ex]
 \cos\alpha=\dfrac{R-w}{R}
-\end{gathered}$$
+\end{gathered}
+$$
 נציב נתונים ונסיק כי:
-$$\alpha=54.9^{\circ} $$
+$$
+\alpha=54.9^{\circ} 
+$$
 לכן זווית היציאה של הסכין מהחומר היא $\boxed{\approx-35^{\circ} }$.
 
 >[!notes] הערה: 
@@ -194,34 +242,44 @@ $$\alpha=54.9^{\circ} $$
 
 **פתרון**:
 מאחר ויש $6$ שיניים בכרסום, הזווית בין כל אחת מהן היא $60^{\circ}$, כך שמספר השיניים הממוצע בכרסום הוא:
-$$\begin{gathered}
+$$
+\begin{gathered}
 n=\dfrac{55^{\circ}}{60^{\circ} } \\[1ex]
 \boxed{n\approx 0.9 }
-\end{gathered}$$
+\end{gathered}
+$$
 
 ### סעיף ג'
 מהו הכוח המקסימלי הפועל על השן?
 
 **פתרון**:
 לפי [[MNF1_004 Machining Processes#Milling#Cutting Force and Power|כוח חיתוך]] על שן:
-$$F_{c}=K_{s}f_{t}d\cos\theta$$
+$$
+F_{c}=K_{s}f_{t}d\cos\theta
+$$
 הביטוי $\cos\theta$ מקסימלי עבור $\theta=-35^{\circ}$ (המשתנה $\theta$ חסום ע"י $-90^{\circ}\leq\theta\leq-35^{\circ}$), ולכן כוח החיתוך המקסימלי הוא:
-$$\begin{gathered}
+$$
+\begin{gathered}
 F_{c}=\pu {3500 N/mm^{2}}\cdot \pu{0.25mm}\cdot \pu{2mm}\cdot \cos(-35^{\circ} ) \\[1ex]
 \boxed{F_{c}=\pu {1433.5N } }
-\end{gathered}$$
+\end{gathered}
+$$
 
 ### סעיף ד'
 מהי מהירות סיבוב הכלי שתבחר?
 
 **פתרון**:
 לפי [[MNF1_004 Machining Processes#Turning#Key Parameters and Equations|מהירות חיתוך]]:
-$$V_{c}=\pi DN$$
+$$
+V_{c}=\pi DN
+$$
 מאחר ו-$V_{c}$ חסום, במקרה שלנו:
-$$\begin{gathered}
+$$
+\begin{gathered}
 \pu{105m/\min_{}}=\pi\cdot \pu{80mm}\cdot {N}_{} \\[1ex]
 N\approx \pu{429rpm}
-\end{gathered}$$
+\end{gathered}
+$$
 לכן נבחר במהירות סיבוב $\boxed {N=\pu{400rpm}}$.
 
 ### סעיף ה'
@@ -229,50 +287,66 @@ N\approx \pu{429rpm}
 
 **פתרון**:
 לפי [[MNF1_004 Machining Processes#Milling#Key Parameters and Equations|מהירות כרסום]] (קדמת השולחן):
-$$\begin{gathered}
+$$
+\begin{gathered}
 v=f_{t}zN
-\end{gathered}$$
+\end{gathered}
+$$
 נציב נתונים:
-$$v=\pu{600mm.min^{-1}}$$
+$$
+v=\pu{600mm.min^{-1}}
+$$
 
 ### סעיף ו'
 מהו ההספק המקסימאלי הדרוש לתהליך הכרסום בתנאים שבחרת?
 
 **פתרון**:
 לפי [[MNF1_004 Machining Processes#Milling#Cutting Force and Power|הספק של כרסום בזמן נתון]]:
-$$\begin{aligned}
+$$
+\begin{aligned}
 P & = F_{c}V_{c}
-\end{aligned}$$
+\end{aligned}
+$$
 מצאנו את הערך המקסימלי עבור $F_{c}$. עלינו למצוא את $V_{c}$ (שהוא לא בהכרח ה-$V_{c}$ המקסימלי כי החלטנו על מהירות סיבוב מסוימת:
-$$\begin{aligned}
+$$
+\begin{aligned}
 V_{c} & =\pi DN \\[1ex]
  &  =\pi\cdot\pu{80mm}\cdot \pu{400rpm} \\[1ex]
  & =\pu{100.53m/\min_{}}
-\end{aligned}$$
+\end{aligned}
+$$
 נציב בחזרה בביטוי להספק:
-$$\begin{gathered}
+$$
+\begin{gathered}
 P=\pu {1433.5N \cdot \pu {100.53 m/\min_{}}} \\[1ex]
 \boxed{P= \pu {2402 W}}
-\end{gathered}$$
+\end{gathered}
+$$
 
 ### סעיף ז'
 מהו ההספק הדרוש מהמכונה לביצוע התהליך?
 
 **פתרון**:
 מאחר ונצילות המכונה היא $85\%$:
-$$\begin{gathered}
+$$
+\begin{gathered}
 P_{r}=\dfrac{P}{0.85} \\[1ex]
 \boxed{P_{r}=\pu{2826W} }
-\end{gathered}$$
+\end{gathered}
+$$
 
 ### סעיף ח'
 מהו זמן (בשניות) העיבוד המינימלי של המדרגה בחלק כך, שנוכל להוציא את החלק ללא הפרעת כרסום?
 
 **פתרון**:
 לפי [[MNF1_004 Machining Processes#Milling#Key Parameters and Equations|זמן כרסום]]:
-$$t=\dfrac{L+D}{v}$$
+$$
+t=\dfrac{L+D}{v}
+$$
 נציב נתונים:
-$$\boxed{t= \pu {46s }}$$
+$$
+\boxed{t= \pu {46s }}
+$$
 
 ### סעיף ט'
 בתהליך שתכננת, מהו הגורם המגביל להקטנת זמן עיבוד של החלק?
@@ -287,26 +361,42 @@ $$\boxed{t= \pu {46s }}$$
 
 **פתרון**:
 לפי [[MNF1_003 Bulk Deformation Processes#Forging#Slab Method of Analysis|לחץ ממוצע בכבישה של דסקה]]:
-$$p_{\text{avg}}=S_{y}\left( 1+\dfrac{2\mu R}{3h} \right)$$
+$$
+p_{\text{avg}}=S_{y}\left( 1+\dfrac{2\mu R}{3h} \right)
+$$
 את $h$ בסוף התהליך אנו יודעים, נידרש למצוא את הרדיוס/קוטר.
 לפי [[MNF1_003 Bulk Deformation Processes#Forces under ideal conditions|מאמץ של חומר בהקשיית מעוותים]]:
-$$S_{y}=K\varepsilon^{n}$$
+$$
+S_{y}=K\varepsilon^{n}
+$$
 הרי ברור שאנו זוכרים בע"פ את הנתונים של 4135:
-$$K=\pu{1015MPa} \qquad  n=0.17$$
+$$
+K=\pu{1015MPa} \qquad  n=0.17
+$$
 בנוסף, העיבור האמיתי הוא:
-$$\varepsilon=\ln\left( \dfrac{h_{i}}{h_{f}} \right)=0.693$$
+$$
+\varepsilon=\ln\left( \dfrac{h_{i}}{h_{f}} \right)=0.693
+$$
 לכן:
-$$S_{y}=\pu {953.7MPa }$$
+$$
+S_{y}=\pu {953.7MPa }
+$$
 את $R$ נוכל למצוא משימור נפח:
-$$\begin{gathered}
+$$
+\begin{gathered}
 \pi R^{2}h_{f}=\pi r^{2}h_{i} \\[1ex]
 R=r\sqrt{ \dfrac{h_{i}}{h_{f}} } \\[1ex]
 R=\pu{107.76mm}
-\end{gathered}$$
+\end{gathered}
+$$
 נציב הכל בלחץ הממוצע:
-$$p_{\text{avg}}=\pu{1223.5MPa}$$
+$$
+p_{\text{avg}}=\pu{1223.5MPa}
+$$
 לכן סך הכוח:
-$$\begin{gathered}
+$$
+\begin{gathered}
 F=p_{\text{avg}}\cdot \pi R^{2} \\[1ex]
 \boxed{F=\pu {44.632MN } }
-\end{gathered}$$
+\end{gathered}
+$$
