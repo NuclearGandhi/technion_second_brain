@@ -11,12 +11,9 @@
             "id": "0b5fb65102827d45",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Technion/CTH1/CTH1_002 מודלים מתמטיים של מערכות.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
+                "file": "logo.png"
               }
             }
           }
@@ -111,7 +108,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Technion/CTH1/CTH1_002 מודלים מתמטיים של מערכות.md",
+            "file": "logo.png",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -123,7 +120,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Technion/CTH1/CTH1_002 מודלים מתמטיים של מערכות.md"
+            "file": "logo.png"
           }
         }
       }
@@ -147,6 +144,8 @@
   },
   "active": "0b5fb65102827d45",
   "lastOpenFiles": [
+    "favicon-32x32.png",
+    "Technion/סטנדרט SI-Fang.md",
     "Technion/CTH1/Screenshot_20241105_141550_Drive.jpg",
     "Technion/CTH1/Screenshot_20241105_141509_Drive.jpg",
     "Technion/CTH1/Screenshot_20241105_135444_Drive 1.jpg",
@@ -160,7 +159,6 @@
     "Technion/CTH1/Screenshot_20241105_133653_Drive.jpg",
     "Technion/CTH1/Screenshot_20241105_131809_Drive.jpg",
     "Technion/CTH1/CTH1_001/Screenshot_20241105_124203_Obsidian.jpg",
-    "Technion/CTH1/CTH1_001/Screenshot_20241105_124757_Obsidian.jpg",
     "פנגייה - רשימת סיכומים.md",
     "Technion/CTH1/CTH1_001",
     "Technion/HTF1/HTF1_002 מבוא להולכה.md",
@@ -185,7 +183,6 @@
     "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
     "Technion/NUM1/NUM1_HW006.pdf",
     "Technion/CAL1/CAL1_009 אינטגרל מוכלל.md",
-    "Technion/SLD2/SLD2_011 שיטות אנרגיה 2024-03-18 14.05.22.excalidraw.md",
     "Technion/SLD2/SLD2_010",
     "Technion/NUM1/NUM1_000.pdf",
     "Technion/NUM1/NUM1_009 אינטגרציה נומרית.pdf",

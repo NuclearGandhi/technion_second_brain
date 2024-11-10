@@ -40,12 +40,12 @@ from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
 
 X, y = make_blobs([...]) # make the blobs: y contains the cluster
-						 # IDs, but we will not use them; that's 
-						 # what we want to predict
-k = 5
-kmeans = KMeans(n_clusters=k, random_state=42)
-y_pred = kmeans.fit_predict(X)
-```
+# IDs, but we will not use them; that's
+# what we want to predict
+		k = 5
+		kmeans = KMeans(n_clusters=k, random_state=42)
+		y_pred = kmeans.fit_predict(X)
+		```
 
 Note that you have to specify the number of clusters $k$ that the algorithm must find. In this example, it is pretty obvious from looking at the data that $k$ should be set to 5, but in general it is not that easy. We will discuss this shortly.
 
@@ -53,21 +53,21 @@ Each instance will be assigned to one of the five clusters. In the context of cl
 
 ```python
 >>> y_pred
-array([4, 0, 1, ..., 2, 1, 0], dtype=int32
+> array([4, 0, 1, ..., 2, 1, 0], dtype=int32
 >>> y_pred is kmeans.labels_
-True
-```
+> True
+> ```
 
 We can also take a look at the five centroids that the algorithm found:
 
 ```python
 >>> kmeans.cluster_centers_
-array([[-2.80037642,  1.30082566],
-       [ 0.20876306,  2.25551336],
-       [-2.79290307,  2.79641063],
-       [-1.46679593,  2.28585348],
-       [-2.80389616,  1.80117999]])
-```
+> array([[-2.80037642,  1.30082566],
+> 	   [ 0.20876306,  2.25551336],
+> 	   [-2.79290307,  2.79641063],
+> 	   [-1.46679593,  2.28585348],
+> 	   [-2.80389616,  1.80117999]])
+> ```
 
 You can easily assign new instances to the cluster whose centroid is closest:
 
@@ -75,8 +75,8 @@ You can easily assign new instances to the cluster whose centroid is closest:
 >>> import numpy as np
 >>> X_new = np.array([[0, 2], [3, 2], [-3, 3], [-3, 2.5]])
 >>> kmeans.predict(X_new)
-array([1, 1, 2, 2], dtype=int32)
-```
+> array([1, 1, 2, 2], dtype=int32)
+> ```
 
 If you plot the cluster’s decision boundaries, you get a Voronoi tessellation:
 ![[Pasted image 20241014114306.png|bscreen]]
@@ -90,11 +90,11 @@ In the `KMeans` class, the `transform()` method measures the distance from each 
 
 ```python
 >>> kmeans.transform(X_new).round(2)
-array([[2.84, 0.59, 1.5 , 2.9 , 0.31],
-       [5.82, 2.97, 4.48, 5.85, 2.69],
-       [1.46, 3.11, 1.69, 0.29, 3.47],
-       [0.97, 3.09, 1.55, 0.36, 3.36]])
-```
+> array([[2.84, 0.59, 1.5 , 2.9 , 0.31],
+> 	   [5.82, 2.97, 4.48, 5.85, 2.69],
+> 	   [1.46, 3.11, 1.69, 0.29, 3.47],
+> 	   [0.97, 3.09, 1.55, 0.36, 3.36]])
+> ```
 
 
 In this example, the first instance in `X_new` is located at a distance of about 2.81 from the first centroid, 0.33 from the second centroid, 2.90 from the third centroid, 1.49 from the fourth centroid, and 2.89 from the fifth centroid. If you have a high-dimensional dataset and you transform it this way, you end up with a $k$-dimensional dataset: this transformation can be a very efficient nonlinear dimensionality reduction technique. Alternatively, you can use these distances as extra features to train another model.
@@ -117,9 +117,9 @@ If you happen to know approximately where the centroids should be (e.g., if you 
 ```python
 good_init = np.array([[-3, 3], [-3, 2], [-3, 1], [-1, 2], [0, 2]])
 kmeans = KMeans(n_clusters=5, init=good_init, n_init=1, 
-				random_state=42)
-kmeans.fit(X)
-```
+random_state=42)
+		kmeans.fit(X)
+		```
 
 Another solution is to run the algorithm multiple times with different random initializations and keep the best solution. The number of random initializations is controlled by the `n_init` hyperparameter: by default it is equal to 10, which means that the whole algorithm described earlier runs 10 times when you call `fit()`, and Scikit-Learn keeps the best solution. But how exactly does it know which solution is the best? It uses a performance metric! That metric is called the model’s `inertia`, which is the sum of the squared distances between the instances and their closest centroids. The `KMeans` class runs the algorithm `n_init` times and keeps the model with the lowest inertia.
 
@@ -151,8 +151,8 @@ We’ll start by importing the Pillow package (successor to the Python Imaging L
 >>> import PIL
 >>> image = np.asarray(PIL.Image.open(filepath))
 >>> image.shape
-(533, 800, 3)
-```
+> (533, 800, 3)
+> ```
 
 ![[Pasted image 20241014162719.png|bscreen]]
 >Image segmentation using $k$-means with various numbers of color clusters
@@ -190,8 +190,8 @@ log_reg.fit(X_train[:n_labeled], y_tain[:n_labeled])
 We can then measure the accuracy of this model on the test set (note that the test set must be labeled):
 ```python
 >>> log_reg.score(X_test, y_test)
-0.7481108312342569
-```
+> 0.7481108312342569
+> ```
 
 If you try training the model on the full training set, you will find that it will reach about 90.7% accuracy. Let’s see how we can do better. First, let’s cluster the training set into 50 clusters. Then, for each cluster, we’ll find the image closest to the centroid. We’ll call these images the **representative images**:
 ```python
@@ -209,11 +209,11 @@ The following figure shows the 50 representative images:
 Let's look at each image and manually label them:
 ```python
 y_representative_digits = np.array([
-    1, 3, 6, 0, 7, 9, 2, 4, 8, 9,
-    5, 4, 7, 1, 2, 6, 1, 2, 5, 1,
-    4, 1, 3, 3, 8, 8, 2, 5, 6, 9,
-    1, 4, 0, 6, 8, 3, 4, 6, 7, 2,
-    4, 1, 0, 7, 5, 1, 9, 9, 3, 7
+1, 3, 6, 0, 7, 9, 2, 4, 8, 9,
+5, 4, 7, 1, 2, 6, 1, 2, 5, 1,
+4, 1, 3, 3, 8, 8, 2, 5, 6, 9,
+1, 4, 0, 6, 8, 3, 4, 6, 7, 2,
+4, 1, 0, 7, 5, 1, 9, 9, 3, 7
 ])
 ```
 
@@ -222,8 +222,8 @@ Now we have a dataset with just 50 labeled instances, but instead of being rando
 >>> log_reg = LogisticRegression(max_iter=10_000)
 >>> log_reg.fit(X_representative_digits, y_representative_digits)
 >>> log_reg.score(X_test, y_test)
-0.8488664987405542
-```
+> 0.8488664987405542
+> ```
 
 We jumped from 74.8% accuracy to 84.9%, although we are still only training the model on 50 instances. Since it is often costly and painful to label instances, especially when it has to be done manually by experts, it is a good idea to label representative instances rather than just random instances.
 
@@ -232,8 +232,8 @@ But perhaps we can go one step further: what if we propagated the labels to all 
 ```python
 y_train_propagated = np.empty(len(X_train), dtype=np.int64)
 for i in range(k):
-    y_train_propagated[kmeans.labels_ == i] =
-    y_representative_digits[i]
+y_train_propagated[kmeans.labels_ == i] =
+y_representative_digits[i]
 ```
 
 Now let's train the model again and look at its performance:
@@ -241,8 +241,8 @@ Now let's train the model again and look at its performance:
 >>> log_reg = LogisticRegression()
 >>> log_reg.fit(X_train, y_train_propagated)
 >>> log_reg.score(X_test, y_test)
-0.8942065491183879
-```
+> 0.8942065491183879
+> ```
 
 We got another significant accuracy boost! Let’s see if we can do even better by ignoring the 1% of instances that are farthest from their cluster center: this should eliminate some outliers. The following code first computes the distance from each instance to its closest cluster center, then for each cluster it sets the 1% largest distances to -1. Lastly, it creates a set without these instances marked with a -1 distance:
 
@@ -251,12 +251,12 @@ percentile_closest = 99
 
 X_cluster_dist = X_digits_dist[np.arange(len(X_train)), kmeans.labels_]
 for i in range(k):
-    in_cluster = (kmeans.labels_ == i)
-    cluster_dist = X_cluster_dist[in_cluster]
-    cutoff_distance = np.percentile(cluster_dist, 
-	    percentile_closest)
-    above_cutoff = (X_cluster_dist > cutoff_distance)
-    X_cluster_dist[in_cluster & above_cutoff] = -1
+in_cluster = (kmeans.labels_ == i)
+cluster_dist = X_cluster_dist[in_cluster]
+cutoff_distance = np.percentile(cluster_dist,
+percentile_closest)
+		above_cutoff = (X_cluster_dist > cutoff_distance)
+		X_cluster_dist[in_cluster & above_cutoff] = -1
 
 partially_propagated = (X_cluster_dist != -1)
 X_train_partially_propagated = X_train[partially_propagated]
@@ -267,17 +267,17 @@ Now let's train the model again on this partially propagated dataset and see wha
 ```python
 >>> log_reg = LogisticRegression(max_iter=10_000)
 >>> log_reg.fit(X_train_partially_propagated, 
-	 y_train_partially_propagated)
+> 	 y_train_partially_propagated)
 >>> log_reg.score(X_test, y_test)
-0.9093198992443325
-```
+> 0.9093198992443325
+> ```
 
 With just 50 labeled instances (only 5 examples per class on average!) we got 90.9% accuracy, which is actually slightly higher than the performance we got on the fully labeled digits dataset (90.7%). This is partly thanks to the fact that we dropped some outliers, and partly because the propagated labels are actually pretty good - their accuracy is about 97.5%, as the following code shows:
 ```python
 >>> (y_train_partially_propagated == 
-		y_train[partially_propagated]).mean()
-0.9755555555555555
-```
+> 		y_train[partially_propagated]).mean()
+> 0.9755555555555555
+		```
 
 ## DBSCAN
 The **density-based spatial clustering of applications with noise (DBSCAN)** algorithm defines clusters as continuous regions of high density. Here is how it works:
@@ -292,32 +292,32 @@ from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_moons
 
 X, y = make_moons(n_samples=1000, noise=0.05, 
-				  random_state=42)
-dbscan = DBSCAN(eps=0.05, min_samples=5)
-dbscan.fit(X)
-```
+random_state=42)
+		dbscan = DBSCAN(eps=0.05, min_samples=5)
+		dbscan.fit(X)
+		```
 
 The labels of all the instances are now available in the `labels_` instance variable:
 
 ```python
 >>> dbscan.labels_[:10]
-array([ 0,  2, -1, -1,  1,  0,  0,  0,  2,  5])
-```
+> array([ 0,  2, -1, -1,  1,  0,  0,  0,  2,  5])
+> ```
 
 Notice that some instances have a cluster index equal to -1, which means that they are considered as anomalies by the algorithm. The indices of the core instances are available in the `core_sample_indices_` instance variable, and the core instances themselves are available in the `components_` instance variable.
 
 ```python
 >>> dbscan.core_sample_indices_[:10]
-array([ 0,  4,  5,  6,  7,  8, 10, 11, 12, 13])
+> array([ 0,  4,  5,  6,  7,  8, 10, 11, 12, 13])
 >>> dbscan.components_
-array([[-0.02137124,  0.40618608],
-       [-0.84192557,  0.53058695],
-       [ 0.58930337, -0.32137599],
-       ...,
-       [ 1.66258462, -0.3079193 ],
-       [-0.94355873,  0.3278936 ],
-       [ 0.79419406,  0.60777171]])
-```
+> array([[-0.02137124,  0.40618608],
+> 	   [-0.84192557,  0.53058695],
+> 	   [ 0.58930337, -0.32137599],
+> 	   ...,
+> 	   [ 1.66258462, -0.3079193 ],
+> 	   [-0.94355873,  0.3278936 ],
+> 	   [ 0.79419406,  0.60777171]])
+> ```
 
 This clustering is represented in the lefthand plot of the following figure:
 
@@ -333,23 +333,23 @@ from sklearn.neighbors import KNeighborsClassifier
 
 knn = KNeighborsClassifier(n_neighbors=50)
 knn.fit(dbscan.components_,
-		dbscan.labels_[dbscan.core_sample_indices_])
-```
+dbscan.labels_[dbscan.core_sample_indices_])
+		```
 
 Now, given a few new instances, we can predict which clusters they most likely belong to and even estimate a probability for each cluster:
 
 ```python
 >>> X_new = np.array([[-0.5, 0], [0, 0.5], [1, -0.1], 
-				  [2, 1]])
->>> knn.predict(X_new)
-array([1, 0, 1, 0])
->>> knn.predict_proba(X_new)
-array([[0.18, 0.82],
-       [1.  , 0.  ],
-       [0.12, 0.88],
-       [1.  , 0.  ]])
-```
-Note that we only trained the classifier on the core instances, but we could also have chosen to train it on all the instances, or all but the anomalies: this choice depends on the final task.
+> 				  [2, 1]])
+		>>> knn.predict(X_new)
+		array([1, 0, 1, 0])
+		>>> knn.predict_proba(X_new)
+		array([[0.18, 0.82],
+		   [1.  , 0.  ],
+		   [0.12, 0.88],
+		   [1.  , 0.  ]])
+		```
+		Note that we only trained the classifier on the core instances, but we could also have chosen to train it on all the instances, or all but the anomalies: this choice depends on the final task.
 
 The decision boundary is represented in the following figure (the crosses represent the four instances in `X_new`):
 ![[Pasted image 20241018223917.png|bscreen]]
@@ -360,11 +360,11 @@ Notice that since there is no anomaly in the training set, the classifier always
 ```python
 >>> y_dist, y_pred_idx = knn.kneighbors(X_new, n_neighbors=1)
 >>> y_pred = dbscan.labels_[dbscan.core_sample_indices_]
-		[y_pred_idx]
->>> y_pred[y_dist > 0.2] = -1
->>> y_pred.ravel()
-array([-1,  0,  1, -1])
-```
+> 		[y_pred_idx]
+		>>> y_pred[y_dist > 0.2] = -1
+		>>> y_pred.ravel()
+		array([-1,  0,  1, -1])
+		```
 
 In short, DBSCAN is a very simple yet powerful algorithm capable of identifying any number of clusters of any shape. It is robust to outliers, and it has just two hyperparameters (`eps` and `min_samples`). If the density varies significantly across the clusters, however, or if there’s no sufficiently low-density region around some clusters, DBSCAN can struggle to capture all the clusters properly. Moreover, its computational complexity is roughly $O(m^{2}n)$, so it does not scale well to large datasets.
 
@@ -387,67 +387,67 @@ So what can you do with such a model? Well, given the dataset $\mathbf{X}$, you 
 from sklearn.mixture import GaussianMixture
 
 gm = GaussianMixture(n_components=3, n_init=10, 
-					 random_state=42)
-gm.fit(X)
-```
-Let’s look at the parameters that the algorithm estimated:
-```python
->>> gm.weights_
-array([0.39025715, 0.40007391, 0.20966893])
->>> gm.means_
-array([[ 0.05131611,  0.07521837],
-       [-1.40763156,  1.42708225],
-       [ 3.39893794,  1.05928897]])
->>> gm.covariances_
-array([[[ 0.68799922,  0.79606357],
-        [ 0.79606357,  1.21236106]],
+random_state=42)
+		gm.fit(X)
+		```
+		Let’s look at the parameters that the algorithm estimated:
+		```python
+		>>> gm.weights_
+		array([0.39025715, 0.40007391, 0.20966893])
+		>>> gm.means_
+		array([[ 0.05131611,  0.07521837],
+		   [-1.40763156,  1.42708225],
+		   [ 3.39893794,  1.05928897]])
+		>>> gm.covariances_
+		array([[[ 0.68799922,  0.79606357],
+[ 0.79606357,  1.21236106]],
 
-       [[ 0.63479409,  0.72970799],
-        [ 0.72970799,  1.1610351 ]],
+[[ 0.63479409,  0.72970799],
+[ 0.72970799,  1.1610351 ]],
 
-       [[ 1.14833585, -0.03256179],
-        [-0.03256179,  0.95490931]]])
-```
+[[ 1.14833585, -0.03256179],
+[-0.03256179,  0.95490931]]])
+		```
 
 Great, it worked fine! Indeed, two of the three clusters were generated with 500 instances each, while the third cluster only contains 250 instances. So the true cluster weights are 0.4, 0.4, and 0.2, respectively, and that’s roughly what the algorithm found. Similarly, the true means and covariance matrices are quite close to those found by the algorithm. But how? This class relies on the **expectation-maximization (EM)** algorithm, which has many similarities with the k-means algorithm: it also initializes the cluster parameters randomly, then it repeats two steps until convergence, first assigning instances to clusters (this is called the *expectation step*) and then updating the clusters (this is called the *maximization step*). Sounds familiar, right? In the context of clustering, you can think of EM as a generalization of k-means that not only finds the cluster centers ($\boldsymbol{\mu}^{(1)}$ to $\boldsymbol{\mu}^{(k)}$), but also their size, shape, and orientation ($\boldsymbol{\Sigma}^{(1)}$ to $\boldsymbol{\Sigma}^{(k)}$), as well as their relative weights ($\phi^{(1)}$ to $\phi^{(k)}$. Unlike $k$-means, though, EM uses soft cluster assignments, no hard assignments. For each instance, during the expectation step, the algorithm estimates the probability that it belongs to each cluster (based on the current cluster parameters). Then, during the maximization step, each cluster is updated using all the instances in the dataset, with each instance weighted by the estimated probability that it belongs to that cluster. These probabilities are called the *responsibilities* of the clusters for the instances. During the maximization step, each cluster’s update will mostly be impacted by the instances it is most responsible for.
 
 You can check whether or not the algorithm converged and how many iterations it took:
 ```python
 >>> gm.converged_
-True
+> True
 >>> gm.n_iter_
-4
-```
+> 4
+> ```
 
 Now that you have an estimate of the location, size, shape, orientation, and relative weight of each cluster, the model can easily assign each instance to the most likely cluster (hard clustering) or estimate the probability that it belongs to a particular cluster (soft clustering). Just use the `predict()` method for hard clustering, or the `predict_proba()` method for soft clustering:
 
 ```python
 >>> gm.predict(X)
-array([0, 0, 1, ..., 2, 2, 2])
+> array([0, 0, 1, ..., 2, 2, 2])
 >>> gm.predict_proba(X).round(3)
-array([[0.977, 0.   , 0.023],
-       [0.983, 0.001, 0.016],
-       [0.   , 1.   , 0.   ],
-       ...,
-       [0.   , 0.   , 1.   ],
-       [0.   , 0.   , 1.   ],
-       [0.   , 0.   , 1.   ]])
-```
+> array([[0.977, 0.   , 0.023],
+> 	   [0.983, 0.001, 0.016],
+> 	   [0.   , 1.   , 0.   ],
+> 	   ...,
+> 	   [0.   , 0.   , 1.   ],
+> 	   [0.   , 0.   , 1.   ],
+> 	   [0.   , 0.   , 1.   ]])
+> ```
 
 A Gaussian mixture model is a *generative model*, meaning you can sample new instances from it (note that they are ordered by cluster index):
 
 ```python
 >>> X_new, y_new = gm.sample(6)
 >>> X_new
-array([[-0.86944074, -0.32767626],
-       [ 0.29836051,  0.28297011],
-       [-2.8014927 , -0.09047309],
-       [ 3.98203732,  1.49951491],
-       [ 3.81677148,  0.53095244],
-       [ 2.84104923, -0.73858639]])
+> array([[-0.86944074, -0.32767626],
+> 	   [ 0.29836051,  0.28297011],
+> 	   [-2.8014927 , -0.09047309],
+> 	   [ 3.98203732,  1.49951491],
+> 	   [ 3.81677148,  0.53095244],
+> 	   [ 2.84104923, -0.73858639]])
 >>> y_new
-array([0, 0, 1, 2, 2, 2])
-```
+> array([0, 0, 1, 2, 2, 2])
+> ```
 
 The following figure shows the cluster means, the decision boundaries (dashed lines), and the density contours of this model:
 ![[Pasted image 20241019103229.png|bscreen]]

@@ -30,14 +30,14 @@ You can visualize the trained decision tree by first using the `export_graphviz(
 from sklearn.tree import export_graphviz
 
 export_graphviz(
-        tree_clf,
-        out_file="iris_tree.dot"
-        feature_names=["petal length (cm)", "petal width (cm)"],
-        class_names=iris.target_names,
-        rounded=True,
-        filled=True
-    )
-```
+tree_clf,
+out_file="iris_tree.dot"
+feature_names=["petal length (cm)", "petal width (cm)"],
+class_names=iris.target_names,
+rounded=True,
+filled=True
+		)
+		```
 
 Then you can use `graphviz.Source.from_file()` to load and display the file in a Jupyter notebook:
 
@@ -63,7 +63,9 @@ A node’s `value` attribute tells you how many training instances of each class
 Finally, a node’s `gini` attribute measures its Gini impurity: a node is “pure” (`gini=0`) if all training instances it applies to belong to the same class. For example, since the depth-1 left node applies only to *Iris setosa* training instances, it is pure and its Gini impurity is 0.
 
 The following equation shows how the training algorithm computes the Gini impurity $G_{i}$ of the $i$th node:
-$$G_{i}=1-\sum_{k=1}^{n}{p_{i,k}}^{2} $$
+$$
+G_{i}=1-\sum_{k=1}^{n}{p_{i,k}}^{2} 
+$$
 where:
 - $G_{i}$ is the Gini impurity of the $i$th node.
 - $p_{i,k}$ is the ratio of class $k$ instances among the training instances in the $i$th node.
@@ -85,18 +87,20 @@ The thick vertical line represents the decision boundary of the root node (depth
 A decision tree can also estimate the probability that an instance belongs to a particular class `k`. First it traverses the tree to find the leaf node for this instance, and then it returns the ratio of training instances of class k in this node. For example, suppose you have found a flower whose petals are $\pu{5cm}$ long and $\pu{1.5cm}$ wide. The corresponding leaf node is the depth-2 left node, so the decision tree outputs the following probabilities: 0% for *Iris setosa* (0/54), 90.7% for *Iris versicolor* (49/54), and 9.3% for *Iris virginica* (5/54). And if you ask it to predict the class, it outputs *Iris versicolor* (class 1) because it has the the highest probability. Let's check this:
 ```python
 >>> tree_clf.predict_proba([[5, 1.5]]).round(3)
-array([[0.    ,0.907, 0.093]])
+> array([[0.	,0.907, 0.093]])
 >>> tree_clf.predict([[5, 1.5]])
-array([1])
-```
+> array([1])
+> ```
 
 Notice that the estimated probabilities would be identical anywhere else in the bottom-right rectangle of the previous figure - for example, if the petals were $\pu{6cm}$ long and $\pu{1.5cm}$ wide (even though it seems obvious that it would most likely be an Iris virginica in this case).
 
 # The CART Training Algorithm
 Scikit-Learn uses the **Classification and Regression Tree (CART)** algorithm to train decision trees (also called “growing” trees). The algorithm works by first splitting the training set into two subsets using a single feature $k$ and a threshold $t_{k}$ (e.g., “petal length $\leq \pu{2.45cm}$”). How does it choose $k$ and $t_{k}$ ? It searches for the pair $(k,t_{k})$ that produces the purest subsets, weighted by their size. The following equation gives the cost function that the algorithm tries to minimize:
-$$\begin{aligned}
+$$
+\begin{aligned}
  & J(k,t_{k})=\dfrac{m_{\text{left}}}{m}G_{\text{left}}+\dfrac{m_{\text{right}}}{m}G_{\text{right}}
-\end{aligned}$$
+\end{aligned}
+$$
 where:
 - $G_{\text{left/right}}$ measures the impurity of the left/right subset.
 - $m_{left/right}$ is the number of instance in the left/right subset.
@@ -113,7 +117,9 @@ By default, the `DecisionTreeClassifier` class uses the Gini impurity measure, b
 
 The following equation shows the definition of the entropy of the $i$th node.
 
-$$H_{i}=-\sum_{\substack{k=1\\[1ex]p_{i,k}\neq 0}}^{n}p_{i,k}\log_{2}(p_{i,k}) $$
+$$
+H_{i}=-\sum_{\substack{k=1\\[1ex]p_{i,k}\neq 0}}^{n}p_{i,k}\log_{2}(p_{i,k}) 
+$$
 For example, the depth-2 left node in the decision tree figure has an entropy equal to $-(49/54) \log_{2}(49/54)-(5/54) \log_{2} (5/54) \approx 0.445$.
 
 So, should you use Gini impurity or entropy? The truth is, most of the time it does not make a big difference: they lead to similar trees. Gini impurity is slightly faster to compute, so it is a good default. However, when they differ, Gini impurity tends to isolate the most frequent class in its own branch of the tree, while entropy tends to produce slightly more balanced trees.
@@ -143,13 +149,13 @@ tree_clf2.fit(X_moons, y_moons)
 The unregularized model on the left is clearly overfitting, and the regularized model on the right will probably generalize better. We can verify this by evaluating both trees on a test set generated using a different random seed:
 
 ```python
->>> X_moons_test, y_moons_test = make_moons(n_samples=1000,      noise=0.2, random_state=43)
-[...]
+>>> X_moons_test, y_moons_test = make_moons(n_samples=1000,	  noise=0.2, random_state=43)
+> [...]
 >>> tree_clf1.score(X_moons_test, y_moons_test)
-0.898
+> 0.898
 >>> tree_clf2.score(X_moons_test, y_moons_test)
-0.92
-```
+> 0.92
+> ```
 
 Indeed, the second tree has a better accuracy on the test set.
 
