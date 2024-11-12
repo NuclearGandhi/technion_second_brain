@@ -11,13 +11,30 @@
             "id": "0b5fb65102827d45",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "logo.png"
+                "file": "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "150b124f355cf51b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technion/DVI1/DVI1_001 מושגי יסוד.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -108,7 +125,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "logo.png",
+            "file": "Technion/DVI1/DVI1_001 מושגי יסוד.md",
             "linksCollapsed": true,
             "unlinkedCollapsed": false
           }
@@ -120,7 +137,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "logo.png"
+            "file": "Technion/DVI1/DVI1_001 מושגי יסוד.md"
           }
         }
       }
@@ -142,8 +159,23 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "0b5fb65102827d45",
+  "active": "150b124f355cf51b",
   "lastOpenFiles": [
+    "Technion/SLD2/SLD2_003 טרנספורמציה של מאמצים.md",
+    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
+    "Technion/SLD2/SLD2_006 קריטריוני כניעה וכשל.md",
+    "Technion/SLD2/SLD2_005 קשרי מאמץ עיבור.md",
+    "Technion/SLD2/SLD2_004 טנזור העיבור.md",
+    "Technion/DVI1/DVI1_000 00340051 דינמיקה ותנודות.md",
+    "Technion/DVI1/DVI1_001 מושגי יסוד.md",
+    "index.md",
+    "Technion/IME1/IME1_000 00340022 מבוא למכטרוניקה.md",
+    "Technion/ALG1/ALG1_008 הדטרמיננטה.md",
+    "Technion/ALG1/ALG1_007 מטריצות הפיכות.md",
+    "Technion/ALG1/ALG1_000 104016 אלגברה 1מ.md",
+    "Technion/SLD2/SLD2_009 מבוא לאלסטיות.md",
+    "Technion/GCH1/GCH1_000 125001 כימיה כללית.md",
+    "logo.png",
     "favicon-32x32.png",
     "Technion/סטנדרט SI-Fang.md",
     "Technion/CTH1/Screenshot_20241105_141550_Drive.jpg",
@@ -157,8 +189,6 @@
     "Technion/CTH1/Screenshot_20241105_133653_Drive 2.jpg",
     "Technion/CTH1/Screenshot_20241105_133653_Drive 1.jpg",
     "Technion/CTH1/Screenshot_20241105_133653_Drive.jpg",
-    "Technion/CTH1/Screenshot_20241105_131809_Drive.jpg",
-    "Technion/CTH1/CTH1_001/Screenshot_20241105_124203_Obsidian.jpg",
     "פנגייה - רשימת סיכומים.md",
     "Technion/CTH1/CTH1_001",
     "Technion/HTF1/HTF1_002 מבוא להולכה.md",
@@ -168,21 +198,8 @@
     "Technion/THE1/THE1_007 מחזורי עבודה על בסיס קיטור.md",
     "Technion/NUM1/NUM1_000 034056 מבוא לחישוב מדעי והנדסי.md",
     "Technion/NUM1/NUM1_001 הקדמה ומושגי יסוד.md",
-    "Technion/SLD2/SLD2_010 שקיעה של קורות.md",
-    "Technion/SLD2/SLD2_009 מבוא לאלסטיות.md",
-    "Technion/SLD2/SLD2_008 מאמצי גזירה בכפיפה.md",
-    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-21 08.49.53.excalidraw.md",
-    "Technion/SLD2/SLD2_010/SLD2_010 שקיעה של קורות 2024-03-21 09.04.22.excalidraw.md",
-    "Technion/SLD2/SLD2_010/SLD2_010 מבוא לאלסטיות 2024-03-21 08.26.09.excalidraw.md",
-    "Technion/SLD2/SLD2_HW009/SLD2_HW009 תרגיל בית 9 2024-03-21 08.21.05.excalidraw.md",
-    "Technion/SLD2/SLD2_011 שיטות אנרגיה.md",
-    "Technion/PDE1/PDE1_006 שיטת הפרדת משתנים.md",
     "Technion/THE1/THE1_007",
-    "Technion/THE1/THE1_000 034035 תרמודינמיקה 1.md",
-    "Technion/THE1/THE1_006 אנטרופיה.md",
-    "Technion/NUM1/NUM1_HW006 תרגיל בית 6.md",
     "Technion/NUM1/NUM1_HW006.pdf",
-    "Technion/CAL1/CAL1_009 אינטגרל מוכלל.md",
     "Technion/SLD2/SLD2_010",
     "Technion/NUM1/NUM1_000.pdf",
     "Technion/NUM1/NUM1_009 אינטגרציה נומרית.pdf",
