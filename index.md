@@ -46,31 +46,31 @@ title: פנגייה - רשימת סיכומים
 
 <div  class="testimonials">
 <figure class="testi">
-  <blockquote>החשבוניה יותר טוב
-    <div class="arrow"></div>
-  </blockquote>
-  <img src="https://www.mofa.co.il/_Uploads/dbsArticles/g2(4).jpg"/>
-  <div class="author">
-    <h5>גרי מנדלבאום</h5><span>גרי ביום, גרשון בלילה</span>
-  </div>
+<blockquote>החשבוניה יותר טוב
+<div class="arrow"></div>
+</blockquote>
+<img src="https://www.mofa.co.il/_Uploads/dbsArticles/g2(4).jpg"/>
+<div class="author">
+<h5>גרי מנדלבאום</h5><span>גרי ביום, גרשון בלילה</span>
+</div>
 </figure>
 <figure class="testi">
-  <blockquote>וואלק אני מצטיין נשיא כבר 21 פעמים ברציפות בזכות האתר הזה
-    <div class="arrow"></div>
-  </blockquote>
-  <img src="https://files.elfsightcdn.com/f7e9a9de-578a-404d-9755-29717c16030a/fc054c73-8c47-427c-b6b1-2137156a4ac4.jpg" alt="sq-sample27" />
-  <div class="author">
-    <h5>אליאור צור</h5><span>מהנדס מכונות סביבתי אזרחי הומני</span>
-  </div>
+<blockquote>וואלק אני מצטיין נשיא כבר 21 פעמים ברציפות בזכות האתר הזה
+<div class="arrow"></div>
+</blockquote>
+<img src="https://files.elfsightcdn.com/f7e9a9de-578a-404d-9755-29717c16030a/fc054c73-8c47-427c-b6b1-2137156a4ac4.jpg" alt="sq-sample27" />
+<div class="author">
+<h5>אליאור צור</h5><span>מהנדס מכונות סביבתי אזרחי הומני</span>
+</div>
 </figure>
 <figure class="testi">
-  <blockquote>חחחחחח אני מת
-    <div class="arrow"></div>
-  </blockquote>
-  <img src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-3091504.jpg" alt="sq-sample17" />
-  <div class="author">
-    <h5>אריק איינשטיין</h5><span>זוכה פרס נובל לשלום</span>
-  </div>
+<blockquote>חחחחחח אני מת
+<div class="arrow"></div>
+</blockquote>
+<img src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-3091504.jpg" alt="sq-sample17" />
+<div class="author">
+<h5>אריק איינשטיין</h5><span>זוכה פרס נובל לשלום</span>
+</div>
 </figure>
 </div>
 
