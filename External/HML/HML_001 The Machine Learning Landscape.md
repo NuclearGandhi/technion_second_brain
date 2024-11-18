@@ -149,9 +149,7 @@ Let's plot the data for these countries:
 >Do you see a trend here? [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 There does seem to be a trend here! Although the data is *noisy* (i.e., partly random), it looks like life satisfaction goes up more or less linearly as the country's GDP per capita increases. So you decide to model life satisfaction as a linear function of GDP per capita. This step is called **model selection**: you selected a **linear model** of life satisfaction with just one attribute, GDP per capita:
-$$
-\text{life\_satisfaction}={\theta}_{0}+{\theta}_{1}\times \text{GDP\_per\_capita}
-$$
+$$\text{life\_satisfaction}={\theta}_{0}+{\theta}_{1}\times \text{GDP\_per\_capita}$$
 This model has two **model parameters**, ${\theta}_{0}$ and ${\theta}_{1}$. By tweaking these parameters, you can make your model represent any linear function, as shown in the following figure:
 ![[{0026D930-7B01-49AE-925C-191974846E66}.png|book|500]]
 >A few possible linear models. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].

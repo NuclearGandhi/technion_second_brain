@@ -42,35 +42,35 @@ X, y = make_moons(n_samples=500, noise=0.30, random_state=42)
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
 voting_clf = VotingClassifier(
-estimators=[
-('lr', LogisticRegression(random_state=42)),
-('rf', RandomForestClassifier(random_state=42)),
-('svc', SVC(random_state=42))
-		]
-		)
-		voting_clf.fit(X_train, y_train)
-		```
+    estimators=[
+        ('lr', LogisticRegression(random_state=42)),
+        ('rf', RandomForestClassifier(random_state=42)),
+        ('svc', SVC(random_state=42))
+    ]
+)
+voting_clf.fit(X_train, y_train)
+```
 
 When you fit a `VotingClassifier`, it clones every estimator and fits the clones. The original estimators are available via the estimators attribute, while the fitted clones are available via the `estimators_` attribute. If you prefer a `dict` rather than a list, you can use `named_estimators` or `named_estimators_` instead. To begin, let’s look at each fitted classifier’s accuracy on the test set:
 
 ```python
 >>> for name, clf in voting_clf.named_estimators_.items():
-> 	print(name, "=", clf.score(X_test, y_test))
-> lr = 0.864
-> rf = 0.896
-> svc = 0.896
-> ```
+    print(name, "=", clf.score(X_test, y_test))
+lr = 0.864
+rf = 0.896
+svc = 0.896
+```
 
 When you call the voting classifier's `predict()` method, it performs hard voting. For example, the voting classifier predicts class 1 for the first instance of the test set, because two out of three classifiers predict that class:
 
 ```python
 >>> voting_clf.predict(X_test[:1])
-> array([1])
+array([1])
 >>> [clf.predict(X_test[:1]) for clf in voting_clf.estimators_]
-> [array([1]), array([1]), array([0])]
+[array([1]), array([1]), array([0])]
 >>> voting_clf.score(X_test, y_test)
-> 0.912
-> ```
+0.912
+```
 
 There you have it! The voting classifier outperforms all the individual classifiers.
 
@@ -81,8 +81,8 @@ If all classifiers are able to estimate class probabilities (i.e., if they all h
 >>> voting_clf.named_estimators["svc"].probability = True
 >>> voting_clf.fit(X_train, y_train)
 >>> voting_clf.score(X_test, y_test)
-> 0.92
-> ```
+0.92
+```
 
 # Bagging and Pasting
 One way to get a diverse set of classifiers is to use very different training algorithms, as just discussed. Another approach is to use the same training algorithm for every predictor but train them on different random subsets of the training set. When sampling is performed with *replacement* (Imagine picking a card randomly from a deck of cards, writing it down, then placing it back in the deck before picking the next card: the same card could be sampled multiple times), this method is called **bagging** (short for **bootstrap aggregating** ). When sampling is performed without replacement, it is called **pasting**.
@@ -102,8 +102,8 @@ from sklearn.ensemble import BaggingClassifier
 from sklearn.tree import DecisionTreeClassifier
 
 bag_clf = BaggingClassifier(DecisionTreeClassifier(), 
-n_estimators=500, max_samples=100, n_jobs=-1,
-random_state=42)
+	n_estimators=500, max_samples=100, n_jobs=-1, 
+	random_state=42)
 bag_clf.fit(X_train, y_train)
 ```
 
@@ -126,20 +126,20 @@ In Scikit-Learn, you can set `oob_score=True` when creating a `BaggingClassifier
 
 ```python
 >>> bag_clf = BaggingClassifier(DecisionTreeClassifier(), 
-> 		n_estimators=500, oob_score=True, n_jobs=-1,
-> 		random_state=42)
-		>>> bag_clf.fit(X_train, y_train)
-		>>> bag_clf.oob_score_
-> 0.896
-		```
+		n_estimators=500, oob_score=True, n_jobs=-1,
+		random_state=42)
+>>> bag_clf.fit(X_train, y_train)
+>>> bag_clf.oob_score_
+0.896
+```
 
 The OOB decision function for each training instance is also available through the `oob_decision_function_` attribute. Since the base estimator has a `predict_proba()` method, the decision function returns the class probabilities for each training instance. For example, the OOB evaluation estimates that the first training instance has a 67.6% probability of belonging to the positive class and a 32.4% probability of belonging to the negative class:
 ```python
 >>> bag_clf.oob_decision_function_[:3] # probas for the first 3 instances
 >>> array([[0.32352941, 0.67647059],
-> 	   [0.3375	, 0.6625	],
-> 	   [1.		, 0.		]])
-> ```
+       [0.3375    , 0.6625    ],
+       [1.        , 0.        ]])
+```
 
 ## Random Patches and Random Subspaces
 The `BaggingClassifier` class supports sampling the features as well. Sampling is controlled by two hyperparameters: `max_features` and `bootstrap_features`. They work the same way as `max_samples` and bootstrap, but for feature sampling instead of instance sampling. Thus, each predictor will be trained on a random subset of the input features.
@@ -154,10 +154,10 @@ A random forest is an ensemble of decision trees, generally trained via the bagg
 from sklearn.ensemble import RandomForestClassifier
 
 rnd_clf = RandomForestClassifier(n_estimators=500, max_leaf_nodes=16,
-n_jobs=-1, random_state=42)
-		rnd_clf.fit(X_train, y_train)
-		y_pred_rf = rnd_clf.predict(X_test)
-		```
+                                 n_jobs=-1, random_state=42)
+rnd_clf.fit(X_train, y_train)
+y_pred_rf = rnd_clf.predict(X_test)
+```
 
 With a few exceptions, a `RandomForestClassifier` has all the hyperparameters of a `DecisionTreeClassifier` (to control how trees are grown), plus all the hyperparameters of a `BaggingClassifier` to control the ensemble itself.
 
@@ -167,10 +167,10 @@ The random forest algorithm introduces extra randomness when growing trees; inst
 from sklearn.ensemble import RandomForestClassifier
 
 rnd_clf = RandomForestClassifier(n_estimators=500, max_leaf_nodes=16,
-n_jobs=-1, random_state=42)
-		rnd_clf.fit(X_train, y_train)
-		y_pred_rf = rnd_clf.predict(X_test)
-		```
+                                 n_jobs=-1, random_state=42)
+rnd_clf.fit(X_train, y_train)
+y_pred_rf = rnd_clf.predict(X_test)
+```
 
 ## Extra-Trees
 When you are growing a tree in a random forest, at each node only a random subset of the features is considered for splitting. It is possible to make trees even more random by also using random thresholds for each feature rather than searching for the best possible thresholds (like regular decision trees do). For this, simply set `splitter="random"` when creating a `DecisionTreeClassifier`.
@@ -189,16 +189,16 @@ You can access the result using the `feature_importances_` variable. For example
 
 >>> iris = load_iris(as_frame=True)
 >>> rnd_clf = RandomForestClassifier(n_estimators=500,
-> 		random_state=42)
-		>>> rnd_clf.fit(iris.data, iris.target)
-		>>> for score, name in zip(rnd_clf.feature_importances_, 
-> 		iris.data.columns):
-> 			print(round(score, 2), name)
-> 0.11 sepal length (cm)
-> 0.02 sepal width (cm)
-> 0.44 petal length (cm)
-> 0.42 petal width (cm)
-		```
+		random_state=42)
+>>> rnd_clf.fit(iris.data, iris.target)
+>>> for score, name in zip(rnd_clf.feature_importances_, 
+		iris.data.columns):
+		    print(round(score, 2), name)
+0.11 sepal length (cm)
+0.02 sepal width (cm)
+0.44 petal length (cm)
+0.42 petal width (cm)
+```
 
 Similarly, if you train a random forest classifier on the MNIST dataset and plot each pixel’s importance, you get the the following image:
 ![[Pasted image 20241011232804.png|bscreen|500]]
@@ -225,27 +225,21 @@ The first classifier gets many instances wrong, so their weights get boosted. Th
 Once all predictors are trained, the ensemble makes predictions very much like bagging or pasting, except that predictors have different weights depending on their overall accuracy on the weighted training set.
 
 Let’s take a closer look at the `AdaBoost` algorithm. Each instance weight $w^{(i)}$ is initially set to $1/m$. A first predictor is trained, and its weighted error rate ${r}_{1}$ is computed on the training set:
-$$
-r_{j}=\sum_{\substack{i=1\\[1ex]\hat{y}_{j}^{(i)}\neq y^{(i)}}}^{\infty}w^{(i)}\hat{y}_{j}^{(i)} 
-$$
+$$r_{j}=\sum_{\substack{i=1\\[1ex]\hat{y}_{j}^{(i)}\neq y^{(i)}}}^{\infty}w^{(i)}\hat{y}_{j}^{(i)} $$
 where $\hat{y}_{j}^{(i)}$ is the $j$th predictor's prediction for the $i$th instance.
 
 The predictor's weight $\alpha_{j}$ is then computed using the following equation:
-$$
-\alpha_{j}=\eta \ln \dfrac{1-r_{j}}{r_{j}}
-$$
+$$\alpha_{j}=\eta \ln \dfrac{1-r_{j}}{r_{j}}$$
 where $\eta$ is the learning rate hyperparameter (defaults to $1$). The more accurate the predictor is, the higher its weight will be. If it is just guessing randomly, then its weight will be close to zero. However, if it is most often wrong (i.e., less accurate than random guessing), then its weight will be negative.
 
 Next, the AdaBoost algorithm updates the instance weights, using the following equation, which boosts the weights of the misclassified instances:
-$$
-\begin{aligned}
+$$\begin{aligned}
  & \text{for } i=1,2,\dots ,m \\
  & w^{(i)}=\begin{cases}
 w^{(i)} & \text{if } \hat{y}_{j}^{(i)}=y^{(i)} \\
 w^{(i)}\exp(\alpha_{j}) & \text{if } \hat{y}_{j}^{(i)}\neq y^{(i)}
 \end{cases}
-\end{aligned}
-$$
+\end{aligned}$$
 
 Then all the instance weights are normalized (i.e., divided by $\sum_{i=1}^{m}w^{(i)}$).
 
@@ -261,7 +255,7 @@ The following code trains an AdaBoost classifier based on 30 **decision stumps**
 from sklearn.ensemble import AdaBoostClassifier
 
 ada_clf = AdaBoostClassifier(
-DecisionTreeClassifier(max_depth=1), n_estimators=30,
-learning_rate=0.5, random_state=42)
+    DecisionTreeClassifier(max_depth=1), n_estimators=30,
+    learning_rate=0.5, random_state=42)
 ada_clf.fit(X_train, y_train)
 ```

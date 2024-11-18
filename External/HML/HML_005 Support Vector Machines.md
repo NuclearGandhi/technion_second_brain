@@ -60,9 +60,9 @@ X = iris.data[["petal length (cm)", "petal width (cm)"]].values
 y = (iris.target == 2)  # Iris virginica
 
 svm_clf = make_pipeline(StandardScaler(),
-LinearSVC(C=1, dual=True, random_state=42))
-		svm_clf.fit(X, y)
-		```
+                        LinearSVC(C=1, dual=True, random_state=42))
+svm_clf.fit(X, y)
+```
 
 The resulting model is represented on the left in the figure above.
 Then, as usual, you can use the model to make predictions:
@@ -70,14 +70,14 @@ Then, as usual, you can use the model to make predictions:
 ```python
 >>> X_new = [[5.5, 1.7], [5.0, 1.5]]
 >>> svm_clf.predict(X_new)
-> array([ True, False])
-> ```
+array([ True, False])
+```
 
 The first plant is classified as an *Iris virginica*, while the second is not. Let’s look at the scores that the SVM used to make these predictions. These measure the signed distance between each instance and the decision boundary:
 ```python
 >>> svm_clf.decision_function(X_new)
-> array([ 0.66163411, -0.22036063])
-> ```
+array([ 0.66163411, -0.22036063])
+```
 
 Unlike `LogisticRegression`, `LinearSVC` doesn’t have a `predict_proba()` method to estimate the class probabilities. That said, if you use the `SVC` class (discussed shortly) instead of `LinearSVC`, and if you set its probability hyperparameter to `True`, then the model will fit an extra model at the end of training to map the SVM decision function scores to estimated probabilities. Under the hood, this requires using 5-fold cross validation to generate out-of-sample predictions for every instance in the training set, then training a `LogisticRegression` model, so it will slow down training considerably. After that, the `predict_proba()` and `predict_log_proba()` methods will be available.
 
@@ -98,9 +98,9 @@ from sklearn.preprocessing import PolynomialFeatures
 X, y = make_moons(n_samples=100, noise=0.15, random_state=42)
 
 polynomial_svm_clf = make_pipeline(
-PolynomialFeatures(degree=3),
-StandardScaler(),
-LinearSVC(C=10, max_iter=10_000, dual=True, random_state=42)
+    PolynomialFeatures(degree=3),
+    StandardScaler(),
+    LinearSVC(C=10, max_iter=10_000, dual=True, random_state=42)
 )
 polynomial_svm_clf.fit(X, y)
 ```
@@ -117,9 +117,9 @@ Fortunately, when using SVMs you can apply an almost miraculous mathematical tec
 from sklearn.svm import SVC
 
 poly_kernel_svm_clf = make_pipeline(StandardScaler(),
-SVC(kernel="poly", degree=3, coef0=1, C=5))
-		poly_kernel_svm_clf.fit(X, y)
-		```
+                                    SVC(kernel="poly", degree=3, coef0=1, C=5))
+poly_kernel_svm_clf.fit(X, y)
+```
 
 This code trains an SVM classifier using a third-degree polynomial kernel, represented on the left in the following figure. On the right is another SVM classifier using a 10th-degree polynomial kernel.
 
@@ -144,9 +144,9 @@ Just like the polynomial features method, the similarity features method can be 
 
 ```python
 rbf_kernel_svm_clf = make_pipeline(StandardScaler(),
-SVC(kernel="rbf", gamma=5, C=0.001))
-		rbf_kernel_svm_clf.fit(X, y)
-		```
+                                   SVC(kernel="rbf", gamma=5, C=0.001))
+rbf_kernel_svm_clf.fit(X, y)
+```
 
 ![[Pasted image 20241009114902.png|bscreen]]
 >SVM classifiers using an RBF kernel
@@ -165,11 +165,11 @@ The SVC class is based on the `libsvm` library, which implements an algorithm th
 
 The `SGDClassifier` class also performs large margin classification by default, and its hyperparameters - especially the regularization hyperparameters (`alpha` and `penalty`) and the `learning_rate` - can be adjusted to produce similar results as the linear SVMs. For training it uses [[HML_004 Training Models#Stochastic Gradient Descent|stochastic gradient descent]], which allows incremental learning and uses little memory, so you can use it to train a model on a large dataset that does not fit in RAM (i.e., for out-of-core learning). Moreover, it scales very well, as its computational complexity is $O(m \times n)$. The following table compares Scikit-Learn’s SVM classification classes:
 
-| Class		   | Time complexity						  | Out-of-core support | Scaling required | Kernel trick |
+| Class           | Time complexity                          | Out-of-core support | Scaling required | Kernel trick |
 | --------------- | ---------------------------------------- | ------------------- | ---------------- | ------------ |
-| `LinearSVC`	 | $O(m\times n)$						   | No				  | Yes			  | No		   |
-| `SVC`		   | $O(m^{2}\times n)$ to $O(m^{3}\times n)$ | No				  | Yes			  | Yes		  |
-| `SGDClassifier` | $O(m\times n)$						   | Yes				 | Yes			  | No		   |
+| `LinearSVC`     | $O(m\times n)$                           | No                  | Yes              | No           |
+| `SVC`           | $O(m^{2}\times n)$ to $O(m^{3}\times n)$ | No                  | Yes              | Yes          |
+| `SGDClassifier` | $O(m\times n)$                           | Yes                 | Yes              | No           |
 
 # SVM Regression
 To use SVMs for regression instead of classification, the trick is to tweak the objective: instead of trying to fit the largest possible street between two classes while limiting margin violations, SVM regression tries to fit as many instances as possible on the street while limiting margin violations (i.e., instances off the street). The width of the street is controlled by a hyperparameter, $\varepsilon$. The following figure shows two linear SVM regression models trained on some linear data, one with a small margin ($\epsilon=0.5$) and the other with a larger margin ($\epsilon=1.2$).
@@ -185,9 +185,9 @@ from sklearn.svm import LinearSVR
 
 X, y = [...] # a linear dataset
 svm_reg = make_pipeline(StandardScaler(),
-LinearSVR(epsilon=0.5, random_state=42))
-		svm_reg.fit(X, y)
-		```
+						LinearSVR(epsilon=0.5, random_state=42))
+svm_reg.fit(X, y)
+```
 
 To tackle nonlinear regression tasks, you can use a kernelized SVM model. The following figure shows SVM regression on a random quadratic training set, using a second-degree polynomial kernel. There is some regularization in the left plot (i.e., a small `C` value), and much less in the right plot (i.e., a large `C` value).
 
@@ -213,23 +213,19 @@ So, we need to keep w as small as possible. Note that the bias term $b$ has no i
 We also want to avoid margin violations, so we need the decision function to be greater than $1$ for all positive training instances and lower than$ –1$ for negative training instances. If we define $t^{(i)}=-1$ for negative instances (when $y^{(i)} = 0$) and $t^{(i)} = 1$ for positive instances (when $y^{(i)} = 1$), then we can write this constraint as $t ^{(i)}(\mathbf{w}^{T} \mathbf{x}^{(i)} + b) ≥ 1$ for all instances.
 
 We can therefore express the hard margin linear SVM classifier objective as the constrained optimization problem in the following equation:
-$$
-\begin{aligned}
+$$\begin{aligned}
  & \underset{ \mathbf{w},b }{ \text{minimize} }  & & \dfrac{1}{2}\mathbf{w}^{T}\mathbf{w} \\[1ex]
  & \text{subject to} & &  t^{(i)}(\mathbf{w}^{T}\mathbf{x}^{(i)}+b)\geq  1  &  \text{for}\qquad  i=1,2,\dots ,m
-\end{aligned}
-$$
+\end{aligned}$$
 
 >[!notes] Note: 
  >We are minimizing $\dfrac{1}{2}\mathbf{w}^{T}\mathbf{w}$, which is equal to $\dfrac{1}{2}\lVert \mathbf{w} \rVert^{2}$ , rather than minimizing $\lVert \mathbf{w} \rVert$. Indeed, $\dfrac{1}{2}\lVert \mathbf{w} \rVert^{2}$ has a nice, simple derivative (it is just $\mathbf{w}$), while $\lVert \mathbf{w} \rVert$ is not differentiable at $\mathbf{w}=0$. Optimization algorithms often work much better on differentiable functions.
 
 To get the soft margin objective, we need to introduce a slack variable $\zeta^{(i)}\geq 0$ for each instance: $\zeta^{(i)}$ measures how much the $i$th instance is allowed to violate the margin. We now have two conflicting objectives: make the slack variables as small as possible to reduce the margin violations, and make $\dfrac{1}{2}\mathbf{w}^{T}\mathbf{w}$ as small as possible to increase the margin. This is where the `C` hyperparameter comes in: it allows us to define the trade-off between these two objectives. This gives us the constrained optimization problem in the following equation:
-$$
-\begin{aligned}
+$$\begin{aligned}
  & \underset{ \mathbf{w},b }{ \text{minimize} }  & & \dfrac{1}{2}\mathbf{w}^{T}\mathbf{w} \\[1ex]
  & \text{subject to} & &  t^{(i)}(\mathbf{w}^{T}\mathbf{x}^{(i)}+b)\geq  1-\zeta^{(i)} \quad \text{and} \quad  \zeta^{(i)}\geq  0  & \text{for} \quad  i=1,2,\dots ,m
-\end{aligned}
-$$
+\end{aligned}$$
 
 The hard margin and soft margin problems are both convex quadratic optimization problems with linear constraints. Such problems are known as **quadratic programming** (QP) problems. Many off-the-shelf solvers are available to solve QP problems by using a variety of techniques that are outside the scope of this course.
 

@@ -81,22 +81,18 @@ PCA identifies the axis that accounts for the largest amount of variance in the 
 The $i$th axis is called the $i$th **principal component (PC)** of the data. In the figure above, the first PC is the axis on which vector ${\mathbf{c}}_{1}$ lies, and the second PC is the axis on which vector ${\mathbf{c}}_{2}$ lies.
 
 So how can you find the principal components of a training set? Luckily, there is a standard matrix factorization technique called **singular value decomposition (SVD)** that can decompose the training set matrix $\mathbf{X}$ into the matrix multiplication of three matrices $\mathbf{U}\boldsymbol{\Sigma}\mathbf{V}^{T}$ , where $\mathbf{V}$ contains the unit vectors that define all the principal components that you are looking for, as shown in the following equation:
-$$
-\mathbf{V}=\begin{pmatrix}
+$$\mathbf{V}=\begin{pmatrix}
 | & | &  & | \\
 \mathbf{c}_{1} & \mathbf{c}_{2} & \cdots  & \mathbf{c}_{n} \\
 | & | &  & |
-\end{pmatrix}
-$$
+\end{pmatrix}$$
 
 
 ## Projecting Down to d Dimensions
 Once you have identified all the principal components, you can reduce the dimensionality of the dataset down to $d$ dimensions by projecting it onto the hyperplane defined by the first $d$ principal components. Selecting this hyperplane ensures that the projection will preserve as much variance as possible.
 
 To project the training set onto the hyperplane and obtain a reduced dataset $\mathbf{X}_{d-\text{proj}}$ of dimensionality $d$, compute the matrix multiplication of the training set matrix $\mathbf{X}$ by the matrix $\mathbf{W}_{d}$, defined as the matrix containing the first $d$ columns of $\mathbf{V}$, as shown in the following figure:
-$$
-\mathbf{X}_{d-\text{proj}}=\mathbf{X}\mathbf{W}_{d}
-$$
+$$\mathbf{X}_{d-\text{proj}}=\mathbf{X}\mathbf{W}_{d}$$
 The following Python code projects the training set onto the plane defined by the first two principal components:
 
 ```python
@@ -120,8 +116,8 @@ Another useful piece of information is the explained variance ratio of each prin
 
 ```python
 >>> pca.explained_variance_ratio_
-> array([0.7578477 , 0.15186921])
-> ```
+array([0.7578477 , 0.15186921])
+```
 
 This output tells us that about 76% of the dataset’s variance lies along the first PC, and about 15% lies along the second PC. This leaves about 9% for the third PC, so it is reasonable to assume that the third PC probably carries little information.
 
@@ -153,8 +149,8 @@ X_reduced = pca.fit_transform(X_train)
 The actual number of components is determined during training, and it is stored in the `n_components_` attribute:
 ```python
 >>> pca.n_components_
-> 154
-> ```
+154
+```
 
 Yet another option is to plot the explained variance as a function of the number of dimensions (simply plot `cumsum`):
 
@@ -171,21 +167,21 @@ from sklearn.model_selection import RandomizedSearchCV
 from sklearn.pipeline import make_pipeline
 
 clf = make_pipeline(PCA(random_state=42),
-RandomForestClassifier(random_state=42))
-		param_distrib = {
-		"pca__n_components": np.arange(10, 80),
-		"randomforestclassifier__n_estimators": np.arange(50, 500)
-		}
-		rnd_search = RandomizedSearchCV(clf, param_distrib, n_iter=10, cv=3,
-random_state=42)
-		rnd_search.fit(X_train[:1000], y_train[:1000])
-		```
+                    RandomForestClassifier(random_state=42))
+param_distrib = {
+    "pca__n_components": np.arange(10, 80),
+    "randomforestclassifier__n_estimators": np.arange(50, 500)
+}
+rnd_search = RandomizedSearchCV(clf, param_distrib, n_iter=10, cv=3,
+                                random_state=42)
+rnd_search.fit(X_train[:1000], y_train[:1000])
+```
 
 Let's look at the best hyperparameters found:
 ```python
 >>> print(rnd_search.best_params_)
-> {'randomforestclassifier__n_estimators': 465, 'pca__n_components': 23}
-> ```
+{'randomforestclassifier__n_estimators': 465, 'pca__n_components': 23}
+```
 
 It’s interesting to note how low the optimal number of components is: we reduced a 784-dimensional dataset to just 23 dimensions! This is tied to the fact that we used a random forest, which is a pretty powerful model. If we used a linear model instead, such as an `SGDClassifier`, the search would find that we need to preserve more dimensions (about 70).
 

@@ -42,26 +42,20 @@ The **perceptron** is one of the simplest ANN architectures, invented in 1957 by
 >LU: an artificial neuron that computes a weighted sum of its inputs $\mathbf{w}^{T}\mathbf{x}$, plus a bias term $b$, then applies a step function.
 
 The inputs and output are numbers (instead of binary on/off values), and each input connection is associated with a weight. The TLU first computes a linear function of its inputs:
-$$
-z={w}_{1}{x}_{1}+{w}_{2}{x}_{2}+\dots +w_{n}x_{n}+b=\mathbf{w}^{T}\mathbf{x}+b
-$$
+$$z={w}_{1}{x}_{1}+{w}_{2}{x}_{2}+\dots +w_{n}x_{n}+b=\mathbf{w}^{T}\mathbf{x}+b$$
 Then it applies a [[LSY1_002 Signals and Convolutions#Standard signals|step function]] to the result:
-$$
-h_{\mathbf{w}}(\mathbf{x})=\mathrm{step}(\mathbf{z})
-$$
+$$h_{\mathbf{w}}(\mathbf{x})=\mathrm{step}(\mathbf{z})$$
 So it’s almost like [[HML_004 Training Models#Logistic Regression|logistic regression]], except it uses a step function instead of the logistic function. Just like in logistic regression, the model parameters are the input weights $\mathbf{w}$ and the bias term $b$.
 
 The most common step function used in perceptrons is the **Heaviside step function**. Sometimes the **sign function** is used instead.
-$$
-\mathrm{heaviside}(z)=\begin{cases}
+$$\mathrm{heaviside}(z)=\begin{cases}
 0 & z<0 \\
 1 & z\geq 0
 \end{cases}\qquad \mathrm{sgn}(z)=\begin{cases}
 -1 & z<0 \\
 0 & z=0 \\
 +1 & z>0
-\end{cases}
-$$
+\end{cases}$$
 A single TLU can be used for simple linear binary classification. It computes a linear function of its inputs, and if the result exceeds a threshold, it outputs the positive class. Otherwise, it outputs the negative class. This may remind you of logistic regression or linear SVM classification. You could, for example, use a single TLU to classify iris flowers based on petal length and width. Training such a TLU would require finding the right values for ${w}_{1}$, ${w}_{2}$ and $b$ (the training algorithm is discussed shortly).
 
 A perceptron is composed of one or more TLUs organized in a single layer, where every TLU is connected to every input. Such a layer is called a **fully connected layer**, or a **dense layer**. The inputs constitute the **input layer**. And since the layer of TLUs produces the final outputs, it is called the **output layer**. For example, a perceptron with two inputs and three outputs is represented in the following figure:
@@ -71,9 +65,7 @@ A perceptron is composed of one or more TLUs organized in a single layer, where 
 This perceptron can classify instances simultaneously into three different binary classes, which makes it a multilabel classifier. It may also be used for multiclass classification.
 
 Thanks to the magic of linear algebra, the following equation can be used to efficiently compute the outputs of a layer of artificial neurons for several instances at once:
-$$
-h_{\mathbf{W},\mathbf{b}}(\mathbf{X})=\phi(\mathbf{X}\mathbf{W}+\mathbf{b})
-$$
+$$h_{\mathbf{W},\mathbf{b}}(\mathbf{X})=\phi(\mathbf{X}\mathbf{W}+\mathbf{b})$$
 where:
 - $\mathbf{X}$ represents the matrix of input features. It has one row per instance and one column per feature.
 - The weight matrix $\mathbf{W}$ contains all the connection weights. It has one row per input and one column per neuron.
@@ -84,9 +76,7 @@ where:
  >In mathematics, the sum of a matrix and a vector is undefined. However, in data science, we allow “**broadcasting**”: adding a vector to a matrix means adding it to every row in the matrix. So, $\mathbf{X}\mathbf{W} + \mathbf{b}$ first multiplies $\mathbf{X}$ by $\mathbf{W}$ - which results in a matrix with one row per instance and one column per output -then adds the vector $\mathbf{b}$ to every row of that matrix, which adds each bias term to the corresponding output, for every instance. Moreover, $\phi$ is then applied itemwise to each item in the resulting matrix.
  
  The perceptron training algorithm proposed by Rosenblatt was largely inspired by **Hebb’s rule.** In his 1949 book [[HML_000 Hands-On Machine Learning#Bibliography|The Organization of Behavior (Wiley)]], Donald Hebb suggested that when a biological neuron triggers another neuron often, the connection between these two neurons grows stronger. Siegrid Löwel later summarized Hebb’s idea in the catchy phrase, “Cells that fire together, wire together”; that is, the connection weight between two neurons tends to increase when they fire simultaneously. This rule later became known as Hebb’s rule (or **Hebbian learning**). Perceptrons are trained using a variant of this rule that takes into account the error made by the network when it makes a prediction; the perceptron learning rule reinforces connections that help reduce the error. More specifically, the perceptron is fed one training instance at a time, and for each instance it makes its predictions. For every output neuron that produced a wrong prediction, it reinforces the connection weights from the inputs that would have contributed to the correct prediction. The rule is shown in the following equation:
- $$
-w_{i,j}^{(\text{next step})}=w_{i,j}+\eta(y_{j}-\hat{y}_{j})x_{i}
-$$
+ $$w_{i,j}^{(\text{next step})}=w_{i,j}+\eta(y_{j}-\hat{y}_{j})x_{i}$$
 where:
 - $w_{i,j}$ is the connection weight between the $i$th input and the $j$th neuron.
 - $x_{i}$ is the $i$th input value of the current training instance.
@@ -112,8 +102,8 @@ per_clf.fit(X, y)
 
 X_new = [[2, 0.5], [3, 1]]
 y_pred = per_clf.predict(X_new) # predicts True and False 
-# for these 2 flowers
-		```
+								# for these 2 flowers
+```
 
 You may have noticed that the perceptron learning algorithm strongly resembles [[HML_004 Training Models#Stochastic Gradient Descent|stochastic gradient descent]]. In fact, Scikit-Learn’s Perceptron class is equivalent to using an `SGDClassifier` with the following hyperparameters: `loss="perceptron"`, `learning_rate="constant"`, `eta0=1` (the learning rate), and `penalty=None` (no regularization).
 
@@ -158,9 +148,7 @@ Let’s run through how backpropagation works again in a bit more detail:
 In short, backpropagation makes predictions for a mini-batch (forward pass), measures the error, then goes through each layer in reverse to measure the error contribution from each parameter (reverse pass), and finally tweaks the connection weights and biases to reduce the error (gradient descent step).
 
 In order for backprop to work properly, Rumelhart and his colleagues made a key change to the MLP’s architecture: they replaced the step function with the **logistic function**
-$$
-\sigma(z)=\dfrac{1}{1+e^{-z}}
-$$
+$$\sigma(z)=\dfrac{1}{1+e^{-z}}$$
 also called the sigmoid function. This was essential because the step function contains only flat segments, so there is no gradient to work with (gradient descent cannot move on a flat surface), while the sigmoid function has a well-defined nonzero derivative everywhere, allowing gradient descent to make some progress at every step. In fact, the backpropagation algorithm works well with many other activation functions, not just the sigmoid function. Here are two other popular choices:
 ![[Pasted image 20241026202654.png|bscreen]]
 >Activation functions (left) and their derivatives (right).
@@ -184,27 +172,25 @@ from sklearn.preprocessing import StandardScaler
 
 housing = fetch_california_housing()
 X_train_full, X_test, y_train_full, y_test =
-train_test_split(housing.data, housing.target,
-random_state=42)
+	train_test_split(housing.data, housing.target,
+	random_state=42)
 X_train, X_valid, y_train, y_valid = 
-train_test_split(X_train_full, y_train_full,
-random_state=42)
+	train_test_split(X_train_full, y_train_full, 
+	random_state=42)
 
 mlp_reg = MLPRegressor(hidden_layer_sizes=[50, 50, 50], 
-random_state=42)
-		pipeline = make_pipeline(StandardScaler(), mlp_reg)
-		pipeline.fit(X_train, y_train)
-		y_pred = pipeline.predict(X_valid)
-		rmse = mean_squared_error(y_valid, y_pred, squared=False)
+						random_state=42)
+pipeline = make_pipeline(StandardScaler(), mlp_reg)
+pipeline.fit(X_train, y_train)
+y_pred = pipeline.predict(X_valid)
+rmse = mean_squared_error(y_valid, y_pred, squared=False)
 # about 0.505
 ```
 
 We get a validation RMSE of about 0.505, which is comparable to what you would get with a random forest classifier. Not too bad for a first try!
 
 Note that this MLP does not use any activation function for the output layer, so it's free to output any value it wants. This is generally fine, but if you want to guarantee that the output will always be positive, then you should use the ReLU activation function in the output layer, or the **softplus** activation function, which is a smooth variant of ReLU:
-$$
-\mathrm{softplus}(z)=\log(1+\exp(z))
-$$
+$$\mathrm{softplus}(z)=\log(1+\exp(z))$$
 Softplus is close to when $z$ is negative, and close to $z$ when $z$ is positive. Finally, if you want to guarantee that the predictions will always fall within a given range of values, then you should use the sigmoid function or the hyperbolic tangent, and scale the targets to the appropriate range: 0 to 1 for $\mathrm{sigmoid}$ and –1 to 1 for $\mathrm{tahn}$. Sadly, the `MLPRegressor` class does not support activation functions in the output layer.
 
 ## Classification MLPs

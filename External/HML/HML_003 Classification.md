@@ -27,32 +27,32 @@ Let’s look at these arrays:
 ```python
 >>>X, y = mnist.data, mnist.target
 >>>X
->  ]
-> X, y = mnist.data, mnist.target
-> X
-> array([[0., 0., 0., ..., 0., 0., 0.],
-> 	   [0., 0., 0., ..., 0., 0., 0.],
-> 	   [0., 0., 0., ..., 0., 0., 0.],
-> 	   ...,
-> 	   [0., 0., 0., ..., 0., 0., 0.],
-> 	   [0., 0., 0., ..., 0., 0., 0.],
-> 	   [0., 0., 0., ..., 0., 0., 0.]])
+ ]
+X, y = mnist.data, mnist.target
+X
+array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]])
 >>>X.shape
-> (70000, 784)
+(70000, 784)
 >>>y
-> array(['5', '0', '4', ..., '4', '5', '6'], dtype=object)
+array(['5', '0', '4', ..., '4', '5', '6'], dtype=object)
 >>>y.shape
-> (70000,)
-> ```
-> There are 70,000 images, and each image has 784 features. This is because each image is 28 $\times$ 28 pixels, and each feature simply represents one pixel’s intensity, from 0 (white) to 255 (black). Let’s take a peek at one digit from the dataset:
+(70000,)
+```
+There are 70,000 images, and each image has 784 features. This is because each image is 28 $\times$ 28 pixels, and each feature simply represents one pixel’s intensity, from 0 (white) to 255 (black). Let’s take a peek at one digit from the dataset:
 
 ```python
 import matplotlib.pyplot as plt
 
 def plot_digit(image_data):
-image = image_data.reshape(28, 28)
-plt.imshow(image, cmap="binary")
-plt.axis("off")
+    image = image_data.reshape(28, 28)
+    plt.imshow(image, cmap="binary")
+    plt.axis("off")
 
 some_digit = X[0]
 plot_digit(some_digit)
@@ -65,8 +65,8 @@ plt.show()
 
 ```python
 >>>y[0]
-> '5'
-> ```
+'5'
+```
 
 You should always create a test set and set it aside before inspecting the data closely. The MNIST dataset returned by `fetch_openml()` is actually already split into a training set (the first 60,000 images) and a test set (the last 10,000 images):
 
@@ -99,8 +99,8 @@ Now we can use it to detect images of the number 5:
 
 ```python
 >>> sgd_clf.predict([some_digit])
-> array([ True])
-> ```
+array([ True])
+```
 
 The classifier guesses that this image represents a 5 (True). Looks like it guessed right in this particular case!
 
@@ -143,22 +143,18 @@ Now you are ready to get the confusion matrix using the `confusion_matrix()` fun
 
 >>>cm = confusion_matrix(y_train_5, y_train_pred)
 >>>cm
-> array([[53892, 687], [ 1891, 3530]])
-> ```
+array([[53892, 687], [ 1891, 3530]])
+```
 
 Each row in a confusion matrix represents an *actual class*, while each column represents a *predicted class*. The first row of this matrix considers non-5 images (the negative class): 53,892 of them were correctly classified as non-5s (they are called true negatives), while the remaining 687 were wrongly classified as 5s (false positives, also called type I errors). The second row considers the images of 5s (the positive class): 1,891 were wrongly classified as non-5s (false negatives, also called type II errors), while the remaining 3,530 were correctly classified as 5s (true positives).
 
 A perfect classifier would only have true positives and true negatives, so its confusion matrix would have nonzero values only on its main diagonal (top left to bottom right).
 
 The confusion matrix gives you a lot of information, but sometimes you may prefer a more concise metric. An interesting one to look at is the accuracy of the positive predictions; this is called the **precision** of the classifier:
-$$
-\text{precision}=\dfrac{TP}{TP+FP}
-$$
+$$\text{precision}=\dfrac{TP}{TP+FP}$$
 $TP$ is the number of true positives, and $FP$ is the number of false positives. A trivial way to have perfect precision is to create a classifier that always makes negative predictions, except for one single positive prediction on the instance it’s most confident about. If this one prediction is correct, then the classifier has 100% precision. Obviously, such a classifier would not be very useful, since it would ignore all but one positive instance. So, precision is typically used along with another metric named **recall**, also called **sensitivity** or the **true positive rate (TPR)**: this is the ratio of positive instances that are correctly detected by the classifier
 :
-$$
-\text{recall}=\dfrac{TP}{TP+FN}
-$$
+$$\text{recall}=\dfrac{TP}{TP+FN}$$
 where $FN$ is the number of false negatives.
 
 If you are confused about the confusion matrix, the following figure may help:
@@ -171,23 +167,21 @@ Scikit-Learn provides several functions to compute classifier metrics, including
 ```python
 >>>from sklearn.metrics import precision_score, recall_score
 >>>precision_score(y_train_5, y_train_pred)  # == 3530 / (687 + 3530)
-> 0.8370879772350012
+0.8370879772350012
 >>>recall_score(y_train_5, y_train_pred)  # == 3530 / (1891 + 3530)
-> 0.6511713705958311
-> ```
+0.6511713705958311
+```
 
 Now our 5-detector does not look as shiny as it did when we looked at its accuracy. When it claims an image represents a 5, it is correct only 83.7% of the time. Moreover, it only detects 65.1% of the 5s. It is often convenient to combine precision and recall into a single metric called the ${F}_{1}$ score, especially when you need a single metric to compare two classifiers. The ${F}_{1}$ score is the [[BMA1_006 ממוצעים#ממוצע הרמוני|harmonic mean]] of precision and recall. 
 Whereas the regular mean treats all values equally, the harmonic mean gives much more weight to low values. As a result, the classifier will only get a high ${F}_{1}$ score if both recall and precision are high.
-$$
-{F}_{1}=\dfrac{2}{\dfrac{1}{\mathrm{precision}}+\dfrac{1}{\mathrm{reca\ll}}}=\dfrac{TP}{TP+\dfrac{FN+FP}{2}}
-$$
+$${F}_{1}=\dfrac{2}{\dfrac{1}{\mathrm{precision}}+\dfrac{1}{\mathrm{reca\ll}}}=\dfrac{TP}{TP+\dfrac{FN+FP}{2}}$$
 
 To compute the ${F}_{1}$ score, simply call the `f1_score()` function:
 ```python
 >>>from sklearn.metrics import f1_score
 >>>f1_score(y_train_5, y_train_pred)
-> 0.7325171197343846
-> ```
+0.7325171197343846
+```
 
 The ${F}_{1}$ score favors classifiers that have similar precision and recall. This is not always what you want: in some contexts you mostly care about precision, and in other contexts you really care about recall. For example, if you trained a classifier to detect videos that are safe for kids, you would probably prefer a classifier that rejects many good videos (low recall) but keeps only safe ones (high precision), rather than a classifier that has a much higher recall but lets a few really bad videos show up in your product.
 
@@ -209,11 +203,11 @@ Scikit-Learn does not let you set the threshold directly, but it does give you a
 ```python
 >>>y_scores = sgd_clf.decision_function([some_digit])
 >>>y_scores
-> array([2164.22030239])
+array([2164.22030239])
 >>>threshold = 0
 >>>y_some_digit_pred = (y_scores > threshold)
-> array([ True])
-> ```
+array([ True])
+```
 
 The `SGDClassifier` uses a threshold equal to 0, so the preceding code returns the same result as the `predict()` method (i.e., `True`). Let’s raise the threshold:
 
@@ -221,8 +215,8 @@ The `SGDClassifier` uses a threshold equal to 0, so the preceding code returns t
 >>> threshold = 3000 
 >>> y_some_digit_pred = (y_scores > threshold) 
 >>> y_some_digit_pred
-> array([False])
-> ```
+array([False])
+```
 
 This confirms that raising the threshold decreases recall. The image actually represents a 5, and the classifier detects it when the threshold is 0, but it misses it when the threshold is increased to 3,000.
 
@@ -230,8 +224,8 @@ How do you decide which threshold to use? First, use the `cross_val_predict()` f
 
 ```python
 y_scores = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3,
-method="decision_function")
-		```
+                             method="decision_function")
+```
 
 With these scores, use the `precision_recall_curve()` function to compute precision and recall for all possible thresholds (the function adds a last precision of 0 and a last recall of 1, corresponding to an infinite threshold):
 ```python
@@ -266,14 +260,14 @@ Suppose you decide to aim for 90% precision. For this, you can use the NumPy arr
 ```python
 >>>idx_for_90_precision = (precisions >= 0.90).argmax()
 >>>threshold_for_90_precision = >>>thresholds[idx_for_90_precision]
-> 3370.0194991439557
+3370.0194991439557
 >>>y_train_pred_90 = (y_scores >= threshold_for_90_precision)
 >>>precision_score(y_train_5, y_train_pred_90)
-> 0.9000345901072293
+0.9000345901072293
 >>>recall_at_90_precision = recall_score(y_train_5, y_train_pred_90)
 >>>recall_at_90_precision
-> 0.4799852425751706
-> ```
+0.4799852425751706
+```
 
 As you can see, it is fairly easy to create a classifier with virtually any precision you want: just set a high enough threshold, and you’re done. But wait, not so fast–a high-precision classifier is not very useful if its recall is too low! For many applications, 48% recall wouldn’t be great at all.
 
@@ -307,8 +301,8 @@ One way to compare classifiers is to measure the area under the curve (AUC). A p
 ```python
 >>>from sklearn.metrics import roc_auc_score
 >>>roc_auc_score(y_train_5, y_scores)
-> 0.9604938554008616
-> ```
+0.9604938554008616
+```
 
 Let’s now create a `RandomForestClassifier`, whose PR curve and F score we can compare to those of the `SGDClassifier`:
 
@@ -322,15 +316,15 @@ The `precision_recall_curve()` function expects labels and scores for each insta
 
 ```python
 y_probas_forest = cross_val_predict(forest_clf, X_train, y_train_5, cv=3,
-method="predict_proba")
-		```
+                                    method="predict_proba")
+```
 
 Let's look at the class probabilities for the first two images in the training set:
 ```python
 >>>y_probas_forest[:2]
-> array([[0.11, 0.89],
-> 	   [0.99, 0.01]])
-> ```
+array([[0.11, 0.89],
+       [0.99, 0.01]])
+```
 
 The model predicts that the first image is positive with 89% probability, and it predicts that the second image is negative with 99% probability. Since each image is either positive or negative, the probabilities in each row add up to 100%.
 
@@ -339,18 +333,18 @@ The second column contains the estimated probabilities for the positive class, s
 ```python
 y_scores_forest = y_probas_forest[:, 1]
 precisions_forest, recalls_forest, thresholds_forest = precision_recall_curve(
-y_train_5, y_scores_forest)
+    y_train_5, y_scores_forest)
 ```
 
 Now we’re ready to plot the PR curve. It is useful to plot the first PR curve as well to see how they compare:
 
 ```python
 plt.plot(recalls_forest, precisions_forest, "b-", linewidth=2,
-label="Random Forest")
-		plt.plot(recalls, precisions, "--", linewidth=2, label="SGD")
-		[...]
-		plt.show()
-		```
+         label="Random Forest")
+plt.plot(recalls, precisions, "--", linewidth=2, label="SGD")
+[...]
+plt.show()
+```
 
 ![[Pasted image 20241001191547.png|bookhue|500]]
 >Comparing PR curves: the random forest classifier is superior to the SGD classifier because its PR curve is much closer to the top-right corner, and it has a greater AUC.
@@ -360,10 +354,10 @@ As you can see in the figure, the `RandomForestClassifier`’s PR curve looks mu
 ```python
 >>>y_train_pred_forest = y_probas_forest[:, 1] >= 0.5  # positive proba ≥ 50%
 >>>f1_score(y_train_5, y_train_pred_forest)
-> 0.9274509803921569
+0.9274509803921569
 >>>roc_auc_score(y_train_5, y_scores_forest)
-> 0.9983436731328145
-> ```
+0.9983436731328145
+```
 
 # Multiclass Classification
 
@@ -390,8 +384,8 @@ Since there are 10 classes (i.e., more than 2), Scikit-Learn used the OvO strate
 
 ```python
 >>> svm_clf.predict([some_digit])
-> array(['5'], dtype=object)
-> ```
+array(['5'], dtype=object)
+```
 
 That’s correct! This code actually made 45 predictions - one per pair of classes - and it selected the class that won the most duels. If you call the `decision_function()` method, you will see that it returns 10 scores per instance: one per class. Each class gets a score equal to the number of won duels plus or minus a small tweak (max $\pm$ 0.33) to break ties, based on the classifier scores:
 
@@ -399,8 +393,8 @@ That’s correct! This code actually made 45 predictions - one per pair of class
 >>> some_digit_scores = svm_clf.decision_function([some_digit])
 >>>some_digit_scores_ovo = svm_clf.decision_function([some_digit])
 >>>some_digit_scores_ovo.round(2)
-> array([[ 3.79, 0.73, 6.06, 8.3 , -0.29, 9.3 , 1.75, 2.77, 7.21, 4.82]])
-> ```
+array([[ 3.79, 0.73, 6.06, 8.3 , -0.29, 9.3 , 1.75, 2.77, 7.21, 4.82]])
+```
 
 The highest score is 9.3, and it’s indeed the one corresponding to class 5.
 
@@ -408,10 +402,10 @@ When a classifier is trained, it stores the list of target classes in its `class
 
 ```python
 >>> svm_clf.classes_
-> array(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], dtype=object)
+array(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], dtype=object)
 >>> svm_clf.classes_[class_id]
-> '5'
-> ```
+'5'
+```
 
 # Error Analysis
 If this were a real project, you’d explore data preparation options, try out multiple models, shortlist the best ones, fine-tune their hyperparameters using `GridSearchCV`, and automate as much as possible. Here, we will assume that you have found a promising model and you want to find ways to improve it. One way to do this is to analyze the types of errors it makes.
@@ -437,9 +431,9 @@ This confusion matrix looks pretty good: most images are on the main diagonal, w
 ```python
 plt.rc('font', size=10)  # extra code
 ConfusionMatrixDisplay.from_predictions(y_train, y_train_pred,
-normalize="true", values_format=".0%")
-		plt.show()
-		```
+                                        normalize="true", values_format=".0%")
+plt.show()
+```
 
 ![[Pasted image 20241005114011.png|bscreen|500]]
 >The same CM normalized by row
@@ -450,10 +444,10 @@ Now we can easily see that only 82% of the images of 5s were classified correctl
 sample_weight = (y_train_pred != y_train)
 plt.rc('font', size=10)  # extra code
 ConfusionMatrixDisplay.from_predictions(y_train, y_train_pred,
-sample_weight=sample_weight,
-normalize="true", values_format=".0%")
-		plt.show()
-		```
+                                        sample_weight=sample_weight,
+                                        normalize="true", values_format=".0%")
+plt.show()
+```
 
 
 ![[Pasted image 20241005114432.png|bscreen|500]]
@@ -508,8 +502,8 @@ This code creates a `y_multilabel` array containing two target labels for each d
 
 ```python
 >>> knn_clf.predict([some_digit])
-> array([[False, True]])
-> ```
+array([[False, True]])
+```
 
 And it gets it right! The digit 5 is indeed not large (`False`) and odd (`True`).
 
