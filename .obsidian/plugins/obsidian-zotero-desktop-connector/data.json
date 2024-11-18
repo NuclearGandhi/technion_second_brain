@@ -8,12 +8,12 @@
     {
       "name": "cite",
       "format": "formatted-citation",
-      "cslStyle": "sage-harvard"
+      "cslStyle": "apa"
     },
     {
       "name": "bib",
       "format": "formatted-bibliography",
-      "cslStyle": "elsevier-harvard"
+      "cslStyle": "apa"
     }
   ],
   "exportFormats": [],
