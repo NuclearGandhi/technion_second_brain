@@ -120,5 +120,4 @@ title: פנגייה - רשימת סיכומים
 %%
 ## אקסטרני
 - [[External/HML/HML_000 Hands-On Machine Learning]]
-
 %%
