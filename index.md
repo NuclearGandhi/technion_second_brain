@@ -36,7 +36,7 @@ title: פנגייה - רשימת סיכומים
 
 
 <div style="display: flex; justify-content: space-around;flex-wrap: wrap;">
-<a style=" margin-bottom: 12px;" href="https://publish.obsidian.md/idofangbentov/%D7%95%D7%95%D7%90%D7%95+%D7%90%D7%A9%D7%9B%D7%A8%D7%94" target="_blank"><img src="https://i.imgur.com/uZoPgYz.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+<a style=" margin-bottom: 12px;" href="https://nucleargandhi.github.io/quartz-fangia/%D7%95%D7%95%D7%90%D7%95-%D7%90%D7%A9%D7%9B%D7%A8%D7%94" target="_blank"><img src="https://i.imgur.com/uZoPgYz.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 <a href="https://www.buymeacoffee.com/idofangbentov" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 </div>
 
@@ -102,7 +102,7 @@ title: פנגייה - רשימת סיכומים
 
 - [[Technion/HTF1/HTF1_000 00340041 מעבר חום|HTF1_000 00340041 מעבר חום]]
 - [[ICT1_000 00340040 מבוא לבקרה]]
-- [[MEC1_000 00340054 תכן מכני 1מ]]
+- [[MDN1_000 00340054 תכן מכני 1מ]]
 - [[IME1_000 00340022 מבוא למכטרוניקה]]
 - [[DVI1_000 00340051 דינמיקה ותנודות]]
 
