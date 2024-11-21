@@ -5,9 +5,14 @@
   "embedUseExcalidrawFolder": false,
   "templateFilePath": "templates/default_exca.excalidraw",
   "scriptFolderPath": "Excalidraw/Scripts",
+  "fontAssetsPath": "Excalidraw/CJK Fonts",
+  "loadChineseFonts": false,
+  "loadJapaneseFonts": false,
+  "loadKoreanFonts": false,
   "compress": true,
   "decompressForMDView": false,
   "onceOffCompressFlagReset": true,
+  "onceOffGPTVersionReset": false,
   "autosave": true,
   "autosaveIntervalDesktop": 15000,
   "autosaveIntervalMobile": 10000,
@@ -27,6 +32,7 @@
   "previewMatchObsidianTheme": true,
   "width": "400",
   "height": "",
+  "overrideObsidianFontSize": false,
   "dynamicStyling": "colorful",
   "isLeftHanded": false,
   "iframeMatchExcalidrawTheme": true,
@@ -35,6 +41,8 @@
   "matchThemeTrigger": true,
   "defaultMode": "normal",
   "defaultPenMode": "never",
+  "penModeDoubleTapEraser": true,
+  "penModeSingleFingerPanning": true,
   "penModeCrosshairVisible": false,
   "renderImageInMarkdownReadingMode": false,
   "renderImageInHoverPreviewForMDNotes": false,
@@ -92,7 +100,7 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.2.10",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.6.7",
     "libraryItems": [
       {
         "status": "unpublished",
@@ -8562,7 +8570,7 @@
   "defaultTrayMode": true,
   "previousRelease": "2.2.10",
   "showReleaseNotes": false,
-  "showNewVersionNotification": true,
+  "showNewVersionNotification": false,
   "latexBoilerplate": "\\color{red}",
   "taskboneEnabled": false,
   "taskboneAPIkey": "",
@@ -8884,6 +8892,7 @@
   "numberOfCustomPens": 0,
   "pdfScale": 4,
   "pdfBorderBox": true,
+  "pdfFrame": false,
   "pdfGapSize": 20,
   "pdfGroupPages": false,
   "pdfLockAfterImport": true,
@@ -8891,6 +8900,11 @@
   "pdfNumRows": 1,
   "pdfDirection": "right",
   "pdfImportScale": 0.3,
+  "gridSettings": {
+    "DYNAMIC_COLOR": true,
+    "COLOR": "#000000",
+    "OPACITY": 50
+  },
   "laserSettings": {
     "DECAY_LENGTH": 50,
     "DECAY_TIME": 1000,
@@ -8907,6 +8921,7 @@
     "borderOpacity": 0,
     "filenameVisible": false
   },
+  "markdownNodeOneClickEditing": false,
   "canvasImmersiveEmbed": true,
   "startupScriptPath": "",
   "openAIAPIToken": "",
@@ -9205,16 +9220,8 @@
   "areaZoomLimit": 1,
   "longPressDesktop": 500,
   "longPressMobile": 500,
+  "doubleClickLinkOpenViewMode": true,
   "isDebugMode": false,
-  "onceOffGPTVersionReset": false,
-  "penModeDoubleTapEraser": true,
-  "pdfFrame": false,
-  "gridSettings": {
-    "DYNAMIC_COLOR": true,
-    "COLOR": "#000000",
-    "OPACITY": 50
-  },
-  "markdownNodeOneClickEditing": false,
   "rank": "Gold",
   "modifierKeyOverrides": [
     {
