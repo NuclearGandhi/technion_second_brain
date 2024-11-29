@@ -4,6 +4,7 @@ aliases:
   - time-invariance
   - memoryless system
   - system stablitiy
+  - BIBO
 ---
 
 # Causality
