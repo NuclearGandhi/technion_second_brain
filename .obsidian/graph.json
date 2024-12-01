@@ -1,5 +1,5 @@
 {
-  "collapse-filter": false,
+  "collapse-filter": true,
   "search": "file: -.excalidraw",
   "showTags": false,
   "showAttachments": false,
@@ -11,14 +11,14 @@
       "query": "file: ALG",
       "color": {
         "a": 1,
-        "rgb": 4345855
+        "rgb": 2041999
       }
     },
     {
       "query": "file: GCH",
       "color": {
         "a": 1,
-        "rgb": 10518075
+        "rgb": 13398865
       }
     },
     {
@@ -53,7 +53,7 @@
       "query": "file: IPY",
       "color": {
         "a": 1,
-        "rgb": 10434004
+        "rgb": 4167195
       }
     },
     {
@@ -71,7 +71,7 @@
       }
     },
     {
-      "query": "file: THE",
+      "query": "file: THE1",
       "color": {
         "a": 1,
         "rgb": 14711890
@@ -95,7 +95,7 @@
       "query": "file: DYN",
       "color": {
         "a": 1,
-        "rgb": 4371985
+        "rgb": 13459040
       }
     },
     {
@@ -109,7 +109,7 @@
       "query": "file: MNF",
       "color": {
         "a": 1,
-        "rgb": 12034059
+        "rgb": 16170065
       }
     },
     {
@@ -123,14 +123,35 @@
       "query": "file: HTF",
       "color": {
         "a": 1,
-        "rgb": 10704655
+        "rgb": 5226394
       }
     },
     {
       "query": "file: HML",
       "color": {
         "a": 1,
-        "rgb": 6003129
+        "rgb": 4101890
+      }
+    },
+    {
+      "query": "file: ICT",
+      "color": {
+        "a": 1,
+        "rgb": 7105708
+      }
+    },
+    {
+      "query": "file: DVI",
+      "color": {
+        "a": 1,
+        "rgb": 7105708
+      }
+    },
+    {
+      "query": "file: MDN",
+      "color": {
+        "a": 1,
+        "rgb": 12131876
       }
     }
   ],
@@ -139,11 +160,11 @@
   "textFadeMultiplier": -0.2,
   "nodeSizeMultiplier": 1.27395833333333,
   "lineSizeMultiplier": 0.3201171875,
-  "collapse-forces": false,
+  "collapse-forces": true,
   "centerStrength": 0.640625,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.08676704392295997,
+  "scale": 0.08676704392296038,
   "close": true
 }
