@@ -159,14 +159,5 @@
       ],
       "key": "S"
     }
-  ],
-  "app:delete-file": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "X"
-    }
   ]
 }
