@@ -64,6 +64,7 @@ $$
  >The **region of convergence**, also called the **region of existence**, for the the Laplace transform $X(s)$, is the set of values of $s$ (the region in the complex plane) for which the integral $\int_{-\infty}^{\infty} x(t)e^{-st} \, \mathrm{d}t$ converges.
  
  >[!example] Example: Laplace transform and ROC of a causal exponential
+ >
 >  For a signal $x(t)=e^{-at} \mathbb{1}(t)$, find the Laplace transform $X(s)$ and its ROC.
 >  
 >  **Solution**:
@@ -230,8 +231,9 @@ $$
 	$$
 	\lim_{ t \to \infty }y(t)=\lim_{ s \to 0} s \dfrac{G(s)}{s}=G(0)
 	$$
-	>[!notes] Note: 
-					 >We refer to ${G}_{0}$ as the static gain of $G$ in the unstable case as well. If $G(0)$ is finite, then we may still think of $y_{\text{ss}}=G(0)\mathbb{1}$ as the steady-state response of an unstable system. However, the transients do not decay then (might even diverge).
+	>[!notes] Note:
+	>
+	>We refer to ${G}_{0}$ as the static gain of $G$ in the unstable case as well. If $G(0)$ is finite, then we may still think of $y_{\text{ss}}=G(0)\mathbb{1}$ as the steady-state response of an unstable system. However, the transients do not decay then (might even diverge).
 
 Practically:
 1. Steady-state response shows *what* the response will eventually be, i.e:
@@ -1050,7 +1052,8 @@ An inverted pendulum with length $L$ is held in place by a torsion spring with c
 The transfer function of the linearized system is given by
 $$
 G(s)=\dfrac{L}{mL^{2}s^{2}+cs+(k-mgL)}
-$$When is this system I/O stable?
+$$
+When is this system I/O stable?
 
 **Solution**:
 The transfer function is [[LSY1_007 Laplace Transform#From Laplace to Transfer Function|proper]]. Because we are working with a second degree polynomial, the criterion for stability is that all coefficients of the numerator have the same sign. In this case, all coefficients must be positive:
