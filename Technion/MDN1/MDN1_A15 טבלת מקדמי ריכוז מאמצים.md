@@ -5,3 +5,6 @@ aliases:
 ![[Pasted image 20241202142442.png|bookhue]]
 ![[Pasted image 20241202142832.png|bookhue]]
 ![[Pasted image 20241202142713.png|bookhue]]
+![[Pasted image 20241212225638.png|bookhue]]
+![[Pasted image 20241212225615.png|bookhue]]
+![[Pasted image 20241212225713.png|bookhue]]
