@@ -7,6 +7,7 @@ aliases:
   - physical realization
   - canonical realization
   - Euler's formula
+  - זהות אויילר
 ---
 
 # Impulse Response

@@ -5,9 +5,11 @@ aliases:
   - polar diagram
   - Nyquist diagram
   - guidelines for asymptotic Bode
+  - frequency response theorem
+  - משפט תגובת התדירות
 ---
 # Frequency Response
->[!theorem] Theorem: 
+>[!theorem] Theorem: Frequency Response Theorem
 > Let $G:u\to y$ be a stable [[LSY1_001 Introduction#State-Space Linear Systems|CLTI]] system. Its response to the *sinusoidal* test input $u$ such that
 > $$
 > u(t)=a\sin(\omega t+\phi)\mathbb{1}(t)
