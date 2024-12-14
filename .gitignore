@@ -7,3 +7,7 @@
 # Ignore Smart Connections folder because embeddings file is large and updated frequently
 .smart-connections
 .obsidian/plugins/smart-connections/
+
+# Wait until submitted
+Technion/DVI1/DVI1_HW001 פרוייקטון 1.md
+Technion/DVI1/DVI1_HW001/
