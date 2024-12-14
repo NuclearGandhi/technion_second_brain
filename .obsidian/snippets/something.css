@@ -11,7 +11,7 @@ img {
   margin-right: auto;
 }
 
-.excalidraw-svg{
+.excalidraw-svg {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -103,7 +103,7 @@ table {
 }
 
 /* Center table headers */
-.markdown-rendered thead tr > th {
+.markdown-rendered thead tr>th {
   text-align: start !important;
 }
 
@@ -132,7 +132,7 @@ table {
   --callout-icon: sigma;
 }
 
-.callout[data-callout="quote"] .callout-content{
+.callout[data-callout="quote"] .callout-content {
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -257,11 +257,13 @@ figure.testi .author {
   -webkit-transform: translateY(50%);
   transform: translateY(50%);
 }
+
 figure.testi .author h5 {
   opacity: 0.8;
   margin: 0;
   font-weight: 700;
 }
+
 figure.testi .author h5 span {
   font-weight: 400;
   text-transform: none;
@@ -274,32 +276,32 @@ Local only
  */
 
 
- .app-container {
+.app-container {
   --font-caption-size: 18px;
- } 
+}
 
- .markdown-rendered .list-bullet {
+.markdown-rendered .list-bullet {
   float: inline-start;
 }
 
 /* Padding between numbers */
-.markdown-rendered ol > li,
-.markdown-rendered ul > li {
+.markdown-rendered ol>li,
+.markdown-rendered ul>li {
   padding-top: 0.2em;
   padding-bottom: 0.2em;
 }
 
-.markdown-rendered ol.has-list-bullet > li,
-.markdown-rendered ul.has-list-bullet > li {
+.markdown-rendered ol.has-list-bullet>li,
+.markdown-rendered ul.has-list-bullet>li {
   padding-top: var(--list-spacing);
   padding-bottom: var(--list-spacing);
 }
 
 div.page-break::after {
-	content: "Break page. Need at least 1 blank line after.";
-	display: block;
-	font-style: italic;
-	color: gray;
+  content: "Break page. Need at least 1 blank line after.";
+  display: block;
+  font-style: italic;
+  color: gray;
 }
 
 /*
@@ -309,20 +311,57 @@ PDF only
 
 
 @media print {
-	div.page-break::after {
-		display: none;
-	}
-}
 
+  h1,
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid;
+  }
 
-@media print {
+  img, div.math, span.internal-embed {
+    page-break-before: avoid;
+  }
+
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  /* use double <hr> ('---') to indicate a page break */
+  hr + hr {
+    page-break-before: always;
+    visibility: hidden;
+  }
+
+  hr:has(+ hr) {
+    visibility: hidden;
+  }
+
+  :not(hr) + hr + :not(hr):not(h2) {
+    border-top: 1px solid black;
+    padding-top: 2em;
+  }
+
   body {
     font-family: "David" !important;
     --font-interface-override: "David" !important;
     --font-print: "David" !important;
     --font-text-size: 14pt !important
   }
+
   table {
-    direction: rtl
+    direction: rtl !important;
+  }
+
+  div.page-break::after {
+    display: none !important;
+  }
+
+  /* block quotes (for image captioning) */
+  .markdown-rendered blockquote {
+    font-weight: bold !important;
+    font-style: bold !important;
+    color: inherit !important;
   }
 }
