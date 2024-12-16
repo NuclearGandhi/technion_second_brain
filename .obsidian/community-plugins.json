@@ -7,8 +7,6 @@
   "better-export-pdf",
   "hot-reload",
   "obsidian-latex-environments",
-  "latex-ocr",
   "obsidian-zotero-desktop-connector",
-  "find-unlinked-files",
-  "math-in-callout"
+  "find-unlinked-files"
 ]

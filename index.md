@@ -70,7 +70,19 @@ title: פנגייה - רשימת סיכומים
 <h5>אריק איינשטיין</h5><span>זוכה פרס נובל לשלום</span>
 </div>
 </figure>
+</figure>
+<figure class="testi">
+<blockquote>אני אוכלת רק את הרפרנסים של הפנגייה
+<div class="arrow"></div>
+</blockquote>
+<img src="/general_pics/IMG-20241216-WA0001.jpg" alt="sq-sample18" />
+<div class="author">
+<h5>דוקטור צ'ילי</h5><span>יותר חמודה מצ'דר</span>
 </div>
+</figure>
+</div>
+
+
 
 ## סמסטר א’
 - [[Technion/GCH1/GCH1_000 125001 כימיה כללית|GCH1_000 125001 כימיה כללית]]
