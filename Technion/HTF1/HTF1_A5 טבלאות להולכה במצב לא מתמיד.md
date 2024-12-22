@@ -2,5 +2,5 @@
 aliases:
 ---
 ![[{F040BFE3-84E7-4E59-8801-28A302EE4447}.png|bookhue]]
-
+![[{8926E4DE-CA51-4078-969D-DEB034F26871}.png|bookhue|550]]
 ![[{A2BF7DAB-F66B-466D-8B96-E30C979E2A09}.png|bookhue]]
