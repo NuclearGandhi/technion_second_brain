@@ -106,6 +106,59 @@
         "status": "unpublished",
         "elements": [
           {
+            "id": "lQjzgHaZotgTfmdSHqLOv",
+            "type": "arrow",
+            "x": -260,
+            "y": -220,
+            "width": 80,
+            "height": 0,
+            "angle": 0,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "#a5d8ff",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "groupIds": [],
+            "frameId": null,
+            "index": "aG",
+            "roundness": {
+              "type": 2
+            },
+            "seed": 1271256690,
+            "version": 9,
+            "versionNonce": 1613293358,
+            "isDeleted": false,
+            "boundElements": [],
+            "updated": 1734983887025,
+            "link": null,
+            "locked": false,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                80,
+                0
+              ]
+            ],
+            "lastCommittedPoint": null,
+            "startBinding": null,
+            "endBinding": null,
+            "startArrowhead": null,
+            "endArrowhead": "dot",
+            "elbowed": false
+          }
+        ],
+        "id": "GkQ17YHl2Ovn5nIhuUfrW",
+        "created": 1734983904615
+      },
+      {
+        "status": "unpublished",
+        "elements": [
+          {
             "type": "line",
             "version": 2665,
             "versionNonce": 1485736109,
@@ -735,84 +788,6 @@
         ],
         "id": "GDnoWZGam9QDtGPUI7NUF",
         "created": 1733770041973
-      },
-      {
-        "status": "unpublished",
-        "elements": [
-          {
-            "id": "cOsL1wWmOZKto23CRGRCA",
-            "type": "line",
-            "x": 300,
-            "y": 40.00000000000008,
-            "width": 80,
-            "height": 0,
-            "angle": 3.1415926535897913,
-            "strokeColor": "#1e1e1e",
-            "backgroundColor": "transparent",
-            "fillStyle": "solid",
-            "strokeWidth": 4,
-            "strokeStyle": "solid",
-            "roughness": 0,
-            "opacity": 100,
-            "groupIds": [],
-            "frameId": null,
-            "index": "aF",
-            "roundness": null,
-            "seed": 423051870,
-            "version": 67,
-            "versionNonce": 1789139202,
-            "isDeleted": false,
-            "boundElements": [],
-            "updated": 1733480383707,
-            "link": null,
-            "locked": false,
-            "points": [
-              [
-                0,
-                0
-              ],
-              [
-                80,
-                0
-              ]
-            ],
-            "lastCommittedPoint": null,
-            "startBinding": null,
-            "endBinding": null,
-            "startArrowhead": null,
-            "endArrowhead": null
-          },
-          {
-            "id": "Ju-jFT7ycecJQPgxVByRW",
-            "type": "ellipse",
-            "x": 374.16638962765967,
-            "y": 34,
-            "width": 11.667220744680833,
-            "height": 11.667220744680833,
-            "angle": 3.1415926535897913,
-            "strokeColor": "#1e1e1e",
-            "backgroundColor": "#1e1e1e",
-            "fillStyle": "solid",
-            "strokeWidth": 4,
-            "strokeStyle": "solid",
-            "roughness": 0,
-            "opacity": 100,
-            "groupIds": [],
-            "frameId": null,
-            "index": "aG",
-            "roundness": null,
-            "seed": 997623810,
-            "version": 176,
-            "versionNonce": 898859294,
-            "isDeleted": false,
-            "boundElements": [],
-            "updated": 1733480391730,
-            "link": null,
-            "locked": false
-          }
-        ],
-        "id": "uZP1ezbp4JJ2aO2_Lg5Oj",
-        "created": 1733480401702
       },
       {
         "status": "unpublished",
