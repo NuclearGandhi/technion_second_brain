@@ -3,3 +3,6 @@ aliases:
 ---
 ![[{998107D7-23F9-4BDD-BE05-E89DA69D3059}.png|bookhue|600]]
 ![[{3932330F-3BF3-48ED-9621-61CEB19ABEBE}.png|bookhue|bookhue]]
+
+![[{4E37AF83-6189-46AD-BCAF-1B978D21F9AE}.png|bookhue|600]]
+![[{D9BA3D32-3ED0-400A-BB11-0A85479C5094}.png|bookhue]]
