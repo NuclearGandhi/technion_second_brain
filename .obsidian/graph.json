@@ -153,6 +153,13 @@
         "a": 1,
         "rgb": 12131876
       }
+    },
+    {
+      "query": "file: IME",
+      "color": {
+        "a": 1,
+        "rgb": 7105708
+      }
     }
   ],
   "collapse-display": true,
@@ -165,6 +172,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.07829475535701168,
-  "close": true
+  "scale": 0.016747380962447957,
+  "close": false
 }
