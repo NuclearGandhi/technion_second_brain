@@ -98,15 +98,6 @@
       "key": ";"
     }
   ],
-  "darlal-switcher-plus:switcher-plus:open-headings": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "H"
-    }
-  ],
   "templater-obsidian:templates/הערות.md": [
     {
       "modifiers": [
@@ -160,5 +151,14 @@
       "key": "S"
     }
   ],
-  "markdown:add-metadata-property": []
+  "markdown:add-metadata-property": [],
+  "darlal-switcher-plus:switcher-plus:open-headings": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "A"
+    }
+  ]
 }
