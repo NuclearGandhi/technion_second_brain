@@ -41,17 +41,6 @@ exportgraphics(gcf, 'q4_c.png', 'Resolution', 300);
 
 %% Part d
 
-% Constants
-D = 0.001; % Diameter in meters
-k_f = 0.05; % Fluid thermal conductivity in W/m.K
-k = 100; % Thermocouple thermal conductivity in W/m.K
-Pr = 0.69; % Prandtl number
-nu = 50e-6; % Kinematic viscosity in m^2/s
-rho = 8920; % Density in kg/m^3
-cp = 385; % Specific heat capacity in J/kg.K
-T_inf = 1000; % Ambient temperature in K
-T_c = 400; % Cold temperature in K
-sigma = 5.67e-8; % Stefan-Boltzmann constant
 V = 5; % Constant velocity in m/s
 
 % Emissivity range
