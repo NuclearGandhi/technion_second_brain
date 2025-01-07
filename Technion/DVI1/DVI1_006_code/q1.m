@@ -1,56 +1,56 @@
 clc; clear; close all;
 
 % Define system parameters
-m3 = 1; % Reference mass
-l3 = 1; % Reference length
-
+m3 = 1;
+l1 = 1; % Length of the first rod
+l2 = 1; % Length of the second rod
+l3 = 1;
 omega_0 = 1;
 natural_frequencies = [omega_0, 2*omega_0, 3*omega_0, 4*omega_0, 5*omega_0]; % Natural frequencies
 
-m = [10/7*m3, 15/14*m3, m3, 15/14*m3, 10/7*m3]; % Masses
-l = [sqrt(10/7)*l3, sqrt(15/14)*l3, l3, sqrt(15/14)*l3, sqrt(10/7)*l3]; % Lengths
-k = [50/7, 90/7, 15, 90/7, 50/7] * (l3^2 * m3); % Torsional spring constants
+m1 = 10/7*m3*(l3/l1)^2;
+m2 = 15/14*m3*(l3/l2)^2;
+
+m = [m1 m2 m3 m2 m1]; % Masses
+l = [l1 l2 l3 l2 l1]; % Lengths
+k = [50/7, 90/7, 15, 90/7, 50/7] * (l3^2 * m3) * omega_0^2; % Torsional spring constants
 
 % Define the differential equations in modal coordinates
-dynamics = @(t, eta) [eta(2); 
-                      -natural_frequencies(1)^2 * eta(1);
-                      eta(4);
-                      -natural_frequencies(2)^2 * eta(3);
-                      eta(6);
-                      -natural_frequencies(3)^2 * eta(5);
-                      eta(8);
-                      -natural_frequencies(4)^2 * eta(7);
-                      eta(10);
-                      -natural_frequencies(5)^2 * eta(9)];
+dynamics = @(t, eta) [eta(6:10);
+    -natural_frequencies(1)^2 * eta(1);
+    -natural_frequencies(2)^2 * eta(2);
+    -natural_frequencies(3)^2 * eta(3);
+    -natural_frequencies(4)^2 * eta(4);
+    -natural_frequencies(5)^2 * eta(5)];
 
 % Define the modes
-modes = [1, 4/3, 10/7, 4/3, 1; 
-         -1, -2/3, 0, 2/3, 1;
-         1, -4/9, -10/9, -4/9, 1;
-         -1, 2, 0, -2, 1;
-         1, -4, 6, -4, 1];
+unnormalized_modes = [1 -1 1 -1 1;
+    4/3 -2/3 -4/9 2 -4;
+    10/7 0 -10/9 0 6;
+    4/3 2/3 -4/9 -2 -4;
+    1 1 1 1 1];
 
 % Calculate modal mass
-modal_mass = diag(modes' * diag(m) * modes);
+modal_mass = diag(unnormalized_modes' * diag(m) * unnormalized_modes);
 alpha = 1 ./ sqrt(modal_mass);
 
 % Calculate natural modes
-natural_mods = modes * diag(alpha);
+modes = unnormalized_modes * diag(alpha);
 
 % Create the 3D animation for each mode separately
-for mode_idx = 1:5
+for mode_idx = 4:5
     % Initial conditions in modal coordinates to excite only one mode
     eta0 = zeros(10, 1);
-    eta0(2*mode_idx-1) = 0.5; % Excite only the current mode
+    eta0(mode_idx) = 0.5; % Excite only the current mode
 
     % Time span for 10 cycles of the current natural frequency
-    tspan = linspace(0, 2 * (2 * pi / natural_frequencies(mode_idx)), 100);
+    tspan = linspace(0, 1 * (2 * pi / natural_frequencies(mode_idx)), 100);
 
     % Solve the differential equations
     [t, eta] = ode45(dynamics, tspan, eta0);
 
     % Convert modal coordinates to physical coordinates
-    theta = (natural_mods * eta(:, 1:2:end)')';
+    theta = (modes * eta(:, 1:5)')';
 
     % Create the 3D animation for the current mode
     figure('Color', 'w'); % Set figure background to white
