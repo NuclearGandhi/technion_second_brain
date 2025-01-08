@@ -40,7 +40,8 @@ alpha = 1 ./ sqrt(modal_mass);
 modes = unnormalized_modes * diag(alpha);
 
 % Create the 3D animation for each mode separately
-for mode_idx = 5:5
+% for mode_idx = 1:5
+for mode_idx = 2:1
     % Initial conditions in modal coordinates to excite only one mode
     eta0 = zeros(10, 1);
     eta0(mode_idx) = 1; % Excite only the current mode
@@ -124,12 +125,14 @@ dynamics = @(t, eta) [eta(6:10);
     -natural_frequencies(5)^2 * eta(5) - 2 * modal_zeta(5) * natural_frequencies(5) * eta(10)];
 
 % Initial conditions in modal coordinates
-eta0 = [10 0 10 0 10 0 0 0 0 0;
-    0 10 0 -10 0 0 0 0 0 0];
-eta0 = deg2rad(eta0);
+theta0 = [10 0 10 0 10;
+    0 10 0 -10 0]';
+theta0 = deg2rad(theta0); % Convert initial conditions to radians
+eta0 = modes^(-1) * theta0; % Convert initial conditions to modal coordinates
+% add zero velocities
+eta0 = [eta0; zeros(5, 2)]';
 
 tspan = linspace(0, 15, 1000);
-
 
 plot_title = {'Free Vibration with Symmetric initial conditions', 'Free Vibration with Anti-Symmetric initial conditions'};
 line_style = {'-', ':', ':', ':', ':'};
@@ -141,7 +144,7 @@ for i = 1:size(eta0, 1)
 
     % Convert modal coordinates to physical coordinates
     theta = (modes * eta(:, 1:5)')';
-    theta = rad2deg(theta);
+    theta = rad2deg(theta); % Convert back to degrees for plotting
 
     % Plot the physical coordinates
     for j = 1:5
