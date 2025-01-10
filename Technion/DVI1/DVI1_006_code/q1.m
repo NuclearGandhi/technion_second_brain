@@ -135,7 +135,7 @@ eta0 = [eta0; zeros(5, 2)]';
 tspan = linspace(0, 15, 1000);
 
 plot_title = {'Free Vibration with Symmetric initial conditions', 'Free Vibration with Anti-Symmetric initial conditions'};
-line_style = {'-', ':', ':', ':', ':'};
+line_style = {'-', ':', ':', ':', ':', ':'};
 for i = 1:size(eta0, 1)
     figure;
     set(gcf, 'Units', 'pixels', 'Position', [300, 300, 800, 400]); % Set figure size and position
@@ -144,6 +144,7 @@ for i = 1:size(eta0, 1)
 
     % Convert modal coordinates to physical coordinates
     theta = (modes * eta(:, 1:5)')';
+    
     theta = rad2deg(theta); % Convert back to degrees for plotting
 
     % Plot the physical coordinates
@@ -159,3 +160,54 @@ for i = 1:size(eta0, 1)
     grid on;
     exportgraphics(gcf, ['q1_free_vibration_', num2str(i), '.png'], 'Resolution', 300);
 end
+
+
+%% Bode magnitude plot for theta_1 and theta_3
+
+% Define system parameters
+zeta_values = [0, 0.03]; % Damping ratios
+omega_range = linspace(0, 6 * omega_0, 1000); % Frequency range
+
+% Define the input moment
+M3 = 1; % Amplitude of the harmonic moment input
+
+% Loop over damping ratios
+figure;
+for idx = 1:length(zeta_values)
+    zeta = zeta_values(idx);
+    % Define the modal damping matrix
+    modal_zeta = zeta * ones(1, 5);
+    Gamma = diag(2 * modal_zeta .* natural_frequencies);
+
+    % Initialize response arrays
+    theta_1_response = zeros(size(omega_range));
+    theta_3_response = zeros(size(omega_range));
+
+    % Loop over frequency range
+    for i = 1:length(omega_range)
+        omega = omega_range(i);
+        Z = -omega^2 * eye(5) + 1i * omega * Gamma + diag(natural_frequencies.^2);
+        H_modal = inv(Z);
+        H = modes * H_modal * modes';
+
+        % Calculate the response for theta_1 and theta_3
+        theta_1_response(i) = abs(H(1, 3) * M3);
+        theta_3_response(i) = abs(H(3, 3) * M3);
+    end
+
+    % Plot the Bode magnitude plot
+    subplot(2, 1, idx);
+    semilogy(omega_range, theta_1_response, 'LineWidth', 2);
+    hold on;
+    semilogy(omega_range, theta_3_response, 'LineWidth', 2);
+    title(['Bode Magnitude Plot for $\zeta = ', num2str(zeta), '$']);
+    xlabel('$\omega / \omega_0$ (rad/s)', 'Interpreter', 'latex');
+    ylabel('$|\theta|$', 'Interpreter', 'latex');
+    legend('$\theta_1$', '$\theta_3$');
+    grid on;
+    hold off;
+end
+
+set(gcf, 'Units', 'pixels', 'Position', [0, 0, 800, 600]); % Set figure size and position
+exportgraphics(gcf, 'q1_bode_magnitude.png', 'Resolution', 300);
+
