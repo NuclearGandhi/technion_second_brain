@@ -40,8 +40,8 @@ alpha = 1 ./ sqrt(modal_mass);
 modes = unnormalized_modes * diag(alpha);
 
 % Create the 3D animation for each mode separately
-% for mode_idx = 1:5
-for mode_idx = 2:1
+for mode_idx = 1:5
+% for mode_idx = 2:1
     % Initial conditions in modal coordinates to excite only one mode
     eta0 = zeros(10, 1);
     eta0(mode_idx) = 1; % Excite only the current mode
@@ -153,7 +153,7 @@ for i = 1:size(eta0, 1)
         hold on;
     end
 
-    title(plot_title{i}, 'Interpreter', 'none');
+    title(plot_title{i}, 'Interpreter', 'latex');
     xlabel('$t$ (s)', 'Interpreter', 'latex');
     ylabel('$\theta$ (degrees)', 'Interpreter', 'latex');
     legend(arrayfun(@(x) ['$\theta_', num2str(x), '$'], 1:5, 'UniformOutput', false), 'Interpreter', 'latex');
@@ -201,7 +201,7 @@ for idx = 1:length(zeta_values)
     hold on;
     semilogy(omega_range, theta_3_response, 'LineWidth', 2);
     title(['Bode Magnitude Plot for $\zeta = ', num2str(zeta), '$']);
-    xlabel('$\omega / \omega_0$ (rad/s)', 'Interpreter', 'latex');
+    xlabel('$\omega / \omega_0$', 'Interpreter', 'latex');
     ylabel('$|\theta|$', 'Interpreter', 'latex');
     legend('$\theta_1$', '$\theta_3$');
     grid on;
