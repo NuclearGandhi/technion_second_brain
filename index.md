@@ -36,8 +36,8 @@ title: פנגייה - רשימת סיכומים
 
 
 <div style="display: flex; justify-content: space-around;flex-wrap: wrap;">
-<a style=" margin-bottom: 12px;" href="https://www.youtube.com/watch?v=mx86-rTclzA" target="_blank"><img src="https://i.imgur.com/uZoPgYz.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-<a href="https://www.youtube.com/watch?v=mx86-rTclzA" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+<a style=" margin-bottom: 12px;" href="https://www.youtube.com/watch?v=2qBlE2-WL60" target="_blank"><img src="https://i.imgur.com/uZoPgYz.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+<a href="https://www.youtube.com/watch?v=2qBlE2-WL60" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 </div>
 
 ## מה משתמשים שלנו אומרים עלינו
