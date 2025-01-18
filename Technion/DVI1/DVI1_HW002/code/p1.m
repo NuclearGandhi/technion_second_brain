@@ -20,7 +20,7 @@ for i = 1:length(lambda_values)
         (2*cos(pi*sqrt(delta - lambda^2/4 + epsilon)).*cos(pi*sqrt(delta - lambda^2/4 - epsilon)) + ...
         (sqrt(delta - lambda^2/4 + epsilon)./sqrt(delta - lambda^2/4 - epsilon) + sqrt(delta - lambda^2/4 - epsilon)./sqrt(delta - lambda^2/4 + epsilon)).* ...
         sin(pi*sqrt(delta - lambda^2/4 - epsilon)).*sin(pi*sqrt(delta - lambda^2/4 + epsilon))).* ...
-        cos(2*pi*sqrt(delta - lambda^2/4 - epsilon)) - 2;
+        cos(2*pi*sqrt(delta - lambda^2/4 - epsilon)) - 2 .* sqrt(exp(lambda * 2 * pi) + 2 * lambda * exp(lambda * pi) + lambda^2);
 
     Gamma_2 = @(delta, epsilon) ...
         (2*cos(pi*sqrt(delta - lambda^2/4 + epsilon)).*sin(pi*sqrt(delta - lambda^2/4 - epsilon)) - ...
@@ -30,21 +30,22 @@ for i = 1:length(lambda_values)
         (2*cos(pi*sqrt(delta - lambda^2/4 + epsilon)).*cos(pi*sqrt(delta - lambda^2/4 - epsilon)) + ...
         (sqrt(delta - lambda^2/4 + epsilon)./sqrt(delta - lambda^2/4 - epsilon) + sqrt(delta - lambda^2/4 - epsilon)./sqrt(delta - lambda^2/4 + epsilon)).* ...
         sin(pi*sqrt(delta - lambda^2/4 - epsilon)).*sin(pi*sqrt(delta - lambda^2/4 + epsilon))).* ...
-        cos(2*pi*sqrt(delta - lambda^2/4 - epsilon)) + 2;
+        cos(2*pi*sqrt(delta - lambda^2/4 - epsilon)) + 2 .* sqrt(exp(lambda * 2 * pi) + 2 * lambda * exp(lambda * pi) + lambda^2);
 
     % Create a subplot for each lambda
     subplot(1, length(lambda_values), i);
-    % Plot the implicit functions
-    fimplicit(Gamma_1, [0 3 0 2], 'LineWidth', 1.5);
+    % Plot the curves using fimplicit
+    plotcolors = get(gca, 'ColorOrder');
+
+    fimplicit(Gamma_1, [0 3 0 2], 'LineWidth', 1.5, 'Color', plotcolors(1, :), 'MeshDensity', 600);
     hold on;
-    fimplicit(Gamma_2, [0 3 0 2], 'LineWidth', 1.5);
+    fimplicit(Gamma_2, [0 3 0 2], 'LineWidth', 1.5, 'Color', plotcolors(1, :), 'MeshDensity', 600);
     hold off;
 
     % Add labels and title
     xlabel('$\delta$');
     ylabel('$\varepsilon$');
     title(['$\lambda = ', num2str(lambda), '$']);
-    legend('$\Gamma_1$', '$\Gamma_2$');
     grid on;
 
     set(gcf, 'Units', 'pixels', 'Position', [300, 300, 1200, 400]); % Set figure size and position
