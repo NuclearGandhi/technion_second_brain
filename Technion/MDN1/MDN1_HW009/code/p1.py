@@ -52,4 +52,3 @@ print(f'sigma_b_all = {sigma_b_all:.5} MPa')
 # Find the maximum allowable b
 b_max = W_t_P * K_O * K_V * K_s * K_H * K_B / (sigma_b_all * Y_J * m)  # mm
 print(f'b_max = {b_max:.5} mm')
-

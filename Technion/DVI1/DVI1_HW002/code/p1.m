@@ -4,10 +4,12 @@ clc; clear; close all;
 
 % Define the parameter lambda values
 lambda_values = [0, 0.01, 0.05];
+% Define the delta and epsilon values for the additional graph
+delta_values = [2.3, 1.5];
+epsilon_values = [0.7, 0.5];
 
 % Create a figure with subplots
 figure;
-
 for i = 1:length(lambda_values)
     lambda = lambda_values(i);
     
@@ -20,7 +22,7 @@ for i = 1:length(lambda_values)
         (2*cos(pi*sqrt(delta - lambda^2/4 + epsilon)).*cos(pi*sqrt(delta - lambda^2/4 - epsilon)) + ...
         (sqrt(delta - lambda^2/4 + epsilon)./sqrt(delta - lambda^2/4 - epsilon) + sqrt(delta - lambda^2/4 - epsilon)./sqrt(delta - lambda^2/4 + epsilon)).* ...
         sin(pi*sqrt(delta - lambda^2/4 - epsilon)).*sin(pi*sqrt(delta - lambda^2/4 + epsilon))).* ...
-        cos(2*pi*sqrt(delta - lambda^2/4 - epsilon)) - 2 .* sqrt(exp(lambda * 2 * pi) + 2 * lambda * exp(lambda * pi) + lambda^2);
+        cos(2*pi*sqrt(delta - lambda^2/4 - epsilon)) - (1+exp(lambda*2*pi)) ./ (exp(lambda*pi) );
 
     Gamma_2 = @(delta, epsilon) ...
         (2*cos(pi*sqrt(delta - lambda^2/4 + epsilon)).*sin(pi*sqrt(delta - lambda^2/4 - epsilon)) - ...
@@ -30,7 +32,7 @@ for i = 1:length(lambda_values)
         (2*cos(pi*sqrt(delta - lambda^2/4 + epsilon)).*cos(pi*sqrt(delta - lambda^2/4 - epsilon)) + ...
         (sqrt(delta - lambda^2/4 + epsilon)./sqrt(delta - lambda^2/4 - epsilon) + sqrt(delta - lambda^2/4 - epsilon)./sqrt(delta - lambda^2/4 + epsilon)).* ...
         sin(pi*sqrt(delta - lambda^2/4 - epsilon)).*sin(pi*sqrt(delta - lambda^2/4 + epsilon))).* ...
-        cos(2*pi*sqrt(delta - lambda^2/4 - epsilon)) + 2 .* sqrt(exp(lambda * 2 * pi) + 2 * lambda * exp(lambda * pi) + lambda^2);
+        cos(2*pi*sqrt(delta - lambda^2/4 - epsilon)) + (1+exp(lambda*2*pi)) ./ (exp(lambda*pi) );
 
     % Create a subplot for each lambda
     subplot(1, length(lambda_values), i);
@@ -41,6 +43,14 @@ for i = 1:length(lambda_values)
     hold on;
     fimplicit(Gamma_2, [0 3 0 2], 'LineWidth', 1.5, 'Color', plotcolors(1, :), 'MeshDensity', 600);
     hold off;
+
+    % Only to the first graph, add two points of interest
+    if i == 1
+        hold on;
+        plot(delta_values(1), epsilon_values(1), 'o', 'MarkerSize', 8, 'MarkerEdgeColor', plotcolors(2, :), 'MarkerFaceColor', plotcolors(2, :));
+        plot(delta_values(2), epsilon_values(2), 'o', 'MarkerSize', 8, 'MarkerEdgeColor', plotcolors(3, :), 'MarkerFaceColor', plotcolors(3, :));
+        hold off;
+    end
 
     % Add labels and title
     xlabel('$\delta$');
@@ -57,15 +67,13 @@ exportgraphics(gcf, 'q4.png', 'Resolution', 300);
 
 %% Question 5
 
-% Define the delta and epsilon values for the additional graph
-delta_values = [9/4, 1.5];
-epsilon_values = [0.7, 0.5];
-
 T = 2 * pi;
 
 % Define the time vector
 tau = linspace(0, 15 * T, 1000);
 
+% Create a figure with subplots
+figure;
 for j = 1:length(delta_values)
     delta = delta_values(j);
     epsilon = epsilon_values(j);
@@ -82,19 +90,23 @@ for j = 1:length(delta_values)
     % Solve the ODE
     [t, u] = ode45(ode_system, tau, u0);
 
-    % Plot the response
-    figure;
-    plot(t, u(:, 1), 'LineWidth', 1.5);
+    % Create a subplot for each delta and epsilon
+    subplot(1, length(delta_values), j);
+    plot(t, u(:, 1), 'LineWidth', 1.5, 'Color', plotcolors(1 + j, :));
     xlabel('$\tau$');
     ylabel('$u(\tau)$');
-    title(['Response of $u$ in terms of $\tau$ for $\epsilon = ', num2str(epsilon), '$ and $\delta = ', num2str(delta), '$']);
+    title(['$\epsilon = ', num2str(epsilon), '$ and $\delta = ', num2str(delta), '$']);
     grid on;
 
-    set(gcf, 'Units', 'pixels', 'Position', [300, 300, 600, 400]); % Set figure size and position
     % Remove scientific notation from y-axis
     ax = gca;
     ax.YAxis.Exponent = 0;
     ytickformat('%.2f'); % Adjust the format as needed
-
-    exportgraphics(gcf, ['q5_', num2str(j), '.png'], 'Resolution', 300);
 end
+
+% Set figure size and position
+set(gcf, 'Units', 'pixels', 'Position', [300, 300, 1200, 400]);
+
+% Add a main title for the figure
+sgtitle('Response of $u$ in terms of $\tau$ for different $\epsilon$ and $\delta$ values');
+exportgraphics(gcf, 'q5.png', 'Resolution', 300);
