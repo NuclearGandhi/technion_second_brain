@@ -36,8 +36,33 @@ print(f'The new radius of the pinion is {r_P_new:.5} mm')
 
 # %% Question 8
 
-r_bP = (np.pi * d_P / N_P) * np.cos(phi)
-phi_new = np.arccos((N_P / (np.pi * d_P_new)) * r_bP)
+# Calculate the base radius of the pinion
+r_bP = (d_P / 2) * np.cos(phi)
+
+# Calculate the new pressure angle
+phi_new = np.arccos(r_bP / (d_P_new / 2))
 
 print(f'The base radius of the pinion is {r_bP:.5} mm')
 print(f'The new pressure angle is {np.rad2deg(phi_new):.5} degrees')
+
+# %% Question 9
+
+# Calculate the new base radius of the gear
+r_bG = (d_G / 2) * np.cos(phi)
+
+print(f'The base radius of the gear is {r_bG:.5} mm')
+
+p_cG = np.pi * d_G / N_G
+
+print(f'The circular pitch of the gear is {p_cG:.5} mm')
+
+
+r_pG = r_bG / np.cos(phi)
+print(f'The radius of the pitch circle of the gear is {r_pG:.5} mm')
+
+# Calculate the new tooth thickness
+inv_phi = np.tan(phi) - phi
+inv_phi_new = np.tan(phi_new) - phi_new
+t_new = (2 * r_bG / np.cos(phi_new)) * ((p_cG / (4 * r_pG)) + inv_phi - inv_phi_new)
+
+print(f'The new tooth thickness is {t_new:.5} mm')
