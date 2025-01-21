@@ -57,10 +57,10 @@ syms theta10 theta20 omega1 omega2 tau psi real
 
 % Define the expressions
 theta1_expr = (b/(a*(b^2/a^2 + 1)) * (b/a*theta10 + theta20) * cos(omega1 * tau - psi)) - ...
-              (mu1/(mu2*(mu1^2/mu2^2 + 1)) * (-mu1/mu2*theta10 + theta20) * cos(omega2 * tau - psi));
+     (mu1/(mu2*(mu1^2/mu2^2 + 1)) * (-mu1/mu2*theta10 + theta20) * cos(omega2 * tau - psi));
 
 theta2_expr = (1/(b^2/a^2 + 1) * (b/a*theta10 + theta20) * cos(omega1 * tau - psi)) + ...
-              (1/(mu1^2/mu2^2 + 1) * (-mu1/mu2*theta10 + theta20) * cos(omega2 * tau - psi));
+     (1/(mu1^2/mu2^2 + 1) * (-mu1/mu2*theta10 + theta20) * cos(omega2 * tau - psi));
 
 % Simplify the expressions
 theta1_simplified = simplify(theta1_expr);
@@ -141,4 +141,88 @@ legend('Numerical', 'Linearized Analytical');
 grid on;
 
 set(gcf, 'Units', 'pixels', 'Position', [100, 100, 1200, 600]); % Set figure size and position
-exportgraphics(gcf, 'q11.png', 'Resolution', 300);
+% exportgraphics(gcf, 'q11.png', 'Resolution', 300);
+
+%% Question 12
+
+% Define symbolic variables for damping coefficients
+syms lambda real
+syms alpha beta mtilde1 mtilde2
+
+
+% Define the modal matrix using alpha and beta
+modal_matrix = [(alpha+beta)/sqrt(mtilde1), (alpha-beta)/sqrt(mtilde2);
+     1/sqrt(mtilde1), 1/sqrt(mtilde2)];
+
+
+% Define the damping matrix C
+C = diag([lambda, lambda]);
+
+% Calculate the modal damping matrix Gamma
+Gamma = modal_matrix^-1 * C *  modal_matrix;
+
+% % Display the modal damping matrix in LaTeX format
+disp('Modal Damping Matrix Gamma:');
+disp(latex(simplify(Gamma)));
+
+%% Question 13
+
+modal_matrix = [1/sqrt(2), -1/sqrt(2);
+     1/sqrt(2), 1/sqrt(2)];
+
+% Define parameters
+omega1 = 1;
+a_tilde = 1;
+b_tilde = 1;
+mu1 = 1;
+mu2 = 1;
+chi = 1;
+
+omega2 = sqrt((a_tilde * mu1 + b_tilde * mu2) / chi^2 + 1);
+lambda = 0.0001; % Damping coefficient
+zeta1 = lambda / (2 * omega1);
+zeta2 = 0;
+
+
+Gamma = [2 * zeta1 * omega1, 0; 0, 2 * zeta2 * omega2];
+
+% Define the frequency range
+omega_range = linspace(0, 2, 1000);
+
+% Define the modal vectors
+phi1 = [1/sqrt(2); 1/sqrt(2)];
+phi2 = [-1/sqrt(2); 1/sqrt(2)];
+
+% Define the force vector
+Q0 = [1; 0];
+
+% Calculate the frequency response
+
+% Loop over frequency range
+for i = 1:length(omega_range)
+     omega = omega_range(i);
+     Z = -omega^2 * eye(2) + i * Gamma * omega * eye(2) + [omega1^2, 0; 0, omega2^2];
+     H_modal = Z \ eye(size(Z));
+     H = modal_matrix * H_modal * modal_matrix';
+     
+     % Calculate the response for theta_1 and theta_2
+     theta_response(:, i) = abs(H * Q0);
+ end
+
+% Plot the frequency response
+figure;
+semilogy(omega_range, theta_response(1, :), 'LineWidth', 2);
+hold on;
+semilogy(omega_range, theta_response(2, :), 'LineWidth', 2);
+title('Frequency Response');
+xlabel('$\omega$');
+ylabel('$\theta_0$');
+legend('$\theta_1$', '$\theta_2$');
+grid on;
+
+% Move legend to the top left corner
+legend('Location', 'NorthWest');
+
+set(gcf, 'Units', 'pixels', 'Position', [100, 100, 600, 400]); % Set figure size and position
+% Save the plot
+exportgraphics(gcf, 'q13.png', 'Resolution', 300);
