@@ -158,7 +158,7 @@ for i = 1:size(eta0, 1)
     ylabel('$\theta$ (degrees)', 'Interpreter', 'latex');
     legend(arrayfun(@(x) ['$\theta_', num2str(x), '$'], 1:5, 'UniformOutput', false), 'Interpreter', 'latex');
     grid on;
-    exportgraphics(gcf, ['q1_free_vibration_', num2str(i), '.png'], 'Resolution', 300);
+    % exportgraphics(gcf, ['q1_free_vibration_', num2str(i), '.png'], 'Resolution', 300);
 end
 
 
@@ -187,9 +187,8 @@ for idx = 1:length(zeta_values)
     for i = 1:length(omega_range)
         omega = omega_range(i);
         Z = -omega^2 * eye(5) + 1i * omega * Gamma + diag(natural_frequencies.^2);
-        H_modal = inv(Z);
+        H_modal = Z \ eye(5);
         H = modes * H_modal * modes';
-
         % Calculate the response for theta_1 and theta_3
         theta_1_response(i) = abs(H(1, 3) * M3);
         theta_3_response(i) = abs(H(3, 3) * M3);
@@ -209,5 +208,5 @@ for idx = 1:length(zeta_values)
 end
 
 set(gcf, 'Units', 'pixels', 'Position', [0, 0, 800, 600]); % Set figure size and position
-exportgraphics(gcf, 'q1_bode_magnitude.png', 'Resolution', 300);
+% exportgraphics(gcf, 'q1_bode_magnitude.png', 'Resolution', 300);
 

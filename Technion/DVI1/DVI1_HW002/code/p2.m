@@ -174,20 +174,21 @@ modal_matrix = [1/sqrt(2), -1/sqrt(2);
 omega1 = 1;
 a_tilde = 1;
 b_tilde = 1;
-mu1 = 1;
-mu2 = 1;
-chi = 1;
+
+mu = 1;
+mu1 = mu;
+mu2 = mu;
+chi = 0.5;
 
 omega2 = sqrt((a_tilde * mu1 + b_tilde * mu2) / chi^2 + 1);
-lambda = 0.0001; % Damping coefficient
-zeta1 = lambda / (2 * omega1);
+zeta1 = 0.1;
 zeta2 = 0;
 
 
 Gamma = [2 * zeta1 * omega1, 0; 0, 2 * zeta2 * omega2];
 
 % Define the frequency range
-omega_range = linspace(0, 2, 1000);
+omega_range = linspace(0, omega2 * 1.3, 1000);
 
 % Define the modal vectors
 phi1 = [1/sqrt(2); 1/sqrt(2)];
@@ -198,10 +199,13 @@ Q0 = [1; 0];
 
 % Calculate the frequency response
 
+% Preallocate theta_response matrix
+theta_response = zeros(2, length(omega_range));
+
 % Loop over frequency range
 for i = 1:length(omega_range)
      omega = omega_range(i);
-     Z = -omega^2 * eye(2) + i * Gamma * omega * eye(2) + [omega1^2, 0; 0, omega2^2];
+     Z = -omega^2 * eye(2) + 1i * Gamma * omega * eye(2) + [omega1^2, 0; 0, omega2^2];
      H_modal = Z \ eye(size(Z));
      H = modal_matrix * H_modal * modal_matrix';
      
@@ -214,7 +218,12 @@ figure;
 semilogy(omega_range, theta_response(1, :), 'LineWidth', 2);
 hold on;
 semilogy(omega_range, theta_response(2, :), 'LineWidth', 2);
-title('Frequency Response');
+
+% Plot vertical lines for the natural frequencies, and add to legend
+xline(omega1, '--', 'LineWidth', 1, 'Color', 'k', 'Label', '$\omega_1$', 'Interpreter', 'latex', 'FontSize', 14);
+xline(omega2, '--', 'LineWidth', 1, 'Color', 'k', 'Label', '$\omega_2$', 'Interpreter', 'latex', 'FontSize', 14);
+
+title(['Frequency Response for $\zeta_1 = ', num2str(zeta1), '$ and $\zeta_2 = ', num2str(zeta2), '$']);
 xlabel('$\omega$');
 ylabel('$\theta_0$');
 legend('$\theta_1$', '$\theta_2$');
@@ -224,5 +233,52 @@ grid on;
 legend('Location', 'NorthWest');
 
 set(gcf, 'Units', 'pixels', 'Position', [100, 100, 600, 400]); % Set figure size and position
-% Save the plot
 exportgraphics(gcf, 'q13.png', 'Resolution', 300);
+
+% Plot 3 graphs on the same figure of the frequency response for different mu values
+mu_values = [0.1, 1, 10];
+theta_response = zeros(2, length(omega_range));
+
+figure;
+% Loop over mu values
+omega2_max = sqrt((a_tilde * mu_values(3) + b_tilde * mu_values(3)) / chi^2 + 1);
+omega_range = linspace(0, omega2_max * 1.3, 1000);
+
+for mu = mu_values
+     mu1 = mu;
+     mu2 = mu;
+     omega2 = sqrt((a_tilde * mu1 + b_tilde * mu2) / chi^2 + 1);
+     % Recalculate Gamma for the new mu value
+     Gamma = [2 * zeta1 * omega1, 0; 0, 2 * zeta2 * omega2];
+
+
+     % Loop over frequency range
+     for i = 1:length(omega_range)
+          omega = omega_range(i);
+          Z = -omega^2 * eye(2) + 1i * Gamma * omega * eye(2) + [omega1^2, 0; 0, omega2^2];
+          H_modal = Z \ eye(size(Z));
+          H = modal_matrix * H_modal * modal_matrix';
+          
+          % Calculate the response for theta_1 and theta_2
+          theta_response(:, i) = abs(H * Q0);
+     end
+     
+     % Plot the frequency response
+     semilogy(omega_range, theta_response(1, :), 'LineWidth', 2, 'DisplayName', ['$\mu = ', num2str(mu), '$']);
+     hold on;
+end
+
+% Plot vertical lines for the natural frequencies, and add to legend
+xline(omega1, '--', 'LineWidth', 1, 'Color', 'k', 'Label', '$\omega_1$', 'LabelHorizontalAlignment', 'left', 'Interpreter', 'latex', 'FontSize', 14);
+
+title(['Frequency Response of $\theta_1$ for $\zeta_1 = ', num2str(zeta1), '$ and $\zeta_2 = ', num2str(zeta2), '$']);
+xlabel('$\omega$');
+ylabel('$\theta_0$');
+grid on;
+
+% Move legend to the top left corner
+legend('Location', 'SouthEast');
+legend('$\mu = 0.1$', '$\mu = 1$', '$\mu = 10$');
+
+set(gcf, 'Units', 'pixels', 'Position', [100, 100, 600, 400]); % Set figure size and position
+exportgraphics(gcf, 'q13_mu.png', 'Resolution', 300);
