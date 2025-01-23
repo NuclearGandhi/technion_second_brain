@@ -65,7 +65,7 @@ The **region of attraction** of an asymptotically stable equilibrium is the set 
 >   $$
 > \rho(A)\in \{ s \in \mathbb{C}\mid\mathrm{Re}(s)\leq  0 \}
 > $$
->   and every imaginary eigenvalue is simple (the [[ALG1_010 וקטורים עצמיים וערכים עצמיים#ריבוי גיאומטרי|geometric multiplicity]] of every pure imaginary eigenvalue equals its [[ALG1_010 וקטורים עצמיים וערכים עצמיים#פולינום אופייני וריבוי אלגברי|algebraic multiplicity]]).
+>   and every imaginary eigenvalue is simple (the [[ALG1_010 וקטורים עצמיים וערכים עצמיים#ריבוי גאומטרי|geometric multiplicity]] of every pure imaginary eigenvalue equals its [[ALG1_010 וקטורים עצמיים וערכים עצמיים#פולינום אופייני וריבוי אלגברי|algebraic multiplicity]]).
 > - asymptotically stable iff its spectral radius is negative:
 >	$$
 >	\rho(A)\in \{ s \in \mathbb{C}\mid\mathrm{Re}(s)<  0 \}
