@@ -127,13 +127,18 @@ table {
   --callout-icon: wand-2;
 }
 
-.callout[data-callout="formula"] .callout-content {
+.callout[data-callout="formula"] {
   --callout-color: var(--callout-default);
   --callout-icon: sigma;
 }
 
 .callout[data-callout="quote"] .callout-content {
   font-family: 'Times New Roman', Times, serif;
+}
+
+.callout[data-callout="new"] {
+  --callout-icon: sparkles;
+  --callout-color: 0, 174, 255;
 }
 
 /* block quotes (for image captioning) */

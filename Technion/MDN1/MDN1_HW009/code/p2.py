@@ -8,7 +8,7 @@ N2 = 10
 phi = np.radians(20)  # Convert angle to radians
 
 # Calculate m_G
-m_G = N2 / N1
+m_G = N1 / N2
 
 # Calculate N_P_min
 N_P_min = (2 / ((1 + 2 * m_G) * np.sin(phi)**2)) * (m_G + np.sqrt(m_G**2 + (1 + 2 * m_G) * np.sin(phi)**2))
