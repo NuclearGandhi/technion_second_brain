@@ -11,7 +11,7 @@ temp2 = data2.Li1(18:144);
 % Calculate the average temperature
 avg_temp = (temp1 + temp2) / 2;
 
-% Generate the length data for the specified range and convert to cm
+% Generate the length data for the specified range and convert to mm
 length_pixels = (18:144)' - 18;
 pixels_to_mm = 190 / 120;
 length_mm = length_pixels * pixels_to_mm;
