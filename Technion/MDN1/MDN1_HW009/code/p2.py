@@ -83,7 +83,7 @@ Y_Z = 0.658 - 0.0759 * np.log(1 - R)
 print(f'Y_Z = {Y_Z:.5}')
 
 # Given data for N calculation
-L = 262800.0  # hours
+L = 365 * 30.0  # hours
 q = 1  # Assuming q = 1
 
 # Calculate N for gear 2
@@ -110,7 +110,6 @@ K_o = 1
 S_F = 1
 
 Y_JP = 0.24
-Y_JP = 0.35
 
 m2 = 1
 m3 = 1.4
