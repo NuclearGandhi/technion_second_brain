@@ -30,6 +30,7 @@ exportgraphics(gcf, 'figs/q4_2.png', 'Resolution', 300);
 k_p = 1;
 
 zeta = 0.5 * sqrt(1 / (R * J * n_g * K_m * k_p)) * (R * f + (n_g^2 * K_m^2));
-OS = exp(-pi * zeta / sqrt(1 - zeta^2));
+OS = exp((-pi * zeta) / sqrt(1 - zeta^2));
 
-fprintf('Overshoot for k_p >= 1: %.2f%%\n', OS * 100);
+fprintf('zeta for k_p = 1: %.5f\n', zeta);
+fprintf('Overshoot for k_p >= 1: %.5f%%\n', OS * 100);
