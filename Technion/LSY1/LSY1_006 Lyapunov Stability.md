@@ -78,7 +78,7 @@ The **region of attraction** of an asymptotically stable equilibrium is the set 
 
 
 >[!theorem] Theorem: 
-> Let $\dot{\mathbf{x}}=\mathbf{f}(\mathbf{x})$ for a continuously differentiable $\mathbf{f}:\mathbb{R}^{n}\to \mathbb{R}^{n}$, $\mathbf{x}_{\text{eq}}\in \mathbb{R}^{n}$ be its equilibrium, and $\mathbf{A}=\dfrac{ \partial \mathbf{f}(\mathbf{x}) }{ \partial \mathbf{x} }$ be the corresponding [[CAL2_011 אינטגרל רב מימדי#מטריצת היעקוביאן|Jacobian]] matrix.
+> Let $\dot{\mathbf{x}}=\mathbf{f}(\mathbf{x})$ for a continuously differentiable $\mathbf{f}:\mathbb{R}^{n}\to \mathbb{R}^{n}$, $\mathbf{x}_{\text{eq}}\in \mathbb{R}^{n}$ be its equilibrium, and $\mathbf{A}=\dfrac{ \partial \mathbf{f}(\mathbf{x}) }{ \partial \mathbf{x} }$ be the corresponding [[CAL2_011 אינטגרל רב ממדי#מטריצת היעקוביאן|Jacobian]] matrix.
 > 
 > - If $\rho(A)\in \mathbb{C} \setminus \bar{\mathbb{C}}_{0}$ (all eigenvalues of $\mathbf{A}$ are in the the open left half-plane - OLHP), then $\mathbf{x}_{\text{eq}}$ is asymptotically stable.
 > - If $\mathbf{A}$ has at least one eigenvalue in $\mathbb{C}_{0}$, then $\mathbf{x}_{\text{eq}}$ is unstable.

@@ -61,7 +61,7 @@ Expanding $\mathbf{h}(\cdot)$ as a [[CAL2_008 טיילור 2.0#טיילור של
 $$
 \delta \mathbf{y}=\dfrac{ \partial \mathbf{h}(\mathbf{x}_{\text{eq}},\, \mathbf{u}_{\text{eq}}) }{ \partial \mathbf{x} } \delta \mathbf{x}+\dfrac{ \partial \mathbf{h}(\mathbf{x}_{\text{eq}},\, \mathbf{u}_{\text{eq}}) }{ \partial \mathbf{u} }\delta\mathbf{u}+\mathcal{O}(\lVert \delta\mathbf{x} \rVert ^{2}) + \mathcal{O}(\lVert \delta\mathbf{u} \rVert ^{2}) 
 $$
-where the partial derivatives are actually the [[CAL2_011 אינטגרל רב מימדי#מטריצת היעקוביאן|Jacobian]] of the corresponding vector:
+where the partial derivatives are actually the [[CAL2_011 אינטגרל רב ממדי#מטריצת היעקוביאן|Jacobian]] of the corresponding vector:
 $$
 \begin{aligned}
  & \dfrac{ \partial \mathbf{h}(\mathbf{x},\mathbf{u}) }{ \partial \mathbf{x} } :=\left[ \left( \dfrac{ \partial h_{i}(\mathbf{x},\mathbf{u}) }{ \partial x_{j}}  \right)_{ij} \right]\in \mathbb{R}^{m\times n} \\[2ex]
