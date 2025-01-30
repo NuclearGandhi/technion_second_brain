@@ -3,12 +3,12 @@ clc; clear; close all;
 %% Part a
 
 % Parameters
-d = 0.1; % m
+d = 0.01; % m
 L = 1; % m
 J = pi * d^4 / 32; % m^4
 G = 80 * 10^9; % Pa
-k_N = 10^6; % N/m
-rho = 7850; % kg/m^3
+k_N = 300; % N/rad
+rho = 8000; % kg/m^3
 I = rho * pi * d^4 /32; % kg/m^2
 
 c = sqrt(G/rho);
@@ -47,7 +47,7 @@ ylabel('$f(\kappa)$');
 title('Roots of the implicit equation');
 
 set(gcf, 'units', 'pixels', 'position', [100, 100, 600, 200]);
-% exportgraphics(gcf, 'q1.png', 'Resolution', 300);
+exportgraphics(gcf, 'q1.png', 'Resolution', 300);
 
 % Calculate the natural frequencies
 natural_frequencies = kappa_roots * c;
@@ -64,11 +64,11 @@ for i = 1:length(kappa_roots)
     grid on;
     xlabel('$x$');
     ylabel(['$X_', num2str(i), '(x)$']);
-    title(['Mode shape for $\omega = ', num2str(natural_frequencies(i), '%.5g'), '$ rad/s']);
+    title(['$\omega_{', num2str(i) ,'} = ', num2str(natural_frequencies(i), '%.5g'), '$ rad/s']);
 end
 
 set(gcf, 'units', 'pixels', 'position', [100, 100, 1200, 600]);
-% exportgraphics(gcf, 'q1_modes.png', 'Resolution', 300);
+exportgraphics(gcf, 'q1_modes.png', 'Resolution', 300);
 
 %% Part b
 
@@ -110,5 +110,5 @@ ylabel('$\theta_0$');
 title('Frequency Response at $x = L$');
 legend('Location', 'best');
 
-set(gcf, 'units', 'pixels', 'position', [100, 100, 600, 400]);
+set(gcf, 'units', 'pixels', 'position', [100, 100, 800, 600]);
 exportgraphics(gcf, 'q1f.png', 'Resolution', 300);
