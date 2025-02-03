@@ -75,7 +75,7 @@ According to [[#Heat Treating Ferrous Alloys]]:
 
 ## Question 2
 Given the following diagrams
-![[image-removebg-preview (3).png|book]]
+![[Technion/MNF1/MNF1_007/image-removebg-preview (3).png|book]]
 >Isothermal transformation diagram for an iron–carbon alloy of eutectoid composition and the isothermal heat treatments for different treatments [[MNF1_000 034030 Manufacturing Processes#Bibliography|(Callister, 2007)]].
 
 
