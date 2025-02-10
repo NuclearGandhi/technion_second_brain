@@ -2,3 +2,7 @@
 aliases:
 ---
 ![[{90751079-770F-4EC7-A7D5-690F1137C6C7}.png|bookhue|600]]
+
+![[{EBED0DD0-2191-4B3C-A161-8913A8CA3C2D}.png|bookhue|600]]
+
+![[{2EC01155-F64B-4189-8D37-D8C037652713}.png|bookhue|500]]
