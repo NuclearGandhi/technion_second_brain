@@ -58,6 +58,3 @@ A_b = W * t
 R_fins = 1 / (N_f * eta_fin * h_i * A_f + A_b * h_i)
 print(f"Thermal resistance of fins R_fins: {R_fins:.5} K/W")
 
-
-
-
