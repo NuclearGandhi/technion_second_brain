@@ -14,7 +14,7 @@ N_T = 5
 
 # Air properties at T_f = 300K
 rho = 1.1614  # kg/m^3
-c_p = 1.007   # kJ/kg.K
+c_p = 1007   # J/kg.K
 mu = 184.6e-7 # Pa.s
 k = 26.3e-3   # W/m.K
 Pr = 0.707
@@ -30,11 +30,12 @@ print(f"Maximum Reynolds number Re_D_max: {Re_D_max:.5}")
 
 # Constants for Nusselt number calculation
 C1 = 0.27
+C2 = 0.92
 m = 0.63
 Pr_s = 0.685
 
 # Calculate average Nusselt number
-Nu_D = C1 * (Re_D_max**m) * (Pr**0.36) * ((Pr/Pr_s)**0.25)
+Nu_D = C2 * C1 * (Re_D_max**m) * (Pr**0.36) * ((Pr/Pr_s)**0.25)
 print(f"Average Nusselt number Nu_D: {Nu_D:.5}")
 
 # Calculate convective heat transfer coefficient
@@ -44,7 +45,7 @@ print(f"Convective heat transfer coefficient h: {h:.5} W/m^2.K")
 # Calculate outlet temperature
 T_s_K = T_s + 273.15  # Convert to Kelvin
 T_i_K = T_i + 273.15  # Convert to Kelvin
-exp_term = math.exp(- (math.pi * D * N * h) / (rho * U_i * N_T * S_T * c_p * 1000))  # c_p in J/kg.K
+exp_term = math.exp(- (math.pi * D * N * h) / (rho * U_i * N_T * S_T * c_p))
 T_o_K = T_s_K - (T_s_K - T_i_K) * exp_term
 T_o = T_o_K - 273.15  # Convert back to Celsius
 print(f"Outlet temperature T_o: {T_o:.5} °C")
