@@ -72,7 +72,7 @@ img[alt*="bmult"] {
 
 /* Vector art also need to have a transparent background */
 .theme-light img[alt*="svg"] {
-  filter: invert(1);
+  filter: invert(1) hue-rotate(180deg);
 }
 
 .theme-light img[alt*="ignore"] {
