@@ -94,8 +94,8 @@ print(f"Length of the pipe L: {L:.5} m")
 
 # %% Part e
 
-b = 0.2  # m
-a = 0.1  # m
+b = 0.4  # m
+a = 0.2  # m
 L = 1.5  # m
 k = 10  # W/m.K
 
