@@ -7,6 +7,8 @@ aliases:
   - guidelines for asymptotic Bode
   - frequency response theorem
   - משפט תגובת התדירות
+  - bandwidth
+  - רוחב-פס
 ---
 # Frequency Response
 >[!theorem] Theorem: Frequency Response Theorem
@@ -488,40 +490,35 @@ $$
 
 We can now analyze each of the subsystems separately:
 - The first system is a static gain:
-	$$
-	\lvert {G}_{1}(j\omega) \rvert=2
-	$$
+	$$\lvert {G}_{1}(j\omega) \rvert=2$$
 	Its magnitude is ${M}_{1(\pu{dB})}=20\log 2\approx 6$.
 	![[Pasted image 20240907183933.png|book|400]]
 	>Asymptotic Bode diagram of ${G}_{1}(s)$.
-	>- The second system is a differentiator:
-	>	$$
-	>\lvert {G}_{2}(j\omega) \rvert=\omega
-	>$$
-	>	thus the magnitude is ${M}_{2\pu{(dB)}}=20\log\omega$ and we get a straight line with slope $\pu{20dB}$.
-	>	![[Pasted image 20240907184129.png|book|400]]
+	
+- The second system is a differentiator:
+	$$\lvert {G}_{2}(j\omega) \rvert=\omega$$
+	thus the magnitude is ${M}_{2\pu{(dB)}}=20\log\omega$ and we get a straight line with slope $\pu{20dB}$.
+	![[Pasted image 20240907184129.png|book|400]]
 	>Asymptotic bode diagram of ${G}_{2}(s)$.
-	>- The third system ${G}_{3}(s)$ is a [[#Filters|Low-pass Filter]]:
-	>	  $$
-	>\begin{aligned}
-	>	\lvert {G}_{3}(j\omega) \rvert & =\left\lvert \dfrac{1}{j\omega /2+1} \right\rvert \\[1ex]
-	>	 & =\left\lvert  \dfrac{-0.5\omega j+1}{0.25\omega ^{2}+1}  \right\rvert \\[1ex]
-	>	 & =\dfrac{1}{\sqrt{ \tau ^{2}\omega ^{2}+1 }} \\[1ex]
-	>	 & =\dfrac{1}{\sqrt{ 0.25\omega ^{2}+1 }}
-	>	\end{aligned}
-	>$$
-	>	so the magnitude in $\pu{dB}$ will be:
-	>	$$
-	>\begin{aligned}
-	>	{M}_{3\pu{(dB)}} & =20\log \dfrac{1}{0.25\omega ^{2}+1} \\[1ex]
-	>	 & =20\log(0.25\omega ^{2}+1)^{-0.5} \\[1ex]
-	>	 & =-10\log(0.25\omega ^{2}+1)
-	>	\end{aligned}
-	>$$
-	>	It has a slope of $\pu{-20dB/dec}$ after the corner frequency of $\omega_{p}=\pu{2dB/dec}$.
-	>	![[Pasted image 20240907185924.png|book|500]]
+	
+- The third system ${G}_{3}(s)$ is a [[#Filters|Low-pass Filter]]:
+	  $$\begin{aligned}
+	\lvert {G}_{3}(j\omega) \rvert & =\left\lvert \dfrac{1}{j\omega /2+1} \right\rvert \\[1ex]
+	 & =\left\lvert  \dfrac{-0.5\omega j+1}{0.25\omega ^{2}+1}  \right\rvert \\[1ex]
+	 & =\dfrac{1}{\sqrt{ \tau ^{2}\omega ^{2}+1 }} \\[1ex]
+	 & =\dfrac{1}{\sqrt{ 0.25\omega ^{2}+1 }}
+	\end{aligned}$$
+	so the magnitude in $\pu{dB}$ will be:
+	$$\begin{aligned}
+	{M}_{3\pu{(dB)}} & =20\log \dfrac{1}{0.25\omega ^{2}+1} \\[1ex]
+	 & =20\log(0.25\omega ^{2}+1)^{-0.5} \\[1ex]
+	 & =-10\log(0.25\omega ^{2}+1)
+	\end{aligned}
+	$$
+	It has a slope of $\pu{-20dB/dec}$ after the corner frequency of $\omega_{p}=\pu{2dB/dec}$.
+	![[Pasted image 20240907185924.png|book|500]]
 	>Asymptotic (and real) Bode diagram of ${G}_{3}(s)$.
-
+	
 - The fourth system is also a Low-pass filter but of order $2$. Similarly, we get a gain of:
 	$$
 	{M}_{4(\pu{dB})}=-20\log(0.015\omega ^{2}+1)

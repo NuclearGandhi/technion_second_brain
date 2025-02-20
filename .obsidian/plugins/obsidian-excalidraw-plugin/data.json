@@ -15363,7 +15363,7 @@
       "User Prompt": ""
     }
   },
-  "defaultTrayMode": true,
+  "defaultTrayMode": false,
   "previousRelease": "2.2.10",
   "showReleaseNotes": false,
   "showNewVersionNotification": false,
