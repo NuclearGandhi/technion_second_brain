@@ -158,13 +158,13 @@ $$\begin{aligned}
 ניתן לראות שאות היציאה כולל בתוכו (במצב המתמיד) אות בתדירות $f=\pu{1Hz}$, שבמובנים של תדירות זוויתית זה $\omega=2\pi \,\pu{rad.s^{-1}}$. בנוסף, נשים לב שההגבר הסטטי של הכניסה לא עבר ליציאה, ולכן $F$ כנראה סינן את $\omega=0$. נסיק שמדובר ב-**א'**, כי רק הוא מעביר את $\omega=2\pi\,\pu{rad.s^{-1}}$ וגם לא מעביר את $\omega=0$.
 
 ## שאלה 20
-אנו רוצים להנחית את כל התדרים מעל ${\omega}_{}\approx 2$, אז נציע LPF מהצורה הפשוטה:
+אנו רוצים להנחית את כל התדרים מעל ${\omega}_{m}\approx 2$, אז נציע LPF מהצורה הפשוטה:
 
 $$G(s)=\dfrac{{\omega}_{0}}{s+{\omega}_{0}}$$
 
 נציב את הדרישה:
 $$\begin{gathered}
-\lvert G(j{\omega}_{0}) \rvert <0.3 \\[1ex]
+\lvert G(j{{\omega}_{m}}) \rvert <0.3 \\[1ex]
 \left\lvert  \dfrac{{\omega}_{0}}{2j+{\omega}_{0}}  \right\rvert<0.3 \\[1ex]
 {{{\omega}_{0}}}^{2}<0.09(4+{{{\omega}_{0}}}^{2}) \\[1ex]
 0.91{{{\omega}_{0}}}^{2}<0.36 \\[1ex]
@@ -176,6 +176,184 @@ $$\boxed{G(s)=\dfrac{0.62}{s+0.62} }$$
 >גרף בודה של המערכת המוצעת.
 
 ## שאלה 21
+באותו אופן כמו שאלה קודמת, ננחית את כל התדרים מעל ${\omega}_{m} \approx 0.1$ ע"י LPF:
+$$G(s)=\dfrac{{\omega}_{0}}{s+{\omega}_{0}}$$
+נציב את הדרישה:
+$$\lvert G(j{\omega}_{m}) \rvert =-\pu{23.5dB}\approx \dfrac{1}{15}$$
+(דרישה די מחמירה, אבל למי אכפת).
+$$\begin{gathered}
+\left\lvert  \dfrac{{\omega}_{0}}{0.1j+{\omega}_{0}}  \right\rvert<\dfrac{1}{15}  \\[1ex]
+225{{{\omega}_{0}}}^{2}<0.01+{{{\omega}_{0}}}^{2} \\[1ex]
+{{{\omega}_{0}}}^{2}<\dfrac{0.01}{224}\approx \dfrac{0.01}{225} \\[1ex]
+{{{\omega}_{0}}}^{2}<\dfrac{0.1}{15}
+\end{gathered}$$
+נבחר ${\omega}_{0}=0.005$:
+$$\boxed{G(s)=\dfrac{0.005}{s+0.005} }$$
+
+![[q21.png|bookhue|500]]
+
+## שאלה 22
+ההבדל המרכזי ביניהם הוא שכל אחד מהם מגיע בזווית אחרת ל-$\infty$. נשים לב ש:
+$$\begin{aligned}
+ & \lim_{ \omega \to \infty } \arg {G}_{1}(s)=\lim_{ \omega \to \infty} \arg \left( \dfrac{1}{-\omega ^{2}} \right)=0-\pi=-\pi \\[1ex]
+ & \lim_{ \omega \to \infty}\arg {G}_{2}(s)=\lim_{ \omega \to \infty}\arg\left( \dfrac{1}{-\omega ^{2}(j\omega+1)} \right)=0-\left( \pi+\dfrac{\pi}{2} \right)=-\dfrac{3}{2}\pi \\[1ex]
+ & \lim_{ \omega \to \infty }\arg {G}_{3}(s)=\lim_{ \omega \to \infty}\arg\left( \dfrac{j\omega+1}{-\omega ^{2}} \right)=\dfrac{\pi}{2}-\pi=-\dfrac{\pi}{2}
+\end{aligned}$$
+
+נסיק כי:
+$$\begin{aligned}
+{G}_{1}\leftrightarrow {P}_{2},\qquad {G}_{2}\leftrightarrow {P}_{3},\qquad {G}_{3}\leftrightarrow {P}_{1}
+\end{aligned}$$
+
+## שאלה 23
+שוב, כל אחת אחד מהם מגיע בזווית אחרת ל-$\infty$ף
+$$\begin{aligned}
+ & \lim_{ \omega \to \infty } \arg {G}_{1}(s)=\lim_{ \omega \to \infty} \arg \left( \dfrac{6(j\omega+1)}{(j\omega+2)(j\omega+3)} \right)=\dfrac{\pi}{2}-\left( \dfrac{\pi}{2}+\dfrac{\pi}{2} \right)=-\dfrac{\pi}{2} \\[1ex]
+ & \lim_{ \omega \to \infty}\arg {G}_{2}(s)=\lim_{ \omega \to \infty}\arg\left( \dfrac{1}{(j\omega+1)^{3}}\right)=0-\left( 3\cdot \dfrac{\pi}{2} \right)=-\dfrac{3\pi}{2} \\[1ex]
+ & \lim_{ \omega \to \infty }\arg {G}_{3}(s)=\lim_{ \omega \to \infty}\arg\left( \dfrac{8(j\omega+1)}{(j\omega+2)^{3}}\right)=\dfrac{\pi}{2}-\left( 3\cdot \dfrac{\pi}{2} \right)=-\pi 
+\end{aligned}$$
+
+נסיק כי:
+$$\begin{aligned}
+{G}_{1}\leftrightarrow {P}_{3},\qquad {G}_{2}\leftrightarrow {P}_{1},\qquad {G}_{3}\leftrightarrow {P}_{2}
+\end{aligned}$$
+
 # חלק ב'
 
-## שאלה 1
+## שאלה 24
+זהה ל[[ICT1_003 בקרה בחוג פתוח#תרגיל 1|שאלה מתרגול]].
+
+## שאלה 25
+לפי [[ICT1_004 ניתוח מודלי וניתוח תגובת תדירות#מודל ייחוס|מודל ייחוס]], נרצה לבחור $C(s)$ כך ש:
+$$C(s)=\dfrac{{T}_{r}(s)}{P(s)}$$
+נשים לב של-${T}_{r}$ יש עודף קוטב יחיד.
+- עבור ${P}_{1}$, הכל טוב ויפה כי יש לו גם עודף קוטב יחיד, ואין לו אפסים חיוביים.
+- עבור ${P}_{2}$, אנחנו בבעיה כי יש לו אפס חיובי, מה שאומר של-$C(s)$ יהיה קוטב חיובי ואז הבקר לא יציב.
+- עבור ${P}_{3}$ אנחנו גם בבעיה כי התהליך עצמו לא יציב. כל הפרעה תגרום להתבדרות המערכת.
+## שאלה 26
+נשים לב ש-$P(s)$ הוא proper וגם יש לנו שני קטבים ב-LHP הפתוח ולכן הוא יציב. נסיק שניתן לבקר את המערכת בעזרת מודל ייחוס עם לפחות עודף קוטב יחיד (כמו ל-$P$), וכל עוד האפס (החיובי) של $P(s)$ הוא גם אפס של ${T}_{r}$, כדי לצמצם אותו.
+
+## שאלה 27
+נשים לב של-$P(s)$ [[LSY1_007 Laplace Transform#Routh Table|אין קטבים יציבים]], ולכן לא ניתן ליישם היפוך תהליך.
+
+## שאלה 28
+נשים לב ש:
+$$PC=\dfrac{10s}{(s+1)(s+0.1)}$$
+בנוסף, ה[[LSY1_007 Laplace Transform#Laplace Transform Table|התמרת לפלס]] של ריצה היא ${Y}_{\text{ramp}}(s)=\dfrac{1}{s^{2}}$ ולכן:
+$$\lim_{ t \to \infty }y(t)=\lim_{ s \to 0}sPC{Y}_{\text{ramp}}=\dfrac{10}{(s+1)(s+0.1)}=100$$
+נסיק כי:
+$$\begin{aligned}
+{e}_{\text{ss}} & =\lim_{ t \to \infty }\lvert r(t)-y(t) \rvert  \\[1ex]
+ & =\lim_{ t \to \infty }\lvert t-100 \rvert  
+\end{aligned}$$
+ולכן:
+$$\boxed{{e}_{\text{ss}}=\infty  }$$
+(בסדר עברתי על כמה חוקי חדו"א של גבולות אבל אני לא זוכר אותם אז זה בסדר).
+## שאלה 29
+נשים לב ש:
+$$\begin{gathered}
+y(t)= r(t) 
+\end{gathered}$$
+ולכן:
+$$\begin{gathered}
+Y(s)=R(s) \\[1ex]
+P(s)U(s)=R(s) \\[1ex]
+U(s)=\dfrac{R(s)}{P(s)} \\[1ex]
+U(s)=R(s)(2s+1)
+\end{gathered}$$
+נקבל:
+$$\boxed{u(t)=2\dot{r}(t)+r(t) }$$
+
+## שאלה 30
+השגיאה אינסופית כי $P(s)$ הוא תהליך לא יציב - המקדמים של המכנה שלו לא כולם מאותו הסימן.
+# חלק ג'
+
+## שאלה 31
+
+לפי [[ICT1_005 מבוא למשוב#משוב יחידה|משוב יחידה]]:
+$$\dfrac{E(s)}{R(s)}=S(s)=\dfrac{1}{1+P(s)C(s)}$$
+כאשר $S(s)$ נקראת פונקציית הרגישות.
+
+
+## שאלה 32
+לפי [[ICT1_005 מבוא למשוב#משוב יחידה|משוב יחידה]], $T(s)$ מקשרת בין $r$ ל-$y$, בין $d$ ל-$u$ (במינוס), וגם בין $n$ ל-$y$ (במינוס).
+
+## שאלה 33
+לפי [[LSY1_003 Classification of Systems#Stable and Unstable Systems|יציבות BIBO]], $G(s)$ יציבה BIBO אם לכל כניסה חסומה למערכת נקבל יציאה חסומה.
+
+## שאלה 34
+נשים לב שהפולינום האופייני הוא:
+$$\begin{aligned}
+\mathcal{X}_{}(s) & ={N}_{P}(s){N}_{C}(s)+{D}_{P}(s){D}_{C}(s)\\[1ex]
+ & =2s+1+s(s-2) \\[1ex]
+ & =s^{2}+1
+\end{aligned}$$
+הפולינום לא הורביץ ולכן המערכת בחוג סגור לא יציבה.
+## שאלה 35
+נשים לב שיש צמצום לא יציב בין $P(s)$ ו-$C(s)$ (עבור $s=2$) ולכן המערכת בחוג סגור לא יציבה.
+
+## שאלה 36
+נשים לב ש- $\mathcal{X}_{\text{cl}}=10+s(s+1)=s^{2}+s+10$ ולכן המערכת בחוג סגור יציבה.
+נזכור כי:
+$$\dfrac{E(s)}{R(s)}=S(s)=\dfrac{1}{1+P(s)C(s)}$$
+במקרה של כניסת מדרגה, $R(s)=\dfrac{1}{s}$ ולכן:
+$$E(s)=\dfrac{1}{s}\dfrac{1}{1+P(s)C(s)}$$
+במצב מתמיד:
+$$\begin{aligned}
+{e}_{\text{ss}} & =\lim_{ t \to \infty }e(t) \\[1ex]
+ & =\lim_{ s \to 0}sE(s) \\[1ex]
+ & =\dfrac{1}{1+P(0)C(0)}
+\end{aligned}$$
+נקבל:
+$$\boxed {
+{e}_{\text{ss}}=0
+ }$$
+ניתן גם היה לראות זאת לפי [[ICT1_007 משוב בהגברים גבוהים#שגיאה עבור אות ייחוס מדרגה|שגיאה עבור אות ייחוס מדרגה]].
+
+## שאלה 37
+נשים לב ש:
+$$\begin{aligned}
+\mathcal{X}_{\text{cl}} & =1+s^{2}(s+1) \\[1ex]
+ & =s^{3}+s^{2}+1
+\end{aligned}$$
+לפי [[LSY1_007 Laplace Transform#Necessary and Sufficient Condition for Stability|יציבות של פולינום ממעלה שלישית]], נראה כי $\mathcal{X}_{\text{cl}}$ לא הורביץ ולכן המערכת בחוג סגור לא יציבה:
+$$\boxed{{e}_{\text{ss}}=\infty  }$$
+
+## שאלה 38
+את הבקר נוכל לרשום גם כ:
+$$\begin{aligned}
+C(s) & =2\left( 1+\dfrac{1}{s} \right) \\[1ex]
+ & =2+\dfrac{2}{s} \\[1ex]
+ & =\dfrac{2s+2}{s}
+\end{aligned}$$
+
+מחפירות של שניר על בקר $H$, המכנה בפונקציות החוג הסגור הופך להיות $1+PCH$, ולכן:
+$$\begin{gathered}
+\boxed{\mathcal{X}_{\text{cl}}(s)=2(s+1)^{2}(s+2)+s^{2}(s+2)(s-3)(s+8) }
+\end{gathered}$$
+
+## שאלה 39
+את הבקר נוכל לרשום:
+$$C(s)=\dfrac{2(s-3)}{s}$$
+באותו אופן כמו סעיף קודם:
+$$\boxed {
+\mathcal{X}_{\text{cl}}(s)=2(2s+1)(s-3)(4s+8)+s^{2}(s+2)(s-3)(s+8)(s+1)
+ }$$
+
+# חלק ד'
+
+## שאלה 40
+לפי [[ICT1_006 שיטת מקום גאומטרי של שורשים#ייצוג מג"ש של הפולינום האופייני|ייצוג מג"ש]]:
+$${G}_{k}(s)=\dfrac{1}{{(s-1)(s+2)}}$$
+לפי [[ICT1_006 שיטת מקום גאומטרי של שורשים#חיתוך עם הציר המדומה|חיתוך עם הציר המדומה]], עלינו לבדוק מתי:
+$$\arg {G}_{k}(j\omega)=\pi$$
+נציב ונקבל:
+$$\begin{gathered}
+\arg\left[ \dfrac{1}{(j\omega-1)(j\omega+2)} \right]=\pi \\[1ex]
+0-[\arg(j\omega-1)+\arg(j\omega+2)]=\pi
+\end{gathered}$$
+ניתן לראות שעבור $j\omega=0$ נקבל:
+$$0-(-\pi+0)=\pi$$
+ולכן נקבל שהמג"ש חוצה את הציר המדומה ב- $s=0$.
+
+## שאלה 41
