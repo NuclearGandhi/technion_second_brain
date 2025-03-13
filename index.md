@@ -1,6 +1,6 @@
 ---
-description: A collection of my notes.
-image: https://publish-01.obsidian.md/access/3b28049eb980919ec7572f81ca933dcb/logo.png
+description: A collection of my notes from courses and lectures.
+image: https://github.com/NuclearGandhi/technion_second_brain/blob/master/general_pics/thumbnail.png
 title: פנגייה - רשימת סיכומים
 ---
 
