@@ -1,7 +1,7 @@
 ---
 socialDescription: A collection of my notes from courses and lectures.
-socialImage: general_pics/thumbnail.png
 title: פנגייה - רשימת סיכומים
+aliases:
 ---
 
 > [!warning] שימו לב!
