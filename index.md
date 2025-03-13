@@ -1,6 +1,6 @@
 ---
-description: A collection of my notes from courses and lectures.
-image: https://github.com/NuclearGandhi/technion_second_brain/blob/master/general_pics/thumbnail.png
+socialDescription: A collection of my notes from courses and lectures.
+socialImage: general_pics/thumbnail.png
 title: פנגייה - רשימת סיכומים
 ---
 
