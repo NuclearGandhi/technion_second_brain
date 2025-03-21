@@ -124,6 +124,12 @@ aliases:
 - [[DVI1_000 00340051 דינמיקה ותנודות]]
 
 ## סמסטר ו'
+
+- [[PSM_000 00340058 Probability and Statistics for Mechanical Engineers]]
+- [[IRB_000 0035001 IRB מבוא לרובוטיקה]]
+- [[FEM_000 00350022 Introduction to the Finite Element Method]]
+
+## סמסטר ז'
 - [[FPH1_000 היבטים פיננסיים בפיזיקה ת 00340012]]
 - [[CTH1_000 תיאוריה של סינית שימושית 01040511]]
 - [[LGR1_000 00210233 פרויקט בגרמנית לינארית]]
