@@ -125,9 +125,9 @@ aliases:
 
 ## סמסטר ו'
 
-- [[PSM_000 00340058 Probability and Statistics for Mechanical Engineers]]
-- [[IRB_000 0035001 IRB מבוא לרובוטיקה]]
-- [[FEM_000 00350022 Introduction to the Finite Element Method]]
+- [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers]]
+- [[IRB1_000 00350001 מבוא לרובוטיקה]]
+- [[FEM1_000 00350022 Introduction to the Finite Element Method]]
 
 ## סמסטר ז'
 - [[FPH1_000 היבטים פיננסיים בפיזיקה ת 00340012]]
