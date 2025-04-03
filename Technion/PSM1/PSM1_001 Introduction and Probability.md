@@ -34,6 +34,8 @@ $$B=\{ x\mid x \,\text{ is an even factor of }7 \}$$
 
 then $B$ must be the null set, since the only possible factors of $7$ are the odd numbers $1$ and $7$.
 
+## Various Set Operations
+
 >[!def] Definition: Complement
  >The **complement** of an event $A$ with respect to $\Omega$ is the subset of all elements of $\Omega$ that are not in $A$. We denote the complement of $A$ by the symbol $A^{c}$.
  
@@ -74,6 +76,41 @@ Some useful rules:
 8. $$(A\cup B)^{c}=A^{c}\cap B^{c}$$
 9. $$(A\cup B)^{c}=A^{c}\cap B^{c}$$
 10. $$A=(A\cap B)\cup(A\cap B^{c})$$
+# Counting Sample Points
+
+## Permutation
+
+ If an operation can be performed in ${n}_{1}$ ways, and if for each of these ways a second operation can be performed in ${n}_{2}$ ways, then the two operations can be performed together in ${n}_{1}{n}_{2}$ ways.
+
+>[!def] Definition: Permutation 
+ >A **permutation** is an arrangement of all or part of a set of objects.
+ 
+ Consider the three letters $a,b$ and $c$. The possible permutations are $abc,\,acb,\,bac,\,bca,\,cab$ and $cba$. Thus, we see that there are $6$ distinct arrangements. There are ${n}_{1}=3$ choices for the first position. No matter which letter is chosen, there are always ${n}_{2}=2$ choices for the second position. No matter which two letters are chosen for the first two positions, there is only ${n}_{3}=1$ choice for the last position, giving a total of:
+ $${n}_{1}{n}_{2}{n}_{3}=3\cdot 2\cdot 1=6$$
+Or simply:
+>[!theorem] Theorem: 
+ >The number of permutations of $n$ objects is $n!$.
+
+Now consider the number of permutations that are possible by taking two letters at a time from four. These would be $ab,\,ac,\,ad,\,ba,\,bc,\,bd,\,ca,\,cb,cd,\,da,\,db$ and $dc$. Using the rule above, we have two positions to fill, with ${n}_{1}=4$ choices for the first and then ${n}_{2}=3$ choices for the second, for a total of
+$${n}_{1}{n}_{2}=4\cdot 3=12$$
+ In general, $n$ distinct objects taken $r$ at a time can be arranged in
+ $$n(n-1)(n-2)\cdots (n-r+1)$$
+ways. We represent this product by the symbol
+$$_{n}{P}_{k}=\dfrac{n!}{(n-k)!}$$
+As a result, we have the following theorem:
+>[!theorem] Theorem: 
+ >The number of permutations of $n$ distinct object taken $r$ at a time is
+ >$$_{n}{P}_{k}=\dfrac{n!}{(n-k)!}$$
+## Combination
+In many problems, we are interested in the number of ways of selecting $r$ objects from $n$ without regard to order. These selections are called **combinations**.
+
+>[!theorem] Theorem: 
+ >The number of combinations of $n$ distinct objects taken $r$ at a time is
+ >$$\binom{n}{k}=\dfrac{n!}{(n-k)!k!}$$
+ 
+ >[!notes] Note: 
+ >$$\binom{n}{n}=\binom{n}{0}=1$$
+ 
 # Probability of an Event
 
 
@@ -104,7 +141,7 @@ Often it is easiest to calculate the probability of some event from known probab
  >If $A$ and $B$ are two events, then
 >$$P(A\cup B)=P(A)+P(B)-P(A\cap B)$$
 
-![[{DC268415-8EBA-4BFC-B27C-642D92D32162}.png|bookhue|300]]
+![[{DC268415-8EBA-4BFC-B27C-642D92D32162}.png|bookhue|350]]
 >Additive rule of probability. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
 
 
@@ -116,10 +153,30 @@ Often it is easiest to calculate the probability of some event from known probab
  >If ${A}_{1},{A}_{2},\dots,{A}_{m}$ are mutually exclusive, then
  >$$P({A}_{1}\cup {A}_{2}\cup\dots \cup {A}_{m})=\sum_{i=1}^{m}P({A}_{i}) $$
 
-
-
 > [!tip] Tip:
 > When in doubt, consider a Venn diagram.
+
+>[!example] Example: 
+>How do employees commute to work? (defined as "use at least one a week"), given:
+>$$\begin{aligned}
+ & P(\text{train})=0.2, &  & P(\text{car})=0.8, \\
+ & P(\text{car and bike})=0.08
+\end{aligned}$$
+>What are the probabilities for "not car", "train or car", "bike and not car"?
+>**Solution**:
+>Using the notation
+>$$\begin{aligned}
+ & P(T)=P(\text{train}), &  & P(C)=P(\text{car}), &  & P(B)=P(\text{bike}) \\
+\end{aligned}$$
+>we get:
+>$$\begin{aligned}
+ & P(C)^{c}=1-0.8=0.2 \\[1ex]
+ & P(T\cup C)=P(T)+P(C)-P(T\cup C)=0.2+0.8-0.16=0.84
+\end{aligned}$$
+>For the third case, we know that:
+>$$P(B)=P(B\cap C)+P(B\cap C^{c})$$
+>So we can simple rearrange:
+>$$P(B\cap C^{c})=P(B)-P(B\cap C)=0.1-0.08=0.02$$
 
 # Conditional Probability, Independence, and the Product Rule
 
@@ -170,12 +227,50 @@ P({A}_{1}\cap {A}_{2}\cap\dots \cap {A}_{n}) & = P({A}_{1})\cdot P({A}_{2}|{A}_{
  & \qquad \cdot P({A}_{3}|{A}_{1}\cap {A}_{2}) \\[1ex]
  & \qquad \cdots P({A}_{m}|{A}_{1}\cap\dots \cap {A}_{m-1})
 \end{aligned}$$
+
+
+
 # Bayes' Rule
 
->[!TODO] TODO: להשלים
+Bayesian statistics is a collection of tools that is used in a special form of statistical inference which applies in the analysis of experimental data in many practical situations in science and engineering. Bayes' rule is one of the most important rules in probability theory.
 
 ## Total Probability
+
+Supposed that our sample space $\Omega$ is the population of adults in a small town who have completed the requirements for a college degree. We shall categorize them according to gender and employment status. The data are given in the following figure:
+![[{1E4D62E0-ED53-463B-A3EB-62F496BC3E52}.png|bookhue|450]]
+>Categorization of the Adults in a Small Town.
+
+One of these individuals is to be selected at random for a tour throughout the country to publicize the advantages of establishing new industries in the town. We shall be concerned with the following events:
+- $M$ - a man is chosen,
+- $E$ - the one chosen is employed.
+
+Suppose that we are now given the additional information that $36$ of those employed and $12$ of those unemployed are members of the Rotary Club. We wish to find the probability of the event $A$ that the individual selected is a member of the Rotary Club.
+![[{26C13AD9-90A9-478A-B9BE-80649EEC2021}.png|bookhue|400]]
+>Venn diagram for the events $A,\,E$ and $E^{c}$. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+Referring to the figure, we can write $A$ as the union of the two mutually exclusive events $E\cap A$ and $E^c\cap A$. Hence, $A=(E\cap A)\cup(E^c\cap A)$, and using the rules discussed earlier we can write:
+$$\begin{aligned}
+P(A) & =P[(E\cap A)\cup(E^c\cap A)] \\[1ex]
+ & =P(E\cap A)+P(E^c\cap A) \\[1ex]
+ & =P(E)P(A|E)+P(E^c)P(A|E^c)
+\end{aligned}$$
+
+From the table we can compute that:
+$$P(E)=\dfrac{600}{900}=\dfrac{2}{3},\qquad P(A|E)=\dfrac{36}{600}=\dfrac{3}{50}$$
+and:
+$$P(E^{c})=\dfrac{300}{900}=\dfrac{1}{3},\qquad P(A|E^{c})=\dfrac{12}{300}=\dfrac{1}{25}$$
+We can also display these probabilities by means of a tree diagram:
+![[{6D9CDCBD-FCAE-436B-8968-464BAAC6F90D}.png|bookhue|450]]
+>Tree diagram for the data above.
+
+It follows that:
+$$P(A)=\dfrac{2}{3}\cdot \dfrac{3}{50}+\dfrac{1}{3} \cdot \dfrac{1}{25}=\dfrac{4}{75}$$
+A generalization of the foregoing illustration to the case where the sample space is partitioned into $k$ subsets is covered by the following theorem, sometimes called the **theorem of total probability**.
+
+
 >[!theorem] Theorem: 
  >If the events ${B}_{1},{B}_{2},\dots,{B}_{k}$ constitute a partition of the sample space $\Omega$ such that $P({B}_{i})\neq 0$ for $i=1,2,\dots,k$, then for any event $A$ of $\Omega$,
  >$$P(A)=\sum_{i=1}^{m}P({B}_{i}\cap A)=\sum_{i=1}^{m}P({B}_{i})P(A|{B}_{i})  $$
 
+![[{27CC9365-1C28-47F2-9B1C-1DDF88A7A685}.png|bookhue|500]]
+>Partitioning the sample space $\Omega$. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
