@@ -32,7 +32,9 @@ var import_obsidian3 = require("obsidian");
 // EditorPlugin.ts
 var import_view = require("@codemirror/view");
 var import_state = require("@codemirror/state");
+var import_language = require("@codemirror/language");
 var import_obsidian = require("obsidian");
+var FRONTMATTER_OPEN = "---";
 function getEditorPlugin(rtlPlugin) {
   return import_view.ViewPlugin.fromClass(class {
     constructor(view) {
@@ -47,17 +49,41 @@ function getEditorPlugin(rtlPlugin) {
       this.emptyDirDec = import_view.Decoration.line({
         attributes: { dir: "auto" }
       });
-      this.decorations = this.buildDecorations(view);
+      this.frontmatterRange = null;
       this.rtlPlugin = rtlPlugin;
+      this.decorations = this.buildDecorations(view);
       this.view = view;
+      let preventRTLFrontmatter = this.rtlPlugin.settings.preventRTLFrontmatter, state = view.state;
+      if (preventRTLFrontmatter && this.checkFrontmatter(state)) {
+        this.getFrontmatterRange(state);
+      }
       const editorInfo = this.view.state.field(import_obsidian.editorInfoField);
       if (editorInfo && editorInfo instanceof import_obsidian.MarkdownView && editorInfo.editMode) {
-        this.rtlPlugin.adjustDirectionToView(editorInfo, this);
+        if (editorInfo.editMode.cm === view) {
+          this.rtlPlugin.adjustDirectionToView(editorInfo, this);
+        } else {
+          const file = editorInfo == null ? void 0 : editorInfo.file;
+          if (file && file.path) {
+            [this.direction] = this.rtlPlugin.getRequiredFileDirection(file);
+          }
+          this.setDirection(this.direction, this.view);
+        }
       }
       this.rtlPlugin.handleIframeEditor(this.view.dom, this.view, editorInfo.file, this);
     }
     update(vu) {
+      var _a;
       if (vu.viewportChanged || vu.docChanged) {
+        if (rtlPlugin.settings.preventRTLFrontmatter && vu.docChanged) {
+          let { from, to } = (_a = this.frontmatterRange) != null ? _a : { from: 0, to: 3 }, state = vu.state;
+          if (vu.changes.touchesRange(from, to)) {
+            if (this.checkFrontmatter(state)) {
+              this.getFrontmatterRange(state);
+            } else {
+              this.frontmatterRange = null;
+            }
+          }
+        }
         this.decorations = this.buildDecorations(vu.view);
       }
     }
@@ -72,7 +98,14 @@ function getEditorPlugin(rtlPlugin) {
       if (this.direction != "auto") {
         decoration = this.direction === "ltr" ? this.ltrDec : this.rtlDec;
       }
-      for (let pos = viewport.from; pos <= viewport.to; ) {
+      let pos = viewport.from, preventRTLFrontmatter = this.rtlPlugin.settings.preventRTLFrontmatter;
+      if (preventRTLFrontmatter && this.frontmatterRange !== null && pos <= this.frontmatterRange.to) {
+        if (pos == viewport.to)
+          return builder.finish();
+        else
+          pos = this.frontmatterRange.to + 1;
+      }
+      while (pos <= viewport.to) {
         const line = view.state.doc.lineAt(pos);
         builder.add(line.from, line.from, decoration);
         pos = line.to + 1;
@@ -84,6 +117,20 @@ function getEditorPlugin(rtlPlugin) {
     setDirection(direction, view) {
       this.direction = direction;
       this.decorations = this.buildDecorations(view);
+    }
+    checkFrontmatter(state) {
+      let firstLineStr = state.doc.line(1).text;
+      return firstLineStr == FRONTMATTER_OPEN;
+    }
+    getFrontmatterRange(state) {
+      let treeCursor = (0, import_language.syntaxTree)(state).cursor(), frontmatterRange = { from: 0, to: 3 };
+      treeCursor.next();
+      treeCursor.next();
+      while (treeCursor.name.includes("frontmatter")) {
+        frontmatterRange.to = treeCursor.to;
+        treeCursor.next();
+      }
+      this.frontmatterRange = frontmatterRange;
     }
   }, { decorations: (v) => v.decorations });
 }
@@ -115,6 +162,7 @@ var DEFAULT_SETTINGS = {
   rememberPerFile: true,
   setNoteTitleDirection: true,
   setYamlDirection: false,
+  preventRTLFrontmatter: false,
   statusBar: true
 };
 var RtlSettingsTab = class extends import_obsidian2.PluginSettingTab {
@@ -147,6 +195,14 @@ var RtlSettingsTab = class extends import_obsidian2.PluginSettingTab {
       var _a;
       return toggle.setValue((_a = this.settings.setYamlDirection) != null ? _a : false).onChange((value) => {
         this.settings.setYamlDirection = value;
+        this.plugin.saveSettings();
+        this.plugin.adjustDirectionToActiveView();
+      });
+    });
+    new import_obsidian2.Setting(containerEl).setName("Prevent raw YAML (Frontmatter) to be RTL-directioned in Editor").setDesc("Raw YAML will always be LTR-directioned whatever the direction is. (Restart required after changing.)").addToggle((toggle) => {
+      var _a;
+      return toggle.setValue((_a = this.settings.preventRTLFrontmatter) != null ? _a : false).onChange((value) => {
+        this.settings.preventRTLFrontmatter = value;
         this.plugin.saveSettings();
         this.plugin.adjustDirectionToActiveView();
       });
@@ -190,8 +246,6 @@ var RtlPlugin = class extends import_obsidian3.Plugin {
       autoDirectionPostProcessor(el, ctx, (path, markdownPreviewElement) => this.setPreviewDirectionByFileSettings(path, markdownPreviewElement));
     });
     this.addSettingTab(new RtlSettingsTab(this.app, this));
-    this.app.workspace.on("active-leaf-change", async (leaf) => {
-    });
     this.app.workspace.on("file-open", async (file, ctx) => {
     });
     this.registerEvent(this.app.vault.on("delete", (file) => {
@@ -220,6 +274,12 @@ var RtlPlugin = class extends import_obsidian3.Plugin {
         return;
       this.switchDocumentDirection(view.editor, view);
     });
+    this.registerEvent(this.app.workspace.on("active-leaf-change", (leaf) => {
+      let view = leaf.view;
+      if (view instanceof import_obsidian3.MarkdownView && view.file) {
+        this.updateStatusBar(view);
+      }
+    }));
   }
   onunload() {
     const view = this.app.workspace.getActiveViewOfType(import_obsidian3.MarkdownView);
@@ -286,10 +346,11 @@ var RtlPlugin = class extends import_obsidian3.Plugin {
       this.saveSettings();
     }
   }
-  updateStatusBar() {
+  updateStatusBar(view) {
     let hide = true;
     let usedDefault = false;
-    const view = this.app.workspace.getActiveViewOfType(import_obsidian3.MarkdownView);
+    if (!view)
+      view = this.app.workspace.getActiveViewOfType(import_obsidian3.MarkdownView);
     if (view && (view == null ? void 0 : view.editor)) {
       const direction = this.getDocumentDirection(view.editor, view);
       if (view.file && view.file.path)
@@ -355,6 +416,7 @@ var RtlPlugin = class extends import_obsidian3.Plugin {
     editor.refresh();
   }
   adjustEditorPlugin(editorView, newDirection, editorPlugin) {
+    var _a;
     let dispatchUpdate = false;
     if (!editorPlugin) {
       editorPlugin = editorView.plugin(this.editorPlugin);
@@ -364,6 +426,13 @@ var RtlPlugin = class extends import_obsidian3.Plugin {
       editorPlugin.setDirection(newDirection, editorView);
       if (dispatchUpdate)
         editorView.dispatch();
+    }
+    let editor = (_a = this.app.workspace.activeEditor) == null ? void 0 : _a.editor;
+    let activeEditorView = editor == null ? void 0 : editor.activeCM;
+    if (activeEditorView && editor.inTableCell) {
+      let tableCellEditorPlugin = activeEditorView.plugin(this.editorPlugin);
+      tableCellEditorPlugin.setDirection(newDirection, activeEditorView);
+      activeEditorView.dispatch();
     }
   }
   setDocumentDirectionForEditorDiv(editorDiv, newDirection) {
@@ -476,3 +545,5 @@ var RtlPlugin = class extends import_obsidian3.Plugin {
     }
   }
 };
+
+/* nosourcemap */
