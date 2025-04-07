@@ -8,21 +8,21 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "file: ALG",
+      "query": "file: ALG OR file: CAL",
       "color": {
         "a": 1,
-        "rgb": 2041999
+        "rgb": 3095222
       }
     },
     {
-      "query": "file: GCH",
+      "query": "file: GCH OR file: THE1 ",
       "color": {
         "a": 1,
         "rgb": 13398865
       }
     },
     {
-      "query": "file: DEQ",
+      "query": "file: DEQ OR file: PDE",
       "color": {
         "a": 1,
         "rgb": 4225445
@@ -36,129 +36,59 @@
       }
     },
     {
-      "query": "file: CAL",
-      "color": {
-        "a": 1,
-        "rgb": 2042019
-      }
-    },
-    {
-      "query": "file: SLD",
+      "query": "file: SLD OR file: PHY OR file: MDN  OR file: IMT",
       "color": {
         "a": 1,
         "rgb": 12327450
       }
     },
     {
-      "query": "file: IPY",
+      "query": "file: IPY OR file: HML",
       "color": {
         "a": 1,
         "rgb": 4167195
       }
     },
     {
-      "query": "file: IMT",
-      "color": {
-        "a": 1,
-        "rgb": 16366659
-      }
-    },
-    {
-      "query": "file: PHY",
-      "color": {
-        "a": 1,
-        "rgb": 13655389
-      }
-    },
-    {
-      "query": "file: THE1",
-      "color": {
-        "a": 1,
-        "rgb": 14711890
-      }
-    },
-    {
-      "query": "file: PDE",
-      "color": {
-        "a": 1,
-        "rgb": 3762574
-      }
-    },
-    {
-      "query": "file: NUM",
+      "query": "file: NUM OR file: FEM",
       "color": {
         "a": 1,
         "rgb": 8472713
       }
     },
     {
-      "query": "file: DYN",
+      "query": "file: DYN OR file: DVI",
       "color": {
         "a": 1,
         "rgb": 13459040
       }
     },
     {
-      "query": "file: FLD",
+      "query": "file: FLD OR file: HTF",
       "color": {
         "a": 1,
         "rgb": 5226394
       }
     },
     {
-      "query": "file: MNF",
+      "query": "file: MNF OR file: LMA",
       "color": {
         "a": 1,
-        "rgb": 16170065
+        "rgb": 11846286
       }
     },
     {
-      "query": "file: LSY",
+      "query": "file: LSY OR file: ICT",
       "color": {
         "a": 1,
         "rgb": 7105708
       }
     },
     {
-      "query": "file: HTF",
+      "query": "file:IME OR file:IRB OR file: ELM",
       "color": {
         "a": 1,
-        "rgb": 5226394
-      }
-    },
-    {
-      "query": "file: HML",
-      "color": {
-        "a": 1,
-        "rgb": 4101890
-      }
-    },
-    {
-      "query": "file: ICT",
-      "color": {
-        "a": 1,
-        "rgb": 7105708
-      }
-    },
-    {
-      "query": "file: DVI",
-      "color": {
-        "a": 1,
-        "rgb": 7105708
-      }
-    },
-    {
-      "query": "file: MDN",
-      "color": {
-        "a": 1,
-        "rgb": 12131876
-      }
-    },
-    {
-      "query": "file: IME",
-      "color": {
-        "a": 1,
-        "rgb": 7105708
+        "rgb": 15973468
       }
     }
   ],
@@ -172,6 +102,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.11390213553148679,
-  "close": true
+  "scale": 0.08124359841490668,
+  "close": false
 }
