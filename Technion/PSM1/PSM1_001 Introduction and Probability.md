@@ -8,7 +8,7 @@ From [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bib
 In the study of statistics, we are concerned basically with presentation and interpretation of **chance outcomes** that occur in a planned study or scientific investigation. The statistician is often dealing with either numerical data, representing counts or measurements, or **categorical data**, which can be classified according to some criterion.
 
 
->[!def] Definition: Sample Space
+>[!def] Definition:
  >The set of all possible outcomes of a statistical experiment is called the **sample space** and is represented by symbol $\Omega$.
  
  Each outcome in a sample space is called an **element** or a **member** of the sample space, or simply a **sample point**. If the sample space has a finite number of elements, we may list the members separated by commas and enclosed in braces. Thus, the sample space $\Omega$, of all possible outcomes when a coin is flipped, may be written
@@ -26,7 +26,7 @@ In the study of statistics, we are concerned basically with presentation and int
 For any given experiment, we may be interested in the occurrence of certain **events** rather than in the occurrence of a specific element in the sample space. For instance, we may be interested in the event $A$ that the outcome when a die is tossed is divisible by $3$. This will occur if the outcome is an element of the subset $A=\{ 3,6 \}$ of the sample space ${\Omega}_{1}$ is the example above.
 To each event we assign a collection of sample points, which constitute a subset of the sample space. That subset represents all of the elements for which the event is true.
 
->[!def] Definition: Event
+>[!def] Definition:
  >An **event** is subset of a sample space.
 
 It is conceivable that an event may be a subset that includes the entire sample space $\Omega$ or a subset of $\Omega$ called the **null set** and denoted by the symbol $\phi$, which contains no elements at all. For example, if
@@ -36,19 +36,19 @@ then $B$ must be the null set, since the only possible factors of $7$ are the od
 
 ## Various Set Operations
 
->[!def] Definition: Complement
+>[!def] Definition:
  >The **complement** of an event $A$ with respect to $\Omega$ is the subset of all elements of $\Omega$ that are not in $A$. We denote the complement of $A$ by the symbol $A^{c}$.
  
  >[!example] Example: 
  >Let $R$ be the event that a red card is selected from an ordinary deck of $52$ playing cards, and let $\Omega$ be the entire deck. Then $R^{c}$ is the event that the card selected from the deck is not a red card but a black card.
 
->[!def] Definition: Intersection 
+>[!def] Definition:
  >The **Intersection** of the two events $A$ and $B$, denoted by the symbol $A\cap B$, is the event containing all elements that are common to $A$ and $B$.
  
->[!def] Definition: Disjoint 
+>[!def] Definition:
  >Two events $A$ and $B$ are **mutually exclusive**, or **disjoint**, if $A\cap B=\phi$, that is, if $A$ and $B$ have no elements in common.
 
->[!def] Definition: Union
+>[!def] Definition:
  >The **union** of two events $A$ and $B$, denoted by the symbol $A\cup B$, is the event containing all the elements that belong to $A$ or $B$ or both.
 
 The relationship between events and the corresponding sample space can be illustrated graphically by means of **Venn diagrams**. In a Venn diagram we let the sample space a rectangle and represent events by circles drawn inside the rectangle.
@@ -78,11 +78,25 @@ Some useful rules:
 10. $$A=(A\cap B)\cup(A\cap B^{c})$$
 # Counting Sample Points
 
+One of the problems that the statistician must consider and attempt to evaluate is the element of chance associated with the occurrence of certain events when an experiment is performed. These problems belong in the field of **probability**. In many cases, we shall be able to solve a probability problem by counting the number of points in the sample space without actually listing each element. The fundamental principle of counting, often referred to as the **multiplication rule**, is the following:
+
+>[!theorem] Theorem: 
+>  If an operation can be performed in ${n}_{1}$ ways, and if for each of these ways a second operation can be performed in ${n}_{2}$ ways, then the two operations can be performed together in ${n}_{1}{n}_{2}$ ways.
+
+This rule can be extended to cover any number of operations. Supposed for instance, that a customer wishes to buy a new cell phone and can choose from ${n}_{1}=5$ brands, ${n}_{2}=5$ sets of capability, and ${n}_{3}=4$ colors. These three classifications result in ${n}_{1}{n}_{2}{n}_{3}=5\cdot 5\cdot 4=100$ different ways for a customer to order one of these phones. The **generalized multiplication rule** covering $k$ operations is stated in the following.
+>[!theorem] Theorem: 
+ >If an operation can be performed in ${n}_{1}$ ways, and if for each of these a second operation can be performed in ${n}_{2}$ ways, and for each of the first two a third operation can be performed in ${n}_{3}$ ways, and so forth, then the sequence of $k$ operations can be performed in ${n}_{1},{n}_{2},\dots,{n}_{k}$ ways.
+
+>[!example] Example:
+>How many even four-digit numbers can be formed from the digits $0,\,1,\,2,\,5,\,6$ and $9$ if each digit can be used only once?
+>**Solution**:
+
+>[!TODO] TODO: להשלים
+
 ## Permutation
 
- If an operation can be performed in ${n}_{1}$ ways, and if for each of these ways a second operation can be performed in ${n}_{2}$ ways, then the two operations can be performed together in ${n}_{1}{n}_{2}$ ways.
 
->[!def] Definition: Permutation 
+>[!def] Definition: 
  >A **permutation** is an arrangement of all or part of a set of objects.
  
  Consider the three letters $a,b$ and $c$. The possible permutations are $abc,\,acb,\,bac,\,bca,\,cab$ and $cba$. Thus, we see that there are $6$ distinct arrangements. There are ${n}_{1}=3$ choices for the first position. No matter which letter is chosen, there are always ${n}_{2}=2$ choices for the second position. No matter which two letters are chosen for the first two positions, there is only ${n}_{3}=1$ choice for the last position, giving a total of:
@@ -114,7 +128,7 @@ In many problems, we are interested in the number of ways of selecting $r$ objec
 # Probability of an Event
 
 
->[!def] Definition: Probability
+>[!def] Definition:
  > The **probability** of an event $A$ is the sum of the weights of all sample points in $A$. Therefore,
  > $$0\leq  P(A)\leq  1,\qquad P(\phi)=0,\qquad \text{and}\qquad  P(\Omega)=1$$
  > Furthermore, if ${A}_{1},{A}_{2},{A}_{3},\dots$ is a sequence of mutually exclusive events, then
@@ -270,7 +284,142 @@ A generalization of the foregoing illustration to the case where the sample spac
 
 >[!theorem] Theorem: 
  >If the events ${B}_{1},{B}_{2},\dots,{B}_{k}$ constitute a partition of the sample space $\Omega$ such that $P({B}_{i})\neq 0$ for $i=1,2,\dots,k$, then for any event $A$ of $\Omega$,
- >$$P(A)=\sum_{i=1}^{m}P({B}_{i}\cap A)=\sum_{i=1}^{m}P({B}_{i})P(A|{B}_{i})  $$
+ >$$P(A)=\sum_{i=1}^{m}P({B}_{i}\cap A)=\sum_{i=1}^{m}P({B}_{i})P(A|{B}_{i}) $$
 
 ![[{27CC9365-1C28-47F2-9B1C-1DDF88A7A685}.png|bookhue|500]]
 >Partitioning the sample space $\Omega$. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+>[!TODO] TODO: add example 2.41
+
+## Bayes' Rule
+Instead of asking for $P(A)$ in the example above, by the rule of eliminations, suppose that we now consider the problem of finding the conditional probability $P({B}_{i}|A)$.
+
+>[!TODO] TODO: להשלים
+
+# Exercises
+## Question 1
+$A$ and $B$ are 2 disjoined events. The following probabilities are given:
+$$\begin{aligned}
+P(A)=0.3, &  & P(B)=0.4
+\end{aligned}$$
+Calculate:
+1. $P(A^{c}\cap B^{c})$
+2. $P(A^{c}\cup B)$
+
+**Solution**:
+1. $$\begin{aligned}
+ P(A^{c}\cap B^{c}) & =P([A\cup B]^{c}) \\[1ex]
+ & =1-P(A\cup B) \\[1ex]
+ &=1-P(A)-P(B) \\[1ex]
+ & =\boxed {
+0.3
+ }
+\end{aligned}$$
+	Where $P(A\cup B)=P(A)+P(B)$ because $A$ and $B$ are disjointed.
+
+2. $$\begin{aligned}
+P(A^{c}\cup B) & =P(A^{c})+P(B)-P(A^{c}\cap B) \\[1ex]
+ & =0.7+0.4-P(B) \\[1ex]
+ & =\boxed {
+0.7
+ }
+\end{aligned}$$
+	Where $P(A^{c}\cap B)=P(B)$ because $A$ and $B$ are disjointed.
+
+## Question 2
+The chance of a student to solve:
+- question 1 correctly is $0.9$. 
+- question 3 correctly is $0.8$.
+- both questions correctly is $0.75$.
+
+### Part a
+What is the chance of a student to solve at least one question correctly?
+
+**Solution**:
+Let's denote:
+- $A$ solving question 1 correctly.
+- $B$ solving question 3 correctly.
+
+We know that:
+$$P(A)=0.9,\qquad P(B)=0.8,\qquad P(A\cap B)=0.75$$
+Solving at least one question correctly corresponds to "$A$ or $B$", which is $A\cup B$. Therefore:
+$$\begin{aligned}
+P(A\cup B) & =P(A)+P(B)-P(A\cap B) \\[1ex]
+ & =0.9+0.8-0.75 \\[1ex]
+ & =\boxed {
+0.95
+ }
+\end{aligned}$$
+### Part b
+What is the chance of a student to solve none of the questions correctly?
+
+**Solution**:
+Solving at none of the questions correctly corresponds to "not $A$ and not $B$", which is $A^{c}\cap B^{c}$. Therefore:
+$$\begin{aligned}
+P(A^{c}\cap B^{c}) & =P([A\cup B]^{c}) \\[1ex]
+ & =1-P(A\cup B) \\[1ex]
+ & =1-0.75 \\[1ex]
+ & =\boxed {
+0.25
+ }
+\end{aligned}$$
+### Part c
+What is the chance of a student to solve only one question correctly?
+
+**Solution**:
+Solving only one question correctly corresponds to "$A$ xor $B$", which is $[A\cap B^{c}]\cup[A^{c}\cap B]$. Therefore:
+$$\begin{align}
+P([A\cap B^{c}]\cup[A^{c}\cap B]) & =P(A\cap B^{c})+P(A^{c}\cap B)-\cancel{ P([A\cap B^{c}]\cap[A^{c}\cap B]) } \\[1ex]
+ & =P(A\cap B^{c})+P(A^{c}\cap B)
+\end{align}$$
+We know that $A=[A\cap B]\cup[A\cap B^{c}]$. Therefore:
+$$\begin{gathered}
+P(A) =P([A\cap B]\cup[A\cap B^{c}]) \\[1ex]
+  P(A)=P(A\cap B)+P(A\cap B^{c})-\cancel{ P([A\cap B]\cap[A\cap B^{c}]) } \\[1ex]
+P(A\cap B^{c})=P(A)-P(A\cap B)
+\end{gathered}$$
+Substituting known values we can see that:
+$$\begin{aligned}
+P(A\cap B^{c}) & =0.9-0.75 \\[1ex]
+ & =0.15
+\end{aligned}$$
+Doing the same for $P(A^{c}\cap B)$, we can solve the problem. Daniel didn't want to do it.
+
+## Question 3
+In how many ways can we choose two people with different nationalities, given out of a group of $7$ French, 10 Italians , and 5 English?
+
+**Solution**:
+If there were only $7$ French and $10$ Italians, then there would simply be $7\cdot 10=70$ ways of performing the given operation. If there were only the Italians and English, it would be $50$ different ways. With only the French and the English, there are $35$ different ways. Now, simply summing it all up, there are $70+50+35=\boxed{155 }$  ways for the given operation to be performed.
+
+## Question 4
+Out of $10$ tenants in a common building, a committee contains $6$ representatives. How many options of representatives are there:
+- With no limitation.
+- If $2$ tenants cannot be together due to a conflict.
+
+**Solution**:
+In the case where there is no limitation, we can simple calculate using a [[#Combination|theorem]]:
+$$\binom{10}{6}=\dfrac{10!}{6!(10-6)!}=\boxed{210 }$$
+
+In the second case, the problem is a bit more complicated. We can separate it to three different situations:
+1. None of special tenants are in the committee.
+2. The first special tenant is in the committee.
+3. The second special tenant is in the committee.
+
+For the first situation, we simply use the same theorem again, but now we have $8$ people to choose from instead of $10$:
+$$\binom{8}{6}=\dfrac{8!}{6!(8-6)!}=28$$
+
+For the second situation, we now already know one of tenants in the committee, so we have $5$ more to choose. We also have $8$ people to choose from, because one was already chosen, and another we can't choose. Therefore:
+$$\binom{8}{5}=\dfrac{8!}{5!(8-5)!}=56$$
+
+The third situation is exactly the same as the second one, so we have another $56$.
+Summing all the different options, we get $56+56+28=\boxed{140 }$ different options for representatives.
+
+## Question 5
+Consider a bag containing $7$ red balls, 8 white and $5$ black. How many ways of arranging the $20$ balls are there, in a row, while all the black balls are together?
+
+**Solution**:
+The basic formula is $n!$ (i.e., there are $n!$ [[#Permutation|permutations]]). So we could say we have $20$ balls, and therefore there are $20!$ permutations. Now we need to subtract from that all the cases where the black balls aren't together. That's a bit problematic.
+Another thing we can try is to treat all the black balls as one group - just as a single ball. Doing that, we get $(7+8+1)!=16!$ permutations.
+
+
+>[!TODO] TODO: להשלים
