@@ -88,10 +88,16 @@ This rule can be extended to cover any number of operations. Supposed for instan
  >If an operation can be performed in ${n}_{1}$ ways, and if for each of these a second operation can be performed in ${n}_{2}$ ways, and for each of the first two a third operation can be performed in ${n}_{3}$ ways, and so forth, then the sequence of $k$ operations can be performed in ${n}_{1},{n}_{2},\dots,{n}_{k}$ ways.
 
 >[!example] Example:
->How many even four-digit numbers can be formed from the digits $0,\,1,\,2,\,5,\,6$ and $9$ if each digit can be used only once?
+>How many *even* four-digit numbers can be formed from the digits $0,\,1,\,2,\,5,\,6$ and $9$ if each digit can be used only once?
 >**Solution**:
-
->[!TODO] TODO: להשלים
+> Since the number must be even, we have only ${n}_{1}=3$ choices for the units position. However, for a four-digit number the thousands position cannot be $0$. Hence, we consider the units position in two parts, $0$ or not $0$. If the units position  is $0$ (i.e., ${n}_{1}=1$), we have ${n}_{2}=5$ choices for the thousands position, ${n}_{3}=4$ for the hundreds position, and ${n}_{4}=3$ for the tens position. Therefore, in this case we have a total of
+> $${n}_{1}{n}_{2}{n}_{3}{n}_{4}=1\cdot 5\cdot 4\cdot 3=60$$
+> even four-digit numbers. On the other hand, if the units position is not $0$ (i.e., ${n}_{1}=2$), we have ${n}_{2}=4$ choices for the thousands position, ${n}_{3}=4$ for the hundreds position, ${n}_{4}=3$ for the tens position. Therefore, in this case we have a total of
+> $${n}_{1}{n}_{2}{n}_{3}{n}_{4}=2\cdot 4\cdot 4\cdot 3=96$$
+> even four-digit numbers.
+> Since the above two cases are mutually exclusive, the total number of even four-digit numbers can be calculated as $60+96=\boxed{156 }$
+> 
+> 
 
 ## Permutation
 
@@ -115,6 +121,17 @@ As a result, we have the following theorem:
 >[!theorem] Theorem: 
  >The number of permutations of $n$ distinct object taken $r$ at a time is
  >$$_{n}{P}_{k}=\dfrac{n!}{(n-k)!}$$
+
+>[!example] Example:
+> In one year, three awards (research, teaching, and service) will be given to a class of $25$ graduate students in a statistics department. If each student can receive at most one award, how many possible selection are there?
+> 
+> **Solution**:
+> Since the awards are distinguishable, it is a permutation problem. The total number of sample points is
+> $$_{25}{P}_{3}=\dfrac{25!}{(25-3)!}=\dfrac{25!}{22!}=25\cdot 24\cdot 23=\boxed {
+> \pu{13800}
+>  }$$
+> 
+
 ## Combination
 In many problems, we are interested in the number of ways of selecting $r$ objects from $n$ without regard to order. These selections are called **combinations**.
 
@@ -124,7 +141,7 @@ In many problems, we are interested in the number of ways of selecting $r$ objec
  
  >[!notes] Note: 
  >$$\binom{n}{n}=\binom{n}{0}=1$$
- 
+
 # Probability of an Event
 
 
@@ -226,7 +243,9 @@ Although conditional probability allows for an alteration of the probability of 
  >$$P(B|A)=P(B)\qquad \text{or}\qquad P(A|B)=P(A)$$
  >Assuming the existences of the conditional probabilities. Otherwise, $A$ and $B$ are **dependant**.
 
-The condition $P(B|A)=P(B)$ implies that $P(A|B)=P(A)$, and conversely.
+>[!notes] Note: 
+ >The condition $P(B|A)=P(B)$ implies that $P(A|B)=P(A)$, and conversely.
+ 
 
 ## The Multiplicative Rule
 Multiplying the definition of the [[#Conditional Probability]] above by $P(A)$, we obtain the following important **multiplicative rule** (or **product rule**), which enables us to calculate the probability that two events will both occur.
@@ -242,9 +261,17 @@ P({A}_{1}\cap {A}_{2}\cap\dots \cap {A}_{n}) & = P({A}_{1})\cdot P({A}_{2}|{A}_{
  & \qquad \cdots P({A}_{m}|{A}_{1}\cap\dots \cap {A}_{m-1})
 \end{aligned}$$
 
+>[!example] Example: 
+>Suppose that we have a fuse box containing $20$ fuses, of which $5$ are defective. If $2$ fuses are selected at random and removed from the box in succession without replacing the first, what is the probability that both fuses are defective?
+> **Solution**:
+> We shall let $A$ be the event that the first fuse is defective and $B$ the event that second fuse is defective; then we interpret $A\cap B$ as the event that $A$ occurs and then $B$ occurs after $A$ has occurred. The probability of first removing a defective fuse is $1/4$; then the probability of removing a second defective fuse from the remaining $4$ is $4/19$. Hence,
+> $$P(A\cap B)=\dfrac{1}{4}\cdot \dfrac{4}{19}=\boxed {
+> \dfrac{1}{19}
+>  }$$
 
+# Bayesian Statistics
 
-# Bayes' Rule
+![](https://www.youtube.com/watch?v=HZGCoVF3YvM)
 
 Bayesian statistics is a collection of tools that is used in a special form of statistical inference which applies in the analysis of experimental data in many practical situations in science and engineering. Bayes' rule is one of the most important rules in probability theory.
 
@@ -289,12 +316,71 @@ A generalization of the foregoing illustration to the case where the sample spac
 ![[{27CC9365-1C28-47F2-9B1C-1DDF88A7A685}.png|bookhue|500]]
 >Partitioning the sample space $\Omega$. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
 
->[!TODO] TODO: add example 2.41
+>[!example] Example: 
+> In a certain assembly plant, three machines, ${B}_{1},{B}_{2}$ and ${B}_{3}$, make $30\%,45\%$, and $25\%$, respectively, of the products. It is known from past experience that $2\%,3\%$ and $2\%$ of the products made by each machine, respectively, are defective. Now, suppose that a finished product is randomly selected. What is the probability that it is defective?
+> 
+> **Solutions**:
+> Consider the following events:
+> - $A$ - the product is defective
+> - ${B}_{1}$ - the product is made by machine ${B}_{1}$,
+> - ${B}_{2}$ - the product is made by machine ${B}_{2}$,
+> - ${B}_{3}$ - the product is made by machine ${B}_{3}$
+> 
+> Applying the rule of elimination, we can write
+> $$P(A)=P({B}_{1})P(A|{B}_{1})+P({B}_{2})P(A|{B}_{2})+P({B}_{3})P(A|{B}_{3})$$
+> ![[{CB5D26FF-2E0F-4EF8-A72F-D58E2E8A0248}.png|bookhue|400]]
+> >Tree diagram for the example above.
+> 
+> Referring to the tree diagram of the figure above, we find that the three branches give the probabilities
+> $$\begin{aligned}
+>  & P({B}_{1})P(A|{B}_{1})=0.3\cdot 0.02=0.006 \\[1ex]
+>  & P({B}_{2})P(A|{B}_{2})=0.45\cdot 0.03=0.0135 \\[1ex]
+>  & P({B}_{3})P(A|{B}_{3})=0.25\cdot 0.02=0.005
+> \end{aligned}$$
+> and hence
+> $$P(A)=0.006+0.0135+0.005=0.0245$$
+
 
 ## Bayes' Rule
-Instead of asking for $P(A)$ in the example above, by the rule of eliminations, suppose that we now consider the problem of finding the conditional probability $P({B}_{i}|A)$.
+Instead of asking for $P(A)$ in the example above, by the rule of eliminations, suppose that we now consider the problem of finding the conditional probability $P({B}_{i}|A)$. In other words, supposed that a product was randomly selected and it is defective. What is the probability that this product was made by machine ${B}_{i}$? Questions of this type can be answered by using the following theorem, called **Bayes' rule**:
 
->[!TODO] TODO: להשלים
+
+>[!theorem] Theorem: 
+ >If the events ${B}_{1},{B}_{2},\dots,{B}_{k}$ constitute a partition of the sample space $\Omega$ such that $P({B}_{i})\neq 0$ for $i=1,2,\dots,k$, then for any event $A$ in $\Omega$ such that $P(A)\neq 0$,
+ >$$P({B}_{r}|A)=\dfrac{P({B}_{r}\cap A)}{\sum _{i=1}^{k}P({B}_{i}\cap A)}=\dfrac{P({B}_{r})P(A|{B}_{r})}{\sum _{i=1}^{k}P({B}_{i})P(A|{B}_{i})},\qquad  r=1,2,\dots ,k$$
+
+
+>[!example] Example: 
+> A medical test has a $0.95$ sensitivity (i.e., detects the disease in $95\%$ of people who have it) and $0.92$ specificity (i.e., does not detect the disease in $92\%$ of people who do not have it).
+> 
+> If $2\%$ of the population have this disease (a $0.02$ prevalence), what is the probability that a person who tests positive has the disease (this is called the “positive predictive value”)?
+> 
+> 
+> **Solution**:
+> Let
+> - $T$ - positive test result
+> - $D$ - disease
+> 
+> Therefore, we know that:
+> $$\begin{aligned}
+>  & P(T|D)=0.95, &  & P(T^{c}|D^{c})=0.92,\qquad P(D)=0.02
+> \end{aligned}$$
+> So that:
+> $$P(T|D^{c})=0.08,\qquad P(D^{c})=0.98$$
+> 
+> We want to know what's the probability of $D$ knowing $T$. Using Bayes' rule:
+> $$\begin{aligned}
+>  P(D|T) & =\dfrac{P(D\cap T)}{P(D\cap T)+P(D^{c}\cap T^{})} \\[1ex]
+>  & =\dfrac{P(D)P(T|D)}{P(D)P(T|D)+P(D^{c})P(T^{}|D^{c})} \\[1ex]
+>  & = \dfrac{0.95\cdot 0.02}{(0.95\cdot 0.05)+(0.08\cdot 0.98)} \\[1ex]
+>  & =\dfrac{0.019}{0.019+0.0784} \\[1ex]
+>  & =\boxed {
+> 0.195
+>  }
+> \end{aligned}$$
+> 
+> ![](https://www.youtube.com/watch?v=R13BD8qKeTg&t=67s)
+> 
 
 # Exercises
 ## Question 1
@@ -307,23 +393,22 @@ Calculate:
 2. $P(A^{c}\cup B)$
 
 **Solution**:
-1. $$\begin{aligned}
- P(A^{c}\cap B^{c}) & =P([A\cup B]^{c}) \\[1ex]
- & =1-P(A\cup B) \\[1ex]
- &=1-P(A)-P(B) \\[1ex]
- & =\boxed {
-0.3
- }
-\end{aligned}$$
+1. Using the [[#Various Set Operations]]:
+	$$\begin{aligned}
+	P(A^{c}\cap B^{c}) & =P([A\cup B]^{c}) \\[1ex]
+	& =1-P(A\cup B) \\[1ex]
+	&=1-P(A)-P(B) \\[1ex]
+	& =\boxed {0.3}
+	\end{aligned}$$
 	Where $P(A\cup B)=P(A)+P(B)$ because $A$ and $B$ are disjointed.
-
-2. $$\begin{aligned}
-P(A^{c}\cup B) & =P(A^{c})+P(B)-P(A^{c}\cap B) \\[1ex]
- & =0.7+0.4-P(B) \\[1ex]
- & =\boxed {
-0.7
- }
-\end{aligned}$$
+2. Using the [[#Various Set Operations]]:
+	$$\begin{aligned}
+	P(A^{c}\cup B) & =P(A^{c})+P(B)-P(A^{c}\cap B) \\[1ex]
+	 & =0.7+0.4-P(B) \\[1ex]
+	 & =\boxed {
+	0.7
+	 }
+	\end{aligned}$$
 	Where $P(A^{c}\cap B)=P(B)$ because $A$ and $B$ are disjointed.
 
 ## Question 2
