@@ -271,8 +271,6 @@ P({A}_{1}\cap {A}_{2}\cap\dots \cap {A}_{n}) & = P({A}_{1})\cdot P({A}_{2}|{A}_{
 
 # Bayesian Statistics
 
-![](https://www.youtube.com/watch?v=HZGCoVF3YvM)
-
 Bayesian statistics is a collection of tools that is used in a special form of statistical inference which applies in the analysis of experimental data in many practical situations in science and engineering. Bayes' rule is one of the most important rules in probability theory.
 
 ## Total Probability
@@ -349,6 +347,9 @@ Instead of asking for $P(A)$ in the example above, by the rule of eliminations, 
  >If the events ${B}_{1},{B}_{2},\dots,{B}_{k}$ constitute a partition of the sample space $\Omega$ such that $P({B}_{i})\neq 0$ for $i=1,2,\dots,k$, then for any event $A$ in $\Omega$ such that $P(A)\neq 0$,
  >$$P({B}_{r}|A)=\dfrac{P({B}_{r}\cap A)}{\sum _{i=1}^{k}P({B}_{i}\cap A)}=\dfrac{P({B}_{r})P(A|{B}_{r})}{\sum _{i=1}^{k}P({B}_{i})P(A|{B}_{i})},\qquad  r=1,2,\dots ,k$$
 
+![](https://www.youtube.com/watch?v=HZGCoVF3YvM)
+
+
 
 >[!example] Example: 
 > A medical test has a $0.95$ sensitivity (i.e., detects the disease in $95\%$ of people who have it) and $0.92$ specificity (i.e., does not detect the disease in $92\%$ of people who do not have it).
@@ -380,6 +381,7 @@ Instead of asking for $P(A)$ in the example above, by the rule of eliminations, 
 > \end{aligned}$$
 > 
 > ![](https://www.youtube.com/watch?v=R13BD8qKeTg&t=67s)
+![](https://www.youtube.com/watch?v=lG4VkPoG3ko)
 > 
 
 # Exercises

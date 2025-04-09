@@ -145,3 +145,8 @@ aliases:
 ## אקסטרני
 - [[External/HML/HML_000 Hands-On Machine Learning]]
 %%
+
+>[!Question]- "למה אתה לא לוקח את הקורסי בחירה שאנחנו לוקחים?"
+>סליחה סליחה תנו לי שנייה:
+ ![](https://i.makeagif.com/media/7-09-2015/V_Abzw.gif)
+ 
