@@ -1,9 +1,3 @@
-/*
-Publish and Local
-=================
- */
-
-
 /* All images */
 img {
   display: block;
@@ -52,7 +46,6 @@ img[alt*="bmult"] {
   mix-blend-mode: multiply;
 }
 
-
 /* transparent background, black themed */
 .theme-dark img[alt*="book"] {
   mix-blend-mode: screen;
@@ -68,7 +61,6 @@ img[alt*="bmult"] {
   mix-blend-mode: screen;
   filter: hue-rotate(180deg) invert(1);
 }
-
 
 /* Vector art also need to have a transparent background */
 .theme-light img[alt*="svg"] {
@@ -154,6 +146,7 @@ table {
   text-align: center !important;
 }
 
+
 /* Center iframes */
 iframe.external-embed {
   display: block;
@@ -161,8 +154,37 @@ iframe.external-embed {
   margin-right: auto;
 }
 
+
+.app-container {
+  --font-caption-size: 18px;
+}
+
+.markdown-rendered .list-bullet {
+  float: inline-start;
+}
+
+/* Padding between numbers */
+.markdown-rendered ol>li,
+.markdown-rendered ul>li {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+.markdown-rendered ol.has-list-bullet>li,
+.markdown-rendered ul.has-list-bullet>li {
+  padding-top: var(--list-spacing);
+  padding-bottom: var(--list-spacing);
+}
+
+div.page-break::after {
+  content: "Break page. Need at least 1 blank line after.";
+  display: block;
+  font-style: italic;
+  color: gray;
+}
+
 /* 
-Testimonials (Publish and local)
+Testimonials
 ============
 */
 
@@ -273,40 +295,6 @@ figure.testi .author h5 span {
   font-weight: 400;
   text-transform: none;
   padding-left: 5px;
-}
-
-/*
-Local only
-==========
- */
-
-
-.app-container {
-  --font-caption-size: 18px;
-}
-
-.markdown-rendered .list-bullet {
-  float: inline-start;
-}
-
-/* Padding between numbers */
-.markdown-rendered ol>li,
-.markdown-rendered ul>li {
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-}
-
-.markdown-rendered ol.has-list-bullet>li,
-.markdown-rendered ul.has-list-bullet>li {
-  padding-top: var(--list-spacing);
-  padding-bottom: var(--list-spacing);
-}
-
-div.page-break::after {
-  content: "Break page. Need at least 1 blank line after.";
-  display: block;
-  font-style: italic;
-  color: gray;
 }
 
 /*
