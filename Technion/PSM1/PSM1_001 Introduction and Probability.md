@@ -1,10 +1,20 @@
 ---
 aliases:
+  - probability
+  - sample space
+  - permutation
+  - combination
+  - conditional probability
+  - independent
+  - the multiplicative rule
+  - total probability
+  - bayes' rule
+  - additive rule
 ---
+From [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]]:
 # Probability
 
 ## Sample Space
-From [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]]:
 In the study of statistics, we are concerned basically with presentation and interpretation of **chance outcomes** that occur in a planned study or scientific investigation. The statistician is often dealing with either numerical data, representing counts or measurements, or **categorical data**, which can be classified according to some criterion.
 
 
@@ -180,8 +190,9 @@ Often it is easiest to calculate the probability of some event from known probab
  >If $A$ and $B$ are disjoint, then
  >$$P(A\cup B)=P(A)+P(B)$$
 
+Which we can generalize:
 >[!theorem] Theorem: 
- >If ${A}_{1},{A}_{2},\dots,{A}_{m}$ are mutually exclusive, then
+ >If ${A}_{1},{A}_{2},\dots,{A}_{m}$ are mutually exclusive (disjoint), then
  >$$P({A}_{1}\cup {A}_{2}\cup\dots \cup {A}_{m})=\sum_{i=1}^{m}P({A}_{i}) $$
 
 > [!tip] Tip:
