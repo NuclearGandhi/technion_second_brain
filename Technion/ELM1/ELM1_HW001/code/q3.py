@@ -69,6 +69,8 @@ M_13 = (N3 * phi_3) / I1
 # Force formula
 F = (phi_3**2) / (2 * mu_0 * A)
 
+F_tot = 2 * F
+
 # %% Display results
 
 print("Results:")
@@ -85,3 +87,4 @@ print(f"MMF2 = {MMF2:.3e} A-turns")
 print(f"phi_3 = {phi_3:.3e} Wb")
 print(f"M_13 = {M_13:.3e} H")
 print(f"F = {F:.3e} N")
+print(f"F_tot = {F_tot:.3e} N")

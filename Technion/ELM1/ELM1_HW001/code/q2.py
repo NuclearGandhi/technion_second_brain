@@ -10,7 +10,7 @@ I0_angle = 70  # degrees
 Z1 = 0.5 + 2j  # Ω
 Z2_mag = 1.5  # Ω
 Z2_angle = -22  # degrees
-Z3 = 0.8 - 12.2j  # Ω
+Z3 = 0.8 - 1.2j  # Ω
 
 # %% Convert to complex form
 
