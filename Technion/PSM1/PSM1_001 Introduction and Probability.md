@@ -233,7 +233,7 @@ We can also write
 $$P(B|A)=\dfrac{2}{5}=\dfrac{2/9}{5/9}=\dfrac{P(A\cap B)}{P(A)}$$
 
 >[!def] Definition: 
- >The conditional probability of $B$, given $A$, denoted by $P(B|A)$, is defined by:
+ >The **conditional probability** of $B$, given $A$, denoted by $P(B|A)$, is defined by:
  >$$P(B|A)=\dfrac{P(A\cap B)}{P(A)},\, \qquad  P(A)>0 $$
 
 Another rule:
@@ -259,7 +259,7 @@ Although conditional probability allows for an alteration of the probability of 
  
 
 ## The Multiplicative Rule
-Multiplying the definition of the [[#Conditional Probability]] above by $P(A)$, we obtain the following important **multiplicative rule** (or **product rule**), which enables us to calculate the probability that two events will both occur.
+Multiplying the definition of the [[#Conditional Probability|conditional probability]] above by $P(A)$, we obtain the following important **multiplicative rule** (or **product rule**), which enables us to calculate the probability that two events will both occur.
 
 >[!theorem] Theorem: 
  >If in an experiment the events $A$ and $B$ can both occur, then
@@ -521,3 +521,64 @@ Another thing we can try is to treat all the black balls as one group - just as 
 
 
 >[!TODO] TODO: להשלים
+
+## Question 6
+Drinking cups are produced in a $2$-step process: shaping and painting. Experience shows that $70\%$ of the cups are properly shaped.
+The probability that a deformed cup is properly painted is $0.2$. A properly shaped cup will be properly painted with $0.95$ probability.
+
+### Part a
+What is the probability that a random cup produced is properly shaped but improperly painted?
+
+**Solution**:
+Let's denote
+- $S$: cup is properly shaped.
+- $A$: cup is properly painted.
+
+We are given that:
+$$\begin{aligned}
+ & P(S)=0.7, &  & P(S^{c})=0.3 \\[1ex]
+ & P(A|S^{c})=0.2, &  & P(A^{c}|S^{c})=0.8 \\[1ex]
+ & P(A|S)=0.95, &  & P(A^{c}|S)=0.05
+\end{aligned}$$
+
+We need to find $P(S\cap A^{c})$.
+![[PSM1_001 Introduction and Probability 2025-04-21 13.59.08.excalidraw.svg]]
+>Probability tree for the given problem.
+
+From the tree above, and from the [[#The Multiplicative Rule|the multiplication rule]], we see that:
+$$\begin{aligned}
+P(S\cap A^{c}) & =P(S)\cdot P(A^{c}) \\[1ex]
+ & =0.7\cdot 0.05 \\[1ex]
+ & =\boxed {
+0.035
+ }
+\end{aligned}$$
+
+
+### Part b
+What is the probability that a cup is properly painted?
+
+**Solution**:
+Using the [[#Total Probability|total probability rule]]:
+$$\begin{aligned}
+P(A) & =P(S\cap A)+P(S^{c}\cap A) \\[1ex]
+ & =P(A)P(A|S)+P(A)P(A|S^{c}) \\[1ex]
+ & =0.7\cdot 0.95+0.3\cdot 0.2 \\[1ex]
+ & =\boxed{0.725 }
+\end{aligned}$$
+
+### Part c
+If a cup is improperly painted, what is the probability it is properly shaped?
+
+**Solution**:
+We need to find $P(S|A^{c})$. Using [[#Bayes' Rule|bayes' rule]]:
+$$\begin{aligned}
+P(S|A^{c}) & =\dfrac{P(A^{c}|S)P(A^{c})}{P(S)} \\[1ex]
+ & =\dfrac{0.05\cdot(1-P(A))}{0.7} \\[1ex]
+ & =\dfrac{0.05\cdot 0.275}{0.7} \\[1ex]
+ & =\boxed {
+0.01964
+ }
+\end{aligned}$$
+
+## Question 7

@@ -108,3 +108,4 @@ $$\begin{gathered}
 P({Y}_{1}\cup {Y}_{2}\cup {Y}_{3})=0.03+0.04+0.02-0.01-0.0006-0+0 \\[1ex]
 \boxed{P({Y}_{1}\cup {Y}_{2}\cup {Y}_{3})=0.0794 }
 \end{gathered}$$
+
