@@ -142,6 +142,16 @@ As a result, we have the following theorem:
 >  }$$
 > 
 
+Permutations that occur by arranging object in a circle are called **circular permutations**. Two circular permutations are not considered different unless corresponding objects in the two arrangements are preceded or followed by a different object as we proceed in a clockwise direction. For example, if $4$ people are playing bridge, we do not have a new permutation if there all move one position in a clockwise direction. By considering one person in a fixed position and arranging the other three in $3!$ ways, we find there are $6$ distinct arrangements for the bridge game.
+
+>[!theorem] Theorem: 
+ >The number of permutations of $n$ objects arranged in a circle is $(n-1)!$
+ 
+So far we have considered permutations of distinct objects. That is, all the objects were completely different or distinguishable. Obviously, if the letters $b$ and $c$ are both equal to $x$, then the $6$ permutations of the letters $a$, $b$, and $c$ are both equal to $x$, then the $6$ permutations of the letters $a$, $b$, and $c$ become $axx$, $ax x$, $xax$, $xax$, $xxa$ and $xxa$, of which only $3$ are distinct. Therefore, with $3$ letters, $2$ being the same, we have $3!/2! = 3$ distinct permutations. With $4$ different letters $a$, $b$, $c$ and $d$, we have $24$ distinct permutations. If we let $a=b=x$ and $c=d=y$, we just list only the following distinct permutations: $x xyy$, $xyxy$, $y xx y$, $y y x x$, $xyyx$ and $yxyx$. Thus we have $4!/(2!2!)=6$ distinct permutations.
+
+>[!theorem] Theorem: 
+ >The number of distinct permutations of $n$ things of which ${n}_{1}$ are of one kind, ${n}_{2}$ of a second kind, $\dots$, ${n}_{k}$ are of a $k$-th kind is
+ >$$\dfrac{n!}{{n}_{1}!{n}_{2}!\cdots {n}_{k}!}$$
 ## Combination
 In many problems, we are interested in the number of ways of selecting $r$ objects from $n$ without regard to order. These selections are called **combinations**.
 
@@ -518,9 +528,10 @@ Consider a bag containing $7$ red balls, 8 white and $5$ black. How many ways of
 **Solution**:
 The basic formula is $n!$ (i.e., there are $n!$ [[#Permutation|permutations]]). So we could say we have $20$ balls, and therefore there are $20!$ permutations. Now we need to subtract from that all the cases where the black balls aren't together. That's a bit problematic.
 Another thing we can try is to treat all the black balls as one group - just as a single ball. Doing that, we get $(7+8+1)!=16!$ permutations.
-
-
->[!TODO] TODO: להשלים
+These permutations contain repeated elements ($7$ reds and $8$ whites), so the number of ways to arrange these $16$ items is:
+$$\dfrac{16!}{7!8!}=\boxed {
+\pu {102960 }
+ }$$
 
 ## Question 6
 Drinking cups are produced in a $2$-step process: shaping and painting. Experience shows that $70\%$ of the cups are properly shaped.
@@ -581,4 +592,3 @@ P(S|A^{c}) & =\dfrac{P(A^{c}|S)P(A^{c})}{P(S)} \\[1ex]
  }
 \end{aligned}$$
 
-## Question 7
