@@ -93,7 +93,19 @@ The graph of the cumulative distribution function is obtained by plotting the po
 >Discrete cumulative distribution function.
 
 # Mean of a Random Variable
->[!TODO] TODO: להשלים
+
+Consider the following. If two coins are tossed $16$ times and $X$ is the number of heads that occur per toss, then the values of $X$ are $0$, $1$, and $2$. Suppose that the experiment yields no heads, one head, and two heads a total of $4$, $7$ and $5$ times, respectively. The average number of heads per toss of the two coins is then
+$$\dfrac{0\cdot 4+1\cdot 7+2\cdot 5}{16}=1.06$$
+This is an average value of the data and yet it is not a possible outcome of $\{ 0,1,2 \}$. Hence, an average is not necessarily a possible outcome for the experiment.
+
+We shall refer to this average value as the **mean of the random variable $X$** or the **mean of the probability distribution of $X$** and write it as ${\mu}_{x}$ or simply as $\mu$ when it is clear to which random variable we refer. It is also common among statisticians to refer to this mean as the mathematical expectation, or the expected value of the random variable $X$, and denote it as $E(X)$.
+
+>[!def] Definition: 
+ >Let $X$ be a random variable with probability distribution $f(x)$. The **mean**, or **expected value**, of $X$ is
+>$$\mu=E(x)=\sum_{x}^{} xf(x) $$
+>if $X$ is discrete, and
+>$$\mu=E(x)=\int_{-\infty }^{\infty} xf(x) \, \mathrm{d}x $$
+>if $X$ is continuous.
 
 
 

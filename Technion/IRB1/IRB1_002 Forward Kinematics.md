@@ -7,7 +7,7 @@ The **forward kinematics** of a robot refers to the calculation of the position 
 
 
 ![[{49C5D564-6058-4D7C-A731-763A44DA766C}.png|bookhue|500]]
->Forward kinematics of a $\mathrm{3R}$ planar open chain. For each frame, the $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ is shown; the $\hat{\mathbf{z}}$-axes are parallel and out of the page.
+>Forward kinematics of a $\mathrm{3R}$ planar open chain. For each frame, the $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ is shown; the $\hat{\mathbf{z}}$-axes are parallel and out of the page. [[IRB1_000 00350001 מבוא לרובוטיקה#ביבליוגרפיה|(Lynch & Park, 2017)]].
 
  The link lengths are ${L}_{1}$, ${L}_{2}$, and ${L}_{3}$. Choose a fixed frame $\{ 0 \}$ with origin located at the base joint as shown, and assume an end-effector frame $\{ 4 \}$ has been attached to the tip of the third link. The Cartesian position $(x,y)$ and orientation $\phi$ of the end-effector frame as functions of the joint angles $({\theta}_{1},{\theta}_{2},{\theta}_{3})$ are then given by
  $$\begin{align}
@@ -51,7 +51,7 @@ The basic idea underlying the Denavit–Hartenberg approach to forward kinematic
 Rather than attaching reference frames to each link in an arbitrary fashion, in the Denavit–Hartenberg convention a set of rules for assigning link frames is observed. The following figure illustrates the frame assignment convention for two adjacent revolute joints $i-1$ and $i$ that are connected by link $i-1$.
 
 ![[{8F16F6D0-67D5-4954-A5E6-A50F733825B7}.png|bookhue|500]]
->Illustration of the Denavit–Hartenberg parameters.
+>Illustration of the Denavit–Hartenberg parameters. [[IRB1_000 00350001 מבוא לרובוטיקה#ביבליוגרפיה|(Lynch & Park, 2017)]].
 
 The first principle in assigning reference frames is that the $\hat{\mathbf{z}}_i$ axis should align with the axis of joint $i$, while the $\hat{\mathbf{z}}_{i-1}$ axis aligns with joint $i - 1$. The direction of positive rotation around each link’s $\hat{\mathbf{z}}$-axis is determined using the right-hand rule. 
 
@@ -94,9 +94,55 @@ We will now address:
 
 ## When Adjacent Revolute Joint Axes Intersect
 
+If two consecutive revolute joint axes intersect, then no single line exists that is perpendicular to both axes. In such situations, we assign the link length $a_{i-1} = 0$, and define the $\hat{\mathbf{x}}_{i-1}$ axis as being perpendicular to the plane formed by $\hat{\mathbf{z}}_{i-1}$ and $\hat{\mathbf{z}}_i$.
 
+This setup yields two valid options: one that results in a positive link twist angle $\alpha_{i-1}$ and another that gives a negative value. Both are acceptable; the choice depends on consistency and convention.
 
->[!TODO] TODO: להשלים
+## When Adjacent Revolute Joint Axes Are Parallel
 
-# Exercises
-## Question 2
+Another special case arises when two adjacent revolute joint axes are parallel. Here, infinitely many perpendicular lines can be drawn between the axes (technically, a one-dimensional family of such lines exists), and any of them can be used to define the frame.
+
+The general recommendation is to pick the perpendicular line that feels most physically meaningful and simplifies the D–H parameters—ideally resulting in more zeros.
+
+## Prismatic Joints
+
+For prismatic joints, the $\hat{\mathbf{z}}$-axis of the link frame is aligned with the direction of positive translation. This mirrors the convention used for revolute joints, where $\hat{\mathbf{z}}$ defines the axis of positive rotation.
+
+Under this convention:
+- The **link offset** $d_i$ becomes the joint variable.
+- The **joint angle** $\phi_i$ is fixed.
+
+The method for setting the origin and determining the $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ axes remains unchanged from the revolute joint case. See the following figure for illustration:
+
+![[{13684895-9E3E-4686-9E47-57C9FBF64381}.png|bookhue|600]]
+>Link frame assignment convention for prismatic joints. Joint $i-1$ is a revolute joint, while joint $i$ is a prismatic joint. [[IRB1_000 00350001 מבוא לרובוטיקה#ביבליוגרפיה|(Lynch & Park, 2017)]].
+
+## Choosing the Ground and End-Effector Frames
+
+So far, we've discussed how to assign link frames, but not how to define the ground (base) frame or the final end-effector frame. A helpful strategy is to choose these in a way that feels intuitive and results in the simplest possible D–H parameter set.
+
+Typically:
+- The **ground frame** is placed to coincide with frame $\{1\}$ when the system is in its zero (home) configuration.
+- For a **revolute joint**, this leads to $a_0 = \alpha_0 = d_1 = 0$.
+- For a **prismatic joint**, we get $a_0 = \alpha_0 = \phi_1 = 0$.
+- The **end-effector frame** is positioned at a convenient reference point on the tool or device, chosen for clarity in task description and simplification of D–H parameters (ideally making them zero where possible).
+
+Keep in mind, though, that not all arbitrary frame choices will work—there may be no valid set of D–H parameters that describe the transformation if the initial or final frames are chosen inconsistently. This point will be addressed in further detail.
+
+>[!example] Example: 
+> Consider the $\mathrm{3R}$ spatial open chain in the following figure:
+> ![[{918BE63D-FF6A-43A6-9BD5-4E74F97D2475}.png|bookhue|600]]
+> >A $\mathrm{3R}$ spatial open chain. [[IRB1_000 00350001 מבוא לרובוטיקה#ביבליוגרפיה|(Lynch & Park, 2017)]].
+> 
+> The assigned link reference frames are shown in the figure, and the corresponding D–H parameters are listed in the following table:
+> $$\begin{array}{c|ccc}
+> i & \alpha _{i-1} & {a}_{i-1} & {d}_{i} & {\phi}_{i} \\
+> \hline 1 & 0 & 0 & 0 & {\theta}_{1} \\
+> 2 & 90^{\circ}  & {L}_{1} & 0 & {\theta}_{2}-90^{\circ}  \\
+> 3 & -90^{\circ}  & {L}_{2} & 0 & {\theta}_{3}
+> \end{array}$$
+> 
+> Note that frames $\{ 1 \}$ and $\{ 2 \}$ are uniquely specified from our frame assignment convention, but that we have some latitude in choosing frames $\{ 0 \}$ and $\{ 3 \}$. Here we choose the ground frame $\{ 3 \}$ to be such that $\hat{\mathbf{x}}_{3}=\hat{\mathbf{x}}_{2}$ (resulting in no offset to the joint angle ${\theta}_{3}$).
+> 
+> 
+> 
