@@ -305,6 +305,15 @@ PDF only
 
 @media print {
 
+  h1.__title__ {
+    font-size: 2.102em !important;
+    text-align: center;
+    margin-top: 320px;
+    margin-bottom: 320px;
+    font-style: normal;
+    font-weight: 400 !important;
+  }
+
   h1,
   h2,
   h3,
@@ -353,8 +362,6 @@ PDF only
 
   /* block quotes (for image captioning) */
   .markdown-rendered blockquote {
-    font-weight: bold !important;
-    font-style: bold !important;
     color: inherit !important;
   }
 }

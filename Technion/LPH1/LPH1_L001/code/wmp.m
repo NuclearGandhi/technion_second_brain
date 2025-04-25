@@ -16,10 +16,11 @@ delta_Total_T = 0.3; %s
 
 N = 10; % Number of periods
 T_deg_var = Total_T_deg_var / N;
+delta_T_deg_var = (delta_Total_T / N) * ones(size(T_deg_var)); % Error in period
 
 % Plot T_deg_var vs initial_deg
 figure(1)
-plot(initial_deg, T_deg_var, 'o-')
+errorbar(initial_deg, T_deg_var, delta_T_deg_var, 'o-')
 xlabel('Initial Angle [deg]', 'Interpreter', 'latex')
 ylabel('Period $T\,[\mathrm{s}]$', 'Interpreter', 'latex')
 title('Period vs Initial Angle', 'Interpreter', 'latex')
@@ -37,14 +38,22 @@ l = linspace(0.2, 0.47, 10); % m
 delta_l = 1e-3; % m
 initial_deg = 30; % deg
 
-T_len_var = [9.13, 9.63, 10.25, 10.64, 11.41, 11.94, 12.4, 12.81, 13.54, 13.83]; % s
+Total_T_len_var = [9.13, 9.63, 10.25, 10.64, 11.41, 11.94, 12.4, 12.81, 13.54, 13.83]; % s
+T_len_var = Total_T_len_var / N; % s
+delta_T_len_var = delta_Total_T / N; % Error in period
+
+% Calculate error propagation for logarithmic values
+% For ln(T/T*), error is approximately delta_T/T
+rel_T_error = delta_T_len_var ./ T_len_var;
+% For ln(l/l*), error is approximately delta_l/l
+rel_l_error = delta_l ./ l;
 
 % Plot ln(l / l(end)) vs ln(T_len_var / T_len_var(end))
 figure(2)
 x = log(T_len_var / T_len_var(end));
 y = log(l / l(end));
 % Swap x and y for the new plot
-plot(y, x, 'o-')
+errorbar(y, x, rel_T_error, rel_T_error, rel_l_error, rel_l_error, 'o')
 hold on
 
 % Linear regression using Curve Fitting Toolbox (swapped axes)
@@ -72,7 +81,6 @@ xlabel('$\ln(\ell / \ell^*)$', 'Interpreter', 'latex')
 ylabel('$\ln(T / T^*)$', 'Interpreter', 'latex')
 title('Plot of $\frac{\ln(T/T^{*})}{\ln(\ell /{\ell}^{*})}$', 'Interpreter', 'latex')
 hold off
-
 
 % Set figure size and export Figure 1
 figure(1)
