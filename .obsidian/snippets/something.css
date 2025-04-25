@@ -88,6 +88,10 @@ img[alt*="bmult"] {
   display: inline-block;
 }
 
+.cm-html-embed th, .markdown-rendered th {
+  font-weight: 400;
+}
+
 /* Center tables */
 table {
   margin-right: auto;
@@ -134,7 +138,8 @@ table {
 }
 
 /* block quotes (for image captioning) */
-.markdown-rendered blockquote {
+.markdown-rendered blockquote, .HyperMD-quote, .HyperMD-quote:before {
+  border-inline-start: 0 !important;
   border-left: 0;
   border-right: 0;
   font-size: var(--font-caption-size);

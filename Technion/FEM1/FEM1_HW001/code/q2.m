@@ -32,7 +32,7 @@ grid on;
 % Add labels and legend
 xlabel('$x$', 'Interpreter', 'latex');
 ylabel('$\mathrm{erfc}(x)$', 'Interpreter', 'latex');
-legend('$erfc(x)$', 'Gauss-Legendre ($n=1$)', 'Gauss-Legendre ($n=2$)', 'Location', 'best');
+legend('MATLAB $erfc(x)$', 'Gauss-Legendre ($n=1$)', 'Gauss-Legendre ($n=2$)', 'Location', 'best');
 title('Complementary Error Function $\mathrm{erfc}(x) = \frac{2}{\sqrt{\pi}}\int_{x}^{\infty} e^{-t^2} dt$', 'Interpreter', 'latex');
 
 % Calculate and display maximum errors
@@ -51,20 +51,20 @@ function result = my_erfc(x, n)
     % erfc(x) = (2/sqrt(pi)) * integral from x to infinity of exp(-t^2) dt
     
     % We need to transform the infinite integral [x, inf) to a finite interval
-    % Using the substitution t = x + (1-u)/u, dt = (1/u^2) du
-    % This maps [x, inf) to (0, 1]
+    % Using the substitution t = x + (1+s)/(1-s), dt = 2/((1-s)^2) ds
+    % This maps [x, inf) to [-1, 1)
     % And the integral becomes:
-    % (2/sqrt(pi)) * integral from 0 to 1 of exp(-(x + (1-u)/u)^2) * (1/u^2) du
+    % (2/sqrt(pi)) * integral from -1 to 1 of exp(-(x + (1+s)/(1-s))^2) * 2/((1-s)^2) ds
     
     % For n = 1 (1-point Gauss-Legendre)
     if n == 1
-        % Weights and nodes for 1-point Gauss-Legendre on [0,1]
-        weights = 1;
-        nodes = 0.5;
+        % Weights and nodes for 1-point Gauss-Legendre on [-1,1]
+        weights = 2;  % Total interval length is 2
+        nodes = 0;
     elseif n == 2
-        % Weights and nodes for 2-point Gauss-Legendre on [0,1]
-        weights = [0.5, 0.5];
-        nodes = [0.5 - sqrt(1/12), 0.5 + sqrt(1/12)];
+        % Weights and nodes for 2-point Gauss-Legendre on [-1,1]
+        weights = [1, 1];  % Each weight is 1 for [-1,1]
+        nodes = [-1/sqrt(3), 1/sqrt(3)];
     else
         error('Only n=1 or n=2 is supported in this implementation');
     end
@@ -72,9 +72,9 @@ function result = my_erfc(x, n)
     % Calculate the integral using Gauss-Legendre quadrature
     integral_value = 0;
     for i = 1:n
-        u = nodes(i);
-        t = x + (1-u)/u;
-        integrand = exp(-t^2) * (1/u^2);
+        s = nodes(i);
+        t = x + (1+s)/(1-s);
+        integrand = exp(-t^2) * (2/((1-s)^2));
         integral_value = integral_value + weights(i) * integrand;
     end
     
