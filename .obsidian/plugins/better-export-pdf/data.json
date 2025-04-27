@@ -11,6 +11,7 @@
   "debug": true,
   "isTimestamp": false,
   "enabledCss": false,
+  "concurrency": "5",
   "prevConfig": {
     "pageSize": "A4",
     "marginType": "3",
