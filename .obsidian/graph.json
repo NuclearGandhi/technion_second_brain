@@ -36,7 +36,7 @@
       }
     },
     {
-      "query": "file: SLD OR file: PHY OR file: MDN  OR file: IMT",
+      "query": "file: SLD OR file: PHY OR file: MDN  OR file: IMT OR file: LPH",
       "color": {
         "a": 1,
         "rgb": 12327450
@@ -102,6 +102,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 30,
-  "scale": 0.08124359841490668,
-  "close": false
+  "scale": 0.15968884603532313,
+  "close": true
 }

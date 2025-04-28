@@ -82,15 +82,15 @@ There are many problems where we may wish to compute the probability that the ob
 
 It is often helpful to look at a probability distribution in the graphic form. One might plot the points $(x,f(x))$ of the example above to obtain the following figures:
 ![[{8ADEA98C-E53D-4C08-867D-994C94036816}.png|bookhue|400]]
->Probability mass function plot.
+>Probability mass function plot. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
 
 ![[{6850365A-3E1E-4EF6-907F-474984755A48}.png|bookhue|400]]
->Probability histogram.
+>Probability histogram. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
 
 The graph of the cumulative distribution function is obtained by plotting the points $(x,F(x))$:
 
 ![[{006D722C-4C6B-49E5-B9BB-62C6653A4336}.png|bookhue|400]]
->Discrete cumulative distribution function.
+>Discrete cumulative distribution function. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
 
 # Mean of a Random Variable
 
@@ -106,6 +106,44 @@ We shall refer to this average value as the **mean of the random variable $X$** 
 >if $X$ is discrete, and
 >$$\mu=E(x)=\int_{-\infty }^{\infty} xf(x) \, \mathrm{d}x $$
 >if $X$ is continuous.
+
+# Variance and Covariance of Random Variables
+
+The mean (expected value) of a random variable $X$ describes the center of its probability distribution, but does not capture how spread out the values are. To understand the variability or dispersion of a distribution, we use the **variance**.
+
+Two distributions can have the same mean but very different variability (dispersion) around the mean.
+
+![[{01A46799-058E-4D12-A51F-B9351A14150D}.png|bookhue|600]]
+>Distributions with equal means and unequal dispersions. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+>[!def] Definition: 
+> Let $X$ be a random variable with probability distribution $f(x)$ and mean $\mu$. The **variance** of $X$ is
+> $$
+> \begin{aligned}
+> & \sigma^2  = E[(X-\mu)^2] = \sum_x (x-\mu)^2 f(x)\quad \text{if $X$ is discrete,} \\[1ex]
+> & \sigma^2  = E[(X-\mu)^2] = \int_{-\infty}^{\infty} (x-\mu)^2 f(x)\,\mathrm{d}x\quad \text{if $X$ is continuous.}
+> \end{aligned}
+> $$
+>
+> The positive square root of the variance, $\sigma$, is called the **standard deviation** of $X$.
+
+The term $x-\mu$ is called the **deviation** of an observation from its mean. Since deviations are squared and then averaged, the variance $\sigma^2$ is smaller when values are close to the mean, and larger when values are more spread out.
+
+>[!example] Example: 
+
+Let the random variable $X$ represent the number of automobiles that are used for official business purposes on any given workday. The probability distribution for company $A$ is
+$$\begin{array}{c|ccc}
+x & 1 & 2 & 3 \\
+\hline f(x) & 0.3 & 0.4 & 0.3
+\end{array}$$
+and that for company $B$ is
+$$\begin{array}{c|ccccc}
+x & 0 & 1 & 2 & 3 & 4 \\
+\hline f(x) & 0.2 & 0.1 & 0.3 & 0.3 & 0.1
+\end{array}$$
+Show that the variance of the probability distribution for company $B$ is greater than that for company $A$.
+
+**Solution**:
 
 
 
@@ -207,3 +245,5 @@ Since the probability distribution of any binomial random variable depends only 
 > x & 0 & 1 & 2 \\
 > \hline f(x) & \dfrac{68}{95} & \dfrac{51}{190} & \dfrac{3}{190}
 > \end{array}$$
+
+# Exercises
