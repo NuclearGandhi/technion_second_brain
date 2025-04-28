@@ -26,6 +26,7 @@ In the study of statistics, we are concerned basically with presentation and int
  where $H$ and $T$ correspond to heads and tails, respectively.
 
 >[!example] Example:
+>
 >Consider the experiment of tossing a die. If we are interested in the number that shows on the top face, the sample face is
 >$${\Omega}_{1}=\{ 1,2,3,4,5,6 \}$$
 >If we are interested only in whether the number is even or odd, the sample space is simply
@@ -50,6 +51,7 @@ then $B$ must be the null set, since the only possible factors of $7$ are the od
  >The **complement** of an event $A$ with respect to $\Omega$ is the subset of all elements of $\Omega$ that are not in $A$. We denote the complement of $A$ by the symbol $A^{c}$.
  
  >[!example] Example: 
+ >
  >Let $R$ be the event that a red card is selected from an ordinary deck of $52$ playing cards, and let $\Omega$ be the entire deck. Then $R^{c}$ is the event that the card selected from the deck is not a red card but a black card.
 
 >[!def] Definition:

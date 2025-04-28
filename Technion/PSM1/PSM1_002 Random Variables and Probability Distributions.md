@@ -109,6 +109,8 @@ We shall refer to this average value as the **mean of the random variable $X$** 
 
 # Variance and Covariance of Random Variables
 
+## Variance of Random Variables
+
 The mean (expected value) of a random variable $X$ describes the center of its probability distribution, but does not capture how spread out the values are. To understand the variability or dispersion of a distribution, we use the **variance**.
 
 Two distributions can have the same mean but very different variability (dispersion) around the mean.
@@ -130,22 +132,105 @@ Two distributions can have the same mean but very different variability (dispers
 The term $x-\mu$ is called the **deviation** of an observation from its mean. Since deviations are squared and then averaged, the variance $\sigma^2$ is smaller when values are close to the mean, and larger when values are more spread out.
 
 >[!example] Example: 
+> Let the random variable $X$ represent the number of automobiles that are used for official business purposes on any given workday. The probability distribution for company $A$ is
+> $$\begin{array}{c|ccc}
+> x & 1 & 2 & 3 \\
+> \hline f(x) & 0.3 & 0.4 & 0.3
+> \end{array}$$
+> and that for company $B$ is
+> $$\begin{array}{c|ccccc}
+> x & 0 & 1 & 2 & 3 & 4 \\
+> \hline f(x) & 0.2 & 0.1 & 0.3 & 0.3 & 0.1
+> \end{array}$$
+> Show that the variance of the probability distribution for company $B$ is greater than that for company $A$.
+> 
+> **Solution**:
+> For company $A$, we find that
+> $${\mu}_{A}=E(X)=1\cdot 0.3 + 2\cdot 0.4+3\cdot 0.3=2.0$$
+> and then
+> $$\begin{aligned}
+> {{{\sigma}_{A}}}^{2} & =\sum_{x=1}^{3} (x-2)^{2}  \\[1ex]
+>  & =(1-2)^{2}\cdot 0.3+(2-2)^{2}\cdot 0.4+(3-2)^{2}\cdot 0.3 \\[1ex]
+>  & =\boxed {
+0.6
+ }
+> \end{aligned}$$
+> For company $B$, we have
+> $${\mu}_{B}=E(x)=0\cdot 0.2+0.1\cdot 1+0.3\cdot 2+0.3\cdot 3+0.1\cdot 4=2.0$$
+> and then
+> $$\begin{aligned}
+> {{{\sigma}_{B}}}^{2} & =\sum_{x=0}^{4}(x-2)^{2}f(x)  \\[1ex]
+>  & =(0-2)^{2}\cdot 0.2+(1-2)^{2}\cdot 0.1+(2-2)^{2}\cdot 0.3 \\[1ex]
+>  & \qquad +(3-2)^{2}\cdot 0.3 \\[1ex]
+>  & \qquad +(4-2)^{2}\cdot 0.1 \\[1ex]
+>  & =\boxed {
+1.6
+ }
+> \end{aligned}$$
+> 
+> Clearly, the variance of the number of automobiles that are used for official business purposes is greater for company $B$ than for company $A$.
 
-Let the random variable $X$ represent the number of automobiles that are used for official business purposes on any given workday. The probability distribution for company $A$ is
-$$\begin{array}{c|ccc}
-x & 1 & 2 & 3 \\
-\hline f(x) & 0.3 & 0.4 & 0.3
-\end{array}$$
-and that for company $B$ is
-$$\begin{array}{c|ccccc}
-x & 0 & 1 & 2 & 3 & 4 \\
-\hline f(x) & 0.2 & 0.1 & 0.3 & 0.3 & 0.1
-\end{array}$$
-Show that the variance of the probability distribution for company $B$ is greater than that for company $A$.
+An alternative and preferred formula for finding $\sigma ^{2}$, which often simplifies the calculations is stated in the following theorem:
 
-**Solution**:
+>[!theorem] Theorem: 
+ >The variance of a random variable $X$ is
+ >$$\sigma ^{2}=E(X^{2})-\mu ^{2}$$
 
+>[!example] Example: 
+> Let the random variable $X$ represent the number of defective parts for a machine when $3$ parts are sampled from a production line and tested. The following is the probability distribution of $X$.
+> 
+> $$\begin{array}{c|cccc}
+> x & 0 & 1 & 2 & 3 \\
+> \hline f(x) & 0.51 & 0.38 & 0.1 & 0.01
+> \end{array}$$
+> Calculate $\sigma ^{2}$.
+> 
+> **Solution**:
+> First, we compute
+> $$\mu=0\cdot 0.51+1\cdot 0.38+2\cdot 0.1+3\cdot 0.01=0.61$$
+> Now,
+> $$E(X^{2})=0\cdot 0.51+1\cdot 0.38+2^{2}\cdot 0.1+3^{2}\cdot 0.01=0.87$$
+> Therefore:
+> $$\begin{aligned}
+> \sigma ^{2} & =0.87-0.61^{2} \\[1ex]
+>  & =\boxed {
+> 0.4979
+>  }
+> \end{aligned}$$
+> 
 
+## Covariance of Random Variables
+
+The **covariance** between two random variables is a measure of the nature of the association between the two.
+
+>[!def] Definition: 
+> Let $X$ and $Y$ be random variables with joint probability distribution $f(x,y)$. The covariance of $X$ and $Y$ is
+>  $$\begin{aligned}
+> {\sigma}_{XY} & =E[(x-{\mu}_{X})(y-{\mu}_{Y})] \\[1ex]
+>  & =\sum_{x}^{}\sum_{y}^{}(x-{\mu}_{X})(y-{\mu}_{y})f(x,y)  
+> \end{aligned}$$
+>  if $X$ and $Y$ are discrete, and
+>  $$\begin{aligned}
+> {\sigma}_{XY} & =E[(X-{\mu}_{X})(Y-{\mu}_{Y})] \\[1ex]
+>  & =\int_{-\infty }^{\infty} \int_{-\infty }^{\infty} (x-{\mu}_{X})(y-{\mu}_{Y}) \, \mathrm{d}x  \, \mathrm{d}y 
+> \end{aligned}$$
+> if $X$ and $Y$ are continuous.
+
+>[!TODO] TODO: להשלים
+
+## Means and Variances of Linear Combinations of Random Variables
+
+We now develop some useful properties that will simplify the calculations of means and variances of random variables that appear in later chapters.
+
+>[!theorem] Theorem: 
+> If $a$ and $b$ are constants, then
+> $$E(aX+b)=aE(X)+b$$
+> Therefore, we can also see that:
+> $$E(b)=b$$
+> and that
+> $$E(aX)=aE(X)$$
+
+>[!TODO] TODO: להשלים
 
 # Binomial and Multinomial Distributions
 
@@ -247,3 +332,48 @@ Since the probability distribution of any binomial random variable depends only 
 > \end{array}$$
 
 # Exercises
+## Question 1
+A farmer found a bottle with $6$ genies. $3$ of them grant wishes. The farmer lets the genies one-by-one, in a random order. Let $X$ be the number of released genies (including) until a wish is granted.
+
+### Part a
+Build the probability function of $X$.
+
+**Solution**:
+Its best to start with a simple case and then generalize. So for $X=1$, the probability is simply $3$ out of $6$:
+$$P(X=1)=\dfrac{3}{6}=0.5$$
+For $X=2$, first need to select a genie that doesn't grant a wish, that's $3/6$, and then a genie that does grant a wish. We have $5$ genies left to select from, and $3$ of them that grant wishes. Therefore:
+$$P(X=2)=\dfrac{3}{6}\cdot \dfrac{3}{5}=0.3$$
+The rest can be calculated in the same manner:
+$$\begin{aligned}
+ & P(X=3)=\dfrac{3}{6}\cdot \dfrac{2}{5}\cdot \dfrac{3}{4}=0.15 \\[1ex]
+ & P(X=4)=\dfrac{3}{6}\cdot \dfrac{2}{5}\cdot \dfrac{1}{4}\cdot \dfrac{3}{3}=0.05
+\end{aligned}$$
+
+
+### Part b
+Calculate $E(X)$ and $\sigma$.
+
+**Solution**:
+Using the [[#Variance and Covariance of Random Variables|theorems]], we get:
+$$\begin{aligned}
+E(X) & =1\cdot 0.5+2\cdot 0.3+3\cdot 0.15+4\cdot 0.05 \\[1ex]
+ & =\boxed {
+1.75
+ }
+\end{aligned}$$
+Therefore:
+$$\begin{aligned}
+E(X^{2}) & =1^{2}\cdot 0.5+2^{2}\cdot 0.3+3^{2}\cdot 0.15+4^{2}\cdot 0.05 \\[1ex]
+ & =\boxed {
+3.85
+ }
+\end{aligned}$$
+And the variance is:
+$$\begin{aligned}
+\sigma & =E(X^{2})-E(X)^{2} \\
+ & =3.85-1.75^{2} \\[1ex]
+ & =\boxed {
+0.7875
+ }
+\end{aligned}$$
+
