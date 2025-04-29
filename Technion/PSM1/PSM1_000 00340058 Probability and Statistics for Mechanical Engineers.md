@@ -11,7 +11,8 @@ Assistant: Daniel Goldberg
 # Notes
 
 - [[PSM1_001 Introduction and Probability]]
-- [[PSM1_002 Random Variables and Probability Distributions]]
+- [[PSM1_002 Random Variables]]
+- [[PSM1_003 Discrete Probability  Distributions]]
 
 # Homework
 - [[PSM1_HW001 Homework 1]]
