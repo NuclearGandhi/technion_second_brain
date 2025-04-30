@@ -217,5 +217,90 @@ The probability of observing exactly $x$ events, denoted as $p(x;\lambda t)$, de
 The Poisson probability sums is defined as:
 $$P(r;\lambda t)=\sum_{x=0}^{r} p(x;\lambda t) $$
 
+>[!example] Example: Radioactive Particles
+>During a laboratory experiment, the average number of radioactive particles passing through a counter in 1 millisecond is 4. What is the probability that 6 particles enter the counter in a given millisecond?
+>
+>**Solution**:
+>Using the Poisson distribution with $x = 6$ and $\lambda t = 4$:
+>$$\begin{aligned}
+p(6; 4)  & = \frac{e^{-4}4^6}{6!}  \\[1ex]
+ & = \sum_{x=0}^{6} p(x; 4) - \sum_{x=0}^{5} p(x; 4)  \\[1ex]
+ & = 0.8893 - 0.7851  \\[1ex]
+ & = \boxed {
+0.1042
+ }
+\end{aligned}$$
 
->[!TODO] TODO: להשלים
+>[!example] Example: Oil Tankers
+>Ten is the average number of oil tankers arriving each day at a certain port. The facilities at the port can handle at most 15 tankers per day. What is the probability that on a given day tankers have to be turned away?
+>
+>**Solution**:
+>Let $X$ be the number of tankers arriving each day. We need to find:
+>$$\begin{aligned}
+P(X > 15)  & = 1 - P(X \leq 15)  \\[1ex]
+ & = 1 - \sum_{x=0}^{15} p(x; 10)  \\[1ex]
+ & = 1 - 0.9513  \\[1ex]
+ & = \boxed {
+0.0487
+ }
+\end{aligned}$$
+
+>[!theorem] Theorem:
+>Both the mean and the variance of the Poisson distribution $p(x;\lambda t)$ are $\lambda t$.
+
+## Nature of the Poisson Probability Function
+
+Like many discrete and continuous distributions, the form of the Poisson distribution becomes increasingly symmetric and bell-shaped as the mean grows larger. The probability function for different values of $\mu$ shows this progression:
+
+- When $\mu = 0.1$, the distribution is highly skewed
+- When $\mu = 2$, it begins to become more balanced
+- When $\mu = 5$, it appears nearly symmetric
+
+This behavior parallels what we see in the binomial distribution as well.
+
+![[{144FCDE2-5433-42CA-A94A-AC13D587C64A}.png|bookhue|600]]
+>Poisson density functions for different means. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+## Approximation of Binomial Distribution by a Poisson Distribution
+
+The Poisson distribution can be viewed as a limiting form of the binomial distribution. When the sample size $n$ is large and the probability $p$ is small, the binomial distribution can be approximated by the Poisson distribution with parameter $\mu = np$.
+
+The independence among Bernoulli trials in the binomial case aligns with the independence property of the Poisson process. When $p$ is close to $0$, this relates to the negligible multiple events property of the Poisson process.
+
+If $p$ is close to $1$, we can still use the Poisson approximation by redefining what we consider a "success," effectively changing $p$ to a value close to $0$.
+
+>[!theorem] Theorem:
+>Let $X$ be a binomial random variable with probability distribution $b(x; n, p)$. When $n \rightarrow \infty$, $p \rightarrow 0$, and $np \rightarrow \mu$ remains constant,
+>$$b(x; n, p) \rightarrow p(x; \mu)$$
+
+>[!example] Example: Industrial Accidents
+>In a certain industrial facility, accidents occur infrequently. The probability of an accident on any given day is $0.005$, and accidents are independent of each other.
+>
+>1. What is the probability that in any given period of $400$ days there will be an accident on exactly one day?
+>2. What is the probability that there are at most three days with an accident?
+>
+>**Solution**:
+>Let $X$ be a binomial random variable with $n = 400$ and $p = 0.005$. Thus, $np = 2$. Using the Poisson approximation with $\mu = 2$:
+>
+>3. $P(X = 1) = \frac{e^{-2}2^1}{1!} = \boxed {
+0.271
+ }$
+>
+>4. $P(X \leq 3) = \sum_{x=0}^{3} \frac{e^{-2}2^x}{x!} = \boxed {0.857}$
+
+>[!example] Example: Glass Manufacturing
+>In a manufacturing process where glass products are made, defects or bubbles occur occasionally, rendering the piece unmarketable. On average, $1$ in every $1000$ items produced has one or more bubbles. What is the probability that a random sample of $8000$ will yield fewer than $7$ items possessing bubbles?
+>
+>**Solution**:
+>This is essentially a binomial experiment with $n = 8000$ and $p = 0.001$. Since $p$ is very close to $0$ and $n$ is quite large, we can approximate with the Poisson distribution using:
+>$$\mu = (8000)(0.001) = 8$$
+>
+>Hence, if $X$ represents the number of bubbles:
+>$$\begin{aligned}
+P(X < 7)  & = \sum_{x=0}^{6} b(x; 8000, 0.001) \\[1ex]
+ &  \approx \sum_{x=0}^{6} p(x; 8) \\[1ex]
+ &  = \boxed {
+0.3134
+ }
+\end{aligned}$$
+
+
