@@ -146,3 +146,116 @@ Keep in mind, though, that not all arbitrary frame choices will work—there may
 > 
 > 
 > 
+
+# Exercises
+
+>[!notes] Note: 
+ >Small difference between the course notations and book's notation:
+ >In the book the D–H table may be written as:
+ >$$\begin{array}{c|ccc}
+> i & \alpha _{i-1} & {a}_{i-1} & {d}_{i} & {\phi}_{i} \\
+> \hline 1 & 0 & 0 & 0 & {\theta}_{1} \\
+> 2 & 90^{\circ}  & {L}_{1} & 0 & {\theta}_{2}-90^{\circ}  \\
+> 3 & -90^{\circ}  & {L}_{2} & 0 & {\theta}_{3}
+> \end{array}$$
+> In the course, we write:
+> $$\begin{array}{c|ccc}
+> i & \alpha _{i} & {a}_{i} & {d}_{i} & {\theta}_{i} \\
+> \hline 1 & 0 & 0 & 0 & {\theta}_{1} \\
+> 2 & 90^{\circ}  & {L}_{1} & 0 & {\theta}_{2}-90^{\circ}  \\
+> 3 & -90^{\circ}  & {L}_{2} & 0 & {\theta}_{3}
+> \end{array}$$
+
+## Question 1
+Given the robot shown in the figure below:
+
+![[IRB1_002 Forward Kinematics 2025-04-30 21.44.20.excalidraw.svg]]
+>Simple robot with one revolute and one prismatic joint.
+
+Compute the last transformation $^{0}\mathbf{T}_{2}$.
+
+**Solution**:
+First, let's assign link frames.
+
+![[IRB1_002 Forward Kinematics 2025-04-30 21.25.38.excalidraw.svg]]
+>Assigning link frames.
+
+We need to establish our coordinate frames according to the D–H parameters.
+
+$$\begin{array}{c|ccc}
+i & \alpha _{i} & {a}_{i} & {d}_{i} & {\theta}_{i} \\
+\hline 1 & 90^{\circ}  & 0 & b & {\theta}_{1} \\
+2 & 0  & 0 & {d}_{2} & 0
+\end{array}$$
+
+We will compute each transformation matrix using the D–H parameters from the table.
+
+For each joint, the transformation matrix is:
+$$^{i-1}\mathbf{T}_i = \begin{pmatrix}
+\cos\theta_i & -\sin\theta_i\cos\alpha_i & \sin\theta_i\sin\alpha_i & a_i\cos\theta_i \\
+\sin\theta_i & \cos\theta_i\cos\alpha_i & -\cos\theta_i\sin\alpha_i & a_i\sin\theta_i \\
+0 & \sin(\alpha_i) & \cos\alpha_i & d_i \\
+0 & 0 & 0 & 1
+\end{pmatrix}$$
+
+Computing each individual transformation matrix:
+
+$$\begin{aligned}
+ & ^{0}\mathbf{T}_1 = \begin{pmatrix}
+\cos{\theta}_{1} & 0 & \sin{\theta}_{1} & b\cos{\theta}_{1} \\
+\sin{\theta}_{1} & 0 & -\cos{\theta}_{1} & b\sin{\theta}_{1} \\
+0 & 1 & 0 & b \\
+0 & 0 & 0 & 1
+\end{pmatrix} \\[1ex]
+ & ^{1}\mathbf{T}_{2}=\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & {d}_{2} \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\end{aligned}$$
+Therefore the last transformation:
+$$\begin{gather}
+^{0}\mathbf{T}_{2}  =\,^{0}{{\mathbf{T}_{1}}}^{2}\mathbf{T}_{2} \\[1ex]
+\boxed {
+ ^{0}\mathbf{T}_{2} = \begin{pmatrix}
+\cos{\theta}_{1} & 0 & \sin{\theta}_{1} & {d}_{2}+b\cos{\theta}_{1} \\
+\sin{\theta}_{1} & 0 & -\cos{\theta}_{1} & -{d}_{2}\cos{\theta}_{1}+b\sin{\theta}_{1} \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+ }
+\end{gather}$$
+
+## Question 2
+Compute the forward kinematics of the following manipulator:
+![[IRB1_002 Forward Kinematics 2025-04-30 22.16.55.excalidraw.svg]]
+>A manipulator with 2 revolute and 1 prismatic joints.
+
+**Solution**:
+First, we'll mark the $\hat{\mathbf{z}}$ axes.
+![[IRB1_002 Forward Kinematics 2025-05-01 09.06.52.excalidraw.svg]]
+>Marking $\hat{\mathbf{z}}$ axes along the joints' axes.
+
+Now we can complete the other frames, starting from the world frame:
+![[IRB1_002 Forward Kinematics 2025-05-01 09.10.36.excalidraw.svg]]
+>Assigning all the frames according to the convention.
+
+Now to plot all the parameters in a table:
+$$\begin{array}{c|cccc}
+i & \alpha _{i} & {a}_{i} & {d}_{i} & {\theta}_{i} \\
+\hline 1 & -90^{\circ}  & 0 & {L}_{1} & {\theta}_{1} \\
+2 & 90^{\circ}  & 0 & {d}_{2} & -90^{\circ}   \\
+3 & 0^{\circ}  & 0 & {L}_{3} & {\theta}_{3}
+\end{array}$$
+
+The forward kinematics will then be:
+$$\boxed {
+^{0}\mathbf{T}_{3}=\small\begin{pmatrix}
+-\sin{\theta}_{1}\sin{\theta}_{3} & -\sin{\theta}_{1}\cos{\theta}_{3} & -\cos{\theta}_{1} & -{L}_{3}\cos{\theta}_{1}-{d}_{2}\sin{\theta}_{1} \\
+\cos{\theta}_{1}\sin{\theta}_{3} & \cos{\theta}_{1}\cos{\theta}_{3} & -\sin{\theta}_{1} & -{L}_{3}\sin{\theta}_{1}  +{d}_{2}\cos{\theta}_{1} \\
+\cos{\theta}_{3} & -\sin{\theta}_{3} & 0 & {L}_{1} \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+ }$$
+
