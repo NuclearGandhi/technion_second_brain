@@ -16,6 +16,7 @@ Assistant: Daniel Goldberg
 
 # Homework
 - [[PSM1_HW001 Homework 1]]
+- [[PSM1_HW002 Homework 2]]
 # Exams
 
 # Bibliography

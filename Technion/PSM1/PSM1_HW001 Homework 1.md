@@ -1,5 +1,6 @@
 ---
 aliases:
+title: Homework 2
 ---
 
 
@@ -9,6 +10,7 @@ aliases:
 | **ID**        | 322869140                      |
 | **Email**     | ido.fang@campus.technion.ac.il |
 
+<div><hr><hr></div>
 
 ## Question 1
 The probability that a part produced in chamber $A$ is defective is $0.15$ and the probability that a part produced in chamber $B$ is defective is $0.05$. All parts are independent of each other. If we know that exactly two of the $16$ parts produced in one shift are defective, what is the probability that in a random sample of five parts selected from these $16$ parts, exactly two are defective?
