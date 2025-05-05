@@ -303,4 +303,75 @@ P(X < 7)  & = \sum_{x=0}^{6} b(x; 8000, 0.001) \\[1ex]
  }
 \end{aligned}$$
 
+# Exercises
+## Question 1
+A ship is shooting rockets at an enemy ship. The probability of success is $P(S)=0.7$.
 
+### Part a
+What is the probability that the first successful hit is on the fifth shot?
+
+**Solution**:
+This is a classic case of a [[#Geometric Distribution|geometric distribution]], where $k=5$:
+$$\begin{aligned}
+g(5;0.7) & =0.7\cdot 0.3^{5-1} \\[1ex]
+ & =\boxed {
+\pu {5.67e-3 }
+ }
+\end{aligned}$$
+
+### Part b
+How many rockets should we shoot so that the probability of a successful hit is at least $0.95$?
+
+**Solution**:
+We can use both a geometric distribution and a binomial distribution to solve this problem.
+
+Assuming the number of rockets shot is $x$, according to the [[#Geometric Distribution|geometric distribution]], the probability of getting a 
+$$g(x;0.7)=0.7\cdot 0.3^{x-1}$$
+We want to know when $g(x;0.7)\geq0.95$. Therefore:
+$$\begin{gathered}
+0.7\cdot 0.3^{x-1}\geq  0.95 \\[1ex]
+0.3^{x-1}\geq  \dfrac{0.95}{0.7} \\[1ex]
+x-1\geq 
+\end{gathered}$$
+>[!TODO] TODO: לסדר
+
+>[!TODO] TODO: Solve using binomial
+
+>[!TODO] TODO: verify
+### Part c
+Given the first $5$ shots were unsuccessful, what is the probability that the first hit will be on the $7$-th shot?
+
+**Solution**:
+Denoting $X$ as the number of shots it takes for getting a successful hit, we are trying to find $P(X=7|X>  5)$. Because geometric distributions are *memoryless*:
+$$P(X=7|X>5)=P(X=2|X>0)$$
+Which is like saying $P(X=2)$.
+Therefore, all we need to calculate is:
+$$\begin{aligned}
+P(X=2) & =g(2;0.7) \\[1ex]
+ & =0.7\cdot 0.3^{2-1} \\[1ex]
+ & =\boxed {
+0.21
+ }
+\end{aligned}$$
+
+## Question 2
+In a coffee shop there are $6$ cakes from yesterday and $10$ cakes from today. By $\text{10 a.m}$ the customers bought $5$ cakes.
+
+What is the probability that at most $2$ old cakes are left at $\text{10 a.m}$?
+
+**Solution**:
+Denoting:
+- $X$: number of old cakes left at $\text{10 a.m}$.
+- $N=16$: number of total cakes
+- $n=5$: number of cakes taken
+- $k=6$: number of old cakes before customers came
+
+Using a [[#Hypergeometric Distribution|hypergeometric distribution]]:
+$$\begin{aligned}
+P(X\leq  2) & =1-P(X\geq  4) \\[1ex]
+ & =1-P(X=4)-P(X=5) \\[1ex]
+ & =1-h(4;16,5,6)-P(5;16,5,6) \\[1ex]
+ & =0.0357
+\end{aligned}$$
+
+>[!TODO] TODO: Verify
