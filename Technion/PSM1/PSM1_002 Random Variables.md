@@ -114,7 +114,6 @@ Visualizing probability distributions is often helpful. Here are graphical repre
 ![[{006D722C-4C6B-49E5-B9BB-62C6653A4336}.png|bookhue|400]]
 >Discrete cumulative distribution function. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
 
->[!TODO] TODO: לעבור
 # Continuous Probability Distributions
 
 Unlike discrete random variables, a **continuous random variable** has a probability of $0$ of assuming exactly any of its values. Consequently, its probability distribution cannot be given in tabular form.

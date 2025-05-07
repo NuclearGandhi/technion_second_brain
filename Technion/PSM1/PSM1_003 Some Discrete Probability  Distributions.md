@@ -325,19 +325,36 @@ How many rockets should we shoot so that the probability of a successful hit is 
 **Solution**:
 We can use both a geometric distribution and a binomial distribution to solve this problem.
 
-Assuming the number of rockets shot is $x$, according to the [[#Geometric Distribution|geometric distribution]], the probability of getting a 
-$$g(x;0.7)=0.7\cdot 0.3^{x-1}$$
-We want to know when $g(x;0.7)\geq0.95$. Therefore:
+Assuming the number of rockets shot is $n$, according to the [[#Geometric Distribution|geometric distribution]], the probability of getting one successful hit after $n$ shots is $P(X=n)=g(n;0.7)=0.7\cdot 0.3^{n-1}$.
+Therefore, the probability of getting *at least* one successful hit after $n$ shots is:
+$$\begin{aligned}
+P(X\leq  n) & =\sum_{t\leq  n}^{}g(t;0.7)  \\[1ex]
+ & =\dots =1-(1-0.7)^{n} \\[1ex]
+ & =1-0.3^{n}
+\end{aligned}$$
+This is a specific case of the more general [[PSM1_002 Random Variables#Discrete Probability Distributions#Cumulative Distribution Function|CDF]] for geometric distributions:
+$$G(n;p)=1-(1-p)^{n}$$
+This formula works because $(1-p)^{n}$ is the probability of *failing every single trial* in the first $n$ trials. So, $1-(1-p)^{n}$ is the probability that we *succeed at least once* in the first $n$ trails.
+
+We want to know when $P(X\leq n)\geq0.95$. Therefore:
 $$\begin{gathered}
-0.7\cdot 0.3^{x-1}\geq  0.95 \\[1ex]
-0.3^{x-1}\geq  \dfrac{0.95}{0.7} \\[1ex]
-x-1\geq 
+1-0.3^{n}\geq  0.95 \\[1ex]
+0.3^{n}\leq  0.05 \\[1ex]
+n\gtrsim 2.49
 \end{gathered}$$
->[!TODO] TODO: לסדר
 
->[!TODO] TODO: Solve using binomial
+Therefore, the ship must take a minimum of $\boxed {n=3}$ shots.
 
->[!TODO] TODO: verify
+We can also solve the problem using a [[#Binomial Distribution|binomial distribution]]. Here, we model the total number of successes in $n$ independent trials. We want:
+$$\begin{gathered}
+P(\text{at least one success})\geq  0.95 \\[1ex]
+1-P(\text{0 successes})\geq  0.95 \\[1ex]
+P(\text{0 successes})\leq  0.05 \\[1ex]
+b(0;n,0.7)\leq  0.05 \\[1ex]
+\binom{n}{0}0.7^{0}\cdot 0.3^{n-0}\leq  0.05 \\[1ex]
+0.3^{n}\leq  0.05
+\end{gathered}$$
+We go the exact same inequality from before.
 ### Part c
 Given the first $5$ shots were unsuccessful, what is the probability that the first hit will be on the $7$-th shot?
 
@@ -361,17 +378,16 @@ What is the probability that at most $2$ old cakes are left at $\text{10 a.m}$?
 
 **Solution**:
 Denoting:
-- $X$: number of old cakes left at $\text{10 a.m}$.
+- $X$: number of old cakes bought.
 - $N=16$: number of total cakes
 - $n=5$: number of cakes taken
 - $k=6$: number of old cakes before customers came
 
-Using a [[#Hypergeometric Distribution|hypergeometric distribution]]:
+Using a [[#Hypergeometric Distribution|hypergeometric distribution]], we want to find:
 $$\begin{aligned}
-P(X\leq  2) & =1-P(X\geq  4) \\[1ex]
- & =1-P(X=4)-P(X=5) \\[1ex]
- & =1-h(4;16,5,6)-P(5;16,5,6) \\[1ex]
- & =0.0357
+P(X\geq    4) & =P(X=4)+P(X=5) \\[1ex]
+ & =h(4;16,5,6)+h(5;16,5,6) \\[1ex]
+ & =\boxed {
+0.0357
+ }
 \end{aligned}$$
-
->[!TODO] TODO: Verify
