@@ -26,5 +26,7 @@
   "rightToLeft": false,
   "newLinkFormat": "shortest",
   "mobilePullAction": "",
-  "focusNewTab": false
+  "focusNewTab": false,
+  "showLineNumber": false,
+  "smartIndentList": false
 }

@@ -14,6 +14,7 @@ aliases:
   - mean of random variable
   - probability function
   - joint probability distribution
+  - density function
 ---
 From [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]]:
 # Concept of a Random Variable
@@ -112,6 +113,153 @@ Visualizing probability distributions is often helpful. Here are graphical repre
 
 ![[{006D722C-4C6B-49E5-B9BB-62C6653A4336}.png|bookhue|400]]
 >Discrete cumulative distribution function. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+>[!TODO] TODO: לעבור
+# Continuous Probability Distributions
+
+Unlike discrete random variables, a **continuous random variable** has a probability of $0$ of assuming exactly any of its values. Consequently, its probability distribution cannot be given in tabular form.
+
+This might seem startling initially, but becomes more plausible when we consider a specific example. Consider a random variable representing the heights of all people over $21$ years of age. Between any two values, say $163.5$ and $164.5$ centimeters, or even $163.99$ and $164.01$ centimeters, there are an infinite number of heights, one of which is $164$ centimeters. The probability of selecting a person at random who is exactly $164$ centimeters tall (and not one of the infinitely large set of heights so close to $164$ centimeters that you cannot humanly measure the difference) is essentially zero.
+
+However, the probability of selecting a person who is at least $163$ centimeters but not more than $165$ centimeters tall is meaningful. Here we're dealing with an interval rather than a point value of our random variable.
+
+For continuous random variables, we compute probabilities for intervals such as $P(a < X < b)$, $P(W \geq c)$, and so forth. Note that when $X$ is continuous:
+
+$$P(a < X \leq b) = P(a < X < b) + P(X = b) = P(a < X < b)$$
+
+That is, it doesn't matter whether we include an endpoint of the interval or not, since $P(X = b) = 0$. This is not true for discrete random variables.
+
+## Probability Density Function
+
+Although the probability distribution of a continuous random variable cannot be presented in tabular form, it can be stated as a formula. Such a formula is a function of the numerical values of the continuous random variable $X$ and is represented by the functional notation $f(x)$.
+
+>[!def] Definition: 
+>For continuous variables, $f(x)$ is called the **probability density function**, or simply the **density function**, of $X$.
+
+Since $X$ is defined over a continuous sample space, $f(x)$ may have a finite number of discontinuities. However, most density functions used in statistical analysis are continuous, and their graphs may take various forms, as shown in the figure below:
+
+![[{9CB84A33-4688-4B53-9E53-4AAF4B59C3B6}.png|bookhue]]
+>Typical density functions. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+Because areas represent probabilities (which are positive), the density function must lie entirely above the $x$-axis.
+
+A probability density function is constructed so that the area under its curve bounded by the $x$-axis equals $1$ when computed over the range of $X$ for which $f(x)$ is defined. If this range is a finite interval, we can extend it to include all real numbers by defining $f(x)$ to be zero outside the original interval.
+
+The probability that $X$ assumes a value between $a$ and $b$ equals the area under the density function between $x = a$ and $x = b$, given by:
+
+$$P(a < X < b) = \int_a^b f(x)\,dx$$
+![[{3D33DDE1-D88E-4330-B5C8-BC3C4708DCD4}.png|bookhue|500]]
+>$P(a<X<b)$.  [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+
+>[!def] Definition: 
+>The function $f(x)$ is a **probability density function** (pdf) for the continuous random variable $X$, defined over the set of real numbers, if:
+>1. $f(x) \geq 0$, for all $x \in \mathbb{R}$.
+>2. $\int_{-\infty}^{\infty} f(x)\,dx = 1$.
+>3. $P(a < X < b) = \int_a^b f(x)\,dx$.
+
+>[!example] Example: Temperature Error
+>Suppose that the error in the reaction temperature, in $^{\circ}\pu{C}$, for a controlled laboratory experiment is a continuous random variable $X$ having the probability density function:
+>$$f(x) = \begin{cases}
+>\frac{x^2}{3}, & -1 < x < 2, \\
+>0, & \text{elsewhere}.
+>\end{cases}$$
+>
+>1. Verify that $f(x)$ is a density function.
+>2. Find $P(0 < X \leq 1)$.
+>
+>**Solution**:
+> 
+> 1. Obviously, $f(x) \geq 0$. To verify condition 2, we have:
+> 	$$\begin{aligned}
+> 	\int_{-\infty}^{\infty} f(x)\,dx &= \int_{-1}^{2} \frac{x^2}{3}\,dx \\[1ex]
+> 	&= \left.\frac{x^3}{9}\right|_{-1}^{2} \\[1ex]
+> 	&= \frac{8}{9} + \frac{1}{9} = 1
+> 	\end{aligned}$$
+> 
+> 2. Using formula 3, we obtain:
+> 	$$\begin{aligned}
+> 	P(0 < X \leq 1) &= \int_{0}^{1} \frac{x^2}{3}\,dx \\[1ex]
+> 	&= \left.\frac{x^3}{9}\right|_{0}^{1} \\[1ex]
+> 	&= \boxed {
+\frac{1}{9}
+ }
+> 	\end{aligned}$$
+
+## Cumulative Distribution Function
+
+Similarly to discrete random variables, we can define a cumulative distribution function for continuous random variables.
+
+>[!def] Definition: 
+>The **cumulative distribution function** $F(x)$ of a continuous random variable $X$ with density function $f(x)$ is:
+>$$F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t)\,dt, \quad -\infty < x < \infty$$
+
+As a consequence of this definition, we can write:
+$$P(a < X < b) = F(b) - F(a)$$
+
+and if the derivative exists:
+$$f(x) = \frac{dF(x)}{dx}$$
+
+>[!example] Example: Using the CDF
+>For the density function of the previous example, find $F(x)$, and use it to evaluate $P(0 < X \leq 1)$.
+>
+>**Solution**:
+>
+>For $-1 < x < 2$,
+>$$\begin{aligned}
+>F(x) &= \int_{-\infty}^{x} f(t)\,dt \\
+>&= \int_{-1}^{x} \frac{t^2}{3}\,dt \\
+>&= \left.\frac{t^3}{9}\right|_{-1}^{x} \\
+>&= \frac{x^3 + 1}{9}
+>\end{aligned}$$
+>
+>Therefore:
+>$$F(x) = \begin{cases}
+>0, & x < -1, \\
+>\frac{x^3 + 1}{9}, & -1 \leq x < 2, \\
+>1, & x \geq 2.
+>\end{cases}$$
+>![[{4343A3BF-1EFF-4131-891B-A8D059635EA7}.png|bookhue|400]]
+>Now we can find:
+>$$\begin{aligned}
+>P(0 < X \leq 1) &= F(1) - F(0) \\
+>&= \frac{2}{9} - \frac{1}{9} \\
+>&= \frac{1}{9}
+>\end{aligned}$$
+>
+>This agrees with our result using the density function directly.
+
+>[!example] Example: Bidding Process
+>The Department of Energy (DOE) puts projects out on bid and generally estimates what a reasonable bid should be. Call the estimate $b$. The DOE has determined that the density function of the winning (low) bid is:
+>$$f(y) = \begin{cases}
+>\frac{5}{8b}, & \frac{2}{5}b \leq y \leq 2b, \\
+>0, & \text{elsewhere}.
+>\end{cases}$$
+>
+>Find $F(y)$ and use it to determine the probability that the winning bid is less than the DOE's preliminary estimate $b$.
+>
+>**Solution**:
+>
+>For $\frac{2}{5}b \leq y \leq 2b$,
+>$$\begin{aligned}
+>F(y) &= \int_{\frac{2b}{5}}^{y} \frac{5}{8b}\,dy \\
+>&= \left.\frac{5t}{8b}\right|_{\frac{2b}{5}}^{y} \\
+>&= \frac{5y}{8b} - \frac{1}{4}
+>\end{aligned}$$
+>
+>Thus:
+>$$F(y) = \begin{cases}
+>0, & y < \frac{2}{5}b, \\
+>\frac{5y}{8b} - \frac{1}{4}, & \frac{2}{5}b \leq y < 2b, \\
+>1, & y \geq 2b.
+>\end{cases}$$
+>
+>To find the probability that the winning bid is less than the preliminary bid estimate $b$:
+>$$\begin{aligned}
+>P(Y \leq b) &= F(b) \\
+>&= \frac{5}{8} - \frac{1}{4} \\
+>&= \frac{3}{8}
+>\end{aligned}$$
 
 # Mean of a Random Variable
 

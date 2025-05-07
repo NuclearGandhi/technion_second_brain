@@ -12,7 +12,8 @@ Assistant: Daniel Goldberg
 
 - [[PSM1_001 Introduction and Probability]]
 - [[PSM1_002 Random Variables]]
-- [[PSM1_003 Probability  Distributions]]
+- [[PSM1_003 Some Discrete Probability  Distributions]]
+- [[PSM1_004 Some Continuous Probability Distributions]]
 
 # Homework
 - [[PSM1_HW001 Homework 1]]
