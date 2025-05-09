@@ -6,8 +6,27 @@ clc;
 % Please VERIFY/UPDATE these constants for your specific experiment
 Vin = 2.5;       % Strain gauge bridge input voltage [V]
 GF = 2.12;       % Gauge Factor of the strain gauge
-A_mm2 = 12.5*5;      % Cross-sectional area of the specimen [mm^2]
-A_m2 = A_mm2 * 1e-6; % Cross-sectional area [m^2]
+
+% Specimen cross-sectional dimensions and their errors [mm]
+width_spec_mm = 12.5;
+depth_spec_mm = 5.0;
+delta_width_spec_mm = 0.1; % Error in width
+delta_depth_spec_mm = 0.1; % Error in depth
+
+A_mm2 = width_spec_mm * depth_spec_mm; % Nominal cross-sectional area of the specimen [mm^2]
+A_m2 = A_mm2 * 1e-6; % Nominal cross-sectional area [m^2]
+
+% Calculate error in cross-sectional area
+delta_A_mm2_val = A_mm2 * sqrt((delta_width_spec_mm / width_spec_mm)^2 + (delta_depth_spec_mm / depth_spec_mm)^2);
+delta_A_m2_abs = delta_A_mm2_val * 1e-6; % Absolute error in area [m^2]
+if A_m2 ~= 0
+    rel_err_A = delta_A_m2_abs / A_m2; % Relative error in area
+else
+    rel_err_A = NaN;
+    fprintf('Warning: Nominal area A_m2 is zero, cannot calculate relative area error reliably.\\n');
+end
+fprintf('Nominal cross-sectional area: %.2f mm^2 (%.2e m^2)\\n', A_mm2, A_m2);
+fprintf('Absolute error in area: +/- %.2e m^2 (Relative error: %.2f%%)\\n', delta_A_m2_abs, rel_err_A*100);
 
 % Strain gauge data file (ensure this file is in the MATLAB path or provide full path)
 strain_gauge_file = 'dogbone.txt';
@@ -196,6 +215,8 @@ if N_elastic < 2
     E_gauge = NaN; sE_gauge = NaN; F_fit_gauge = [];
     E_dic = NaN; sE_dic = NaN; F_fit_dic = [];
     sigma_y_gauge_offset = NaN; % Yield strength cannot be calculated
+    sE_gauge_from_polyfit = NaN; % Ensure defined even if fit skipped
+    sE_dic_from_polyfit = NaN;   % Ensure defined even if fit skipped
 else
     fprintf('Using N_elastic = %d points (indices %d to %d of F_common) for elastic modulus calculation.\n', N_elastic, elastic_indices(1), elastic_indices(end));
 end
@@ -222,9 +243,18 @@ if N_elastic >=2
     xbar_g_stress = mean(strain_g_elastic);
     Sxx_g_stress = sum((strain_g_elastic - xbar_g_stress).^2);
     s_slope_gauge_stress = sqrt(sigma2_gauge_stress / Sxx_g_stress);
-    sE_gauge = s_slope_gauge_stress; % Standard error of E_gauge
+    sE_gauge_from_polyfit = s_slope_gauge_stress; % Standard error of E_gauge from polyfit
+
+    % Combine polyfit error with area error for total E_gauge error
+    if ~isnan(E_gauge) && E_gauge ~= 0 && ~isnan(sE_gauge_from_polyfit) && ~isnan(rel_err_A)
+        sE_gauge = abs(E_gauge) * sqrt( (sE_gauge_from_polyfit / E_gauge)^2 + rel_err_A^2 );
+    else
+        sE_gauge = sE_gauge_from_polyfit; % Fallback to only polyfit error
+    end
 else
-    p_gauge_stress = [NaN NaN]; stress_fit_gauge = []; E_gauge = NaN; sE_gauge = NaN;
+    p_gauge_stress = [NaN NaN]; stress_fit_gauge = []; E_gauge = NaN; 
+    sE_gauge_from_polyfit = NaN; % Error from polyfit
+    sE_gauge = NaN; % Total error
 end
 
 % --- Linear regression: gauge (Force vs Strain) for Fig 1 plot slope AND Fig 2 offset line slope ---
@@ -249,9 +279,18 @@ if N_elastic >= 2
     xbar_d_stress = mean(strain_d_elastic);
     Sxx_d_stress = sum((strain_d_elastic - xbar_d_stress).^2);
     s_slope_dic_stress = sqrt(sigma2_dic_stress / Sxx_d_stress);
-    sE_dic = s_slope_dic_stress; % Standard error of E_dic
+    sE_dic_from_polyfit = s_slope_dic_stress; % Standard error of E_dic from polyfit
+
+    % Combine polyfit error with area error for total E_dic error
+    if ~isnan(E_dic) && E_dic ~= 0 && ~isnan(sE_dic_from_polyfit) && ~isnan(rel_err_A)
+        sE_dic = abs(E_dic) * sqrt( (sE_dic_from_polyfit / E_dic)^2 + rel_err_A^2 );
+    else
+        sE_dic = sE_dic_from_polyfit; % Fallback to only polyfit error
+    end
 else
-    p_dic_stress = [NaN NaN]; stress_fit_dic = []; E_dic = NaN; sE_dic = NaN;
+    p_dic_stress = [NaN NaN]; stress_fit_dic = []; E_dic = NaN; 
+    sE_dic_from_polyfit = NaN; % Error from polyfit
+    sE_dic = NaN; % Total error
 end
 
 % --- Linear regression: DIC (Force vs Strain) for Fig 1 plot slope ---
@@ -267,6 +306,7 @@ end
 % --- 0.2% Offset Yield Strength Calculation (from average STRESS-STRAIN gauge data) ---
 sigma_y_gauge_offset = NaN;
 epsilon_offset_line_stress_calc = [];
+s_sigma_y_gauge_offset = NaN; % Initialize error for yield strength
 
 if N_elastic >= 2 && ~isnan(E_gauge)
     offset_strain = 0.002;
@@ -316,6 +356,16 @@ if N_elastic >= 2 && ~isnan(E_gauge)
             sigma_y_gauge_offset = E_gauge * (intersect_strain - offset_strain);
             
             fprintf(1, '0.2%% Offset Yield Strength (Gauge): %.2f MPa\n', sigma_y_gauge_offset / 1e6);
+
+            % Calculate error for sigma_y_gauge_offset
+            if ~isnan(sigma_y_gauge_offset) && sigma_y_gauge_offset ~= 0 && ...
+               ~isnan(E_gauge) && E_gauge ~= 0 && ...
+               exist('sE_gauge_from_polyfit', 'var') && ~isnan(sE_gauge_from_polyfit) && ~isnan(rel_err_A)
+                s_sigma_y_gauge_offset = abs(sigma_y_gauge_offset) * sqrt( (sE_gauge_from_polyfit / E_gauge)^2 + rel_err_A^2 );
+                fprintf(1, '  Estimated error in Yield Strength (Gauge): +/- %.2f MPa\n', s_sigma_y_gauge_offset / 1e6);
+            else
+                fprintf(1, '  Could not calculate error for Yield Strength (Gauge).\n');
+            end
         else
             fprintf(1, 'Warning: 0.2%% offset line does not intersect the stress-strain curve (gauge data).\n');
         end
@@ -414,101 +464,114 @@ fprintf(1, 'Test output for Modulus Section\n');
 fprintf(1, 'Avg Strain Gauge (SG2 & SG3): %.3f GPa ± %.3f GPa\n', E_gauge/1e9, sE_gauge/1e9);
 fprintf(1, 'DIC (avg Eyy): %.3f GPa ± %.3f GPa\n', E_dic/1e9, sE_dic/1e9);
 if ~isnan(sigma_y_gauge_offset)
-    fprintf(1, '0.2%% Offset Yield Strength (Gauge): %.2f MPa\n', sigma_y_gauge_offset/1e6);
+    if ~isnan(s_sigma_y_gauge_offset)
+        fprintf(1, '0.2%% Offset Yield Strength (Gauge): %.2f MPa ± %.2f MPa\n', sigma_y_gauge_offset/1e6, s_sigma_y_gauge_offset/1e6);
+    else
+        fprintf(1, '0.2%% Offset Yield Strength (Gauge): %.2f MPa (error not calculated)\n', sigma_y_gauge_offset/1e6);
+    end
 end
 
 %% --- Student t-test on E_gauge and E_dic ---
-if N_elastic > 2 && ~isnan(sE_gauge) && ~isnan(sE_dic)
-    alpha = 0.05; % Significance level (e.g., 0.05 for 95% confidence)
-    % Degrees of freedom for pooled variance (conservative: use N_elastic-2 from one sample,
-    % or for two independent samples with individual fits, it's more complex.
-    % Here, we're comparing two slopes, each fit with N_elastic points.
-    % The t-statistic for comparing two regression coefficients is:
-    % t = (b1 - b2) / sqrt(SE(b1)^2 + SE(b2)^2)
-    % Degrees of freedom: (N1 - 2) + (N2 - 2) = 2 * (N_elastic - 2) if slopes are from different datasets.
-    % Or, if comparing to a known value, df = N-2.
-    % For comparing two slopes, use the SE of the difference.
-    % A common approach is to use a conservative df, e.g., min(N1-2, N2-2).
-    % Since N1=N2=N_elastic, df = N_elastic-2.
+% Replaced t-test with eta calculation as per user request
+fprintf(1, '\\n--- Comparison between E_gauge and E_dic (using eta) ---\\n');
+if N_elastic > 1 && ~isnan(E_gauge) && ~isnan(sE_gauge) && ~isnan(E_dic) && ~isnan(sE_dic)
+    % eta = |K1 - K2| / sqrt((deltaK1)^2 + (deltaK2)^2)
+    % Here K1 = E_gauge, K2 = E_dic
+    % deltaK1 = sE_gauge, deltaK2 = sE_dic
     
-    df_ttest = N_elastic - 2; % Using conservative df for t-critical value lookup
-    if df_ttest <= 0
-        fprintf('Not enough degrees of freedom for t-test.\n');
-    else
-        t_crit = tinv(1 - alpha/2, df_ttest);
-        
-        diff_E = abs(E_gauge - E_dic);
-        SE_diff = sqrt(sE_gauge^2 + sE_dic^2); % Standard error of the difference
-        
-        if SE_diff == 0
-             fprintf(1, 'Cannot perform t-test: Standard error of difference is zero.\n');
+    numerator_eta_E = abs(E_gauge - E_dic);
+    denominator_eta_E_sq = sE_gauge^2 + sE_dic^2;
+    
+    if denominator_eta_E_sq > 0
+        eta_E_gauge_vs_E_dic = numerator_eta_E / sqrt(denominator_eta_E_sq);
+        fprintf(1, 'Eta (E_gauge vs E_dic) = %.3f\\n', eta_E_gauge_vs_E_dic);
+        if eta_E_gauge_vs_E_dic <= 1
+            fprintf(1, '  Values are consistent within 1-sigma combined uncertainty.\\n');
+        elseif eta_E_gauge_vs_E_dic <= 2
+            fprintf(1, '  Values are consistent within 2-sigma combined uncertainty.\\n');
+        elseif eta_E_gauge_vs_E_dic <= 3
+            fprintf(1, '  Values are consistent within 3-sigma combined uncertainty.\\n');
         else
-            t_stat = diff_E / SE_diff;
-            confidence_level_percent = (1-alpha)*100;
-            
-            fprintf(1, '\n--- Student t-test Comparison (alpha=%.2f) ---\n', alpha);
-            fprintf(1, 'Degrees of Freedom (df) = %d\n', df_ttest);
-            fprintf(1, 't-statistic = %.3f, t-critical (%.1f%% two-tailed) = %.3f\n', t_stat, confidence_level_percent, t_crit);
-            if t_stat > t_crit
-                % fprintf(1, 'The difference in Young\'\'s moduli IS statistically significant at the %.0f%% confidence level.\n', confidence_level_percent);
-                fprintf(1, 't-test: Difference IS significant (%.0f%%)\n', confidence_level_percent); % Simplified test line
-            else
-                % fprintf(1, 'The difference in Young\'\'s moduli is NOT statistically significant at the %.0f%% confidence level.\n', confidence_level_percent);
-                fprintf(1, 't-test: Difference IS NOT significant (%.0f%%)\n', confidence_level_percent); % Simplified test line that was erroring
-            end
+            fprintf(1, '  Discrepancy is larger than 3-sigma combined uncertainty.\\n');
         end
+    else
+        fprintf(1, 'Cannot calculate eta: Combined uncertainty squared is not positive.\\n');
     end
 else
-    fprintf(1, '\n--- Student t-test Comparison ---\n');
-    fprintf(1, 'Skipping t-test due to insufficient data or undefined errors.\n');
+    fprintf(1, 'Skipping eta calculation for E_gauge vs E_dic due to insufficient data or undefined errors.\\n');
 end
 
 %% --- Student t-test against Literature Values ---
+% Replaced t-test with eta calculation as per user request
 % USER ACTION: Define literature values
 E_literature_Pa = 69e9; % Placeholder - e.g., 70e9 for Aluminum
 sigma_y_literature_Pa = 267e6; % Placeholder - e.g., 250e6 for some Aluminum alloys
 
-fprintf(1, '\n--- t-test against Literature Values (if defined) ---\n');
+% Define errors for literature values as per user input
+delta_E_literature_Pa = 1873.2e6; % Uncertainty for E_literature (1873.2 MPa in Pa)
+delta_sigma_y_literature_Pa = 0.05 * sigma_y_literature_Pa; % 5% error for sigma_y_literature
 
-% t-test for E_gauge vs E_literature
+fprintf(1, '\\n--- Comparison against Literature Values (using eta) ---\\n');
+fprintf(1, 'Literature E: %.2f GPa +/- %.2f GPa\\n', E_literature_Pa/1e9, delta_E_literature_Pa/1e9);
+fprintf(1, 'Literature sigma_y: %.2f MPa +/- %.2f MPa\\n', sigma_y_literature_Pa/1e6, delta_sigma_y_literature_Pa/1e6);
+
+% Comparison for E_gauge vs E_literature
 if ~isnan(E_literature_Pa) && ~isnan(E_gauge) && ~isnan(sE_gauge) && N_elastic >=2
-    t_stat_E_gauge_lit = (E_gauge - E_literature_Pa) / sE_gauge; % sE_gauge is std error of E_gauge
-    df_E_lit = N_elastic - 2; % Degrees of freedom from the regression fit of E_gauge
-    p_val_E_gauge_lit = 2 * tcdf(-abs(t_stat_E_gauge_lit), df_E_lit); % two-tailed p-value
-    fprintf(1, 'Comparison of E_gauge (%.2f GPa) with Literature E (%.2f GPa):\n', E_gauge/1e9, E_literature_Pa/1e9);
-    fprintf(1, '  t-statistic = %.3f, df = %d, p-value = %.4f\n', t_stat_E_gauge_lit, df_E_lit, p_val_E_gauge_lit);
-    if p_val_E_gauge_lit < alpha % alpha defined earlier for t-test (e.g. 0.05)
-        fprintf(1, '  Difference IS statistically significant at alpha = %.2f\n', alpha);
+    numerator_eta_E_gauge_lit = abs(E_gauge - E_literature_Pa);
+    denominator_eta_E_gauge_lit_sq = sE_gauge^2 + delta_E_literature_Pa^2;
+    if denominator_eta_E_gauge_lit_sq > 0
+        eta_E_gauge_lit = numerator_eta_E_gauge_lit / sqrt(denominator_eta_E_gauge_lit_sq);
+        fprintf(1, 'Comparison of E_gauge (%.2f +/- %.2f GPa) with Literature E:\\n', E_gauge/1e9, sE_gauge/1e9);
+        fprintf(1, '  Eta = %.3f\\n', eta_E_gauge_lit);
+        if eta_E_gauge_lit <= 1, fprintf(1, '    Values are consistent within 1-sigma combined uncertainty.\\n');
+        elseif eta_E_gauge_lit <= 2, fprintf(1, '    Values are consistent within 2-sigma combined uncertainty.\\n');
+        elseif eta_E_gauge_lit <= 3, fprintf(1, '    Values are consistent within 3-sigma combined uncertainty.\\n');
+        else fprintf(1, '    Discrepancy is larger than 3-sigma combined uncertainty.\\n'); end
     else
-        fprintf(1, '  Difference IS NOT statistically significant at alpha = %.2f\n', alpha);
+        fprintf(1, 'Cannot calculate eta for E_gauge vs Literature E: Combined uncertainty squared is not positive.\\n');
     end
 else
-    fprintf(1, 'Skipping t-test for E_gauge vs Literature E (missing data or E_literature_Pa not set).\n');
+    fprintf(1, 'Skipping eta calculation for E_gauge vs Literature E (missing data or E_literature_Pa not set).\\n');
 end
 
-% t-test for E_dic vs E_literature
+% Comparison for E_dic vs E_literature
 if ~isnan(E_literature_Pa) && ~isnan(E_dic) && ~isnan(sE_dic) && N_elastic >=2
-    t_stat_E_dic_lit = (E_dic - E_literature_Pa) / sE_dic; % sE_dic is std error of E_dic
-    df_E_lit_dic = N_elastic - 2; % Degrees of freedom from the regression fit of E_dic
-    p_val_E_dic_lit = 2 * tcdf(-abs(t_stat_E_dic_lit), df_E_lit_dic); % two-tailed p-value
-    fprintf(1, 'Comparison of E_dic (%.2f GPa) with Literature E (%.2f GPa):\n', E_dic/1e9, E_literature_Pa/1e9);
-    fprintf(1, '  t-statistic = %.3f, df = %d, p-value = %.4f\n', t_stat_E_dic_lit, df_E_lit_dic, p_val_E_dic_lit);
-    if p_val_E_dic_lit < alpha
-        fprintf(1, '  Difference IS statistically significant at alpha = %.2f\n', alpha);
+    numerator_eta_E_dic_lit = abs(E_dic - E_literature_Pa);
+    denominator_eta_E_dic_lit_sq = sE_dic^2 + delta_E_literature_Pa^2;
+    if denominator_eta_E_dic_lit_sq > 0
+        eta_E_dic_lit = numerator_eta_E_dic_lit / sqrt(denominator_eta_E_dic_lit_sq);
+        fprintf(1, 'Comparison of E_dic (%.2f +/- %.2f GPa) with Literature E:\\n', E_dic/1e9, sE_dic/1e9);
+        fprintf(1, '  Eta = %.3f\\n', eta_E_dic_lit);
+        if eta_E_dic_lit <= 1, fprintf(1, '    Values are consistent within 1-sigma combined uncertainty.\\n');
+        elseif eta_E_dic_lit <= 2, fprintf(1, '    Values are consistent within 2-sigma combined uncertainty.\\n');
+        elseif eta_E_dic_lit <= 3, fprintf(1, '    Values are consistent within 3-sigma combined uncertainty.\\n');
+        else fprintf(1, '    Discrepancy is larger than 3-sigma combined uncertainty.\\n'); end
     else
-        fprintf(1, '  Difference IS NOT statistically significant at alpha = %.2f\n', alpha);
+        fprintf(1, 'Cannot calculate eta for E_dic vs Literature E: Combined uncertainty squared is not positive.\\n');
     end
 else
-    fprintf(1, 'Skipping t-test for E_dic vs Literature E (missing data or E_literature_Pa not set).\n');
+    fprintf(1, 'Skipping eta calculation for E_dic vs Literature E (missing data or E_literature_Pa not set).\\n');
 end
 
-% Note: t-test for yield strength vs literature is more complex to set up without std error for sigma_y_gauge_offset
-% For now, we will just report the calculated yield strength.
-if ~isnan(sigma_y_literature_Pa) && ~isnan(sigma_y_gauge_offset)
-    fprintf(1, 'Calculated 0.2%% Offset Yield Strength (Gauge): %.2f MPa\n', sigma_y_gauge_offset/1e6);
-    fprintf(1, 'Literature Yield Strength: %.2f MPa\n', sigma_y_literature_Pa/1e6);
+% Comparison for sigma_y_gauge_offset vs sigma_y_literature
+if ~isnan(sigma_y_literature_Pa) && ~isnan(sigma_y_gauge_offset) && exist('s_sigma_y_gauge_offset', 'var') && ~isnan(s_sigma_y_gauge_offset) && N_elastic >=2
+    numerator_eta_sigma_y_lit = abs(sigma_y_gauge_offset - sigma_y_literature_Pa);
+    denominator_eta_sigma_y_lit_sq = s_sigma_y_gauge_offset^2 + delta_sigma_y_literature_Pa^2;
+    
+    if denominator_eta_sigma_y_lit_sq > 0
+        eta_sigma_y_lit = numerator_eta_sigma_y_lit / sqrt(denominator_eta_sigma_y_lit_sq);
+        fprintf(1, 'Comparison of Sigma_y_gauge (%.2f +/- %.2f MPa) with Literature Sigma_y (%.2f +/- %.2f MPa):\\n', ...
+            sigma_y_gauge_offset/1e6, s_sigma_y_gauge_offset/1e6, sigma_y_literature_Pa/1e6, delta_sigma_y_literature_Pa/1e6);
+        fprintf(1, '  Eta = %.3f\\n', eta_sigma_y_lit);
+        if eta_sigma_y_lit <= 1, fprintf(1, '    Values are consistent within 1-sigma combined uncertainty.\\n');
+        elseif eta_sigma_y_lit <= 2, fprintf(1, '    Values are consistent within 2-sigma combined uncertainty.\\n');
+        elseif eta_sigma_y_lit <= 3, fprintf(1, '    Values are consistent within 3-sigma combined uncertainty.\\n');
+        else fprintf(1, '    Discrepancy is larger than 3-sigma combined uncertainty.\\n'); end
+    else
+        fprintf(1, 'Cannot calculate eta for Sigma_y_gauge vs Literature Sigma_y: Combined uncertainty squared is not positive.\\n');
+    end
 else
-     fprintf(1, 'Literature Yield Strength (sigma_y_literature_Pa) not set, skipping direct comparison printout.\n');
+     fprintf(1, 'Skipping eta calculation for Sigma_y_gauge vs Literature Sigma_y (missing data, errors, or N_elastic too small).\\n');
 end
 
 
