@@ -65,27 +65,22 @@ With the origin defined, the remaining axes of the frame follow naturally:
 
 The figure above shows the resulting frames $\{i\}$ and $\{i-1\}$.
 
-With the frames defined, we now introduce four parameters that fully describe the transformation $^{i-1}{T}_{i}$:
+With the frames defined, we now introduce four parameters that fully describe the transformation $^{i-1}{\mathbf{T}}_{i}$:
 
-- **Link length** $a_{i-1}$:
-  The length of the perpendicular line between axes $\hat{\mathbf{z}}_{i-1}$ and $\hat{\mathbf{z}}_i$.  
-  >[!notes] Note: 
+- **Link length** $a_{i-1}$: The length of the perpendicular line between axes $\hat{\mathbf{z}}_{i-1}$ and $\hat{\mathbf{z}}_i$.  
+	>[!notes] Note: 
 	 >Despite the name, this does *not* necessarily represent the actual physical length of the link.
 
-- **Link twist** $\alpha_{i-1}$:  
-  The angle between $\hat{\mathbf{z}}_{i-1}$ and $\hat{\mathbf{z}}_i$, measured about $\hat{\mathbf{x}}_{i-1}$.
+ - **Link twist** $\alpha_{i}$: The angle between $\hat{\mathbf{z}}_{i-1}$ and $\hat{\mathbf{z}}_i$, measured about $\hat{\mathbf{x}}_{i}$.
+ - **Link offset** $d_i$: The distance from $\hat{\mathbf{x}}_{i-1}$ to $\hat{\mathbf{x}}_{i}$ along $\hat{\mathbf{z}}_{i-1}$
+ - **Joint angle** $\theta_i$: The angle from $\hat{\mathbf{x}}_{i-1}$ to $\hat{\mathbf{x}}_i$, measured around the $\hat{\mathbf{z}}_{i-1}$-axis.
 
-- **Link offset** $d_i$:  
-  The distance from the intersection of $\hat{\mathbf{x}}_{i-1}$ and $\hat{\mathbf{z}}_i$ to the origin of frame $i$, measured along $\hat{\mathbf{z}}_i$, with the positive direction defined to be along the $\hat{\mathbf{z}}_{i}$-axis.
-
-- **Joint angle** $\phi_i$:  
-  The angle from $\hat{\mathbf{x}}_{i-1}$ to $\hat{\mathbf{x}}_i$, measured around the $\hat{\mathbf{z}}_i$-axis.
 
 These four parameters are known collectively as the **Denavit–Hartenberg parameters**. For an open-chain robotic arm with $n$ one-degree-of-freedom joints, a total of $4n$ D–H parameters fully define the **forward kinematics**.
 
 If all joints are revolute:
-- The parameters $a_{i-1}$, $\alpha_{i-1}$, and $d_i$ are constants.
-- The joint angle $\phi_i$ serves as the **joint variable**.
+- The parameters $a_{i}$, $\alpha_{i}$, and $d_i$ are constants.
+- The joint angle ${\theta}_{i}$ serves as the **joint variable**.
 
 We will now address:
 - Cases where the perpendicular line is undefined or not unique.
@@ -94,9 +89,9 @@ We will now address:
 
 ## When Adjacent Revolute Joint Axes Intersect
 
-If two consecutive revolute joint axes intersect, then no single line exists that is perpendicular to both axes. In such situations, we assign the link length $a_{i-1} = 0$, and define the $\hat{\mathbf{x}}_{i-1}$ axis as being perpendicular to the plane formed by $\hat{\mathbf{z}}_{i-1}$ and $\hat{\mathbf{z}}_i$.
+If two consecutive revolute joint axes intersect, then no single line exists that is perpendicular to both axes. In such situations, we assign the link length $a_{i} = 0$, and define the $\hat{\mathbf{x}}_{i-1}$ axis as being perpendicular to the plane formed by $\hat{\mathbf{z}}_{i-1}$ and $\hat{\mathbf{z}}_i$.
 
-This setup yields two valid options: one that results in a positive link twist angle $\alpha_{i-1}$ and another that gives a negative value. Both are acceptable; the choice depends on consistency and convention.
+This setup yields two valid options: one that results in a positive link twist angle $\alpha_{i}$ and another that gives a negative value. Both are acceptable; the choice depends on consistency and convention.
 
 ## When Adjacent Revolute Joint Axes Are Parallel
 
@@ -110,7 +105,7 @@ For prismatic joints, the $\hat{\mathbf{z}}$-axis of the link frame is aligned w
 
 Under this convention:
 - The **link offset** $d_i$ becomes the joint variable.
-- The **joint angle** $\phi_i$ is fixed.
+- The **joint angle** ${\theta}_{i}$ is fixed.
 
 The method for setting the origin and determining the $\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$ axes remains unchanged from the revolute joint case. See the following figure for illustration:
 
@@ -123,48 +118,40 @@ So far, we've discussed how to assign link frames, but not how to define the gro
 
 Typically:
 - The **ground frame** is placed to coincide with frame $\{1\}$ when the system is in its zero (home) configuration.
-- For a **revolute joint**, this leads to $a_0 = \alpha_0 = d_1 = 0$.
-- For a **prismatic joint**, we get $a_0 = \alpha_0 = \phi_1 = 0$.
+- For a **revolute joint**, this leads to $a_1 = \alpha_1 = d_1 = 0$.
+- For a **prismatic joint**, we get $a_1 = \alpha_1 = \theta_1 = 0$.
 - The **end-effector frame** is positioned at a convenient reference point on the tool or device, chosen for clarity in task description and simplification of D–H parameters (ideally making them zero where possible).
 
 Keep in mind, though, that not all arbitrary frame choices will work—there may be no valid set of D–H parameters that describe the transformation if the initial or final frames are chosen inconsistently. This point will be addressed in further detail.
 
->[!example] Example: 
-> Consider the $\mathrm{3R}$ spatial open chain in the following figure:
-> ![[{918BE63D-FF6A-43A6-9BD5-4E74F97D2475}.png|bookhue|600]]
-> >A $\mathrm{3R}$ spatial open chain. [[IRB1_000 00350001 מבוא לרובוטיקה#ביבליוגרפיה|(Lynch & Park, 2017)]].
-> 
-> The assigned link reference frames are shown in the figure, and the corresponding D–H parameters are listed in the following table:
-> $$\begin{array}{c|ccc}
-> i & \alpha _{i-1} & {a}_{i-1} & {d}_{i} & {\phi}_{i} \\
-> \hline 1 & 0 & 0 & 0 & {\theta}_{1} \\
-> 2 & 90^{\circ}  & {L}_{1} & 0 & {\theta}_{2}-90^{\circ}  \\
-> 3 & -90^{\circ}  & {L}_{2} & 0 & {\theta}_{3}
-> \end{array}$$
-> 
-> Note that frames $\{ 1 \}$ and $\{ 2 \}$ are uniquely specified from our frame assignment convention, but that we have some latitude in choosing frames $\{ 0 \}$ and $\{ 3 \}$. Here we choose the ground frame $\{ 3 \}$ to be such that $\hat{\mathbf{x}}_{3}=\hat{\mathbf{x}}_{2}$ (resulting in no offset to the joint angle ${\theta}_{3}$).
-> 
-> 
-> 
+# Manipulator Forward Kinematics
+Once all the transformations $^{i-1}\mathbf{T}_{i}$, between adjacent link frames are known in terms of their D–H parameters, the forward kinematics is obtained by sequentially multiplying these link transformations. Each link frame transformation is of the form
+$$\boxed {
+\begin{aligned}
+^{i-1}\mathbf{T}_{i} & =\mathrm{Rot}(\hat{\mathbf{x}},\alpha _{i})\mathrm{Trans}(\hat{\mathbf{x}},{a}_{i})\mathrm{Trans}(\hat{\mathbf{z}},{d}_{i})\mathrm{Rot}(\hat{\mathbf{z}},{\theta}_{i}) \\[2ex]
+ & =\begin{pmatrix}
+\cos\theta_i & -\sin\theta_i\cos\alpha_i & \sin\theta_i\sin\alpha_i & a_i\cos\theta_i \\
+\sin\theta_i & \cos\theta_i\cos\alpha_i & -\cos\theta_i\sin\alpha_i & a_i\sin\theta_i \\
+0 & \sin(\alpha_i) & \cos\alpha_i & d_i \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\end{aligned}
+ }$$
 
 # Exercises
 
 >[!notes] Note: 
- >Small difference between the course notations and book's notation:
- >In the book the D–H table may be written as:
- >$$\begin{array}{c|ccc}
-> i & \alpha _{i-1} & {a}_{i-1} & {d}_{i} & {\phi}_{i} \\
-> \hline 1 & 0 & 0 & 0 & {\theta}_{1} \\
-> 2 & 90^{\circ}  & {L}_{1} & 0 & {\theta}_{2}-90^{\circ}  \\
-> 3 & -90^{\circ}  & {L}_{2} & 0 & {\theta}_{3}
-> \end{array}$$
-> In the course, we write:
-> $$\begin{array}{c|ccc}
-> i & \alpha _{i} & {a}_{i} & {d}_{i} & {\theta}_{i} \\
-> \hline 1 & 0 & 0 & 0 & {\theta}_{1} \\
-> 2 & 90^{\circ}  & {L}_{1} & 0 & {\theta}_{2}-90^{\circ}  \\
-> 3 & -90^{\circ}  & {L}_{2} & 0 & {\theta}_{3}
-> \end{array}$$
+>We prefer using the shorthand
+> $$\begin{aligned}
+>  & {C}_{i}:=\cos{\theta}_{i} &  & {S}_{j}:=\sin{\theta}_{i} \\[1ex]
+>  & {C}_{ij}:=\cos({\theta}_{i}+{\theta}_{j}) &  & {S}_{ij}:=\sin({\theta}_{i}+{\theta}_{j})
+> \end{aligned}$$
+> which means, using [[BMA1_009 זהויות טריגונומטריות#חיבור וחיסור זוויות|trigonometric identities]],
+> $$\begin{aligned}
+>  & {C}_{1}{C}_{2}-{S}_{1}{S}_{2}={C}_{12} \\[1ex]
+>  & {S}_{1}{C}_{2}+{C}_{1}{S}_{2}={S}_{12}
+> \end{aligned}$$
+> 
 
 ## Question 1
 Given the robot shown in the figure below:
