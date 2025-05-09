@@ -787,100 +787,117 @@ else
     %     fprintf(1, 'Note: Example frames found for Fig 2 highlight, but avg gauge data was not plotted or handle_avg_gauge_data_fig2 is missing.\n');
     % end
 
-    xlabel('Strain, $\epsilon$','Interpreter','latex');
+    xlabel('Strain, $\varepsilon$','Interpreter','latex');
     ylabel('Force (N)','Interpreter','latex');
     title('Force vs. Strain (Full Experiment Range with Yield Point)','Interpreter','latex');
-    legend('Location', 'best', 'Interpreter', 'latex');
+    legend('Location', 'northwest', 'Interpreter', 'latex');
     set(gca, 'FontSize', 14);
     ylim([0 22000]); % Cap Y-axis as requested
 
     % --- Create Inset Plot for Force Zoom (14kN-20kN) ---
     try
         ax_main_fig2 = gca; % Get handle to main axes of Figure 2
-        inset_pos_fig2 = [0.25, 0.55, 0.35, 0.3]; % [left, bottom, width, height]
+        inset_pos_fig2 = [0.58, 0.20, 0.35, 0.3]; % Bottom-right, slightly higher
         ax_inset_fig2 = axes(fig2_handle, 'Position', inset_pos_fig2);
+        % set(ax_inset_fig2, 'Color', 'cyan'); % Removed cyan background
+        fprintf(1, 'DEBUG: Inset axes created at position [%.2f %.2f %.2f %.2f].\n', inset_pos_fig2);
         hold(ax_inset_fig2, 'on');
         grid(ax_inset_fig2, 'on');
         box(ax_inset_fig2, 'on');
 
         force_zoom_min = 14000;
         force_zoom_max = 20000;
-        all_strains_inset_fig2 = []; % To collect strains for dynamic X-axis
+        all_strains_inset_fig2 = []; 
+        any_data_plotted_in_inset = false;
 
-        % 1. Strain Gauge 3 (Far)
+        % --- Logic to determine tight X-limits for the inset --- 
+        relevant_strains_for_xlim_calc = [];
         if exist('sg3_plot_s2', 'var') && exist('F_plot_s2', 'var') && ~isempty(sg3_plot_s2)
-            idx_sg3_inset = (F_plot_s2 >= force_zoom_min & F_plot_s2 <= force_zoom_max);
-            if any(idx_sg3_inset)
-                plot(ax_inset_fig2, sg3_plot_s2(idx_sg3_inset), F_plot_s2(idx_sg3_inset), '-o', 'Color', 'b', 'MarkerSize', 3, 'LineWidth', 1);
-                all_strains_inset_fig2 = [all_strains_inset_fig2; sg3_plot_s2(idx_sg3_inset)];
-            end
+            idx = (F_plot_s2 >= force_zoom_min & F_plot_s2 <= force_zoom_max);
+            if any(idx), relevant_strains_for_xlim_calc = [relevant_strains_for_xlim_calc; sg3_plot_s2(idx)]; end
         end
-
-        % 2. DIC Far from Failure (Avg)
         if exist('dic_far_plot_s2', 'var') && exist('F_plot_s2', 'var') && ~isempty(dic_far_plot_s2)
-            idx_dic_far_inset = (F_plot_s2 >= force_zoom_min & F_plot_s2 <= force_zoom_max);
-            if any(idx_dic_far_inset)
-                plot(ax_inset_fig2, dic_far_plot_s2(idx_dic_far_inset), F_plot_s2(idx_dic_far_inset), '-s', 'Color', 'r', 'MarkerSize', 3, 'LineWidth', 1);
-                all_strains_inset_fig2 = [all_strains_inset_fig2; dic_far_plot_s2(idx_dic_far_inset)];
-            end
+            idx = (F_plot_s2 >= force_zoom_min & F_plot_s2 <= force_zoom_max);
+            if any(idx), relevant_strains_for_xlim_calc = [relevant_strains_for_xlim_calc; dic_far_plot_s2(idx)]; end
         end
-
-        % 3. DIC Near Failure (Avg)
         if exist('dic_near_plot_s2', 'var') && exist('F_plot_s2', 'var') && ~isempty(dic_near_plot_s2)
-            idx_dic_near_inset = (F_plot_s2 >= force_zoom_min & F_plot_s2 <= force_zoom_max);
-            if any(idx_dic_near_inset)
-                plot(ax_inset_fig2, dic_near_plot_s2(idx_dic_near_inset), F_plot_s2(idx_dic_near_inset), '-d', 'Color', 'k', 'MarkerSize', 3, 'LineWidth', 1);
-                all_strains_inset_fig2 = [all_strains_inset_fig2; dic_near_plot_s2(idx_dic_near_inset)];
-            end
+            idx = (F_plot_s2 >= force_zoom_min & F_plot_s2 <= force_zoom_max);
+            if any(idx), relevant_strains_for_xlim_calc = [relevant_strains_for_xlim_calc; dic_near_plot_s2(idx)]; end
         end
-
-        % 4. 0.2% Offset Line (SG3 Elastic Slope)
         if exist('epsilon_offset_line_sg3_fig2', 'var') && exist('force_offset_line_sg3_fig2', 'var') && ~isempty(epsilon_offset_line_sg3_fig2)
-            idx_offset_inset = (force_offset_line_sg3_fig2 >= force_zoom_min & force_offset_line_sg3_fig2 <= force_zoom_max);
-            if any(idx_offset_inset)
-                % No DisplayName needed for inset plots usually, but if we add one, ensure % is escaped
-                plot(ax_inset_fig2, epsilon_offset_line_sg3_fig2(idx_offset_inset), force_offset_line_sg3_fig2(idx_offset_inset), 'g--', 'LineWidth', 1);
-                all_strains_inset_fig2 = [all_strains_inset_fig2; epsilon_offset_line_sg3_fig2(idx_offset_inset).']; % Ensure column vector
-            end
+            idx = (force_offset_line_sg3_fig2 >= force_zoom_min & force_offset_line_sg3_fig2 <= force_zoom_max);
+            if any(idx), relevant_strains_for_xlim_calc = [relevant_strains_for_xlim_calc; epsilon_offset_line_sg3_fig2(idx).']; end
         end
-
-        % 5. Yield Point (SG3)
-        if exist('F_yield_sg3_fig2', 'var') && exist('intersect_strain_sg3_fig2', 'var') && ~isnan(F_yield_sg3_fig2) && ~isnan(intersect_strain_sg3_fig2)
+        if exist('F_yield_sg3_fig2', 'var') && exist('intersect_strain_sg3_fig2', 'var') && ~isnan(F_yield_sg3_fig2)
             if (F_yield_sg3_fig2 >= force_zoom_min && F_yield_sg3_fig2 <= force_zoom_max)
-                plot(ax_inset_fig2, intersect_strain_sg3_fig2, F_yield_sg3_fig2, 'gx', 'MarkerSize', 8, 'LineWidth', 1.5);
-                all_strains_inset_fig2 = [all_strains_inset_fig2; intersect_strain_sg3_fig2];
+                relevant_strains_for_xlim_calc = [relevant_strains_for_xlim_calc; intersect_strain_sg3_fig2];
             end
+        end
+        if exist('highlight_points_strain_dic_near_fig2', 'var') && exist('highlight_points_force_dic_near_fig2', 'var') && ~isempty(highlight_points_strain_dic_near_fig2)
+            idx = (highlight_points_force_dic_near_fig2 >= force_zoom_min & highlight_points_force_dic_near_fig2 <= force_zoom_max);
+            if any(idx), relevant_strains_for_xlim_calc = [relevant_strains_for_xlim_calc; highlight_points_strain_dic_near_fig2(idx)]; end
+        end
+        % --- End X-limit data collection ---
+
+        % 1. Strain Gauge 3 (Far) - Plot full series
+        if exist('sg3_plot_s2', 'var') && exist('F_plot_s2', 'var') && ~isempty(sg3_plot_s2)
+            plot(ax_inset_fig2, sg3_plot_s2, F_plot_s2, '-o', 'Color', 'b', 'MarkerSize', 3, 'LineWidth', 1);
+            any_data_plotted_in_inset = true; % Assume if var exists, it's plotted
+            fprintf(1, 'DEBUG: Plotted FULL SG3 data in inset.\n');
         end
 
-        % 6. Example Frames (on DIC Near Failure)
-        if exist('highlight_points_strain_dic_near_fig2', 'var') && exist('highlight_points_force_dic_near_fig2', 'var') && ~isempty(highlight_points_strain_dic_near_fig2)
-            idx_example_inset = (highlight_points_force_dic_near_fig2 >= force_zoom_min & highlight_points_force_dic_near_fig2 <= force_zoom_max);
-            if any(idx_example_inset)
-                plot(ax_inset_fig2, highlight_points_strain_dic_near_fig2(idx_example_inset), highlight_points_force_dic_near_fig2(idx_example_inset), 'mp', 'MarkerFaceColor', 'm', 'MarkerSize', 8);
-                all_strains_inset_fig2 = [all_strains_inset_fig2; highlight_points_strain_dic_near_fig2(idx_example_inset)];
-            end
+        % 2. DIC Far from Failure (Avg) - Plot full series
+        if exist('dic_far_plot_s2', 'var') && exist('F_plot_s2', 'var') && ~isempty(dic_far_plot_s2)
+            plot(ax_inset_fig2, dic_far_plot_s2, F_plot_s2, '-s', 'Color', 'r', 'MarkerSize', 3, 'LineWidth', 1);
+            any_data_plotted_in_inset = true;
+            fprintf(1, 'DEBUG: Plotted FULL DIC Far data in inset.\n');
         end
+
+        % 3. DIC Near Failure (Avg) - Plot full series
+        if exist('dic_near_plot_s2', 'var') && exist('F_plot_s2', 'var') && ~isempty(dic_near_plot_s2)
+            plot(ax_inset_fig2, dic_near_plot_s2, F_plot_s2, '-d', 'Color', 'k', 'MarkerSize', 3, 'LineWidth', 1);
+            any_data_plotted_in_inset = true;
+            fprintf(1, 'DEBUG: Plotted FULL DIC Near data in inset.\n');
+        end
+
+        % 4. 0.2% Offset Line (SG3 Elastic Slope) - Plot full series
+        if exist('epsilon_offset_line_sg3_fig2', 'var') && exist('force_offset_line_sg3_fig2', 'var') && ~isempty(epsilon_offset_line_sg3_fig2)
+            plot(ax_inset_fig2, epsilon_offset_line_sg3_fig2, force_offset_line_sg3_fig2, 'g--', 'LineWidth', 1);
+            any_data_plotted_in_inset = true;
+            fprintf(1, 'DEBUG: Plotted FULL Offset Line in inset.\n');
+        end
+
+        % 5. Yield Point (SG3) - Plot if exists
+        if exist('F_yield_sg3_fig2', 'var') && exist('intersect_strain_sg3_fig2', 'var') && ~isnan(F_yield_sg3_fig2) && ~isnan(intersect_strain_sg3_fig2)
+            plot(ax_inset_fig2, intersect_strain_sg3_fig2, F_yield_sg3_fig2, 'gx', 'MarkerSize', 8, 'LineWidth', 1.5);
+            any_data_plotted_in_inset = true; % If it exists and is plotted
+            fprintf(1, 'DEBUG: Plotted Yield Point in inset (if it exists).\n');
+        end
+
+        % 6. Example Frames (on DIC Near Failure) - Plot if exists
+        if exist('highlight_points_strain_dic_near_fig2', 'var') && exist('highlight_points_force_dic_near_fig2', 'var') && ~isempty(highlight_points_strain_dic_near_fig2)
+             plot(ax_inset_fig2, highlight_points_strain_dic_near_fig2, highlight_points_force_dic_near_fig2, 'mp', 'MarkerFaceColor', 'm', 'MarkerSize', 8);
+             any_data_plotted_in_inset = true;
+             fprintf(1, 'DEBUG: Plotted Example Frames in inset (if they exist).\n');
+        end
+        
+        fprintf(1, 'DEBUG: any_data_plotted_in_inset flag is: %d\n', any_data_plotted_in_inset);
+        fprintf(1, 'DEBUG: relevant_strains_for_xlim_calc is empty: %d\n', isempty(relevant_strains_for_xlim_calc));
 
         % Set Inset Limits
         ylim(ax_inset_fig2, [force_zoom_min force_zoom_max]);
-        if ~isempty(all_strains_inset_fig2)
-            min_strain_inset = min(all_strains_inset_fig2(isfinite(all_strains_inset_fig2)));
-            max_strain_inset = max(all_strains_inset_fig2(isfinite(all_strains_inset_fig2)));
-            if ~isempty(min_strain_inset) && ~isempty(max_strain_inset) && (min_strain_inset < max_strain_inset)
-                padding_strain_inset = (max_strain_inset - min_strain_inset) * 0.05;
-                xlim(ax_inset_fig2, [min_strain_inset - padding_strain_inset, max_strain_inset + padding_strain_inset]);
-            elseif ~isempty(min_strain_inset) % Only one point or all same strain
-                 xlim(ax_inset_fig2, [min_strain_inset - 0.001, min_strain_inset + 0.001]); % Default small range
-            end
-        end
+        xlim(ax_inset_fig2, [0, 0.03]); % User-defined xlim for inset
+        fprintf(1, 'DEBUG: Set inset xlim to [0, 0.03] as requested.\n');
 
         xlabel(ax_inset_fig2, 'Strain, $\varepsilon$','Interpreter','latex');
         ylabel(ax_inset_fig2, 'Force (N)');
         title(ax_inset_fig2, 'Zoom: 14kN - 20kN');
         set(ax_inset_fig2, 'FontSize', 10);
 
+        uistack(ax_inset_fig2, 'top'); % Bring inset to the top
         hold(ax_inset_fig2, 'off');
-        axes(ax_main_fig2); % Switch back to main axes
+        drawnow; % Force graphics update
+        % axes(ax_main_fig2); % Switch back to main axes - COMMENTED OUT
 
     catch ME_inset_fig2
         fprintf(1, 'Warning: Could not create inset plot for Figure 2. Error: %s\n', ME_inset_fig2.message);
@@ -892,16 +909,17 @@ else
 
     hold off;
 
-    % Save the second figure
-    try
-        fig2_handle = gcf; 
-        fig2_handle.Position = [100, 100, 1000, 800]; 
-        fig2_filename = 'figure2_full_range_comparison.png';
-        print(fig2_handle, fig2_filename, '-dpng', '-r300'); 
-        fprintf(1, 'Saved second figure as: %s\n', fullfile(pwd, fig2_filename));
-    catch ME_fig2
-        fprintf(1, 'Warning: Could not save Figure 2. Error: %s\n', ME_fig2.message);
-    end
+    % % Save the second figure
+    % try
+    %     % fig2_handle should already be defined
+    %     fig2_handle.Position = [100, 100, 1000, 800]; 
+    %     fig2_filename = 'figure2_full_range_comparison.png';
+    %     pause(0.5); % Short pause to allow graphics to fully render before saving
+    %     print(fig2_handle, fig2_filename, '-dpng', '-r300'); 
+    %     fprintf(1, 'Saved second figure as: %s\n', fullfile(pwd, fig2_filename));
+    % catch ME_fig2
+    %     fprintf(1, 'Warning: Could not save Figure 2. Error: %s\n', ME_fig2.message);
+    % end
 end
 
 % %% --- Figure 3: Zoomed Low Strain Region --- (REMOVING ENTIRE SECTION)
