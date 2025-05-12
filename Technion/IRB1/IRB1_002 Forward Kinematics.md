@@ -137,19 +137,18 @@ $$\boxed {
 \end{pmatrix}
 \end{aligned}
  }$$
-
 # Exercises
 
 >[!notes] Note: 
 >We prefer using the shorthand
 > $$\begin{aligned}
->  & {C}_{i}:=\cos{\theta}_{i} &  & {S}_{j}:=\sin{\theta}_{i} \\[1ex]
->  & {C}_{ij}:=\cos({\theta}_{i}+{\theta}_{j}) &  & {S}_{ij}:=\sin({\theta}_{i}+{\theta}_{j})
+>  & {c}_{i}:=\cos{\theta}_{i} &  & {s}_{j}:=\sin{\theta}_{i} \\[1ex]
+>  & {c}_{ij}:=\cos({\theta}_{i}+{\theta}_{j}) &  & {s}_{ij}:=\sin({\theta}_{i}+{\theta}_{j})
 > \end{aligned}$$
 > which means, using [[BMA1_009 זהויות טריגונומטריות#חיבור וחיסור זוויות|trigonometric identities]],
 > $$\begin{aligned}
->  & {C}_{1}{C}_{2}-{S}_{1}{S}_{2}={C}_{12} \\[1ex]
->  & {S}_{1}{C}_{2}+{C}_{1}{S}_{2}={S}_{12}
+>  & {c}_{1}{c}_{2}-{s}_{1}{s}_{2}={c}_{12} \\[1ex]
+>  & {s}_{1}{c}_{2}+{c}_{1}{s}_{2}={s}_{12}
 > \end{aligned}$$
 > 
 

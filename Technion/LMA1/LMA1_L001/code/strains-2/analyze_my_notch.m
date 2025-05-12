@@ -4,7 +4,7 @@ clc;
 
 %% --- User-defined Parameters ---
 % Path to the DIC data .mat file
-dic_data_file = 'C:\Users\Ido\Documents\lab-data\advanced-lab\strains-2\notch\dic_data.mat';
+dic_data_file = 'C:\\Users\\Ido\\Documents\\lab-data\\advanced-lab\\strains-2\\notch\\dic_data.mat';
 % Path to the text file containing force data
 force_data_file = 'notch.txt'; % Assuming it's in the same directory or MATLAB path
 
@@ -64,7 +64,8 @@ if frame_idx < 1 || frame_idx > num_frames
 end
 fprintf('Analyzing frame: %d\n', frame_idx);
 
-%% --- Load Force Data (from notch.txt) ---
+%% --- Load Force Data ---
+% --- Load force data from text file ---
 load_at_frame_N = NaN; % Default to NaN
 try
     fprintf('Loading force data from: %s\n', force_data_file);
@@ -73,7 +74,7 @@ try
         % Assuming tab delimited and Load is the 4th column
         if length(opts_force.VariableNames) >= 4
             opts_force.SelectedVariableNames = opts_force.VariableNames{4}; % Select 4th column by name if possible
-        else 
+        else
             opts_force.SelectedVariableNames = 4; % Fallback to index if names are not as expected
         end
         opts_force.DataLines = [2, Inf]; % Skip header line
@@ -95,7 +96,7 @@ catch ME_force
     fprintf('Warning: Could not load or process force data from "%s". Error: %s\n', force_data_file, ME_force.message);
 end
 
-%% --- Extract Strain Data and ROI ---
+%% --- Extract Strain Map and Profile ---
 % Check if the selected strain component exists for the chosen frame
 if ~isfield(data_dic_struct.strains(frame_idx), strain_component_to_plot)
     error('Strain component "%s" not found for frame %d. Check available fields in data_dic_struct.strains(%d).', strain_component_to_plot, frame_idx, frame_idx);
@@ -115,11 +116,11 @@ end
 % Extract the 1D strain profile along the specified y-coordinate
 strain_profile_1D_raw = strain_map_2D(y_profile_pixel, :);
 
-% Attempt to get and apply ROI mask
+%% --- Apply ROI Mask ---
 roi_mask_1D = [];
 if isfield(data_dic_struct.strains(frame_idx), 'roi_ref_formatted') && ...
-   isprop(data_dic_struct.strains(frame_idx).roi_ref_formatted, 'mask') && ...
-   ~isempty(data_dic_struct.strains(frame_idx).roi_ref_formatted.mask)
+        isprop(data_dic_struct.strains(frame_idx).roi_ref_formatted, 'mask') && ...
+        ~isempty(data_dic_struct.strains(frame_idx).roi_ref_formatted.mask)
 
     roi_map_2D = data_dic_struct.strains(frame_idx).roi_ref_formatted.mask;
     if size(roi_map_2D, 1) == size(strain_map_2D, 1) && size(roi_map_2D, 2) == size(strain_map_2D, 2)
@@ -136,7 +137,7 @@ else
     strain_profile_1D_masked = strain_profile_1D_raw;
 end
 
-%% --- Prepare X-coordinates for Plotting ---
+%% --- Prepare X-coordinates ---
 % Attempt to use physical coordinates if available
 x_coords = 1:length(strain_profile_1D_masked); % Default to pixel indices
 x_label_text = 'X-coordinate (pixels)';
@@ -147,11 +148,11 @@ if isfield(data_dic_struct.strains(frame_idx), 'plot_x_ref_formatted')
         x_coords_profile = x_map_2D(y_profile_pixel, :);
         % Check if these physical coordinates are uniform enough or if they also need masking
         if ~isempty(roi_mask_1D)
-             x_coords = x_coords_profile(roi_mask_1D); % Use only X-coords within ROI for plotting against masked strain
-             strain_values_to_plot = strain_profile_1D_masked(roi_mask_1D);
+            x_coords = x_coords_profile(roi_mask_1D); % Use only X-coords within ROI for plotting against masked strain
+            strain_values_to_plot = strain_profile_1D_masked(roi_mask_1D);
         else
-             x_coords = x_coords_profile;
-             strain_values_to_plot = strain_profile_1D_masked;
+            x_coords = x_coords_profile;
+            strain_values_to_plot = strain_profile_1D_masked;
         end
         x_label_text = 'X-coordinate (physical units, e.g., mm)';
         fprintf('Using physical X-coordinates for the plot.\n');
@@ -179,10 +180,10 @@ if isempty(x_coords) || isempty(strain_values_to_plot)
     return;
 end
 
-%% --- Plot Strain Profile ---
+%% --- Plot Strain Profile (Figure 1) ---
 figure;
 
-% Determine LaTeX string for the strain component
+% --- Determine plot labels ---
 strain_label_latex = '';
 switch strain_component_to_plot
     case 'plot_exx_ref_formatted'
@@ -199,19 +200,20 @@ switch strain_component_to_plot
         strain_label_latex = strrep(strain_component_to_plot, '_ref_formatted', ''); % Fallback
 end
 
+% --- Generate plot ---
 plot(x_coords, strain_values_to_plot, '-o', 'LineWidth', 1.5, 'MarkerSize', 4);
 grid on;
 box on;
 
-% Add legend
+% --- Configure Plot Details ---
 legend('DIC measurements', 'Location', 'best', 'Interpreter', 'none');
 
 if ~isnan(load_at_frame_N)
     title_str = sprintf('Strain Profile (%s) along Y = %d pixels (Load: %.1f N)', ...
-                        strain_label_latex, y_profile_pixel, load_at_frame_N);
+        strain_label_latex, y_profile_pixel, load_at_frame_N);
 else
     title_str = sprintf('Strain Profile (%s) along Y = %d pixels (Load N/A for frame %d)', ...
-                        strain_label_latex, y_profile_pixel, frame_idx);
+        strain_label_latex, y_profile_pixel, frame_idx);
 end
 title(title_str, 'Interpreter', 'latex');
 
@@ -222,17 +224,17 @@ ylabel(ylabel_str, 'Interpreter', 'latex');
 
 set(gca, 'FontSize', 12);
 
-%% --- Export Figure ---
+% --- Export Figure 1 ---
 try
     fig_handle = gcf; % Get current figure handle
     fig_handle.Position = [100, 100, 600, 400]; % [left, bottom, width, height] in pixels
-    
+
     % Define filename based on parameters
     filename_str = sprintf('notch_profile_y%d_frame%d_%s.png', ...
-                           y_profile_pixel, ...
-                           frame_idx, ...
-                           strrep(strain_component_to_plot, '_ref_formatted', ''));
-    
+        y_profile_pixel, ...
+        frame_idx, ...
+        strrep(strain_component_to_plot, '_ref_formatted', ''));
+
     print(fig_handle, filename_str, '-dpng', '-r300'); % Save as PNG with 300 DPI
     fprintf('Saved figure as: %s\n', fullfile(pwd, filename_str));
 catch ME_export
@@ -241,7 +243,8 @@ end
 
 fprintf('Plot generated. Check the figure window.\n');
 
-%% --- Figure 2: Theoretical Stress Plot ---
+%% --- Plot Theoretical Stress (Figure 2) ---
+% --- Define Parameters and Calculate ---
 KI = 3; % Stress Intensity Factor
 
 % Define r_values for the theoretical plot (e.g., from a small positive number to 10)
@@ -257,6 +260,7 @@ else
     sigma_yy_theoretical = KI ./ sqrt(2 * pi * r_values);
 
     figure; % New figure for theoretical stress
+% --- Configure Plot Details ---
     plot(r_values, sigma_yy_theoretical, 'r-', 'LineWidth', 1.5);
     grid on;
     box on;
@@ -269,7 +273,7 @@ else
     legend(sprintf('$\\sigma_{yy} = K_I / \\sqrt{2\\pi r}$'), 'Location', 'best', 'Interpreter', 'latex');
     set(gca, 'FontSize', 12);
 
-    % --- Export Theoretical Stress Figure ---
+    % --- Export Figure 2 ---
     try
         fig2_handle = gcf;
         fig2_handle.Position = [150, 150, 600, 400]; % Slightly offset from first figure position
@@ -281,14 +285,16 @@ else
     end
 end
 
-%% --- Figure 3: Plot of log10(Eyy) vs log10(r) ---
+%% --- Log-Log Analysis: ln(Eyy) vs ln(r) (Figures 3 & 4) ---
+% --- Check Prerequisites ---
 if strcmp(strain_component_to_plot, 'plot_eyy_ref_formatted')
     fprintf('\n--- Generating Figure 3: Plot of log10(Eyy) vs log10(r) ---\n');
+% --- Prepare Data for Log Plot ---
     if exist('strain_values_to_plot', 'var') && exist('x_coords', 'var') && ...
-       ~isempty(strain_values_to_plot) && ~isempty(x_coords) && ...
-       length(strain_values_to_plot) == length(x_coords)
+            ~isempty(strain_values_to_plot) && ~isempty(x_coords) && ...
+            length(strain_values_to_plot) == length(x_coords)
 
-        % --- Shift r data (x_coords) so its minimum is 0 for this plot --- 
+        % --- Shift r data (x_coords) so its minimum is 0 for this plot ---
         min_r_original = 0;
         r_shifted = x_coords; % Default if x_coords is empty or all non-positive
         if ~isempty(x_coords)
@@ -302,24 +308,25 @@ if strcmp(strain_component_to_plot, 'plot_eyy_ref_formatted')
                 fprintf('DEBUG: For Figure 3, original r (x_coords) min positive value used for shift: %.4g. Data shifted for ln(r) plot.\n', min_r_original);
             end
         else
-             fprintf('Warning: x_coords is empty, cannot perform shift effectively for Figure 3.\n');
+            fprintf('Warning: x_coords is empty, cannot perform shift effectively for Figure 3.\n');
         end
-        
+
         % Filter for positive values for log plot (r_shifted > 0 and eyy > 0)
         valid_log_indices = (r_shifted > 0) & (strain_values_to_plot > 0);
-        r_input_for_ln = r_shifted(valid_log_indices); 
+        r_input_for_ln = r_shifted(valid_log_indices);
         eyy_input_for_ln = strain_values_to_plot(valid_log_indices);
 
         if isempty(r_input_for_ln) || isempty(eyy_input_for_ln)
             fprintf('Warning: No valid positive data points (r_shifted > 0 and eyy > 0) for ln-ln plot. Skipping Figure 3.\n');
         else
+% --- Plot Full Log-Log Data (Figure 3) ---
             % Perform linear fit on natural log-transformed data
-            ln_r_values = log(r_input_for_ln); 
-            ln_eyy_values = log(eyy_input_for_ln); 
+            ln_r_values = log(r_input_for_ln);
+            ln_eyy_values = log(eyy_input_for_ln);
 
             % Remove any potential NaNs or Infs
             valid_fit_indices = ~isinf(ln_r_values) & ~isinf(ln_eyy_values) & ...
-                                ~isnan(ln_r_values) & ~isnan(ln_eyy_values);
+                ~isnan(ln_r_values) & ~isnan(ln_eyy_values);
             ln_r_clean = ln_r_values(valid_fit_indices);
             ln_eyy_clean = ln_eyy_values(valid_fit_indices);
 
@@ -332,18 +339,18 @@ if strcmp(strain_component_to_plot, 'plot_eyy_ref_formatted')
                 title_str_fig3 = '$\ln(\varepsilon_{yy})$ vs. $\ln(r)$';
                 title(title_str_fig3, 'Interpreter', 'latex');
 
-                xlabel_str_fig3 = sprintf('$\ln(r)$ ($r \approx %.3g$, $r$: %s)', min_r_original, x_label_text);
+                xlabel_str_fig3 = ['$\ln(r)$'];
                 xlabel(xlabel_str_fig3, 'Interpreter', 'latex');
                 ylabel('$\ln(\varepsilon_{yy})$', 'Interpreter', 'latex');
                 legend('Location', 'best', 'Interpreter', 'latex');
                 set(gca, 'FontSize', 12);
-                
+
                 fprintf('Figure 3 (ln(Eyy) vs ln(r)) plotted showing all valid data points.\n');
 
                 % --- Export Figure 3 ---
                 try
                     fig3_handle = gcf;
-                    fig3_handle.Position = [200, 200, 600, 400]; 
+                    fig3_handle.Position = [200, 200, 600, 400];
                     fig3_filename = 'notch_ln_eyy_vs_ln_r_all_data.png'; % Updated filename
                     print(fig3_handle, fig3_filename, '-dpng', '-r300');
                     fprintf('Saved Figure 3 as: %s\n', fullfile(pwd, fig3_filename));
@@ -351,11 +358,11 @@ if strcmp(strain_component_to_plot, 'plot_eyy_ref_formatted')
                     fprintf('Warning: Could not save Figure 3. Error: %s\n', ME_export_fig3.message);
                 end
 
-                % --- Figure 4: Fit on data where ln(r-rmin) > 2.5 ---
+                % --- Fit Subset and Plot (Figure 4) ---
                 fprintf('\n--- Preparing for Figure 4: Fit for ln(r-rmin) > 2.5 ---\n');
                 filter_threshold_ln_r = 2.5;
                 idx_fig4_fit = (ln_r_clean > filter_threshold_ln_r);
-                
+
                 ln_r_fig4_subset = ln_r_clean(idx_fig4_fit);
                 ln_eyy_fig4_subset = ln_eyy_clean(idx_fig4_fit);
                 num_points_fig4_fit = length(ln_r_fig4_subset);
@@ -364,7 +371,7 @@ if strcmp(strain_component_to_plot, 'plot_eyy_ref_formatted')
                     fprintf('Found %d data points where ln(r-rmin) > %.2f for Figure 4 fit.\n', num_points_fig4_fit, filter_threshold_ln_r);
                     figure; % New Figure 4
                     plot(ln_r_fig4_subset, ln_eyy_fig4_subset, 'gs', 'MarkerSize', 6, ...
-                         'DisplayName', sprintf('Exp. Data ($\ln(r) > %.1f$)', filter_threshold_ln_r));
+                        'DisplayName', ['Exp. Data ($\ln(r) > ',num2str(filter_threshold_ln_r), '$)']);
                     hold on;
                     grid on;
                     box on;
@@ -376,16 +383,17 @@ if strcmp(strain_component_to_plot, 'plot_eyy_ref_formatted')
                     ln_eyy_fit_line_fig4 = polyval(p_fig4_fit, ln_r_fit_line_fig4);
 
                     plot(ln_r_fit_line_fig4, ln_eyy_fit_line_fig4, 'r--', 'LineWidth', 1.5, ...
-                           'DisplayName', sprintf('Linear Fit (Slope = %.3f)', slope_fig4));
+                        'DisplayName', sprintf('Linear Fit (Slope = %.3f)', slope_fig4));
                     hold off;
 
-                    title_str_fig4 = sprintf('$\ln(\varepsilon_{yy})$ vs. $\ln(r)$ for $\ln(r) > %.1f$ & Fit', filter_threshold_ln_r);
+                    title_str_fig4 = '$\ln(\varepsilon_{yy})$ vs. $\ln(r)$';
                     title(title_str_fig4, 'Interpreter', 'latex');
                     xlabel(xlabel_str_fig3, 'Interpreter', 'latex'); % Re-use x-label from Fig 3
                     ylabel('$\ln(\varepsilon_{yy})$', 'Interpreter', 'latex');
                     legend('Location', 'best', 'Interpreter', 'latex');
                     set(gca, 'FontSize', 12);
 
+% --- Output Fit Results ---
                     fprintf('\n--- Figure 4 Analysis (Fit on $\ln(r) > %.1f$ Data) ---\n', filter_threshold_ln_r);
                     fprintf('Experimental slope from fit: %.4f\n', slope_fig4);
                     fprintf('Theoretical slope for original Eyy vs r^(-1/2) model is -0.5000.\n');
@@ -393,7 +401,7 @@ if strcmp(strain_component_to_plot, 'plot_eyy_ref_formatted')
                     % --- Export Figure 4 ---
                     try
                         fig4_handle = gcf;
-                        fig4_handle.Position = [250, 250, 600, 400]; 
+                        fig4_handle.Position = [250, 250, 600, 400];
                         fig4_filename = sprintf('notch_ln_fit_ln_r_gt_%.1f.png', filter_threshold_ln_r);
                         print(fig4_handle, fig4_filename, '-dpng', '-r300');
                         fprintf('Saved Figure 4 as: %s\n', fullfile(pwd, fig4_filename));
@@ -416,4 +424,5 @@ else
     fprintf('Current setting is: %s\n', strain_component_to_plot);
 end
 
+%% --- Analysis Complete ---
 fprintf('--- Analysis Complete ---\n');

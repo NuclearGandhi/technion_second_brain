@@ -1,13 +1,19 @@
+%% ========================================================================
+%%                        INITIALIZATION
+%% ========================================================================
 clear;
 close all;
 clc;
 
-%% --- User-defined Parameters and Data Loading ---
-% Please VERIFY/UPDATE these constants for your specific experiment
+%% ========================================================================
+%%                   USER-DEFINED PARAMETERS & SETUP
+%% ========================================================================
+
+% --- Experiment Constants ---
 Vin = 2.5;       % Strain gauge bridge input voltage [V]
 GF = 2.12;       % Gauge Factor of the strain gauge
 
-% Specimen cross-sectional dimensions and their errors [mm]
+% --- Specimen Geometry & Error Propagation ---
 width_spec_mm = 12.5;
 depth_spec_mm = 5.0;
 delta_width_spec_mm = 0.1; % Error in width
@@ -28,12 +34,17 @@ end
 fprintf('Nominal cross-sectional area: %.2f mm^2 (%.2e m^2)\n', A_mm2, A_m2);
 fprintf('Absolute error in area: +/- %.2e m^2 (Relative error: %.2f%%)\n', delta_A_m2_abs, rel_err_A*100);
 
-% Strain gauge data file (ensure this file is in the MATLAB path or provide full path)
+% --- File Paths ---
 strain_gauge_file = 'dogbone.txt';
 % DIC data file (ensure this is the correct path to your .mat file)
 dic_data_file = 'C:\\Users\\Ido\\Documents\\lab-data\\advanced-lab\\strains-2\\dogbone\\dic_data.mat'; % Windows path
 
-% --- Load data ---
+%% ========================================================================
+%%                           DATA LOADING
+%% ========================================================================
+
+% --- Load Strain Gauge Data ---
+fprintf('\n--- Loading Strain Gauge Data ---\n');
 fprintf('Loading strain gauge data from: %s\n', strain_gauge_file);
 try
     opts = detectImportOptions(strain_gauge_file);
@@ -48,6 +59,8 @@ catch ME
     return;
 end
 
+% --- Load DIC Data ---
+fprintf('\n--- Loading DIC Data ---\n');
 fprintf('Loading DIC data from: %s\n', dic_data_file);
 try
     load(dic_data_file); % This should load a structure, e.g., 'data_dic_save' or 'handles_ncorr'
@@ -69,7 +82,12 @@ catch ME
     return;
 end
 
-% Determine number of frames for analysis
+%% ========================================================================
+%%                         DATA PREPARATION
+%% ========================================================================
+
+% --- Determine Number of Frames for Analysis ---
+fprintf('\n--- Preparing Data for Analysis ---\n');
 % Typically, this is limited by the number of DIC frames processed
 N_analysis = length(data_dic_struct.strains);
 if N_analysis == 0
@@ -83,31 +101,20 @@ end
 
 fprintf('Number of frames for analysis: %d\n', N_analysis);
 
-% Extract data from strain gauge file
+% --- Extract Strain Gauge & Force Data ---
 % dogbone.txt columns: SG1 [mV] SG2 [mV] SG3 [mV] Load [N] Position [mm]
 % Corresponding indices in `data_sg` (after readtable with selected vars):
 % SG1: 1, SG2: 2, SG3: 3, Load: 4, Position: 5
-
-% USER ACTION: Choose which strain gauge to use (1, 2, or 3 for SG1, SG2, SG3)
-% sg_column_index = 2; % Defaulting to SG2 as in the example
-% if sg_column_index == 1
-%     fprintf('Using Strain Gauge SG1 for analysis.\n');
-% elseif sg_column_index == 2
-%     fprintf('Using Strain Gauge SG2 for analysis.\n');
-% elseif sg_column_index == 3
-%     fprintf('Using Strain Gauge SG3 for analysis.\n');
-% else
-%     error('Invalid sg_column_index. Choose 1, 2, or 3.');
-% end
 
 F = data_sg(1:N_analysis, 4);        % Force [N] (column 4 is Load)
 % Vout = data_sg(1:N_analysis, sg_column_index); % Strain gauge [mV]
 % Reverted Vout inversion
 Vout_sg2 = data_sg(1:N_analysis, 2); % SG2 in mV (column 2 of data_sg)
 Vout_sg3 = data_sg(1:N_analysis, 3); % SG3 in mV (column 3 of data_sg)
-fprintf('Using average of Strain Gauge SG2 and SG3 for analysis in Part 1 & 2.\n');
+fprintf('Using average of Strain Gauge SG2 and SG3 for analysis in Part 1 & 2 Modulus Calc.\n');
+fprintf('Using Strain Gauge 3 for Section 2 plots.\n');
 
-% Print frame and load info for selected examples
+% --- Display Example Frame Information ---
 % USER ACTION: Adjust these indices if needed, ensure they are <= N_analysis
 example_indices = [3, 30, 60, 85]; % Adjusted example indices
 example_indices(example_indices > N_analysis) = []; % Remove indices out of bounds
@@ -121,10 +128,14 @@ else
     fprintf('No example frames to display or N_analysis is too small.\n');
 end
 
-%% --- Part 1: Strain Calculation and Elastic Modulus ---
+%% ========================================================================
+%%         PART 1: ELASTIC MODULUS FROM AVERAGE SG & FULL ROI DIC
+%% ========================================================================
+fprintf('\n%s\n', repmat('=', 1, 70));
+fprintf('%% PART 1: ELASTIC MODULUS (Avg SG2&3, Full ROI DIC)\n');
+fprintf('%s\n', repmat('=', 1, 70));
 
-% Strain from gauge
-% epsilon_gauge = (4 * Vout * 1e-3) ./ (GF * Vin); % Vout is in mV
+% --- Calculate Strain from Gauges (SG2, SG3, Average) ---
 epsilon_gauge_sg2_p1 = (4 * Vout_sg2 * 1e-3) ./ (GF * Vin);
 epsilon_gauge_sg3_p1 = (4 * Vout_sg3 * 1e-3) ./ (GF * Vin);
 epsilon_gauge_avg_p1 = (epsilon_gauge_sg2_p1 + epsilon_gauge_sg3_p1) / 2;
@@ -138,7 +149,7 @@ else
     fprintf('Warning: No valid average strain gauge data found for Part 1 normalization.\n');
 end
 
-% Strain from DIC (average εyy from each frame)
+% --- Calculate Average Strain from DIC (Full ROI) ---
 epsilon_dic = zeros(N_analysis, 1);
 for i = 1:N_analysis
     if i <= length(data_dic_struct.strains) && isfield(data_dic_struct.strains(i), 'plot_eyy_ref_formatted') && isfield(data_dic_struct.strains(i), 'roi_ref_formatted')
@@ -173,20 +184,20 @@ else
     end
 end
 
+% --- Filter Data for Combined Analysis ---
 % Filter valid (positive strain and positive force) data for plotting and analysis
 % Allow strains to be zero after normalization
 valid_combined = ~isnan(epsilon_gauge_avg_p1) & ~isnan(epsilon_dic) & epsilon_gauge_avg_p1 >= 0 & epsilon_dic >= 0 & F > 0;
 
 F_common = F(valid_combined);
-% epsilon_gauge_common = epsilon_gauge(valid_combined);
 epsilon_gauge_avg_common = epsilon_gauge_avg_p1(valid_combined);
 epsilon_dic_common = epsilon_dic(valid_combined);
 
 if isempty(F_common)
-    error('No valid data points after filtering. Check data quality and filter conditions.');
+    error('No valid data points after filtering for Part 1. Check data quality and filter conditions.');
 end
 
-% Elastic range
+% --- Define Elastic Range for Fitting ---
 % USER ACTION: Define the range of points from F_common to use for elastic fit
 % Adjust start_fit_offset to skip initial points from F_common
 % Adjust num_points_for_fit for the number of points to include in the fit
@@ -221,8 +232,8 @@ else
     fprintf('Using N_elastic = %d points (indices %d to %d of F_common) for elastic modulus calculation.\n', N_elastic, elastic_indices(1), elastic_indices(end));
 end
 
+% Extract data for elastic region
 F_elastic = F_common(elastic_indices);
-% strain_g_elastic = epsilon_gauge_common(1:N_elastic);
 strain_g_elastic = epsilon_gauge_avg_common(elastic_indices);
 strain_d_elastic = epsilon_dic_common(elastic_indices);
 % F_dic_elastic is F_elastic, since we use F_common
@@ -231,7 +242,8 @@ strain_d_elastic = epsilon_dic_common(elastic_indices);
 stress_common = F_common / A_m2; % Stress for all common valid data points
 stress_elastic = F_elastic / A_m2; % Stress for the points used in elastic fit
 
-% --- Linear regression: gauge (Stress vs Strain) ---
+% --- Linear Regression: Average Gauge (Stress vs Strain) for E_gauge ---
+fprintf('\n--- Calculating E from Stress-Strain Fits (Elastic Region) ---\n');
 if N_elastic >=2
     p_gauge_stress = polyfit(strain_g_elastic, stress_elastic, 1);
     stress_fit_gauge = polyval(p_gauge_stress, strain_g_elastic);
@@ -252,12 +264,12 @@ if N_elastic >=2
         sE_gauge = sE_gauge_from_polyfit; % Fallback to only polyfit error
     end
 else
-    p_gauge_stress = [NaN NaN]; stress_fit_gauge = []; E_gauge = NaN; 
+    p_gauge_stress = [NaN NaN]; stress_fit_gauge = []; E_gauge = NaN;
     sE_gauge_from_polyfit = NaN; % Error from polyfit
     sE_gauge = NaN; % Total error
 end
 
-% --- Linear regression: gauge (Force vs Strain) for Fig 1 plot slope AND Fig 2 offset line slope ---
+% --- Linear Regression: Average Gauge (Force vs Strain) for Fig 1 plot slope --- 
 p_gauge_force_elastic = [NaN NaN]; 
 slope_force_strain_elastic_gauge = NaN; % This is dF/dEpsilon for AVG GAUGE in elastic region
 fit_force_gauge_fig1 = [];
@@ -267,7 +279,7 @@ if N_elastic >=2
     fit_force_gauge_fig1 = polyval(p_gauge_force_elastic, strain_g_elastic);
 end
 
-% --- Linear regression: DIC (Stress vs Strain) ---
+% --- Linear Regression: DIC (Stress vs Strain) for E_dic ---
 if N_elastic >= 2
     p_dic_stress = polyfit(strain_d_elastic, stress_elastic, 1);
     stress_fit_dic = polyval(p_dic_stress, strain_d_elastic);
@@ -293,7 +305,7 @@ else
     sE_dic = NaN; % Total error
 end
 
-% --- Linear regression: DIC (Force vs Strain) for Fig 1 plot slope ---
+% --- Linear Regression: DIC (Force vs Strain) for Fig 1 plot slope ---
 p_dic_force_elastic = [NaN NaN];
 slope_force_strain_elastic_dic_fig1 = NaN;
 fit_force_dic_fig1 = [];
@@ -303,7 +315,8 @@ if N_elastic >=2
     fit_force_dic_fig1 = polyval(p_dic_force_elastic, strain_d_elastic);
 end
 
-% --- 0.2% Offset Yield Strength Calculation (from average STRESS-STRAIN gauge data) ---
+% --- 0.2% Offset Yield Strength (from Avg Gauge Stress-Strain) ---
+fprintf('\n--- Calculating 0.2%% Offset Yield Strength (Avg Gauge) ---\n');
 sigma_y_gauge_offset = NaN;
 epsilon_offset_line_stress_calc = [];
 s_sigma_y_gauge_offset = NaN; % Initialize error for yield strength
@@ -342,43 +355,34 @@ if N_elastic >= 2 && ~isnan(E_gauge)
             idx2 = idx1 + 1;        % Index after a sign change in 'difference' array
             
             % Linear interpolation to find intersection strain and stress
-            % Intersection of y1=m1*x+c1 and y2=m2*x+c2 is x=(c2-c1)/(m1-m2)
-            % Here, one line is data segment, other is offset line.
-            % Interpolate stress (y) vs strain (x)
-            % Stress_curve(idx1) at Strain_curve(idx1)
-            % Stress_curve(idx2) at Strain_curve(idx2)
-            % Stress_offset(idx1) at Strain_curve(idx1)
-            % Stress_offset(idx2) at Strain_curve(idx2)
-            
-            % Interpolate between the two points on the experimental curve where sign changes
             p_intersect = polyfit(difference(idx1:idx2), strain_curve_segment(idx1:idx2), 1);
             intersect_strain = polyval(p_intersect, 0); % Strain where difference is zero
             sigma_y_gauge_offset = E_gauge * (intersect_strain - offset_strain);
             
-            fprintf(1, '0.2%% Offset Yield Strength (Gauge): %.2f MPa\n', sigma_y_gauge_offset / 1e6);
+            fprintf(1, '0.2%% Offset Yield Strength (Avg Gauge Stress-Strain): %.2f MPa\n', sigma_y_gauge_offset / 1e6);
 
             % Calculate error for sigma_y_gauge_offset
             if ~isnan(sigma_y_gauge_offset) && sigma_y_gauge_offset ~= 0 && ...
                ~isnan(E_gauge) && E_gauge ~= 0 && ...
                exist('sE_gauge_from_polyfit', 'var') && ~isnan(sE_gauge_from_polyfit) && ~isnan(rel_err_A)
                 s_sigma_y_gauge_offset = abs(sigma_y_gauge_offset) * sqrt( (sE_gauge_from_polyfit / E_gauge)^2 + rel_err_A^2 );
-                fprintf(1, '  Estimated error in Yield Strength (Gauge): +/- %.2f MPa\n', s_sigma_y_gauge_offset / 1e6);
+                fprintf(1, '  Estimated error in Yield Strength (Avg Gauge): +/- %.2f MPa\n', s_sigma_y_gauge_offset / 1e6);
             else
-                fprintf(1, '  Could not calculate error for Yield Strength (Gauge).\n');
+                fprintf(1, '  Could not calculate error for Yield Strength (Avg Gauge).\n');
             end
         else
-            fprintf(1, 'Warning: 0.2%% offset line does not intersect the stress-strain curve (gauge data).\n');
+            fprintf(1, 'Warning: 0.2%% offset line does not intersect the average gauge stress-strain curve.\n');
         end
     else
-        fprintf(1, 'Warning: Not enough data points beyond 0.2%% strain to find offset yield strength (gauge data).\n');
+        fprintf(1, 'Warning: Not enough average gauge data points beyond 0.2%% strain to find offset yield strength.\n');
     end
 else
-    fprintf(1, 'Warning: E_gauge not valid, cannot calculate 0.2%% offset yield strength.\n');
+    fprintf(1, 'Warning: E_gauge not valid, cannot calculate 0.2%% offset yield strength from average gauge data.\n');
 end
 
-
-%% --- Plot elastic region only (now Force vs Strain for Fig 1) ---
-% --- Determine which example_indices fall into the elastic region for Fig 1 ---
+% --- FIGURE 1: ELASTIC REGION (FORCE vs STRAIN) ---
+fprintf('\n--- Generating Figure 1: Elastic Region (Force vs Strain) ---\n');
+% Determine which example_indices fall into the elastic region for Fig 1 highlights
 valid_common_frame_indices_for_map = find(valid_combined); 
 highlight_points_strain_g_elastic_fig1 = [];
 highlight_points_FORCE_elastic_fig1 = []; % Changed from stress to force
@@ -406,15 +410,13 @@ if ~isempty(elastic_indices) && N_elastic > 0 && ~isempty(valid_common_frame_ind
         highlight_points_FORCE_elastic_fig1 = highlight_points_FORCE_elastic_fig1(1:actual_found_count_fig1); % Changed
     end
 end
-% --- End Fig 1 Highlight Prep ---
 
 figure; hold on; grid on; box on;
 % Plot force-strain data for the elastic region for Figure 1
-plot(strain_g_elastic, F_elastic, 'bo', 'MarkerSize', 4, 'DisplayName', 'Strain Gauge Data (Elastic)'); % Simplified name
-plot(strain_d_elastic, F_elastic, 'ro', 'MarkerSize', 4, 'DisplayName', 'DIC Data (Elastic, $\varepsilon_{yy}$ avg)'); % Simplified name, assuming 'eyy' is fine, if not, remove too
+plot(strain_g_elastic, F_elastic, 'bo', 'MarkerSize', 4, 'DisplayName', 'Avg Strain Gauge (Elastic)');
+plot(strain_d_elastic, F_elastic, 'ro', 'MarkerSize', 4, 'DisplayName', 'DIC (Elastic, $\varepsilon_{yy}$ avg)');
 
 % Plot the force-strain fit line based on the elastic region only for Figure 1
-% The legend will show E (from stress-strain), though plot shows dF/dEpsilon visually
 if N_elastic >= 2 
     if ~isempty(fit_force_gauge_fig1) && ~isnan(E_gauge) % Check E_gauge for legend
         plot(strain_g_elastic, fit_force_gauge_fig1, 'b-', 'LineWidth', 1.5, 'DisplayName', sprintf('Avg Gauge Fit (E = %.2f GPa)', E_gauge/1e9));
@@ -733,12 +735,27 @@ else
     fig2_handle = gcf; % Get handle immediately after creation
     hold on; grid on; box on;
     
+    % --- Diagnostic Print for Fig 2 Highlighting ---
+    fprintf('\n--- Fig 2 Highlight Diagnostic (DIC Near Failure) ---\n');
+    if exist('frames_to_highlight_dic_near_fig2', 'var') && ~isempty(frames_to_highlight_dic_near_fig2)
+        fprintf('Frames intended for highlighting on DIC Near: %s\n', mat2str(frames_to_highlight_dic_near_fig2));
+        if ~isempty(highlight_points_strain_dic_near_fig2)
+            fprintf('Calculated highlight points (Strain, Force):\n');
+            for i_diag = 1:length(highlight_points_strain_dic_near_fig2)
+                fprintf('  Frame %d -> (Strain=%.4f, Force=%.1f)\n', frames_to_highlight_dic_near_fig2(i_diag), highlight_points_strain_dic_near_fig2(i_diag), highlight_points_force_dic_near_fig2(i_diag));
+            end
+        else
+            fprintf('Highlight coordinates array is empty or not calculated.\\n');
+        end
+    else
+        fprintf('No frames identified for highlighting on DIC Near Failure line.\\n');
+    end
+    fprintf('--- End Fig 2 Highlight Diagnostic ---\n\n');
+    % --- End Diagnostic Print ---
+
     % Plot the average strain gauge data from Part 1 (from which yield is determined) - REMOVED AS PER USER REQUEST
     % handle_avg_gauge_data_fig2 = [];
     % if ~isempty(F_common) && ~isempty(epsilon_gauge_avg_common)
-    %     handle_avg_gauge_data_fig2 = plot(epsilon_gauge_avg_common, F_common, '-p', 'DisplayName', 'Avg Gauge Data (SG2&SG3, Part 1)', ...
-    %          'Color', [0.5 0.5 1], 'MarkerSize', 4, 'LineWidth', 1); % Light blue
-    % end
 
     plot(sg3_plot_s2, F_plot_s2, '-o', 'DisplayName', 'Strain Gauge 3 (Far)', ...
          'Color', 'b', 'MarkerSize', 4, 'LineWidth', 1.2);
@@ -855,9 +872,9 @@ else
     title('Force vs. Strain (Full Experiment Range with Yield Point)','Interpreter','latex');
     legend('Location', 'northwest', 'Interpreter', 'latex');
     set(gca, 'FontSize', 14);
-    ylim([0 22000]); % Cap Y-axis as requested
+    ylim([0 22000]); % Cap Y-axis
 
-    % --- Create Inset Plot for Force Zoom (14kN-20kN) ---
+    % Create Inset Plot for Figure 2 (Zoom: 14kN-20kN)
     try
         ax_main_fig2 = gca; % Get handle to main axes of Figure 2
         inset_pos_fig2 = [0.58, 0.20, 0.35, 0.3]; % Bottom-right, slightly higher
