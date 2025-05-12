@@ -23,10 +23,10 @@ if A_m2 ~= 0
     rel_err_A = delta_A_m2_abs / A_m2; % Relative error in area
 else
     rel_err_A = NaN;
-    fprintf('Warning: Nominal area A_m2 is zero, cannot calculate relative area error reliably.\\n');
+    fprintf('Warning: Nominal area A_m2 is zero, cannot calculate relative area error reliably.\n');
 end
-fprintf('Nominal cross-sectional area: %.2f mm^2 (%.2e m^2)\\n', A_mm2, A_m2);
-fprintf('Absolute error in area: +/- %.2e m^2 (Relative error: %.2f%%)\\n', delta_A_m2_abs, rel_err_A*100);
+fprintf('Nominal cross-sectional area: %.2f mm^2 (%.2e m^2)\n', A_mm2, A_m2);
+fprintf('Absolute error in area: +/- %.2e m^2 (Relative error: %.2f%%)\n', delta_A_m2_abs, rel_err_A*100);
 
 % Strain gauge data file (ensure this file is in the MATLAB path or provide full path)
 strain_gauge_file = 'dogbone.txt';
@@ -473,7 +473,7 @@ end
 
 %% --- Student t-test on E_gauge and E_dic ---
 % Replaced t-test with eta calculation as per user request
-fprintf(1, '\\n--- Comparison between E_gauge and E_dic (using eta) ---\\n');
+fprintf(1, '\n--- Comparison between E_gauge and E_dic (using eta) ---\n');
 if N_elastic > 1 && ~isnan(E_gauge) && ~isnan(sE_gauge) && ~isnan(E_dic) && ~isnan(sE_dic)
     % eta = |K1 - K2| / sqrt((deltaK1)^2 + (deltaK2)^2)
     % Here K1 = E_gauge, K2 = E_dic
@@ -484,21 +484,21 @@ if N_elastic > 1 && ~isnan(E_gauge) && ~isnan(sE_gauge) && ~isnan(E_dic) && ~isn
     
     if denominator_eta_E_sq > 0
         eta_E_gauge_vs_E_dic = numerator_eta_E / sqrt(denominator_eta_E_sq);
-        fprintf(1, 'Eta (E_gauge vs E_dic) = %.3f\\n', eta_E_gauge_vs_E_dic);
+        fprintf(1, 'Eta (E_gauge vs E_dic) = %.3f\n', eta_E_gauge_vs_E_dic);
         if eta_E_gauge_vs_E_dic <= 1
-            fprintf(1, '  Values are consistent within 1-sigma combined uncertainty.\\n');
+            fprintf(1, '  Values are consistent within 1-sigma combined uncertainty.\n');
         elseif eta_E_gauge_vs_E_dic <= 2
-            fprintf(1, '  Values are consistent within 2-sigma combined uncertainty.\\n');
+            fprintf(1, '  Values are consistent within 2-sigma combined uncertainty.\n');
         elseif eta_E_gauge_vs_E_dic <= 3
-            fprintf(1, '  Values are consistent within 3-sigma combined uncertainty.\\n');
+            fprintf(1, '  Values are consistent within 3-sigma combined uncertainty.\n');
         else
-            fprintf(1, '  Discrepancy is larger than 3-sigma combined uncertainty.\\n');
+            fprintf(1, '  Discrepancy is larger than 3-sigma combined uncertainty.\n');
         end
     else
-        fprintf(1, 'Cannot calculate eta: Combined uncertainty squared is not positive.\\n');
+        fprintf(1, 'Cannot calculate eta: Combined uncertainty squared is not positive.\n');
     end
 else
-    fprintf(1, 'Skipping eta calculation for E_gauge vs E_dic due to insufficient data or undefined errors.\\n');
+    fprintf(1, 'Skipping eta calculation for E_gauge vs E_dic due to insufficient data or undefined errors.\n');
 end
 
 %% --- Student t-test against Literature Values ---
@@ -511,9 +511,9 @@ sigma_y_literature_Pa = 267e6; % Placeholder - e.g., 250e6 for some Aluminum all
 delta_E_literature_Pa = 1873.2e6; % Uncertainty for E_literature (1873.2 MPa in Pa)
 delta_sigma_y_literature_Pa = 0.05 * sigma_y_literature_Pa; % 5% error for sigma_y_literature
 
-fprintf(1, '\\n--- Comparison against Literature Values (using eta) ---\\n');
-fprintf(1, 'Literature E: %.2f GPa +/- %.2f GPa\\n', E_literature_Pa/1e9, delta_E_literature_Pa/1e9);
-fprintf(1, 'Literature sigma_y: %.2f MPa +/- %.2f MPa\\n', sigma_y_literature_Pa/1e6, delta_sigma_y_literature_Pa/1e6);
+fprintf(1, '\n--- Comparison against Literature Values (using eta) ---\n');
+fprintf(1, 'Literature E: %.2f GPa +/- %.2f GPa\n', E_literature_Pa/1e9, delta_E_literature_Pa/1e9);
+fprintf(1, 'Literature sigma_y: %.2f MPa +/- %.2f MPa\n', sigma_y_literature_Pa/1e6, delta_sigma_y_literature_Pa/1e6);
 
 % Comparison for E_gauge vs E_literature
 if ~isnan(E_literature_Pa) && ~isnan(E_gauge) && ~isnan(sE_gauge) && N_elastic >=2
@@ -521,17 +521,17 @@ if ~isnan(E_literature_Pa) && ~isnan(E_gauge) && ~isnan(sE_gauge) && N_elastic >
     denominator_eta_E_gauge_lit_sq = sE_gauge^2 + delta_E_literature_Pa^2;
     if denominator_eta_E_gauge_lit_sq > 0
         eta_E_gauge_lit = numerator_eta_E_gauge_lit / sqrt(denominator_eta_E_gauge_lit_sq);
-        fprintf(1, 'Comparison of E_gauge (%.2f +/- %.2f GPa) with Literature E:\\n', E_gauge/1e9, sE_gauge/1e9);
-        fprintf(1, '  Eta = %.3f\\n', eta_E_gauge_lit);
-        if eta_E_gauge_lit <= 1, fprintf(1, '    Values are consistent within 1-sigma combined uncertainty.\\n');
-        elseif eta_E_gauge_lit <= 2, fprintf(1, '    Values are consistent within 2-sigma combined uncertainty.\\n');
-        elseif eta_E_gauge_lit <= 3, fprintf(1, '    Values are consistent within 3-sigma combined uncertainty.\\n');
-        else fprintf(1, '    Discrepancy is larger than 3-sigma combined uncertainty.\\n'); end
+        fprintf(1, 'Comparison of E_gauge (%.2f +/- %.2f GPa) with Literature E:\n', E_gauge/1e9, sE_gauge/1e9);
+        fprintf(1, '  Eta = %.3f\n', eta_E_gauge_lit);
+        if eta_E_gauge_lit <= 1, fprintf(1, '    Values are consistent within 1-sigma combined uncertainty.\n');
+        elseif eta_E_gauge_lit <= 2, fprintf(1, '    Values are consistent within 2-sigma combined uncertainty.\n');
+        elseif eta_E_gauge_lit <= 3, fprintf(1, '    Values are consistent within 3-sigma combined uncertainty.\n');
+        else fprintf(1, '    Discrepancy is larger than 3-sigma combined uncertainty.\n'); end
     else
-        fprintf(1, 'Cannot calculate eta for E_gauge vs Literature E: Combined uncertainty squared is not positive.\\n');
+        fprintf(1, 'Cannot calculate eta for E_gauge vs Literature E: Combined uncertainty squared is not positive.\n');
     end
 else
-    fprintf(1, 'Skipping eta calculation for E_gauge vs Literature E (missing data or E_literature_Pa not set).\\n');
+    fprintf(1, 'Skipping eta calculation for E_gauge vs Literature E (missing data or E_literature_Pa not set).\n');
 end
 
 % Comparison for E_dic vs E_literature
@@ -540,17 +540,17 @@ if ~isnan(E_literature_Pa) && ~isnan(E_dic) && ~isnan(sE_dic) && N_elastic >=2
     denominator_eta_E_dic_lit_sq = sE_dic^2 + delta_E_literature_Pa^2;
     if denominator_eta_E_dic_lit_sq > 0
         eta_E_dic_lit = numerator_eta_E_dic_lit / sqrt(denominator_eta_E_dic_lit_sq);
-        fprintf(1, 'Comparison of E_dic (%.2f +/- %.2f GPa) with Literature E:\\n', E_dic/1e9, sE_dic/1e9);
-        fprintf(1, '  Eta = %.3f\\n', eta_E_dic_lit);
-        if eta_E_dic_lit <= 1, fprintf(1, '    Values are consistent within 1-sigma combined uncertainty.\\n');
-        elseif eta_E_dic_lit <= 2, fprintf(1, '    Values are consistent within 2-sigma combined uncertainty.\\n');
-        elseif eta_E_dic_lit <= 3, fprintf(1, '    Values are consistent within 3-sigma combined uncertainty.\\n');
-        else fprintf(1, '    Discrepancy is larger than 3-sigma combined uncertainty.\\n'); end
+        fprintf(1, 'Comparison of E_dic (%.2f +/- %.2f GPa) with Literature E:\n', E_dic/1e9, sE_dic/1e9);
+        fprintf(1, '  Eta = %.3f\n', eta_E_dic_lit);
+        if eta_E_dic_lit <= 1, fprintf(1, '    Values are consistent within 1-sigma combined uncertainty.\n');
+        elseif eta_E_dic_lit <= 2, fprintf(1, '    Values are consistent within 2-sigma combined uncertainty.\n');
+        elseif eta_E_dic_lit <= 3, fprintf(1, '    Values are consistent within 3-sigma combined uncertainty.\n');
+        else fprintf(1, '    Discrepancy is larger than 3-sigma combined uncertainty.\n'); end
     else
-        fprintf(1, 'Cannot calculate eta for E_dic vs Literature E: Combined uncertainty squared is not positive.\\n');
+        fprintf(1, 'Cannot calculate eta for E_dic vs Literature E: Combined uncertainty squared is not positive.\n');
     end
 else
-    fprintf(1, 'Skipping eta calculation for E_dic vs Literature E (missing data or E_literature_Pa not set).\\n');
+    fprintf(1, 'Skipping eta calculation for E_dic vs Literature E (missing data or E_literature_Pa not set).\n');
 end
 
 % Comparison for sigma_y_gauge_offset vs sigma_y_literature
@@ -560,18 +560,18 @@ if ~isnan(sigma_y_literature_Pa) && ~isnan(sigma_y_gauge_offset) && exist('s_sig
     
     if denominator_eta_sigma_y_lit_sq > 0
         eta_sigma_y_lit = numerator_eta_sigma_y_lit / sqrt(denominator_eta_sigma_y_lit_sq);
-        fprintf(1, 'Comparison of Sigma_y_gauge (%.2f +/- %.2f MPa) with Literature Sigma_y (%.2f +/- %.2f MPa):\\n', ...
+        fprintf(1, 'Comparison of Sigma_y_gauge (%.2f +/- %.2f MPa) with Literature Sigma_y (%.2f +/- %.2f MPa):\n', ...
             sigma_y_gauge_offset/1e6, s_sigma_y_gauge_offset/1e6, sigma_y_literature_Pa/1e6, delta_sigma_y_literature_Pa/1e6);
-        fprintf(1, '  Eta = %.3f\\n', eta_sigma_y_lit);
-        if eta_sigma_y_lit <= 1, fprintf(1, '    Values are consistent within 1-sigma combined uncertainty.\\n');
-        elseif eta_sigma_y_lit <= 2, fprintf(1, '    Values are consistent within 2-sigma combined uncertainty.\\n');
-        elseif eta_sigma_y_lit <= 3, fprintf(1, '    Values are consistent within 3-sigma combined uncertainty.\\n');
-        else fprintf(1, '    Discrepancy is larger than 3-sigma combined uncertainty.\\n'); end
+        fprintf(1, '  Eta = %.3f\n', eta_sigma_y_lit);
+        if eta_sigma_y_lit <= 1, fprintf(1, '    Values are consistent within 1-sigma combined uncertainty.\n');
+        elseif eta_sigma_y_lit <= 2, fprintf(1, '    Values are consistent within 2-sigma combined uncertainty.\n');
+        elseif eta_sigma_y_lit <= 3, fprintf(1, '    Values are consistent within 3-sigma combined uncertainty.\n');
+        else fprintf(1, '    Discrepancy is larger than 3-sigma combined uncertainty.\n'); end
     else
-        fprintf(1, 'Cannot calculate eta for Sigma_y_gauge vs Literature Sigma_y: Combined uncertainty squared is not positive.\\n');
+        fprintf(1, 'Cannot calculate eta for Sigma_y_gauge vs Literature Sigma_y: Combined uncertainty squared is not positive.\n');
     end
 else
-     fprintf(1, 'Skipping eta calculation for Sigma_y_gauge vs Literature Sigma_y (missing data, errors, or N_elastic too small).\\n');
+     fprintf(1, 'Skipping eta calculation for Sigma_y_gauge vs Literature Sigma_y (missing data, errors, or N_elastic too small).\n');
 end
 
 
@@ -1164,4 +1164,4 @@ end
 % end
 
 fprintf(1, '\nAnalysis complete. Check plots and console output.\n');
-fprintf('Remember to update USER ACTION sections if defaults are not appropriate.\n'); 
+fprintf('Remember to update USER ACTION sections if defaults are not appropriate.\n');

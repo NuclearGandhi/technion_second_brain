@@ -324,21 +324,21 @@ if strcmp(strain_component_to_plot, 'plot_eyy_ref_formatted')
             ln_eyy_clean = ln_eyy_values(valid_fit_indices);
 
             if length(ln_r_clean) >= 2 % Need at least 2 points for Figure 3 plot
-                figure; % Figure 3: Plot of all valid ln(eyy) vs ln(r-r_min)
-                plot(ln_r_clean, ln_eyy_clean, 'bo', 'MarkerSize', 6, 'DisplayName', 'Experimental Data ($\ln(\varepsilon_{yy})$ vs $\ln(r-r_{min})$)');
+                figure; % Figure 3: Plot of all valid ln(eyy) vs ln(r)
+                plot(ln_r_clean, ln_eyy_clean, 'bo', 'MarkerSize', 6, 'DisplayName', 'Experimental Data ($\ln(\varepsilon_{yy})$ vs $\ln(r)$)');
                 grid on;
                 box on;
 
-                title_str_fig3 = '$\ln(\varepsilon_{yy})$ vs. $\ln(r-r_{min})$';
+                title_str_fig3 = '$\ln(\varepsilon_{yy})$ vs. $\ln(r)$';
                 title(title_str_fig3, 'Interpreter', 'latex');
 
-                xlabel_str_fig3 = sprintf('$\ln(r - r_{min})$ ($r_{min} \approx %.3g$, $r$: %s)', min_r_original, x_label_text);
+                xlabel_str_fig3 = sprintf('$\ln(r)$ ($r \approx %.3g$, $r$: %s)', min_r_original, x_label_text);
                 xlabel(xlabel_str_fig3, 'Interpreter', 'latex');
                 ylabel('$\ln(\varepsilon_{yy})$', 'Interpreter', 'latex');
                 legend('Location', 'best', 'Interpreter', 'latex');
                 set(gca, 'FontSize', 12);
                 
-                fprintf('Figure 3 (ln(Eyy) vs ln(r-r_min)) plotted showing all valid data points.\n');
+                fprintf('Figure 3 (ln(Eyy) vs ln(r)) plotted showing all valid data points.\n');
 
                 % --- Export Figure 3 ---
                 try
@@ -364,7 +364,7 @@ if strcmp(strain_component_to_plot, 'plot_eyy_ref_formatted')
                     fprintf('Found %d data points where ln(r-rmin) > %.2f for Figure 4 fit.\n', num_points_fig4_fit, filter_threshold_ln_r);
                     figure; % New Figure 4
                     plot(ln_r_fig4_subset, ln_eyy_fig4_subset, 'gs', 'MarkerSize', 6, ...
-                         'DisplayName', sprintf('Exp. Data ($\ln(r-r_{min}) > %.1f$)', filter_threshold_ln_r));
+                         'DisplayName', sprintf('Exp. Data ($\ln(r) > %.1f$)', filter_threshold_ln_r));
                     hold on;
                     grid on;
                     box on;
@@ -379,14 +379,14 @@ if strcmp(strain_component_to_plot, 'plot_eyy_ref_formatted')
                            'DisplayName', sprintf('Linear Fit (Slope = %.3f)', slope_fig4));
                     hold off;
 
-                    title_str_fig4 = sprintf('$\ln(\varepsilon_{yy})$ vs. $\ln(r-r_{min})$ for $\ln(r-r_{min}) > %.1f$ & Fit', filter_threshold_ln_r);
+                    title_str_fig4 = sprintf('$\ln(\varepsilon_{yy})$ vs. $\ln(r)$ for $\ln(r) > %.1f$ & Fit', filter_threshold_ln_r);
                     title(title_str_fig4, 'Interpreter', 'latex');
                     xlabel(xlabel_str_fig3, 'Interpreter', 'latex'); % Re-use x-label from Fig 3
                     ylabel('$\ln(\varepsilon_{yy})$', 'Interpreter', 'latex');
                     legend('Location', 'best', 'Interpreter', 'latex');
                     set(gca, 'FontSize', 12);
 
-                    fprintf('\n--- Figure 4 Analysis (Fit on $\ln(r-r_{min}) > %.1f$ Data) ---\n', filter_threshold_ln_r);
+                    fprintf('\n--- Figure 4 Analysis (Fit on $\ln(r) > %.1f$ Data) ---\n', filter_threshold_ln_r);
                     fprintf('Experimental slope from fit: %.4f\n', slope_fig4);
                     fprintf('Theoretical slope for original Eyy vs r^(-1/2) model is -0.5000.\n');
 
