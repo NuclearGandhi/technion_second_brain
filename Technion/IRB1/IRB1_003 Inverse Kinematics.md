@@ -113,3 +113,58 @@ $$ \theta_1 = \pi + \mathrm{atan2}(p_y, p_x), \quad \theta_2 = \pi - \mathrm{ata
 The translation distance $\theta_3$ (which is the joint variable for the prismatic joint) is found from the relation $(\theta_3 + a_2)^2 = r^2 + s^2$ as
 $$ \theta_3 = \sqrt{r^2 + s^2} - a_2 = \sqrt{p_x^2 + p_y^2 + (p_z - d_1)^2} - a_2 $$
 Ignoring the negative square root solution for $\sqrt{r^2+s^2}$ (as $\theta_3+a_2$ typically represents a positive length), we obtain two solutions to the inverse position kinematics as long as the wrist center $\mathbf{p}$ does not intersect the $\hat{\mathbf{z}}_0$-axis of the fixed frame. If there is an offset then, as in the case of the PUMA-type arm, there will be lefty and righty solutions.
+
+# Exercises
+Compute the inverse kinematics of the following manipulator:
+
+![[IRB1_002 Forward Kinematics 2025-04-30 21.25.38.excalidraw.svg]]
+>Simple robot with one revolute and one prismatic joint.
+
+The forward kinematics are:
+$$ ^{0}\mathbf{T}_{2} = \begin{pmatrix}
+{c}_{1} & 0 & {s}_{1} & {d}_{2}+b{c}_{1} \\
+{s}_{1} & 0 & -{c}_{1} & -{d}_{2}{c}_{1}+b{s}_{1} \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}$$
+where ${c}_{1}:=\cos{\theta}_{1}$ and ${s}_{1}:=\sin{\theta}_{1}$.
+
+**Solution**:
+Given ${p}_{x}$ and ${p}_{y}$, we want to move the robot so that:
+$$\begin{aligned}
+ & {p}_{x}={d}_{2}+b{c}_{1} \\
+ & {p}_{y}=-{d}_{2}{c}_{1}+b{s}_{1}
+\end{aligned}$$
+Meaning, we need to find ${d}_{2}$ and ${\theta}_{1}$. Squaring both equations we get
+$$\begin{gathered}
+{{{p}_{x}}}^{2}+{{{p}_{y}}}^{2}=(b^{2}{{{c}_{1}}}^{2}+2b{c}_{1}{d}_{2}{s}_{1}+{{{d}_{2}}}^{2}{{{s}_{1}}}^{2})+(b^{2}{{{s}_{1}}}^{2}-2b{c}_{1}{d}_{2}{s}_{1}+{{{d}_{2}}}^{2}{{{c}_{1}}}^{2}) \\[1ex]
+{{{p}_{x}}}^{2}+{{{p}_{y}}}^{2}=b^{2}+{{{d}_{2}}}^{2} \\[1ex]
+\boxed {
+{d}_{2}=\pm \sqrt{ {{{p}_{x}}}^{2}+{{{p}_{y}}}^{2}-b^{2} }
+ }
+\end{gathered}$$
+
+Now that we know ${d}_{2}$, we can't write our system of equations in a matrix form:
+$$\begin{pmatrix}
+{p}_{x} \\
+{p}_{y}
+\end{pmatrix}=\begin{pmatrix}
+b & {d}_{2} \\
+-{d}_{2} & b
+\end{pmatrix}\begin{pmatrix}
+{c}_{1} \\
+{s}_{1}
+\end{pmatrix}$$
+Solving for ${c}_{1}$ and ${s}_{1}$ (inversing the matrix), we get:
+$$\begin{aligned}
+ & {c}_{1}=\dfrac{b{p}_{x}-{d}_{2}{p}_{y}}{b^{2}+{{{d}_{2}}}^{2}} \\[1ex]
+ & {s}_{1}=\dfrac{{d}_{2}{p}_{x}+b{p}_{y}}{b^{2}+{{{d}_{2}}}^{2}}
+\end{aligned}$$
+Therefore:
+$$\boxed {
+\begin{aligned}
+{\theta}_{1} & =\mathrm{atan2}({s}_{1},{c}_{1}) \\[1ex]
+ & =\mathrm{atan2}\left( \dfrac{{d}_{2}{p}_{x}+b{p}_{y}}{b^{2}+{{{d}_{2}}}^{2}},\, \dfrac{b{p}_{x}-{d}_{2}{p}_{y}}{b^{2}+{{{d}_{2}}}^{2}} \right)
+\end{aligned}
+ }$$
+
