@@ -50,7 +50,7 @@ R_c_calc = L_yoke_md / (mu_r * mu0 * A_c_val);
 R_g0_calc = L_g_md / (mu0 * A_c_val); % Reluctance of one air gap at x=0
 R_f_calc = L_plunger_md / (mu_r * mu0 * A_f_val);
 
-R_T0_calc = 2*R_c_calc + 2*R_g0_calc + R_f_calc;
+R_T0_calc = R_c_calc + 2*R_g0_calc + R_f_calc;
 
 fprintf('Calculated reluctance components (using image lengths L_yoke=%.1fm, L_plunger=%.1fm):\n', L_yoke_md, L_plunger_md);
 fprintf('R_c (one side of yoke) = %.4e A-turns/Wb\n', R_c_calc);
