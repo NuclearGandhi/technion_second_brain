@@ -103,7 +103,8 @@ Based on inspection of the figures and examination of the first and second deriv
 >[!theorem] Theorem: 
 >The mean and variance of $n(x; \mu, \sigma)$ are $\mu$ and $\sigma^2$, respectively. Hence, the standard deviation is $\sigma$.
 
-**Proof**: To evaluate the mean, we first calculate:
+**Proof**:
+To evaluate the mean, we first calculate:
 $$E(X - \mu) = \int_{-\infty}^{\infty} \frac{x-\mu}{\sqrt{2\pi\sigma}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2} dx.$$
 
 Setting $z = (x - \mu)/\sigma$ and $dx = \sigma dz$, we obtain:
@@ -119,7 +120,11 @@ Again setting $z = (x - \mu)/\sigma$ and $dx = \sigma dz$, we obtain:
 $$E[(X - \mu)^2] = \frac{\sigma^2}{\sqrt{2\pi}}\int_{-\infty}^{\infty} z^2e^{-\frac{z^2}{2}} dz.$$
 
 Integrating by parts with $u = z$ and $dv = ze^{-z^2/2} dz$ so that $du = dz$ and $v = -e^{-z^2/2}$, we find that:
-$$E[(X - \mu)^2] = \frac{\sigma^2}{\sqrt{2\pi}}\left(-ze^{-z^2/2}\bigg|_{-\infty}^{\infty} + \int_{-\infty}^{\infty} e^{-z^2/2} dz\right) = \sigma^2(0 + 1) = \sigma^2$$
+$$\begin{aligned}
+E[(X - \mu)^2]  & = \frac{\sigma^2}{\sqrt{2\pi}}\left(-ze^{-z^2/2}\bigg|_{-\infty}^{\infty} + \int_{-\infty}^{\infty} e^{-z^2/2} dz\right)  \\[1ex]
+ & = \sigma^2(0 + 1)  \\[1ex]
+ & = \sigma^2
+\end{aligned}$$
 $$\tag*{$\blacksquare$}$$
 
 ## Applications of the Normal Distribution
@@ -135,6 +140,138 @@ The normal distribution plays a significant role as a reasonable approximation o
 3. The limiting distribution of sample averages is normal, which provides a broad base for statistical inference that proves very valuable for estimation and hypothesis testing.
 
 4. Theory in important areas such as analysis of variance and quality control is based on assumptions that make use of the normal distribution.
+
+## Areas Under the Normal Curve
+
+The curve of any continuous probability distribution (or density function) is constructed so that the area under the curve, bounded by the two ordinates $x = x_1$ and $x = x_2$, equals the probability that the random variable $X$ assumes a value between $x_1$ and $x_2$:
+
+$$
+\begin{aligned}
+P(x_1 < X < x_2)  & = \int_{x_1}^{x_2} n(x; \mu, \sigma) \, dx  \\[1ex]
+ & = \frac{1}{\sqrt{2\pi\sigma}} \int_{x_1}^{x_2} e^{-\frac{1}{2\sigma^2}(x-\mu)^2} dx
+\end{aligned}
+$$
+
+This probability is represented by the area of the shaded region under the normal curve between $x_1$ and $x_2$.
+
+![[{0D677C63-5D11-4C80-8522-580ED5A3A6F7}.png|bookhue|500]]
+>Area under the normal curve between $x_1$ and $x_2$ represents $P(x_1 < X < x_2)$.
+
+In previous figures, we saw how the normal curve depends on the mean ($\mu$) and standard deviation ($\sigma$) of the distribution. The area under the curve between any two ordinates also depends on $\mu$ and $\sigma$. This is illustrated below, where shaded regions correspond to $P(x_1 < X < x_2)$ for two curves with different means and variances:
+
+![[{12FB2419-6B2C-439A-B560-A7836E52EFCA}.png|bookhue|600]]
+>Shaded regions for $P(x_1 < X < x_2)$ for two different normal curves.
+
+The two shaded regions are different in size; therefore, the probability associated with each distribution will be different for the same $x_1$ and $x_2$.
+
+### Standardization and the Standard Normal Distribution
+
+Calculating areas under the normal curve for every possible $\mu$ and $\sigma$ would require an infinite number of tables. Fortunately, we can transform any normal random variable $X$ into a standard normal variable $Z$ with mean $0$ and variance $1$ using the transformation:
+
+$$
+Z = \frac{X - \mu}{\sigma}
+$$
+
+Whenever $X$ assumes a value $x$, the corresponding value of $Z$ is $z = (x - \mu)/\sigma$. Therefore, if $X$ falls between $x_1$ and $x_2$, $Z$ falls between $z_1 = (x_1 - \mu)/\sigma$ and $z_2 = (x_2 - \mu)/\sigma$.
+
+Thus,
+$$
+P(x_1 < X < x_2) = \int_{x_1}^{x_2} n(x; \mu, \sigma) dx = \int_{z_1}^{z_2} n(z; 0, 1) dz = P(z_1 < Z < z_2)
+$$
+where $n(z; 0, 1)$ is the standard normal density.
+
+>[!def] Definition:
+>The distribution of a normal random variable with mean $0$ and variance $1$ is called the **standard normal distribution**.
+
+![[{1F22C59A-21EC-463B-B35B-BF49D3967CD5}.png|bookhue|600]]
+>The area under the $X$-curve between $x_1$ and $x_2$ equals the area under the $Z$-curve between $z_1$ and $z_2$.
+
+Tables of the standard normal distribution (Table A.3) provide $P(Z < z)$ for values of $z$ from $-3.49$ to $3.49$. For example, to find $P(Z < 1.74)$, locate $z = 1.7$ in the left column and $0.04$ in the top row; the value is $0.9591$.
+
+To find a $z$ value corresponding to a given probability, reverse the process. For example, the $z$ value leaving an area of $0.2148$ to the left is $-0.79$.
+
+>[!example] Example:
+>Given a standard normal distribution, find the area under the curve that lies
+>1. to the right of $z = 1.84$ and
+>2. between $z = -1.97$ and $z = 0.86$.
+>
+>![[{12ECE2DA-E126-48A0-A906-E29AEEF6DC52}.png|bookhue|450]]
+>
+>**Solution**:
+>
+>1. The area to the right of $z = 1.84$ is 
+>	$$1 - P(Z < 1.84) = 1 - 0.9671 = 0.0329$$
+>
+>2. The area between $z = -1.97$ and $z = 0.86$ is 
+>	$$P(Z < 0.86) - P(Z < -1.97) = 0.8051 - 0.0244 = 0.7807$$
+
+>[!example] Example:
+>Given a standard normal distribution, find the value of $k$ such that
+>**(a)** $P(Z > k) = 0.3015$ and
+>**(b)** $P(k < Z < -0.18) = 0.4197$.
+>
+>![[{1D97C1C4-F450-4803-9C8E-2FFA6B76E959}.png|bookhue|500]]
+>
+>**Solution**:
+>
+>1. $k$ leaves $0.3015$ to the right, so $0.6985$ to the left. From the table, $k = 0.52$.
+>
+>2. The area to the left of $-0.18$ is $0.4286$. The area between $k$ and $-0.18$ is $0.4197$, so the area to the left of $k$ is $0.4286 - 0.4197 = 0.0089$. From the table, $k = -2.37$.
+
+>[!example] Example:
+>Given $X \sim N(50, 10^2)$, find $P(45 < X < 62)$.
+>
+>![[{794A901D-A8B2-4D95-9DDC-1A3F89966649}.png|bookhue|500]]
+>
+>**Solution**:
+>
+>The $z$ values are 
+>$$z_1 = (45-50)/10 = -0.5$, $z_2 = (62-50)/10 = 1.2$$
+>Therefore:
+>$$\begin{aligned}
+P(45 < X < 62)  & = P(-0.5 < Z < 1.2)  \\[1ex]
+ & = P(Z < 1.2) - P(Z < -0.5)  \\[1ex]
+ & = 0.8849 - 0.3085  \\[1ex]
+ & = 0.5764
+\end{aligned}$$
+
+>[!example] Example:
+>Given $X \sim N(300, 50^2)$, find $P(X > 362)$.
+>
+>![[{5242F757-EE3E-4DFA-813E-060E3A460E8F}.png|bookhue|500]]
+>
+>**Solution**:
+>
+>$z = (362-300)/50 = 1.24$.
+>
+>$P(X > 362) = 1 - P(Z < 1.24) = 1 - 0.8925 = 0.1075$.
+
+### Probability within $k$ Standard Deviations
+
+According to Chebyshev's theorem, the probability that a random variable assumes a value within $2$ standard deviations of the mean is at least $3/4$. For the normal distribution, the $z$ values corresponding to $x_1 = \mu - 2\sigma$ and $x_2 = \mu + 2\sigma$ are $z_1 = -2$ and $z_2 = 2$.
+
+$$
+P(\mu - 2\sigma < X < \mu + 2\sigma) = P(-2 < Z < 2) = P(Z < 2) - P(Z < -2) = 0.9772 - 0.0228 = 0.9544
+$$
+
+This is a much stronger statement than Chebyshev's theorem.
+
+### Using the Normal Curve in Reverse
+
+Sometimes, we are required to find the value of $z$ (or $x$) corresponding to a specified probability. Rearranging the standardization formula gives $x = \sigma z + \mu$.
+
+>[!example] Example:
+>Given $X \sim N(40, 6^2)$, find the value of $x$ that has
+>1. $45\%$ of the area to the left and
+>2. $14\%$ of the area to the right.
+>
+>![[{D2607958-CF89-48F2-8CB9-73C7FCE2DE60}.png|bookhue|600]]
+>
+>**Solution**:
+>
+>1. $P(Z < z) = 0.45 \implies z = -0.13$, so $x = 6 \cdot (-0.13) + 40 = 39.22$.
+>
+>2. $P(Z < z) = 0.86 \implies z = 1.08$, so $x = 6 \cdot 1.08 + 40 = 46.48$.
 
 # Gamma and Exponential Distributions
 

@@ -19,7 +19,8 @@ Assistant: Daniel Goldberg
 - [[PSM1_HW001 Homework 1]]
 - [[PSM1_HW002 Homework 2]]
 - [[PSM1_HW003 Homework 3]]
-- [[PMS1_HW004 Homework 4]]
+- [[PSM1_HW004 Homework 4]]
+- [[PSM1_005 Fundamental Sampling Distributions and Data Descriptions]]
 # Exams
 
 # Bibliography
