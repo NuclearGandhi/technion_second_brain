@@ -115,6 +115,9 @@ $$ \theta_3 = \sqrt{r^2 + s^2} - a_2 = \sqrt{p_x^2 + p_y^2 + (p_z - d_1)^2} - a_
 Ignoring the negative square root solution for $\sqrt{r^2+s^2}$ (as $\theta_3+a_2$ typically represents a positive length), we obtain two solutions to the inverse position kinematics as long as the wrist center $\mathbf{p}$ does not intersect the $\hat{\mathbf{z}}_0$-axis of the fixed frame. If there is an offset then, as in the case of the PUMA-type arm, there will be lefty and righty solutions.
 
 # Exercises
+
+## Question 1
+
 Compute the inverse kinematics of the following manipulator:
 
 ![[IRB1_002 Forward Kinematics 2025-04-30 21.25.38.excalidraw.svg]]
@@ -168,3 +171,7 @@ $$\boxed {
 \end{aligned}
  }$$
 
+## Question 2
+Compute the inverse kinematics of the following manipulator:
+
+**Solution**:
