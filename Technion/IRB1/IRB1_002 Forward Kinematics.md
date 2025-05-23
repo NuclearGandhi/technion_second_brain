@@ -1,5 +1,8 @@
 ---
 aliases:
+- Forward Kinematics
+- Denavit–Hartenberg parameters
+- D–H parameters
 ---
 from [[IRB1_000 00350001 מבוא לרובוטיקה#ביבליוגרפיה|(Lynch & Park, 2017)]]:
 # Forward Kinematics
@@ -67,11 +70,10 @@ The figure above shows the resulting frames $\{i\}$ and $\{i-1\}$.
 
 With the frames defined, we now introduce four parameters that fully describe the transformation $^{i-1}{\mathbf{T}}_{i}$:
 
-
-- **Link length** $a_{i-1}$: The length of the perpendicular line between axes $\hat{\mathbf{z}}_{i-1}$ and $\hat{\mathbf{z}}_i$.  
+- **Link twist** $\alpha_{i}$: The angle between $\hat{\mathbf{z}}_{i-1}$ and $\hat{\mathbf{z}}_i$, measured about $\hat{\mathbf{x}}_{i}$.
+- **Link length** $a_{i}$: The length of the perpendicular line between axes $\hat{\mathbf{z}}_{i-1}$ and $\hat{\mathbf{z}}_i$.  
 >[!notes] Note:
 >Despite the name, this does *not* necessarily represent the actual physical length of the link.
-- **Link twist** $\alpha_{i}$: The angle between $\hat{\mathbf{z}}_{i-1}$ and $\hat{\mathbf{z}}_i$, measured about $\hat{\mathbf{x}}_{i}$.
 - **Link offset** $d_i$: The distance from $\hat{\mathbf{x}}_{i-1}$ to $\hat{\mathbf{x}}_{i}$ along $\hat{\mathbf{z}}_{i-1}$
 - **Joint angle** $\theta_i$: The angle from $\hat{\mathbf{x}}_{i-1}$ to $\hat{\mathbf{x}}_i$, measured around the $\hat{\mathbf{z}}_{i-1}$-axis.
 

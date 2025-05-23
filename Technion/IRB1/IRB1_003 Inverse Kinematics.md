@@ -172,6 +172,118 @@ $$\boxed {
  }$$
 
 ## Question 2
-Compute the inverse kinematics of the following manipulator:
+
+Given the following manipulator:
+![[IRB1_003 Inverse Kinematics 2025-05-23 10.57.40.excalidraw.svg]]
+>Simple manipulator.
+### Part a
+
+Compute the inverse kinematics.
 
 **Solution**:
+Denoting the frames according to the [[IRB1_002 Forward Kinematics#Assigning Link Frames|D–H method]]:
+![[IRB1_003 Inverse Kinematics 2025-05-23 10.42.39.excalidraw.svg]]
+>Assigning frames.
+
+Therefore, the table:
+$$\begin{array}{c|cccc}
+i & \alpha _{i} & {a}_{i} & {d}_{i} & {\theta}_{i} \\
+\hline 1  & 90^{\circ} & e & h & {\theta}_{1} \\
+2 & 90^{\circ}  & 0 & 0 & {\theta}_{2} \\
+3 & 0 & 0 & {d}_{3} & 0
+\end{array}$$
+The forward kinematics are:
+$$^{0}\mathbf{T}_{3}=\begin{pmatrix}
+{c}_{1}{c}_{2}{c}_{3}+{s}_{1}{s}_{3} & -{c}_{1}{c}_{2}{s}_{3}+{s}_{1}{c}_{3} & {c}_{1}{s}_{2} & {d}_{3}{c}_{1}{s}_{2}+e{c}_{1} \\
+{s}_{1}{c}_{2}{c}_{3}-{c}_{1}{s}_{3} & -{s}_{1}{c}_{2}{s}_{3}-{c}_{1}{c}_{3} & {s}_{1}{s}_{2} & {d}_{3}{s}_{1}{s}_{2}+e{s}_{2} \\
+{s}_{2}{c}_{3} & -{s}_{2}{s}_{3} & -{c}_{2} & -{d}_{3}{c}_{2}+h \\
+0 & 0 & 0 & 1
+\end{pmatrix}$$
+
+Given ${p}_{x}$, ${p}_{y}$ and ${p}_{z}$ we want to move the robot so that:
+$$\begin{align}
+ & {p}_{x}={d}_{3}{c}_{1}{s}_{2}+e{c}_{1} \tag{E2.1} \\[1ex]
+ & {p}_{y}={d}_{3}{s}_{1}{s}_{2}+e{s}_{2} \tag{E2.2}\\[1ex]
+ & {p}_{z}=-{d}_{3}{c}_{2}+h\tag{E2.3}
+\end{align}$$
+First, we compute ${\theta}_{1}$. From $\text{(E2.1)}$ and $\text{(E2.2)}$:
+$$\begin{aligned}
+ & {c}_{1}=\dfrac{{p}_{x}}{{d}_{3}{s}_{2}+e} &  & {s}_{1}=\dfrac{{p}_{y}}{{d}_{3}{s}_{2}+e}
+\end{aligned}$$
+Therefore:
+$$\begin{aligned}
+{\theta}_{1} & =\mathrm{atan2}({s}_{1},{c}_{1}) \\[1ex]
+ & =\mathrm{atan2}\left( \dfrac{{p}_{y}}{{d}_{3}{s}_{2}+e},\dfrac{{p}_{x}}{{d}_{3}{s}_{2}+e} \right)
+\end{aligned}$$
+Thing is, we don't know ${d}_{3}$ or ${\theta}_{2}$ - that's a problem. But, we note the denominators are identical. So maybe in the $\mathrm{atan2}$ they cancel out? Well, no, because:
+$${\theta}_{1}=\mathrm{atan2}\left( \dfrac{{p}_{y}}{{d}_{3}{s}_{2}+e},\dfrac{{p}_{x}}{{d}_{3}{s}_{2}+e} \right)\neq \mathrm{atan}\left( \dfrac{{p}_{y}}{{p}_{x}} \right)$$
+That is because we don't know the sign of ${d}_{3}{s}_{2}+e$. What we can do though is split into the two options:
+- if ${d}_{3}{s}_{2}+e>0$, then:
+	$$\begin{aligned}
+{\theta}_{1} & =\mathrm{atan2}\left( \dfrac{{p}_{y}}{{d}_{3}{s}_{2}+e},\dfrac{{p}_{x}}{{d}_{3}{s}_{2}+e} \right) \\[1ex]
+ & =\mathrm{atan2}({p}_{y},{p}_{x})
+\end{aligned}$$
+- if ${d}_{3}{s}_{2}+e<0$, then:
+	$$\begin{aligned}
+	{\theta}_{1} & =\mathrm{atan2}\left( \dfrac{{p}_{y}}{{d}_{3}{s}_{2}+e},\dfrac{{p}_{x}}{{d}_{3}{s}_{2}+e} \right) \\[1ex]
+ 	& =\mathrm{atan2}(-{p}_{y},-{p}_{x}) \\[1ex]
+ 	& =\mathrm{atan2}({p}_{y},{p}_{x})+\pi
+\end{aligned}$$
+So basically:
+$$\boxed {
+{\theta}_{1}=\mathrm{atan2}(\pm {p}_{y},\pm {p}_{x})
+ }$$
+
+Now we can move to ${\theta}_{2}$. From $\text{(E2.1)}$ and $\text{(E2.3)}$:
+$$\begin{aligned}
+ & {s}_{2}=\dfrac{{p}_{x}-e{c}_{1}}{{d}_{3}{c}_{1}} &  & {c}_{2}=\dfrac{(h-{p}_{z})}{{d}_{3}}
+\end{aligned}$$
+As before, ${d}_{3}$ can be either positive or negative, so there are two possible solutions:
+$$\boxed {
+{\theta}_{2}=\mathrm{atan2}\left( \pm  \dfrac{{p}_{x}-e{c}_{1}}{{c}_{1}},\pm (h-{p}_{z}) \right)
+ }$$
+
+Regarding ${d}_{3}$, from $\text{(E2.3)}$ we get:
+$$\boxed {
+{d}_{3}=\dfrac{h-{p}_{z}}{{c}_{2}}
+ }$$
+
+We therefore have 4 solutions.
+### Part b
+Write the inverse kinematics solution as a function of the target point $P$ and the following decision parameters:
+$$\begin{aligned}
+ & \mathrm{ARM}=\begin{cases}
++1\quad (\text{right arm}) &  & -90^{\circ} \leq  {\theta}_{1}\leq  90^{\circ} \\
+-1\quad (\text{left arm}) &  & 90^{\circ} <  {\theta}_{1}<  270^{\circ}
+\end{cases} \\[1ex]
+ & \mathrm{ELB}=\begin{cases}
++1\quad (\text{elbow up}) &  & 90^{\circ} \leq  {\theta}_{2}\leq   270^{\circ}  \\
+-1\quad \text{(elbow down} &  & -90^{\circ} <{\theta}_{2}<90^{\circ} 
+\end{cases}
+\end{aligned}$$
+- The four solutions have a distinct geometrical interpretation of the manipulator's pose.
+- The idea is to allow the user to determine the manipulator's pose by setting $\mathrm{ARM}$ and $\mathrm{ELB}$.
+
+Let us examine the relation between $\mathrm{ARM}$ and $\mathrm{sgn}({p}_{x})$:
+- if $\mathrm{ARM}\cdot \mathrm{sgn}({p}_{x})=1$, then ${\theta}_{1}=\mathrm{atan2}({p}_{y},{p}_{x})$
+- if $\mathrm{ARM}\cdot \mathrm{sgn}({p}_{x})=-1$, then ${\theta}_{1}=\mathrm{atan2}({p}_{y},{p}_{x})+\pi$
+
+We can therefore write the solution as:
+$$\boxed {
+{\theta}_{1}=\mathrm{atan2}({p}_{y},{p}_{x})+\dfrac{\pi}{2}(1-\mathrm{ARM}\cdot \mathrm{sgn}({p}_{x}))
+ }$$
+![[IRB1_003 Inverse Kinematics 2025-05-23 16.17.32.excalidraw.svg]]
+>Distinction between left arm and right arm.
+
+Let us examine the relation between $\mathrm{ELB}$ and $\mathrm{sgn}({p}_{x})$:
+- if $\mathrm{ELB}\cdot \mathrm{sgn}(h-{p}_{z})=-1$, then 
+	$${\theta}_{2}=\mathrm{atan2}\left(\dfrac{{p}_{x}-e{c}_{1}}{{c}_{1}},h-{p}_{z}\right)$$
+- if $\mathrm{ELB}\cdot \mathrm{sgn}(h-{p}_{z})=1$, then 
+	$${\theta}_{2}=\mathrm{atan2}\left(\dfrac{{p}_{x}-e{c}_{1}}{{c}_{1}},h-{p}_{z}\right)+\pi$$
+
+We can therefore write the solution as:
+$$\boxed {
+{\theta}_{2}=\mathrm{atan2}\left(\dfrac{{p}_{x}-e{c}_{1}}{{c}_{1}},h-{p}_{z}\right)+\dfrac{\pi}{2}(1-\mathrm{ELB}\cdot \mathrm{sgn}(h-{p}_{z}))
+ }$$
+
+ 
