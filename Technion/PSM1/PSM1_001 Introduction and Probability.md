@@ -78,16 +78,19 @@ $$\begin{aligned}
 
 
 Some useful rules:
-1. $$A\cap \phi=\phi$$
-2. $$A\cup \phi=A$$
-3. $$A\cap A^{c}=\phi$$
-4. $$A\cup A^{c}=\Omega$$
-5. $$\Omega^{c}=\phi$$
-6. $$\phi^{c}=\Omega$$
-7. $$(A^{c})^{c}=A$$
-8. $$(A\cup B)^{c}=A^{c}\cap B^{c}$$
-9. $$(A\cup B)^{c}=A^{c}\cap B^{c}$$
-10. $$A=(A\cap B)\cup(A\cap B^{c})$$
+$$\begin{aligned}
+ & 1. &  & A\cap \phi=\phi \\[1ex]
+ & 2. &  & A\cup \phi=A \\[1ex]
+ & 3. &  & A\cap A^{c}=\phi \\[1ex]
+ & 4. &  & A\cup A^{c}=\Omega \\[1ex]
+ & 5. &  & \Omega^{c}=\phi \\[1ex]
+ & 6. &  & \phi^{c}=\Omega \\[1ex]
+ & 7. &  & (A^{c})^{c}=A \\[1ex]
+ & 8. &  & (A\cup B)^{c}=A^{c}\cap B^{c} \\[1ex]
+ & 9. &  & (A\cup B)^{c}=A^{c}\cap B^{c} \\[1ex]
+ & 10. &  & A=(A\cap B)\cup(A\cap B^{c})
+\end{aligned}$$
+
 # Counting Sample Points
 
 One of the problems that the statistician must consider and attempt to evaluate is the element of chance associated with the occurrence of certain events when an experiment is performed. These problems belong in the field of **probability**. In many cases, we shall be able to solve a probability problem by counting the number of points in the sample space without actually listing each element. The fundamental principle of counting, often referred to as the **multiplication rule**, is the following:
@@ -183,10 +186,12 @@ In many problems, we are interested in the number of ways of selecting $r$ objec
 >so
 >$$ P(A)=\dfrac{1}{4}+\dfrac{1}{4}+\dfrac{1}{4}=\dfrac{3}{4}$$
 
-
 Some important rules:
-1. $$P(A)+P(A^{c})=1$$
-2. $$A\subseteq B\implies P(A)\leq  P(B)$$
+$$\begin{aligned}
+ & 1. &  & P(A)+P(A^{c})=1 \\[1ex]
+ & 2. &  & A\subseteq B\implies P(A)\leq  P(B)
+\end{aligned}$$
+
 # Additive Rules
 Often it is easiest to calculate the probability of some event from known probabilities of other events. This may well be true if the event in question can be represented as the union of two other events or as the complement of some event. Several important laws that frequently simplify the computation of probabilities follow. The first, called the **additive rule**, applies to union of events.
 
@@ -248,8 +253,12 @@ $$P(B|A)=\dfrac{2}{5}=\dfrac{2/9}{5/9}=\dfrac{P(A\cap B)}{P(A)}$$
  >The **conditional probability** of $B$, given $A$, denoted by $P(B|A)$, is defined by:
  >$$P(B|A)=\dfrac{P(A\cap B)}{P(A)},\, \qquad  P(A)>0 $$
 
+
 Another rule:
-1. $$P(A|B)=P(A\cap C|B)+P(A\cap C^{c}|B)$$
+$$\begin{aligned}
+& 1. & & P(A|B)=P(A\cap C|B)+P(A\cap C^{c}|B) \\[1ex]
+\end{aligned}$$
+
 ## Independent Events
 
 In the die tossing experiment we note that $P(B|A)=2/5$ whereas $P(B)=1/3$. That is, $P(B|A)\neq P(B)$, indicating that $B$ depends on $A$. Now consider an experiment in which $2$ cards are drawn in succession from an ordinary deck, with replacement. The events are defined as

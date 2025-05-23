@@ -74,10 +74,10 @@ Let $X_1, X_2, \ldots, X_n$ represent $n$ random variables.
 	The sample median is the middle value of the sample.
 - **Sample mode:**
 	  The value of the sample that occurs most often.
-	>[!example] Example:
-	>Suppose a data set consists of the following observations:
-	>$$0.32,\ 0.53,\ 0.28,\ 0.37,\ 0.47,\ 0.43,\ 0.36,\ 0.42,\ 0.38,\ 0.43$$
-	>The sample mode is $0.43$, since it occurs more than any other value.
+>[!example] Example:
+>Suppose a data set consists of the following observations:
+>$$0.32,\ 0.53,\ 0.28,\ 0.37,\ 0.47,\ 0.43,\ 0.36,\ 0.42,\ 0.38,\ 0.43$$
+>The sample mode is $0.43$, since it occurs more than any other value.
 
 A measure of location or central tendency in a sample does not by itself give a clear indication of the nature of the sample. Thus, a measure of variability in the sample must also be considered.
 
@@ -87,30 +87,31 @@ The variability in a sample displays how the observations spread out from the av
 
 - **Sample variance:**
 	$$
-	S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X})^2
+	\boxed {S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X})^2}
 	$$
 	The computed value for a given sample is denoted $s^2$.
-	>[!example] Example:
-	>A comparison of coffee prices at 4 randomly selected grocery stores in San Diego showed increases from the previous month of $12$, $15$, $17$, and $20$ cents for a 1-pound bag. Find the variance of this random sample of price increases.
-	>
-	>**Solution:**
-	>Sample mean: $\overline{x} = (12 + 15 + 17 + 20)/4 = 16$ cents.
-	>
-	>Sample variance:
-	>$$
-	>s^2 = \frac{1}{3} \sum_{i=1}^4 (x_i - 16)^2 = \frac{(-4)^2 + (-1)^2 + 1^2 + 4^2}{3} = \frac{34}{3}
-	>$$
-	An alternative formula for the sample variance is:
-	>[!theorem] Theorem:
-	>If $S^2$ is the variance of a random sample of size $n$, we may write
-	>$$
-	>S^2 = \frac{1}{n(n-1)} \left[ n \sum_{i=1}^n X_i^2 - \left( \sum_{i=1}^n X_i \right)^2 \right]
-	>$$
+>[!example] Example:
+>A comparison of coffee prices at 4 randomly selected grocery stores in San Diego showed increases from the previous month of $12$, $15$, $17$, and $20$ cents for a 1-pound bag. Find the variance of this random sample of price increases.
+>
+>**Solution:**
+>Sample mean: $\overline{x} = (12 + 15 + 17 + 20)/4 = 16$ cents.
+>Sample variance:
+>$$
+>s^2 = \frac{1}{3} \sum_{i=1}^4 (x_i - 16)^2 = \frac{(-4)^2 + (-1)^2 + 1^2 + 4^2}{3} = \frac{34}{3}
+>$$
+	
+- An alternative formula for the sample variance is:
+>[!theorem] Theorem:
+>If $S^2$ is the variance of a random sample of size $n$, we may write
+>$$
+>S^2 = \frac{1}{n(n-1)} \left[ n \sum_{i=1}^n X_i^2 - \left( \sum_{i=1}^n X_i \right)^2 \right]
+>$$
+	
 - **Sample standard deviation:**
 	$$S = \sqrt{S^2}$$
 	where $S^{2}$ is the sample variance.
 - **Sample range:**
-  $$R = X_{\max} - X_{\min}$$
+	$$R = X_{\max} - X_{\min}$$
 
 >[!example] Example:
 >Find the variance of the data $3, 4, 5, 6, 6, 7$, representing the number of trout caught by a random sample of 6 fishermen.

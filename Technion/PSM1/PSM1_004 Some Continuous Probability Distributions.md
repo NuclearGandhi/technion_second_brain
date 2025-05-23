@@ -4,6 +4,11 @@ aliases:
   - normal distribution
   - Gaussian distribution
   - rectangular distribution
+  - gamma distribution
+  - exponential distribution
+  - gamma function
+  - Chebyshev's theorem
+  - standard normal distribution
 ---
 # Continuous Uniform Distribution
 
