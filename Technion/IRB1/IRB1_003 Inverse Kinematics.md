@@ -284,6 +284,6 @@ Let us examine the relation between $\mathrm{ELB}$ and $\mathrm{sgn}({p}_{x})$:
 We can therefore write the solution as:
 $$\boxed {
 {\theta}_{2}=\mathrm{atan2}\left(\dfrac{{p}_{x}-e{c}_{1}}{{c}_{1}},h-{p}_{z}\right)+\dfrac{\pi}{2}(1-\mathrm{ELB}\cdot \mathrm{sgn}(h-{p}_{z}))
- }$$
+}$$
 
  
