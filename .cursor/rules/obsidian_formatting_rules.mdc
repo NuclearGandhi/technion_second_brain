@@ -7,7 +7,7 @@ alwaysApply: true
 
 ## General - Obsidian Markdown
 - Use "$" for inline math and "$$" for math blocks
-- Do not put Hebrew text inside math blocks
+- Do not put Hebrew text inside math blocks or math inline
 - Put definitions, examples, notes and so forth in callouts
 - Reference local links using [[]] and not []()
 - Each image (callouts are exempt, but still desirable) should have a caption
