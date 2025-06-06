@@ -302,6 +302,15 @@ figure.testi .author h5 span {
   padding-left: 5px;
 }
 
+.mermaid {
+  text-align: center;
+}
+
+.mermaid svg {
+  max-width: 700px;
+  height: auto;
+}
+
 /*
 PDF only
 ==========

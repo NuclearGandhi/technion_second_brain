@@ -102,7 +102,7 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.11.0",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.12.2",
     "libraryItems": [
       {
         "status": "unpublished",
@@ -180,7 +180,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "LWoTMawMIBx2yHG_IDh0X",
@@ -225,7 +226,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "brW-HU51iE3MKcdTWsSyo",
@@ -270,7 +272,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "RoZ1TEkoBowhlSnu6qEMn",
@@ -335,7 +338,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "jEKll0l6qowpLbqEiZfIr",
@@ -400,7 +404,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "2jl_wplb1bx2xwZ8rfjUW",
@@ -446,7 +451,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "In_zNOzF-Jz-3VEVsPZgF",
@@ -492,7 +498,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "I9j-3f2Q2ObSysyNewcWw",
@@ -556,7 +563,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "W-p8KPlGRO1cOAXy9BtEl",
@@ -613,7 +621,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "wRQIDleyxzYyx6v6XPoy8",
@@ -670,7 +679,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "eamw7CKttEeTbT8qy3C42",
@@ -715,7 +725,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "ysYVZvCts652un8kOzTWE",
@@ -760,7 +771,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "6jWHtX7EMWTgfsWK76ADT",
@@ -805,7 +817,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "v07XYu-l-NYwS08fBGXHr",
@@ -865,7 +878,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "DymXLhtzbSqEC6odkYlyX",
@@ -910,7 +924,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "3RyWyVX0EtDJ2qdTPLhyT",
@@ -1004,7 +1019,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "NUzQWj155i0rjyb1DoFWn",
@@ -1079,7 +1095,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "pprLoJhI4ncI6szS_vXS8",
@@ -1124,7 +1141,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "eWQ6ehlolCE4Fo0ACRCu7",
@@ -1303,7 +1321,8 @@
                 42.456848199069,
                 -42.45684819906896
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -1384,7 +1403,8 @@
                 36.74073559004822,
                 -56.01714979343761
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "E35agLkJmNFbsk2E8XM8w",
@@ -1429,7 +1449,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "type": "line",
@@ -1510,7 +1531,8 @@
                 36.74073559004822,
                 56.01714979343761
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "HIJ6Y5L7z8bUG_8Jl44QS",
@@ -1555,7 +1577,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "type": "line",
@@ -1660,7 +1683,8 @@
                 42.456848199069,
                 -42.45684819906896
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "pJu9Tze-P0BIrxhtrsqOi",
@@ -1705,7 +1729,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "lRGQTr8RgieK963Q4UDkc",
@@ -1817,7 +1842,8 @@
                 42.51951187802829,
                 -42.51951187802824
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -1898,7 +1924,8 @@
                 36.79496264074562,
                 -56.09982763787891
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "WuR6axjqpWei8LxfgufrJ",
@@ -1943,7 +1970,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "type": "line",
@@ -2024,7 +2052,8 @@
                 36.79496264074562,
                 56.09982763787891
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "yAS16UxHNHeYepibuDGkk",
@@ -2069,7 +2098,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "z-22armoggde32-ZIdnL0",
@@ -2114,7 +2144,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "PxKufON7BgsJCNKynYK-r",
@@ -2166,7 +2197,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "szyx3BYXrc_6DRqqjcYBl",
@@ -2211,7 +2243,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "4NWkScCbi2GicKmsOYGoq",
@@ -2264,7 +2297,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "XBhEZN5euzjVv5eLWVhpV",
@@ -2309,7 +2343,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "type": "line",
@@ -2414,7 +2449,8 @@
                 29.999999999999996,
                 -29.999999999999766
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -2519,7 +2555,8 @@
                 29.999999999999996,
                 29.999999999999766
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "YhPndX09NzvSgsNs6mS1I",
@@ -2631,7 +2668,8 @@
                 84.81624800364155,
                 -84.81624800364145
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -2712,7 +2750,8 @@
                 73.39714260066252,
                 -111.90572712935216
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "znroZ_H47V_CvYV5JxVeK",
@@ -2757,7 +2796,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "type": "line",
@@ -2838,7 +2878,8 @@
                 73.39714260066252,
                 111.90572712935216
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "cXFzR5R_9lDsEV1tUwWsi",
@@ -2883,7 +2924,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "type": "line",
@@ -2988,7 +3030,8 @@
                 84.81624800364155,
                 -84.81624800364145
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "V-jp7cZbmYn25bs4w_ml2",
@@ -3033,7 +3076,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "7WG0TlAyAent8681NlIXw",
@@ -3120,7 +3164,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "pYYIig29L84Cp9R7f8Wnc",
@@ -3165,7 +3210,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "zvXEqJ1iiKNU_-mijOEu-",
@@ -3383,7 +3429,8 @@
                 85.03902375605684,
                 -85.03902375605674
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -3464,7 +3511,8 @@
                 73.58992528149146,
                 -112.19965527575815
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "JQymhCtVzGm5etcqYRwGP",
@@ -3509,7 +3557,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "type": "line",
@@ -3590,7 +3639,8 @@
                 73.58992528149146,
                 112.19965527575815
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "G7P9XHAFdMZnFHmFKEdW-",
@@ -3635,7 +3685,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "d4Zy8u3dooPcuV-nHSzsY",
@@ -3680,7 +3731,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "AgeosQuZPHbWmo8jWSBCE",
@@ -3793,7 +3845,8 @@
                 10.000000000000027,
                 -10.000000000000028
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -3899,7 +3952,8 @@
                 -10.000000000000027,
                 -10.000000000000028
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "E2_S536T-MtsDc8yrPib1",
@@ -3945,7 +3999,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "pCHhvYDvY3QGJRglrLfjN",
@@ -3991,7 +4046,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "9-73D2EGyvZH0TUCY6-T6",
@@ -4036,7 +4092,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "mUvt_GYUg9rpifZE0cwEb",
@@ -4096,7 +4153,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "ZSiSjwevJrw8gcXkfJc2j",
@@ -4141,7 +4199,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "stv2MvFaiqYq6GBucNkJM",
@@ -4186,7 +4245,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "4UNyDaj96OXyLxjCaNyBA",
@@ -4286,7 +4346,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "sW8Wr1rVysY2t_RA74sAs",
@@ -4331,7 +4392,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "jtvwm31ZMb1SKsWTXMLvw",
@@ -4384,7 +4446,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "hwhgGL8lAoT1cuDk2gsrH",
@@ -4429,7 +4492,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "type": "line",
@@ -4534,7 +4598,8 @@
                 60.00000000000001,
                 -59.999999999999545
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -4639,7 +4704,8 @@
                 60.00000000000001,
                 59.999999999999545
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "zXFyTlmo7YAoOsXGi12pt",
@@ -4708,7 +4774,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "PNh4VNx4f6qRXnLSpz7ci",
@@ -4754,7 +4821,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "ioCZ9I0Q52DPEoT4beBJy",
@@ -4848,7 +4916,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "nuVuC2k1hpo6AkzH9k1Hq",
@@ -4974,7 +5043,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "XgQNww1BRP2EPGwnOCdIg",
@@ -5422,7 +5492,8 @@
                 29.999999999999993,
                 -29.999999999999993
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -5475,7 +5546,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -5580,7 +5652,8 @@
                 29.999999999999993,
                 -29.999999999999993
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -5685,7 +5758,8 @@
                 29.999999999999993,
                 -29.999999999999993
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "hxasB-41xLNP3t6We29cT",
@@ -5798,7 +5872,8 @@
                 18.51819460119378,
                 -18.518194601193702
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -5904,7 +5979,8 @@
                 -18.51819460119378,
                 -18.518194601193702
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -5964,7 +6040,8 @@
                 7.407277840477512,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -6070,7 +6147,8 @@
                 18.51819460119378,
                 -18.518194601193702
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -6176,7 +6254,8 @@
                 -18.51819460119378,
                 -18.518194601193702
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -6236,7 +6315,8 @@
                 7.407277840477512,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -6342,7 +6422,8 @@
                 18.51819460119378,
                 -18.518194601193702
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -6448,7 +6529,8 @@
                 -18.51819460119378,
                 -18.518194601193702
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -6508,7 +6590,8 @@
                 7.407277840477512,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "tR5oCIH3GTfarir58TZBW",
@@ -6553,7 +6636,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "hoaWiFZswp1GNJk8KR5J0",
@@ -6598,7 +6682,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "WscJZJO7G-lpLFRqsXW6c",
@@ -6680,7 +6765,8 @@
                 -160,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "JaB3Nn2mAJwxsF7MCAaPJ",
@@ -6732,7 +6818,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "FJGp-GyABX7je3nrm285H",
@@ -6777,7 +6864,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "GvhNok4k46yFUB1LAS9h_",
@@ -6831,7 +6919,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "Dzsg9y9sK0UclNzRlaM39",
@@ -6877,7 +6966,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "Y7lyWvF8938zmsPFkcNtm",
@@ -6939,7 +7029,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "pwswjR6GT2w3GnFiLcpPj",
@@ -7016,7 +7107,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "KlsI2VmplAVCwa1y1J5XK",
@@ -7062,7 +7154,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "ArEKIhpiIiIDtcvDmUtCr",
@@ -7109,7 +7202,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "6GAf7BYlJlnmQMdXTnUKx",
@@ -7156,7 +7250,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "Ovec5yM4HN6hoJr8jtfjU",
@@ -7238,7 +7333,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "3gTO_0Jk_trmTHw1qKF5T",
@@ -7283,7 +7379,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "ZW1XAkcJ6dcfBkfN068L5",
@@ -7329,7 +7426,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "Kdx8SYczuYCCASMDLGUsK",
@@ -7375,7 +7473,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "ixUl6PgQ94_iT2s6edjek",
@@ -7464,7 +7563,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "VZB4ZMPJaJNpv83K38EIO",
@@ -7510,7 +7610,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "vVT09HYGA4oY8Zfj1SqbO",
@@ -7619,7 +7720,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "yiKs4nQn57LsBJKdfS-rn",
@@ -7671,7 +7773,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "pSjB2AYVCGAA8_Ulhh5mo",
@@ -7716,7 +7819,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "_kANSztkzzMYuDQXNv-Dz",
@@ -7769,7 +7873,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "Q_YTXAfaBWFma-4q3B0j-",
@@ -7815,7 +7920,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "qRYeMgULiBoVrM2sxPbjz",
@@ -7861,7 +7967,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "0-ehsPWGmy5jBfLOWeBZ_",
@@ -7906,7 +8013,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "tmtFY8bvKqN2p3qv8tdlv",
@@ -7951,7 +8059,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "201RaCVW8A9INiKZJKhg_",
@@ -8205,7 +8314,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "lXGro2ks09Z9850h1Rfzf",
@@ -8250,7 +8360,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "-EX3lDKfdTbLnlzmY-FxN",
@@ -8295,7 +8406,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "KODBDFQtGXDiG17AAKzBT",
@@ -8340,7 +8452,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "gTErX9a--OZFCDzfkTJcX",
@@ -8432,7 +8545,8 @@
                 -160,
                 -0.34360126561007576
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "id": "5idmF0SF6ZRhK_414Uo6a",
@@ -8478,7 +8592,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "E6SKuKCsWPNh5wuPwVQFD",
@@ -8532,7 +8647,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "NS1sbmVVhzS9Ov3U9IXzq",
@@ -8578,7 +8694,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "nc_KTqbCpoVK0vp9SE6oP",
@@ -8624,7 +8741,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "uDqPKe1BtKvxxS8FZYmrU",
@@ -8673,7 +8791,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "mXUjK-U07b09B0bRf21wE",
@@ -8718,7 +8837,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "r3wg9McALH07iBxVljKXo",
@@ -8770,7 +8890,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "45jRpSZcizIjLsOkw1a32",
@@ -8823,7 +8944,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "WqkvnV1TB8hd-MbcRdpTa",
@@ -8868,7 +8990,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "Bx5kec0-J41Y2NYiyrj6a",
@@ -8913,7 +9036,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           }
         ],
         "id": "mlsVUrN-mHClWd1uMC3N0",
@@ -9061,7 +9185,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "PXAMEBwDxgGwduRcTXH3i",
@@ -9106,7 +9231,8 @@
             "startBinding": null,
             "endBinding": null,
             "startArrowhead": null,
-            "endArrowhead": null
+            "endArrowhead": null,
+            "polygon": false
           },
           {
             "id": "Mt--mBHcCSBLzgJUjqNZF",
@@ -9231,7 +9357,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "BT-KMCOdZlDGeXnrOybHX",
@@ -9311,7 +9438,8 @@
                 44.7755985058749,
                 -44.775598505874704
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -9364,7 +9492,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "Om6LGf52B6DCMIivtZc6S",
@@ -9813,7 +9942,8 @@
                 14.002807419021408,
                 14.002807419021405
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -9858,7 +9988,8 @@
                 14.054193868265523,
                 -14.054193868265521
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "eMVxvC0RmwJLXfcdcJ_3X",
@@ -10969,7 +11100,8 @@
                 42.103485740576396,
                 30.772444745938287
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "qJ8FPY5h6v-vs8JDahOkx",
@@ -11081,7 +11213,8 @@
                 48.133221535388635,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "VfHpwLNOcjhM2I7WVPk8B",
@@ -11163,7 +11296,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -11234,7 +11368,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -11291,7 +11426,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -11366,7 +11502,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -11425,7 +11562,8 @@
                 0,
                 100
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -11476,7 +11614,8 @@
                 0,
                 -50
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -11529,7 +11668,8 @@
                 0,
                 100
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "NHo81yBIEq8UFUow4-bvr",
@@ -11648,7 +11788,8 @@
                 40,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -11693,7 +11834,8 @@
                 26.666666666666664,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -11738,7 +11880,8 @@
                 13.333333333333332,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "pjO_a9jlPewiadJfkPVfr",
@@ -11821,7 +11964,8 @@
                 10,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -11866,7 +12010,8 @@
                 0,
                 10
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "created": 1716814467787
@@ -11947,7 +12092,8 @@
                 10,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "8Sr9VAUHJAFa_hSHfQ0mF",
@@ -12059,7 +12205,8 @@
                 24.536540881535235,
                 8.178846960511688
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -12164,7 +12311,8 @@
                 8.178846960511775,
                 24.536540881535156
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -12217,7 +12365,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "UZbpK4AXQiGEVQzQIA2JH",
@@ -12327,7 +12476,8 @@
                 -10.107282477407633,
                 -30.32184743222271
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -12430,7 +12580,8 @@
                 -30.321847432222807,
                 -10.10728247740753
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -12481,7 +12632,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "TiCjZPG53GKzsN-QE0AF4",
@@ -12593,7 +12745,8 @@
                 30.000000000000046,
                 -29.999999999999954
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -12698,7 +12851,8 @@
                 30.000000000000046,
                 -29.999999999999954
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -12751,7 +12905,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "OJuHVz8FLf8P4urZuAt41",
@@ -12861,7 +13016,8 @@
                 200.00000000000014,
                 -199.99999999999957
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "kMWLxXwh_NOJnTPWl8Q5O",
@@ -12921,7 +13077,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -12974,7 +13131,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "dn6rlYwfMw4WZYbcukXyw",
@@ -13052,7 +13210,8 @@
                 120,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "F1H96CsHdvVbfY84B7oh-",
@@ -13134,7 +13293,8 @@
                 120.00000000000009,
                 9.947598300641403e-14
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "yF0t4cY7Yxcp-6Zh_V6wT",
@@ -13258,7 +13418,8 @@
                 22.040418191780738,
                 56.661195611337774
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "NEC0V_bkdyCgDZkVzyF27",
@@ -13376,7 +13537,8 @@
                 0.34681986700348943,
                 171.34676884021772
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -13421,7 +13583,8 @@
                 0,
                 7.899441120442972
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "wt-fy2BA0KxDHgoroYoTQ",
@@ -13483,7 +13646,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "gFtnDaO3ZGwzQMkGbC8WD",
@@ -13576,7 +13740,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -13633,7 +13798,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -13690,7 +13856,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "UR4CW8kSohcyt46Q-4x9O",
@@ -14263,7 +14430,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -14560,7 +14728,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -14857,7 +15026,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "r26gaFGANApryjLhj1Ou5",
@@ -15167,7 +15337,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "HkDq3Uw52eDuoqnAXPhpV",
@@ -15253,7 +15424,8 @@
                 0,
                 60
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -15296,7 +15468,8 @@
                 0,
                 100
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "IY3pLOlkRk1DJoHWvbnDe",
@@ -15532,7 +15705,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -15585,7 +15759,8 @@
                 -118.54753628526103,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "ellipse",
@@ -15693,7 +15868,8 @@
                 -25.9784726618052,
                 25.978472661805142
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -15736,7 +15912,8 @@
                 25.483125895752437,
                 25.483125895752536
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "MyU3g3kvGSuBiozEdN-QH",
@@ -16065,7 +16242,8 @@
                 140,
                 1.2789769243681803e-13
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "gwqePoSpG-jxGhT6Cd_J4",
@@ -16167,7 +16345,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "line",
@@ -16212,7 +16391,8 @@
                 20,
                 -20
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "JldktivVbhTKSWmBbzLfU",
@@ -16284,7 +16464,8 @@
                 0,
                 0
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "ew5rLXtQsSixyga7zXzPQ",
@@ -16342,7 +16523,8 @@
                 0.334798516814754,
                 -0.1585768705152404
               ]
-            ]
+            ],
+            "polygon": false
           }
         ],
         "id": "MXDzpZvRm8F04ltZIHqAY",
@@ -16406,7 +16588,8 @@
                 -0.2827203267214755,
                 0.23299492970015143
               ]
-            ]
+            ],
+            "polygon": false
           },
           {
             "type": "ellipse",

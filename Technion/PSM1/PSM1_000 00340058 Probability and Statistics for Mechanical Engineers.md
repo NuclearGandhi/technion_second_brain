@@ -15,12 +15,14 @@ Assistant: Daniel Goldberg
 - [[PSM1_003 Some Discrete Probability  Distributions]]
 - [[PSM1_004 Some Continuous Probability Distributions]]
 - [[PSM1_005 Fundamental Sampling Distributions and Data Descriptions]]
+- [[PSM1_006 One- and Two-Sample  Estimation Problems]]
 
 # Homework
 - [[PSM1_HW001 Homework 1]]
 - [[PSM1_HW002 Homework 2]]
 - [[PSM1_HW003 Homework 3]]
 - [[PSM1_HW004 Homework 4]]
+- [[PSM1_HW005 Homework 5]]
 
 # Exams
 

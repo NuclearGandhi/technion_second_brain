@@ -44,8 +44,8 @@ $$
 >Let $X_1, X_2, \ldots, X_n$ be $n$ independent random variables, each having the same probability distribution $f(x)$. Then $X_1, X_2, \ldots, X_n$ form a **random sample** of size $n$ from the population $f(x)$, with joint probability distribution
 >$$f(x_1, x_2, \ldots, x_n) = f(x_1)f(x_2) \cdots f(x_n)$$
 
-**Example:**
-If we select $n = 8$ storage batteries from a manufacturing process and record the life of each battery, with $x_1$ the value of $X_1$, $x_2$ the value of $X_2$, etc., then $x_1, x_2, \ldots, x_8$ are the values of the random sample $X_1, X_2, \ldots, X_8$. If the population of battery lives is normal, each $X_i$ has the same normal distribution as $X$.
+> [!example] Example:
+> If we select $n = 8$ storage batteries from a manufacturing process and record the life of each battery, with $x_1$ the value of $X_1$, $x_2$ the value of $X_2$, etc., then $x_1, x_2, \ldots, x_8$ are the values of the random sample $X_1, X_2, \ldots, X_8$. If the population of battery lives is normal, each $X_i$ has the same normal distribution as $X$.
 
 # Some Important Statistics
 
@@ -79,9 +79,11 @@ Let $X_1, X_2, \ldots, X_n$ represent $n$ random variables.
 >$$0.32,\ 0.53,\ 0.28,\ 0.37,\ 0.47,\ 0.43,\ 0.36,\ 0.42,\ 0.38,\ 0.43$$
 >The sample mode is $0.43$, since it occurs more than any other value.
 
-A measure of location or central tendency in a sample does not by itself give a clear indication of the nature of the sample. Thus, a measure of variability in the sample must also be considered.
+
 
 ## Variability Measures of a Sample: The Sample Variance, Standard Deviation, and Range
+
+A measure of location or central tendency in a sample does not by itself give a clear indication of the nature of the sample. Thus, a measure of variability in the sample must also be considered.
 
 The variability in a sample displays how the observations spread out from the average.
 
@@ -141,6 +143,8 @@ $$\sigma^2_{\overline{X}} = \frac{1}{n^2}(\sigma^2 + \sigma^2 + \cdots + \sigma^
 If we are sampling from a population with unknown distribution, either finite or infinite, the sampling distribution of $\overline{X}$ will still be approximately normal with mean $\mu$ and variance $\sigma^2/n$, provided that the sample size is large. This amazing result is an immediate consequence of the following theorem, called the Central Limit Theorem.
 
 # The Central Limit Theorem
+
+![](https://www.youtube.com/watch?v=zeJD6dqJ5lo)
 
 The Central Limit Theorem is one of the most important results in probability theory and statistics. It provides the theoretical foundation for many statistical procedures and explains why the normal distribution appears so frequently in nature.
 

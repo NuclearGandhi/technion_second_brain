@@ -1,6 +1,9 @@
 % FEM solution for 1D heat equation with variable area and source
 
 clear; clc; close all;
+set(groot, 'defaultTextInterpreter', 'latex');
+set(groot, 'defaultAxesTickLabelInterpreter', 'latex');
+set(groot, 'defaultLegendInterpreter', 'latex');
 
 % Problem parameters
 k = 15; % W/m/K
@@ -8,7 +11,7 @@ A = @(x) 50e-4 * exp(x); % m^2
 L = 1; % m
 qdot = 2.5; % W/m
 T0 = 50; % K
-qL = 1.5e3; % W/m^2
+qL = 1.5; % W/m^2
 
 % 2-point Gauss quadrature points and weights (for use in main script)
 xi_q = [-1/sqrt(3), 1/sqrt(3)];
@@ -113,9 +116,11 @@ end
 
 % Plot error convergence
 figure;
-loglog(hvals, L2err, '-o', 'DisplayName','$L^2$ error'); hold on;
-loglog(hvals, H1err, '-s', 'DisplayName','$H^1$ error');
-xlabel('Element size $h$','Interpreter','latex'); ylabel('Error norm','Interpreter','latex');
+h1 = loglog(hvals, L2err, '-o'); hold on;
+h2 = loglog(hvals, H1err, '-s');
+legend([h1, h2], {'$L^2$ error', '$H^1$ error'}, 'Interpreter', 'latex', 'Location', 'best');
+xlabel('Element size $h$','Interpreter','latex'); 
+ylabel('Error norm','Interpreter','latex');
 title('Error convergence'); legend('show','Location','best'); grid on;
 % Compute and annotate slopes
 pL2 = polyfit(log(hvals), log(L2err), 1);
@@ -123,9 +128,9 @@ pH1 = polyfit(log(hvals), log(H1err), 1);
 xlims = xlim;
 ylims = ylim;
 text(xlims(1) * (xlims(2)/xlims(1))^0.3, ylims(1) * (ylims(2)/ylims(1))^0.8, ...
-    sprintf('Slope $L^2$: %.2f', pL2(1)), 'FontSize',12);
+    sprintf('Slope $L^2$: %.2f', pL2(1)), 'FontSize',12, 'Interpreter','latex');
 text(xlims(1) * (xlims(2)/xlims(1))^0.5, ylims(1) * (ylims(2)/ylims(1))^0.4, ...
-    sprintf('Slope $H^1$: %.2f', pH1(1)), 'FontSize',12);
+    sprintf('Slope $H^1$: %.2f', pH1(1)), 'FontSize',12, 'Interpreter','latex');
 
 set(gcf, 'Position', [100, 100, 600, 400]);
 exportgraphics(gcf, 'q7_error_convergence.png', 'Resolution', 150);

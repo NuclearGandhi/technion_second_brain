@@ -55,6 +55,8 @@ Probabilities are simple to calculate for the uniform distribution because of th
 
 # Normal Distribution
 
+![](https://www.youtube.com/watch?v=8idr1WZ1A7Q)
+
 The most important continuous probability distribution in the entire field of statistics is the **normal distribution**. Its graph, called the **normal curve**, is the bell-shaped curve shown below, which approximately describes many phenomena that occur in nature, industry, and research.
 
 ![[{3C38BD34-FA5E-4D1F-B9A6-10AA4D1E63A9}.png|bookhue|500]]
