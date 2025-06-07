@@ -1,5 +1,12 @@
 ---
 aliases:
+  - binomial distribution
+  - hypergeometric distribution
+  - geometric distribution
+  - negative binomial
+  - poisson distribution
+  - bernoulli process
+  - discrete distributions
 ---
 From [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]]:
 # Binomial and Multinomial Distributions

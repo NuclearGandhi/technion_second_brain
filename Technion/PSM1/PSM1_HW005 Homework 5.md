@@ -1,6 +1,6 @@
 ---
-aliases:
-  - Homework 5
+aliases: 
+title: Homework 5
 ---
 
 |               | Student A                      |

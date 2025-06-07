@@ -1,5 +1,14 @@
 ---
 aliases:
+  - estimation
+  - confidence intervals
+  - point estimation
+  - interval estimation
+  - unbiased estimator
+  - statistical inference
+  - sample size
+  - confidence coefficient
+  - error estimation
 ---
 
 # Introduction
@@ -139,7 +148,7 @@ The dot at the center of each interval indicates the position of the point estim
 >The average zinc concentration recovered from a sample of measurements taken in 36 different locations in a river is found to be $2.6$ grams per milliliter. Find the $95\%$ and $99\%$ confidence intervals for the mean zinc concentration in the river. Assume that the population standard deviation is $0.3$ gram per milliliter.
 >
 >**Solution:**
->The point estimate of $\mu$ is $\overline{x} = 2.6$. The $z$-value leaving an area of 0.025 to the right, and therefore an area of 0.975 to the left, is $z_{0.025} = 1.96$ (from table). Hence, the $95\%$ confidence interval is
+>The point estimate of $\mu$ is $\overline{x} = 2.6$. The $z$-value leaving an area of $0.025$ to the right, and therefore an area of $0.975$ to the left, is $z_{0.025} = 1.96$ (from table). Hence, the $95\%$ confidence interval is
 >$$2.6 - (1.96)\left(\frac{0.3}{\sqrt{36}}\right) < \mu < 2.6 + (1.96)\left(\frac{0.3}{\sqrt{36}}\right)$$
 > which reduces to $2.50 < \mu < 2.70$. To find a $99\%$ confidence interval, we find the $z$-value leaving an area of $0.005$ to the right and $0.995$ to the left. From Table A.3 again, $z_{0.005} = 2.575$, and the $99\%$ confidence interval is:
 > 
@@ -185,7 +194,6 @@ Strictly speaking, the formula in the theorem above is applicable only if we kno
 >
 >Therefore, we can be $95\%$ confident that a random sample of size $139$ will provide an estimate $\overline{x}$ differing from $\mu$ by an amount less than $0.05$.
 
->[!TODO] TODO: לסדר
 ## One-Sided Confidence Bounds
 
 The confidence intervals and resulting confidence bounds discussed thus far are two-sided (i.e., both upper and lower bounds are given). However, there are many applications in which only one bound is sought. For example, if the measurement of interest is tensile strength, the engineer receives better information from a lower bound only. This bound communicates the worst-case scenario. On the other hand, if the measurement is something for which a relatively large value of $\mu$ is not profitable or desirable, then an upper confidence bound is of interest. An example would be a case in which inferences need to be made concerning the mean mercury composition in a river. An upper bound is very informative in this case.
@@ -204,22 +212,28 @@ $$P\left(\mu < \overline{X} + z_\alpha\frac{\sigma}{\sqrt{n}}\right) = 1 - \alph
 
 As a result, the upper and lower one-sided bounds follow.
 
->[!def] One-Sided Confidence Bounds on $\mu$, $\sigma^2$ Known:
->If $\overline{X}$ is the mean of a random sample of size $n$ from a population with variance $\sigma^2$, the one-sided $100(1 - \alpha)\%$ confidence bounds for $\mu$ are given by:
+>[!def] Definition:
+>If $\overline{X}$ is the mean of a random sample of size $n$ from a population with variance $\sigma^2$, **the one-sided $100(1 - \alpha)\%$ confidence bounds for $\mu$** are given by:
 >
->**Upper one-sided bound:** $\overline{x} + z_\alpha\frac{\sigma}{\sqrt{n}}$
+>**Upper one-sided bound:**
+>$$\overline{x} + z_\alpha\frac{\sigma}{\sqrt{n}}$$
 >
->**Lower one-sided bound:** $\overline{x} - z_\alpha\frac{\sigma}{\sqrt{n}}$
+>**Lower one-sided bound:**
+>$$\overline{x} - z_\alpha\frac{\sigma}{\sqrt{n}}$$
 
->[!example] Example 9.4: Psychological Testing
->In a psychological testing experiment, 25 subjects are selected randomly and their reaction time, in seconds, to a particular stimulus is measured. Past experience suggests that the variance in reaction times to these types of stimuli is $4 \text{ sec}^2$ and that the distribution of reaction times is approximately normal. The average time for the subjects is $6.2$ seconds. Give an upper $95\%$ bound for the mean reaction time.
+>[!example] Example: Psychological Testing
+>In a psychological testing experiment, 25 subjects are selected randomly and their reaction time, in seconds, to a particular stimulus is measured. Past experience suggests that the variance in reaction times to these types of stimuli is $\pu{4s^{2}}$ and that the distribution of reaction times is approximately normal. The average time for the subjects is $6.2$ seconds. Give an upper $95\%$ bound for the mean reaction time.
 >
 >**Solution:**
 >The upper $95\%$ bound is given by
->$$\overline{x} + z_\alpha\frac{\sigma}{\sqrt{n}} = 6.2 + (1.645)\frac{\sqrt{4}}{\sqrt{25}} = 6.2 + 0.658 = 6.858 \text{ seconds}$$
+>$$\begin{aligned}
+\overline{x} + z_\alpha\frac{\sigma}{\sqrt{n}}  & = 6.2 + (1.645)\frac{\sqrt{4}}{\sqrt{25}}  \\[1ex]
+ & = 6.2 + 0.658  \\[1ex]
+ & = \pu {6.858 s} 
+\end{aligned}$$
 >
->Hence, we are $95\%$ confident that the mean reaction time is less than 6.858 seconds.
-
+>Hence, we are $95\%$ confident that the mean reaction time is less than $6.858$ seconds.
+%% 
 ## The Case of $\sigma$ Unknown
 
 Frequently, we must attempt to estimate the mean of a population when the variance is unknown. The reader should recall learning in [[PSM1_005 Fundamental Sampling Distributions and Data Descriptions|Chapter 8]] that if we have a random sample from a normal distribution, then the random variable
@@ -270,7 +284,7 @@ They are the upper and lower $100(1 - \alpha)\%$ bounds, respectively. Here $t_\
 >Using Table A.4, we find $t_{0.025} = 2.447$ for $v = 6$ degrees of freedom. Hence, the $95\%$ confidence interval for $\mu$ is
 >$$10.0 - (2.447)\left(\frac{0.283}{\sqrt{7}}\right) < \mu < 10.0 + (2.447)\left(\frac{0.283}{\sqrt{7}}\right)$$
 >which reduces to $9.74 < \mu < 10.26$.
-
+ %%
 ## Concept of a Large-Sample Confidence Interval
 
 Often statisticians recommend that even when normality cannot be assumed, $\sigma$ is unknown, and $n \geq 30$, $s$ can replace $\sigma$ and the confidence interval
@@ -279,11 +293,11 @@ $$\overline{x} \pm z_{\alpha/2}\frac{s}{\sqrt{n}}$$
 
 may be used. This is often referred to as a **large-sample confidence interval**. The justification lies only in the presumption that with a sample as large as 30 and the population distribution not too skewed, $s$ will be very close to the true $\sigma$ and thus the Central Limit Theorem prevails. It should be emphasized that this is only an approximation and the quality of the result becomes better as the sample size grows larger.
 
->[!example] Example 9.6: SAT Mathematics Scores
->Scholastic Aptitude Test (SAT) mathematics scores of a random sample of 500 high school seniors in the state of Texas are collected, and the sample mean and standard deviation are found to be 501 and 112, respectively. Find a $99\%$ confidence interval on the mean SAT mathematics score for seniors in the state of Texas.
+>[!example] Example: SAT Mathematics Scores
+>Scholastic Aptitude Test (SAT) mathematics scores of a random sample of $500$ high school seniors in the state of Texas are collected, and the sample mean and standard deviation are found to be $501$ and $112$, respectively. Find a $99\%$ confidence interval on the mean SAT mathematics score for seniors in the state of Texas.
 >
 >**Solution:**
->Since the sample size is large, it is reasonable to use the normal approximation. Using Table A.3, we find $z_{0.005} = 2.575$. Hence, a $99\%$ confidence interval for $\mu$ is
+>Since the sample size is large, it is reasonable to use the normal approximation. Using a table, we find $z_{0.005} = 2.575$. Hence, a $99\%$ confidence interval for $\mu$ is
 >$$501 \pm (2.575)\left(\frac{112}{\sqrt{500}}\right) = 501 \pm 12.9$$
 >which yields $488.1 < \mu < 513.9$.
 
@@ -301,17 +315,20 @@ For $\overline{X}$, the computed confidence limit
 
 $$\overline{x} \pm z_{\alpha/2}\frac{\sigma}{\sqrt{n}}$$
 
-is written as $\overline{x} \pm z_{\alpha/2} \cdot \text{s.e.}(\overline{x})$, where "s.e." is the "standard error."
+is written as $\overline{x} \pm z_{\alpha/2} \,\,\text{s.e.}(\overline{x})$, where "s.e." is the "standard error."
 
 The important point is that the width of the confidence interval on $\mu$ is dependent on the quality of the point estimator through its standard error. In the case where $\sigma$ is unknown and sampling is from a normal distribution, $s$ replaces $\sigma$ and the estimated standard error $s/\sqrt{n}$ is involved. Thus, the confidence limits on $\mu$ are:
 
->[!def] Confidence Limits on $\mu$, $\sigma^2$ Unknown:
+>[!def] Definition:
+>The **confidence limits on $\mu$** are:
 >$$\overline{x} \pm t_{\alpha/2}\frac{s}{\sqrt{n}} = \overline{x} \pm t_{\alpha/2} \cdot \text{s.e.}(\overline{x})$$
 
 Again, the confidence interval is no better (in terms of width) than the quality of the point estimate, in this case through its estimated standard error. Computer packages often refer to estimated standard errors simply as "standard errors."
 
 As we move to more complex confidence intervals, there is a prevailing notion that widths of confidence intervals become shorter as the quality of the corresponding point estimate becomes better, although it is not always quite as simple as we have illustrated here. It can be argued that a confidence interval is merely an augmentation of the point estimate to take into account the precision of the point estimate.
 
+
+%% 
 # Prediction Intervals
 
 The point and interval estimations of the mean in previous sections provide good information about the unknown parameter $\mu$ of a normal distribution or a nonnormal distribution from which a large sample is drawn. Sometimes, other than the population mean, the experimenter may also be interested in predicting the possible value of a future observation.
@@ -383,3 +400,4 @@ To this point in the text very little attention has been paid to the concept of 
 It is convenient for our purposes to view an outlying observation as one that comes from a population with a mean that is different from the mean that governs the rest of the sample of size $n$ being studied. The prediction interval produces a bound that "covers" a future single observation with probability $1 - \alpha$ if it comes from the population from which the sample was drawn.
 
 As a result, a methodology for outlier detection involves the rule that an observation is an outlier if it falls outside the prediction interval computed without including the questionable observation in the sample. As a result, for the prediction interval of Example 9.8, if a new pack of beef is measured and its leanness is outside the interval $(93.96, 98.44)$, that observation can be viewed as an outlier.
+ %%

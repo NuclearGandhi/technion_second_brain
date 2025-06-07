@@ -1,6 +1,6 @@
 ---
-aliases:
-  - Homework 3
+aliases: 
+title: Homework 3
 ---
 
 |               | Student A                      |

@@ -193,7 +193,7 @@ where $n(z; 0, 1)$ is the standard normal density.
 ![[{1F22C59A-21EC-463B-B35B-BF49D3967CD5}.png|bookhue|600]]
 >The area under the $X$-curve between $x_1$ and $x_2$ equals the area under the $Z$-curve between $z_1$ and $z_2$.
 
-Tables of the standard normal distribution (Table A.3) provide $P(Z < z)$ for values of $z$ from $-3.49$ to $3.49$. For example, to find $P(Z < 1.74)$, locate $z = 1.7$ in the left column and $0.04$ in the top row; the value is $0.9591$.
+Tables of the standard normal distribution provide $P(Z < z)$ for values of $z$ from $-3.49$ to $3.49$. For example, to find $P(Z < 1.74)$, locate $z = 1.7$ in the left column and $0.04$ in the top row; the value is $0.9591$.
 
 To find a $z$ value corresponding to a given probability, reverse the process. For example, the $z$ value leaving an area of $0.2148$ to the left is $-0.79$.
 

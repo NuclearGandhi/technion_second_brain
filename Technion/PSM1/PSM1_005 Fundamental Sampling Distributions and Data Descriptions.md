@@ -1,5 +1,14 @@
 ---
 aliases:
+  - sampling distributions
+  - central limit theorem
+  - sample mean
+  - sample variance
+  - random sampling
+  - population sample
+  - statistics
+  - sample median
+  - CLT
 ---
 # Random Sampling
 
@@ -148,8 +157,8 @@ If we are sampling from a population with unknown distribution, either finite or
 
 The Central Limit Theorem is one of the most important results in probability theory and statistics. It provides the theoretical foundation for many statistical procedures and explains why the normal distribution appears so frequently in nature.
 
->[!theorem] Central Limit Theorem
->If $\overline{X}$ is the mean of a random sample of size $n$ taken from a population with mean $\mu$ and finite variance $\sigma^2$, then the limiting form of the distribution of 
+>[!theorem] Theorem:
+>The **Central Limit Theorem** states that if $\overline{X}$ is the mean of a random sample of size $n$ taken from a population with mean $\mu$ and finite variance $\sigma^2$, then the limiting form of the distribution of 
 >$$Z = \frac{\overline{X} - \mu}{\sigma/\sqrt{n}}$$
 >as $n \to \infty$, is the standard normal distribution $n(z; 0, 1)$.
 
@@ -201,4 +210,105 @@ One very important application of the Central Limit Theorem is the determination
 >$$2P\left(\frac{\overline{X} - 5}{0.1/\sqrt{100}} \geq 2.7\right) = 2P(Z \geq 2.7) = 2(0.0035) = 0.007.$$
 >
 >Therefore, one would experience by chance that an $\overline{x}$ would be $\pu{0.027mm}$ from the mean in only $7$ in $1000$ experiments. As a result, this experiment with $\overline{x} = 5.027$ certainly does not give supporting evidence to the conjecture that $\mu = 5.0$. In fact, it strongly refutes the conjecture!
+%% 
+# t-Distribution
 
+In the previous section, we discussed the utility of the Central Limit Theorem. Its applications revolve around inferences on a population mean or the difference between two population means. Use of the Central Limit Theorem and the normal distribution is certainly helpful in this context. However, it was assumed that the population standard deviation is known. This assumption may not be unreasonable in situations where the engineer is quite familiar with the system or process. However, in many experimental scenarios, knowledge of $\sigma$ is certainly no more reasonable than knowledge of the population mean $\mu$. Often, in fact, an estimate of $\sigma$ must be supplied by the same sample information that produced the sample average $\overline{x}$. As a result, a natural statistic to consider to deal with inferences on $\mu$ is
+
+$$T = \frac{\overline{X} - \mu}{S/\sqrt{n}}$$
+
+since $S$ is the sample analog to $\sigma$. If the sample size is small, the values of $S^2$ fluctuate considerably from sample to sample and the distribution of $T$ deviates appreciably from that of a standard normal distribution. If the sample size is large enough, say $n \geq 30$, the distribution of $T$ does not differ considerably from the standard normal. However, for $n < 30$, it is useful to deal with the exact distribution of $T$.
+
+In developing the sampling distribution of $T$, we shall assume that our random sample was selected from a normal population. We can then write
+
+$$T = \frac{(\overline{X} - \mu)/(\sigma/\sqrt{n})}{\sqrt{S^2/\sigma^2}} = \frac{Z}{\sqrt{V/(n-1)}}$$
+
+where
+
+$$Z = \frac{\overline{X} - \mu}{\sigma/\sqrt{n}}$$
+
+has the standard normal distribution and
+
+$$V = \frac{(n-1)S^2}{\sigma^2}$$
+
+has a chi-squared distribution with $v = n - 1$ degrees of freedom. In sampling from normal populations, we can show that $\overline{X}$ and $S^2$ are independent, and consequently so are $Z$ and $V$. The following theorem gives the definition of a random variable $T$ as a function of $Z$ (standard normal) and $\chi^2$. For completeness, the density function of the t-distribution is given.
+
+>[!theorem] Theorem 8.5:
+>Let $Z$ be a standard normal random variable and $V$ a chi-squared random variable with $v$ degrees of freedom. If $Z$ and $V$ are independent, then the distribution of the random variable $T$, where
+>$$T = \frac{Z}{\sqrt{V/v}}$$
+>is given by the density function
+>$$h(t) = \frac{\Gamma[(v+1)/2]}{\Gamma(v/2)\sqrt{\pi v}} \left(1 + \frac{t^2}{v}\right)^{-(v+1)/2}, \quad -\infty < t < \infty$$
+>This is known as the **t-distribution** with $v$ degrees of freedom.
+
+From the foregoing and the theorem above we have the following corollary.
+
+>[!info] Corollary 8.1:
+>Let $X_1, X_2, \ldots, X_n$ be independent random variables that are all normal with mean $\mu$ and standard deviation $\sigma$. Let
+>$$\overline{X} = \frac{1}{n} \sum_{i=1}^n X_i \quad \text{and} \quad S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X})^2$$
+>Then the random variable
+>$$T = \frac{\overline{X} - \mu}{S/\sqrt{n}}$$
+>has a t-distribution with $v = n - 1$ degrees of freedom.
+
+The probability distribution of $T$ was first published in 1908 in a paper written by W. S. Gosset. At the time, Gosset was employed by an Irish brewery that prohibited publication of research by members of its staff. To circumvent this restriction, he published his work secretly under the name "Student." Consequently, the distribution of $T$ is usually called the **Student t-distribution** or simply the **t-distribution**. In deriving the equation of this distribution, Gosset assumed that the samples were selected from a normal population. Although this would seem to be a very restrictive assumption, it can be shown that nonnormal populations possessing nearly bell-shaped distributions will still provide values of $T$ that approximate the t-distribution very closely.
+
+## What Does the t-Distribution Look Like?
+
+The distribution of $T$ is similar to the distribution of $Z$ in that they both are symmetric about a mean of zero. Both distributions are bell shaped, but the t-distribution is more variable, owing to the fact that the $T$-values depend on the fluctuations of two quantities, $\overline{X}$ and $S^2$, whereas the $Z$-values depend only on the changes in $\overline{X}$ from sample to sample. The distribution of $T$ differs from that of $Z$ in that the variance of $T$ depends on the sample size $n$ and is always greater than 1. Only when the sample size $n \to \infty$ will the two distributions become the same.
+
+![[Figure 8.8.png|bookhue|600]]
+>The t-distribution curves for $v = 2, 5,$ and $\infty$. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+The percentage points of the t-distribution are given in Table A.4.
+
+It is customary to let $t_\alpha$ represent the t-value above which we find an area equal to $\alpha$. Hence, the t-value with 10 degrees of freedom leaving an area of 0.025 to the right is $t = 2.228$. Since the t-distribution is symmetric about a mean of zero, we have $t_{1-\alpha} = -t_\alpha$; that is, the t-value leaving an area of $1 - \alpha$ to the right and therefore an area of $\alpha$ to the left is equal to the negative t-value that leaves an area of $\alpha$ in the right tail of the distribution.
+
+![[Figure 8.9.png|bookhue|500]]
+>Symmetry property (about 0) of the t-distribution. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+That is, $t_{0.95} = -t_{0.05}$, $t_{0.99} = -t_{0.01}$, and so forth.
+
+>[!example] Example 8.8:
+>The t-value with $v = 14$ degrees of freedom that leaves an area of 0.025 to the left, and therefore an area of 0.975 to the right, is
+>$$t_{0.975} = -t_{0.025} = -2.145$$
+
+>[!example] Example 8.9:
+>Find $P(-t_{0.025} < T < t_{0.05})$.
+>
+>**Solution:**
+>Since $t_{0.05}$ leaves an area of 0.05 to the right, and $-t_{0.025}$ leaves an area of 0.025 to the left, we find a total area of
+>$$1 - 0.05 - 0.025 = 0.925$$
+>between $-t_{0.025}$ and $t_{0.05}$. Hence
+>$$P(-t_{0.025} < T < t_{0.05}) = 0.925$$
+
+>[!example] Example 8.10:
+>Find $k$ such that $P(k < T < -1.761) = 0.045$ for a random sample of size 15 selected from a normal distribution and $T = \frac{\overline{X} - \mu}{S/\sqrt{n}}$.
+>
+>![[Figure 8.10.png|bookhue|500]]
+>
+>**Solution:**
+>From Table A.4 we note that 1.761 corresponds to $t_{0.05}$ when $v = 14$. Therefore, $-t_{0.05} = -1.761$. Since $k$ in the original probability statement is to the left of $-t_{0.05} = -1.761$, let $k = -t_\alpha$. Then, from the figure, we have
+>$$0.045 = 0.05 - \alpha, \quad \text{or} \quad \alpha = 0.005$$
+>Hence, from Table A.4 with $v = 14$, $k = -t_{0.005} = -2.977$ and
+>$$P(-2.977 < T < -1.761) = 0.045$$
+
+Exactly 95% of the values of a t-distribution with $v = n - 1$ degrees of freedom lie between $-t_{0.025}$ and $t_{0.025}$. Of course, there are other t-values that contain 95% of the distribution, such as $-t_{0.02}$ and $t_{0.03}$, but these values do not appear in Table A.4, and furthermore, the shortest possible interval is obtained by choosing t-values that leave exactly the same area in the two tails of our distribution. A t-value that falls below $-t_{0.025}$ or above $t_{0.025}$ would tend to make us believe either that a very rare event has taken place or that our assumption about $\mu$ is in error. Should this happen, we shall make the decision that our assumed value of $\mu$ is in error. In fact, a t-value falling below $-t_{0.01}$ or above $t_{0.01}$ would provide even stronger evidence that our assumed value of $\mu$ is quite unlikely. General procedures for testing claims concerning the value of the parameter $\mu$ will be treated in Chapter 10. A preliminary look into the foundation of these procedures is illustrated by the following example.
+
+>[!example] Example 8.11:
+>A chemical engineer claims that the population mean yield of a certain batch process is 500 grams per milliliter of raw material. To check this claim he samples 25 batches each month. If the computed t-value falls between $-t_{0.05}$ and $t_{0.05}$, he is satisfied with this claim. What conclusion should he draw from a sample that has a mean $\overline{x} = 518$ grams per milliliter and a sample standard deviation $s = 40$ grams? Assume the distribution of yields to be approximately normal.
+>
+>**Solution:**
+>From Table A.4 we find that $t_{0.05} = 1.711$ for 24 degrees of freedom. Therefore, the engineer can be satisfied with his claim if a sample of 25 batches yields a t-value between $-1.711$ and $1.711$. If $\mu = 500$, then
+>$$t = \frac{518 - 500}{40/\sqrt{25}} = 2.25$$
+>a value well above 1.711. The probability of obtaining a t-value, with $v = 24$, equal to or greater than 2.25 is approximately 0.02. If $\mu > 500$, the value of $t$ computed from the sample is more reasonable. Hence, the engineer is likely to conclude that the process produces a better product than he thought.
+
+## What Is the t-Distribution Used For?
+
+The t-distribution is used extensively in problems that deal with inference about the population mean (as illustrated in Example 8.11) or in problems that involve comparative samples (i.e., in cases where one is trying to determine if means from two samples are significantly different). The use of the distribution will be extended in Chapters 9, 10, 11, and 12.
+
+>[!notes] Important Notes:
+>- The use of the t-distribution for the statistic $T = \frac{\overline{X} - \mu}{S/\sqrt{n}}$ requires that $X_1, X_2, \ldots, X_n$ be normal.
+>- The use of the t-distribution and the sample size consideration do not relate to the Central Limit Theorem.
+>- The use of the standard normal distribution rather than $T$ for $n \geq 30$ merely implies that $S$ is a sufficiently good estimator of $\sigma$ in this case.
+>- In chapters that follow, the t-distribution finds extensive usage.
+
+ %%
