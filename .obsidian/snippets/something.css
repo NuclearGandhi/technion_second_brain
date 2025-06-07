@@ -144,13 +144,11 @@ table {
   border-right: 0;
   font-size: var(--font-caption-size);
   color: var(--icon-color-hover);
-  text-align: center;
+  text-align: start;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
 }
-
-.markdown-rendered blockquote p {
-  text-align: center !important;
-}
-
 
 /* Center iframes */
 iframe.external-embed {

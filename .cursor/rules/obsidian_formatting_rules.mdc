@@ -66,5 +66,26 @@ alwaysApply: true
 - Use `|bookhue` for textbook images and `|book` for other book images
 - Specify image size in pixels when needed (e.g., `|bookhue|500`)
 
+# Common Mistakes to Avoid
+
+## Content Structure and Organization
+- **DO NOT add titles or section headings that weren't in the original text** - stick to the original structure and organization
+- **DO NOT create unnecessary callout blocks** - only use them when the original text specifically defines terms, states theorems, provides clear examples, etc.
+- **When using callout blocks in English text, use English titles** (e.g., `>[!def] Definition:` not `>[!def] הגדרה:`)
+- **Always include figure placeholders and captions** when the original text references figures
+- **Reference figures appropriately** in the flowing text (e.g., "as illustrated in Figure X.Y" or "see Figure X.Y")
+
+## Figure Handling
+- Include proper figure placeholders using format: `![[Figure X.Y placeholder.png|bookhue|600]]` when figures are mentioned but not provided
+- Always include figure captions below images using the format: `>Caption text. [[Source reference]]`
+- Reference figures in the text flow where they are mentioned
+- Use consistent image sizing (typically 600px width for main figures)
+- Leave appropriate space and context for figures to be inserted
+
+## Language Consistency
+- When content is primarily in English, use English callout titles
+- When content is primarily in Hebrew, use Hebrew callout titles
+- Match the language of callout blocks to the language of the surrounding content
+
 # Additional Rules for Code Files
 

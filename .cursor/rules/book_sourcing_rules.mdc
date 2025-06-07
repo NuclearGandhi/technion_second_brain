@@ -13,9 +13,6 @@ alwaysApply: false
 - **Always use precise technical terminology in Hebrew** (e.g., use 'הדקים' instead of 'טרמינלים', 'מתח ההדקים', 'זרם ההדקים', etc.)
 - Use consistent variable names and notation as in the original source, unless a specific correction is required
 - When referencing internal sections, use proper Obsidian cross-links (e.g., `[[#Section Name]]`)
-- Include proper spacing between sections and subsections
-- Use proper tab indentation for nested content
-- Maintain strict heading hierarchy and section organization
 
 ## Figure Citations
 - For figures from books, use the format: `![[filename.png|bookhue|size]]`
@@ -23,9 +20,6 @@ alwaysApply: false
 - Example: `>Figure caption. [[Course_000 Course Name#ביבליוגרפיה|(Author et al., Year)]].`
 - For figures from the same book, you can reference the same source multiple times
 - Include figure numbers from the original book when available
-- Use `|bookhue` for textbook images and `|book` for other book images
-- Specify image size in pixels when needed (e.g., `|bookhue|500`)
-- Use proper spacing between figures and their captions
 
 ## Content Attribution
 - When directly quoting or closely paraphrasing book content, cite the source
@@ -33,7 +27,6 @@ alwaysApply: false
 - When combining information from multiple sources, cite all relevant sources
 - For translated content, maintain the original structure and formatting
 - Use consistent terminology across translations
-- Use proper spacing between sections and subsections
 
 ## Mathematical Content
 - When presenting theorems, definitions, or equations from books:
@@ -47,7 +40,6 @@ alwaysApply: false
   - Indicate if the proof has been modified or adapted
   - Maintain the original logical flow
   - Use proper mathematical notation and symbols
-  - Use proper spacing between equations and text
 
 ## Examples and Exercises
 - When using examples from books:
@@ -55,13 +47,8 @@ alwaysApply: false
   - Use `>[!example] Example:` for English and `>[!example] דוגמה:` for Hebrew
   - Include complete solutions with proper mathematical formatting
   - Use `**Solution:**` or `**פתרון:**` before solutions
-  - Use proper spacing between examples and their solutions
 - For exercises:
   - Maintain original numbering if available
-  - Use proper section headings (e.g., "# תרגילים" for exercises)
-  - Use "## שאלה n" for individual problems
-  - Use "### סעיף א'" format for multiple-part questions
-  - Use proper spacing between exercises and their solutions
 
 ## Cross-References
 - When referencing content from other parts of the same book:
@@ -71,7 +58,6 @@ alwaysApply: false
   - Use the full citation format
   - Include specific page numbers or section references
 - For internal links, use proper Obsidian link format
-- Use proper spacing between cross-references and surrounding text
 
 ## Translation and Adaptation
 - When translating content from books:
@@ -85,19 +71,16 @@ alwaysApply: false
   - Maintain the original structure where possible
   - Cite the original source
   - Use proper bilingual formatting
-  - Use proper spacing between translated sections
 
 ## Tables and Data
 - For tables from books:
   - Include a caption with the source
   - Maintain the original formatting where possible
   - Use proper LaTeX formatting for mathematical content
-  - Use proper spacing between tables and surrounding text
 - For data from books:
   - Cite the source of the data
   - Indicate if the data has been modified or updated
   - Include relevant units and measurement methods
-  - Use proper units formatting with `\pu{...}`
 
 ## Code and Algorithms
 - When presenting code or algorithms from books:
@@ -105,19 +88,12 @@ alwaysApply: false
   - Include any relevant implementation notes
   - Use proper code formatting and syntax highlighting
   - Include comments explaining key steps
-  - Use proper spacing between code blocks and surrounding text
 
 ## Units and Measurements
 - Use `\pu{...}` for physical units
 - Maintain consistent unit notation throughout the document
 - Include units in all numerical values
-- Use proper spacing between numbers and units
 
 ## Document Structure
-- Use proper heading hierarchy (h1, h2, h3)
 - Include aliases for important terms
-- Use consistent formatting for definitions, theorems, and examples
-- Maintain clear section organization
-- Use proper spacing between sections
-- Use proper indentation for nested content
 - **Review and update all content for terminology, variable names, and formatting before finalizing**
