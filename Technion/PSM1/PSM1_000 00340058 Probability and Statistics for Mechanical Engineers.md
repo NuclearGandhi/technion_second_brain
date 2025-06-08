@@ -6,7 +6,7 @@ aliases:
 Moodle: [link](https://moodle24.technion.ac.il/course/view.php?id=3058)
 Syllabus: [link](https://moodle24.technion.ac.il/mod/resource/view.php?id=166866)
 
-Teacher: 
+Teacher: Jacqueline Asscher
 Assistant: Daniel Goldberg
 # Notes
 
