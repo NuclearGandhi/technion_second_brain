@@ -5,49 +5,20 @@ clc;
 close all;
 
 % --- Configuration ---
-% Data files are now in .m format with naming pattern: data_dy_X_TYY.m
-% where X is the run number and YY is the temperature
+temperatures_infinity_runs = [65, 70, 78]; % °C
+num_runs = length(temperatures_infinity_runs);
 data_folder = 'dynamic/';
 
-% Extract temperature information from available data files
-data_files = dir(fullfile(data_folder, 'data_dy_*_T*.m'));
-temperatures_infinity_runs = [];
-run_numbers = [];
-
-% Parse filenames to extract temperatures and run numbers
-for i = 1:length(data_files)
-    filename = data_files(i).name;
-    % Extract temperature and run number from filename pattern data_dy_X_TYY.m
-    temp_match = regexp(filename, 'data_dy_(\d+)_T(\d+)\.m', 'tokens');
-    if ~isempty(temp_match)
-        run_num = str2double(temp_match{1}{1});
-        temp = str2double(temp_match{1}{2});
-        run_numbers(end+1) = run_num;
-        temperatures_infinity_runs(end+1) = temp;
-    end
-end
-
-% Sort by temperature
-[temperatures_infinity_runs, sort_idx] = sort(temperatures_infinity_runs);
-run_numbers = run_numbers(sort_idx);
-num_runs = length(temperatures_infinity_runs);
-
-fprintf('Found %d dynamic runs: ', num_runs);
-for i = 1:num_runs
-    fprintf('Run %d at %.0f°C ', run_numbers(i), temperatures_infinity_runs(i));
-end
-fprintf('\n');
-
-% Thermocouple configurations (Updated with calibrated values from static analysis)
-% TC1: Sensitivity (S_tc1) = 3.9917e-05 V/°C, Offset (V0_tc1) = -8.1431e-04 V, Measured Diameter = 1.4mm
-% TC5: Sensitivity (S_tc5) = 4.1845e-05 V/°C, Offset (V0_tc5) = -6.0133e-05 V, Measured Diameter = 0.7mm
-% TC7: Sensitivity (S_tc7) = 4.2038e-05 V/°C, Offset (V0_tc7) = -5.9380e-05 V, Measured Diameter = 1.3mm
+% Thermocouple configurations
+% TC1: Sensitivity (S_tc1) = 3.8009e-05 V/°C, Offset (V0_tc1) = -8.4696e-04 V, Measured Diameter = 1.4mm
+% TC5: Sensitivity (S_tc5) = 2.9971e-05 V/°C, Offset (V0_tc5) = -1.7305e-03 V, Measured Diameter = 0.7mm
+% TC7: Sensitivity (S_tc7) = 2.8579e-05 V/°C, Offset (V0_tc7) = -1.7186e-03 V, Measured Diameter = 1.3mm
 
 thermocouples_config = struct(...
     'name',            {'TC1', 'TC5', 'TC7'}, ...
     'column',          {1, 5, 7}, ...
-    'sensitivity',     {3.9917e-05, 4.1845e-05, 4.2038e-05}, ... % V/°C (calibrated values)
-    'offset_voltage',  {-8.1431e-04, -6.0133e-05, -5.9380e-05}, ... % V (calibrated values)
+    'sensitivity',     {3.8009e-05, 2.9971e-05, 2.8579e-05}, ... % V/°C
+    'offset_voltage',  {-8.4696e-04, -1.7305e-03, -1.7186e-03}, ... % V
     'measured_diameter_m', {1.4e-3, 0.7e-3, 1.3e-3} ... % m
 );
 num_thermocouples = length(thermocouples_config);
@@ -60,9 +31,6 @@ cp_material = 410;   % J/(kg·°C)
 dt = 0.01; % seconds per data point
 N_t0_points = 20; % Number of initial points to average for T0
 
-% Process start times for each temperature (in seconds)
-start_times = containers.Map({59, 60, 62}, {2.8, 4.16, 4.42});
-
 % Results storage
 all_time_constants = NaN(num_thermocouples, num_runs); 
 
@@ -71,10 +39,9 @@ disp('--- Starting Dynamic Thermocouple Analysis ---');
 % --- Main Loop: Process each dynamic run ---
 for run_idx = 1:num_runs
     T_infinity = temperatures_infinity_runs(run_idx);
-    current_run_num = run_numbers(run_idx);
-    run_filename = sprintf('%sdata_dy_%d_T%.0f.m', data_folder, current_run_num, T_infinity);
+    run_filename = sprintf('%s%d.csv', data_folder, T_infinity);
     
-    fprintf('\nProcessing Run: T_∞ = %.1f°C (Run %d)\n', T_infinity, current_run_num);
+    fprintf('\nProcessing Run: T_∞ = %.1f°C\n', T_infinity);
     
     % Load data
     if ~exist(run_filename, 'file')
@@ -82,46 +49,9 @@ for run_idx = 1:num_runs
         continue;
     end
     
-    try
-        % Load the .m data file using load with -mat flag
-        % The data is stored in a variable called 'data'
-        loaded_data = load(run_filename, '-mat');
-        
-        if isfield(loaded_data, 'data')
-            full_data = loaded_data.data;
-            fprintf('  Loaded data matrix: %dx%d\n', size(full_data, 1), size(full_data, 2));
-        else
-            error('Data variable not found in loaded file');
-        end
-    catch ME
-        fprintf('  ERROR loading file %s: %s\n', run_filename, ME.message);
-        continue;
-    end
-    
+    full_data = readmatrix(run_filename);
     num_data_points = size(full_data, 1);
-    full_time_vector = (0:num_data_points-1)' * dt;
-    
-    % Determine process start time and trim data accordingly
-    if isKey(start_times, T_infinity)
-        process_start_time = start_times(T_infinity);
-        start_index = round(process_start_time / dt) + 1;
-        
-        if start_index <= num_data_points
-            % Trim data to start from process beginning
-            full_data = full_data(start_index:end, :);
-            time_vector = (0:size(full_data, 1)-1)' * dt; % Reset time to start from 0
-            num_data_points = size(full_data, 1);
-            
-            fprintf('  Process starts at t=%.2fs, trimmed %d initial data points\n', ...
-                    process_start_time, start_index-1);
-        else
-            fprintf('  Warning: Start time %.2fs exceeds data length, using full data\n', process_start_time);
-            time_vector = full_time_vector;
-        end
-    else
-        fprintf('  Warning: No start time defined for T=%.0f°C, using full data\n', T_infinity);
-        time_vector = full_time_vector;
-    end
+    time_vector = (0:num_data_points-1)' * dt;
     
     % Create figure for this run
     figure_run = figure;
@@ -202,7 +132,7 @@ for run_idx = 1:num_runs
     
     % Set figure size and export at high quality
     set(figure_run, 'Position', [100, 100, 800, 600]);
-    fig_filename = sprintf('dynamic_response_T%dC_run%d', T_infinity, current_run_num);
+    fig_filename = sprintf('dynamic_response_T%dC', T_infinity);
     print(figure_run, fig_filename, '-dpng', '-r300');
     fprintf('  Figure saved as %s.png (800x600, 300 DPI)\n', fig_filename);
 end
@@ -255,30 +185,30 @@ if ~isnan(h_convection)
     end
 end
 
-% Create summary figure
-figure_summary = figure;
-if any(~isnan(avg_time_constants))
-    diameters_mm = [thermocouples_config.measured_diameter_m] * 1000;
-    valid_idx = ~isnan(avg_time_constants);
-    
-    scatter(diameters_mm(valid_idx), avg_time_constants(valid_idx), 100, 'filled');
-    xlabel('Diameter (mm)');
-    ylabel('Time Constant $\\tau$ (s)');
-    title('Time Constant vs Thermocouple Diameter');
-    grid on;
-    
-    % Add labels for each point
-    for tc_idx = find(valid_idx)
-        text(diameters_mm(tc_idx), avg_time_constants(tc_idx), ...
-             sprintf('  %s', thermocouples_config(tc_idx).name), ...
-             'VerticalAlignment', 'middle');
+    % Create summary figure
+    figure_summary = figure;
+    if any(~isnan(avg_time_constants))
+        diameters_mm = [thermocouples_config.measured_diameter_m] * 1000;
+        valid_idx = ~isnan(avg_time_constants);
+        
+        scatter(diameters_mm(valid_idx), avg_time_constants(valid_idx), 100, 'filled');
+        xlabel('Diameter (mm)');
+        ylabel('Time Constant $\\tau$ (s)');
+        title('Time Constant vs Thermocouple Diameter');
+        grid on;
+        
+        % Add labels for each point
+        for tc_idx = find(valid_idx)
+            text(diameters_mm(tc_idx), avg_time_constants(tc_idx), ...
+                 sprintf('  %s', thermocouples_config(tc_idx).name), ...
+                 'VerticalAlignment', 'middle');
+        end
+        
+        % Set figure size and export at high quality
+        set(figure_summary, 'Position', [100, 100, 800, 600]);
+        print(figure_summary, 'tau_vs_diameter', '-dpng', '-r300');
+        fprintf('\nSummary plot saved as tau_vs_diameter.png (800x600, 300 DPI)\n');
     end
-    
-    % Set figure size and export at high quality
-    set(figure_summary, 'Position', [100, 100, 800, 600]);
-    print(figure_summary, 'tau_vs_diameter', '-dpng', '-r300');
-    fprintf('\nSummary plot saved as tau_vs_diameter.png (800x600, 300 DPI)\n');
-end
 
 disp('Analysis complete.');
 
@@ -293,4 +223,4 @@ disp('Analysis complete.');
 % t: Time.
 % The term (T(t) - T_infinity) / (T0 - T_infinity) represents the non-dimensionalized temperature.
 % Taking the natural log: ln((T(t) - T_infinity) / (T0 - T_infinity)) = -t/tau.
-% This shows a linear relationship between the logged term and time, with a slope of -1/tau. 
+% This shows a linear relationship between the logged term and time, with a slope of -1/tau.

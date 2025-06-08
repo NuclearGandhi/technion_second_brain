@@ -5,36 +5,10 @@ clc;
 close all;
 
 % --- Configuration ---
-% Data files are now in .m format with naming pattern: data_X_TYY.m
-% where X is the data number and YY is the temperature
-data_folder = 'static/';
-
-% Extract temperature information from available data files
-data_files = dir(fullfile(data_folder, 'data_*_T*.m'));
-temperatures_celsius = [];
-data_numbers = [];
-
-% Parse filenames to extract temperatures
-for i = 1:length(data_files)
-    filename = data_files(i).name;
-    % Extract temperature from filename pattern data_X_TYY.m
-    temp_match = regexp(filename, 'data_(\d+)_T(\d+)\.m', 'tokens');
-    if ~isempty(temp_match)
-        data_num = str2double(temp_match{1}{1});
-        temp = str2double(temp_match{1}{2});
-        data_numbers(end+1) = data_num;
-        temperatures_celsius(end+1) = temp;
-    end
-end
-
-% Sort by temperature
-[temperatures_celsius, sort_idx] = sort(temperatures_celsius);
-data_numbers = data_numbers(sort_idx);
+% List of temperatures (from filenames like '22.csv', '25.csv', etc.)
+temperatures_celsius = [22, 25, 30, 35, 45, 55, 60, 71, 75];
 num_temperatures = length(temperatures_celsius);
-
-fprintf('Found %d temperature data files: ', num_temperatures);
-fprintf('%.0f°C ', temperatures_celsius);
-fprintf('\n');
+data_folder = 'static/';
 
 % Define the thermocouples and their corresponding column numbers
 thermocouples_config = struct(...  
@@ -66,24 +40,14 @@ for tc_idx = 1:num_thermocouples
     % --- Inner Loop: Iterate through each temperature file ---
     for temp_idx = 1:num_temperatures
         current_temp = temperatures_celsius(temp_idx);
-        current_data_num = data_numbers(temp_idx);
-        tc_filename = sprintf('%sdata_%d_T%.0f.m', data_folder, current_data_num, current_temp);
+        tc_filename = sprintf('%s%d.csv', data_folder, current_temp);
         
         fprintf('  Processing file: %s for temperature: %.1f°C\n', tc_filename, current_temp);
         
         if exist(tc_filename, 'file')
             try
-                % Load the .m data file using load with -mat flag
-                % The data is stored in a variable called 'data' (500x10 double)
-                loaded_data = load(tc_filename, '-mat');
-                
-                if isfield(loaded_data, 'data')
-                    full_data = loaded_data.data;
-                    fprintf('    Loaded data matrix: %dx%d\n', size(full_data, 1), size(full_data, 2));
-                else
-                    error('Data variable not found in loaded file');
-                end
-                
+                % Read the whole CSV, then select the column
+                full_data = readmatrix(tc_filename);
                 if size(full_data, 2) >= current_tc_column
                     voltages_for_tc = full_data(:, current_tc_column);
                     mean_voltages_for_current_tc(temp_idx) = mean(voltages_for_tc(~isnan(voltages_for_tc))); % Handle potential NaNs in data
@@ -262,4 +226,4 @@ disp('--- Part C: Thermocouple Selection (TODO) ---');
 %     - How close their Seebeck coefficients are to expected literature values (Part B).
 % No single thermocouple might be "best" in all aspects. You might need to weigh these factors.
 
-disp('Script execution complete.'); 
+disp('Script execution complete.');
