@@ -1,9 +1,6 @@
 % FEM solution for 1D heat equation with variable area and source
 
 clear; clc; close all;
-set(groot, 'defaultTextInterpreter', 'latex');
-set(groot, 'defaultAxesTickLabelInterpreter', 'latex');
-set(groot, 'defaultLegendInterpreter', 'latex');
 
 % Problem parameters
 k = 15; % W/m/K
