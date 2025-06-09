@@ -9,21 +9,18 @@ set(groot, 'defaultLegendInterpreter', 'latex');
 k = 15; % W/m/K
 A = @(x) 50e-4 * exp(x); % m^2
 L = 1; % m
-qdot = 2.5; % W/m
+qdot = 2.5; % W/m^3
 T0 = 50; % K
-qL = 1.5; % W/m^2
+qL = 1.5; % W (heat transfer rate)
 
 % 2-point Gauss quadrature points and weights (for use in main script)
 xi_q = [-1/sqrt(3), 1/sqrt(3)];
 w_q = [1, 1];
 
-% Exact solution (symbolic or analytical)
-syms x T(x)
-A_x = 50e-4 * exp(x);
-ODE = diff(A_x*k*diff(T,x),x) + A_x*qdot == 0;
-conds = [T(0)==T0, -k*subs(diff(T,x),x,L)==qL];
-Tsol = dsolve(ODE, conds);
-T_exact = matlabFunction(Tsol, 'Vars', x);
+% Exact solution (analytical)
+% T(x) = T0 - (qdot/k)*x + (1/k)*(qdot - qL/A(L))*(exp(L) - exp(L-x))
+p = 50e-4;
+T_exact = @(x) T0 - (qdot/k)*x + (1/k)*(qdot - qL/A(L))*(exp(L) - exp(L-x));
 
 % FEM solver function
 function [x_nodes, T_num] = fem1d(n, k, A, L, qdot, T0, qL)
@@ -61,8 +58,8 @@ function [x_nodes, T_num] = fem1d(n, k, A, L, qdot, T0, qL)
     end
     % Apply Dirichlet BC at x=0
     K(1,:) = 0; K(1,1) = 1; F(1) = T0;
-    % Apply Neumann BC at x=L
-    F(end) = F(end) - qL * A(x_nodes(end));
+    % Apply Neumann BC at x=L (heat transfer rate boundary condition)
+    F(end) = F(end) - qL;
     % Solve
     T_num = K\F;
 end
