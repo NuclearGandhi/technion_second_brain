@@ -40,7 +40,7 @@ fprintf('\n');
 
 % Thermocouple configurations (Updated with calibrated values from static analysis)
 % TC1: Sensitivity (S_tc1) = 3.9917e-05 V/°C, Offset (V0_tc1) = -8.1431e-04 V, Measured Diameter = 1.4mm
-% TC5: Sensitivity (S_tc5) = 4.1845e-05 V/°C, Offset (V0_tc5) = -6.0133e-05 V, Measured Diameter = 0.7mm
+% TC5: Sensitivity (S_tc5) = 4.1845e-05 V/°C, Offset (V0_tc5) = -6.0133e-05 V, Measured Diameter = 0.9mm (caliper measurement)
 % TC7: Sensitivity (S_tc7) = 4.2038e-05 V/°C, Offset (V0_tc7) = -5.9380e-05 V, Measured Diameter = 1.3mm
 
 thermocouples_config = struct(...
@@ -48,7 +48,7 @@ thermocouples_config = struct(...
     'column',          {1, 5, 7}, ...
     'sensitivity',     {3.9917e-05, 4.1845e-05, 4.2038e-05}, ... % V/°C (calibrated values)
     'offset_voltage',  {-8.1431e-04, -6.0133e-05, -5.9380e-05}, ... % V (calibrated values)
-    'measured_diameter_m', {1.4e-3, 0.7e-3, 1.3e-3} ... % m
+    'measured_diameter_m', {1.4e-3, 0.9e-3, 1.3e-3} ... % m (caliper measurements)
 );
 num_thermocouples = length(thermocouples_config);
 
@@ -62,6 +62,10 @@ N_t0_points = 20; % Number of initial points to average for T0
 
 % Process start times for each temperature (in seconds)
 start_times = containers.Map({59, 60, 62}, {2.8, 4.16, 4.42});
+
+% Fitting time limits for each temperature (in seconds after process start)
+% These limits avoid noisy data at the end of measurements
+fitting_time_limits = containers.Map({59, 60, 62}, {0.3, 0.3, 0.2});
 
 % Results storage
 all_time_constants = NaN(num_thermocouples, num_runs); 
@@ -123,10 +127,14 @@ for run_idx = 1:num_runs
         time_vector = full_time_vector;
     end
     
-    % Create figure for this run
+    % Create figures for this run
     figure_run = figure;
     hold on;
     legend_entries_run = {};
+    
+    figure_ln = figure;
+    hold on;
+    legend_entries_ln = {};
     
     % --- Process each thermocouple ---
     for tc_idx = 1:num_thermocouples
@@ -146,17 +154,35 @@ for run_idx = 1:num_runs
         % Estimate T0 (initial temperature)
         T0_tc = mean(temperature_tc_t(1:min(N_t0_points, num_data_points)));
         
-        % Plot T(t) vs. time
+        % Plot T(t) vs. time on first figure
+        figure(figure_run);
         plot(time_vector, temperature_tc_t, 'DisplayName', sprintf('%s ($T_0=%.1f^\\circ$C)', tc_name, T0_tc));
         legend_entries_run{end+1} = sprintf('%s ($T_0=%.1f^\\circ$C)', tc_name, T0_tc);
         
         % Calculate time constant
-        % Find valid data range for exponential fit
+        % Apply time limit for fitting if specified
+        if isKey(fitting_time_limits, T_infinity)
+            max_fit_time = fitting_time_limits(T_infinity);
+            time_limited_indices = find(time_vector <= max_fit_time);
+            if tc_idx == 1 % Print only once per run
+                fprintf('  Using fitting time range: 0 to %.2fs\n', max_fit_time);
+            end
+        else
+            time_limited_indices = 1:length(time_vector);
+            if tc_idx == 1 % Print only once per run
+                fprintf('  Using full time range for fitting\n');
+            end
+        end
+        
+        % Find valid data range for exponential fit within time limits
         if T_infinity > T0_tc % Heating
             valid_indices = find(temperature_tc_t > T0_tc & temperature_tc_t < T_infinity);
         else % Cooling
             valid_indices = find(temperature_tc_t < T0_tc & temperature_tc_t > T_infinity);
         end
+        
+        % Combine time limit with valid temperature range
+        valid_indices = intersect(valid_indices, time_limited_indices);
         
         if length(valid_indices) < 2
             all_time_constants(tc_idx, run_idx) = NaN;
@@ -188,12 +214,22 @@ for run_idx = 1:num_runs
             tau_tc_run = -1 / slope_ln_plot;
             all_time_constants(tc_idx, run_idx) = tau_tc_run;
             fprintf('  %s: τ = %.3f s\n', tc_name, tau_tc_run);
+            
+            % Plot ln plot on second figure
+            figure(figure_ln);
+            h_data = plot(selected_time, y_transform, 'o-', 'DisplayName', sprintf('%s (\\tau=%.3fs)', tc_name, tau_tc_run));
+            legend_entries_ln{end+1} = sprintf('%s (\\tau=%.3fs)', tc_name, tau_tc_run);
+            
+            % Plot fitted line with same color as data
+            fitted_line = polyval(p_fit, selected_time);
+            plot(selected_time, fitted_line, '--', 'Color', h_data.Color, 'DisplayName', sprintf('%s fit', tc_name));
         else
             all_time_constants(tc_idx, run_idx) = NaN;
         end
     end
     
-    % Format and save figure
+    % Format and save temperature figure
+    figure(figure_run);
     xlabel('Time (s)');
     ylabel('Temperature ($^\circ$C)');
     title(sprintf('Dynamic Response at $T_{\\infty} = %d^\\circ$C', T_infinity));
@@ -204,7 +240,21 @@ for run_idx = 1:num_runs
     set(figure_run, 'Position', [100, 100, 800, 600]);
     fig_filename = sprintf('dynamic_response_T%dC_run%d', T_infinity, current_run_num);
     print(figure_run, fig_filename, '-dpng', '-r300');
-    fprintf('  Figure saved as %s.png (800x600, 300 DPI)\n', fig_filename);
+    fprintf('  Temperature figure saved as %s.png (800x600, 300 DPI)\n', fig_filename);
+    
+    % Format and save ln figure
+    figure(figure_ln);
+    xlabel('Time (s)');
+    ylabel('$\ln\left(\frac{T(t) - T_\infty}{T_0 - T_\infty}\right)$');
+    title(sprintf('Natural Log Plot at $T_{\\infty} = %d^\\circ$C', T_infinity));
+    legend('Location', 'best');
+    grid on;
+    
+    % Set figure size and export at high quality
+    set(figure_ln, 'Position', [900, 100, 800, 600]);
+    fig_ln_filename = sprintf('ln_plot_T%dC_run%d', T_infinity, current_run_num);
+    print(figure_ln, fig_ln_filename, '-dpng', '-r300');
+    fprintf('  Ln plot figure saved as %s.png (800x600, 300 DPI)\n', fig_ln_filename);
 end
 
 % --- Post-Analysis: Calculate averages and convection coefficient ---
@@ -235,8 +285,13 @@ end
 
 % Compare calculated vs measured diameters
 fprintf('\nDiameter Comparison:\n');
-fprintf('TC  | Measured (mm) | Calculated (mm) | Difference (mm)\n');
-fprintf('----|--------------|-----------------|-----------------\n');
+fprintf('TC  | Measured (mm) | Calculated (mm) | Difference (mm) | Uncertainty (mm)\n');
+fprintf('----|--------------|-----------------|-----------------|------------------\n');
+
+% Measurement uncertainties
+caliper_uncertainty_mm = 0.05; % Typical caliper uncertainty ±0.05 mm
+material_prop_uncertainty = 0.05; % 5% uncertainty in material properties
+tau_relative_uncertainty = 0.10; % 10% uncertainty in time constant measurement
 
 if ~isnan(h_convection)
     for tc_idx = 1:num_thermocouples
@@ -248,49 +303,157 @@ if ~isnan(h_convection)
             r_tc_calc = (3 * h_convection * tau_tc_avg) / (rho_material * cp_material);
             d_tc_calc_mm = r_tc_calc * 2 * 1000;
             diff_mm = d_tc_calc_mm - measured_d_mm;
-            fprintf('%-3s | %12.2f | %15.2f | %15.2f\n', tc_name, measured_d_mm, d_tc_calc_mm, diff_mm);
+            
+            % Calculate uncertainty in calculated diameter
+            % δd_calc = d_calc * sqrt((δτ/τ)² + (δρ/ρ)² + (δcp/cp)²)
+            relative_uncertainty_calc = sqrt(tau_relative_uncertainty^2 + ...
+                                           material_prop_uncertainty^2 + ...
+                                           material_prop_uncertainty^2);
+            calc_d_uncertainty_mm = d_tc_calc_mm * relative_uncertainty_calc;
+            
+            fprintf('%-3s | %12.2f | %15.2f | %15.2f | ±%.2f / ±%.2f\n', ...
+                    tc_name, measured_d_mm, d_tc_calc_mm, diff_mm, ...
+                    caliper_uncertainty_mm, calc_d_uncertainty_mm);
         else
-            fprintf('%-3s | %12.2f | %15s | %15s\n', tc_name, measured_d_mm, 'N/A', 'N/A');
+            fprintf('%-3s | %12.2f | %15s | %15s | %16s\n', tc_name, measured_d_mm, 'N/A', 'N/A', 'N/A');
         end
     end
 end
 
-% Create summary figure
-figure_summary = figure;
-if any(~isnan(avg_time_constants))
-    diameters_mm = [thermocouples_config.measured_diameter_m] * 1000;
-    valid_idx = ~isnan(avg_time_constants);
+% Statistical analysis of diameter differences
+fprintf('\n--- Statistical Analysis of Diameter Differences ---\n');
+if ~isnan(h_convection)
+    differences = [];
+    relative_errors = [];
     
-    scatter(diameters_mm(valid_idx), avg_time_constants(valid_idx), 100, 'filled');
-    xlabel('Diameter (mm)');
-    ylabel('Time Constant $\\tau$ (s)');
-    title('Time Constant vs Thermocouple Diameter');
-    grid on;
-    
-    % Add labels for each point
-    for tc_idx = find(valid_idx)
-        text(diameters_mm(tc_idx), avg_time_constants(tc_idx), ...
-             sprintf('  %s', thermocouples_config(tc_idx).name), ...
-             'VerticalAlignment', 'middle');
+    for tc_idx = 1:num_thermocouples
+        if ~isnan(avg_time_constants(tc_idx))
+            measured_d_mm = thermocouples_config(tc_idx).measured_diameter_m * 1000;
+            tau_tc_avg = avg_time_constants(tc_idx);
+            r_tc_calc = (3 * h_convection * tau_tc_avg) / (rho_material * cp_material);
+            d_tc_calc_mm = r_tc_calc * 2 * 1000;
+            diff_mm = d_tc_calc_mm - measured_d_mm;
+            rel_error = abs(diff_mm) / measured_d_mm * 100;
+            
+            differences(end+1) = diff_mm;
+            relative_errors(end+1) = rel_error;
+        end
     end
     
-    % Set figure size and export at high quality
-    set(figure_summary, 'Position', [100, 100, 800, 600]);
-    print(figure_summary, 'tau_vs_diameter', '-dpng', '-r300');
-    fprintf('\nSummary plot saved as tau_vs_diameter.png (800x600, 300 DPI)\n');
+    if ~isempty(differences)
+        mean_diff = mean(abs(differences));
+        std_diff = std(differences);
+        max_rel_error = max(relative_errors);
+        
+        fprintf('Mean absolute difference: %.2f mm\n', mean_diff);
+        fprintf('Standard deviation of differences: %.2f mm\n', std_diff);
+        fprintf('Maximum relative error: %.1f%%\n', max_rel_error);
+        
+        fprintf('\nAnalysis:\n');
+        if max_rel_error < 10
+            fprintf('- The differences are relatively small (< 10%% relative error)\n');
+            fprintf('- These differences can likely be attributed to random measurement errors\n');
+        elseif max_rel_error < 20
+            fprintf('- The differences are moderate (10-20%% relative error)\n');
+            fprintf('- Some systematic effects may be present in addition to random errors\n');
+        else
+            fprintf('- The differences are large (> 20%% relative error)\n');
+            fprintf('- Systematic effects likely dominate over random measurement errors\n');
+        end
+        
+        fprintf('- Typical caliper measurement uncertainty: ±0.02-0.05 mm\n');
+        fprintf('- Heat transfer measurement uncertainties may also contribute\n');
+    end
+end
+
+% Welch's t-test analysis for diameter comparison
+fprintf('\n--- Welch''s t-test Analysis ---\n');
+if ~isnan(h_convection)
+    for tc_idx = 1:num_thermocouples
+        tc_name = thermocouples_config(tc_idx).name;
+        
+        if ~isnan(avg_time_constants(tc_idx))
+            % Measured diameter and uncertainty
+            d_measured_mm = thermocouples_config(tc_idx).measured_diameter_m * 1000;
+            delta_d_measured_mm = caliper_uncertainty_mm;
+            
+            % Calculated diameter and uncertainty
+            tau_tc_avg = avg_time_constants(tc_idx);
+            r_tc_calc = (3 * h_convection * tau_tc_avg) / (rho_material * cp_material);
+            d_calculated_mm = r_tc_calc * 2 * 1000;
+            
+            % Calculate uncertainty in calculated diameter
+            relative_uncertainty_calc = sqrt(tau_relative_uncertainty^2 + ...
+                                           material_prop_uncertainty^2 + ...
+                                           material_prop_uncertainty^2);
+            delta_d_calculated_mm = d_calculated_mm * relative_uncertainty_calc;
+            
+            % Welch's t-test statistic: t = |d_calc - d_meas| / sqrt(δd_calc² + δd_meas²)
+            numerator_t = abs(d_calculated_mm - d_measured_mm);
+            denominator_t = sqrt(delta_d_calculated_mm^2 + delta_d_measured_mm^2);
+            
+            if denominator_t > 0
+                t_statistic = numerator_t / denominator_t;
+                
+                fprintf('\n%s Welch''s t-test:\n', tc_name);
+                fprintf('  Measured diameter: %.2f ± %.2f mm\n', d_measured_mm, delta_d_measured_mm);
+                fprintf('  Calculated diameter: %.2f ± %.2f mm\n', d_calculated_mm, delta_d_calculated_mm);
+                fprintf('  Difference: %.2f mm\n', d_calculated_mm - d_measured_mm);
+                fprintf('  t-statistic: %.3f\n', t_statistic);
+                
+                % Interpretation
+                if t_statistic < 1
+                    fprintf('  Interpretation: Small difference (t < 1), measurements are consistent\n');
+                elseif t_statistic < 2
+                    fprintf('  Interpretation: Moderate difference (1 ≤ t < 2), some disagreement\n');
+                else
+                    fprintf('  Interpretation: Large difference (t ≥ 2), significant disagreement\n');
+                end
+                
+                % Rough p-value estimation (assuming normal distribution)
+                p_value_approx = 2 * (1 - normcdf(t_statistic)); % Two-tailed test
+                fprintf('  Approximate p-value: %.3f\n', p_value_approx);
+                
+                if p_value_approx < 0.05
+                    fprintf('  Result: Significant difference (p < 0.05)\n');
+                else
+                    fprintf('  Result: No significant difference (p ≥ 0.05)\n');
+                end
+            else
+                fprintf('\n%s: Cannot calculate t-statistic (zero combined uncertainty)\n', tc_name);
+            end
+        else
+            fprintf('\n%s: No valid time constant data for t-test\n', tc_name);
+        end
+    end
 end
 
 disp('Analysis complete.');
 
-% Explanation of the formula (Part B of instructions)
-% T(t) = T_infinity + (T0 - T_infinity) * exp(-t/tau)
-% T(t): Temperature of the thermocouple at time t.
-% T_infinity: Temperature of the surrounding fluid (hot water), the steady-state temperature.
-% T0: Initial temperature of the thermocouple (air temperature).
-% tau: Time constant of the thermocouple, characterizing its response speed.
-%      It's the time taken for the temperature to change by (1 - 1/e) or ~63.2% of the total difference (T_infinity - T0).
-% e: Base of the natural logarithm.
-% t: Time.
-% The term (T(t) - T_infinity) / (T0 - T_infinity) represents the non-dimensionalized temperature.
-% Taking the natural log: ln((T(t) - T_infinity) / (T0 - T_infinity)) = -t/tau.
-% This shows a linear relationship between the logged term and time, with a slope of -1/tau. 
+% ==================== FORMULA EXPLANATION ====================
+% התפלגות הטמפרטורה כפונקציה של הזמן:
+% T(t) = T_∞ + (T0 - T_∞) * exp(-t/τ)
+%
+% משמעות האיברים:
+% T(t): טמפרטורת המדיד בזמן t
+% T_∞: טמפרטורת הנוזל הסובב (מים חמים) - הטמפרטורה הסופית במצב יציב  
+% T0: הטמפרטורה הראשונית של המדיד (טמפרטורת האוויר)
+% τ: קבוע הזמן של המדיד - מאפיין את מהירות התגובה התרמית
+%    זהו הזמן הנדרש לשינוי של (1 - 1/e) ≈ 63.2% מההפרש הכולל (T_∞ - T0)
+% e: בסיס הלוגריתם הטבעי
+% t: הזמן
+%
+% הגרף הלוגריתמי:
+% ln((T(t) - T_∞)/(T0 - T_∞)) = -t/τ
+% גרף זה יראה קו ישר עם שיפוע -1/τ
+% מהשיפוע ניתן לחשב את קבוע הזמן: τ = -1/slope
+%
+% חישוב מקדם ההסעה:
+% τ = (ρ*V*cp)/(h*A) = (ρ*r*cp)/(3*h) (עבור כדור)
+% לכן: h = (ρ*r*cp)/(3*τ)
+% כאשר:
+% ρ = 8666 kg/m³ - צפיפות החומר
+% cp = 410 J/(kg·°C) - החום הסגולי
+% r - רדיוס המדיד
+% h - מקדם ההסעה
+% ============================================================ 
