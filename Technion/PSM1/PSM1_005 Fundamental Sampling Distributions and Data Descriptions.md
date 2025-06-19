@@ -210,10 +210,80 @@ One very important application of the Central Limit Theorem is the determination
 >$$2P\left(\frac{\overline{X} - 5}{0.1/\sqrt{100}} \geq 2.7\right) = 2P(Z \geq 2.7) = 2(0.0035) = 0.007.$$
 >
 >Therefore, one would experience by chance that an $\overline{x}$ would be $\pu{0.027mm}$ from the mean in only $7$ in $1000$ experiments. As a result, this experiment with $\overline{x} = 5.027$ certainly does not give supporting evidence to the conjecture that $\mu = 5.0$. In fact, it strongly refutes the conjecture!
-%% 
+
+# Sampling Distribution of S²
+
+In the preceding section we learned about the sampling distribution of $\overline{X}$. The Central Limit Theorem allowed us to make use of the fact that
+$$\frac{\overline{X} - \mu}{\sigma/\sqrt{n}}$$
+tends toward $N(0, 1)$ as the sample size grows large. Sampling distributions of important statistics allow us to learn information about parameters. Usually, the parameters are the counterpart to the statistics in question. For example, if an engineer is interested in the population mean resistance of a certain type of resistor, the sampling distribution of $\overline{X}$ will be exploited once the sample information is gathered. On the other hand, if the variability in resistance is to be studied, clearly the sampling distribution of $S^2$ will be used in learning about the parametric counterpart, the population variance $\sigma^2$.
+
+If a random sample of size $n$ is drawn from a normal population with mean $\mu$ and variance $\sigma^2$, and the sample variance is computed, we obtain a value of the statistic $S^2$. We shall proceed to consider the distribution of the statistic $(n-1)S^2/\sigma^2$.
+
+By the addition and subtraction of the sample mean $\overline{X}$, it is easy to see that
+$$\sum_{i=1}^n (X_i - \mu)^2 = \sum_{i=1}^n [(X_i - \overline{X}) + (\overline{X} - \mu)]^2$$
+
+Expanding this expression:
+$$\begin{aligned}
+\sum_{i=1}^n (X_i - \mu)^2 &= \sum_{i=1}^n (X_i - \overline{X})^2 + \sum_{i=1}^n (\overline{X} - \mu)^2 + 2(\overline{X} - \mu) \sum_{i=1}^n (X_i - \overline{X}) \\[1ex]
+&= \sum_{i=1}^n (X_i - \overline{X})^2 + n(\overline{X} - \mu)^2
+\end{aligned}$$
+
+The cross-product term equals zero because $\sum_{i=1}^n (X_i - \overline{X}) = 0$.
+
+Dividing each term of the equality by $\sigma^2$ and substituting $(n-1)S^2$ for $\sum_{i=1}^n (X_i - \overline{X})^2$, we obtain:
+$$\frac{1}{\sigma^2} \sum_{i=1}^n (X_i - \mu)^2 = \frac{(n-1)S^2}{\sigma^2} + \frac{(\overline{X} - \mu)^2}{\sigma^2/n}$$
+
+Now, it known that
+$$\sum_{i=1}^n\frac{ (X_i - \mu)^2}{\sigma^2}$$
+is a [[PSM1_004 Some Continuous Probability Distributions#Chi-Squared Distribution|chi-squared random variable]] with $n$ degrees of freedom. We have a chi-squared random variable with $n$ degrees of freedom partitioned into two components. The second term on the right-hand side is $Z^2$, which is a chi-squared random variable with $1$ degree of freedom, and it turns out that $(n-1)S^2/\sigma^2$ is a chi-squared random variable with $n-1$ degrees of freedom. We formalize this in the following theorem.
+
+>[!theorem] Theorem:
+>If $S^2$ is the variance of a random sample of size $n$ taken from a normal population having the variance $\sigma^2$, then the statistic
+>$$\chi^2 = \frac{(n-1)S^2}{\sigma^2} =\sum_{i=1}^n \frac{ (X_i - \overline{X})^2}{\sigma^2}$$
+>has a chi-squared distribution with $v = n-1$ degrees of freedom.
+
+The values of the random variable $\chi^2$ are calculated from each sample by the formula:
+$$\chi^2 = \frac{(n-1)s^2}{\sigma^2}$$
+
+The probability that a random sample produces a $\chi^2$ value greater than some specified value is equal to the area under the curve to the right of this value. It is customary to let $\chi^2_\alpha$ represent the $\chi^2$ value above which we find an area of $\alpha$. This is illustrated by the shaded region in the following figure:
+
+![[Pasted image 20250614170346.png|bookhue|500]]
+>The chi-squared distribution. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+There are tables that give values of ${{{\chi}_{\alpha}}}^{2}$ for various values of $\alpha$ and $v$. The areas, $\alpha$, are the column headings; the degrees of freedom, $v$, are given in the left column; and the table entries are the $\chi^2$ values. Hence, the $\chi^2$ value with $7$ degrees of freedom, leaving an area of $0.05$ to the right, is ${\chi}^{2}_{0.05} = 14.067$. Owing to lack of symmetry, we must also use the tables to find $\chi^2_{0.95} = 2.167$ for $v = 7$.
+
+Exactly $95\%$ of a chi-squared distribution lies between $\chi^2_{0.975}$ and $\chi^2_{0.025}$. A $\chi^2$ value falling to the right of $\chi^2_{0.025}$ is not likely to occur unless our assumed value of $\sigma^2$ is too small. Similarly, a $\chi^2$ value falling to the left of $\chi^2_{0.975}$ is unlikely unless our assumed value of $\sigma^2$ is too large. In other words, it is possible to have a $\chi^2$ value to the left of $\chi^2_{0.975}$ or to the right of $\chi^2_{0.025}$ when $\sigma^2$ is correct, but if this should occur, it is more probable that the assumed value of $\sigma^2$ is in error.
+
+>[!example] Example:
+>A manufacturer of car batteries guarantees that the batteries will last, on average, $3$ years with a standard deviation of $1$ year. If five of these batteries have lifetimes of $1.9$, $2.4$, $3.0$, $3.5$, and $4.2$ years, should the manufacturer still be convinced that the batteries have a standard deviation of $1$ year? Assume that the battery lifetime follows a normal distribution.
+>
+>**Solution:**
+>We first find the sample variance using the [[#Variability Measures of a Sample The Sample Variance, Standard Deviation, and Range|alternative formula]]:
+>$$s^2 = \frac{5\cdot48.26 - 15^2}{5\cdot4} = 0.815$$
+>
+>Then
+>$$\chi^2 = \frac{4\cdot0.815}{1} = 3.26$$
+>is a value from a chi-squared distribution with $4$ degrees of freedom. Since $95\%$ of the $\chi^2$ values with $4$ degrees of freedom fall between $0.484$ and $11.143$, the computed value with $\sigma^2 = 1$ is reasonable, and therefore the manufacturer has no reason to suspect that the standard deviation is other than $1$ year.
+
+## Degrees of Freedom as a Measure of Sample Information
+
+It is known that
+$$\sum_{i=1}^n\frac{ (X_i - \mu)^2}{\sigma^2}$$
+has a $\chi^2$-distribution with $n$ degrees of freedom. Note also from the [[#Sampling Distribution of S²|theorem]] that the random variable
+$$\frac{(n-1)S^2}{\sigma^2} = \frac{\sum_{i=1}^n (X_i - \overline{X})^2}{\sigma^2}$$
+has a $\chi^2$-distribution with $n-1$ degrees of freedom.
+
+The reader can view the [[#Sampling Distribution of S²|theorem]] as indicating that when $\mu$ is not known and one considers the distribution of 
+$$\sum_{i=1}^n\frac{ (X_i - \overline{X})^2}{\sigma^2}$$
+there is $1$ less degree of freedom, or a degree of freedom is lost in the estimation of $\mu$ (i.e., when $\mu$ is replaced by $\overline{x}$).
+
+In other words, there are $n$ degrees of freedom, or independent pieces of information, in the random sample from the normal distribution. When the data (the values in the sample) are used to compute the mean, there is 1 less degree of freedom in the information used to estimate $\sigma^2$.
+
+This concept of "losing" a degree of freedom when estimating parameters is fundamental to understanding why we use $n-1$ in the denominator of the sample variance formula and why many statistical distributions depend on degrees of freedom rather than sample size directly.
+
 # t-Distribution
 
-In the previous section, we discussed the utility of the Central Limit Theorem. Its applications revolve around inferences on a population mean or the difference between two population means. Use of the Central Limit Theorem and the normal distribution is certainly helpful in this context. However, it was assumed that the population standard deviation is known. This assumption may not be unreasonable in situations where the engineer is quite familiar with the system or process. However, in many experimental scenarios, knowledge of $\sigma$ is certainly no more reasonable than knowledge of the population mean $\mu$. Often, in fact, an estimate of $\sigma$ must be supplied by the same sample information that produced the sample average $\overline{x}$. As a result, a natural statistic to consider to deal with inferences on $\mu$ is
+In [[#The Central Limit Theorem]], we discussed the utility of the Central Limit Theorem. Its applications revolve around inferences on a population mean or the difference between two population means. Use of the Central Limit Theorem and the normal distribution is certainly helpful in this context. However, it was assumed that the population standard deviation is known. This assumption may not be unreasonable in situations where the engineer is quite familiar with the system or process. However, in many experimental scenarios, knowledge of $\sigma$ is certainly no more reasonable than knowledge of the population mean $\mu$. Often, in fact, an estimate of $\sigma$ must be supplied by the same sample information that produced the sample average $\overline{x}$. As a result, a natural statistic to consider to deal with inferences on $\mu$ is
 
 $$T = \frac{\overline{X} - \mu}{S/\sqrt{n}}$$
 
@@ -233,18 +303,18 @@ $$V = \frac{(n-1)S^2}{\sigma^2}$$
 
 has a chi-squared distribution with $v = n - 1$ degrees of freedom. In sampling from normal populations, we can show that $\overline{X}$ and $S^2$ are independent, and consequently so are $Z$ and $V$. The following theorem gives the definition of a random variable $T$ as a function of $Z$ (standard normal) and $\chi^2$. For completeness, the density function of the t-distribution is given.
 
->[!theorem] Theorem 8.5:
+>[!theorem] Theorem:
 >Let $Z$ be a standard normal random variable and $V$ a chi-squared random variable with $v$ degrees of freedom. If $Z$ and $V$ are independent, then the distribution of the random variable $T$, where
 >$$T = \frac{Z}{\sqrt{V/v}}$$
 >is given by the density function
->$$h(t) = \frac{\Gamma[(v+1)/2]}{\Gamma(v/2)\sqrt{\pi v}} \left(1 + \frac{t^2}{v}\right)^{-(v+1)/2}, \quad -\infty < t < \infty$$
+>$$h(t) = \frac{\Gamma[(v+1)/2]}{\Gamma(v/2)\sqrt{\pi v}} \left(1 + \frac{t^2}{v}\right)^{-(v+1)/2} \qquad -\infty < t < \infty$$
 >This is known as the **t-distribution** with $v$ degrees of freedom.
 
 From the foregoing and the theorem above we have the following corollary.
 
->[!info] Corollary 8.1:
+>[!theo] Corollary:
 >Let $X_1, X_2, \ldots, X_n$ be independent random variables that are all normal with mean $\mu$ and standard deviation $\sigma$. Let
->$$\overline{X} = \frac{1}{n} \sum_{i=1}^n X_i \quad \text{and} \quad S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X})^2$$
+>$$\overline{X} = \frac{1}{n} \sum_{i=1}^n X_i \qquad \text{and} \qquad S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X})^2$$
 >Then the random variable
 >$$T = \frac{\overline{X} - \mu}{S/\sqrt{n}}$$
 >has a t-distribution with $v = n - 1$ degrees of freedom.
@@ -255,55 +325,55 @@ The probability distribution of $T$ was first published in 1908 in a paper writt
 
 The distribution of $T$ is similar to the distribution of $Z$ in that they both are symmetric about a mean of zero. Both distributions are bell shaped, but the t-distribution is more variable, owing to the fact that the $T$-values depend on the fluctuations of two quantities, $\overline{X}$ and $S^2$, whereas the $Z$-values depend only on the changes in $\overline{X}$ from sample to sample. The distribution of $T$ differs from that of $Z$ in that the variance of $T$ depends on the sample size $n$ and is always greater than 1. Only when the sample size $n \to \infty$ will the two distributions become the same.
 
-![[Figure 8.8.png|bookhue|600]]
+![[Pasted image 20250615113041.png|bookhue|500]]
 >The t-distribution curves for $v = 2, 5,$ and $\infty$. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
 
-The percentage points of the t-distribution are given in Table A.4.
+The percentage points of the t-distribution are usually given in a table.
 
-It is customary to let $t_\alpha$ represent the t-value above which we find an area equal to $\alpha$. Hence, the t-value with 10 degrees of freedom leaving an area of 0.025 to the right is $t = 2.228$. Since the t-distribution is symmetric about a mean of zero, we have $t_{1-\alpha} = -t_\alpha$; that is, the t-value leaving an area of $1 - \alpha$ to the right and therefore an area of $\alpha$ to the left is equal to the negative t-value that leaves an area of $\alpha$ in the right tail of the distribution.
+It is customary to let $t_\alpha$ represent the t-value above which we find an area equal to $\alpha$. Hence, the t-value with $10$ degrees of freedom leaving an area of $0.025$ to the right is $t = 2.228$. Since the t-distribution is symmetric about a mean of zero, we have $t_{1-\alpha} = -t_\alpha$; that is, the t-value leaving an area of $1 - \alpha$ to the right and therefore an area of $\alpha$ to the left is equal to the negative t-value that leaves an area of $\alpha$ in the right tail of the distribution.
 
-![[Figure 8.9.png|bookhue|500]]
+![[Pasted image 20250615113058.png|bookhue|500]]
 >Symmetry property (about 0) of the t-distribution. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
 
 That is, $t_{0.95} = -t_{0.05}$, $t_{0.99} = -t_{0.01}$, and so forth.
 
->[!example] Example 8.8:
->The t-value with $v = 14$ degrees of freedom that leaves an area of 0.025 to the left, and therefore an area of 0.975 to the right, is
+>[!example] Example:
+>The t-value with $v = 14$ degrees of freedom that leaves an area of $0.025$ to the left, and therefore an area of $0.975$ to the right, is
 >$$t_{0.975} = -t_{0.025} = -2.145$$
 
->[!example] Example 8.9:
+>[!example] Example:
 >Find $P(-t_{0.025} < T < t_{0.05})$.
 >
 >**Solution:**
->Since $t_{0.05}$ leaves an area of 0.05 to the right, and $-t_{0.025}$ leaves an area of 0.025 to the left, we find a total area of
+>Since $t_{0.05}$ leaves an area of $0.05$ to the right, and $-t_{0.025}$ leaves an area of $0.025$ to the left, we find a total area of
 >$$1 - 0.05 - 0.025 = 0.925$$
 >between $-t_{0.025}$ and $t_{0.05}$. Hence
 >$$P(-t_{0.025} < T < t_{0.05}) = 0.925$$
 
->[!example] Example 8.10:
->Find $k$ such that $P(k < T < -1.761) = 0.045$ for a random sample of size 15 selected from a normal distribution and $T = \frac{\overline{X} - \mu}{S/\sqrt{n}}$.
+>[!example] Example:
+>Find $k$ such that $P(k < T < -1.761) = 0.045$ for a random sample of size $15$ selected from a normal distribution and $T = \frac{\overline{X} - \mu}{S/\sqrt{n}}$.
 >
->![[Figure 8.10.png|bookhue|500]]
+>![[Pasted image 20250615113311.png|bookhue|500]]
 >
 >**Solution:**
->From Table A.4 we note that 1.761 corresponds to $t_{0.05}$ when $v = 14$. Therefore, $-t_{0.05} = -1.761$. Since $k$ in the original probability statement is to the left of $-t_{0.05} = -1.761$, let $k = -t_\alpha$. Then, from the figure, we have
+>From a t-distribution table we note that $1.761$ corresponds to $t_{0.05}$ when $v = 14$. Therefore, $-t_{0.05} = -1.761$. Since $k$ in the original probability statement is to the left of $-t_{0.05} = -1.761$, let $k = -t_\alpha$. Then, from the figure, we have
 >$$0.045 = 0.05 - \alpha, \quad \text{or} \quad \alpha = 0.005$$
->Hence, from Table A.4 with $v = 14$, $k = -t_{0.005} = -2.977$ and
+>Hence, from the table with $v = 14$, $k = -t_{0.005} = -2.977$ and
 >$$P(-2.977 < T < -1.761) = 0.045$$
 
-Exactly 95% of the values of a t-distribution with $v = n - 1$ degrees of freedom lie between $-t_{0.025}$ and $t_{0.025}$. Of course, there are other t-values that contain 95% of the distribution, such as $-t_{0.02}$ and $t_{0.03}$, but these values do not appear in Table A.4, and furthermore, the shortest possible interval is obtained by choosing t-values that leave exactly the same area in the two tails of our distribution. A t-value that falls below $-t_{0.025}$ or above $t_{0.025}$ would tend to make us believe either that a very rare event has taken place or that our assumption about $\mu$ is in error. Should this happen, we shall make the decision that our assumed value of $\mu$ is in error. In fact, a t-value falling below $-t_{0.01}$ or above $t_{0.01}$ would provide even stronger evidence that our assumed value of $\mu$ is quite unlikely. General procedures for testing claims concerning the value of the parameter $\mu$ will be treated in Chapter 10. A preliminary look into the foundation of these procedures is illustrated by the following example.
+Exactly $95\%$ of the values of a t-distribution with $v = n - 1$ degrees of freedom lie between $-t_{0.025}$ and $t_{0.025}$. Of course, there are other t-values that contain $95\%$ of the distribution, such as $-t_{0.02}$ and $t_{0.03}$, but these values do not appear in the tables, and furthermore, the shortest possible interval is obtained by choosing t-values that leave exactly the same area in the two tails of our distribution. A t-value that falls below $-t_{0.025}$ or above $t_{0.025}$ would tend to make us believe either that a very rare event has taken place or that our assumption about $\mu$ is in error. Should this happen, we shall make the decision that our assumed value of $\mu$ is in error. In fact, a t-value falling below $-t_{0.01}$ or above $t_{0.01}$ would provide even stronger evidence that our assumed value of $\mu$ is quite unlikely. General procedures for testing claims concerning the value of the parameter $\mu$ will be treated in [[PSM1_007 One- and Two-Sample Tests of  Hypotheses|One- and Two-Sample Tests of  Hypotheses]]. A preliminary look into the foundation of these procedures is illustrated by the following example.
 
->[!example] Example 8.11:
->A chemical engineer claims that the population mean yield of a certain batch process is 500 grams per milliliter of raw material. To check this claim he samples 25 batches each month. If the computed t-value falls between $-t_{0.05}$ and $t_{0.05}$, he is satisfied with this claim. What conclusion should he draw from a sample that has a mean $\overline{x} = 518$ grams per milliliter and a sample standard deviation $s = 40$ grams? Assume the distribution of yields to be approximately normal.
+>[!example] Example:
+>A chemical engineer claims that the population mean yield of a certain batch process is $500$ grams per milliliter of raw material. To check this claim he samples $25$ batches each month. If the computed t-value falls between $-t_{0.05}$ and $t_{0.05}$, he is satisfied with this claim. What conclusion should he draw from a sample that has a mean $\overline{x} = 518$ grams per milliliter and a sample standard deviation $s = 40$ grams? Assume the distribution of yields to be approximately normal.
 >
 >**Solution:**
->From Table A.4 we find that $t_{0.05} = 1.711$ for 24 degrees of freedom. Therefore, the engineer can be satisfied with his claim if a sample of 25 batches yields a t-value between $-1.711$ and $1.711$. If $\mu = 500$, then
+>From a table we find that $t_{0.05} = 1.711$ for $24$ degrees of freedom. Therefore, the engineer can be satisfied with his claim if a sample of $25$ batches yields a t-value between $-1.711$ and $1.711$. If $\mu = 500$, then
 >$$t = \frac{518 - 500}{40/\sqrt{25}} = 2.25$$
->a value well above 1.711. The probability of obtaining a t-value, with $v = 24$, equal to or greater than 2.25 is approximately 0.02. If $\mu > 500$, the value of $t$ computed from the sample is more reasonable. Hence, the engineer is likely to conclude that the process produces a better product than he thought.
+>a value well above $1.711$. The probability of obtaining a t-value, with $v = 24$, equal to or greater than $2.25$ is approximately $0.02$. If $\mu > 500$, the value of $t$ computed from the sample is more reasonable. Hence, the engineer is likely to conclude that the process produces a better product than he thought.
 
 ## What Is the t-Distribution Used For?
 
-The t-distribution is used extensively in problems that deal with inference about the population mean (as illustrated in Example 8.11) or in problems that involve comparative samples (i.e., in cases where one is trying to determine if means from two samples are significantly different). The use of the distribution will be extended in Chapters 9, 10, 11, and 12.
+The t-distribution is used extensively in problems that deal with inference about the population mean (as illustrated in the example above) or in problems that involve comparative samples (i.e., in cases where one is trying to determine if means from two samples are significantly different).
 
 >[!notes] Important Notes:
 >- The use of the t-distribution for the statistic $T = \frac{\overline{X} - \mu}{S/\sqrt{n}}$ requires that $X_1, X_2, \ldots, X_n$ be normal.
@@ -311,4 +381,93 @@ The t-distribution is used extensively in problems that deal with inference abou
 >- The use of the standard normal distribution rather than $T$ for $n \geq 30$ merely implies that $S$ is a sufficiently good estimator of $\sigma$ in this case.
 >- In chapters that follow, the t-distribution finds extensive usage.
 
- %%
+# F-Distribution
+
+We have motivated the t-distribution in part by its application to problems in which there is comparative sampling (i.e., a comparison between two sample means). For example, some of our examples in future chapters will take a more formal approach: a chemical engineer collects data on two catalysts, a biologist collects data on two growth media, or a chemist gathers data on two methods of coating material to inhibit corrosion. While it is of interest to let sample information shed light on two population means, it is often the case that a comparison of variability is equally important, if not more so. The F-distribution finds enormous application in comparing sample variances. Applications of the F-distribution are found in problems involving two or more samples.
+
+The statistic $F$ is defined to be the ratio of two independent chi-squared random variables, each divided by its number of degrees of freedom. Hence, we can write:
+$$F = \frac{U/v_1}{V/v_2}$$
+where $U$ and $V$ are independent random variables having [[PSM1_004 Some Continuous Probability Distributions#Chi-Squared Distribution|chi-squared distributions]] with $v_1$ and $v_2$ degrees of freedom, respectively. We shall now state the sampling distribution of $F$.
+
+>[!theorem] Theorem:
+>Let $U$ and $V$ be two independent random variables having chi-squared distributions with $v_1$ and $v_2$ degrees of freedom, respectively. Then the distribution of the random variable 
+>$$F = \frac{U/v_1}{V/v_2}$$
+>is given by the density function
+>$$h(f) = \begin{cases}
+>\dfrac{\Gamma[(v_1+v_2)/2](v_1/v_2)^{v_1/2}}{\Gamma(v_1/2)\Gamma(v_2/2)} \cdot \dfrac{f^{(v_1/2)-1}}{(1+v_1f/v_2)^{(v_1+v_2)/2}}, & f > 0 \\
+>0, & f \leq 0
+>\end{cases}$$
+>This is known as the **F-distribution** with $v_1$ and $v_2$ degrees of freedom (d.f.).
+
+We will make considerable use of the random variable $F$ in future chapters. However, the density function will not be used and is given only for completeness. The curve of the F-distribution depends not only on the two parameters $v_1$ and $v_2$ but also on the order in which we state them. Once these two values are given, we can identify the curve. Typical F-distributions are shown in the following figure:
+
+![[Pasted image 20250615133222.png|bookhue|500]]
+>Typical F-distributions. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+Let $f_\alpha$ be the f-value above which we find an area equal to $\alpha$. This is illustrated by the shaded region in the following figure:
+
+![[Pasted image 20250615133248.png|bookhue|500]]
+>Illustration of the $f_\alpha$ for the F-distribution. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+Tables give values of $f_\alpha$ only for $\alpha = 0.05$ and $\alpha = 0.01$ for various combinations of the degrees of freedom $v_1$ and $v_2$. Hence, the f-value with $6$ and $10$ degrees of freedom, leaving an area of $0.05$ to the right, is $f_{0.05} = 3.22$. By means of the following theorem, tables can also be used to find values of $f_{0.95}$ and $f_{0.99}$.
+
+>[!theorem] Theorem:
+>Writing $f_\alpha(v_1, v_2)$ for $f_\alpha$ with $v_1$ and $v_2$ degrees of freedom, we obtain
+>$$f_{1-\alpha}(v_1, v_2) = \frac{1}{f_\alpha(v_2, v_1)}$$
+
+Thus, the f-value with $6$ and $10$ degrees of freedom, leaving an area of $0.95$ to the right, is:
+$$f_{0.95}(6, 10) = \frac{1}{f_{0.05}(10, 6)} = \frac{1}{4.06} = 0.246$$
+
+## The F-Distribution with Two Sample Variances
+
+Suppose that random samples of size $n_1$ and $n_2$ are selected from two normal populations with variances $\sigma_1^2$ and $\sigma_2^2$, respectively. From the [[#Sampling Distribution of S²|theorem]], we know that:
+$${{{\chi}_{1}}}^{2} = \frac{(n_1 - 1)S_1^2}{\sigma_1^2} \quad \text{and} \quad {{{\chi}_{2}}}^{2} = \frac{(n_2 - 1)S_2^2}{\sigma_2^2}$$
+are random variables having chi-squared distributions with $v_1 = n_1 - 1$ and $v_2 = n_2 - 1$ degrees of freedom. Furthermore, since the samples are selected at random, we are dealing with independent random variables. Then, using the F-distribution theorem with $\chi_1^2 = U$ and $\chi_2^2 = V$, we obtain the following result.
+
+>[!theorem] Theorem:
+>If ${{{S}_{1}}}^{2}$ and ${{{S}_{2}}}^{2}$ are the variances of independent random samples of size $n_1$ and $n_2$ taken from normal populations with variances ${{{\sigma}_{1}}}^{2}$ and ${{{\sigma}_{2}}}^{2}$, respectively, then
+>$$F = \frac{{{{S}_{1}}}^{2}/{{{\sigma}_{1}}}^{2}}{{{{S}_{2}}}^{2}/{{{\sigma}_{2}}}^{2}} = \dfrac{{{{\sigma}_{2}}}^{2}{{{S}_{1}}}^{2}}{{{{\sigma}_{1}}}^{2}{{{S}_{2}}}^{2}}$$
+>has an F-distribution with $v_1 = n_1 - 1$ and $v_2 = n_2 - 1$ degrees of freedom.
+
+## What Is the F-Distribution Used For?
+
+We answered this question, in part, at the beginning of this section. The F-distribution is used in two-sample situations to draw inferences about the population variances. This involves the application of the theorem above. However, the F-distribution can also be applied to many other types of problems involving sample variances. In fact, the F-distribution is called the **variance ratio distribution**.
+
+As an illustration, consider a case in which two paints, $A$ and $B$, were compared with regard to mean drying time. The normal distribution applies nicely (assuming that $\sigma_A$ and $\sigma_B$ are known). However, suppose that there are three types of paints to compare, say $A$, $B$, and $C$. We wish to determine if the population means are equivalent. Suppose that important summary information from the experiment is as follows:
+
+| Paint | Sample Mean            | Sample Variance | Sample Size |
+| ----- | ---------------------- | --------------- | ----------- |
+| $A$   | $\overline{X}_A = 4.5$ | $s_A^2 = 0.20$  | $10$        |
+| $B$   | $\overline{X}_B = 5.5$ | $s_B^2 = 0.14$  | $10$        |
+| $C$   | $\overline{X}_C = 6.5$ | $s_C^2 = 0.11$  | $10$        |
+
+The problem centers around whether or not the sample averages $(\overline{x}_A, \overline{x}_B, \overline{x}_C)$ are far enough apart. The implication of "far enough apart" is very important. It would seem reasonable that if the variability between sample averages is larger than what one would expect by chance, the data do not support the conclusion that $\mu_A = \mu_B = \mu_C$. Whether these sample averages could have occurred by chance depends on the variability within samples, as quantified by $s_A^2$, $s_B^2$, and $s_C^2$.
+
+The notion of the important components of variability is best seen through some simple graphics. Consider the plot of raw data from samples $A$, $B$, and $C$, shown in the following figure. These data could easily have generated the above summary information.
+
+![[Pasted image 20250615135405.png|bookhue|600]]
+>Data from three distinct samples. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+It appears evident that the data came from distributions with different population means, although there is some overlap between the samples. An analysis that involves all of the data would attempt to determine if the variability between the sample averages and the variability within the samples could have occurred jointly if in fact the populations have a common mean. Notice that the key to this analysis centers around the following two sources of variability:
+
+>[!info] Two Sources of Variability:
+>1. **Variability within samples** (between observations in distinct samples)
+>2. **Variability between samples** (between sample averages)
+
+Clearly, if the variability in (1) is considerably larger than that in (2), there will be considerable overlap in the sample data, a signal that the data could all have come from a common distribution. An example is found in the data set shown in the following figure:
+
+![[Pasted image 20250615135522.png|bookhue|600]]
+>Data that easily could have come from the same population. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+
+On the other hand, it is very unlikely that data from distributions with a common mean could have variability between sample averages that is considerably larger than the variability within samples.
+
+The sources of variability in (1) and (2) above generate important ratios of sample variances, and ratios are used in conjunction with the F-distribution. The general procedure involved is called **analysis of variance**. It is interesting that in the paint example described here, we are dealing with inferences on three population means, but two sources of variability are used. We will not supply details here, but in future chapters we make extensive use of analysis of variance, and, of course, the F-distribution plays an important role.
+
+>[!notes] Key Applications of F-Distribution:
+>- Comparing population variances from two or more samples
+>- Analysis of variance (ANOVA) procedures
+>- Testing equality of multiple population means
+>- Quality control and experimental design
+>- The F-distribution is also known as the variance ratio distribution
+
+

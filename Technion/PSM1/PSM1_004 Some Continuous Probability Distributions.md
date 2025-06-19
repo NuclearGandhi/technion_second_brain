@@ -9,6 +9,7 @@ aliases:
   - gamma function
   - Chebyshev's theorem
   - standard normal distribution
+  - chi-squared distribution
 ---
 # Continuous Uniform Distribution
 
@@ -306,7 +307,7 @@ The following are a few simple properties of the gamma function:
 >[!def] Definition: 
 >The continuous random variable $X$ has a **gamma distribution**, with parameters $\alpha$ and $\beta$, if its density function is given by
 >$$f(x; \alpha, \beta) = \begin{cases}
->\frac{1}{\beta^{\alpha}\Gamma(\alpha)}x^{\alpha-1}e^{-x/\beta} & x > 0 \\
+>\dfrac{1}{\beta^{\alpha}\Gamma(\alpha)}x^{\alpha-1}e^{-x/\beta} & x > 0 \\
 >0 & \text{elsewhere},
 >\end{cases}$$
 >where $\alpha > 0$ and $\beta > 0$.
@@ -463,3 +464,22 @@ While the origin of the gamma distribution deals in time (or space) until the oc
 >
 >The probability that a major repair is necessary in the first year is
 >$$P(Y < 1) = 1 - e^{-1/4} = 1 - 0.779 = 0.221.$$
+
+
+# Chi-Squared Distribution
+
+Another very important special case of the gamma distribution is obtained by letting $\alpha = v/2$ and $\beta = 2$, where $v$ is a positive integer. The result is called the **chi-squared distribution**. The distribution has a single parameter, $v$, called the degrees of freedom.
+
+>[!def] Definition:
+>The continuous random variable $X$ has a **chi-squared distribution**, with $v$ degrees of freedom, if its density function is given by
+>$$f(x; v) = \begin{cases}
+>\dfrac{1}{2^{v/2}\Gamma(v/2)} x^{v/2-1}e^{-x/2}, & x > 0 \\
+>0, & \text{elsewhere}
+>\end{cases}$$
+>where $v$ is a positive integer.
+
+The chi-squared distribution plays a vital role in statistical inference. It has considerable applications in both methodology and theory. While we do not discuss applications in detail in this chapter, it is important to understand that the next chapters contain important applications. The chi-squared distribution is an important component of statistical hypothesis testing and estimation. Topics dealing with sampling distributions, analysis of variance, and nonparametric statistics involve extensive use of the chi-squared distribution.
+
+>[!theorem] Theorem:
+>The mean and variance of the chi-squared distribution are
+>$$\mu = v \quad \text{and} \quad \sigma^2 = 2v$$

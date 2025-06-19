@@ -37,6 +37,7 @@ alwaysApply: true
 - For matrices, use `\begin{pmatrix}...\end{pmatrix}` format
 - When using equation arrays, properly align entries with `&` symbol
 - Include footnotes for clarifying mathematical notation with `[^n]` syntax
+- Multiplying between numerical values should be done with `\cdot`, not `\times` or `(num1)(num)2`
 
 ## Document Structure
 - Start content files with YAML frontmatter including aliases
