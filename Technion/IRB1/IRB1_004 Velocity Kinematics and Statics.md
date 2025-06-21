@@ -42,10 +42,10 @@ $$\begin{pmatrix}
 \end{pmatrix} \begin{pmatrix}
 \dot{\theta}_1 \\
 \dot{\theta}_2
-\end{pmatrix} \tag{5.1}$$
+\end{pmatrix} \tag{LP5.1}$$
 
-Writing the two columns of $\mathbf{J}(\boldsymbol{\theta})$ as $\mathbf{J}_1(\boldsymbol{\theta})$ and $\mathbf{J}_2(\boldsymbol{\theta})$, and the tip velocity $\dot{\mathbf{x}}$ as $\mathbf{v}_{\text{tip}}$, Equation $\text{(5.1)}$ becomes
-$$\mathbf{v}_{\text{tip}} = \mathbf{J}_1(\boldsymbol{\theta})\dot{\theta}_1 + \mathbf{J}_2(\boldsymbol{\theta})\dot{\theta}_2 \tag{5.2}$$
+Writing the two columns of $\mathbf{J}(\boldsymbol{\theta})$ as $\mathbf{J}_1(\boldsymbol{\theta})$ and $\mathbf{J}_2(\boldsymbol{\theta})$, and the tip velocity $\dot{\mathbf{x}}$ as $\mathbf{v}_{\text{tip}}$, Equation $\text{(LP5.1)}$ becomes
+$$\mathbf{v}_{\text{tip}} = \mathbf{J}_1(\boldsymbol{\theta})\dot{\theta}_1 + \mathbf{J}_2(\boldsymbol{\theta})\dot{\theta}_2 \tag{LP5.2}$$
 
 As long as $\mathbf{J}_1(\boldsymbol{\theta})$ and $\mathbf{J}_2(\boldsymbol{\theta})$ are not collinear, it is possible to generate a tip velocity $\mathbf{v}_{\text{tip}}$ in any arbitrary direction in the $x_1$–$x_2$-plane by choosing appropriate joint velocities $\dot{\theta}_1$ and $\dot{\theta}_2$. Since $\mathbf{J}_1(\boldsymbol{\theta})$ and $\mathbf{J}_2(\boldsymbol{\theta})$ depend on the joint values $\theta_1$ and $\theta_2$, one may ask whether there are any configurations at which $\mathbf{J}_1(\boldsymbol{\theta})$ and $\mathbf{J}_2(\boldsymbol{\theta})$ become collinear. For our example the answer is yes: if $\theta_2$ is $0°$ or $180°$ then, regardless of the value of $\theta_1$, $\mathbf{J}_1(\boldsymbol{\theta})$ and $\mathbf{J}_2(\boldsymbol{\theta})$ will be collinear and the Jacobian $\mathbf{J}(\boldsymbol{\theta})$ becomes a singular matrix. Such configurations are therefore called **singularities**; they are characterized by a situation where the robot tip is unable to generate velocities in certain directions.
 
@@ -67,14 +67,14 @@ $$\mathbf{f}_{\text{tip}}^T\mathbf{v}_{\text{tip}} = \boldsymbol{\tau}^T\dot{\bo
 for all arbitrary joint velocities $\dot{\boldsymbol{\theta}}$. Since $\mathbf{v}_{\text{tip}} = \mathbf{J}(\boldsymbol{\theta})\dot{\boldsymbol{\theta}}$, the equality
 $$\mathbf{f}_{\text{tip}}^T\mathbf{J}(\boldsymbol{\theta})\dot{\boldsymbol{\theta}} = \boldsymbol{\tau}^T\dot{\boldsymbol{\theta}}$$
 must hold for all possible $\dot{\boldsymbol{\theta}}$. This can only be true if
-$$\boldsymbol{\tau} = \mathbf{J}^T(\boldsymbol{\theta})\mathbf{f}_{\text{tip}} \tag{5.3}$$
+$$\boldsymbol{\tau} = \mathbf{J}^T(\boldsymbol{\theta})\mathbf{f}_{\text{tip}} \tag{LP5.3}$$
 
-The joint torque $\boldsymbol{\tau}$ needed to create the tip force $\mathbf{f}_{\text{tip}}$ is calculated from the equation above. For our two-link planar chain example, $\mathbf{J}(\boldsymbol{\theta})$ is a square matrix dependent on $\boldsymbol{\theta}$. If the configuration $\boldsymbol{\theta}$ is not a singularity then both $\mathbf{J}(\boldsymbol{\theta})$ and its transpose are invertible, and Equation $\text{(5.3)}$ can be written
-$$\mathbf{f}_{\text{tip}} = ((\mathbf{J}(\boldsymbol{\theta}))^T)^{-1}\boldsymbol{\tau} = \mathbf{J}^{-T}(\boldsymbol{\theta})\boldsymbol{\tau} \tag{5.4}$$
+The joint torque $\boldsymbol{\tau}$ needed to create the tip force $\mathbf{f}_{\text{tip}}$ is calculated from the equation above. For our two-link planar chain example, $\mathbf{J}(\boldsymbol{\theta})$ is a square matrix dependent on $\boldsymbol{\theta}$. If the configuration $\boldsymbol{\theta}$ is not a singularity then both $\mathbf{J}(\boldsymbol{\theta})$ and its transpose are invertible, and Equation $\text{(LP5.3)}$ can be written
+$$\mathbf{f}_{\text{tip}} = ((\mathbf{J}(\boldsymbol{\theta}))^T)^{-1}\boldsymbol{\tau} = \mathbf{J}^{-T}(\boldsymbol{\theta})\boldsymbol{\tau} \tag{LP5.4}$$
 
 Using the equation above one can now determine, under the same static equilibrium assumption, what input torques are needed to generate a desired tip force, e.g., the joint torques needed for the robot tip to push against a wall with a specified normal force. For a given posture $\boldsymbol{\theta}$ of the robot at equilibrium and a set of joint torque limits such as
 $$ \pu{-1 N⋅m} \leq \tau_1 \leq \pu{\pu{1N.m}}, \qquad \pu{-\pu{1N.m}} \leq \tau_2 \leq \pu{\pu{1N.m}}$$
-then Equation $\text{(5.4)}$ can be used to generate the set of all possible tip forces as indicated in the following figure:
+then Equation $\text{(LP5.4)}$ can be used to generate the set of all possible tip forces as indicated in the following figure:
 
 ![[{8A5B9510-39CD-43EE-8D9C-727588E3FB7D}.png|bookhue|600]]^figure-joint-torque-bounds
 >Mapping joint torque bounds to tip force bounds. [[IRB1_000 00350001 מבוא לרובוטיקה#ביבליוגרפיה|(Lynch & Park, 2017)]].
@@ -97,7 +97,7 @@ In this chapter we present methods for deriving the Jacobian for general open ch
 
 In the $\mathrm{2R}$ planar open chain example, we saw that, for any joint configuration $\boldsymbol{\theta}$, the tip velocity vector $\mathbf{v}_{\text{tip}}$ and joint velocity vector $\dot{\boldsymbol{\theta}}$ are linearly related via the Jacobian matrix $\mathbf{J}(\boldsymbol{\theta})$, i.e., $\mathbf{v}_{\text{tip}} = \mathbf{J}(\boldsymbol{\theta})\dot{\boldsymbol{\theta}}$. The tip velocity $\mathbf{v}_{\text{tip}}$ depends on the coordinates of interest for the tip, which in turn determine the specific form of the Jacobian. For example, in the most general case $\mathbf{v}_{\text{tip}}$ can be taken to be a six-dimensional twist, while, for pure orienting devices such as a wrist, $\mathbf{v}_{\text{tip}}$ is usually taken to be the angular velocity of the end-effector frame. Other choices for $\mathbf{v}_{\text{tip}}$ lead to different formulations for the Jacobian.
 
-We begin with the general case where $\mathbf{v}_{\text{tip}}$ is taken to be a six-dimensional twist $\mathcal{V}$. All the derivations below are mathematical expressions of the same simple idea, embodied in Equation $\text{(5.2)}$: given the configuration $\boldsymbol{\theta}$ of the robot, the $6$-vector $\mathbf{J}_i(\boldsymbol{\theta})$, which is column $i$ of $\mathbf{J}(\boldsymbol{\theta})$, is the twist $\mathcal{V}$ when $\dot{\theta}_i = 1$ and all other joint velocities are zero.
+We begin with the general case where $\mathbf{v}_{\text{tip}}$ is taken to be a six-dimensional twist $\mathcal{V}$. All the derivations below are mathematical expressions of the same simple idea, embodied in Equation $\text{(LP5.2)}$: given the configuration $\boldsymbol{\theta}$ of the robot, the $6$-vector $\mathbf{J}_i(\boldsymbol{\theta})$, which is column $i$ of $\mathbf{J}(\boldsymbol{\theta})$, is the twist $\mathcal{V}$ when $\dot{\theta}_i = 1$ and all other joint velocities are zero.
 
 For manipulators described using [[IRB1_002 Forward Kinematics#Assigning Link Frames|Denavit-Hartenberg parameters]], the Jacobian can be systematically derived. Each column of the Jacobian corresponds to the end-effector velocity when one joint moves with unit velocity while all other joints remain stationary.
 
@@ -107,7 +107,7 @@ For an $n$-link open chain described by [[IRB1_002 Forward Kinematics#D-H Parame
 $$^0\mathbf{T}_n = \,^0\mathbf{T}_1 \,^1\mathbf{T}_2 \cdots ^{n-1}\mathbf{T}_n$$
 
 The Jacobian matrix $\mathbf{J}(\boldsymbol{\theta}) \in \mathbb{R}^{6 \times n}$ relates the joint velocities $\dot{\boldsymbol{\theta}}$ to the end-effector twist $\mathcal{V}$ expressed in the base frame:
-$$\mathcal{V} = \mathbf{J}(\boldsymbol{\theta})\dot{\boldsymbol{\theta}} \tag{5.5}$$
+$$\mathcal{V} = \mathbf{J}(\boldsymbol{\theta})\dot{\boldsymbol{\theta}} \tag{LP5.5}$$
 
 where $\mathcal{V} = \begin{pmatrix} \mathbf{v} \\ \boldsymbol{\omega} \end{pmatrix}$ is the 6-dimensional twist vector with $\mathbf{v}$ being the linear velocity and $\boldsymbol{\omega}$ being the angular velocity of the end-effector.
 
@@ -160,14 +160,14 @@ For each joint $i = 1, 2, \ldots, n$:
 
 **Revolute Joint $i$:**
 The $i$-th column is:
-$$\mathbf{J}_i = \begin{pmatrix} \mathbf{J}_{Li} \\ \mathbf{J}_{Ai} \end{pmatrix} = \begin{pmatrix} \mathbf{z}_{i-1} \times (\mathbf{p}_n - \mathbf{p}_{i-1}) \\ \mathbf{z}_{i-1} \end{pmatrix} \tag{5.6}$$
+$$\mathbf{J}_i = \begin{pmatrix} \mathbf{J}_{Li} \\ \mathbf{J}_{Ai} \end{pmatrix} = \begin{pmatrix} \mathbf{z}_{i-1} \times (\mathbf{p}_n - \mathbf{p}_{i-1}) \\ \mathbf{z}_{i-1} \end{pmatrix} \tag{LP5.6}$$
 
 **Prismatic Joint $i$:**
 The $i$-th column is:
-$$\mathbf{J}_i = \begin{pmatrix} \mathbf{J}_{Li} \\ \mathbf{J}_{Ai} \end{pmatrix} = \begin{pmatrix} \mathbf{z}_{i-1} \\ \mathbf{0} \end{pmatrix} \tag{5.7}$$
+$$\mathbf{J}_i = \begin{pmatrix} \mathbf{J}_{Li} \\ \mathbf{J}_{Ai} \end{pmatrix} = \begin{pmatrix} \mathbf{z}_{i-1} \\ \mathbf{0} \end{pmatrix} \tag{LP5.7}$$
 
 **Step 5: Assemble the Complete Jacobian**
-$$\mathbf{J}(\boldsymbol{\theta}) = \begin{bmatrix} \mathbf{J}_1 & \mathbf{J}_2 & \cdots & \mathbf{J}_n \end{bmatrix} \tag{5.8}$$
+$$\mathbf{J}(\boldsymbol{\theta}) = \begin{bmatrix} \mathbf{J}_1 & \mathbf{J}_2 & \cdots & \mathbf{J}_n \end{bmatrix} \tag{LP5.8}$$
 
 ### Physical Interpretation
 
@@ -190,7 +190,7 @@ where $\mathbf{r}_i = \mathbf{p}_n - \mathbf{p}_{i-1}$ is the vector from joint 
 
 # Manipulator Statics
 
-As established earlier in this chapter, the Jacobian matrix plays a central role in static analysis through the fundamental relationship (see Equation $\text{(5.3)}$):
+As established earlier in this chapter, the Jacobian matrix plays a central role in static analysis through the fundamental relationship (see Equation $\text{(LP5.3)}$):
 $$\boldsymbol{\tau} = \mathbf{J}^T(\boldsymbol{\theta})\mathbf{f}_{\text{tip}}$$
 
 In this section, we extend this analysis to more complex scenarios involving multiple loads, gravity effects, and practical applications.
@@ -232,7 +232,7 @@ Such configurations typically correspond to singular poses where the external fo
 
 ### Inverse Force Analysis
 
-Using the inverse relationship from Equation $\text{(5.4)}$, we can determine external forces from known joint torques:
+Using the inverse relationship from Equation $\text{(LP5.4)}$, we can determine external forces from known joint torques:
 $$\mathbf{f}_{\text{tip}} = \mathbf{J}^{-T}(\boldsymbol{\theta})\boldsymbol{\tau}$$
 
 This is valid only when $\mathbf{J}(\boldsymbol{\theta})$ is square and non-singular.

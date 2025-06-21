@@ -14,12 +14,12 @@ The **forward kinematics** of a robot refers to the calculation of the position 
 
  The link lengths are ${L}_{1}$, ${L}_{2}$, and ${L}_{3}$. Choose a fixed frame $\{ 0 \}$ with origin located at the base joint as shown, and assume an end-effector frame $\{ 4 \}$ has been attached to the tip of the third link. The Cartesian position $(x,y)$ and orientation $\phi$ of the end-effector frame as functions of the joint angles $({\theta}_{1},{\theta}_{2},{\theta}_{3})$ are then given by
  $$\begin{align}
- & x={L}_{1}\cos{\theta}_{1}+{L}_{2}\cos({\theta}_{1}+{\theta}_{2})+{L}_{3}\cos({\theta}_{1}+{\theta}_{2}+{\theta}_{3}) \tag{4.1} \\[1ex]
- & y={L}_{1}\sin{\theta}_{1}+{L}_{2}\sin({\theta}_{1}+{\theta}_{2})+{L}_{3}\sin({\theta}_{1}+{\theta}_{2}+{\theta}_{3}) \tag{4.2} \\[1ex]
- & \phi={\theta}_{1}+{\theta}_{2}+{\theta}_{3}\tag{4.3}
+ & x={L}_{1}\cos{\theta}_{1}+{L}_{2}\cos({\theta}_{1}+{\theta}_{2})+{L}_{3}\cos({\theta}_{1}+{\theta}_{2}+{\theta}_{3}) \tag{LP4.1} \\[1ex]
+ & y={L}_{1}\sin{\theta}_{1}+{L}_{2}\sin({\theta}_{1}+{\theta}_{2})+{L}_{3}\sin({\theta}_{1}+{\theta}_{2}+{\theta}_{3}) \tag{LP4.2} \\[1ex]
+ & \phi={\theta}_{1}+{\theta}_{2}+{\theta}_{3}\tag{LP4.3}
 \end{align}$$
 A more systematic method of deriving the forward kinematics might involve attaching reference frames to each link
-$$^{0}{T}_{4}= \,^{0}{{{T}_{1}}}^{1}{{{T}_{2}}}^{2}{{{T}_{3}}}^{3}{T}_{4}\tag{4.4}$$
+$$^{0}{T}_{4}= \,^{0}{{{T}_{1}}}^{1}{{{T}_{2}}}^{2}{{{T}_{3}}}^{3}{T}_{4}\tag{LP4.4}$$
 where
 $$\begin{aligned}
  & ^{0}{T}_{1}=\begin{pmatrix}
@@ -47,7 +47,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 # Assigning Link Frames
-One widely used representation for the forward kinematics of open chains relies on the **Denavit–Hartenberg parameters** (D–H parameters), and this representation uses equation $\text{(4.4)}$.
+One widely used representation for the forward kinematics of open chains relies on the **Denavit–Hartenberg parameters** (D–H parameters), and this representation uses equation $\text{(LP4.4)}$.
 
 The basic idea underlying the Denavit–Hartenberg approach to forward kinematics is to attach reference frames to each link of the open chain and then to derive the forward kinematics from the knowledge of the relative displacements between adjacent link frames.
 

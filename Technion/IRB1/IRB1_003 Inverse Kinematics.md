@@ -13,7 +13,7 @@ To highlight the main features of the inverse kinematics problem, let us examine
 
 Considering only the position of the end-effector and ignoring its orientation, the forward kinematics can be expressed as
 $$
-\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} L_1 \cos \theta_1 + L_2 \cos(\theta_1 + \theta_2) \\ L_1 \sin \theta_1 + L_2 \sin(\theta_1 + \theta_2) \end{pmatrix} \tag{6.1}
+\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} L_1 \cos \theta_1 + L_2 \cos(\theta_1 + \theta_2) \\ L_1 \sin \theta_1 + L_2 \sin(\theta_1 + \theta_2) \end{pmatrix} \tag{LP6.1}
 $$
 Assuming $L_1 > L_2$, the set of reachable points, or the **workspace**, is an annulus of inner radius $L_1 - L_2$ and outer radius $L_1 + L_2$. Given some end-effector position $(x, y)$, it is not hard to see that there will be either zero, one, or two solutions depending on whether $(x, y)$ lies in the exterior, boundary, or interior of this annulus, respectively. When there are two solutions, the angle at the second joint (the “elbow” joint) may be positive or negative. These two solutions are sometimes called “lefty” and “righty” solutions, or “elbow-up” and “elbow-down” solutions.
 
@@ -44,9 +44,9 @@ In this chapter we first consider the inverse kinematics of spatial open chains 
 
 ## Analytic Inverse Kinematics
 
-We begin by writing the forward kinematics of a spatial six-dof open chain:
-$$ \mathbf{T}(\theta) = e^{[S_1]\theta_1} e^{[S_2]\theta_2} e^{[S_3]\theta_3} e^{[S_4]\theta_4} e^{[S_5]\theta_5} e^{[S_6]\theta_6} \mathbf{M} $$
-Given some end-effector frame $\mathbf{X} \in SE(3)$, the inverse kinematics problem is to find solutions $\theta \in \mathbb{R}^6$ satisfying $\mathbf{T}(\theta) = \mathbf{X}$. In the following subsections we derive analytic inverse kinematic solutions for the PUMA and Stanford arms.
+We begin by writing the forward kinematics of a spatial six-dof open chain using the Denavit-Hartenberg method:
+$$ \mathbf{T}(\theta) = ^{0}\mathbf{T}_{1}(\theta_1) \, ^{1}\mathbf{T}_{2}(\theta_2) \, ^{2}\mathbf{T}_{3}(\theta_3) \, ^{3}\mathbf{T}_{4}(\theta_4) \, ^{4}\mathbf{T}_{5}(\theta_5) \, ^{5}\mathbf{T}_{6}(\theta_6) $$
+where each $^{i-1}\mathbf{T}_{i}(\theta_i)$ represents the homogeneous transformation matrix from frame $i-1$ to frame $i$ as a function of joint variable $\theta_i$. Given some desired end-effector frame $\mathbf{X} \in SE(3)$, the inverse kinematics problem is to find solutions $\theta \in \mathbb{R}^6$ satisfying $\mathbf{T}(\theta) = \mathbf{X}$. In the following subsections we derive analytic inverse kinematic solutions for the PUMA and Stanford arms.
 
 ### 6R PUMA-Type Arm
 
@@ -93,20 +93,24 @@ where $s_3 = \sin \theta_3$ and $c_3 = \cos \theta_3$. The two solutions for $\t
 the postures in the upper panel are lefty solutions (elbow-up and elbow-down), while those in the lower panel are righty solutions (elbow-up and elbow-down).
 
 We now solve the inverse orientation problem of finding $(\theta_4, \theta_5, \theta_6)$ given the end-effector orientation. This problem is completely straightforward: having found $(\theta_1, \theta_2, \theta_3)$, the forward kinematics can be manipulated into the form
-$$ e^{[S_4]\theta_4} e^{[S_5]\theta_5} e^{[S_6]\theta_6} = (e^{[S_1]\theta_1} e^{[S_2]\theta_2} e^{[S_3]\theta_3})^{-1} \mathbf{X} \mathbf{M}^{-1} = e^{-[S_3]\theta_3} e^{-[S_2]\theta_2} e^{-[S_1]\theta_1} \mathbf{X} \mathbf{M}^{-1} \tag{6.2} $$
-where the right-hand side is now known. The $\boldsymbol{\omega}_i$-components of $S_4, S_5,$ and $S_6$ are (representing the direction of rotation axes):
-$$ \boldsymbol{\omega}_4 = (0, 0, 1)^T, \quad \boldsymbol{\omega}_5 = (0, 1, 0)^T, \quad \boldsymbol{\omega}_6 = (1, 0, 0)^T $$
-Denoting the $SO(3)$ component of the right-hand side of Equation (6.2) by $\mathbf{R}$, the wrist joint angles $(\theta_4, \theta_5, \theta_6)$ can be determined as the solution to
+
+$$ ^{3}\mathbf{T}_{4} \, ^{4}\mathbf{T}_{5} \, ^{5}\mathbf{T}_{6} = (^{0}\mathbf{T}_{1} \, ^{1}\mathbf{T}_{2} \, ^{2}\mathbf{T}_{3})^{-1} \mathbf{X} = (^{2}\mathbf{T}_{3})^{-1} (^{1}\mathbf{T}_{2})^{-1} (^{0}\mathbf{T}_{1})^{-1} \mathbf{X} \tag{LP6.2} $$
+where $\mathbf{X}$ is the desired end-effector transformation and the right-hand side is now known. The transformation matrices $^{3}\mathbf{T}_{4}$, $^{4}\mathbf{T}_{5}$, and $^{5}\mathbf{T}_{6}$ correspond to rotations about the wrist joint axes:
+- $^{3}\mathbf{T}_{4}$: rotation about the $\hat{\mathbf{z}}$-axis by angle $\theta_4$
+- $^{4}\mathbf{T}_{5}$: rotation about the $\hat{\mathbf{y}}$-axis by angle $\theta_5$  
+- $^{5}\mathbf{T}_{6}$: rotation about the $\hat{\mathbf{x}}$-axis by angle $\theta_6$
+
+Denoting the rotation matrix component of the right-hand side of Equation $\text{(LP6.2)}$ by $\mathbf{R}$, the wrist joint angles $(\theta_4, \theta_5, \theta_6)$ can be determined as the solution to
 $$ \mathrm{Rot}(\hat{\mathbf{z}}, \theta_4)\mathrm{Rot}(\hat{\mathbf{y}}, \theta_5)\mathrm{Rot}(\hat{\mathbf{x}}, \theta_6) = \mathbf{R} $$
 
 ### Stanford-Type Arms
 
-If the elbow joint in a $\mathrm{6R}$ PUMA-type arm is replaced by a prismatic joint, as shown in Figure 6.6, we then have an $\mathrm{RRPRRR}$ Stanford-type arm. Here we consider the inverse position kinematics for the arm of Figure 6.6; the inverse orientation kinematics is identical to that for the PUMA-type arm and so is not repeated here.
+If the elbow joint in a $\mathrm{6R}$ PUMA-type arm is replaced by a prismatic joint, as shown in the following figure, we then have an $\mathrm{RRPRRR}$ Stanford-type arm. Here we consider the inverse position kinematics for the arm of the figure; the inverse orientation kinematics is identical to that for the PUMA-type arm and so is not repeated here.
 
 ![[{79C17852-35A2-4BBF-9352-F4C468D9BFC8}.png|bookhue|500]]
 > The first three joints of a Stanford-type arm. [[IRB1_000 00350001 מבוא לרובוטיקה#ביבליוגרפיה|(Lynch & Park, 2017)]].
 
-The first joint variable $\theta_1$ can be found in similar fashion to the PUMA-type arm: $\theta_1 = \mathrm{atan2}(p_y, p_x)$ (provided that $p_x$ and $p_y$ are not both zero). The variable $\theta_2$ is then found from Figure 6.6 to be
+The first joint variable $\theta_1$ can be found in similar fashion to the PUMA-type arm: $\theta_1 = \mathrm{atan2}(p_y, p_x)$ (provided that $p_x$ and $p_y$ are not both zero). The variable $\theta_2$ is then found from the figure above to be
 $$ \theta_2 = \mathrm{atan2}(s, r) $$
 where $r = \sqrt{p_x^2 + p_y^2}$ and $s = p_z - d_1$. Similarly to the case of the PUMA-type arm, a second solution for $\theta_1$ and $\theta_2$ is given by
 $$ \theta_1 = \pi + \mathrm{atan2}(p_y, p_x), \quad \theta_2 = \pi - \mathrm{atan2}(s, r) $$
