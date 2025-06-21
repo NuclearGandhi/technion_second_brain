@@ -131,14 +131,14 @@ Using the frequency response we can design filters to shape the spectra of signa
 	\lvert G(j\omega) \rvert\geq	\dfrac{1}{\sqrt{ 2 }} \iff \omega\leq  \omega_{b}
 	$$
 2. **High-pass Filters**: filters that pass signals with frequency higher than a certain cutoff frequency $\omega_{c}$ and attenuate signals with frequencies lower than the cutoff frequency:
-	   $$
+	$$
 	\lvert G(j\omega) \rvert\geq  \dfrac{1}{\sqrt{ 2 }}\iff\omega\geq  \omega_{c}
 	$$
-3. **Band-pass Filters**: filters that pass frequencies within a certain range and attenuate frequencies outside that range.
+3. **Band-pass Filters**: filters that pass frequencies *within* a certain range and attenuate frequencies *outside* that range.
 	$$
 	\lvert G(j\omega) \rvert\geq  \dfrac{1}{\sqrt{ 2 }}\iff\omega \in [{\omega}_{1},\, {\omega}_{2}]
 	$$
-4. **Band-pass Filters**: filters that pass frequencies outside a certain range and attenuate frequencies in that range.
+4. **Band-stop Filters**: filters that pass frequencies *outside* a certain range and attenuate frequencies *in* that range.
 	$$
 	\lvert G(j\omega) \rvert\geq  \dfrac{1}{\sqrt{ 2 }}\iff\omega \notin [({\omega}_{1},{\omega}_{2})]
 	$$
