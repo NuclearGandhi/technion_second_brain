@@ -92,8 +92,30 @@ function [nodes, K, M] = create_fem_discretization(n_elements, L, k_values, x_bo
     end
 end
 
+%% Critical time step calculation for 4 elements
+fprintf('=== Critical time step calculation for 4 elements ===\n');
+
+n_elements_4 = 4;
+[nodes_4, K_4, M_4] = create_fem_discretization(n_elements_4, L, k_values, x_boundaries);
+num_nodes_4 = length(nodes_4);
+
+% Calculate critical time step for 4 elements
+fixed_dofs_4 = [1, num_nodes_4];
+free_dofs_4 = setdiff(1:num_nodes_4, fixed_dofs_4);
+K_free_4 = K_4(free_dofs_4, free_dofs_4);
+M_free_4 = M_4(free_dofs_4, free_dofs_4);
+eigvals_4 = eig(M_free_4\K_free_4);
+lambda_max_4 = max(abs(eigvals_4));
+dt_critical_4 = 2/lambda_max_4;
+
+fprintf('For 4 elements:\n');
+fprintf('  Number of nodes: %d\n', num_nodes_4);
+fprintf('  Free DOFs: %d\n', length(free_dofs_4));
+fprintf('  Maximum eigenvalue: %.6e\n', lambda_max_4);
+fprintf('  Critical time step: dt_cr = %.6e s\n', dt_critical_4);
+
 %% Part 5: Steady-state solution with 4 elements
-fprintf('=== Part 5: Steady-state solution with 4 elements ===\n');
+fprintf('\n=== Part 5: Steady-state solution with 4 elements ===\n');
 
 n_elements_steady = 4;
 [nodes_steady, K_steady, M_steady] = create_fem_discretization(n_elements_steady, L, k_values, x_boundaries);
