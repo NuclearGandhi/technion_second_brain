@@ -235,7 +235,7 @@ $$\frac{1}{\sigma^2} \sum_{i=1}^n (X_i - \mu)^2 = \frac{(n-1)S^2}{\sigma^2} + \f
 
 Now, it known that
 $$\sum_{i=1}^n\frac{ (X_i - \mu)^2}{\sigma^2}$$
-is a [[PSM1_004 Some Continuous Probability Distributions#Chi-Squared Distribution|chi-squared random variable]] with $n$ degrees of freedom. We have a chi-squared random variable with $n$ degrees of freedom partitioned into two components. The second term on the right-hand side is $Z^2$, which is a chi-squared random variable with $1$ degree of freedom, and it turns out that $(n-1)S^2/\sigma^2$ is a chi-squared random variable with $n-1$ degrees of freedom. We formalize this in the following theorem.
+is a [[PSM1_004 Some Continuous Probability Distributions#Chi-Squared Distribution|chi-squared random variable]] with $n$ **degrees of freedom**. We have a chi-squared random variable with $n$ degrees of freedom partitioned into two components. The second term on the right-hand side is $Z^2$, which is a chi-squared random variable with $1$ degree of freedom, and it turns out that $(n-1)S^2/\sigma^2$ is a chi-squared random variable with $n-1$ degrees of freedom. We formalize this in the following theorem.
 
 >[!theorem] Theorem:
 >If $S^2$ is the variance of a random sample of size $n$ taken from a normal population having the variance $\sigma^2$, then the statistic
@@ -266,6 +266,8 @@ Exactly $95\%$ of a chi-squared distribution lies between $\chi^2_{0.975}$ and $
 >is a value from a chi-squared distribution with $4$ degrees of freedom. Since $95\%$ of the $\chi^2$ values with $4$ degrees of freedom fall between $0.484$ and $11.143$, the computed value with $\sigma^2 = 1$ is reasonable, and therefore the manufacturer has no reason to suspect that the standard deviation is other than $1$ year.
 
 ## Degrees of Freedom as a Measure of Sample Information
+
+![](https://www.youtube.com/watch?v=VDlnuO96p58)
 
 It is known that
 $$\sum_{i=1}^n\frac{ (X_i - \mu)^2}{\sigma^2}$$

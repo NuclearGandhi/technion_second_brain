@@ -516,8 +516,6 @@ which is equivalent to
 $$\overline{x} - z_{\alpha/2}\frac{\sigma}{\sqrt{n}} \leq \mu_0 \leq \overline{x} + z_{\alpha/2}\frac{\sigma}{\sqrt{n}}$$
 
 The equivalence of confidence interval estimation to hypothesis testing extends to differences between two means, variances, ratios of variances, and so on. As a result, the student of statistics should not consider confidence interval estimation and hypothesis testing as separate forms of statistical inference.
-
->[!TODO] TODO: לעבור
 ## Tests on a Single Sample (Variance Unknown)
 
 One would certainly suspect that tests on a population mean $\mu$ with $\sigma^2$ unknown, like confidence interval estimation, should involve the use of [[PSM1_005 Fundamental Sampling Distributions and Data Descriptions#t-Distribution|Student t-distribution]]. Strictly speaking, the application of Student $t$ for both confidence intervals and hypothesis testing is developed under the following assumptions. The random variables $X_1, X_2, \ldots, X_n$ represent a random sample from a normal distribution with unknown $\mu$ and $\sigma^2$. Then the random variable $\sqrt{n}(\overline{X} - \mu)/S$ has a Student $t$-distribution with $n-1$ degrees of freedom. The structure of the test is identical to that for the case of $\sigma$ known, with the exception that the value $\sigma$ in the test statistic is replaced by the computed estimate $S$ and the standard normal distribution is replaced by a $t$-distribution.
