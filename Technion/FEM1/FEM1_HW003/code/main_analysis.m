@@ -1,14 +1,16 @@
 close all; clear; clc;
 
-%% Problem 1: Time-dependent heat conduction with variable conductivity
+%% Main Analysis: Time-dependent heat conduction with variable conductivity
 % Governing equation: d/dx(k(x) dT/dx) = dT/dt, 0 < x < 1.5
-% Boundary conditions: T(0,t) = 12, T(1.5,t) = 1.5
+% Boundary conditions: T(0,t) = 12, T(1.5,t) = 3
 % Initial condition: T(x,0) = 12
+
+fprintf('=== Main Analysis: Heat Conduction with Variable Conductivity ===\n\n');
 
 %% Problem Parameters
 L = 1.5;           % Domain length
 T0 = 12;           % Left boundary temperature
-TL = 3;          % Right boundary temperature
+TL = 3;            % Right boundary temperature
 Ti = 12;           % Initial temperature
 
 % Material properties k(x) - piecewise constant
@@ -28,7 +30,7 @@ function k = get_conductivity(x, k_values, x_boundaries)
     end
 end
 
-%% Part 4: Domain discretization function
+%% Domain discretization function
 function [nodes, K, M] = create_fem_discretization(n_elements, L, k_values, x_boundaries)
     % For the general case, divide each region into n_elements/4 elements
     % This ensures each material region gets equal discretization
@@ -80,11 +82,43 @@ function [nodes, K, M] = create_fem_discretization(n_elements, L, k_values, x_bo
         % Element length
         he = nodes(n2) - nodes(n1);
         
-        % Element stiffness matrix (from HW3 derivation)
-        Ke = (k_e/he) * [1, -1; -1, 1];
+        % 2-point Gauss quadrature
+        gauss_points = [-1/sqrt(3), 1/sqrt(3)];  % Gauss points in reference element [-1,1]
+        gauss_weights = [1, 1];                   % Gauss weights
         
-        % Element mass matrix (consistent mass matrix)
-        Me = (he/6) * [2, 1; 1, 2];
+        % Initialize element matrices
+        Ke = zeros(2, 2);
+        Me = zeros(2, 2);
+        
+        % Numerical integration using Gauss quadrature
+        for gp = 1:2
+            xi = gauss_points(gp);
+            w = gauss_weights(gp);
+            
+            % Shape functions in reference coordinates
+            N1 = (1 - xi) / 2;
+            N2 = (1 + xi) / 2;
+            N = [N1; N2];
+            
+            % Shape function derivatives in reference coordinates
+            dN1_dxi = -1/2;
+            dN2_dxi = 1/2;
+            dN_dxi = [dN1_dxi; dN2_dxi];
+            
+            % Jacobian: dx/dxi = he/2
+            J = he / 2;
+            
+            % Shape function derivatives in physical coordinates
+            dN_dx = dN_dxi / J;  % dN/dx = (dN/dxi) * (dxi/dx) = (dN/dxi) / J
+            
+            % Add contributions to element stiffness matrix
+            % K_e = ∫(dN/dx)^T * k * (dN/dx) * dx = ∫(dN/dx)^T * k * (dN/dx) * J * dxi
+            Ke = Ke + w * J * k_e * (dN_dx * dN_dx');
+            
+            % Add contributions to element mass matrix  
+            % M_e = ∫N^T * N * dx = ∫N^T * N * J * dxi
+            Me = Me + w * J * (N * N');
+        end
         
         % Assemble into global matrices
         K(n1:n2, n1:n2) = K(n1:n2, n1:n2) + Ke;
@@ -92,30 +126,8 @@ function [nodes, K, M] = create_fem_discretization(n_elements, L, k_values, x_bo
     end
 end
 
-%% Critical time step calculation for 4 elements
-fprintf('=== Critical time step calculation for 4 elements ===\n');
-
-n_elements_4 = 4;
-[nodes_4, K_4, M_4] = create_fem_discretization(n_elements_4, L, k_values, x_boundaries);
-num_nodes_4 = length(nodes_4);
-
-% Calculate critical time step for 4 elements
-fixed_dofs_4 = [1, num_nodes_4];
-free_dofs_4 = setdiff(1:num_nodes_4, fixed_dofs_4);
-K_free_4 = K_4(free_dofs_4, free_dofs_4);
-M_free_4 = M_4(free_dofs_4, free_dofs_4);
-eigvals_4 = eig(M_free_4\K_free_4);
-lambda_max_4 = max(abs(eigvals_4));
-dt_critical_4 = 2/lambda_max_4;
-
-fprintf('For 4 elements:\n');
-fprintf('  Number of nodes: %d\n', num_nodes_4);
-fprintf('  Free DOFs: %d\n', length(free_dofs_4));
-fprintf('  Maximum eigenvalue: %.6e\n', lambda_max_4);
-fprintf('  Critical time step: dt_cr = %.6e s\n', dt_critical_4);
-
-%% Part 5: Steady-state solution with 4 elements
-fprintf('\n=== Part 5: Steady-state solution with 4 elements ===\n');
+%% Part 1: Steady-state solution with 4 elements
+fprintf('=== Part 1: Steady-state solution with 4 elements ===\n');
 
 n_elements_steady = 4;
 [nodes_steady, K_steady, M_steady] = create_fem_discretization(n_elements_steady, L, k_values, x_boundaries);
@@ -155,9 +167,10 @@ fprintf('Steady-state temperatures at nodes:\n');
 for i = 1:num_nodes_steady
     fprintf('  Node %d (x = %.2f): T = %.4f K\n', i, nodes_steady(i), T_steady(i));
 end
+fprintf('\n');
 
-%% Part 6: Time-dependent solution with 200 elements for different theta values
-fprintf('\n=== Part 6: Time-dependent solutions (200 elements) ===\n');
+%% Part 2: Time-dependent solution with 200 elements for different theta values
+fprintf('=== Part 2: Time-dependent solutions (200 elements) ===\n');
 
 n_elements_transient = 200;
 [nodes_trans, K_trans, M_trans] = create_fem_discretization(n_elements_transient, L, k_values, x_boundaries);
@@ -180,14 +193,14 @@ dt_critical = 2/lambda_max;
 fprintf('Critical time step: dt_cr = %.6e\n', dt_critical);
 fprintf('Total simulation time: %.1f s\n', tend);
 
-% Time steps for plotting (11 points like in q1.m)
+% Time steps for plotting (11 points)
 nTimePlots = 11;
 t_plot = linspace(0, tend, nTimePlots);
 
 % Initialize solution storage
 solutions = cell(length(theta_cases), 1);
 
-% Define colormap for time evolution (same as q1.m)
+% Define colormap for time evolution
 startColor = [0, 0, 1];   % Blue
 endColor = [1, 0, 0];     % Red
 colors = zeros(nTimePlots, 3);
@@ -200,7 +213,7 @@ end
 figure('Position', [100, 100, 600, 1000]);
 
 % Define subplot width as a variable for consistent spacing
-subplot_width = 0.75;
+subplot_width = 0.7;
 
 % Loop through different theta values - create subplots
 for theta_idx = 1:length(theta_cases)
@@ -248,10 +261,9 @@ for theta_idx = 1:length(theta_cases)
         % Compute RHS for free DOFs, including boundary contributions
         rhs = B_free * u(free_dofs);
         
-        % Add boundary condition contributions from current time step
-        % These come from the boundary DOFs that are eliminated from the system
-        rhs = rhs + B(free_dofs, 1) * T0 + B(free_dofs, end) * TL;
-        rhs = rhs - A(free_dofs, 1) * T0 - A(free_dofs, end) * TL;
+        % Add boundary coupling contributions (correct formulation)
+        % For constant boundary conditions: (B_boundary - A_boundary) * boundary_values
+        rhs = rhs + (B(free_dofs, 1) - A(free_dofs, 1)) * T0 + (B(free_dofs, end) - A(free_dofs, end)) * TL;
         
         % Solve system for free DOFs
         u(free_dofs) = A_free \ rhs;
@@ -319,20 +331,11 @@ set(cb, 'TickLabelInterpreter', 'latex');
 % Export combined time evolution figure
 exportgraphics(gcf, 'fem1_hw3_time_evolution_combined.png', 'Resolution', 300);
 
-%% Part 7: Critical time step analysis for theta = 0
-fprintf('\n=== Part 7: Critical time step analysis (theta=0) ===\n');
-
-% Calculate critical time step for stability analysis
-fixed_dofs = [1, num_nodes_trans];
-free_dofs = setdiff(1:num_nodes_trans, fixed_dofs);
-K_free = K_trans(free_dofs, free_dofs);
-M_free = M_trans(free_dofs, free_dofs);
-eigvals = eig(M_free\K_free);
-lambda_max = max(abs(eigvals));
-dt_critical = 2/lambda_max;
+%% Part 3: Critical time step analysis for theta = 0
+fprintf('\n=== Part 3: Critical time step analysis (theta=0) ===\n');
 
 % Use dt slightly larger than critical to demonstrate instability
-dt_unstable = 1.01 * dt_critical;  % 0.1% larger than critical
+dt_unstable = 1.01 * dt_critical;  % 1% larger than critical
 dt_stable = 0.9 * dt_critical;     % 10% smaller than critical
 
 fprintf('Critical time step: dt_cr = %.6e\n', dt_critical);
@@ -350,10 +353,7 @@ case_names = {'Stable: $\Delta t < \Delta t_{\mathrm{cr}}$', 'Unstable: $\Delta 
 % Create single figure with subplots for stability analysis
 figure('Position', [200, 200, 600, 800]);
 
-% Use the same subplot width variable for consistency
-% subplot_width = 0.75; % Already defined above
-
-% Define colormap for time evolution (same as Part 6)
+% Define colormap for time evolution (same as Part 2)
 startColor = [0, 0, 1];   % Blue
 endColor = [1, 0, 0];     % Red
 colors_stab = zeros(nTimePlots_stab, 3);
@@ -395,10 +395,9 @@ for case_idx = 1:2
         % Compute RHS for free DOFs, including boundary contributions
         rhs = B_free * u(free_dofs);
         
-        % Add boundary condition contributions from current time step
-        % These come from the boundary DOFs that are eliminated from the system
-        rhs = rhs + B(free_dofs, 1) * T0 + B(free_dofs, end) * TL;
-        rhs = rhs - A(free_dofs, 1) * T0 - A(free_dofs, end) * TL;
+        % Add boundary coupling contributions (correct formulation)
+        % For constant boundary conditions: (B_boundary - A_boundary) * boundary_values
+        rhs = rhs + (B(free_dofs, 1) - A(free_dofs, 1)) * T0 + (B(free_dofs, end) - A(free_dofs, end)) * TL;
         
         % Solve system for free DOFs
         u(free_dofs) = A_free \ rhs;
@@ -454,15 +453,7 @@ for case_idx = 1:2
 end
 
 % Add a single colorbar for the entire stability figure
-startColor = [0, 0, 1];   % Blue
-endColor = [1, 0, 0];     % Red
-colors_stab = zeros(nTimePlots_stab, 3);
-for i = 1:nTimePlots_stab
-    frac = (i-1)/(nTimePlots_stab-1);
-    colors_stab(i,:) = startColor*(1-frac) + endColor*frac;
-end
-
-cb = colorbar('Position', [0.88 0.15 0.03 0.7]);
+cb = colorbar('Position', [0.86 0.15 0.03 0.7]);
 colormap(colors_stab);
 ylabel(cb, 'Time [s]', 'Interpreter', 'latex');
 cb.Ticks = linspace(0, 1, nTimePlots_stab);
@@ -483,4 +474,4 @@ set(cb, 'TickLabelInterpreter', 'latex');
 % Export combined stability analysis figure
 exportgraphics(gcf, 'fem1_hw3_stability_combined.png', 'Resolution', 300);
 
-fprintf('\nAnalysis complete. All figures generated.\n');
+fprintf('\nMain analysis complete. All figures generated.\n'); 

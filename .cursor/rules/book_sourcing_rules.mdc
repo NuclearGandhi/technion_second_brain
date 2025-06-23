@@ -14,10 +14,38 @@ alwaysApply: false
 - Use consistent variable names and notation as in the original source, unless a specific correction is required
 - When referencing internal sections, use proper Obsidian cross-links (e.g., `[[#Section Name]]`)
 
+## Mathematical Notation and Formatting Rules
+
+### Derivative Notation
+- **ALWAYS use `\mathrm{d}` for differential operator**, not `d`
+- Correct: `\frac{\mathrm{d}w}{\mathrm{d}x}`, `\mathrm{d}A`, `\mathrm{d}x`
+- Incorrect: `\frac{dw}{dx}`, `dA`, `dx`
+
+### Equation Formatting
+- Use `\begin{aligned}...\end{aligned}` for multi-line equations with alignment
+- Use `\begin{align}...\end{align}` for numbered multi-line equations
+- Use `\begin{gather}...\end{gather}` for multi-line equations without alignment
+- **Prefer `aligned` over separate single-line equations when showing derivation steps**
+- Use `\\[1ex]`, `\\[2ex]`, `\\[3ex]` for proper vertical spacing between lines
+- Use `&` for alignment points in aligned environments
+
+### Equation Numbering and References
+- Use descriptive equation tags with prefixes (e.g., `\tag{RJ5.1}`, `\tag{ZT6.1}`)
+- **Reference equations using `$\text{(RJ5.1)}$` format, not `(RJ5.1)` alone**
+- Keep equation numbering sequential and logical
+- Restart numbering for each major section if needed
+
+### Figure References and Anchors
+- **Always add anchor tags to figures**: `^figure-descriptive-name`
+- Use internal links for figure references: `[[#^figure-name|איור]]`
+- Example: `![[filename.png|bookhue|600]]^figure-beam-kinematics`
+- Reference format: `כפי שמוצג ב[[#^figure-general-beam|איור]]`
+
 ## Figure Citations
-- For figures from books, use the format: `![[filename.png|bookhue|size]]`
+- For figures from books, use the format: `![[{GUID}.png|bookhue|size]]^anchor-name`
 - Add a caption below each figure starting with ">" and including the source
-- Example: `>Figure caption. [[Course_000 Course Name#ביבליוגרפיה|(Author et al., Year)]].`
+- **Remove redundant figure numbers from captions** - let the anchor handle identification
+- Example: `>קינמטיקה של דפורמציה של קורה לפי השערת אויילר-ברנולי. [[Course_000#ביבליוגרפיה|(Author, Year)]].`
 - For figures from the same book, you can reference the same source multiple times
 - Include figure numbers from the original book when available
 
@@ -30,16 +58,21 @@ alwaysApply: false
 
 ## Mathematical Content
 - When presenting theorems, definitions, or equations from books:
-  - Use the original numbering if available
+  - Use the original numbering if available, but adapt with prefixes when needed
   - Maintain the original notation unless there's a specific reason to change it
   - For equations, use proper LaTeX formatting with `$` for inline and `$$` for display
   - Use `\begin{aligned}...\end{aligned}` for multi-line equations
-  - **Always use the correct variable names and technical terms as in the source (e.g., $V_t$ for מתח ההדקים, not 'טרמינלים')**
-  - For cross-references to equations or sections, use Obsidian links
+  - **Always use `\mathrm{d}` for differential operators**
+  - **Always use the correct variable names and technical terms as in the source**
+  - For cross-references to equations or sections, use `$\text{(equation)}$` format
 - For proofs and derivations:
   - Indicate if the proof has been modified or adapted
   - Maintain the original logical flow
   - Use proper mathematical notation and symbols
+
+## Hebrew Technical Terminology
+- **Remove unnecessary unit specifications** from mathematical content when they don't add value
+- **Use Hebrew for section headings and technical terms**, maintain English abbreviations in parentheses when needed
 
 ## Examples and Exercises
 - When using examples from books:
@@ -52,7 +85,7 @@ alwaysApply: false
 
 ## Cross-References
 - When referencing content from other parts of the same book:
-  - Use the format `[[Chapter Name#Section Name]]`
+  - Use the format `[[Chapter Name#Section Name]]` or `[[#^anchor|text]]`
   - Include specific equation or figure numbers when relevant
 - When referencing content from different books:
   - Use the full citation format
@@ -92,8 +125,19 @@ alwaysApply: false
 ## Units and Measurements
 - Use `\pu{...}` for physical units
 - Maintain consistent unit notation throughout the document
-- Include units in all numerical values
+- **Remove unnecessary unit specifications** from text when context is clear
+- Include units in all numerical values where relevant
 
 ## Document Structure
 - Include aliases for important terms
+- **Use proper internal cross-referencing with anchors and links**
+- **Maintain consistent equation and figure numbering schemes**
 - **Review and update all content for terminology, variable names, and formatting before finalizing**
+
+## Common Formatting Mistakes to Avoid
+1. **Never use `d` instead of `\mathrm{d}` for derivatives**
+2. **Never reference equations without proper `$\text{()}$` formatting**
+3. **Never create figures without anchor tags**
+4. **Never use inconsistent Hebrew technical terminology**
+5. **Never separate multi-line equations when they should be in aligned environments**
+6. **Never include unnecessary unit specifications in mathematical descriptions**
