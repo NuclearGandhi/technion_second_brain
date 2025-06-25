@@ -54,15 +54,15 @@ We also know that:
 $$
 \begin{gathered}
 3.95R_{a}=\dfrac{f^{2}}{8r} \\[1ex]
-	f=\sqrt{ 3.95\cdot 8R_{a}r }
-	\end{gathered}
-	$$
-	Substituting $R_{a}$ and $r=\pu{0.8mm}$, we get:
-	$$
-	\boxed {
-	f=\pu{0.2mm}
-	 }
-	$$
+f=\sqrt{ 3.95\cdot 8R_{a}r }
+\end{gathered}
+$$
+Substituting $R_{a}$ and $r=\pu{0.8mm}$, we get:
+$$
+\boxed {
+f=\pu{0.2mm}
+}
+$$
 
 ### Part d
 The [[MNF1_004 Machining Processes#Turning#Cutting Force and Power|power required]] is given by:
