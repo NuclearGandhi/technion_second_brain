@@ -141,3 +141,72 @@ alwaysApply: false
 4. **Never use inconsistent Hebrew technical terminology**
 5. **Never separate multi-line equations when they should be in aligned environments**
 6. **Never include unnecessary unit specifications in mathematical descriptions**
+
+## Advanced Mathematical Formatting Rules
+
+### Variable and Subscript Formatting
+- **For variables with subscripts that are squared or powered**, use triple braces: `{{{V}_{1}}}^{2}` instead of `V_1^2`
+- **For complex impedance calculations**, use polar form when appropriate: `\pu {0.5 \angle 53.13^{\circ} \Omega }`
+- **Always explain subscript meanings** when introducing new notation: "כאשר $d$ הוא עבור developed ו-$m$ הוא עבור max."
+
+### Multi-Step Calculations and Definitions
+- **Use aligned environments for variable definitions**, even simple ones:
+  ```latex
+  $$\begin{aligned}
+   & R_e = R_1 + R_2 \\[1ex]
+   & X_e = X_1 + X_2
+  \end{aligned}$$
+  ```
+- **For multi-step calculations**, always use aligned format:
+  ```latex
+  $$\begin{aligned}
+   \omega_m  & = (1-s_p)\omega_s  \\[1ex]
+    & = (1-0.286) \times 125.66  \\[1ex]
+    & = 89.72\,\pu{rad/s}
+  \end{aligned}$$
+  ```
+- **For impedance calculations**, show step-by-step with aligned format and include both rectangular and polar forms
+
+### Figure Reference Accuracy
+- **Always verify figure anchor names** match the actual context being discussed
+- **Use the most relevant figure** for the current section (e.g., use approximate equivalent circuit figure when discussing approximate analysis)
+- **Double-check figure references** before finalizing content
+
+### Language Consistency in Mathematical Context
+- **Use "or" instead of "או"** in mathematical equations and numerical results
+- **Use "or" for alternative units or values**: `1200\,\pu{rpm} \quad \text{or} \quad 125.66\,\pu{rad/s}`
+- **Reserve "או" for Hebrew textual explanations** outside of mathematical expressions
+
+### Unit Formatting Standards
+- **For torque units**, use `\pu{N . m}` (with space-dot-space) instead of `\pu{N \cdot m}`
+- **For angular units**, use standard notation: `\pu{rad/s}`, `\pu{rpm}`
+- **For electrical units**, maintain consistency: `\pu{V}`, `\pu{A}`, `\pu{W}`, `\pu{kW}`
+
+### Cross-Reference Guidelines
+- **Avoid external course references** unless absolutely necessary and verified to exist
+- **Remove references to other courses** (e.g., PHY2_004) unless they are confirmed to be available in the current context
+- **Focus on internal consistency** within the current document/course
+
+### Professional Mathematical Presentation
+- **Always use proper mathematical spacing** with `\,` for thousands separators in results
+- **Include units with all numerical answers** in examples
+- **Show intermediate steps** in aligned format for complex calculations
+- **Use consistent decimal precision** throughout calculations (typically 2-3 significant figures for final answers)
+
+### Example Problem Formatting
+- **Structure solutions with clear steps**: calculation setup, intermediate steps, final answer
+- **Use aligned equations for all multi-step work**
+- **Include unit analysis** where appropriate
+- **End with boxed or clearly marked final answers** when appropriate
+
+## Quality Control Checklist
+Before finalizing any mathematical content, verify:
+- [ ] All variables with subscripts use proper triple-brace formatting when powered
+- [ ] Multi-step calculations use aligned environments
+- [ ] Figure references match the actual content being discussed
+- [ ] "or" is used in mathematical contexts, "או" in Hebrew text
+- [ ] Units follow established formatting (N . m for torque, etc.)
+- [ ] Cross-references are valid and necessary
+- [ ] Variable subscripts are explained when first introduced
+- [ ] Impedance calculations show both rectangular and polar forms when relevant
+
