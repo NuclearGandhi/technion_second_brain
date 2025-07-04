@@ -626,13 +626,16 @@ At this configuration:
 
 ## Question 4
 
-For a 2R planar manipulator with the following D-H parameters:
+For a $\mathrm{2R}$ planar manipulator with the following D–H parameters:
 
 $$\begin{array}{c|cccc}
 i & \alpha _{i} & {a}_{i} & {d}_{i} & {\theta}_{i} \\
 \hline 1    & 270^{\circ}  & 0 & 0 & {\theta}_{1} \\
 2 & 0  & 0 &r & 90^{\circ}  \\
 \end{array}$$
+
+![[IRB1_004 Velocity Kinematics and Statics 2025-07-04 13.44.06.excalidraw.svg]]
+>The given manipulator.
 
 The transformation matrices are given as:
 $$\begin{aligned}
