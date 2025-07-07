@@ -17,6 +17,7 @@ Assistant: Daniel Goldberg
 - [[PSM1_005 Fundamental Sampling Distributions and Data Descriptions]]
 - [[PSM1_006 One- and Two-Sample  Estimation Problems]]
 - [[PSM1_007 One- and Two-Sample Tests of  Hypotheses]]
+- [[PSM1_008 Simple Linear Regression and Correlation]]
 
 # Homework
 - [[PSM1_HW001 Homework 1]]
