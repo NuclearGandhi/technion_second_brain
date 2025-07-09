@@ -147,7 +147,7 @@ $$\overline{X} = \frac{1}{n}(X_1 + X_2 + \cdots + X_n)$$
 has a normal distribution with mean
 $$\mu_{\overline{X}} = \frac{1}{n}(\mu + \mu + \cdots + \mu) = \mu$$
 and variance
-$$\sigma^2_{\overline{X}} = \frac{1}{n^2}(\sigma^2 + \sigma^2 + \cdots + \sigma^2) = \frac{\sigma^2}{n}.$$
+$$\sigma^2_{\overline{X}} = \frac{1}{n^2}(\sigma^2 + \sigma^2 + \cdots + \sigma^2) = \frac{\sigma^2}{n}$$
 
 If we are sampling from a population with unknown distribution, either finite or infinite, the sampling distribution of $\overline{X}$ will still be approximately normal with mean $\mu$ and variance $\sigma^2/n$, provided that the sample size is large. This amazing result is an immediate consequence of the following theorem, called the Central Limit Theorem.
 

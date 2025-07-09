@@ -134,11 +134,11 @@ $$\boxed {
  & =\begin{pmatrix}
 \cos\theta_i & -\sin\theta_i\cos\alpha_i & \sin\theta_i\sin\alpha_i & a_i\cos\theta_i \\
 \sin\theta_i & \cos\theta_i\cos\alpha_i & -\cos\theta_i\sin\alpha_i & a_i\sin\theta_i \\
-0 & \sin(\alpha_i) & \cos\alpha_i & d_i \\
+0 & \sin\alpha_i & \cos\alpha_i & d_i \\
 0 & 0 & 0 & 1
 \end{pmatrix}
 \end{aligned}
- }$$
+ } \tag{LP14.5}$$
 # Exercises
 
 >[!notes] Note: 
@@ -182,7 +182,7 @@ For each joint, the transformation matrix is:
 $$^{i-1}\mathbf{T}_i = \begin{pmatrix}
 \cos\theta_i & -\sin\theta_i\cos\alpha_i & \sin\theta_i\sin\alpha_i & a_i\cos\theta_i \\
 \sin\theta_i & \cos\theta_i\cos\alpha_i & -\cos\theta_i\sin\alpha_i & a_i\sin\theta_i \\
-0 & \sin(\alpha_i) & \cos\alpha_i & d_i \\
+0 & \sin\alpha_i & \cos\alpha_i & d_i \\
 0 & 0 & 0 & 1
 \end{pmatrix}$$
 

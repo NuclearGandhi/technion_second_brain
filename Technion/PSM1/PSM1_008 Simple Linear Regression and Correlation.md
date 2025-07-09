@@ -454,7 +454,7 @@ which follows a $t$-distribution with $n-2$ degrees of freedom.
 >This simplifies to: $15.0585 < y_0 < 28.7464$
 
 ![[{E1B5A9E7-29EB-44DB-9C89-4CD45DA9DE1F}.png|bookhue|600]]
->Comparison of confidence intervals for the mean response and prediction intervals for individual responses. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
+>Confidence and prediction intervals for the chemical oxygen demand reduction data; inside bands indicate the confidence limits for the mean responses and outside bands indicate the prediction limits for the future responses. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].
 
 ## Key Differences Between Confidence and Prediction Intervals
 
@@ -505,7 +505,7 @@ $$Y = \beta_0 + \beta_1 X + \varepsilon$$
 
 where $X$ is now a random variable independent of the random error $\varepsilon$. Since the mean of the random error is zero, it follows that:
 
-$$\mu_Y = \beta_0 + \beta_1 \mu_X \quad \text{and} \quad \sigma_Y^2 = \sigma^2 + \beta_1^2 \sigma_X^2$$
+$$\mu_Y = \beta_0 + \beta_1 \mu_X \quad \text{and} \quad \sigma_Y^2 = \sigma^2 + {{{\beta}_{1}}}^{2} \sigma_X^2$$
 
 After substitution and algebraic manipulation, we obtain the **bivariate normal distribution**:
 
@@ -540,7 +540,7 @@ Dividing both sides by $S_{yy}$ and replacing $S_{xy}$ by $b_1 S_{xx}$, we obtai
 
 $$\frac{{{{b}_{1}}}^{2} S_{xx}}{S_{yy}} = 1 - \frac{SSE}{S_{yy}}$$
 
-Since $S_{yy} \geq SSE$, we conclude that $b_1^2 S_{xx}/S_{yy}$ must be between 0 and 1. Consequently, $b_1\sqrt{S_{xx}/S_{yy}}$ must range from $-1$ to $+1$, with:
+Since $S_{yy} \geq SSE$, we conclude that ${{{b}_{1}}}^{2} S_{xx}/S_{yy}$ must be between $0$ and $1$. Consequently, $b_1\sqrt{S_{xx}/S_{yy}}$ must range from $-1$ to $+1$, with:
 - Negative values corresponding to lines with negative slopes
 - Positive values corresponding to lines with positive slopes
 - Values of $\pm 1$ occurring when $SSE = 0$ (perfect linear relationship)
@@ -632,7 +632,7 @@ which follows approximately the standard normal distribution.
 >4. Critical region: $z > 1.645$
 >5. Computations:
 >   $$z = \frac{\sqrt{26}}{2}\ln\left[\frac{(1+0.9435)(0.1)}{(1-0.9435)(1.9)}\right] = 1.51, \quad P = 0.0655$$
->6. **Decision:** There is some evidence that $\rho$ does not exceed 0.9, but not quite significant at the 0.05 level.
+>6. **Decision:** There is some evidence that $\rho$ does not exceed $0.9$, but not quite significant at the $0.05$ level.
 
 ## Important Caveats About Correlation
 
