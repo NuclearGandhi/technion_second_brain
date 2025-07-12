@@ -1,11 +1,11 @@
 ---
 aliases:
-- Velocity Kinematics
-- Manipulator Statics
-- Manipulability Ellipsoid
-- Force Ellipsoid
-- Static Equilibrium
-- Joint Torques
+  - Manipulator Statics
+  - Manipulability Ellipsoid
+  - Force Ellipsoid
+  - Static Equilibrium
+  - Joint Torques
+  - Manipulator Jacobian
 ---
 from [[IRB1_000 00350001 מבוא לרובוטיקה#ביבליוגרפיה|(Lynch & Park, 2017)]]:
 
