@@ -27,6 +27,8 @@ Assistant: Daniel Goldberg
 - [[PSM1_HW005 Homework 5]]
 
 # Exams
+- [[PSM1_E2021SA 2021 Spring Moed A]]
+- [[PSM1_E2020SB 2020 Spring Moed B]]
 
 # Bibliography
 - Walpole, R. E., Myers, R. H., Myers, S. L., & Ye, K. (2017). _Probability & statistics for engineers & scientists: MyStatLab update_ (Ninth edition). Pearson.

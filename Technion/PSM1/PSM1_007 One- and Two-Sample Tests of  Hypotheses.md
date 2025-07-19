@@ -545,3 +545,84 @@ The reader should recall that the $t$-distribution is symmetric around the value
 >   $$t = \frac{42 - 46}{11.9/\sqrt{12}} = -1.16, \quad P = P(T < -1.16) \approx 0.135$$
 >6. Decision: Do not reject $H_0$ and conclude that the average number of kilowatt hours used annually by home vacuum cleaners is not significantly less than $46$.
 
+
+# Two Samples: Tests on Two Means
+
+The reader should now understand the relationship between tests and confidence intervals, and can rely heavily on details supplied by the confidence interval material in [[PSM1_006 One- and Two-Sample  Estimation Problems|the previous chapter]]. Tests concerning two means represent a set of very important analytical tools for the scientist or engineer. Two independent random samples of sizes $n_1$ and $n_2$, respectively, are drawn from two populations with means $\mu_1$ and $\mu_2$ and variances ${{{\sigma}_{1}}}^{2}$ and ${{{\sigma}_{2}}}^{2}$. We know that the random variable
+
+$$Z = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sqrt{{{{\sigma}_{1}}}^{2}/n_1 + {{{\sigma}_{2}}}^{2}/n_2}}$$
+
+has a standard normal distribution. Here we are assuming that $n_1$ and $n_2$ are sufficiently large that the Central Limit Theorem applies. Of course, if the two populations are normal, the statistic above has a standard normal distribution even for small $n_1$ and $n_2$. Obviously, if we can assume that $\sigma_1 = \sigma_2 = \sigma$, the statistic above reduces to
+
+$$Z = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sigma\sqrt{1/n_1 + 1/n_2}}$$
+
+The two statistics above serve as a basis for the development of the test procedures involving two means. The equivalence between tests and confidence intervals, along with the technical detail involving tests on one mean, allow a simple transition to tests on two means. The two-sided hypothesis on two means can be written generally as
+
+$$H_0: \mu_1 - \mu_2 = d_0$$
+
+Obviously, the alternative can be two sided or one sided. Again, the distribution used is the distribution of the test statistic under $H_0$. Values $\overline{x}_1$ and $\overline{x}_2$ are computed and, for $\sigma_1$ and $\sigma_2$ known, the test statistic is given by
+
+$$z = \frac{(\overline{x}_1 - \overline{x}_2) - d_0}{\sqrt{{{{\sigma}_{1}}}^{2}/n_1 + {{{\sigma}_{2}}}^{2}/n_2}}$$
+
+with a two-tailed critical region in the case of a two-sided alternative. That is, reject $H_0$ in favor of $H_1: \mu_1 - \mu_2 \neq d_0$ if $z > z_{\alpha/2}$ or $z < -z_{\alpha/2}$. One-tailed critical regions are used in the case of the one-sided alternatives. The reader should, as before, study the test statistic and be satisfied that for, say, $H_1: \mu_1 - \mu_2 > d_0$, the signal favoring $H_1$ comes from large values of $z$. Thus, the upper-tailed critical region applies.
+
+## Unknown But Equal Variances
+
+The more prevalent situations involving tests on two means are those in which variances are unknown. If the scientist involved is willing to assume that both distributions are normal and that $\sigma_1 = \sigma_2 = \sigma$, the pooled $t$-test (often called the two-sample $t$-test) may be used. The test statistic (see Section 9.8) is given by the following test procedure.
+
+>[!info] Two-Sample Pooled $t$-Test:
+>For the two-sided hypothesis
+>$$\begin{aligned}
+ & H_0: \mu_1 = \mu_2 \\[1ex]
+ & H_1: \mu_1 \neq \mu_2
+\end{aligned}$$
+>
+>we reject $H_0$ at significance level $\alpha$ when the computed $t$-statistic
+>$$t = \frac{(\overline{x}_1 - \overline{x}_2) - d_0}{s_p\sqrt{1/n_1 + 1/n_2}}$$
+>
+>where
+>$${{{s}_{p}}}^{2} = \frac{{{{s}_{1}}}^{2}(n_1 - 1) + {{{s}_{2}}}^{2}(n_2 - 1)}{n_1 + n_2 - 2}$$
+>
+>exceeds $t_{\alpha/2,n_1+n_2-2}$ or is less than $-t_{\alpha/2,n_1+n_2-2}$.
+
+Recall from Chapter 9 that the degrees of freedom for the $t$-distribution are a result of pooling of information from the two samples to estimate ${\sigma}^{2}$. One-sided alternatives suggest one-sided critical regions, as one might expect. For example, for $H_1: \mu_1 - \mu_2 > d_0$, reject $H_0: \mu_1 - \mu_2 = d_0$ when $t > t_{\alpha,n_1+n_2-2}$.
+
+>[!example] Example:
+>An experiment was performed to compare the abrasive wear of two different laminated materials. Twelve pieces of material 1 were tested by exposing each piece to a machine measuring wear. Ten pieces of material 2 were similarly tested. In each case, the depth of wear was observed. The samples of material 1 gave an average (coded) wear of $85$ units with a sample standard deviation of $4$, while the samples of material 2 gave an average of $81$ with a sample standard deviation of $5$. Can we conclude at the $0.05$ level of significance that the abrasive wear of material 1 exceeds that of material 2 by more than $2$ units? Assume the populations to be approximately normal with equal variances.
+>
+>**Solution:**
+>Let $\mu_1$ and $\mu_2$ represent the population means of the abrasive wear for material 1 and material 2, respectively.
+>
+>1. $H_0: \mu_1 - \mu_2 = 2$.
+>2. $H_1: \mu_1 - \mu_2 > 2$.
+>3. $\alpha = 0.05$.
+>4. Critical region: $t > 1.725$, where $t = \frac{(\overline{x}_1-\overline{x}_2)-d_0}{s_p\sqrt{1/n_1 +1/n_2}}$ with $v = 20$ degrees of freedom.
+>5. Computations:
+>   $$\overline{x}_1 = 85, \quad s_1 = 4, \quad n_1 = 12$$
+>   $$\overline{x}_2 = 81, \quad s_2 = 5, \quad n_2 = 10$$
+>   
+>   Hence
+>   $$\begin{aligned}
+s_p &= \sqrt{\frac{(11)(16) + (9)(25)}{12 + 10 - 2}} = 4.478 \\[1ex]
+t &= \frac{(85 - 81) - 2}{4.478\sqrt{1/12 + 1/10}} = 1.04
+\end{aligned}$$
+>   
+>   $P = P(T > 1.04) \approx 0.16$. (See Table A.4.)
+>   
+>6. Decision: Do not reject $H_0$. We are unable to conclude that the abrasive wear of material 1 exceeds that of material 2 by more than $2$ units.
+
+## Unknown But Unequal Variances
+
+There are situations where the analyst is not able to assume that $\sigma_1 = \sigma_2$. Recall from Section 9.8 that, if the populations are normal, the statistic
+
+$$T' = \frac{(\overline{X}_1 - \overline{X}_2) - d_0}{\sqrt{{{{s}_{1}}}^{2}/n_1 + {{{s}_{2}}}^{2}/n_2}}$$
+
+has an approximate $t$-distribution with approximate degrees of freedom
+
+$$v = \frac{({{{s}_{1}}}^{2}/n_1 + {{{s}_{2}}}^{2}/n_2)^2}{({{{s}_{1}}}^{2}/n_1)^2/(n_1 - 1) + ({{{s}_{2}}}^{2}/n_2)^2/(n_2 - 1)}$$
+
+As a result, the test procedure is to not reject $H_0$ when
+
+$$-t_{\alpha/2,v} < t' < t_{\alpha/2,v}$$
+
+with $v$ given as above. Again, as in the case of the pooled $t$-test, one-sided alternatives suggest one-sided critical regions.

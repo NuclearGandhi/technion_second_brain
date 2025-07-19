@@ -225,7 +225,7 @@ The Poisson probability sums is defined as:
 $$P(r;\lambda t)=\sum_{x=0}^{r} p(x;\lambda t) $$
 
 >[!example] Example: Radioactive Particles
->During a laboratory experiment, the average number of radioactive particles passing through a counter in 1 millisecond is 4. What is the probability that 6 particles enter the counter in a given millisecond?
+>During a laboratory experiment, the average number of radioactive particles passing through a counter in $1$ millisecond is $4$. What is the probability that $6$ particles enter the counter in a given millisecond?
 >
 >**Solution**:
 >Using the Poisson distribution with $x = 6$ and $\lambda t = 4$:

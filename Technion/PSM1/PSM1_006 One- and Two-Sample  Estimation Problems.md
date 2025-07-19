@@ -401,3 +401,159 @@ It is convenient for our purposes to view an outlying observation as one that co
 
 As a result, a methodology for outlier detection involves the rule that an observation is an outlier if it falls outside the prediction interval computed without including the questionable observation in the sample. As a result, for the prediction interval of Example 9.8, if a new pack of beef is measured and its leanness is outside the interval $(93.96, 98.44)$, that observation can be viewed as an outlier.
  %%
+# Two Samples: Estimating the Difference between Two Means
+
+If we have two populations with means $\mu_1$ and $\mu_2$ and variances ${{{\sigma}_{1}}}^{2}$ and ${{{\sigma}_{2}}}^{2}$, respectively, a point estimator of the difference between $\mu_1$ and $\mu_2$ is given by the statistic $\overline{X}_1 - \overline{X}_2$. Therefore, to obtain a point estimate of $\mu_1 - \mu_2$, we shall select two independent random samples, one from each population, of sizes $n_1$ and $n_2$, and compute $\overline{x}_1 - \overline{x}_2$, the difference of the sample means. Clearly, we must consider the sampling distribution of $\overline{X}_1 - \overline{X}_2$.
+
+We can expect the sampling distribution of $\overline{X}_1 - \overline{X}_2$ to be approximately normally distributed with mean $\mu_{\overline{X}_1-\overline{X}_2} = \mu_1 - \mu_2$ and standard deviation $\sigma_{\overline{X}_1-\overline{X}_2} = \sqrt{{{{\sigma}_{1}}}^{2}/n_1 + {{{\sigma}_{2}}}^{2}/n_2}$. Therefore, we can assert with a probability of $1 - \alpha$ that the standard normal variable
+
+$$Z = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sqrt{{{{\sigma}_{1}}}^{2}/n_1 + {{{\sigma}_{2}}}^{2}/n_2}}$$
+
+will fall between $-z_{\alpha/2}$ and $z_{\alpha/2}$. Referring once again to Figure 9.2, we write
+
+$$P(-z_{\alpha/2} < Z < z_{\alpha/2}) = 1 - \alpha$$
+
+Substituting for $Z$, we state equivalently that
+
+$$P\left(-z_{\alpha/2} < \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sqrt{{{{\sigma}_{1}}}^{2}/n_1 + {{{\sigma}_{2}}}^{2}/n_2}} < z_{\alpha/2}\right) = 1 - \alpha$$
+
+which leads to the following $100(1 - \alpha)\%$ confidence interval for $\mu_1 - \mu_2$.
+
+>[!info] Confidence Interval for $\mu_1 - \mu_2$, ${{{\sigma}_{1}}}^{2}$ and ${{{\sigma}_{2}}}^{2}$ Known:
+>If $\overline{x}_1$ and $\overline{x}_2$ are means of independent random samples of sizes $n_1$ and $n_2$ from populations with known variances ${{{\sigma}_{1}}}^{2}$ and ${{{\sigma}_{2}}}^{2}$, respectively, a $100(1 - \alpha)\%$ confidence interval for $\mu_1 - \mu_2$ is given by
+>$$(\overline{x}_1 - \overline{x}_2) - z_{\alpha/2}\sqrt{\frac{{{{\sigma}_{1}}}^{2}}{n_1} + \frac{{{{\sigma}_{2}}}^{2}}{n_2}} < \mu_1 - \mu_2 < (\overline{x}_1 - \overline{x}_2) + z_{\alpha/2}\sqrt{\frac{{{{\sigma}_{1}}}^{2}}{n_1} + \frac{{{{\sigma}_{2}}}^{2}}{n_2}}$$
+>where $z_{\alpha/2}$ is the $z$-value leaving an area of $\alpha/2$ to the right.
+
+The degree of confidence is exact when samples are selected from normal populations. For nonnormal populations, the Central Limit Theorem allows for a good approximation for reasonable size samples.
+
+## The Experimental Conditions and the Experimental Unit
+
+For the case of confidence interval estimation on the difference between two means, we need to consider the experimental conditions in the data-taking process. It is assumed that we have two independent random samples from distributions with means $\mu_1$ and $\mu_2$, respectively. It is important that experimental conditions emulate this ideal described by these assumptions as closely as possible. Quite often, the experimenter should plan the strategy of the experiment accordingly. For almost any study of this type, there is a so-called experimental unit, which is that part of the experiment that produces experimental error and is responsible for the population variance we refer to as ${\sigma}^{2}$. In a drug study, the experimental unit is the patient or subject. In an agricultural experiment, it may be a plot of ground. In a chemical experiment, it may be a quantity of raw materials. It is important that differences between the experimental units have minimal impact on the results. The experimenter will have a degree of insurance that experimental units will not bias results if the conditions that define the two populations are randomly assigned to the experimental units. We shall again focus on randomization in future chapters that deal with hypothesis testing.
+
+>[!example] Example:
+>A study was conducted in which two types of engines, $A$ and $B$, were compared. Gas mileage, in miles per gallon, was measured. Fifty experiments were conducted using engine type $A$ and $75$ experiments were done with engine type $B$. The gasoline used and other conditions were held constant. The average gas mileage was $36$ miles per gallon for engine A and $42$ miles per gallon for engine $B$. Find a $96\%$ confidence interval on $\mu_B - \mu_A$, where $\mu_A$ and $\mu_B$ are population mean gas mileages for engines $A$ and $B$, respectively. Assume that the population standard deviations are $6$ and $8$ for engines $A$ and $B$, respectively.
+>
+>**Solution:**
+>The point estimate of $\mu_B - \mu_A$ is $\overline{x}_B - \overline{x}_A = 42 - 36 = 6$. Using $\alpha = 0.04$, we find $z_{0.02} = 2.05$ from a table. Hence, with substitution in the formula above, the $96\%$ confidence interval is
+>$$6 - 2.05\sqrt{\frac{64}{75} + \frac{36}{50}} < \mu_B - \mu_A < 6 + 2.05\sqrt{\frac{64}{75} + \frac{36}{50}}$$
+>or simply $3.43 < \mu_B - \mu_A < 8.57$.
+
+This procedure for estimating the difference between two means is applicable if ${{{\sigma}_{1}}}^{2}$ and ${{{\sigma}_{2}}}^{2}$ are known. If the variances are not known and the two distributions involved are approximately normal, the $t$-distribution becomes involved, as in the case of a single sample. If one is not willing to assume normality, large samples (say greater than $30$) will allow the use of $s_1$ and $s_2$ in place of $\sigma_1$ and $\sigma_2$, respectively, with the rationale that $s_1 \approx \sigma_1$ and $s_2 \approx \sigma_2$. Again, of course, the confidence interval is an approximate one.
+
+## Variances Unknown but Equal
+
+Consider the case where ${{{\sigma}_{1}}}^{2}$ and ${{{\sigma}_{2}}}^{2}$ are unknown. If ${{{\sigma}_{1}}}^{2} = {{{\sigma}_{2}}}^{2} = {\sigma}^{2}$, we obtain a standard normal variable of the form
+
+$$Z = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sqrt{{\sigma}^{2}[(1/n_1) + (1/n_2)]}}$$
+
+The two random variables
+
+$$\frac{(n_1 - 1){{{S}_{1}}}^{2}}{{\sigma}^{2}} \quad \text{and} \quad \frac{(n_2 - 1){{{S}_{2}}}^{2}}{{\sigma}^{2}}$$
+
+have chi-squared distributions with $n_1 - 1$ and $n_2 - 1$ degrees of freedom, respectively. Furthermore, they are independent chi-squared variables, since the random samples were selected independently. Consequently, their sum
+
+$$V = \frac{(n_1 - 1){{{S}_{1}}}^{2}}{{\sigma}^{2}} + \frac{(n_2 - 1){{{S}_{2}}}^{2}}{{\sigma}^{2}} = \frac{(n_1 - 1){{{S}_{1}}}^{2} + (n_2 - 1){{{S}_{2}}}^{2}}{{\sigma}^{2}}$$
+
+has a chi-squared distribution with $v = n_1 + n_2 - 2$ degrees of freedom. Since the preceding expressions for $Z$ and $V$ can be shown to be independent, it follows that the statistic
+
+$$T = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sqrt{{\sigma}^{2}[(1/n_1) + (1/n_2)]}} \bigg/ \sqrt{\frac{(n_1 - 1){{{S}_{1}}}^{2} + (n_2 - 1){{{S}_{2}}}^{2}}{{\sigma}^{2}(n_1 + n_2 - 2)}}$$
+
+has the $t$-distribution with $v = n_1 + n_2 - 2$ degrees of freedom. A point estimate of the unknown common variance ${\sigma}^{2}$ can be obtained by pooling the sample variances. Denoting the **pooled estimator** by ${{{S}_{p}}}^{2}$, we have the following.
+
+>[!def] Definiton:
+>The **Pooled Estimate of Variance** ${S}_{p}$ is defined as:
+>$${{{S}_{p}}}^{2} = \frac{(n_1 - 1){{{S}_{1}}}^{2} + (n_2 - 1){{{S}_{2}}}^{2}}{n_1 + n_2 - 2}$$
+
+Substituting ${{{S}_{p}}}^{2}$ in the $T$ statistic, we obtain the less cumbersome form
+
+$$T = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{S_p\sqrt{(1/n_1) + (1/n_2)}}$$
+
+Using the $T$ statistic, we have
+
+$$P(-t_{\alpha/2} < T < t_{\alpha/2}) = 1 - \alpha$$
+
+where $t_{\alpha/2}$ is the $t$-value with $n_1 + n_2 - 2$ degrees of freedom, above which we find an area of $\alpha/2$. Substituting for $T$ in the inequality, we write
+
+$$P\left[-t_{\alpha/2} < \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{S_p\sqrt{(1/n_1) + (1/n_2)}} < t_{\alpha/2}\right] = 1 - \alpha$$
+
+After the usual mathematical manipulations, the difference of the sample means $\overline{x}_1 - \overline{x}_2$ and the pooled variance are computed and then the following $100(1 - \alpha)\%$ confidence interval for $\mu_1 - \mu_2$ is obtained. The value of ${{{s}_{p}}}^{2}$ is easily seen to be a weighted average of the two sample variances ${{{s}_{1}}}^{2}$ and ${{{s}_{2}}}^{2}$, where the weights are the degrees of freedom.
+
+>[!info] Confidence Interval for $\mu_1 - \mu_2$, ${{{\sigma}_{1}}}^{2} = {{{\sigma}_{2}}}^{2}$ but Both Unknown:
+>If $\overline{x}_1$ and $\overline{x}_2$ are the means of independent random samples of sizes $n_1$ and $n_2$, respectively, from approximately normal populations with unknown but equal variances, a $100(1 - \alpha)\%$ confidence interval for $\mu_1 - \mu_2$ is given by
+>$$(\overline{x}_1 - \overline{x}_2) - t_{\alpha/2}s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}} < \mu_1 - \mu_2 < (\overline{x}_1 - \overline{x}_2) + t_{\alpha/2}s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}$$
+>where $s_p$ is the pooled estimate of the population standard deviation and $t_{\alpha/2}$ is the $t$-value with $v = n_1 + n_2 - 2$ degrees of freedom, leaving an area of $\alpha/2$ to the right.
+
+>[!example] Example:
+>The article "Macroinvertebrate Community Structure as an Indicator of Acid Mine Pollution," published in the Journal of Environmental Pollution, reports on an investigation undertaken in Cane Creek, Alabama, to determine the relationship between selected physiochemical parameters and different measures of macroinvertebrate community structure. One facet of the investigation was an evaluation of the effectiveness of a numerical species diversity index to indicate aquatic degradation due to acid mine drainage. Conceptually, a high index of macroinvertebrate species diversity should indicate an unstressed aquatic system, while a low diversity index should indicate a stressed aquatic system. Two independent sampling stations were chosen for this study, one located downstream from the acid mine discharge point and the other located upstream. For $12$ monthly samples collected at the downstream station, the species diversity index had a mean value $\overline{x}_1 = 3.11$ and a standard deviation $s_1 = 0.771$, while $10$ monthly samples collected at the upstream station had a mean index value $\overline{x}_2 = 2.04$ and a standard deviation $s_2 = 0.448$. Find a $90\%$ confidence interval for the difference between the population means for the two locations, assuming that the populations are approximately normally distributed with equal variances.
+>
+>**Solution:**
+>Let $\mu_1$ and $\mu_2$ represent the population means, respectively, for the species diversity indices at the downstream and upstream stations. We wish to find a $90\%$ confidence interval for $\mu_1 - \mu_2$. Our point estimate of $\mu_1 - \mu_2$ is
+>$$\overline{x}_1 - \overline{x}_2 = 3.11 - 2.04 = 1.07$$
+>
+>The pooled estimate, ${{{s}_{p}}}^{2}$, of the common variance, ${\sigma}^{2}$, is
+>$${{{s}_{p}}}^{2} = \frac{(n_1 - 1){{{s}_{1}}}^{2} + (n_2 - 1){{{s}_{2}}}^{2}}{n_1 + n_2 - 2} = \frac{(11)(0.771)^2 + (9)(0.448)^2}{12 + 10 - 2} = 0.417$$
+>
+>Taking the square root, we obtain $s_p = 0.646$. Using $\alpha = 0.1$, we find in Table A.4 that $t_{0.05} = 1.725$ for $v = n_1 + n_2 - 2 = 20$ degrees of freedom. Therefore, the $90\%$ confidence interval for $\mu_1 - \mu_2$ is
+>$$1.07 - (1.725)(0.646)\sqrt{\frac{1}{12} + \frac{1}{10}} < \mu_1 - \mu_2 < 1.07 + (1.725)(0.646)\sqrt{\frac{1}{12} + \frac{1}{10}}$$
+>which simplifies to $0.593 < \mu_1 - \mu_2 < 1.547$.
+
+### Interpretation of the Confidence Interval
+
+For the case of a single parameter, the confidence interval simply provides error bounds on the parameter. Values contained in the interval should be viewed as reasonable values given the experimental data. In the case of a difference between two means, the interpretation can be extended to one of comparing the two means. For example, if we have high confidence that a difference $\mu_1 - \mu_2$ is positive, we would certainly infer that $\mu_1 > \mu_2$ with little risk of being in error. For example, in the previous example, we are $90\%$ confident that the interval from $0.593$ to $1.547$ contains the difference of the population means for values of the species diversity index at the two stations. The fact that both confidence limits are positive indicates that, on the average, the index for the station located downstream from the discharge point is greater than the index for the station located upstream.
+
+### Equal Sample Sizes
+
+The procedure for constructing confidence intervals for $\mu_1 - \mu_2$ with $\sigma_1 = \sigma_2 = \sigma$ unknown requires the assumption that the populations are normal. Slight departures from either the equal variance or the normality assumption do not seriously alter the degree of confidence for our interval. (A procedure is presented in Chapter 10 for testing the equality of two unknown population variances based on the information provided by the sample variances.) If the population variances are considerably different, we still obtain reasonable results when the populations are normal, provided that $n_1 = n_2$. Therefore, in planning an experiment, one should make every effort to equalize the size of the samples.
+
+## Unknown and Unequal Variances
+
+Let us now consider the problem of finding an interval estimate of $\mu_1 - \mu_2$ when the unknown population variances are not likely to be equal. The statistic most often used in this case is
+
+$$T' = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sqrt{({{{S}_{1}}}^{2}/n_1) + ({{{S}_{2}}}^{2}/n_2)}}$$
+
+which has approximately a $t$-distribution with $v$ degrees of freedom, where
+
+$$v = \frac{({{{s}_{1}}}^{2}/n_1 + {{{s}_{2}}}^{2}/n_2)^2}{[({{{s}_{1}}}^{2}/n_1)^2/(n_1 - 1)] + [({{{s}_{2}}}^{2}/n_2)^2/(n_2 - 1)]}$$
+
+Since $v$ is seldom an integer, we round it down to the nearest whole number. The above estimate of the degrees of freedom is called the **Satterthwaite approximation**. Using the statistic $T'$, we write
+
+$$P(-t_{\alpha/2} < T' < t_{\alpha/2}) \approx 1 - \alpha$$
+
+where $t_{\alpha/2}$ is the value of the $t$-distribution with $v$ degrees of freedom, above which we find an area of $\alpha/2$. Substituting for $T'$ in the inequality and following the same steps as before, we state the final result.
+
+>[!info] Confidence Interval for $\mu_1 - \mu_2$, ${{{\sigma}_{1}}}^{2} \neq {{{\sigma}_{2}}}^{2}$ and Both Unknown:
+>If $\overline{x}_1$ and ${{{s}_{1}}}^{2}$ and $\overline{x}_2$ and ${{{s}_{2}}}^{2}$ are the means and variances of independent random samples of sizes $n_1$ and $n_2$, respectively, from approximately normal populations with unknown and unequal variances, an approximate $100(1 - \alpha)\%$ confidence interval for $\mu_1 - \mu_2$ is given by
+>$$(\overline{x}_1 - \overline{x}_2) - t_{\alpha/2}\sqrt{\frac{{{{s}_{1}}}^{2}}{n_1} + \frac{{{{s}_{2}}}^{2}}{n_2}} < \mu_1 - \mu_2 < (\overline{x}_1 - \overline{x}_2) + t_{\alpha/2}\sqrt{\frac{{{{s}_{1}}}^{2}}{n_1} + \frac{{{{s}_{2}}}^{2}}{n_2}}$$
+>where $t_{\alpha/2}$ is the $t$-value with
+>$$v = \frac{({{{s}_{1}}}^{2}/n_1 + {{{s}_{2}}}^{2}/n_2)^2}{[({{{s}_{1}}}^{2}/n_1)^2/(n_1 - 1)] + [({{{s}_{2}}}^{2}/n_2)^2/(n_2 - 1)]}$$
+>degrees of freedom, leaving an area of $\alpha/2$ to the right.
+
+Note that the expression for $v$ above involves random variables, and thus $v$ is an estimate of the degrees of freedom. In applications, this estimate will not result in a whole number, and thus the analyst must round down to the nearest integer to achieve the desired confidence. Before we illustrate the above confidence interval with an example, we should point out that all the confidence intervals on $\mu_1 - \mu_2$ are of the same general form as those on a single mean; namely, they can be written as
+
+$$\text{point estimate} \pm t_{\alpha/2} \widehat{\text{s.e.}}(\text{point estimate})$$
+
+or
+
+$$\text{point estimate} \pm z_{\alpha/2} \text{ s.e.}(\text{point estimate})$$
+
+For example, in the case where $\sigma_1 = \sigma_2 = \sigma$, the estimated standard error of $\overline{x}_1 - \overline{x}_2$ is $s_p\sqrt{1/n_1 + 1/n_2}$. For the case where ${{{\sigma}_{1}}}^{2} \neq {{{\sigma}_{2}}}^{2}$,
+
+$$\widehat{\text{s.e.}}(\overline{x}_1 - \overline{x}_2) = \sqrt{\frac{{{{s}_{1}}}^{2}}{n_1} + \frac{{{{s}_{2}}}^{2}}{n_2}}$$
+
+>[!example] Example:
+>A study was conducted by the Department of Zoology at the Virginia Tech to estimate the difference in the amounts of the chemical orthophosphorus measured at two different stations on the James River. Orthophosphorus was measured in milligrams per liter. Fifteen samples were collected from station 1, and 12 samples were obtained from station 2. The 15 samples from station 1 had an average orthophosphorus content of $3.84$ milligrams per liter and a standard deviation of $3.07$ milligrams per liter, while the 12 samples from station 2 had an average content of $1.49$ milligrams per liter and a standard deviation of $0.80$ milligram per liter. Find a $95\%$ confidence interval for the difference in the true average orthophosphorus contents at these two stations, assuming that the observations came from normal populations with different variances.
+>
+>**Solution:**
+>For station 1, we have $\overline{x}_1 = 3.84$, $s_1 = 3.07$, and $n_1 = 15$. For station 2, $\overline{x}_2 = 1.49$, $s_2 = 0.80$, and $n_2 = 12$. We wish to find a $95\%$ confidence interval for $\mu_1 - \mu_2$.
+>
+>Since the population variances are assumed to be unequal, we can only find an approximate $95\%$ confidence interval based on the $t$-distribution with $v$ degrees of freedom, where
+>$$v = \frac{(3.07^2/15 + 0.80^2/12)^2}{[(3.07^2/15)^2/14] + [(0.80^2/12)^2/11]} = 16.3 \approx 16$$
+>
+>Our point estimate of $\mu_1 - \mu_2$ is
+>$$\overline{x}_1 - \overline{x}_2 = 3.84 - 1.49 = 2.35$$
+>
+>Using $\alpha = 0.05$, we find in Table A.4 that $t_{0.025} = 2.120$ for $v = 16$ degrees of freedom. Therefore, the $95\%$ confidence interval for $\mu_1 - \mu_2$ is
+>$$2.35 - 2.120\sqrt{\frac{3.07^2}{15} + \frac{0.80^2}{12}} < \mu_1 - \mu_2 < 2.35 + 2.120\sqrt{\frac{3.07^2}{15} + \frac{0.80^2}{12}}$$
+>which simplifies to $0.60 < \mu_1 - \mu_2 < 4.10$. Hence, we are $95\%$ confident that the interval from $0.60$ to $4.10$ milligrams per liter contains the difference of the true average orthophosphorus contents for these two locations.
+
+When two population variances are unknown, the assumption of equal variances or unequal variances may be precarious. In Section 10.10, a procedure will be introduced that will aid in discriminating between the equal variance and the unequal variance situation.
