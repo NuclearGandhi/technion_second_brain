@@ -325,7 +325,7 @@ The probability distribution of $T$ was first published in 1908 in a paper writt
 
 ## What Does the t-Distribution Look Like?
 
-The distribution of $T$ is similar to the distribution of $Z$ in that they both are symmetric about a mean of zero. Both distributions are bell shaped, but the t-distribution is more variable, owing to the fact that the $T$-values depend on the fluctuations of two quantities, $\overline{X}$ and $S^2$, whereas the $Z$-values depend only on the changes in $\overline{X}$ from sample to sample. The distribution of $T$ differs from that of $Z$ in that the variance of $T$ depends on the sample size $n$ and is always greater than 1. Only when the sample size $n \to \infty$ will the two distributions become the same.
+The distribution of $T$ is similar to the distribution of $Z$ in that they both are symmetric about a mean of zero. Both distributions are bell shaped, but the t-distribution is more variable, owing to the fact that the $T$-values depend on the fluctuations of two quantities, $\overline{X}$ and $S^2$, whereas the $Z$-values depend only on the changes in $\overline{X}$ from sample to sample. The distribution of $T$ differs from that of $Z$ in that the variance of $T$ depends on the sample size $n$ and is always greater than $1$. Only when the sample size $n \to \infty$ will the two distributions become the same.
 
 ![[Pasted image 20250615113041.png|bookhue|500]]
 >The t-distribution curves for $v = 2, 5,$ and $\infty$. [[PSM1_000 00340058 Probability and Statistics for Mechanical Engineers#Bibliography|(Walpole et al., 2017)]].

@@ -1,0 +1,1035 @@
+\documentclass{article}
+\usepackage[a4paper, top=2cm,right=1cm,left=1cm,bottom=0.5cm]{geometry}
+\usepackage{url}
+
+\usepackage{ifthen}
+\usepackage{xcolor}
+
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{1pt}
+\usepackage[compact]{titlesec}
+
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\usepackage{siunitx}
+\sisetup{inter-unit-product=\ensuremath{{}\cdot{}}, exponent-product = \cdot}
+
+\usepackage[version=4]{mhchem} 
+
+\makeatletter
+\newsavebox\myboxA
+\newsavebox\myboxB
+\newlength\mylenA
+\newcommand*\overbar[2][0.75]{%
+    \sbox{\myboxA}{$\m@th#2$}%
+    \setbox\myboxB\null% Phantom box
+    \ht\myboxB=\ht\myboxA%
+    \dp\myboxB=\dp\myboxA%
+    \wd\myboxB=#1\wd\myboxA% Scale phantom
+    \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
+    \setlength\mylenA{\the\wd\myboxA}%   calc width diff
+    \addtolength\mylenA{-\the\wd\myboxB}%
+    \ifdim\wd\myboxB<\wd\myboxA%
+       \rlap{\hskip 0.5\mylenA\usebox\myboxB}{\usebox\myboxA}%
+    \else
+        \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
+    \fi}
+\makeatother
+\renewcommand{\arraystretch}{1.2}
+
+\makeatletter
+\renewcommand*\env@matrix[1][\arraystretch]{%
+  \edef\arraystretch{#1}%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{*\c@MaxMatrixCols c}}
+\makeatother
+
+\usepackage{esint}
+\usepackage{setspace}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[hidelinks]{hyperref}
+
+\parindent0pt
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headsep}{0.3cm}
+\fancyhead[R]{\ifodd\value{page}Page {\thepage} of \pageref{LastPage}\fi}
+\fancyhead[L]{\ifodd\value{page}\else Page {\thepage} of \pageref{LastPage}\fi}
+
+\def\imagewidth{0.9}
+
+\newenvironment{cheatformula}[1][Title]{
+    \begin{minipage}{\linewidth}
+    \textbf{#1}:\\
+}{
+    \end{minipage}\\[2ex]
+}
+
+\newcommand{\cheatimage}[4][\imagewidth]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#1\linewidth]{#2}
+        \caption{#3}
+        \label{#4}
+    \end{figure}
+}
+
+\newcommand*{\NameAndID}{%
+    \par\noindent\makebox[2.5in]{\hrulefill} \hspace{0.5in}\makebox[2.0in]{\hrulefill}%
+    \par\noindent\makebox[2.5in][r]{Full Name}      \hspace{0.5in}\makebox[2.0in][r]{ID}%
+}%
+
+\title{Cheat Sheet for Probability and Statistics 00340058}
+\author{Ido Peng Bentov}
+
+\begin{document}
+
+\makeatletter
+\begin{center}
+    {\NameAndID}\\[2ex]
+    {\huge{\textbf{\@title}}}\\[2ex]
+\end{center}
+\makeatother
+
+\begin{multicols*}{2}
+\raggedcolumns
+
+\section{Basic Probability}
+
+\begin{cheatformula}[Sample Space and Events]
+    Sample space $\Omega$: set of all possible outcomes\\
+    Event $A$: subset of sample space\\
+    Complement: $A^c = \{x \in \Omega : x \notin A\}$\\
+    Union: $A \cup B = \{x : x \in A \text{ or } x \in B\}$\\
+    Intersection: $A \cap B = \{x : x \in A \text{ and } x \in B\}$\\
+    Disjoint events: $A \cap B = \emptyset$
+\end{cheatformula}
+
+\begin{cheatformula}[Probability Axioms]
+    For any event $A$:
+    \begin{align*}
+        &0 \leq P(A) \leq 1\\
+        &P(\Omega) = 1\\
+        &P(\emptyset) = 0\\
+        &P(A^c) = 1 - P(A)
+    \end{align*}
+\end{cheatformula}
+
+\begin{cheatformula}[Additive Rules]
+    General additive rule:
+    $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+    For mutually exclusive events ($A \cap B = \emptyset$):
+    $$P(A \cup B) = P(A) + P(B)$$
+\end{cheatformula}
+
+\begin{cheatformula}[Conditional Probability]
+    $$P(A|B) = \frac{P(A \cap B)}{P(B)}, \quad P(B) > 0$$
+    Multiplication rule:
+    $$P(A \cap B) = P(A|B)P(B) = P(B|A)P(A)$$
+    Independence: $A$ and $B$ are independent if
+    $$P(A \cap B) = P(A)P(B)$$
+    or equivalently $P(A|B) = P(A)$
+\end{cheatformula}
+
+\begin{cheatformula}[Law of Total Probability]
+    If $B_1, B_2, \ldots, B_k$ form a partition of $\Omega$:
+    $$P(A) = \sum_{i=1}^{k} P(A|B_i)P(B_i)$$
+\end{cheatformula}
+
+\begin{cheatformula}[Bayes' Theorem]
+    $$P(B_i|A) = \frac{P(A|B_i)P(B_i)}{\sum_{j=1}^{k} P(A|B_j)P(B_j)}$$
+\end{cheatformula}
+
+\begin{cheatformula}[Counting Principles]
+    Multiplication rule: $n_1 \times n_2 \times \cdots \times n_k$ ways\\
+    Permutations: $P(n,r) = \frac{n!}{(n-r)!}$\\
+    Combinations: $\binom{n}{r} = \frac{n!}{r!(n-r)!}$\\
+    Circular permutations: $(n-1)!$\\
+    With repetition: $\frac{n!}{n_1!n_2!\cdots n_k!}$
+\end{cheatformula}
+
+\section{Random Variables}
+
+\begin{cheatformula}[Discrete Random Variables]
+    Probability mass function (PMF): $f(x) = P(X = x)$\\
+    Properties:
+    \begin{align*}
+        &f(x) \geq 0 \text{ for all } x\\
+        &\sum_{\text{all } x} f(x) = 1
+    \end{align*}
+    Cumulative distribution function (CDF):
+    $$F(x) = P(X \leq x) = \sum_{t \leq x} f(t)$$
+\end{cheatformula}
+
+\begin{cheatformula}[Continuous Random Variables]
+    Probability density function (PDF): $f(x)$\\
+    Properties:
+    \begin{align*}
+        &f(x) \geq 0 \text{ for all } x\\
+        &\int_{-\infty}^{\infty} f(x)dx = 1
+    \end{align*}
+    Cumulative distribution function:
+    $$F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t)dt$$
+    $$P(a < X < b) = \int_a^b f(x)dx = F(b) - F(a)$$
+\end{cheatformula}
+
+\begin{cheatformula}[Expected Value (Mean)]
+    Discrete: $E(X) = \mu = \sum_{\text{all } x} x \cdot f(x)$\\
+    Continuous: $E(X) = \mu = \int_{-\infty}^{\infty} x \cdot f(x)dx$\\
+    
+    Properties of expectation:
+    \begin{align*}
+        &E(c) = c\\
+        &E(cX) = cE(X)\\
+        &E(X + Y) = E(X) + E(Y)\\
+        &E(aX + b) = aE(X) + b
+    \end{align*}
+\end{cheatformula}
+
+\begin{cheatformula}[Variance and Standard Deviation]
+    $$\text{Var}(X) = \sigma^2 = E[(X-\mu)^2] = E(X^2) - [E(X)]^2$$
+    
+    Computing $E(X^2)$:
+    \begin{itemize}
+        \item Discrete: $E(X^2) = \sum_{\text{all } x} x^2 \cdot f(x)$
+        \item Continuous: $E(X^2) = \int_{-\infty}^{\infty} x^2 \cdot f(x)dx$
+    \end{itemize}
+    
+    Alternative formulas:
+    \begin{itemize}
+        \item Discrete: $\sigma^2 = \sum_{\text{all } x} (x-\mu)^2 f(x)$
+        \item Continuous: $\sigma^2 = \int_{-\infty}^{\infty} (x-\mu)^2 f(x)dx$
+    \end{itemize}
+    
+    Standard deviation: $\sigma = \sqrt{\text{Var}(X)}$\\
+    
+    Properties of variance:
+    \begin{align*}
+        &\text{Var}(c) = 0\\
+        &\text{Var}(cX) = c^2\text{Var}(X)\\
+        &\text{Var}(aX + b) = a^2\text{Var}(X)
+    \end{align*}
+\end{cheatformula}
+
+\begin{cheatformula}[Variance Calculation Example]
+    Discrete distribution: $X$ takes values 1, 2, 3 with probabilities 0.2, 0.5, 0.3\\
+    
+    Step 1: $E(X) = 1(0.2) + 2(0.5) + 3(0.3) = 2.1$\\
+    Step 2: $E(X^2) = 1^2(0.2) + 2^2(0.5) + 3^2(0.3) = 0.2 + 2.0 + 2.7 = 4.9$\\
+    Step 3: $\text{Var}(X) = E(X^2) - [E(X)]^2 = 4.9 - (2.1)^2 = 4.9 - 4.41 = 0.49$
+\end{cheatformula}
+
+\begin{cheatformula}[Covariance and Correlation]
+    Covariance: $\text{Cov}(X,Y) = E[(X-\mu_X)(Y-\mu_Y)]$\\
+    Alternative form: $\text{Cov}(X,Y) = E(XY) - E(X)E(Y)$\\
+    
+    Correlation coefficient:
+    $$\rho = \frac{\text{Cov}(X,Y)}{\sigma_X \sigma_Y}$$
+    
+    Properties: $-1 \leq \rho \leq 1$\\
+    If $X$ and $Y$ are independent, then $\text{Cov}(X,Y) = 0$
+\end{cheatformula}
+
+\section{Discrete Distributions}
+
+\begin{cheatformula}[Binomial Distribution]
+    $X \sim \text{Binomial}(n,p)$\\
+    Parameters:
+    \begin{itemize}
+        \item $n$: number of independent trials (fixed)
+        \item $p$: probability of success on each trial (constant)
+        \item $x$: number of successes observed ($0 \leq x \leq n$)
+    \end{itemize}
+    PMF: $f(x) = \binom{n}{x}p^x(1-p)^{n-x}$, $x = 0,1,\ldots,n$\\
+    Mean: $\mu = np$\\
+    Variance: $\sigma^2 = np(1-p)$\\
+    
+    Use when: Fixed number of independent trials, each with probability $p$ of success
+\end{cheatformula}
+
+\begin{cheatformula}[Hypergeometric Distribution]
+    $X \sim \text{Hypergeometric}(N,K,n)$\\
+    Parameters:
+    \begin{itemize}
+        \item $N$: total population size
+        \item $K$: number of success states in population
+        \item $n$: number of draws (sample size)
+        \item $x$: number of observed successes in sample
+    \end{itemize}
+    PMF: $f(x) = \frac{\binom{K}{x}\binom{N-K}{n-x}}{\binom{N}{n}}$\\
+    where $\max(0, n-(N-K)) \leq x \leq \min(n,K)$\\
+    
+    Mean: $\mu = n\frac{K}{N}$\\
+    Variance: $\sigma^2 = n\frac{K}{N}\left(1-\frac{K}{N}\right)\frac{N-n}{N-1}$\\
+    
+    Use when: Sampling without replacement from finite population
+\end{cheatformula}
+
+\begin{cheatformula}[Geometric Distribution]
+    $X \sim \text{Geometric}(p)$ (number of trials until first success)\\
+    Parameters:
+    \begin{itemize}
+        \item $p$: probability of success on each trial (constant)
+        \item $x$: trial number on which first success occurs ($x = 1,2,3,\ldots$)
+    \end{itemize}
+    PMF: $f(x) = p(1-p)^{x-1}$, $x = 1,2,3,\ldots$\\
+    Mean: $\mu = \frac{1}{p}$\\
+    Variance: $\sigma^2 = \frac{1-p}{p^2}$\\
+    
+    Memoryless property: $P(X > s+t | X > s) = P(X > t)$
+\end{cheatformula}
+
+\begin{cheatformula}[Negative Binomial Distribution]
+    $X \sim \text{NegBinomial}(r,p)$ (number of trials until $r$-th success)\\
+    Parameters:
+    \begin{itemize}
+        \item $r$: target number of successes (positive integer)
+        \item $p$: probability of success on each trial (constant)
+        \item $x$: trial number on which $r$-th success occurs ($x = r,r+1,\ldots$)
+    \end{itemize}
+    PMF: $f(x) = \binom{x-1}{r-1}p^r(1-p)^{x-r}$, $x = r,r+1,\ldots$\\
+    Mean: $\mu = \frac{r}{p}$\\
+    Variance: $\sigma^2 = \frac{r(1-p)}{p^2}$\\
+    
+    Special case: Geometric is NegBinomial with $r=1$
+\end{cheatformula}
+
+\begin{cheatformula}[Poisson Distribution]
+    $X \sim \text{Poisson}(\lambda)$\\
+    Parameters:
+    \begin{itemize}
+        \item $\lambda$: average rate of events per unit time/space ($\lambda > 0$)
+        \item $x$: number of events observed in the unit ($x = 0,1,2,\ldots$)
+    \end{itemize}
+    PMF: $f(x) = \frac{\lambda^x e^{-\lambda}}{x!}$, $x = 0,1,2,\ldots$\\
+    Mean: $\mu = \lambda$\\
+    Variance: $\sigma^2 = \lambda$\\
+    
+    Use when: Counting rare events in time/space\\
+    Approximation to binomial when $n$ is large, $p$ is small, $np = \lambda$
+\end{cheatformula}
+
+\begin{cheatformula}[Binomial Example]
+    Component survival probability = 0.75. Find P(exactly 2 of 4 survive):
+    $$P(X = 2) = \binom{4}{2}(0.75)^2(0.25)^2 = 6 \times \frac{9}{256} = \frac{27}{128} \approx 0.211$$
+\end{cheatformula}
+
+\begin{cheatformula}[Poisson Example]
+    Average 3 accidents per month at intersection.\\
+    Find P(at most 2 accidents next month):
+    $$P(X \leq 2) = e^{-3}\left(\frac{3^0}{0!} + \frac{3^1}{1!} + \frac{3^2}{2!}\right)$$
+    $$= e^{-3}(1 + 3 + 4.5) = 8.5e^{-3} \approx 0.423$$
+\end{cheatformula}
+
+\begin{cheatformula}[Hypergeometric Example]
+    Batch of 20 components: 5 defective, 15 good. Sample 4 without replacement.\\
+    Find P(exactly 1 defective):
+    $$P(X = 1) = \frac{\binom{5}{1}\binom{15}{3}}{\binom{20}{4}} = \frac{5 \times 455}{4845} = \frac{2275}{4845} \approx 0.469$$
+\end{cheatformula}
+
+\section{Continuous Distributions}
+
+\begin{cheatformula}[Uniform Distribution]
+    $X \sim \text{Uniform}(a,b)$\\
+    Parameters:
+    \begin{itemize}
+        \item $a$: lower bound of the interval
+        \item $b$: upper bound of the interval ($b > a$)
+        \item $x$: observed value ($a \leq x \leq b$)
+    \end{itemize}
+    PDF: $f(x) = \frac{1}{b-a}$, $a \leq x \leq b$\\
+    CDF: $F(x) = \frac{x-a}{b-a}$, $a \leq x \leq b$\\
+    Mean: $\mu = \frac{a+b}{2}$\\
+    Variance: $\sigma^2 = \frac{(b-a)^2}{12}$
+\end{cheatformula}
+
+\begin{cheatformula}[Exponential Distribution]
+    $X \sim \text{Exponential}(\lambda)$\\
+    Parameters:
+    \begin{itemize}
+        \item $\lambda$: rate parameter ($\lambda > 0$)
+        \item $x$: observed time or distance ($x \geq 0$)
+    \end{itemize}
+    PDF: $f(x) = \lambda e^{-\lambda x}$, $x \geq 0$\\
+    CDF: $F(x) = 1 - e^{-\lambda x}$, $x \geq 0$\\
+    Mean: $\mu = \frac{1}{\lambda}$\\
+    Variance: $\sigma^2 = \frac{1}{\lambda^2}$\\
+    
+    Memoryless property: $P(X > s+t | X > s) = P(X > t)$\\
+    Use for: Waiting times, reliability analysis
+\end{cheatformula}
+
+\begin{cheatformula}[Normal Distribution]
+    $X \sim N(\mu, \sigma^2)$\\
+    Parameters:
+    \begin{itemize}
+        \item $\mu$: mean (location parameter)
+        \item $\sigma^2$: variance; $\sigma$ is standard deviation (scale parameter)
+        \item $x$: observed value ($-\infty < x < \infty$)
+    \end{itemize}
+    PDF: $f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$\\
+    
+    Standard normal: $Z \sim N(0,1)$\\
+    Standardization: $Z = \frac{X-\mu}{\sigma}$\\
+    
+    Properties:
+    \begin{align*}
+        &P(-1.96 < Z < 1.96) = 0.95\\
+        &P(-2.58 < Z < 2.58) = 0.99\\
+        &P(-1.64 < Z < 1.64) = 0.90
+    \end{align*}
+\end{cheatformula}
+
+\cheatimage[1.0]{standard_normal_distribution.png}{Standard normal distribution with common areas}{fig:standard-normal}
+
+\begin{cheatformula}[Gamma Distribution]
+    $X \sim \text{Gamma}(\alpha, \beta)$\\
+    Parameters:
+    \begin{itemize}
+        \item $\alpha$: shape parameter ($\alpha > 0$)
+        \item $\beta$: rate parameter ($\beta > 0$)
+        \item $x$: observed value ($x > 0$)
+    \end{itemize}
+    PDF: $f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}$, $x > 0$\\
+    Mean: $\mu = \frac{\alpha}{\beta}$\\
+    Variance: $\sigma^2 = \frac{\alpha}{\beta^2}$\\
+    
+    Special cases:
+    \begin{itemize}
+        \item Exponential: $\alpha = 1$
+        \item Chi-square: $\alpha = \nu/2$, $\beta = 1/2$
+    \end{itemize}
+\end{cheatformula}
+
+\begin{cheatformula}[Normal Distribution Example]
+    IQ scores: $\mu = 100$, $\sigma = 15$. Find P(IQ between 85 and 115):
+    $$P(85 < X < 115) = P\left(\frac{85-100}{15} < Z < \frac{115-100}{15}\right)$$
+    $$= P(-1 < Z < 1) = 0.6826$$
+\end{cheatformula}
+
+\begin{cheatformula}[Exponential Example]
+    Component lifetime: exponential with $\lambda = 0.02$ per hour.\\
+    Find P(lasts more than 50 hours):
+    $$P(X > 50) = 1 - F(50) = 1 - (1 - e^{-0.02 \times 50})$$
+    $$= e^{-1} \approx 0.368$$
+    
+    Mean lifetime: $\mu = \frac{1}{0.02} = 50$ hours
+\end{cheatformula}
+
+\section{Sampling Distributions}
+
+\begin{cheatformula}[Sample Mean Distribution]
+    If $X_1, X_2, \ldots, X_n$ are iid from population with mean $\mu$ and variance $\sigma^2$:\\
+    Sample mean: $\overline{X} = \frac{1}{n}\sum_{i=1}^n X_i$\\
+    
+    Properties:
+    \begin{align*}
+        &E(\overline{X}) = \mu\\
+        &\text{Var}(\overline{X}) = \frac{\sigma^2}{n}\\
+        &\text{SE}(\overline{X}) = \frac{\sigma}{\sqrt{n}}
+    \end{align*}
+\end{cheatformula}
+
+\begin{cheatformula}[Central Limit Theorem]
+    For large $n$ (typically $n \geq 30$):
+    $$\frac{\overline{X} - \mu}{\sigma/\sqrt{n}} \xrightarrow{d} N(0,1)$$
+    
+    Or equivalently: $\overline{X} \xrightarrow{d} N\left(\mu, \frac{\sigma^2}{n}\right)$\\
+    
+    Sum of sample: $\sum_{i=1}^n X_i \xrightarrow{d} N(n\mu, n\sigma^2)$
+\end{cheatformula}
+
+\cheatimage[1.0]{central_limit_theorem.png}{Central Limit Theorem illustration showing how sample mean distribution approaches normality}{fig:clt-illustration}
+
+\begin{cheatformula}[Chi-Square Distribution]
+    $\chi^2 \sim \chi^2_\nu$ with $\nu$ degrees of freedom\\
+    
+    If $X \sim N(\mu, \sigma^2)$ and $S^2$ is sample variance:
+    $$\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$$
+    
+    Mean: $E(\chi^2_\nu) = \nu$\\
+    Variance: $\text{Var}(\chi^2_\nu) = 2\nu$
+\end{cheatformula}
+
+\cheatimage[1.0]{chi_square_distribution.png}{Chi-square distribution for different degrees of freedom}{fig:chisquare-dist}
+
+\begin{cheatformula}[t-Distribution]
+    $t \sim t_\nu$ with $\nu$ degrees of freedom\\
+    Parameters:
+    \begin{itemize}
+        \item $\nu$: degrees of freedom (positive integer)
+        \item $t$: observed t-statistic ($-\infty < t < \infty$)
+    \end{itemize}
+    
+    If $\overline{X}$ and $S$ are sample mean and standard deviation from $N(\mu, \sigma^2)$:
+    $$T = \frac{\overline{X} - \mu}{S/\sqrt{n}} \sim t_{n-1}$$
+    
+    As $\nu \to \infty$, $t_\nu \to N(0,1)$\\
+    Symmetric around 0, heavier tails than normal
+\end{cheatformula}
+
+\begin{cheatformula}[Central Limit Theorem Example]
+    Population: $\mu = 25$, $\sigma = 4$. Sample size $n = 36$.\\
+    Find P(sample mean exceeds 26):
+    $$P(\overline{X} > 26) = P\left(Z > \frac{26-25}{4/\sqrt{36}}\right)$$
+    $$= P(Z > 1.5) = 0.067$$
+\end{cheatformula}
+
+\begin{cheatformula}[F-Distribution]
+    $F \sim F_{\nu_1, \nu_2}$ with $\nu_1$ and $\nu_2$ degrees of freedom\\
+    Parameters:
+    \begin{itemize}
+        \item $\nu_1$: numerator degrees of freedom (positive integer)
+        \item $\nu_2$: denominator degrees of freedom (positive integer)
+        \item $F$: observed F-statistic ($F \geq 0$)
+    \end{itemize}
+    
+    If $S_1^2$ and $S_2^2$ are sample variances from $N(\mu_1, \sigma_1^2)$ and $N(\mu_2, \sigma_2^2)$:
+    $$F = \frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2} \sim F_{n_1-1, n_2-1}$$
+    
+    Always positive, right-skewed
+\end{cheatformula}
+
+\section{Confidence Intervals}
+
+\begin{cheatformula}[Mean ($\sigma$ known)]
+    $100(1-\alpha)\%$ CI for $\mu$:
+    $$\overline{x} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$
+    
+    Sample size for margin of error $E$:
+    $$n = \left(\frac{z_{\alpha/2}\sigma}{E}\right)^2$$
+\end{cheatformula}
+
+\cheatimage[1.0]{confidence_interval.png}{Confidence interval interpretation}{fig:confidence-interval}
+
+\begin{cheatformula}[Mean ($\sigma$ unknown)]
+    $100(1-\alpha)\%$ CI for $\mu$ (small sample, normal population):
+    $$\overline{x} \pm t_{\alpha/2,n-1} \frac{s}{\sqrt{n}}$$
+\end{cheatformula}
+
+\cheatimage[1.0]{t-for-different-v.png}{t-distribution for different degrees of freedom}{fig:t-for-different-v}
+
+\begin{cheatformula}[Proportion]
+    $100(1-\alpha)\%$ CI for $p$ (large sample):
+    $$\hat{p} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
+    where $\hat{p} = \frac{x}{n}$
+    
+    Sample size: $n = \left(\frac{z_{\alpha/2}}{E}\right)^2 p(1-p)$\\
+    Conservative: use $p = 0.5$
+\end{cheatformula}
+
+\begin{cheatformula}[Variance]
+    $100(1-\alpha)\%$ CI for $\sigma^2$ (normal population):
+    $$\frac{(n-1)s^2}{\chi^2_{\alpha/2,n-1}} \leq \sigma^2 \leq \frac{(n-1)s^2}{\chi^2_{1-\alpha/2,n-1}}$$
+\end{cheatformula}
+
+\begin{cheatformula}[Difference of Means]
+    Independent samples, $\sigma_1, \sigma_2$ known:
+    $$(\overline{x}_1 - \overline{x}_2) \pm z_{\alpha/2}\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$$
+    
+    $\sigma_1 = \sigma_2 = \sigma$ unknown, equal variances:
+    $$(\overline{x}_1 - \overline{x}_2) \pm t_{\alpha/2,n_1+n_2-2}s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}$$
+    where $s_p^2 = \frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1+n_2-2}$
+\end{cheatformula}
+
+\section{Hypothesis Testing}
+
+\begin{cheatformula}[Test Components]
+    Null hypothesis: $H_0$ (assumed true)\\
+    Alternative hypothesis: $H_1$ or $H_a$\\
+    Test statistic: calculated from sample data\\
+    P-value: probability of observed result under $H_0$\\
+    Significance level: $\alpha$ (Type I error rate)\\
+    
+    Decision rules:
+    \begin{itemize}
+        \item Reject $H_0$ if p-value $< \alpha$
+        \item Reject $H_0$ if test statistic in critical region
+    \end{itemize}
+\end{cheatformula}
+
+\cheatimage[1.0]{critical_region.png}{Critical region illustration for hypothesis testing}{fig:critical-region}
+
+\begin{cheatformula}[Errors in Testing]
+    Type I Error: Reject true $H_0$, $P(\text{Type I}) = \alpha$\\
+    Type II Error: Fail to reject false $H_0$, $P(\text{Type II}) = \beta$\\
+    Power: $1 - \beta = P(\text{reject false } H_0)$\\
+    
+    Trade-off: Decreasing $\alpha$ increases $\beta$\\
+    Increase sample size to decrease both errors
+\end{cheatformula}
+
+\begin{cheatformula}[Hypothesis Test Example]
+    Testing $H_0: \mu = 68$ kg vs $H_1: \mu \neq 68$ kg\\
+    Sample: $n = 36$, $\overline{x} = 67.5$, $s = 3.6$\\
+    
+    Test statistic: $t = \frac{67.5 - 68}{3.6/\sqrt{36}} = \frac{-0.5}{0.6} = -0.833$\\
+    
+    Critical values: $\pm t_{0.025,35} = \pm 2.03$\\
+    
+    Since $|t| = 0.833 < 2.03$, fail to reject $H_0$
+\end{cheatformula}
+
+\begin{cheatformula}[Type II Error Example]
+    Testing $H_0: \mu = 50$ vs $H_1: \mu = 52$ with $\sigma = 5$, $n = 25$, $\alpha = 0.05$\\
+    
+    Critical value: $\overline{x}_c = 50 + 1.64 \times \frac{5}{\sqrt{25}} = 51.64$\\
+    
+    When true mean is 52:
+    $$\beta = P(\overline{X} < 51.64 | \mu = 52) = P\left(Z < \frac{51.64-52}{1}\right)$$
+    $$= P(Z < -0.36) = 0.359$$
+    
+    Power = $1 - \beta = 0.641$
+\end{cheatformula}
+
+\section{Tests for Mean (sigma known)}
+
+\begin{cheatformula}[Tests for Mean (sigma known)]
+    Test statistic: $Z = \frac{\overline{X} - \mu_0}{\sigma/\sqrt{n}}$\\
+    
+    Critical values:
+    \begin{itemize}
+        \item Two-tailed ($H_1: \mu \neq \mu_0$): $\pm z_{\alpha/2}$
+        \item Upper-tailed ($H_1: \mu > \mu_0$): $z_\alpha$
+        \item Lower-tailed ($H_1: \mu < \mu_0$): $-z_\alpha$
+    \end{itemize}
+\end{cheatformula}
+
+\cheatimage[1.0]{critical_regions_alternatives.png}{Critical regions for different alternative hypotheses}{fig:critical-regions}
+
+\cheatimage[1.0]{two_tailed_test.png}{Two-tailed test critical region}{fig:two-tailed-test}
+
+\begin{cheatformula}[Tests for Mean ($\sigma$ unknown)]
+    Test statistic: $T = \frac{\overline{X} - \mu_0}{S/\sqrt{n}} \sim t_{n-1}$\\
+    
+    Critical values: Replace $z$ with $t_{\alpha,n-1}$ in previous formula
+\end{cheatformula}
+
+\begin{cheatformula}[Tests for Proportion]
+    Test statistic: $Z = \frac{\hat{P} - p_0}{\sqrt{p_0(1-p_0)/n}}$\\
+    where $\hat{p} = \frac{x}{n}$, large sample required
+\end{cheatformula}
+
+\begin{cheatformula}[Tests for Variance]
+    Test statistic: $\chi^2 = \frac{(n-1)S^2}{\sigma_0^2} \sim \chi^2_{n-1}$\\
+    
+    Critical values depend on alternative:
+    \begin{itemize}
+        \item $H_1: \sigma^2 \neq \sigma_0^2$: $\chi^2_{\alpha/2,n-1}$ and $\chi^2_{1-\alpha/2,n-1}$
+        \item $H_1: \sigma^2 > \sigma_0^2$: $\chi^2_{\alpha,n-1}$
+        \item $H_1: \sigma^2 < \sigma_0^2$: $\chi^2_{1-\alpha,n-1}$
+    \end{itemize}
+\end{cheatformula}
+
+\begin{cheatformula}[Two-Sample Tests]
+    Difference of means (equal variances):
+    $$T = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \sim t_{n_1+n_2-2}$$
+    
+    Equality of variances:
+    $$F = \frac{S_1^2}{S_2^2} \sim F_{n_1-1, n_2-1}$$
+    
+    Difference of proportions:
+    $$Z = \frac{(\hat{P}_1 - \hat{P}_2) - (p_1 - p_2)}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}}$$
+    where $\hat{p} = \frac{x_1 + x_2}{n_1 + n_2}$
+\end{cheatformula}
+
+\section{Linear Regression}
+
+\begin{cheatformula}[Simple Linear Regression Model]
+    $$Y = \beta_0 + \beta_1 x + \epsilon$$
+    where $\epsilon \sim N(0, \sigma^2)$\\
+    
+    Least squares estimates:
+    $$\hat{\beta}_1 = \frac{\sum(x_i - \overline{x})(y_i - \overline{y})}{\sum(x_i - \overline{x})^2} = \frac{S_{xy}}{S_{xx}}$$
+    $$\hat{\beta}_0 = \overline{y} - \hat{\beta}_1\overline{x}$$
+    
+    Fitted line: $\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x$
+\end{cheatformula}
+
+\begin{cheatformula}[Regression Calculations]
+    Key computational formulas:
+    \begin{align*}
+        S_{xx} &= \sum(x_i - \overline{x})^2 = \sum x_i^2 - n\overline{x}^2\\
+        S_{yy} &= \sum(y_i - \overline{y})^2 = \sum y_i^2 - n\overline{y}^2\\
+        S_{xy} &= \sum(x_i - \overline{x})(y_i - \overline{y}) = \sum x_i y_i - n\overline{x}\overline{y}
+    \end{align*}
+    
+    Where:
+    \begin{itemize}
+        \item $S_{xx}$: sum of squares of deviations in $x$
+        \item $S_{yy}$: sum of squares of deviations in $y$
+        \item $S_{xy}$: sum of cross products of deviations
+        \item $\overline{x} = \frac{1}{n}\sum x_i$, $\overline{y} = \frac{1}{n}\sum y_i$
+    \end{itemize}
+    
+    \textbf{Example:} Data points: $(1,2), (2,3), (3,5)$
+    \begin{align*}
+        n &= 3, \quad \overline{x} = \frac{1+2+3}{3} = 2, \quad \overline{y} = \frac{2+3+5}{3} = \frac{10}{3}\\
+        S_{xx} &= (1-2)^2 + (2-2)^2 + (3-2)^2 = 1 + 0 + 1 = 2\\
+        S_{xy} &= (1-2)(2-\frac{10}{3}) + (2-2)(3-\frac{10}{3}) + (3-2)(5-\frac{10}{3})\\
+        &= (-1)(-\frac{4}{3}) + (0)(-\frac{1}{3}) + (1)(\frac{5}{3}) = \frac{4}{3} + \frac{5}{3} = 3\\
+        \hat{\beta} &= \frac{S_{xy}}{S_{xx}} = \frac{3}{2} = 1.5
+    \end{align*}
+\end{cheatformula}
+
+\cheatimage[1.0]{scatter_regression.png}{Scatter plot with fitted regression line example}{fig:scatter-regression}
+
+\begin{cheatformula}[Sum of Squares]
+    Total: $SS_{tot} = \sum(y_i - \overline{y})^2$\\
+    Regression: $SS_{reg} = \sum(\hat{y}_i - \overline{y})^2$\\
+    Error: $SS_{err} = \sum(y_i - \hat{y}_i)^2$\\
+    
+    Relationship: $SS_{tot} = SS_{reg} + SS_{err}$\\
+    
+    Mean squared error: $MSE = \frac{SS_{err}}{n-2}$\\
+    Standard error: $s = \sqrt{MSE}$
+\end{cheatformula}
+
+\begin{cheatformula}[Coefficient of Determination]
+    $$R^2 = \frac{SS_{reg}}{SS_{tot}} = 1 - \frac{SS_{err}}{SS_{tot}}$$
+    
+    Interpretation: Proportion of variance explained by regression\\
+    Range: $0 \leq R^2 \leq 1$
+\end{cheatformula}
+
+\cheatimage[1.0]{regression_fit_comparison.png}{Good fit vs poor fit comparison in regression}{fig:regression-fit-comparison}
+
+\begin{cheatformula}[Correlation Coefficient]
+    Sample correlation:
+    $$r = \frac{\sum(x_i - \overline{x})(y_i - \overline{y})}{\sqrt{\sum(x_i - \overline{x})^2\sum(y_i - \overline{y})^2}}$$
+    
+    Properties:
+    \begin{itemize}
+        \item $-1 \leq r \leq 1$
+        \item $r^2 = R^2$ in simple regression
+        \item Sign of $r$ matches sign of $\hat{\beta}_1$
+    \end{itemize}
+\end{cheatformula}
+
+\cheatimage[1.0]{correlation_examples.png}{Examples of different correlation coefficients}{fig:correlation-examples}
+
+\begin{cheatformula}[Inference for Regression]
+    Standard errors:
+    $$SE(\hat{\beta}_1) = \frac{s}{\sqrt{S_{xx}}}, \quad SE(\hat{\beta}_0) = s\sqrt{\frac{1}{n} + \frac{\overline{x}^2}{S_{xx}}}$$
+    
+    Tests for slope:
+    $$T = \frac{\hat{\beta}_1 - \beta_1}{SE(\hat{\beta}_1)} \sim t_{n-2}$$
+    
+    CI for slope: $\hat{\beta}_1 \pm t_{\alpha/2,n-2} \cdot SE(\hat{\beta}_1)$\\
+    
+    Prediction interval for $Y$ at $x_0$:
+    $$\hat{y}_0 \pm t_{\alpha/2,n-2} \cdot s\sqrt{1 + \frac{1}{n} + \frac{(x_0-\overline{x})^2}{S_{xx}}}$$
+\end{cheatformula}
+
+\section{Common Critical Values}
+
+\begin{cheatformula}[Standard Normal (Z)]
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Confidence & 90\% & 95\% & 98\% & 99\% \\
+    \hline
+    $z_{\alpha/2}$ & 1.64 & 1.96 & 2.33 & 2.58 \\
+    \hline
+    \end{tabular}
+    \end{center}
+    
+    One-tailed:
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $\alpha$ & 0.10 & 0.05 & 0.025 & 0.01 \\
+    \hline
+    $z_\alpha$ & 1.28 & 1.64 & 1.96 & 2.33 \\
+    \hline
+    \end{tabular}
+    \end{center}
+\end{cheatformula}
+
+\begin{cheatformula}[t-Distribution (Selected Values)]
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    df & $t_{0.05}$ & $t_{0.025}$ & $t_{0.01}$ & $t_{0.005}$ \\
+    \hline
+    1 & 6.31 & 12.71 & 31.82 & 63.66 \\
+    2 & 2.92 & 4.30 & 6.96 & 9.92 \\
+    5 & 2.02 & 2.57 & 3.36 & 4.03 \\
+    10 & 1.81 & 2.23 & 2.76 & 3.17 \\
+    20 & 1.72 & 2.09 & 2.53 & 2.85 \\
+    30 & 1.70 & 2.04 & 2.46 & 2.75 \\
+    $\infty$ & 1.64 & 1.96 & 2.33 & 2.58 \\
+    \hline
+    \end{tabular}
+    \end{center}
+\end{cheatformula}
+
+\section{Paired Tests and Two-Sample Tests}
+
+\begin{cheatformula}[Paired t-Test]
+    For dependent samples (before/after, matched pairs):
+    $$H_0: \mu_D = 0 \quad \text{vs} \quad H_1: \mu_D \neq 0$$
+    
+    Test statistic: $T = \frac{\overline{D} - 0}{S_D/\sqrt{n}} \sim t_{n-1}$\\
+    where $D_i = X_i - Y_i$, $\overline{D} = \frac{1}{n}\sum D_i$\\
+    
+    CI for $\mu_D$: $\overline{d} \pm t_{\alpha/2,n-1} \frac{s_d}{\sqrt{n}}$\\
+    
+    Example: Testing drug effectiveness on same patients
+\end{cheatformula}
+
+\begin{cheatformula}[Pooled t-Test (Equal Variances)]
+    For independent samples when $\sigma_1^2 = \sigma_2^2$:
+    $$H_0: \mu_1 = \mu_2 \quad \text{vs} \quad H_1: \mu_1 \neq \mu_2$$
+    
+    Test statistic: 
+    $$T = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \sim t_{n_1+n_2-2}$$
+    
+    Pooled standard deviation:
+    $$S_p = \sqrt{\frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1+n_2-2}}$$
+    
+    Use when: $\frac{s_1^2}{s_2^2}$ is close to 1
+\end{cheatformula}
+
+\begin{cheatformula}[Welch's t-Test (Unequal Variances)]
+    For independent samples when $\sigma_1^2 \neq \sigma_2^2$:
+    
+    Test statistic: 
+    $$T = \frac{(\overline{X}_1 - \overline{X}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{S_1^2}{n_1} + \frac{S_2^2}{n_2}}}$$
+    
+    Degrees of freedom:
+    $$\nu = \frac{\left(\frac{S_1^2}{n_1} + \frac{S_2^2}{n_2}\right)^2}{\frac{(S_1^2/n_1)^2}{n_1-1} + \frac{(S_2^2/n_2)^2}{n_2-1}}$$
+    
+    Use when variances are clearly different
+\end{cheatformula}
+
+\section{Chi-Square Tests}
+
+\begin{cheatformula}[Chi-Square Goodness of Fit]
+    Tests if sample follows specified distribution:
+    $$H_0: \text{Data follows specified distribution}$$
+    
+    Test statistic: $\chi^2 = \sum_{i=1}^k \frac{(O_i - E_i)^2}{E_i}$\\
+    where $O_i$ = observed frequency, $E_i$ = expected frequency\\
+    
+    Degrees of freedom: $\nu = k - 1 - (\text{parameters estimated})$\\
+    
+    Requirements: $E_i \geq 5$ for all categories\\
+    
+    Example: Testing if dice is fair
+\end{cheatformula}
+
+\begin{cheatformula}[Chi-Square Test of Independence]
+    Tests independence between two categorical variables:
+    $$H_0: \text{Variables are independent}$$
+    
+    Test statistic: $\chi^2 = \sum_{i=1}^r \sum_{j=1}^c \frac{(O_{ij} - E_{ij})^2}{E_{ij}}$\\
+    
+    Expected frequency: $E_{ij} = \frac{(\text{Row i total})(\text{Column j total})}{\text{Grand total}}$\\
+    
+    Degrees of freedom: $\nu = (r-1)(c-1)$\\
+    where $r$ = rows, $c$ = columns\\
+    
+    Example: Testing if treatment and outcome are independent
+\end{cheatformula}
+
+\begin{cheatformula}[Chi-Square Test for Homogeneity]
+    Tests if several populations have same proportions:
+    $$H_0: p_{11} = p_{21} = \cdots = p_{k1}$$
+    
+    Same formula as independence test\\
+    Different interpretation: comparing populations\\
+    
+    Example: Comparing cure rates across hospitals
+\end{cheatformula}
+
+\section{Power and Sample Size}
+
+\begin{cheatformula}[Power of a Test]
+    Power = $1 - \beta$ = Probability of rejecting false $H_0$\\
+    
+    Factors affecting power:
+    \begin{itemize}
+        \item Larger effect size $\Rightarrow$ higher power
+        \item Larger sample size $\Rightarrow$ higher power
+        \item Larger $\alpha$ $\Rightarrow$ higher power
+        \item Smaller $\sigma$ $\Rightarrow$ higher power
+    \end{itemize}
+    
+    Power curve: Plot of power vs true parameter value
+\end{cheatformula}
+
+\begin{cheatformula}[Sample Size Determination]
+    For testing $H_0: \mu = \mu_0$ vs $H_1: \mu = \mu_1$:
+    
+    To achieve power $1-\beta$ at significance $\alpha$:
+    $$n = \left(\frac{(z_\alpha + z_\beta)\sigma}{\mu_1 - \mu_0}\right)^2$$
+    
+    For two-sample tests:
+    $$n = \frac{2(z_\alpha + z_\beta)^2\sigma^2}{(\mu_1 - \mu_2)^2}$$ (per group)
+    
+    For proportions:
+    $$n = \frac{(z_\alpha + z_\beta)^2[p_0(1-p_0) + p_1(1-p_1)]}{(p_1 - p_0)^2}$$
+\end{cheatformula}
+
+\section{Decision Rules and Common Scenarios}
+
+\begin{cheatformula}[When to Use Which Test]
+    \textbf{One Sample:}
+    \begin{itemize}
+        \item $\sigma$ known, any $n$: Z-test
+        \item $\sigma$ unknown, $n < 30$: t-test (assume normality)
+        \item $\sigma$ unknown, $n \geq 30$: t-test or Z-test
+    \end{itemize}
+    
+    \textbf{Two Samples:}
+    \begin{itemize}
+        \item Dependent samples: Paired t-test
+        \item Independent, equal variances: Pooled t-test
+        \item Independent, unequal variances: Welch's t-test
+        \item Large samples: Z-test for proportions
+    \end{itemize}
+\end{cheatformula}
+
+\begin{cheatformula}[Quality Control Example]
+    Production line: target diameter 10mm, tolerance $\pm 0.2$mm\\
+    Sample 16 parts: $\overline{x} = 10.15$, $s = 0.18$\\
+    
+    Test if process is on target ($H_0: \mu = 10$ vs $H_1: \mu \neq 10$):
+    $$t = \frac{10.15 - 10}{0.18/\sqrt{16}} = \frac{0.15}{0.045} = 3.33$$
+    
+    With $t_{0.025,15} = 2.13$, reject $H_0$. Process needs adjustment.
+\end{cheatformula}
+
+\begin{cheatformula}[Medical Trial Example]
+    New drug vs placebo for blood pressure reduction:\\
+    Drug: $n_1 = 30$, $\overline{x}_1 = 12.5$, $s_1 = 4.2$\\
+    Placebo: $n_2 = 30$, $\overline{x}_2 = 8.1$, $s_2 = 3.8$\\
+    
+    Equal variances assumed:
+    $$s_p = \sqrt{\frac{29(4.2)^2 + 29(3.8)^2}{58}} = 4.0$$
+    
+    $$t = \frac{12.5 - 8.1}{4.0\sqrt{\frac{1}{30} + \frac{1}{30}}} = \frac{4.4}{1.03} = 4.27$$
+    
+    Highly significant: drug is effective
+\end{cheatformula}
+
+\begin{cheatformula}[Survey Sampling Example]
+    Poll: 400 voters, 220 support proposition\\
+    95\% CI for true proportion:
+    $$\hat{p} = \frac{220}{400} = 0.55$$
+    $$0.55 \pm 1.96\sqrt{\frac{0.55 \times 0.45}{400}} = 0.55 \pm 0.049 = (0.501, 0.599)$$
+    
+    Margin of error: $\pm 4.9\%$
+\end{cheatformula}
+
+\begin{cheatformula}[Reliability Testing Example]
+    Component lifetime follows exponential distribution.\\
+    Test 20 components, observe failures at times:\\
+    5, 12, 18, 25, 30, 35, 42, 48, 55, 62 hours\\
+    
+    Maximum likelihood estimate: $\hat{\lambda} = \frac{n}{\sum t_i} = \frac{10}{332} = 0.030$\\
+    
+    Estimated mean lifetime: $\hat{\mu} = \frac{1}{0.030} = 33.2$ hours
+\end{cheatformula}
+
+\section{Probability Calculation Examples}
+
+\begin{cheatformula}[Bayes' Theorem Example]
+    Disease prevalence: 1\%. Test accuracy: 95\% (both sensitivity and specificity)\\
+    Person tests positive. What's P(actually has disease)?
+    
+    Let $D$ = has disease, $T^+$ = tests positive\\
+    $$P(D|T^+) = \frac{P(T^+|D)P(D)}{P(T^+|D)P(D) + P(T^+|D^c)P(D^c)}$$
+    $$= \frac{0.95 \times 0.01}{0.95 \times 0.01 + 0.05 \times 0.99} = \frac{0.0095}{0.0590} = 0.161$$
+    
+    Only 16.1\% chance of actually having disease!
+\end{cheatformula}
+
+\begin{cheatformula}[Law of Total Probability Example]
+    Three machines produce parts: A (50\%), B (30\%), C (20\%)\\
+    Defective rates: A (2\%), B (3\%), C (5\%)\\
+    
+    Overall defective rate:
+    $$P(\text{defective}) = 0.5 \times 0.02 + 0.3 \times 0.03 + 0.2 \times 0.05 = 0.029$$
+    
+    If part is defective, P(from machine A):
+    $$P(A|\text{defective}) = \frac{0.02 \times 0.5}{0.029} = 0.345$$
+\end{cheatformula}
+
+\begin{cheatformula}[Combination Example]
+    Committee of 5 from 12 people (7 men, 5 women)\\
+    Find P(exactly 3 women):
+    $$P(X = 3) = \frac{\binom{5}{3}\binom{7}{2}}{\binom{12}{5}} = \frac{10 \times 21}{792} = \frac{210}{792} = 0.265$$
+\end{cheatformula}
+
+\section{Useful Identities}
+
+\begin{cheatformula}[Summation Identities]
+    \begin{align*}
+        &\sum_{i=1}^n (x_i - \overline{x}) = 0\\
+        &\sum_{i=1}^n (x_i - \overline{x})^2 = \sum_{i=1}^n x_i^2 - n\overline{x}^2\\
+        &\sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y}) = \sum_{i=1}^n x_i y_i - n\overline{x}\overline{y}
+    \end{align*}
+\end{cheatformula}
+
+\begin{cheatformula}[Probability Rules]
+    \begin{align*}
+        &P(A^c) = 1 - P(A)\\
+        &P(A \cup B) = P(A) + P(B) - P(A \cap B)\\
+        &P(A|B) = \frac{P(A \cap B)}{P(B)}\\
+        &P(A \cap B) = P(A|B)P(B)
+    \end{align*}
+\end{cheatformula}
+
+\begin{cheatformula}[Normal Approximations]
+    Binomial to Normal (continuity correction):
+    $$P(X = k) \approx P(k-0.5 < Y < k+0.5)$$
+    where $Y \sim N(np, np(1-p))$\\
+    
+    Poisson to Normal: $\lambda > 5$\\
+    $X \sim \text{Poisson}(\lambda) \approx N(\lambda, \lambda)$\\
+    
+    Rule of thumb for normal approximation to binomial:\\
+    Use when $np \geq 5$ and $nq \geq 5$
+\end{cheatformula}
+
+\begin{cheatformula}[Common Probability Relationships]
+    For independent events: $P(A \cap B) = P(A)P(B)$\\
+    
+    Multiplication rule: $P(A \cap B \cap C) = P(A)P(B|A)P(C|A \cap B)$\\
+    
+    Complement rule: $P(A^c) = 1 - P(A)$\\
+    
+    At least one: $P(\text{at least one success}) = 1 - P(\text{all failures})$
+\end{cheatformula}
+
+\section{Distribution Relationships}
+
+\begin{cheatformula}[Special Cases and Limits]
+    Hypergeometric $\to$ Binomial: As $N \to \infty$, $K/N \to p$\\
+    
+    Binomial $\to$ Poisson: As $n \to \infty$, $p \to 0$, $np = \lambda$\\
+    
+    Poisson $\to$ Normal: As $\lambda \to \infty$\\
+    
+    t-distribution $\to$ Normal: As $\nu \to \infty$\\
+    
+    Chi-square: $\chi^2_1 = Z^2$ where $Z \sim N(0,1)$\\
+    
+    F-distribution: $F_{1,\nu} = t_\nu^2$
+\end{cheatformula}
+
+\end{multicols*}
+\newpage
+
+\end{document}
