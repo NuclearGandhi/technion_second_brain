@@ -26,6 +26,7 @@ $$
 which is the state equation with zero inputs. It is also known as the **unforced motion** (or autonomous motion) of the system, where the state responds only to initial conditions.
 
 the unforced motion fully represents properties of the system, while being easier to analyze.
+
 ## Stability of Autonomous System
 
 
@@ -38,20 +39,15 @@ the unforced motion fully represents properties of the system, while being easie
 > $$
 >An equilibrium $\mathbf{x}_{\text{eq}}\in \mathbb{R}^{n}$ of this system is said to be:
 > - **Lyapunov stable** if for every $\varepsilon>0$ there is $\delta>0$ such that if $\lVert \mathbf{x}(0)-\mathbf{x}_{\text{eq}} \rVert<\delta$, then:
->	$$
->	\begin{aligned}
+>	$$\begin{aligned}
 >	\lVert \mathbf{x}(t)-\mathbf{x}_{\text{eq}} \rVert<\varepsilon  &  & \forall t\geq  0
->	\end{aligned}
->	$$
->	- **asymptotically stable** if it is Lyapunov stable and there is $\delta>0$ such that if $\lVert \mathbf{x}(0)-\mathbf{x}_{\text{eq}} \rVert<\delta$, then:
->	$$
->	\lim_{ t \to \infty}\lVert \mathbf{x}(t)-\mathbf{x}_{\text{eq}} \rVert =0
->	$$
->	
+>	\end{aligned}$$
+> - **asymptotically stable** if it is Lyapunov stable and there is $\delta>0$ such that if $\lVert \mathbf{x}(0)-\mathbf{x}_{\text{eq}} \rVert<\delta$, then:
+>	$$\lim_{ t \to \infty}\lVert \mathbf{x}(t)-\mathbf{x}_{\text{eq}} \rVert =0$$
 
 Conceptually, the meanings of the above terms are the following:
 
-- Lyapunov stability of an equilibrium means that solutions starting "close enough" to the equilibrium (within a distance $\delta$ from it) remain "close enough" forever (within a distance $\varepsilon$ from it). Note that this must be true for _any_ $\varepsilon$ that one may want to choose.
+1. Lyapunov stability of an equilibrium means that solutions starting "close enough" to the equilibrium (within a distance $\delta$ from it) remain "close enough" forever (within a distance $\varepsilon$ from it). Note that this must be true for _any_ $\varepsilon$ that one may want to choose.
 2. Asymptotic stability means that solutions that start close enough not only remain close enough but also eventually converge to the equilibrium.
 
 The **region of attraction** of an asymptotically stable equilibrium is the set of initial conditions $\mathbf{x}(0)$ that generate states $\mathbf{x}$ converging to $\mathbf{x}_{\text{eq}}$. If the region of attraction is the whole $\mathbb{R}_{n}$ , then the equilibrium is said to be **globally asymptotically stable**.
@@ -62,15 +58,12 @@ The **region of attraction** of an asymptotically stable equilibrium is the set 
 >[!theorem] Theorem: 
 > An equilibrium of the autonomous linear system $\dot{\mathbf{x}}=\mathbf{A}\mathbf{x}$ is
 > - Lyapunov stable iff its [[NUM1_003 נורמה#נורמה-$2$ - רדיוס ספקטרלי|spectral radius]] is non-positive:
->   $$
-> \rho(A)\in \{ s \in \mathbb{C}\mid\mathrm{Re}(s)\leq  0 \}
-> $$
->   and every imaginary eigenvalue is simple (the [[ALG1_010 וקטורים עצמיים וערכים עצמיים#ריבוי גאומטרי|geometric multiplicity]] of every pure imaginary eigenvalue equals its [[ALG1_010 וקטורים עצמיים וערכים עצמיים#פולינום אופייני וריבוי אלגברי|algebraic multiplicity]]).
+>	$$\rho(A)\in \{ s \in \mathbb{C}\mid\mathrm{Re}(s)\leq  0 \}$$
+>	and every imaginary eigenvalue is simple (the [[ALG1_010 וקטורים עצמיים וערכים עצמיים#ריבוי גאומטרי|geometric multiplicity]] of every pure imaginary eigenvalue equals its [[ALG1_010 וקטורים עצמיים וערכים עצמיים#פולינום אופייני וריבוי אלגברי|algebraic multiplicity]]).
+>
 > - asymptotically stable iff its spectral radius is negative:
->	$$
->	\rho(A)\in \{ s \in \mathbb{C}\mid\mathrm{Re}(s)<  0 \}
->	$$
->	
+>	$$\rho(A)\in \{ s \in \mathbb{C}\mid\mathrm{Re}(s)<  0 \}$$
+
 
 
 ## Lyapunov’s indirect method
