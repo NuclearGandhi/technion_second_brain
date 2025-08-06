@@ -377,7 +377,7 @@ $$
 > The input $u(t)$ to this system is the force applied to the mass, and the output is the position of the mass.
 > Supposing zero spring and damper forces at $y=0$, by [[PHY1_003 חוקי ניוטון#חוק ניוטון השני|Newton's second law]]:
 > $$
-> m\ddot{y}(t)=u(t)-c\dot{y}(t)-c\dot{y}(t)
+> m\ddot{y}(t)=u(t)-c\dot{y}(t)-k{y}(t)
 > $$
 > Introducing the vector $x(t)=\begin{pmatrix}y(t)\\\dot{y}(t)\end{pmatrix}$ allows to describe the system by state-space representation:
 > $$
@@ -424,7 +424,7 @@ $$
 >	{\lambda}_{1,2}=\dfrac{-c\pm \sqrt{ c^{2}-4k }}{2}
 >	\end{gathered}
 >	$$
->	- If $c\neq 4k$, then ${\lambda}_{1}\neq{\lambda}_{2}$:
+>	- If $c^{2}\neq 4k$, then ${\lambda}_{1}\neq{\lambda}_{2}$:
 >	$\mathbf{A}$ can be written as
 >	$$
 >	\mathbf{A}=\begin{pmatrix}

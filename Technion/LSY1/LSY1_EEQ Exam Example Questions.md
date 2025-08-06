@@ -270,7 +270,7 @@ $$
  & \neq \sin(2t)u(t)
 \end{aligned}
 $$
-Therefore, the system is [[LSY1_003 Classification of Systems#Time Invariance|time-variant]].
+Therefore, the system is *not* [[LSY1_003 Classification of Systems#Time Invariance|time-invariant]].
 
 ## Question 19
 Is the system $G:u\to y$ such that $y(t)=\sin(2u(t))$ static?
@@ -356,21 +356,21 @@ Which by [[CAL1_009 אינטגרל מוכלל#אינטגרלים מיוחדים|
 What's the transfer function of $G:v\to w$ that is described by:
 $$
 \begin{gathered}
-\ddot{w}(t)=-\dot{w}(t)-3w(t)+\dot{v}(t)-2v(t)
+\ddot{w}(t)=-\dot{w}(t)+3w(t)+\dot{v}(t)-2v(t)
 \end{gathered}
 $$
 
 **Solution**:
 Rearranging, we get:
 $$
-\ddot{w}(t)+\dot{w}(t)-3w(t)=\dot{v}(t)-2v(t)
+\ddot{w}(t)+\dot{w}(t)+3w(t)=\dot{v}(t)-2v(t)
 $$
 Applying the [[LSY1_007 Laplace Transform#The Laplace Transform|Laplace transform]] to both sides of the equation, we get:
 $$
 \begin{gathered}
-s^{2}W(s)+sW(s)-3W(s)=sV(s)-2V(s) \\[1ex]
+s^{2}W(s)+sW(s)+3W(s)=sV(s)-2V(s) \\[1ex]
 \boxed {
-G(s)=\dfrac{V(s)}{W(s)}=\dfrac{s-2}{s^{2}+s-3}
+G(s)=\dfrac{V(s)}{W(s)}=\dfrac{s-2}{s^{2}+s+3}
  }
 \end{gathered}
 $$
