@@ -9,7 +9,6 @@ aliases:
   - Euler's formula
   - זהות אויילר
 ---
-
 # Impulse Response
 The **impulse response** of a dynamic system is its output when presented with a brief input signal ([[LSY1_002 Signals and Convolutions#The Delta Function|unit impulse]]) - $\delta (t)$. More generally, an impulse response is the reaction of any dynamic system in response to some external change.
 ![[Pasted image 20240616155903.png|book|400]]
