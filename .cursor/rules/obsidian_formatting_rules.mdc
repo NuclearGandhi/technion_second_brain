@@ -39,6 +39,7 @@ alwaysApply: true
 - When using equation arrays, properly align entries with `&` symbol
 - Include footnotes for clarifying mathematical notation with `[^n]` syntax
 - Multiplying between numerical values should be done with `\cdot`, not `\times` or `(num1)(num)2`
+- When referencing a numbered equation that lives in another file, include an Obsidian link to that source (for example `[[Course_000#Section|תיאור]] $\text{(ID)}$`).
 
 ## Document Structure
 - Start content files with YAML frontmatter including aliases
@@ -64,7 +65,7 @@ alwaysApply: true
 - Use LaTeX formatting for all mathematical expressions in graph labels, legends, and titles
 - Use the default color scheme for all graphs, and maintain consistency in color usage across figures
 - By default, export figures at a resolution of 600x400 pixels, unless the figure contains a large amount of data that requires a larger size
-- Include proper captions for all figures using the format `>Figure caption. [[Course_000 Course Name#ביבליוגרפיה|(Author et al., Year)]].`
+- Include proper captions for all figures using the format `>Figure caption. [[Course_000 Course Name#ביבליוגרפיה|(Author et al., Year)]]`
 - Use `|bookhue` for textbook images and `|book` for other book images
 - Specify image size in pixels when needed (e.g., `|bookhue|500`)
 
@@ -79,8 +80,9 @@ alwaysApply: true
 
 ## Figure Handling
 - Include proper figure placeholders using format: `![[Figure X.Y placeholder.png|bookhue|600]]` when figures are mentioned but not provided
-- Always include figure captions below images using the format: `>Caption text. [[Source reference]]`
+- Always include figure captions below images using the format `>Caption text. [[Source reference]]`
 - Reference figures in the text flow where they are mentioned
+- When referring to an existing figure, add an inline link to its anchor (for example `[[#^figure-anchor|איור]]`).
 - Use consistent image sizing (typically 600px width for main figures)
 - Leave appropriate space and context for figures to be inserted
 
