@@ -29,9 +29,9 @@ The tool that makes it possible to represent arbitrary input $x(t)$ in terms of 
 We can also separate the input into exponentials of the form $e^{j\omega t}$ instead of $e^{st}$. This is accomplished the Fourier transform. In a sense, the Fourier transform may be considered to be a special case of the Laplace transform with $s=j\omega$. Although this view is true most of the time, it does not always hold because of the nature of convergence of the Laplace and Fourier integrals.
 # The Laplace Transform
 
-![](https://www.youtube.com/watch?v=6MXMDrs6ZmA)
+![](https://www.youtube.com/watch?v=-j8PzkZ70Lg)
 
-![](https://www.youtube.com/watch?v=n2y7n6jw5d0)
+![](https://www.youtube.com/watch?v=j0wJBEZdwLs)
 
 >[!def] Definition: 
 > For a signal $x(t)$, its **Laplace transform** $X(s)$ is defined by
