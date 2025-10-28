@@ -31,6 +31,11 @@ function robot = ur5_dh_parameters()
         0,       robot.d6,  0,         0         % Joint 6
     ];
     
+    % Array versions for convenience
+    robot.a = [0, robot.a2, robot.a3, 0, 0, 0];
+    robot.d = [robot.d1, 0, 0, robot.d4, robot.d5, robot.d6];
+    robot.alpha = [pi/2, 0, 0, pi/2, -pi/2, 0];
+    
     % Joint limits (from UR5e specifications, in radians)
     robot.joint_limits = [
         -2*pi,  2*pi;   % Joint 1: ±360°

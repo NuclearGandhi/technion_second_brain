@@ -367,14 +367,14 @@ PDF only
   }
 
   body {
-    font-family: "David" !important;
-    --font-interface-override: "David" !important;
-    --font-print: "David" !important;
+    font-family: "David", "Georgia", serif !important;
+    --font-interface-override: "David", "Georgia", serif !important;
+    --font-print: "David", "Georgia", serif !important;
     --font-text-size: 14pt !important
   }
 
   table {
-    direction: rtl !important;
+    direction: ltr !important;
   }
 
   div.page-break::after {
@@ -383,6 +383,6 @@ PDF only
 
   /* block quotes (for image captioning) */
   .markdown-rendered blockquote {
-    color: inherit !important;
+    color: var(--color-base-70) !important;
   }
 }
