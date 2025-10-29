@@ -1,0 +1,112 @@
+
+========================================
+UR5e Symbolic Forward Kinematics Results
+========================================
+
+Individual Transformation Matrices:
+-----------------------------------
+
+T_0^1:
+[cos(theta1), 0,  sin(theta1),  0]
+[sin(theta1), 0, -cos(theta1),  0]
+[          0, 1,            0, d1]
+[          0, 0,            0,  1]
+ 
+
+T_1^2:
+[cos(theta2), -sin(theta2), 0, a2*cos(theta2)]
+[sin(theta2),  cos(theta2), 0, a2*sin(theta2)]
+[          0,            0, 1,              0]
+[          0,            0, 0,              1]
+ 
+
+T_2^3:
+[cos(theta3), -sin(theta3), 0, a3*cos(theta3)]
+[sin(theta3),  cos(theta3), 0, a3*sin(theta3)]
+[          0,            0, 1,              0]
+[          0,            0, 0,              1]
+ 
+
+T_3^4:
+[cos(theta4), 0,  sin(theta4),  0]
+[sin(theta4), 0, -cos(theta4),  0]
+[          0, 1,            0, d4]
+[          0, 0,            0,  1]
+ 
+
+T_4^5:
+[cos(theta5),  0, -sin(theta5),  0]
+[sin(theta5),  0,  cos(theta5),  0]
+[          0, -1,            0, d5]
+[          0,  0,            0,  1]
+ 
+
+T_5^6:
+[cos(theta6), -sin(theta6), 0,  0]
+[sin(theta6),  cos(theta6), 0,  0]
+[          0,            0, 1, d6]
+[          0,            0, 0,  1]
+ 
+
+
+Cumulative Transformations (Base to Joint i):
+---------------------------------------------
+
+T_0^1:
+  (Position (1,1) has 11 characters)
+[cos(theta1), 0,  sin(theta1),  0]
+[sin(theta1), 0, -cos(theta1),  0]
+[          0, 1,            0, d1]
+[          0, 0,            0,  1]
+ 
+
+T_0^2:
+  (Position (1,1) has 23 characters)
+[cos(theta1)*cos(theta2), -cos(theta1)*sin(theta2),  sin(theta1), a2*cos(theta1)*cos(theta2)]
+[cos(theta2)*sin(theta1), -sin(theta1)*sin(theta2), -cos(theta1), a2*cos(theta2)*sin(theta1)]
+[            sin(theta2),              cos(theta2),            0,        d1 + a2*sin(theta2)]
+[                      0,                        0,            0,                          1]
+ 
+
+T_0^3:
+  (Position (1,1) has 32 characters)
+[cos(theta2 + theta3)*cos(theta1), -sin(theta2 + theta3)*cos(theta1),  sin(theta1), cos(theta1)*(a3*cos(theta2 + theta3) + a2*cos(theta2))]
+[cos(theta2 + theta3)*sin(theta1), -sin(theta2 + theta3)*sin(theta1), -cos(theta1), sin(theta1)*(a3*cos(theta2 + theta3) + a2*cos(theta2))]
+[            sin(theta2 + theta3),              cos(theta2 + theta3),            0,          d1 + a3*sin(theta2 + theta3) + a2*sin(theta2)]
+[                               0,                                 0,            0,                                                      1]
+ 
+
+T_0^4:
+  (Position (1,1) has 41 characters)
+  [Matrix too large to display - 4 x 4 with complex expressions]
+
+T_0^5:
+  (Position (1,1) has 79 characters)
+  [Matrix too large to display - 4 x 4 with complex expressions]
+
+T_0^6:
+  (Position (1,1) has 149 characters)
+  [Matrix too large to display - 4 x 4 with complex expressions]
+
+
+End-Effector Position Components:
+----------------------------------
+
+p_x = d6*(cos(theta5)*sin(theta1) - cos(theta2 + theta3 + theta4)*cos(theta1)*sin(theta5)) + d4*sin(theta1) + a2*cos(theta1)*cos(theta2) + d5*sin(theta2 + theta3 + theta4)*cos(theta1) + a3*cos(theta1)*cos(theta2)*cos(theta3) - a3*cos(theta1)*sin(theta2)*sin(theta3)
+ 
+
+p_y = a2*cos(theta2)*sin(theta1) - d4*cos(theta1) - d6*(cos(theta1)*cos(theta5) + cos(theta2 + theta3 + theta4)*sin(theta1)*sin(theta5)) + d5*sin(theta2 + theta3 + theta4)*sin(theta1) + a3*cos(theta2)*cos(theta3)*sin(theta1) - a3*sin(theta1)*sin(theta2)*sin(theta3)
+ 
+
+p_z = d1 + a3*sin(theta2 + theta3) + a2*sin(theta2) - d5*cos(theta2 + theta3 + theta4) - d6*sin(theta2 + theta3 + theta4)*sin(theta5)
+ 
+
+
+========================================
+Analysis Complete
+========================================
+
+Results saved to:
+  - symbolic_fk_results.mat (MATLAB data)
+  - symbolic_fk_output.txt (text format)
+
