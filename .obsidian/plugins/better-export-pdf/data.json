@@ -4,7 +4,7 @@
   "displayHeader": false,
   "displayFooter": true,
   "headerTemplate": "<div style=\"width: 100vw;\nfont-size:10px;\ntext-align:left;\nmargin-left:1.4cm;\nmargin-bottom:0.7cm;\ndirection:rtl;\nfont-family:David\">\n  <span class=\"pageNumber\"></span> מתוך <span class=\"totalPages\"></span>\n</div>",
-  "footerTemplate": "<div style=\"width: 100vw;\nfont-size:12px;\ntext-align:right;\nmargin-right:1.4cm;\nmargin-bottom:0.5cm;\ndirection:ltr;\nfont-family:Georgia\">\n  Page <span class=\"pageNumber\"></span> out of <span class=\"totalPages\"></span>\n</div>",
+  "footerTemplate": "<div style=\"width: 100vw;\nfont-size:12px;\ntext-align:left;\nmargin-left:1.4cm;\nmargin-bottom:0.5cm;\ndirection:rtl;\nfont-family:David\">\n  עמוד <span class=\"pageNumber\"></span> מתוך <span class=\"totalPages\"></span>\n</div>",
   "printBackground": false,
   "generateTaggedPDF": false,
   "displayMetadata": false,

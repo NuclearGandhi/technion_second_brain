@@ -374,7 +374,7 @@ PDF only
   }
 
   table {
-    direction: ltr !important;
+    direction: rtl !important;
   }
 
   div.page-break::after {

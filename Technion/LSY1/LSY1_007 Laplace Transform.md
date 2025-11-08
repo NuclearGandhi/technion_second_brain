@@ -33,6 +33,8 @@ We can also separate the input into exponentials of the form $e^{j\omega t}$ ins
 
 ![](https://www.youtube.com/watch?v=j0wJBEZdwLs)
 
+![](https://www.youtube.com/watch?v=FE-hM1kRK4Y)
+
 >[!def] Definition: 
 > For a signal $x(t)$, its **Laplace transform** $X(s)$ is defined by
 > $$
