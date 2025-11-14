@@ -9,6 +9,7 @@ Assistant:
 # Notes
 
 - [[HDY1_001 Introduction]]
+- [[HDY1_002 Constrained Lagrangian Mechanics]]
 
 # Homework
 

@@ -50,7 +50,7 @@
       }
     },
     {
-      "query": "file: NUM OR file: FEM",
+      "query": "file: NUM OR file: FEM OR file: MCS",
       "color": {
         "a": 1,
         "rgb": 8472713

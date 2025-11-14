@@ -340,8 +340,6 @@ Analysts quote values of $R^{2}$ quite often, perhaps due to its simplicity. How
 
 The $R^{2}$ criterion is dangerous to use for comparing *competing models* for the same data set. Adding additional terms to the model (e.g., an additional regressor) decreases $SSE$ and thus increase $R^{2}$ (or at least does not decrease is). This implies that $R^{2}$ can be made artificially high by an unwise practice of **overfitting** (i.e., the inclusion of too many model terms). Thus, the inevitable increase in $R^{2}$ enjoyed by adding an additional term does not imply the additional term was needed. In face, the simple model may be superior for predicting response values.
 
->[!TODO] TODO: לעבור
-
 # Prediction
 
 There are several reasons for building a linear regression model. One of the most important is to predict response values at one or more values of the independent variable. In this section, we focus on the errors associated with prediction and the construction of appropriate intervals for predicted values.

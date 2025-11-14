@@ -1,0 +1,4 @@
+---
+aliases:
+---
+# Constrained Lagrangian Mechanics
