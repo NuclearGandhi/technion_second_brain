@@ -5,16 +5,16 @@ aliases:
 >These are notes taken from [[#Bibliography|(Géron, 2023)]].
 
 # Notes
-- [[HML_001 The Machine Learning Landscape]]
-- [[HML_002 End-to-End Machine Learning Project]]
-- [[HML_003 Classification]]
-- [[HML_004 Training Models]]
-- [[HML_005 Support Vector Machines]]
-- [[HML_006 Decision Trees]]
-- [[HML_007 Ensemble Learning and Random Forests]]
-- [[HML_008 Dimensionality Reduction]]
-- [[HML_009 Unsupervised Learning Techniques]]
-- [[HML_010 Introduction to Artificial Neural Networks with Keras]]
+- [[HML1_001 The Machine Learning Landscape]]
+- [[HML1_002 End-to-End Machine Learning Project]]
+- [[HML1_003 Classification]]
+- [[HML1_004 Training Models]]
+- [[HML1_005 Support Vector Machines]]
+- [[HML1_006 Decision Trees]]
+- [[HML1_007 Ensemble Learning and Random Forests]]
+- [[HML1_008 Dimensionality Reduction]]
+- [[HML1_009 Unsupervised Learning Techniques]]
+- [[HML1_010 Introduction to Artificial Neural Networks with Keras]]
 
 # Bibliography
 - Géron, A., 2023. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow: concepts, tools, and techniques to build intelligent systems, Third edition. ed, Data science / machine learning. O’Reilly, Beijing Boston Farnham Sebastopol Tokyo.

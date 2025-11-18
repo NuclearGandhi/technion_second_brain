@@ -5,13 +5,16 @@ Moodle: [link](https://moodle25.technion.ac.il/course/view.php?id=184)
 Syllabus: [link](https://moodle25.technion.ac.il/pluginfile.php/136360/mod_resource/content/11/syllabusschedule_planW25-26.pdf)
 
 Teacher: Prof. Yizhar Or
-Assistant:
+
+>[!warning] Pay attention!
+>Most of these notes is simply a 1:1 copy of the course's notes by Elad Tenenbaum 
 # Notes
 
 - [[HDY1_001 Introduction]]
 - [[HDY1_002 Constrained Lagrangian Mechanics]]
 
 # Homework
+- [[HDY1_HW001 Homework 1]]
 
 # Exams
 

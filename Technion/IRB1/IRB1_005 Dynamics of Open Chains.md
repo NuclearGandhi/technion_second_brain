@@ -37,7 +37,7 @@ The Lagrangian formalism is conceptually elegant and quite effective for robots 
 
 ## Basic Concepts
 
-As developed in [[DVI1_001 מושגי יסוד ומכניקת לגראנז'#משוואות לגראנז'|Lagrangian mechanics]], the Lagrangian approach for manipulator dynamics follows these steps:
+As developed in [[DVI1_001 מושגי יסוד ומכניקת לגראנז'#משוואות אויילר-לגראנז'|Lagrangian mechanics]], the Lagrangian approach for manipulator dynamics follows these steps:
 
 1. **Choose generalized coordinates** $\mathbf{q} \in \mathbb{R}^n$ that describe the system's configuration
 2. **Define the Lagrangian function** as:

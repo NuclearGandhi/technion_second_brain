@@ -18807,9 +18807,7 @@
   "latexPreambleLocation": "preamble.sty",
   "taskboneEnabled": false,
   "taskboneAPIkey": "",
-  "pinnedScripts": [
-    "Excalidraw/Scripts/Downloaded/Boolean Operations.md"
-  ],
+  "pinnedScripts": [],
   "customPens": [
     {
       "type": "default",

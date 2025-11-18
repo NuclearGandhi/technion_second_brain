@@ -7,11 +7,11 @@ aliases:
   - SVM Regression
 ---
 # Introduction
-From [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
+From [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
 A support vector machine (SVM) is a powerful and versatile machine learning model, capable of performing linear or nonlinear classification, regression, and even novelty detection. SVMs shine with small to medium-sized nonlinear datasets (i.e., hundreds to thousands of instances), especially for classification tasks. However, they don’t scale very well to very large datasets, as you will see.
 
 # Linear SVM Classification
-The fundamental idea behind SVMs is best explained with some visuals. The following figure shows part of the iris dataset that was introduced at the end of the [[HML_004 Training Models#Decision Boundaries|previous chapter]].
+The fundamental idea behind SVMs is best explained with some visuals. The following figure shows part of the iris dataset that was introduced at the end of the [[HML1_004 Training Models#Decision Boundaries|previous chapter]].
 ![[Pasted image 20241008214504.png|bscreen]]
 >Large margin classification
 
@@ -82,7 +82,7 @@ array([ 0.66163411, -0.22036063])
 Unlike `LogisticRegression`, `LinearSVC` doesn’t have a `predict_proba()` method to estimate the class probabilities. That said, if you use the `SVC` class (discussed shortly) instead of `LinearSVC`, and if you set its probability hyperparameter to `True`, then the model will fit an extra model at the end of training to map the SVM decision function scores to estimated probabilities. Under the hood, this requires using 5-fold cross validation to generate out-of-sample predictions for every instance in the training set, then training a `LogisticRegression` model, so it will slow down training considerably. After that, the `predict_proba()` and `predict_log_proba()` methods will be available.
 
 # Nonlinear SVM Classification
-Although linear SVM classifiers are efficient and often work surprisingly well, many datasets are not even close to being linearly separable. One approach to handling nonlinear datasets is to add more features, such as polynomial features (as we did in [[HML_004 Training Models#Polynomial Regression|HML_004]]); in some cases this can result in a linearly separable dataset. Consider the lefthand plot in the following figure:
+Although linear SVM classifiers are efficient and often work surprisingly well, many datasets are not even close to being linearly separable. One approach to handling nonlinear datasets is to add more features, such as polynomial features (as we did in [[HML1_004 Training Models#Polynomial Regression|HML_004]]); in some cases this can result in a linearly separable dataset. Consider the lefthand plot in the following figure:
 
 ![[Pasted image 20241009111650.png|bscreen]]
 >Adding features to make a dataset linearly separable
@@ -163,7 +163,7 @@ The `LinearSVC` class is based on the `liblinear` library, which implements an o
 
 The SVC class is based on the `libsvm` library, which implements an algorithm that supports the kernel trick. The training time complexity is usually between $O(m^{2} \times n)$ and $O(m^{3}\times n)$. Unfortunately, this means that it gets dreadfully slow when the number of training instances gets large (e.g., hundreds of thousands of instances), so this algorithm is best for small or medium-sized nonlinear training sets. It scales well with the number of features, especially with sparse features (i.e., when each instance has few nonzero features). In this case, the algorithm scales roughly with the average number of nonzero features per instance.
 
-The `SGDClassifier` class also performs large margin classification by default, and its hyperparameters - especially the regularization hyperparameters (`alpha` and `penalty`) and the `learning_rate` - can be adjusted to produce similar results as the linear SVMs. For training it uses [[HML_004 Training Models#Stochastic Gradient Descent|stochastic gradient descent]], which allows incremental learning and uses little memory, so you can use it to train a model on a large dataset that does not fit in RAM (i.e., for out-of-core learning). Moreover, it scales very well, as its computational complexity is $O(m \times n)$. The following table compares Scikit-Learn’s SVM classification classes:
+The `SGDClassifier` class also performs large margin classification by default, and its hyperparameters - especially the regularization hyperparameters (`alpha` and `penalty`) and the `learning_rate` - can be adjusted to produce similar results as the linear SVMs. For training it uses [[HML1_004 Training Models#Stochastic Gradient Descent|stochastic gradient descent]], which allows incremental learning and uses little memory, so you can use it to train a model on a large dataset that does not fit in RAM (i.e., for out-of-core learning). Moreover, it scales very well, as its computational complexity is $O(m \times n)$. The following table compares Scikit-Learn’s SVM classification classes:
 
 | Class           | Time complexity                          | Out-of-core support | Scaling required | Kernel trick |
 | --------------- | ---------------------------------------- | ------------------- | ---------------- | ------------ |
@@ -197,7 +197,7 @@ To tackle nonlinear regression tasks, you can use a kernelized SVM model. The fo
 The `SVR` class is the regression equivalent of the `SVC` class, and the `LinearSVR` class is the regression equivalent of the `LinearSVC` class. The `LinearSVR` class scales linearly with the size of the training set (just like the `LinearSVC` class), while the `SVR` class gets much too slow when the training set grows very large (just like the `SVC` class).
 
 # Under the Hood of Linear SVM Classifiers
-A linear SVM classifier predicts the class of a new instance $\mathbf{x}$ by first computing the decision function $\boldsymbol{\theta}^{T}\mathbf{x}={\theta}_{0}{x}_{0}+\dots+\theta_{n}x_{n}$, where ${x}_{0}$ is the bias feature (always equal to $1$). If the result is positive, then the predicted class $\hat{\mathbf{y}}$ is the positive class ($1$); otherwise it is the negative class ($0$). This is exactly like [[HML_004 Training Models#Logistic Regression|logistic regression]].
+A linear SVM classifier predicts the class of a new instance $\mathbf{x}$ by first computing the decision function $\boldsymbol{\theta}^{T}\mathbf{x}={\theta}_{0}{x}_{0}+\dots+\theta_{n}x_{n}$, where ${x}_{0}$ is the bias feature (always equal to $1$). If the result is positive, then the predicted class $\hat{\mathbf{y}}$ is the positive class ($1$); otherwise it is the negative class ($0$). This is exactly like [[HML1_004 Training Models#Logistic Regression|logistic regression]].
 
 >[!notes] Note: 
  >Up to now, I have used the convention of putting all the model parameters in one vector $\boldsymbol{\theta}$, including the bias term $\theta_{0}$ and the input feature weights $\theta_{1}$ to $\boldsymbol{\theta}_{n}$ . This required adding a bias input ${x}_{0}=1$ to all instances. Another very common convention is to separate the bias term $b$ (equal to ${\theta}_{0}$) and the feature weights vector $\mathbf{w}$ (containing ${\theta}_{1}$ to $\theta_{n}$ ). In this case, no bias feature needs to be added to the input feature vectors, and the linear SVM’s decision function is equal to $\mathbf{w}^{T}\mathbf{x}+b={w}_{1}{x}_{1}+\dots+w_{n}x_{n}+b$. I will use this convention throughout the rest of this course.

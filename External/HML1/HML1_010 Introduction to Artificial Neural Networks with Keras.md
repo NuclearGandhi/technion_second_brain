@@ -7,15 +7,15 @@ aliases:
  - deep neural network
 ---
 # Introduction
-From [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
+From [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
 **Artificial neural networks (ANNs)** are machine learning models inspired by the networks of biological neurons found in our brains. But, ANNs have gradually become quite different from their biological cousins. Some researchers even argue that we should drop the biological analogy altogether (e.g., by saying “units” rather than “neurons”), lest we restrict our creativity to biologically plausible systems.
 
 ANNs are at the very core of deep learning. They are versatile, powerful, and scalable, making them ideal to tackle large and highly complex machine learning tasks such as classifying billions of images (e.g., Google Images), powering speech recognition services (e.g., Apple’s Siri), recommending the best videos to watch to hundreds of millions of users every day (e.g., YouTube), or learning to beat the world champion at the game of Go (DeepMind’s AlphaGo).
 
 # From Biological to Artificial Neurons
-Surprisingly, ANNs have been around for quite a while: they were first introduced back in 1943 by the neurophysiologist Warren McCulloch and the mathematician Walter Pitts. In their landmark paper [[HML_000 Hands-On Machine Learning#Bibliography|(McCulloch & Pitts, 1943)]], McCulloch and Pitts presented a simplified computational model of how biological neurons might work together in animal brains to perform complex computations using propositional logic. This was the first artificial neural network architecture. Since then many other architectures have been invented, as you will see.
+Surprisingly, ANNs have been around for quite a while: they were first introduced back in 1943 by the neurophysiologist Warren McCulloch and the mathematician Walter Pitts. In their landmark paper [[HML1_000 Hands-On Machine Learning#Bibliography|(McCulloch & Pitts, 1943)]], McCulloch and Pitts presented a simplified computational model of how biological neurons might work together in animal brains to perform complex computations using propositional logic. This was the first artificial neural network architecture. Since then many other architectures have been invented, as you will see.
 
-The early successes of ANNs led to the widespread belief that we would soon be conversing with truly intelligent machines. When it became clear in the 1960s that this promise would go unfulfilled (at least for quite a while), funding flew elsewhere, and ANNs entered a long winter. In the early 1980s, new architectures were invented and better training techniques were developed, sparking a revival of interest in **connectionism**, the study of neural networks. But progress was slow, and by the 1990s other powerful machine learning techniques had been invented, such as [[HML_005 Support Vector Machines#Introduction|support vector machines]]. These techniques seemed to offer better results and stronger theoretical foundations than ANNs, so once again the study of neural networks was put on hold.
+The early successes of ANNs led to the widespread belief that we would soon be conversing with truly intelligent machines. When it became clear in the 1960s that this promise would go unfulfilled (at least for quite a while), funding flew elsewhere, and ANNs entered a long winter. In the early 1980s, new architectures were invented and better training techniques were developed, sparking a revival of interest in **connectionism**, the study of neural networks. But progress was slow, and by the 1990s other powerful machine learning techniques had been invented, such as [[HML1_005 Support Vector Machines#Introduction|support vector machines]]. These techniques seemed to offer better results and stronger theoretical foundations than ANNs, so once again the study of neural networks was put on hold.
 
 We are now witnessing yet another wave of interest in ANNs. Will this wave die out like the previous ones did? Well, here are a few good reasons to believe that this time is different and that the renewed interest in ANNs will have a much more profound impact on our lives:
 
@@ -28,7 +28,7 @@ We are now witnessing yet another wave of interest in ANNs. Will this wave die o
 McCulloch and Pitts proposed a very simple model of the biological neuron, which later became known as an **artificial neuron**: it has one or more binary (on/off) inputs and one binary output. The artificial neuron activates its output when more than a certain number of its inputs are active. In their paper, McCulloch and Pitts showed that even with such a simplified model it is possible to build a network of artificial neurons that can compute any logical proposition you want. To see how such a network works, let’s build a few ANNs that perform various logical computations, assuming that a neuron is activated when at least two of its input connections are active.
 
 ![[{B7F509AC-1E2B-47A3-AE98-7197C2B9A2B5}.png|bookhue|500]]
->ANNs performing simple logical computations. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>ANNs performing simple logical computations. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Let’s see what these networks do:
 - The first network on the left is the identity function: if neuron A is activated, then neuron C gets activated as well (since it receives two input signals from neuron A); but if neuron A is off, then neuron C is off as well.
@@ -45,7 +45,7 @@ The inputs and output are numbers (instead of binary on/off values), and each in
 $$z={w}_{1}{x}_{1}+{w}_{2}{x}_{2}+\dots +w_{n}x_{n}+b=\mathbf{w}^{T}\mathbf{x}+b$$
 Then it applies a [[LSY1_002 Signals and Convolutions#Standard signals|step function]] to the result:
 $$h_{\mathbf{w}}(\mathbf{x})=\mathrm{step}(\mathbf{z})$$
-So it’s almost like [[HML_004 Training Models#Logistic Regression|logistic regression]], except it uses a step function instead of the logistic function. Just like in logistic regression, the model parameters are the input weights $\mathbf{w}$ and the bias term $b$.
+So it’s almost like [[HML1_004 Training Models#Logistic Regression|logistic regression]], except it uses a step function instead of the logistic function. Just like in logistic regression, the model parameters are the input weights $\mathbf{w}$ and the bias term $b$.
 
 The most common step function used in perceptrons is the **Heaviside step function**. Sometimes the **sign function** is used instead.
 $$\mathrm{heaviside}(z)=\begin{cases}
@@ -60,7 +60,7 @@ A single TLU can be used for simple linear binary classification. It computes a 
 
 A perceptron is composed of one or more TLUs organized in a single layer, where every TLU is connected to every input. Such a layer is called a **fully connected layer**, or a **dense layer**. The inputs constitute the **input layer**. And since the layer of TLUs produces the final outputs, it is called the **output layer**. For example, a perceptron with two inputs and three outputs is represented in the following figure:
 ![[{B4CCDC49-EF32-4A18-B552-FF2B989CBF9B}.png|bookhue|450]]
->Architecture of a perceptron with two inputs and three output neurons. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>Architecture of a perceptron with two inputs and three output neurons. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 This perceptron can classify instances simultaneously into three different binary classes, which makes it a multilabel classifier. It may also be used for multiclass classification.
 
@@ -75,14 +75,14 @@ where:
 >[!notes] Note: 
  >In mathematics, the sum of a matrix and a vector is undefined. However, in data science, we allow “**broadcasting**”: adding a vector to a matrix means adding it to every row in the matrix. So, $\mathbf{X}\mathbf{W} + \mathbf{b}$ first multiplies $\mathbf{X}$ by $\mathbf{W}$ - which results in a matrix with one row per instance and one column per output -then adds the vector $\mathbf{b}$ to every row of that matrix, which adds each bias term to the corresponding output, for every instance. Moreover, $\phi$ is then applied itemwise to each item in the resulting matrix.
  
- The perceptron training algorithm proposed by Rosenblatt was largely inspired by **Hebb’s rule.** In his 1949 book [[HML_000 Hands-On Machine Learning#Bibliography|The Organization of Behavior (Wiley)]], Donald Hebb suggested that when a biological neuron triggers another neuron often, the connection between these two neurons grows stronger. Siegrid Löwel later summarized Hebb’s idea in the catchy phrase, “Cells that fire together, wire together”; that is, the connection weight between two neurons tends to increase when they fire simultaneously. This rule later became known as Hebb’s rule (or **Hebbian learning**). Perceptrons are trained using a variant of this rule that takes into account the error made by the network when it makes a prediction; the perceptron learning rule reinforces connections that help reduce the error. More specifically, the perceptron is fed one training instance at a time, and for each instance it makes its predictions. For every output neuron that produced a wrong prediction, it reinforces the connection weights from the inputs that would have contributed to the correct prediction. The rule is shown in the following equation:
+ The perceptron training algorithm proposed by Rosenblatt was largely inspired by **Hebb’s rule.** In his 1949 book [[HML1_000 Hands-On Machine Learning#Bibliography|The Organization of Behavior (Wiley)]], Donald Hebb suggested that when a biological neuron triggers another neuron often, the connection between these two neurons grows stronger. Siegrid Löwel later summarized Hebb’s idea in the catchy phrase, “Cells that fire together, wire together”; that is, the connection weight between two neurons tends to increase when they fire simultaneously. This rule later became known as Hebb’s rule (or **Hebbian learning**). Perceptrons are trained using a variant of this rule that takes into account the error made by the network when it makes a prediction; the perceptron learning rule reinforces connections that help reduce the error. More specifically, the perceptron is fed one training instance at a time, and for each instance it makes its predictions. For every output neuron that produced a wrong prediction, it reinforces the connection weights from the inputs that would have contributed to the correct prediction. The rule is shown in the following equation:
  $$w_{i,j}^{(\text{next step})}=w_{i,j}+\eta(y_{j}-\hat{y}_{j})x_{i}$$
 where:
 - $w_{i,j}$ is the connection weight between the $i$th input and the $j$th neuron.
 - $x_{i}$ is the $i$th input value of the current training instance.
 - $\hat{y}_{j}$ is the output of the $j$th output neuron for the current training instance.
 - $y_{j}$ is the target output of the $j$th output neuron for the current training instance.
-- $\eta$ is the [[HML_004 Training Models#Gradient Descent|learning rate]].
+- $\eta$ is the [[HML1_004 Training Models#Gradient Descent|learning rate]].
 
 The decision boundary of each output neuron is linear, so perceptrons are incapable of learning complex patterns (just like logistic regression classifiers). However, if the training instances are linearly separable, Rosenblatt demonstrated that this algorithm would converge to a solution. This is called the perceptron convergence theorem.
 
@@ -105,11 +105,11 @@ y_pred = per_clf.predict(X_new) # predicts True and False
 								# for these 2 flowers
 ```
 
-You may have noticed that the perceptron learning algorithm strongly resembles [[HML_004 Training Models#Stochastic Gradient Descent|stochastic gradient descent]]. In fact, Scikit-Learn’s Perceptron class is equivalent to using an `SGDClassifier` with the following hyperparameters: `loss="perceptron"`, `learning_rate="constant"`, `eta0=1` (the learning rate), and `penalty=None` (no regularization).
+You may have noticed that the perceptron learning algorithm strongly resembles [[HML1_004 Training Models#Stochastic Gradient Descent|stochastic gradient descent]]. In fact, Scikit-Learn’s Perceptron class is equivalent to using an `SGDClassifier` with the following hyperparameters: `loss="perceptron"`, `learning_rate="constant"`, `eta0=1` (the learning rate), and `penalty=None` (no regularization).
 
 In their 1969 monograph *Perceptrons*, Marvin Minsky and Seymour Papert highlighted a number of serious weaknesses of perceptrons- in particular, the fact that they are incapable of solving some trivial problems (e.g., the exclusive OR (XOR) classification problem; see the left side of the following figure:
 ![[{ACEAD8B4-6337-47FC-8A12-684C9F084F0C}.png|bookhue|500]]
->XOR classification problem and an MLP that solves it. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>XOR classification problem and an MLP that solves it. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 This is true of any other linear classification model (such as logistic regression classifiers), but researchers had expected much more from perceptrons, and some were so disappointed that they dropped neural networks altogether in favor of higher-level problems such as logic, problem solving, and search. The lack of practical applications also didn’t help.
 
@@ -124,13 +124,13 @@ The layers close to the input layer are usually called the lower layers, and the
 
 When an ANN contains a deep stack of hidden layers, it is called a deep neural network (DNN). The field of **deep learning** studies DNNs, and more generally it is interested in models containing deep stacks of computations. Even so, many people talk about deep learning whenever neural networks are involved (even shallow ones).
 
-For many years researchers struggled to find a way to train MLPs, without success. In the early 1960s several researchers discussed the possibility of using gradient descent to train neural networks, but as we saw in [[HML_004 Training Models#Gradient Descent|HML_004]], this requires computing the gradients of the model’s error with regard to the model parameters; it wasn’t clear at the time how to do this efficiently with such a complex model containing so many parameters, especially with the computers they had back then.
+For many years researchers struggled to find a way to train MLPs, without success. In the early 1960s several researchers discussed the possibility of using gradient descent to train neural networks, but as we saw in [[HML1_004 Training Models#Gradient Descent|HML_004]], this requires computing the gradients of the model’s error with regard to the model parameters; it wasn’t clear at the time how to do this efficiently with such a complex model containing so many parameters, especially with the computers they had back then.
 
 Then, in 1970, a researcher named Seppo Linnainmaa introduced in his master’s thesis a technique to compute all the gradients automatically and efficiently. This algorithm is now called **reverse-mode automatic differentiation** (or **reverse-mode autodiff** for short). In just two passes through the network (one forward, one backward), it is able to compute the gradients of the neural network’s error with regard to every single model parameter. In other words, it can find out how each connection weight and each bias should be tweaked in order to reduce the neural network’s error. These gradients can then be used to perform a gradient descent step. If you repeat this process of computing the gradients automatically and taking a gradient descent step, the neural network’s error will gradually drop until it eventually reaches a minimum. This combination of reverse-mode autodiff and gradient descent is now called **backpropagation** (or **backprop** for short).
 
 Backpropagation can actually be applied to all sorts of computational graphs, not just neural networks: indeed, Linnainmaa’s master’s thesis was not about neural nets, it was more general. It was several more years before backprop started to be used to train neural networks, but it still wasn’t mainstream.
 
-Then, in 1985, David Rumelhart, Geoffrey Hinton, and Ronald Williams published a groundbreaking paper [[HML_000 Hands-On Machine Learning#Bibliography|(Rumelhart et al., 1988)]] analyzing how backpropagation allowed neural networks to learn useful internal representations. Their results were so impressive that backpropagation was quickly popularized in the field. Today, it is by far the most popular training technique for neural networks.
+Then, in 1985, David Rumelhart, Geoffrey Hinton, and Ronald Williams published a groundbreaking paper [[HML1_000 Hands-On Machine Learning#Bibliography|(Rumelhart et al., 1988)]] analyzing how backpropagation allowed neural networks to learn useful internal representations. Their results were so impressive that backpropagation was quickly popularized in the field. Today, it is by far the most popular training technique for neural networks.
 
 Let’s run through how backpropagation works again in a bit more detail:
 
@@ -158,9 +158,9 @@ Why do we need activation functions in the first place? Well, if you chain sever
 ## Regression MLPs
 First, MLPs can be used for regression tasks. If you want to predict a single value (e.g., the price of a house, given many of its features), then you just need a single output neuron: its output is the predicted value. For multivariate regression (i.e., to predict multiple values at once), you need one output neuron per output dimension. For example, to locate the center of an object in an image, you need to predict 2D coordinates, so you need two output neurons. If you also want to place a bounding box around the object, then you need two more numbers: the width and the height of the object. So, you end up with four output neurons.
 
-Scikit-Learn includes an `MLPRegressor` class, so let’s use it to build an MLP with three hidden layers composed of 50 neurons each, and train it on the California housing dataset. For simplicity, we will use Scikit-Learn’s `fetch_california_housing()` function to load the data. This dataset is simpler than the one we in [[HML_002 End-to-End Machine Learning Project|HML_002]], since it contains only numerical features (there is no `ocean_proximity` feature), and there are no missing values.
+Scikit-Learn includes an `MLPRegressor` class, so let’s use it to build an MLP with three hidden layers composed of 50 neurons each, and train it on the California housing dataset. For simplicity, we will use Scikit-Learn’s `fetch_california_housing()` function to load the data. This dataset is simpler than the one we in [[HML1_002 End-to-End Machine Learning Project|HML_002]], since it contains only numerical features (there is no `ocean_proximity` feature), and there are no missing values.
 
-The following code starts by fetching and splitting the dataset, then it creates a pipeline to standardize the input features before sending them to the `MLPRegressor`. This is very important for neural networks because they are trained using gradient descent, and as we saw in [[HML_004 Training Models#Gradient Descent|HML_004]], gradient descent does not converge very well when the features have very different scales. Finally, the code trains the model and evaluates its validation error. The model uses the ReLU activation function in the hidden layers, and it uses a variant of gradient descent called **Adam** to minimize the mean squared error, with a little bit of ${\ell}_{2}$ regularization (which you can control via the `alpha` hyperparameter):
+The following code starts by fetching and splitting the dataset, then it creates a pipeline to standardize the input features before sending them to the `MLPRegressor`. This is very important for neural networks because they are trained using gradient descent, and as we saw in [[HML1_004 Training Models#Gradient Descent|HML_004]], gradient descent does not converge very well when the features have very different scales. Finally, the code trains the model and evaluates its validation error. The model uses the ReLU activation function in the hidden layers, and it uses a variant of gradient descent called **Adam** to minimize the mean squared error, with a little bit of ${\ell}_{2}$ regularization (which you can control via the `alpha` hyperparameter):
 
 ```python
 from sklearn.datasets import fetch_california_housing

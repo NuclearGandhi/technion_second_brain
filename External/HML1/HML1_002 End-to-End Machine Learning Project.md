@@ -9,7 +9,7 @@ aliases:
   - standardization
 ---
 # Working with Real Data
-From [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
+From [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
 When you are learning about machine learning, it is best to experiment with real-world data, not artificial datasets. Fortunately, there are thousands of open datasets to choose from, ranging across al sorts of domains. Here are a few places you can look to get data:
 - Popular open data repositories:
 	  - [OpenML.org](https://openml.org/)
@@ -43,7 +43,7 @@ The first question to ask your boss is what exactly the business objective is. B
 Your boss answers that your model’s output (a prediction of a district’s median housing price) will be fed to another machine learning system, along with many other signals. This downstream system will determine whether it is worth investing in a given area. Getting this right is critical, as it directly affects revenue.
 
 ![[{06250006-E9ED-4D21-B57F-59CEB35F0D42}.png|bookhue|500]]
->A machine learning pipeline for real estate investments. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>A machine learning pipeline for real estate investments. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 
 > [!info] Pipelines:
@@ -52,7 +52,7 @@ Your boss answers that your model’s output (a prediction of a district’s med
 
 The next question to ask your boss is what the current solution looks like (if any). The current situation will often give you a reference for performance, as well as insights on how to solve the problem. Your boss answers that the district housing prices are currently estimated manually by experts: a team gathers up-to-date information about a district, and when they cannot get the median housing price, they estimate it using complex rules. This is costly and time-consuming, and their estimates are not great; in cases where they manage to find out the actual median housing price, they often realize that their estimates were off by more than $30\%$.
 
-With all this information, you are now ready to start designing your system. First, determine what kind of training supervision the model will need. This is clearly a typical [[HML_001 The Machine Learning Landscape#Supervised Learning|supervised learning]] task, since the model can be trained with labeled examples (each instance comes with the expected output, i.e., the district’s median housing price). It is a typical [[HML_001 The Machine Learning Landscape#Supervised Learning|regression]] task, since the model will be asked to predict a value. More specifically, this is a multiple regression problem, since the system will use multiple features to make a prediction (the district’s population, the median income, etc.). It is also a univariate regression problem, since we are only trying to predict a single value for each district. If we were trying to predict multiple values per district, it would be a multivariate regression problem. Finally, there is no continuous flow of data coming into the system, there is no particular need to adjust to changing data rapidly, and the data is small enough to fit in memory, so plain [[HML_001 The Machine Learning Landscape#Batch Learning|batch learning]] should do just fine.
+With all this information, you are now ready to start designing your system. First, determine what kind of training supervision the model will need. This is clearly a typical [[HML1_001 The Machine Learning Landscape#Supervised Learning|supervised learning]] task, since the model can be trained with labeled examples (each instance comes with the expected output, i.e., the district’s median housing price). It is a typical [[HML1_001 The Machine Learning Landscape#Supervised Learning|regression]] task, since the model will be asked to predict a value. More specifically, this is a multiple regression problem, since the system will use multiple features to make a prediction (the district’s population, the median income, etc.). It is also a univariate regression problem, since we are only trying to predict a single value for each district. If we were trying to predict multiple values per district, it would be a multivariate regression problem. Finally, there is no continuous flow of data coming into the system, there is no particular need to adjust to changing data rapidly, and the data is small enough to fit in memory, so plain [[HML1_001 The Machine Learning Landscape#Batch Learning|batch learning]] should do just fine.
 
 ## Select a Performance Measure
 A typical performance measure for regression problems is the **root mean square error** ($\mathrm{RMSE}$) - basically an $L_{2}$-[[NUM1_003 נורמה#נורמה של וקטור|norm]]. It gives an idea of how much error the system typically makes in its predictions, with higher weight given to large errors.
@@ -131,7 +131,7 @@ plt.show()
 
 
 ![[Pasted image 20240925175425.png|bookhue]]
->A histogram for each numerical attribute. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>A histogram for each numerical attribute. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Looking at these histograms, you notice a few things:
 - First, the median income attribute does not look like it is expressed in US dollars (USD). After checking with the team that collected the data, you are told that the data has been scaled and capped at $15$ (actually, $15.0001$) for higher median incomes, and at $0.5$ (actually, $0.49999$) for lower median incomes. The numbers represent roughly tens of thousands of dollars (e.g., $3$ actually means about $\$\pu {30,000}$). Working with preprocessed attributes is common in machine learning, and it is not necessarily a problem, but you should try to understand how the data was computed.
@@ -237,7 +237,7 @@ plt.show()
 ```
 
 ![[Pasted image 20240925210928.png|bookhue|500]]
->Histogram of income categories. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>Histogram of income categories. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Now you are ready to do stratified sampling based on the income category. Scikit-Learn provides a number of splitter classes in the `sklearn.model_selection` package that implement various strategies to split your dataset into a training set and a test set. Each splitter has a `split()` method that returns an iterator over different training/test splits of the same data.
 
@@ -308,7 +308,7 @@ plt.show()
 ```
 
 ![[Pasted image 20240926164912.png|bookhue|400]]
->A geographical scatterplot of the data. Setting the `alpha` option to $0.2$ makes it much easier to visualize the places where there is a high density of data points. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>A geographical scatterplot of the data. Setting the `alpha` option to $0.2$ makes it much easier to visualize the places where there is a high density of data points. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Next, you look at the housing prices:
 
@@ -322,7 +322,7 @@ plt.show()
 ```
 
 ![[Pasted image 20240926165031.png|bookhue|500]]
->California housing prices: red is expensive, blue is cheap, larger circles indicate areas with a larger population. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>California housing prices: red is expensive, blue is cheap, larger circles indicate areas with a larger population. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 The radius of each circle represents the district's population (options `s`), and the color represents the price (option `c`). Here you use a predefined color map (option `cmap`) called `jet`, which ranges from blue (low values) to red (high prices).
 
@@ -369,7 +369,7 @@ plt.show()
 ```
 
 ![[Pasted image 20240926170502.png|bookhue]]
->This scatter matrix plots every numerical attribute against every other numerical attribute, plus a histogram of each numerical attribute’s values on the main diagonal (top left to bottom right). [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>This scatter matrix plots every numerical attribute against every other numerical attribute, plus a histogram of each numerical attribute’s values on the main diagonal (top left to bottom right). [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 
 The main diagonal would be full of straight lines if Pandas plotted each variable against itself, which would not be very useful. So instead, the Pandas displays a histogram of each attribute.
@@ -384,7 +384,7 @@ plt.show()
 ```
 
 ![[Pasted image 20240926170604.png|bookhue|500]]
->Median income versus median house value. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>Median income versus median house value. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 This plot reveals a few things. First, the correlation is indeed quite strong; you can clearly see the upward trend, and the points are not too dispersed. Second, the price cap you noticed earlier is clearly visible as a horizontal line at $\$500,000$. But the plot also reveals other less obvious straight lines: a horizontal line around $\$450,000$, another around $\$350,000$, perhaps one around $\$280,000$, and a few more below that. You may want to try removing the corresponding districts to prevent your algorithms from learning to reproduce these data quirks.
 
@@ -393,7 +393,7 @@ This plot reveals a few things. First, the correlation is indeed quite strong; y
 >It may completely miss out on nonlinear relationships (e.g., “as $x$ approaches 0, $y$ generally goes up”). The figure below shows a variety of datasets along with their correlation coefficient. Note how all the plots of the bottom row have a correlation coefficient equal to $0$, despite the fact that their axes are clearly not independent: these are examples of nonlinear relationships.
 >
 > ![[Pasted image 20240926174034.png|bookhue]]
-> >Standard correlation coefficient of various datasets. [[HML_000 Hands-On Machine Learning#Bibliography|(“Correlation,” 2024)]]
+> >Standard correlation coefficient of various datasets. [[HML1_000 Hands-On Machine Learning#Bibliography|(“Correlation,” 2024)]]
 >
 >Also, the second row shows examples where the correlation coefficient is equal to $1$ or $–1$; notice that this has nothing to do with the slope. For example, your height in inches has a correlation coefficient of $1$ with your height in feet or in nanometers.
 
@@ -611,7 +611,7 @@ housing_num_std_scaled = std_scaler.fit_transform(housing_num)
 When a feature’s distribution has a *heavy tail* (i.e., when values far from the mean are not exponentially rare), both min-max scaling and standardization will squash most values into a small range. Machine learning models generally don’t like this at all. So *before* you scale the feature, you should first transform it to shrink the heavy tail, and if possible to make the distribution roughly symmetrical. For example, a common way to do this for positive features with a heavy tail to the right is to replace the feature with its square root (or raise the feature to a power between 0 and 1). If the feature has a really long and heavy tail, such as a **power law distribution**, then replacing the feature with its logarithm may help. For example, the population feature roughly follows a power law: districts with $\pu {10,000}$ inhabitants are only $10$ times less frequent than districts with $\pu{1,000}$ inhabitants, not exponentially less frequent.
 
 ![[Pasted image 20240927225351.png|book|500]]
->Transforming a feature to make it closer to a **Gaussian distribution**. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>Transforming a feature to make it closer to a **Gaussian distribution**. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 So far we’ve only looked at the input features, but the target values may also need to be transformed. For example, if the target distribution has a heavy tail, you may choose to replace the target with its logarithm. But if you do, the regression model will now predict the log of the median house value, not the median house value itself. You will need to compute the exponential of the model’s prediction if you want the predicted median house value.
 
@@ -716,7 +716,7 @@ array([[0.08, 0.  , 0.6 , 0.  , 0.  , 0.99, 0.  , 0.  , 0.  , 0.14],
 The following figure shows the 10 cluster centers found by k-means. The districts are colored according to their geographic similarity to their closest cluster center. As you can see, most clusters are located in highly populated and expensive areas.
 
 ![[Pasted image 20240928161858.png|bookhue]]
->Gaussian RBF similarity to the nearest cluster center. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>Gaussian RBF similarity to the nearest cluster center. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 ## Transformation Pipelines
 As you can see, there are many data transformation steps that need to be executed in the right order. Fortunately, Scikit-Learn provides the `Pipeline` class to help with such sequences of transformations. Here is a small pipeline for numerical attributes, which will first impute then scale the input features:
@@ -904,7 +904,7 @@ Now that the model is trained, you evaluate it on the training set;
 0.0
 ```
 
-Of course, it is much more likely that the model has badly overfit the data. [[HML_001 The Machine Learning Landscape#Hyperparameter Tuning and Model Selection|As you saw earlier]], you don’t want to touch the test set until you are ready to launch a model you are confident about, so you need to use part of the training set for training and part of it for model validation.
+Of course, it is much more likely that the model has badly overfit the data. [[HML1_001 The Machine Learning Landscape#Hyperparameter Tuning and Model Selection|As you saw earlier]], you don’t want to touch the test set until you are ready to launch a model you are confident about, so you need to use part of the training set for training and part of it for model validation.
 
 ## Better Evaluation Using Cross-Validation
 One way to evaluate the decision tree model would be to use the `train_ test_split()` function to split the training set into a smaller training set and a validation set, then train your models against the smaller training set and evaluate them against the validation set.

@@ -10,7 +10,7 @@ aliases:
   - logistic regression
 ---
 # Introduction
-From [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
+From [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
 So far we have treated machine learning models and their training algorithms mostly like black boxes. However, having a good understanding of how things work can help you quickly home in on the appropriate model, the right training algorithm to use, and a good set of hyperparameters for your task.
 
 # Linear Regression
@@ -30,7 +30,7 @@ where:
 - $\mathbf{x}$ is the instance's **feature vector**, containing ${x}_{0}$ to $x_{n}$, with ${x}_{0}$ always equal to $1$.
 - $\boldsymbol{\theta}\cdot \mathbf{x}$ is the dot product of the vectors $\boldsymbol{\theta}$ and $\mathbf{x}$ which is equal to ${\theta}_{0}{x}_{0}+{\theta}_{1}{x}_{1}+{\theta}_{2}{x}_{2}+\dots+\theta_{n}x_{n}$.
 
-Recall that training a model means setting its parameters so that the model best fits the training set. For this purpose, we first need a measure of how well (or poorly) the model fits the training data. In [[HML_002 End-to-End Machine Learning Project#Select a Performance Measure|HML_002]] We saw that the most common performance measure of a regression model is the root mean square error. Therefore, to train a linear regression model, we need to find the value of $\boldsymbol{\theta}$ that minimizes the $\mathrm{RMSE}$. In practice, it is simpler to minimize the mean squared error ($\mathrm{MSE}$) than the $\mathrm{RMSE}$, and it leads to the same result (because the value that minimizes a positive function also minimizes its square root).
+Recall that training a model means setting its parameters so that the model best fits the training set. For this purpose, we first need a measure of how well (or poorly) the model fits the training data. In [[HML1_002 End-to-End Machine Learning Project#Select a Performance Measure|HML_002]] We saw that the most common performance measure of a regression model is the root mean square error. Therefore, to train a linear regression model, we need to find the value of $\boldsymbol{\theta}$ that minimizes the $\mathrm{RMSE}$. In practice, it is simpler to minimize the mean squared error ($\mathrm{MSE}$) than the $\mathrm{RMSE}$, and it leads to the same result (because the value that minimizes a positive function also minimizes its square root).
 
 The $\mathrm{MSE}$ of a linear regression hypothesis $h_{\theta}$ on a training set $\mathbf{X}$ is calculated using:
 $$\mathrm{MSE}(\mathbf{X},\, h_{\theta})=\dfrac{1}{m}\sum_{i=1}^{m}(\boldsymbol{\theta}^{T}\mathbf{x}^{(i)}-y^{(i)})^{2}$$
@@ -146,24 +146,24 @@ Suppose you are lost in the mountains in a dense fog, and you can only feel the 
 In practice, you start by filling $\boldsymbol{\theta}$ with random values (this is called **random initialization**). Then you improve it gradually, taking one baby step at a time, each step attempting to decrease the cost function (e.g., the $\mathrm{MSE}$), until the algorithm **converges** to a minimum.
 
 ![[{169624AC-E142-45F2-B450-368FE0790C90}.png|bookhue|500]]
->In this depiction of gradient descent, the model parameters are initialized randomly and get tweaked repeatedly to minimize the cost function; the learning step size is proportional to the slope of the cost function, so the steps gradually get smaller as the cost approaches the minimum. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>In this depiction of gradient descent, the model parameters are initialized randomly and get tweaked repeatedly to minimize the cost function; the learning step size is proportional to the slope of the cost function, so the steps gradually get smaller as the cost approaches the minimum. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 An important parameter in gradient descent is the size of the steps, determined by the **learning rate** hyperparameter. If the learning rate is too small, then the algorithm will have to go through many iterations to converge, which will take a long time:
 
 ![[{F10C1F75-FA17-481F-9E4F-A4D08364DD62}.png|bookhue|500]]
->Learning rate too small. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>Learning rate too small. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 On the other hand, if the learning rate is too high, you might jump across the valley and end up on the other side, possibly even higher up than you were before. This might make the algorithm diverge, with larger and larger values, failing to find a good solution:
 
 ![[{EDC3FBF1-ECB7-42C8-977C-7A9D2D9F0576} 1.png|bookhue|500]]
->Learning rate too high. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>Learning rate too high. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Additionally, not all cost functions look like nice, regular bowls. There may be holes, ridges, plateaus, and all sorts of irregular terrain, making convergence to the minimum difficult. Fortunately, the $\mathrm{MSE}$ cost function for a linear regression model happens to be a convex function, which means that if you pick any two points on the curve, the line segment joining them is never below the curve. This implies that there are no local minima, just one global minimum. It is also a continuous function with a slope that never changes abruptly. These two facts have a great consequence: gradient descent is guaranteed to approach arbitrarily closely the global minimum (if you wait long enough and if the learning rate is not too high).
 
 While the cost function has the shape of a bowl, it can be an elongated bowl if the features have very different scales.
 
 ![[{1F0FEC1A-E9AC-4495-92BE-386DB97495D8}.png|bookhue|500]]
->Gradient descent with (left) and without (right) feature scaling. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>Gradient descent with (left) and without (right) feature scaling. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 The graph above shows gradient descent on a training set where features 1 and 2 have the same scale (on the left), and on a training set where feature 1 has much smaller values than feature 2 (on the right).
 As you can see, on the left the gradient descent algorithm goes straight toward the minimum, thereby reaching it quickly, whereas on the right it first goes in a direction almost orthogonal to the direction of the global minimum, and it ends with a long march down an almost flat valley. It will eventually reach the minimum, but it will take a long time.
@@ -222,7 +222,7 @@ The following figure shows the first 20 steps of gradient descent using three di
 
 On the left, the learning rate is too low: the algorithm will eventually reach the solution, but it will take a long time. In the middle, the learning rate looks pretty good: in just a few epochs, it has already converged to the solution. On the right, the learning rate is too high: the algorithm diverges, jumping all over the place and actually getting further and further away from the solution at every step.
 
-To find a good learning rate, you can use [[HML_002 End-to-End Machine Learning Project#Grid Search|grid search]]. However, you may want to limit the number of epochs so that grid search can eliminate models that take too long to converge.
+To find a good learning rate, you can use [[HML1_002 End-to-End Machine Learning Project#Grid Search|grid search]]. However, you may want to limit the number of epochs so that grid search can eliminate models that take too long to converge.
 
 You may wonder how to set the number of epochs. If it is too low, you will still be far away from the optimal solution when the algorithm stops; but if it is too high, you will waste time while the model parameters do not change anymore. A simple solution is to set a very large number of epochs but to interrupt the algorithm when the gradient vector becomes tiny - that is, when its norm becomes smaller than a tiny number $\epsilon$ (called the **tolerance**) - because this happens when gradient descent has (almost) reached the minimum.
 
@@ -233,7 +233,7 @@ Obviously, working on a single instance at a time makes the algorithm much faste
 On the other hand, due to its stochastic (i.e., random) nature, this algorithm is much less regular than batch gradient descent: instead of gently decreasing until it reaches the minimum, the cost function will bounce up and down, decreasing only on average. Over time it will end up very close to the minimum, but once it gets there it will continue to bounce around, never settling down:
 
 ![[{8A1590B3-3BFA-44B2-AF7C-17674C0A3897}.png|bookhue|500]]
->With stochastic gradient descent, each training step is much faster but also much more stochastic than when using batch gradient descent. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>With stochastic gradient descent, each training step is much faster but also much more stochastic than when using batch gradient descent. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 When the cost function is very irregular, this can actually help the algorithm jump out of local minima, so stochastic gradient descent has a better chance of finding the global minimum than batch gradient descent does.
 
@@ -369,7 +369,7 @@ If you perform high-degree polynomial regression, you will likely fit the traini
 
 This high-degree polynomial regression model is severely overfitting the training data, while the linear model is underfitting it. The model that will generalize best in this case is the quadratic model, which makes sense because the data was generated using a quadratic model. But in general you won’t know what function generated the data, so how can you decide how complex your model should be? How can you tell that your model is overfitting or underfitting the data?
 
-In [[HML_002 End-to-End Machine Learning Project#Better Evaluation Using Cross-Validation|HML_002]] you used cross-validation to get an estimate of a model’s generalization performance. If a model performs well on the training data but generalizes poorly according to the cross-validation metrics, then your model is overfitting. If it performs poorly on both, then it is underfitting. This is one way to tell when a model is too simple or too complex.
+In [[HML1_002 End-to-End Machine Learning Project#Better Evaluation Using Cross-Validation|HML_002]] you used cross-validation to get an estimate of a model’s generalization performance. If a model performs well on the training data but generalizes poorly according to the cross-validation metrics, then your model is overfitting. If it performs poorly on both, then it is underfitting. This is one way to tell when a model is too simple or too complex.
 
 Another way to tell is to look at the learning curves, which are plots of the model’s training error and validation error as a function of the training iteration: just evaluate the model at regular intervals during training on both the training set and the validation set, and plot the results.
 

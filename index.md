@@ -157,10 +157,9 @@ aliases:
 - [[MFB1_000 00320032 מיקרופבריקציית כדורי פינג פונג]]
 
 
-%%
 ## אקסטרני
-- [[External/HML/HML_000 Hands-On Machine Learning]]
-%%
+- [[HML1_000 Hands-On Machine Learning]]
+- [[THP1_000 Course of Theoretical Physics - Mechanics]]
 
 >[!Question]- "למה אתה לא לוקח את הקורסי בחירה שאנחנו לוקחים?"
 >סליחה סליחה תנו לי שנייה:

@@ -4,7 +4,7 @@ aliases:
   - CART
 ---
 # Introduction
-From [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
+From [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
 Decision trees are versatile machine learning algorithms that can perform both classification and regression tasks, and even multioutput tasks. They are powerful algorithms, capable of fitting complex datasets.
 
 Decision trees are also the fundamental components of random forests, which are among the most powerful machine learning algorithms available today.
@@ -188,7 +188,7 @@ Hopefully by now you are convinced that decision trees have a lot going for them
 
 Although both decision trees fit the training set perfectly, it is very likely that the model on the right will not generalize well.
 
-One way to limit this problem is to scale the data, then apply a **principal component analysis transformation**. We will look at PCA in detail in [[HML_008 Dimensionality Reduction|HML_008]], but for now you only need to know that it rotates the data in a way that reduces the correlation between the features, which often (not always) makes things easier for trees.
+One way to limit this problem is to scale the data, then apply a **principal component analysis transformation**. We will look at PCA in detail in [[HML1_008 Dimensionality Reduction|HML_008]], but for now you only need to know that it rotates the data in a way that reduces the correlation between the features, which often (not always) makes things easier for trees.
 
 Let’s create a small pipeline that scales the data and rotates it using PCA, then train a `DecisionTreeClassifier` on that data. The following figure shows the decision boundaries of that tree: as you can see, the rotation makes it possible to fit the dataset pretty well using only one feature, ${z}_{1}$ , which is a linear function of the original petal length and width. Here’s the code:
 
@@ -211,4 +211,4 @@ More generally, the main issue with decision trees is that they have quite a hig
 ![[Pasted image 20241011140907.png|bscreen]]
 >Retraining the same model on the same data may produce a very different model
 
-As you can see, it looks very different from the [[#Making Predictions|previous decision tree]]. Luckily, by averaging predictions over many trees, it’s possible to reduce variance significantly. Such an ensemble of trees is called a *random forest*, and it’s one of the most powerful types of models available today, as you will see in the [[HML_007 Ensemble Learning and Random Forests|HML_007]].
+As you can see, it looks very different from the [[#Making Predictions|previous decision tree]]. Luckily, by averaging predictions over many trees, it’s possible to reduce variance significantly. Such an ensemble of trees is called a *random forest*, and it’s one of the most powerful types of models available today, as you will see in the [[HML1_007 Ensemble Learning and Random Forests|HML_007]].

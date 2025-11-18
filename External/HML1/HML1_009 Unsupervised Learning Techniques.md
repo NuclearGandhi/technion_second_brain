@@ -2,7 +2,7 @@
 aliases:
 ---
 # Introduction
-From [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
+From [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
 Although most of the applications of machine learning today are based on supervised learning (and as a result, this is where most of the investments go to), the vast majority of the available data is unlabeled: we have the input features $\mathbf{X}$, but we do not have the labels $\mathbf{y}$. The computer scientist Yann LeCun famously said that:
 
 > [!quote]
@@ -169,7 +169,7 @@ segmented_img = segmented_img.reshape(image.shape)
 This outputs the image shown in the upper right of the previous figure. You can experiment with various number of clusters, as shown in the figure. When you use fewer than eight clusters, notice that the ladybug's flashy red color fails to get a cluster of its own: it gets merged with colors from the environment. This is because $k$-means prefers clusters of similar sizes. The ladybug is small - much smaller than the rest of the image - so even though its color is flashy, $k$-means fails to dedicate a cluster to it.
 
 ## Using Clustering for Semi-Supervised Learning
-Another use case for clustering is in [[HML_001 The Machine Learning Landscape#Semi-Supervised Learning|semi-supervised learning]], when we have plenty of unlabeled instances and very few labeled instances. In this section, we’ll use the digits dataset, which is a simple MNIST-like dataset containing 1,797 grayscale $8\times 8$ images representing the digits 0 to 9. First, let’s load and split the dataset (it’s already shuffled):
+Another use case for clustering is in [[HML1_001 The Machine Learning Landscape#Semi-Supervised Learning|semi-supervised learning]], when we have plenty of unlabeled instances and very few labeled instances. In this section, we’ll use the digits dataset, which is a simple MNIST-like dataset containing 1,797 grayscale $8\times 8$ images representing the digits 0 to 9. First, let’s load and split the dataset (it’s already shuffled):
 
 ```python
 from sklearn.datasets import load_digits

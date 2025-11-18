@@ -3,19 +3,19 @@ aliases:
   - ensemble
 ---
 # Introduction
-From [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
+From [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
 Suppose you pose a complex question to thousands of random people, then aggregate their answers. In many cases you will find that this aggregated answer is better than an expert’s answer. This is called the **wisdom of the crowd**. Similarly, if you aggregate the predictions of a group of predictors (such as classifiers or regressors), you will often get better predictions than with the best individual predictor. A group of predictors is called an **ensemble**; thus, this technique is called **ensemble learning**, and an ensemble learning algorithm is called an **ensemble method**.
 
 # Voting Classifiers
 Suppose you have trained a few classifiers, each one achieving about 80% accuracy. You may have a logistic regression classifier, an SVM classifier, a random forest classifier, a k-nearest neighbors classifier, and perhaps a few more.
 
 ![[{AC3F2F18-CA0E-4D18-BE00-605111C12A51}.png|bookhue|500]]
->Training diverse classifiers. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>Training diverse classifiers. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 A very simple way to create an even better classifier is to aggregate the predictions of each classifier: the class that gets the most votes is the ensemble’s prediction. This majority-vote classifier is called a **hard voting** classifier.
 
 ![[{A1BF8B75-BA08-4CC7-8E8C-5B0191A6816B}.png|bookhue|500]]
->Hard voting classifier predictions. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>Hard voting classifier predictions. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Somewhat surprisingly, this voting classifier often achieves a higher accuracy than the best classifier in the ensemble. In fact, even if each classifier is a **weak learner** (meaning it does only slightly better than random guessing), the ensemble can still be a **strong learner** (achieving high accuracy), provided there are a sufficient number of weak learners in the ensemble and they are sufficiently diverse.
 
@@ -90,7 +90,7 @@ One way to get a diverse set of classifiers is to use very different training al
 In other words, both bagging and pasting allow training instances to be sampled several times across multiple predictors, but only bagging allows training instances to be sampled several times for the same predictor. This sampling and training process is represented in the following figure:
 
 ![[{842153AA-7E5E-4B19-A290-768EFA7589D2}.png|bookhue|500]]
->Bagging and pasting involve training several predictors on different random samples of the training set. [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>Bagging and pasting involve training several predictors on different random samples of the training set. [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 Once all predictors are trained, the ensemble can make a prediction for a new instance by simply aggregating the predictions of all predictors. The aggregation function is typically the **statistical mode** for classification (i.e., the most frequent prediction, just like with a hard voting classifier), or the average for regression. Each individual predictor has a higher bias than if it were trained on the original training set, but aggregation reduces both bias and variance. Generally, the net result is that the ensemble has a similar bias but a lower variance than a single predictor trained on the original training set.
 

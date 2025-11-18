@@ -14,7 +14,7 @@ aliases:
   - multilabel classification system
 ---
 # MNSIT
-From [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
+From [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]]:
 In this chapter we will be using the MNIST dataset, which is a set of 70,000 small images of digits handwritten by high school students and employees of the US Census Bureau. Each image is labeled with the digit it represents. This set has been studied so much that it is often called the “hello world” of machine learning: whenever people come up with a new classification algorithm they are curious to see how it will perform on MNIST, and anyone who learns machine learning tackles this dataset sooner or later.
 
 The following code fetches the MNIST dataset from OpenML.org:
@@ -108,7 +108,7 @@ The classifier guesses that this image represents a 5 (True). Looks like it gues
 Evaluating a classifier is often significantly trickier than evaluating a regressor, so we will spend a large part of this chapter on this topic.
 
 ## Measuring Accuracy Using Cross-Validation
-A good way to evaluate a model is to use cross-validation. Let’s use the `cross_val_score()` function to evaluate our `SGDClassifier` model, using k-fold cross-validation with three folds. Remember that [[HML_002 End-to-End Machine Learning Project#Better Evaluation Using Cross-Validation|k-fold cross-validation]] means splitting the training set into folds (in this case, three), then training the model k times, holding out a different fold each time for evaluation:
+A good way to evaluate a model is to use cross-validation. Let’s use the `cross_val_score()` function to evaluate our `SGDClassifier` model, using k-fold cross-validation with three folds. Remember that [[HML1_002 End-to-End Machine Learning Project#Better Evaluation Using Cross-Validation|k-fold cross-validation]] means splitting the training set into folds (in this case, three), then training the model k times, holding out a different fold each time for evaluation:
 
 ```python
 >>> from sklearn.model_selection import cross_val_score
@@ -159,7 +159,7 @@ where $FN$ is the number of false negatives.
 
 If you are confused about the confusion matrix, the following figure may help:
 ![[{53A5B5E9-7B79-456B-8CD4-BB369698E050}.png|bookhue]]
->An illustrated confusion matrix showing examples of true negatives (top left), false positives (top right), false negatives (lower left), and true positives (lower right). [[HML_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
+>An illustrated confusion matrix showing examples of true negatives (top left), false positives (top right), false negatives (lower left), and true positives (lower right). [[HML1_000 Hands-On Machine Learning#Bibliography|(Géron, 2023)]].
 
 ## Precision and Recall
 Scikit-Learn provides several functions to compute classifier metrics, including precision and recall:
