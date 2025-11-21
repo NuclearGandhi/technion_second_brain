@@ -79,6 +79,7 @@ f2 = simplify(diff(Hc, dphi2));
 %% Assignment 3: link 2 angular momentum about p2
 p2 = [x + ell*cos(theta);
       y + ell*sin(theta)];
+vp2 = simplify(jacobian(p2, q) * qd);
 v2 = simplify(jacobian(r2, q) * qd);
 r2p = simplify(r2 - p2);
 Ic_link2 = m*ell^2/3;
@@ -89,7 +90,9 @@ zdot = [qd; qdd];
 Hp2_dot = simplify(jacobian(Hp2, zVars) * zdot);
 Fg = [0; -m*g];
 Mg = simplify(cross_z(r2p, Fg));
-eq_p2 = simplify(Hp2_dot - (tau2 + Mg));
+% Balance about moving point p2: Hp2_dot + vp2 x (m*v2) = M_ext
+term_inertial = simplify(m * cross_z(vp2, v2));
+eq_p2 = simplify(Hp2_dot + term_inertial - (tau2 + Mg));
 eq_p2_norm = simplify(eq_p2/(ell*m));
 theta_link2_coeff = simplify(diff(eq_p2_norm, ddtheta));
 theta_link2_const = simplify(subs(eq_p2_norm, ddtheta, 0));

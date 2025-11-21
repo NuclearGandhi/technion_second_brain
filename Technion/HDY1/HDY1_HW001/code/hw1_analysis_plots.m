@@ -52,11 +52,19 @@ ell = params.ell;
 omega = params.omega;
 m = params.m;
 
+% Use built-in colors from the default color order
+colors = get(groot, 'defaultAxesColorOrder');
+c1 = colors(1, :); % Default Blue
+c2 = colors(2, :); % Default Orange
+c3 = colors(3, :); % Default Yellow
+c4 = colors(4, :); % Default Purple
+c5 = colors(5, :); % Default Green
+
 theta_deg = qb(:, 3) * 180 / pi;
 
 figA = figure('Visible', 'off');
 set(figA, 'Position', [100, 100, 800, 533]);
-plot(t_state, theta_deg, 'LineWidth', 2, 'Color', [0.10, 0.45, 0.85]);
+plot(t_state, theta_deg, 'LineWidth', 2, 'Color', c1);
 grid on;
 xlabel('$t~[\mathrm{s}]$');
 ylabel('$\theta~[\mathrm{deg}]$');
@@ -67,9 +75,9 @@ close(figA);
 
 figB = figure('Visible', 'off');
 set(figB, 'Position', [100, 100, 800, 533]);
-plot(t_state, qb(:, 1) / ell, 'LineWidth', 2, 'LineStyle', '-', 'Color', [0.85, 0.33, 0.10]);
+plot(t_state, qb(:, 1) / ell, 'LineWidth', 2, 'LineStyle', '-', 'Color', c2);
 hold on;
-plot(t_state, xc_hist / ell, 'LineWidth', 2, 'LineStyle', '-', 'Color', [0.00, 0.45, 0.74]);
+plot(t_state, xc_hist / ell, 'LineWidth', 2, 'LineStyle', '-', 'Color', c1);
 grid on;
 xlabel('$t~[\mathrm{s}]$');
 ylabel('Normalized position');
@@ -86,10 +94,10 @@ Hc_norm = Hc_hist / (m * ell^2 * omega);
 
 figC = figure('Visible', 'off');
 set(figC, 'Position', [100, 100, 800, 533]);
-plot(t_state, xdot_norm, 'LineWidth', 2, 'LineStyle', '-', 'Color', [0.85, 0.33, 0.10]);
+plot(t_state, xdot_norm, 'LineWidth', 2, 'LineStyle', '-', 'Color', c2);
 hold on;
-plot(t_state, xc_dot_norm, 'LineWidth', 2, 'LineStyle', '--', 'Color', [0.00, 0.45, 0.74]);
-plot(t_state, Hc_norm, 'LineWidth', 2, 'LineStyle', ':', 'Color', [0.10, 0.60, 0.40]);
+plot(t_state, xc_dot_norm, 'LineWidth', 2, 'LineStyle', '--', 'Color', c1);
+plot(t_state, Hc_norm, 'LineWidth', 2, 'LineStyle', ':', 'Color', c5);
 grid on;
 xlabel('$t~[\mathrm{s}]$');
 ylabel('Normalized value');
@@ -108,16 +116,16 @@ figD = figure('Visible', 'off');
 set(figD, 'Position', [100, 100, 800, 600]);
 tiledlayout(figD, 2, 1, 'TileSpacing', 'compact');
 nexttile;
-plot(t_state, ydot_norm, 'LineWidth', 2, 'LineStyle', '-', 'Color', [0.85, 0.33, 0.10]);
+plot(t_state, ydot_norm, 'LineWidth', 2, 'LineStyle', '--', 'Color', c2);
 hold on;
-plot(t_state, yc_dot_norm, 'LineWidth', 2, 'LineStyle', '--', 'Color', [0.00, 0.45, 0.74]);
+plot(t_state, yc_dot_norm, 'LineWidth', 2, 'LineStyle', ':', 'Color', c1);
 grid on;
 xlabel('$t~[\mathrm{s}]$');
 ylabel('Normalized value');
 title('Vertical velocity comparison');
 legend({'$\dot{y}/(\ell\omega)$', '$\dot{y}_{c}/(\ell\omega)$'}, 'Location', 'best');
 nexttile;
-plot(t_state, ydiff_norm, 'LineWidth', 2, 'Color', [0.10, 0.60, 0.40]);
+plot(t_state, ydiff_norm, 'LineWidth', 2, 'Color', c5);
 grid on;
 xlabel('$t~[\mathrm{s}]$');
 ylabel('Difference');
@@ -131,9 +139,9 @@ theta_dot_cons_norm = theta_dot_cons_hist / omega;
 
 figE = figure('Visible', 'off');
 set(figE, 'Position', [100, 100, 800, 533]);
-plot(t_state, theta_dot_norm, 'LineWidth', 2, 'LineStyle', '-', 'Color', [0.85, 0.33, 0.10]);
+plot(t_state, theta_dot_norm, 'LineWidth', 2, 'LineStyle', '-', 'Color', c2);
 hold on;
-plot(t_state, theta_dot_cons_norm, 'LineWidth', 2, 'LineStyle', '--', 'Color', [0.00, 0.45, 0.74]);
+plot(t_state, theta_dot_cons_norm, 'LineWidth', 2, 'LineStyle', '--', 'Color', c1);
 grid on;
 xlabel('$t~[\mathrm{s}]$');
 ylabel('Normalized value');
@@ -146,9 +154,9 @@ close(figE);
 %% Part f: joint torques
 figF = figure('Visible', 'off');
 set(figF, 'Position', [100, 100, 800, 533]);
-plot(t_state, tau_hist(:, 1), 'LineWidth', 2, 'LineStyle', '-', 'Color', [0.85, 0.33, 0.10]);
+plot(t_state, tau_hist(:, 1), 'LineWidth', 2, 'LineStyle', '-', 'Color', c2);
 hold on;
-plot(t_state, tau_hist(:, 2), 'LineWidth', 2, 'LineStyle', '-', 'Color', [0.00, 0.45, 0.74]);
+plot(t_state, tau_hist(:, 2), 'LineWidth', 2, 'LineStyle', '-', 'Color', c1);
 grid on;
 xlabel('$t~[\mathrm{s}]$');
 ylabel('$\tau~[\mathrm{N\cdot m}]$');
@@ -164,9 +172,9 @@ theta_dd_link2_norm = theta_dd_link2_hist / omega^2;
 
 figG = figure('Visible', 'off');
 set(figG, 'Position', [100, 100, 800, 533]);
-plot(t_state, theta_dd_norm, 'LineWidth', 2, 'LineStyle', '-', 'Color', [0.85, 0.33, 0.10]);
+plot(t_state, theta_dd_norm, 'LineWidth', 2, 'LineStyle', '-', 'Color', c2);
 hold on;
-plot(t_state, theta_dd_link2_norm, 'LineWidth', 2, 'LineStyle', '-', 'Color', [0.00, 0.45, 0.74]);
+plot(t_state, theta_dd_link2_norm, 'LineWidth', 2, 'LineStyle', '--', 'Color', c1);
 grid on;
 xlabel('$t~[\mathrm{s}]$');
 ylabel('Normalized value');
