@@ -10,6 +10,16 @@
 
 # Wait until submitted
 Technion/FNL1/
-Technion/MCS1/MCS1_HW002 תרגיל בית 2.md
 Technion/MCS1/MCS1_HW003 תרגיל בית 3.md
+Technion/MCS1/MCS1_HW004 תרגיל בית 4.md
 Technion/HDY1/HDY1_HW001 Homework 1.md
+
+# STM32 Project build artifacts and IDE files
+**/Debug/
+**/Release/
+**/.settings/
+**/.cache/
+**/.vscode/
+**/compile_commands.json
+**/.mxproject
+**/*.launch

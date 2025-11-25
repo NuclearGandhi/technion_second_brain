@@ -1,0 +1,5 @@
+Checks: 'clang-analyzer-*,bugprone-*,performance-*,readability-*'
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*'
+FormatStyle: file
+HeaderFilterRegex: '^(?!.*(Drivers|Middlewares)).*$'

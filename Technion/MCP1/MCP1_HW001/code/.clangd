@@ -1,0 +1,48 @@
+CompileFlags:
+  Add:
+    - -DDEBUG
+    - -DUSE_HAL_DRIVER
+    - -DSTM32F446xx
+    - -ICore/Inc
+    - -IDrivers/STM32F4xx_HAL_Driver/Inc
+    - -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy
+    - -IDrivers/CMSIS/Device/ST/STM32F4xx/Include
+    - -IDrivers/CMSIS/Include
+    - -std=gnu11
+    - -Wall
+    # For embedded ARM development, we suppress missing system header warnings
+    - -Wno-unknown-pragmas
+  Remove:
+    # Remove problematic flags that clangd doesn't understand
+    - -ffunction-sections
+    - -fdata-sections
+    - -fstack-usage
+    - -fcyclomatic-complexity
+    - --specs=nano.specs
+    - -MMD
+    - -MP
+    # Remove ARM-specific flags that clangd doesn't need
+    - -mcpu=cortex-m4
+    - -mthumb
+    - -mfpu=fpv4-sp-d16
+    - -mfloat-abi=hard
+    - --target=arm-none-eabi
+
+Diagnostics:
+  UnusedIncludes: None
+  MissingIncludes: None
+  ClangTidy:
+    Remove:
+      # Disable checks that don't apply to embedded/HAL code
+      - readability-magic-numbers
+      - cppcoreguidelines-avoid-magic-numbers
+  Suppress:
+    - pp_file_not_found
+    - unknown-warning-option
+    - unused-command-line-argument
+    - implicit-function-declaration
+    - ext_implicit_lib_function_decl
+  
+Index:
+  Background: Build
+

@@ -110,6 +110,73 @@
         "status": "unpublished",
         "elements": [
           {
+            "id": "MZbKLt-8uUs0qfh8d4oU_",
+            "type": "ellipse",
+            "x": 30,
+            "y": -130,
+            "width": 20,
+            "height": 20,
+            "angle": 0.007656584400155708,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "#e7f5ff",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "groupIds": [
+              "9WAkJAtNDN2F8ZHWnD2-E"
+            ],
+            "frameId": null,
+            "index": "aDV",
+            "roundness": null,
+            "seed": 2024808614,
+            "version": 431,
+            "versionNonce": 1137870714,
+            "isDeleted": false,
+            "boundElements": [],
+            "updated": 1763998360081,
+            "link": null,
+            "locked": false
+          },
+          {
+            "id": "eBugG1-TTtk-IST3mo4cp",
+            "type": "rectangle",
+            "x": 20,
+            "y": -140,
+            "width": 40,
+            "height": 40,
+            "angle": 0,
+            "strokeColor": "transparent",
+            "backgroundColor": "transparent",
+            "fillStyle": "solid",
+            "strokeWidth": 0.5,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "groupIds": [
+              "9WAkJAtNDN2F8ZHWnD2-E"
+            ],
+            "frameId": null,
+            "index": "aE",
+            "roundness": null,
+            "seed": 1861856442,
+            "version": 16,
+            "versionNonce": 96962618,
+            "isDeleted": false,
+            "boundElements": [],
+            "updated": 1763998360081,
+            "link": null,
+            "locked": false
+          }
+        ],
+        "id": "v_fuecpmUecrLPkUD5Iv6",
+        "created": 1763998372778
+      },
+      {
+        "status": "unpublished",
+        "elements": [
+          {
             "id": "F54y5YHKVkTnf-2LWC1t8",
             "type": "arrow",
             "x": 35.40801508007846,
