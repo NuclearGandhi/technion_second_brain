@@ -7,7 +7,7 @@ Syllabus: [link](https://moodle25.technion.ac.il/pluginfile.php/136360/mod_resou
 Teacher: Prof. Yizhar Or
 
 >[!warning] Pay attention!
->Most of these notes is simply a 1:1 copy of the course's notes by Elad Tenenbaum 
+>Most of these notes are simply a 1:1 copy of the course's notes by Elad Tenenbaum 
 # Notes
 
 - [[HDY1_001 Introduction]]
@@ -15,7 +15,7 @@ Teacher: Prof. Yizhar Or
 
 # Homework
 - [[HDY1_HW001 Homework 1]]
-
+- [[HDY1_HW002 Homework 2]]
 # Exams
 
 # Bibliography

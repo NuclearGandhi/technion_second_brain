@@ -7,9 +7,6 @@
 
 clear; clc; close all;
 
-% This will work if "parent" is defined; MATLAB does not have a built-in "parent" function for paths.
-% The code below replaces "parent" with fileparts, which is compatible with the default MATLAB folder structure.
-
 scriptPath = mfilename('fullpath');
 if isempty(scriptPath)
     scriptPath = which('hw1_symbolic_numeric_calc');
