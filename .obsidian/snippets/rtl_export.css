@@ -1,0 +1,80 @@
+
+@media print {
+
+    body {
+      direction: rtl !important;
+    }
+
+    li {
+      direction: rtl !important;
+    }
+
+    h1.__title__ {
+      font-size: 2.102em !important;
+      text-align: center;
+      margin-top: 320px;
+      margin-bottom: 160px;
+      font-style: normal;
+      font-weight: 400 !important;
+    }
+  
+    h1.__inner_title__ {
+      font-size: 2.102em !important;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      font-style: normal;
+      font-weight: 400 !important;
+    }
+  
+    h1,
+    h2,
+    h3,
+    h4 {
+      page-break-after: avoid;
+    }
+  
+    img, div.math, span.internal-embed {
+      page-break-before: avoid;
+    }
+  
+    pre,
+    blockquote {
+      page-break-inside: avoid;
+    }
+  
+    /* use double <hr> ('---') to indicate a page break */
+    hr + hr {
+      page-break-before: always;
+      visibility: hidden;
+    }
+  
+    hr:has(+ hr) {
+      visibility: hidden;
+    }
+  
+    :not(hr) + hr + :not(hr):not(h2) {
+      border-top: 1px solid black;
+      padding-top: 2em;
+    }
+  
+    body {
+      font-family: "David", "Georgia", serif !important;
+      --font-interface-override: "David", "Georgia", serif !important;
+      --font-print: "David", "Georgia", serif !important;
+      --font-text-size: 14pt !important
+    }
+  
+    table {
+      direction: rtl !important;
+    }
+  
+    div.page-break::after {
+      display: none !important;
+    }
+  
+    /* block quotes (for image captioning) */
+    .markdown-rendered blockquote {
+      color: var(--color-base-70) !important;
+    }
+  }

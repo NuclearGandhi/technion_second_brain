@@ -17,6 +17,10 @@
 **/compile_commands.json
 **/.mxproject
 **/*.launch
+**/*Drivers/
+**/*CMakeFiles/
+**/*cmake/
+**/*build/
 
 # Wait until submitted
 Technion/FNL1/
