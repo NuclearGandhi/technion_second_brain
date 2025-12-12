@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;lesson5_cart_step_rec&apos; to &apos;HW002_code&apos;" description="Rename resource &apos;lesson5_cart_step_rec&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/lesson5_cart_step_rec" name="HW002_code" stamp="1764590645639" updateReferences="true"/>
-</session>

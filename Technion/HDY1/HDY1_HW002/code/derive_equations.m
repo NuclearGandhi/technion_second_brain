@@ -5,7 +5,7 @@ syms x y theta phi1 phi2 psi real
 syms dx dy dtheta dphi1 dphi2 dpsi real
 syms m1 m2 J1 J2 b d k c cw real
 syms t real
-%% 
+%%
 
 % Generalized coordinates and velocities
 q = [x; y; theta; phi1; phi2; psi];
@@ -15,20 +15,20 @@ dq = [dx; dy; dtheta; dphi1; dphi2; dpsi];
 % Rotation matrix from Body to World (e1', e2' expressed in e1, e2)
 % e1' = [cos(theta); sin(theta)]
 % e2' = [-sin(theta); cos(theta)]
-R_bw = [cos(theta), -sin(theta); 
-        sin(theta),  cos(theta)];
+R_bw = [cos(theta), -sin(theta);
+    sin(theta),  cos(theta)];
 
 e1_prime = R_bw(:,1);
 e2_prime = R_bw(:,2);
 
 % Center of Mass Position
 r_c = [x; y];
-v_c = [dx; dy]; % Jacobian would give same result
+v_c = [dx; dy];
 
 % Wheel Hinge Positions (relative to C in body frame)
 % Hinge 1 is at -b along e1'
 % Hinge 2 is at +b along e1'
-r_h1_b = [-b; 0]; 
+r_h1_b = [-b; 0];
 r_h2_b = [ b; 0];
 
 % Wheel Axle Positions relative to Hinges (in body frame)
@@ -66,7 +66,7 @@ v_p1_sq = v_p1.' * v_p1;
 v_p2_sq = v_p2.' * v_p2;
 
 D = simplify(0.5 * c * dphi1^2 + 0.5 * c * dphi2^2 + ...
-             0.5 * cw * v_p1_sq + 0.5 * cw * v_p2_sq);
+    0.5 * cw * v_p1_sq + 0.5 * cw * v_p2_sq);
 
 %% 6. Generalized Forces
 % Actuation torque tau_psi on coordinate psi
@@ -154,7 +154,7 @@ W_a = W(:, idx_a);
 % Note: 2.16 assumes F_q_a is the UNKNOWN actuation force F_qa, and moves it to LHS.
 % Here F_q_a includes tau_psi (actuation) AND dissipation.
 % We should split F_q_a into F_act + F_diss_a
-F_act_a = [tau_psi]; 
+F_act_a = [tau_psi];
 F_diss_a = F_diss(idx_a);
 
 % The term F_q_a_rest in RHS would be F_diss_a.
@@ -170,8 +170,6 @@ end
 Gamma = -dW_dt * dq; % RHS of acceleration constraint
 
 % Partition Gamma into terms depending on ddq (none) and rest (all)
-% Actually Gamma = - (dW_p * dq_p + dW_a * dq_a) ?
-% No, dW/dt includes dq terms.
 % The constraint equation is W * ddq + dW_dt * dq = 0
 % W_p * ddq_p + W_a * ddq_a = Gamma
 
@@ -184,14 +182,14 @@ LHS_Matrix = [
     M_pp,               zeros(5,1),      -W_p.';
     M_pa.',             -1,              -W_a.';
     W_p,                zeros(2,1),       zeros(2,2)
-];
+    ];
 
 % RHS Vector
 RHS_Vector = [
     -M_pa * sym('ddpsi') - B_p - G_p + F_q_p;         % Top block (5 rows)
     -M_aa * sym('ddpsi') - B_a - G_a + F_diss_a;      % Middle block (1 row) - Note: tau_psi moved to LHS
     -W_a * sym('ddpsi') + Gamma                       % Bottom block (2 rows)
-];
+    ];
 
 %% 10. Display Results for Verification
 disp('Constraint Matrix W:');
@@ -213,9 +211,6 @@ disp(RHS_Vector);
 % 2. Rolling resistance at wheels (dissipative)
 % Actuation torque is internal. Gravity is in vertical plane (ignored/horizontal motion).
 % Springs/dampers at hinges are internal to the multi-body system?
-% Wait, the problem asks for "total external force acting on the vehicle".
-% The vehicle is the whole system.
-% Internal forces (springs, dampers, actuation) sum to zero.
 % External forces are from the ground interaction at the wheels.
 
 % Force at wheel contact i: F_contact_i = F_constraint_i + F_roll_i
@@ -243,7 +238,7 @@ F_total_1 = F_constr_1 + F_roll_1;
 F_total_2 = F_constr_2 + F_roll_2;
 
 M_ext_total = (r_p1_c(1)*F_total_1(2) - r_p1_c(2)*F_total_1(1)) + ...
-              (r_p2_c(1)*F_total_2(2) - r_p2_c(2)*F_total_2(1));
+    (r_p2_c(1)*F_total_2(2) - r_p2_c(2)*F_total_2(1));
 
 M_ext_total = simplify(M_ext_total);
 
@@ -253,10 +248,18 @@ disp(F_ext_total);
 disp('Total External Moment M_c:');
 disp(M_ext_total);
 
-%% 13. Export Function
+%% 13. Export Functions
 ddpsi_sym = sym('ddpsi');
-matlabFunction(LHS_Matrix, RHS_Vector, F_ext_total, M_ext_total, 'File', 'get_EOM_matrices', ...
-    'Vars', {q, dq, m1, m2, J1, J2, b, d, k, c, cw, ddpsi_sym, tau_psi, lambda1, lambda2});
 
+% 1. Dynamics Matrices Function
+% Returns LHS and RHS for the linear system A*X = B
+% where X = [ddq_p; tau_psi; lambda]
+matlabFunction(LHS_Matrix, RHS_Vector, 'File', 'get_dynamics_matrices', ...
+    'Vars', {q, dq, m1, m2, J1, J2, b, d, k, c, cw, ddpsi_sym});
+
+% 2. Contact Forces Function
+% Returns Total External Force and Moment based on state and constraint forces
+matlabFunction(F_ext_total, M_ext_total, 'File', 'get_contact_forces', ...
+    'Vars', {q, dq, m1, m2, J1, J2, b, d, k, c, cw, lambda1, lambda2});
 
 

@@ -47,16 +47,23 @@ function plot_results_full()
     if ~exist(fig_dir, 'dir')
         mkdir(fig_dir);
     end
+
+    % Set all figures to the same 600x400 size
+    set(0, 'defaultFigurePosition', [100, 100, 600, 400]);
+
+    set(groot, 'defaultTextInterpreter', 'latex');
+    set(groot, 'defaultAxesTickLabelInterpreter', 'latex');
+    set(groot, 'defaultLegendInterpreter', 'latex');
     
     %% 2. Plot Generation
     
     % -- (a) Wheels' angles phi1, phi2 --
     f_a = figure('Name', 'Wheels Angles', 'Visible', 'off');
-    plot(t, rad2deg(phi1), 'LineWidth', 2, 'DisplayName', '\phi_1');
+    plot(t, rad2deg(phi1), 'LineWidth', 2, 'DisplayName', '$\phi_1$');
     hold on;
-    plot(t, rad2deg(phi2), 'LineWidth', 2, 'DisplayName', '\phi_2');
+    plot(t, rad2deg(phi2), 'LineWidth', 2, 'DisplayName', '$\phi_2$');
     xlabel('Time [s]'); ylabel('Angle [deg]');
-    title('(a) Wheels'' Angles \phi_1, \phi_2');
+    title('(a) Wheels'' Angles $\phi_1, \phi_2$');
     legend('show'); grid on;
     saveas(f_a, fullfile(fig_dir, 'HDY1_HW002_Fig_a.png'));
     
@@ -64,7 +71,7 @@ function plot_results_full()
     f_b = figure('Name', 'Body Orientation', 'Visible', 'off');
     plot(t, rad2deg(theta), 'LineWidth', 2);
     xlabel('Time [s]'); ylabel('Angle [deg]');
-    title('(b) Body Orientation \theta(t)');
+    title('(b) Body Orientation $\theta(t)$');
     grid on;
     saveas(f_b, fullfile(fig_dir, 'HDY1_HW002_Fig_b.png'));
     
@@ -76,25 +83,25 @@ function plot_results_full()
     f_c = figure('Name', 'Projected COM Velocity', 'Visible', 'off');
     plot(t, vc_proj, 'LineWidth', 2);
     xlabel('Time [s]'); ylabel('Velocity [m/s]');
-    title('(c) COM Velocity along body axis e_1''');
+    title('(c) COM Velocity along body axis $e_1''$');
     grid on;
     saveas(f_c, fullfile(fig_dir, 'HDY1_HW002_Fig_c.png'));
     
     % -- (d) Trajectory of C --
     f_d = figure('Name', 'Trajectory', 'Visible', 'off');
     plot(x, y, 'LineWidth', 2);
-    xlabel('x [m]'); ylabel('y [m]');
-    title('(d) Trajectory of Center of Mass C');
+    xlabel('$x$ [m]'); ylabel('$y$ [m]');
+    title('(d) Trajectory of Center of Mass $c$');
     axis equal; grid on;
     saveas(f_d, fullfile(fig_dir, 'HDY1_HW002_Fig_d.png'));
     
     % -- (e) Constraint Forces lambda --
     f_e = figure('Name', 'Constraint Forces', 'Visible', 'off');
-    plot(t, lam(1,:), 'LineWidth', 2, 'DisplayName', '\lambda_1');
+    plot(t, lam(1,:), 'LineWidth', 2, 'DisplayName', '$\lambda_1$');
     hold on;
-    plot(t, lam(2,:), 'LineWidth', 2, 'DisplayName', '\lambda_2');
+    plot(t, lam(2,:), 'LineWidth', 2, 'DisplayName', '$\lambda_2$');
     xlabel('Time [s]'); ylabel('Force [N]');
-    title('(e) Constraint Forces \lambda_1, \lambda_2');
+    title('(e) Constraint Forces $\lambda_1, \lambda_2$');
     legend('show'); grid on;
     saveas(f_e, fullfile(fig_dir, 'HDY1_HW002_Fig_e.png'));
     
@@ -102,7 +109,7 @@ function plot_results_full()
     f_f = figure('Name', 'Actuation Torque', 'Visible', 'off');
     plot(t, tau_psi, 'LineWidth', 2);
     xlabel('Time [s]'); ylabel('Torque [Nm]');
-    title('(f) Actuation Torque \tau_\psi(t)');
+    title('(f) Actuation Torque $\tau_\psi(t)$');
     grid on;
     saveas(f_f, fullfile(fig_dir, 'HDY1_HW002_Fig_f.png'));
     
@@ -112,9 +119,9 @@ function plot_results_full()
     ma_x = m_total * ddx;
     
     f_g = figure('Name', 'Linear Momentum Check', 'Visible', 'off');
-    plot(t, F_ext_x, 'b', 'LineWidth', 4, 'DisplayName', 'F_{ext} \cdot e_1');
+    plot(t, F_ext_x, 'LineWidth', 2, 'DisplayName', '$\mathbf{F}_{ext} \cdot \mathbf{e}_1$');
     hold on;
-    plot(t, ma_x, 'r--', 'LineWidth', 2, 'DisplayName', 'm \ddot{r}_c \cdot e_1');
+    plot(t, ma_x, '--', 'LineWidth', 2, 'DisplayName', '$m \ddot{\mathbf{r}}_c \cdot \mathbf{e}_1$');
     xlabel('Time [s]'); ylabel('Force [N]');
     title('(g) Linear Momentum Check (X-dir)');
     legend('show'); grid on;
@@ -127,9 +134,9 @@ function plot_results_full()
     dHc_dt = p.J1 * ddtheta + p.J2 * (ddtheta + ddpsi);
     
     f_h = figure('Name', 'Angular Momentum Check', 'Visible', 'off');
-    plot(t, Mc, 'b', 'LineWidth', 4, 'DisplayName', 'M_c');
+    plot(t, Mc, 'LineWidth', 2, 'DisplayName', '$M_c$');
     hold on;
-    plot(t, dHc_dt, 'r--', 'LineWidth', 2, 'DisplayName', '\dot{H}_c');
+    plot(t, dHc_dt, '--', 'LineWidth', 2, 'DisplayName', '$\dot{H}_c$');
     xlabel('Time [s]'); ylabel('Moment [Nm]');
     title('(h) Angular Momentum Check');
     legend('show'); grid on;
@@ -144,41 +151,19 @@ function plot_results_full()
     dE_dt = gradient(E, dt);
     
     % Non-conservative Power
-    % P_NC = Q_act*dq + Q_diss*dq
+    % P_nc = Q_act*dq + Q_diss*dq
     % P_act = tau_psi * dpsi
     % P_diss = -2 * D (Rayleigh dissipation)
     
     % Recompute Dissipation Function D
-    % Need v_p1, v_p2 magnitudes squared
-    % Using derived expressions:
-    % v_p1^2 = v_c^2 + b^2 theta_dot^2 + d^2 (theta_dot+phi1_dot)^2 ...
-    % Let's do vector calculation for safety
-    % r_p1_dot ... easier to use v_p1_sq from derivation or compute from geometry
-    % v_p1 = v_c + omega x r_p1_c ... complex.
-    % Use the explicit formulas from HW2.5/2.6 or just code geometry again?
-    % Let's code geometry vectors
-    
-    vp1_sq = zeros(1, length(t));
-    vp2_sq = zeros(1, length(t));
-    
-    for k = 1:length(t)
-        th = theta(k); ph1 = phi1(k); ph2 = phi2(k);
-        dth = dtheta(k); dph1 = dphi1(k); dph2 = dphi2(k);
-        dx_k = dx(k); dy_k = dy(k);
-        
-        % Vectors from derivation
-        % v_p1_x = dx + b*dth*sin(th) + d*(dth+dph1)*sin(th+ph1);
-        % v_p1_y = dy - b*dth*cos(th) - d*(dth+dph1)*cos(th+ph1);
-        vx1 = dx_k + p.b*dth*sin(th) + p.d*(dth+dph1)*sin(th+ph1);
-        vy1 = dy_k - p.b*dth*cos(th) - p.d*(dth+dph1)*cos(th+ph1);
-        vp1_sq(k) = vx1^2 + vy1^2;
-        
-        % v_p2_x = dx - b*dth*sin(th) + d*(dth+dph2)*sin(th+ph2);
-        % v_p2_y = dy + b*dth*cos(th) - d*(dth+dph2)*cos(th+ph2);
-        vx2 = dx_k - p.b*dth*sin(th) + p.d*(dth+dph2)*sin(th+ph2);
-        vy2 = dy_k + p.b*dth*cos(th) - p.d*(dth+dph2)*cos(th+ph2);
-        vp2_sq(k) = vx2^2 + vy2^2;
-    end
+    % Vectorized calculation
+    vx1 = dx + p.b * dtheta .* sin(theta) + p.d * (dtheta + dphi1) .* sin(theta + phi1);
+    vy1 = dy - p.b * dtheta .* cos(theta) - p.d * (dtheta + dphi1) .* cos(theta + phi1);
+    vp1_sq = vx1.^2 + vy1.^2;
+
+    vx2 = dx - p.b * dtheta .* sin(theta) + p.d * (dtheta + dphi2) .* sin(theta + phi2);
+    vy2 = dy + p.b * dtheta .* cos(theta) - p.d * (dtheta + dphi2) .* cos(theta + phi2);
+    vp2_sq = vx2.^2 + vy2.^2;
     
     D = 0.5 * p.c * dphi1.^2 + 0.5 * p.c * dphi2.^2 + ...
         0.5 * p.cw * vp1_sq + 0.5 * p.cw * vp2_sq;
@@ -188,9 +173,9 @@ function plot_results_full()
     P_nc = P_act + P_diss;
     
     f_i = figure('Name', 'Power Balance', 'Visible', 'off');
-    plot(t, dE_dt, 'b', 'LineWidth', 4, 'DisplayName', 'd(T+V)/dt');
+    plot(t, dE_dt, 'LineWidth', 2, 'DisplayName', '$d(T+V)/dt$');
     hold on;
-    plot(t, P_nc, 'r--', 'LineWidth', 2, 'DisplayName', 'P_{NC}');
+    plot(t, P_nc, '--', 'LineWidth', 2, 'DisplayName', '$P_{nc}$');
     xlabel('Time [s]'); ylabel('Power [W]');
     title('(i) Power Balance Check');
     legend('show'); grid on;
@@ -198,18 +183,13 @@ function plot_results_full()
     
     % -- (j) Drift / Skid Velocities --
     % w1 * dq = 0?
-    % w1 * dq = -sin(th+ph1)*dx + cos(th+ph1)*dy - (d+b*cos(ph1))*dth - d*dph1
     
-    drift1 = zeros(1, length(t));
-    drift2 = zeros(1, length(t));
-    
-    for k = 1:length(t)
-        th = theta(k); ph1 = phi1(k); ph2 = phi2(k);
-        dx_k = dx(k); dy_k = dy(k); dth = dtheta(k); dph1 = dphi1(k); dph2 = dphi2(k);
-        
-        drift1(k) = -sin(th+ph1)*dx_k + cos(th+ph1)*dy_k - (p.d + p.b*cos(ph1))*dth - p.d*dph1;
-        drift2(k) = -sin(th+ph2)*dx_k + cos(th+ph2)*dy_k + (p.b*cos(ph2) - p.d)*dth - p.d*dph2;
-    end
+    % Vectorized drift calculation
+    drift1 = -sin(theta + phi1) .* dx + cos(theta + phi1) .* dy - ...
+             (p.d + p.b * cos(phi1)) .* dtheta - p.d * dphi1;
+             
+    drift2 = -sin(theta + phi2) .* dx + cos(theta + phi2) .* dy + ...
+             (p.b * cos(phi2) - p.d) .* dtheta - p.d * dphi2;
     
     f_j = figure('Name', 'Constraint Drift', 'Visible', 'off');
     plot(t, drift1, 'DisplayName', 'Constraint 1');

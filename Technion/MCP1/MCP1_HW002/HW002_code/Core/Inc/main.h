@@ -76,7 +76,19 @@ void Error_Handler(void);
 #define T_SWO_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
+#define STATE_IDLE 1
+#define STATE_PWM 2
+#define STATE_SQUARE 3
+#define STATE_DRIVE 4
 
+#define MODE_F 1
+#define MODE_B 2
+#define MODE_CW 3
+#define MODE_CCW 4
+#define MODE_NW 5
+#define MODE_SW 6
+#define MODE_NE 7
+#define MODE_SE 8
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
