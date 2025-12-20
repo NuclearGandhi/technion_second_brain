@@ -105,7 +105,7 @@ function animate_simulation()
           'FaceColor', 'k', 'Parent', t_arm2);
     
     % Trace for Center of Mass
-    h_trace = plot(x(1), y(1), 'r--', 'LineWidth', 1, 'Parent', ax);
+    h_trace = plot(x(1), y(1), 'r-', 'LineWidth', 1, 'Parent', ax);
     
     
     %% 4. Animation Loop

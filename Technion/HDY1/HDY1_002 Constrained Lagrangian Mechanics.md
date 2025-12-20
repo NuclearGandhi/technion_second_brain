@@ -129,8 +129,8 @@ Finally, substituting $\text{(2.9)}$ into $\text{(2.3)}$ gives a second-order OD
 >\end{pmatrix}
 >\end{aligned}$$
 >Now applying $\text{(2.4)}$:
->- for $i=1,\,{q}_{1}=r$:
->   $$\begin{aligned}
+> - for $i=1,\,{q}_{1}=r$:
+> 	$$\begin{aligned}
 >	 & \dfrac{\mathrm{d}}{\mathrm{d}t}\left( \dfrac{ \partial T }{ \partial \dot{r} }  \right)=m\ddot{r} \\[1ex]
 >	 & \dfrac{ \partial T }{ \partial r } =mr\dot{\theta}^{2} \\[1ex]
 >	 & \dfrac{ \partial V }{ \partial r } =-mg\cos\theta \\[1ex]
@@ -559,7 +559,7 @@ T & =\dfrac{1}{2}\dot{\mathbf{q}}^{T}\mathbf{M}\dot{\mathbf{q}} \\[1ex]
 \end{aligned}$$
 This implies that the solution trajectories move along ellipse arcs in $({u}_{1},\omega)$ plane. Each ellipse corresponds to the initial (conserved) energy level.
 
-![[HDY1_002/chaplygin_phase_plane.png|bookhue|600]]^figure-chaplygin-phase-plane
+![[chaplygin_phase_plane.png|bookhue|600]]^figure-chaplygin-phase-plane
 >Phase plane of Chaplygin's Sleigh. Stable equilibria in solid red, unstable in dashed red.
 
 Note the remarkable difference from pendulum dynamics: similar phase plane of elliptic trajectories, but here energy conservation does NOT imply marginal stability and periodic solution, a unique feature of nonholonomic system!

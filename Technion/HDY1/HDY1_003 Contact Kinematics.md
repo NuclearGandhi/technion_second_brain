@@ -4,7 +4,7 @@ aliases:
 ---
 # Contact Kinematics
 Let us begin with a mathematical representation of rigid-body contact. Let ${B}_{1}$ and ${B}_{2}$ represent two rigid bodies in $\mathbb{R}^{2}$ or $\mathbb{R}^{3}$. The distance between bodies is defined as
-$$d_{21}=\min_{\mathbf{r}_{1}\in B_{1},\ \mathbf{r}_{2}\in B_{2}} \lVert \mathbf{r}_{2}-\mathbf{r}_{1} \rVert.$$
+$$d_{21}=\min_{\mathbf{r}_{1}\in B_{1},\ \mathbf{r}_{2}\in B_{2}} \lVert \mathbf{r}_{2}-\mathbf{r}_{1} \rVert$$
 That is, the minimum distance between pairs of material points of the two bodies. It can be proven that for $d_{21}>0$, a minimizing pair $\mathbf{r}_{1},\mathbf{r}_{2}$ is attained at boundary points of $B_{1},B_{2}$, such that $\mathbf{r}_{2}-\mathbf{r}_{1}$ is directed along the common normal $\mathbf{n}_{21}$ to the boundaries of $B_{1},B_{2}$ (pointing from $B_{1}$ to $B_{2}$). Note that $\mathbf{n}_{21}$ is also well defined in the limiting case $d_{21}=0$. For a body with a non-smooth boundary (e.g. a polygon or polyhedron), the minimum distance may be attained at a vertex.
 
 ![[HDY1_003 Contact Kinematics 2025-12-02 15.22.32.excalidraw.svg]]^figure-rigid-body-distances
@@ -19,9 +19,9 @@ $$(\mathbf{r}_{2}-\mathbf{r}_{1})\cdot(\mathbf{r}_{2}-\mathbf{r}_{1})=c^{2}$$
 Time-differentiation gives
 $$2(\dot{\mathbf{r}}_{2}-\dot{\mathbf{r}}_{1})\cdot(\mathbf{r}_{2}-\mathbf{r}_{1})=0$$
 Using $\mathbf{r}_{2}-\mathbf{r}_{1}=d_{21}\mathbf{n}_{21}$, we get (for $d_{21}>0$) the standard normal-velocity condition
-$$({\mathbf{v}}_{2}-{\mathbf{v}}_{1})\cdot \mathbf{n}_{21}=0.$$
-This holds also for the limiting case of contact ${d}_{21}=0$ and implies that the normal relative velocity at the contact points is zero for maintaining contact,
-$$({\mathbf{v}}_{2}-{\mathbf{v}}_{1})\cdot \mathbf{n}_{21}=0.$$
+$$({\mathbf{v}}_{2}-{\mathbf{v}}_{1})\cdot \mathbf{n}_{21}=0$$
+This holds also for the limiting case of contact ${d}_{21}=0$ and implies that the normal relative velocity at the contact points is zero for maintaining contact.
+
 In most cases, the contact is *unilateral*, so that for ${d}_{21}=0$, $(\mathbf{v}_{2}-\mathbf{v}_{1})\cdot \mathbf{n}_{21}>0$ implies contact separation, while $(\mathbf{v}_{2}-\mathbf{v}_{1})\cdot \mathbf{n}_{21}<0$ implies collision between the bodies (penetration). $(\mathbf{v}_{2}-\mathbf{v}_{1})\cdot \mathbf{n}_{21}=0$ means maintaining contact.
 
 >[!notes] Note: 
@@ -67,7 +67,7 @@ Note that this does not necessarily imply that the contact points $\mathbf{r}_{1
 > So, is the no-slip constraint integrable?
 > - In 2D motion, yes. The constraint $s'=s''+c$ can be written as $h(\mathbf{q})=0$. Together with the contact constraint it reduces the number of DOFs for the relative motion to $1$.
 > 
->   For example, for a wheel rolling on the ground in 2D, $\mathbf{q}=\begin{pmatrix}x & y & \theta\end{pmatrix}^{T}$. The contact constraint is $y=R$, and the pure rolling constraint is $R\dot{\theta}=\dot{x}$. Integrating gives $x=x_{0}+R\theta$. The motion has 1 DOF and can be parameterized by $x$ or by $\theta$. Examples: [wheel on ground](https://www.f-lohmueller.de/pov_tut/animate/anim131e.htm), [planetary gear](https://grabcad.com/library/planetary-epicyclic-gear-train-animated-1#!).
+>   For example, for a wheel rolling on the ground in 2D, $\mathbf{q}=\begin{pmatrix}x & y & \theta\end{pmatrix}^{T}$. The contact constraint is $y=R$, and the pure rolling constraint is $R\dot{\theta}=\dot{x}$. Integrating gives $x=x_{0}+R\theta$. The motion has 1 DOF and can be parameterized by $x$ or by $\theta$. Examples: [wheel on ground](https://www.f-lohmueller.de/pov_tut/animate/anim131e.htm) (the wheel's rotation angle directly determines horizontal position), [planetary gear](https://grabcad.com/library/planetary-epicyclic-gear-train-animated-1#!) (constrained rolling in a gear train).
 > - For smooth bodies in 3D no-slip constraints are **NOT** integrable. Examples: upright rolling disc on plane, rolling sphere, rolling ellipsoid.
 > - For a body with a non-smooth boundary in contact with a smooth body, a *vertex point* of ${B}_{1}$ will keep contact with a *fixed* point on the smooth body ${B}_{2}$. In such a case, rolling is integrable also for 3D motion. Example: Euler's spinning top.
 > 
@@ -84,7 +84,7 @@ When the contact is subject to compression load in normal direction, the bodies 
 > Contact forces with penetration.
 
 For small deformations, the normal force ${f}_{n}$ depends monotonically on the normal displacement ${\delta}_{n}$. Hertz theory of contact mechanics of smooth frictionless bodies such as cylinders and ellipsoids suggests a power law of ${f}_{n}\sim{{{\delta}_{n}}}^{1.5}$. Around an operating point ${\delta}_{n,0}$, this can be linearized to a spring law of the form
-$$f_{n}\approx f_{n,0}+k_{n}(\delta_{n}-\delta_{n,0}).$$
+$$f_{n}\approx f_{n,0}+k_{n}(\delta_{n}-\delta_{n,0})$$
 
 Now, suppose that after applying a normal loading force ${f}_{n}$ and reaching an equilibrium normal displacement ${\delta}_{n}$, one begins to apply a loading force ${f}_{t}$ in the tangential direction, causing a tangential displacement ${\delta}_{t}$. For small loads, the force-displacement may behave linearly as ${f}_{t}=-{k}_{t}{\delta}_{t}$ and the "normal penetration cavity" deforms asymmetrically until reaching a critical tangential force ${f}_{\text{cr}}$ where the normal cavity "fails" and the bodies transition from micro- to macro-scale slippage. Both ${k}_{t}$ and the critical tangential force ${f}_{\text{cr}}$ increase for larger initial normal penetration and force.
 
@@ -105,10 +105,10 @@ called **friction angle**. A simple experiment for determining the friction coef
 >Friction cone, friction angle.
 
 After macro-scale slip begins, the actual friction force ${f}_{t}$ may drop a bit below ${f}_{\text{cr}}$. This is sometimes represented by different coefficients of static and dynamic friction ${\mu}_{s}>{\mu}_{d}$, such that
-$$f_{t}=-\mu_{d}\,\mathrm{sgn}(v_{t})\,f_{n}\qquad\text{for }v_{t}\neq 0.$$
+$$f_{t}=-\mu_{d}\,\mathrm{sgn}(v_{t})\,f_{n}\qquad\text{for }v_{t}\neq 0$$
 To summarize, the friction law in a unilateral contact can be formulated as:
-$$\begin{cases}
-{f}_{n}={f}_{t}=0 &  {v}_{n}>0 & \text{(contact separation)} \\[1ex]
+
+$$\begin{cases} {f}_{n}={f}_{t}=0 &  {v}_{n}> 0 & \text{(contact separation)} \\[1ex]
 {f}_{n}\geq 0 & {v}_{n}=0 & \text{(contact)} \\[1ex]
 \lvert {f}_{t} \rvert \leq  {\mu}_{s}{f}_{n} & {v}_{t}=0 & \text{(no-slip)} \\[1ex]
 {f}_{t}=-\mathrm{sgn}({v}_{t}){\mu}_{d}{f}_{n} & {v}_{t}\neq 0 & \text{(slip)}
@@ -124,7 +124,7 @@ For simplicity, in many cases one does not distinguish between static and dynami
 
 ### Extension of Coulomb's Friction to 3D
 The tangent is now a 2D plane, perpendicular to $\hat{\mathbf{n}}$. The contact force is written as $\mathbf{f}=f_{n}\hat{\mathbf{n}}+\mathbf{f}_{t}$, where $\mathbf{f}_{t}\perp \hat{\mathbf{n}}$, or equivalently
-$$\mathbf{f}_{t}=\mathbf{f}-(\mathbf{f}\cdot\hat{\mathbf{n}})\hat{\mathbf{n}}.$$
+$$\mathbf{f}_{t}=\mathbf{f}-(\mathbf{f}\cdot\hat{\mathbf{n}})\hat{\mathbf{n}}$$
 Coulomb's inequality states that $\lVert \mathbf{f}_{t} \rVert\leq \mu f_{n}$. In components (assuming $\hat{\mathbf{n}}=\hat{\mathbf{z}}$), $\sqrt{f_{x}^{2}+f_{y}^{2}}\leq \mu f_{z}$. Graphically, the direction of $\mathbf{f}$ must lie within a quadratic "ice-cream cone".
 
 ![[HDY1_003 Contact Kinematics 2025-12-05 17.07.31.excalidraw.svg]]^figure-3d-frictional-contact
@@ -134,7 +134,7 @@ Coulomb's inequality states that $\lVert \mathbf{f}_{t} \rVert\leq \mu f_{n}$. I
 
 Another effect that may exist in 3D frictional contact: If the contacting bodies slightly deform to a contact region of small circular patch, tangential forces may generate added resisting "torsional moment" ${\tau}_{n}$ about $\hat{\mathbf{n}}$. Since the radius of the contact patch grows monotonically with ${f}_{n}$, this **soft finger model** assumes that $\lvert {\tau}_{n} \rvert \leq {r}_{t}\mu {f}_{n}$, where ${r}_{t}$ is the torsional friction coefficient (represents "effective" radius of the contact patch).
 
-## Graphical Analysis of Force Statics in 2D
+# Graphical Analysis of Force Statics in 2D
 When a static body/structure is subject to *two* external forces (vectors) and no external torques (i.e. [[SLD1_003 מסבכים, מסגרות ומכונות#מסבכים|two-force member]]), the forces are equal and opposite, and must be directed along the line connecting the two points where the forces act.
 
 In the case of *three* external forces and no external pure torques, the lines of action of the three forces must intersect at a common point, OR all three forces must be parallel and anti-parallel (this is actually a limit of the general case with intersection point approaching infinity).
@@ -158,7 +158,7 @@ What if we do have frictional contacts? What if instead of gravity, we'd like to
 
 To answer these, we'll learn about two methods: **Linear Programming** and **Moment Labeling**. But first, we need to understand **Polyhedral Cones**.
 
-### Polyhedral Cones
+## Polyhedral Cones
 A vector $\mathbf{w}\in \mathbb{R}^{3}$ which represents a load of force and a moment generated by a force $\mathbf{f}$ acting at a point $\mathbf{r}$ is called **wrench**, and defined as:
 $$\mathbf{w}=\begin{pmatrix}
 {f}_{x} \\
@@ -226,12 +226,8 @@ Interpretation: Intersection of $m$ half spaces in $\mathbb{R}^{n}$ bounded by h
 
 Note that $\text{(3.8)}$ is a special case of $\text{(3.9)}$ but not vice versa, since $W$ in $\text{(3.9)}$ is not necessarily a cone. An equivalent formulation of CPS is:
 $$W=\{ {\lambda}_{1}\hat{\mathbf{w}}_{1}+\dots +{\lambda}_{N}\hat{\mathbf{w}}_{N}\mid{\lambda}_{1},\dots ,{\lambda}_{N}\geq 0 \quad \text{and}\quad {\lambda}_{1}+\dots +{\lambda}_{N}=1 \} \tag{3.10}$$
-### Linear Programming
 
->[!TODO] TODO: להשלים
-
-
-### The Moment Labeling Method
+## The Moment Labeling Method
 This is a method for graphical representation of polyhedral convex cones of wrenches spanned by action lines of unilateral forces in 2D. Consider a PCC defined as in $\text{(3.7)}$. We now define two sets of points in the 2D plane as:
 $$\begin{aligned}
  & {P}_{+}(W)=\left\{  \mathbf{p} \in \mathbb{R}^{2}\mid\hat{\mathbf{z}}\cdot[(\mathbf{r}-\mathbf{p})\times\hat{\mathbf{u}}]\geq  0 \quad \text{for every}\quad \begin{pmatrix}
@@ -311,3 +307,95 @@ The set of loads that can be resisted/balanced by wrenches in $W$ is characteriz
 > >A case of large friction cones.
 > 
 > Now, any line has ${P}_{+}$ to its "right" and ${P}_{-}$ to its "left". Therefore, any load can be resisted by the contact points, including gravity.
+
+>[!theorem] Theorem:
+ >A 2D grasp with two frictional contacts satisfies force closure iff the line segment connecting the two contacts is fully contained in the two friction cones.
+
+ Undesired effect of force closure is jamming/wedging/clamping/self-locking (Hebrew: כליבה). Examples: stuck drawer, jamming in peg-in-hole insertion.
+ ![[HDY1_003 Contact Kinematics 2025-12-16 15.08.40.excalidraw.svg]]^figure-jamming-example
+>Example of jamming.
+
+## Representing Planar Statics Problems with Unilateral Frictional Contacts as Convex Polyhedral Sets
+
+A unilateral frictional contact force in 2D satisfies Coulomb's law $0\leq \lvert \mathbf{f}_{i}\cdot \hat{\mathbf{t}}_{i} \rvert\leq \mu(\mathbf{f}_{i}\cdot \hat{\mathbf{n}}_{i})$ when ${v}_{t}=0$. The set of all possible wrenches (loads of net force + moment) that can be generated by a frictional contact at point $\mathbf{r}$ are formulated as a polyhedral set
+$$W=\left\{  \begin{pmatrix}
+\mathbf{f} \\
+\hat{\mathbf{z}}\cdot(\mathbf{r}\times \mathbf{f})
+\end{pmatrix} \mid -\mu(\mathbf{f}\cdot\hat{\mathbf{n}})\leq  \mathbf{f}\cdot \hat{\mathbf{t}}\leq  \mu(\mathbf{f}\cdot\hat{\mathbf{n}})  \right\}$$
+
+On the other hand, $W$ can be formulated as in $\text{(3.7)}$, where the two generators are $$\hat{\mathbf{w}}_{i}=\begin{pmatrix}\hat{\mathbf{u}}_{i}\\\hat{\mathbf{z}}\cdot(\mathbf{r}\times\hat{\mathbf{u}}_{i})\end{pmatrix}\quad \text{where}\quad \begin{cases}
+\hat{\mathbf{u}}_{1}=\hat{\mathbf{n}}-\mu \hat{\mathbf{t}} \\
+\hat{\mathbf{u}}_{2}=\hat{\mathbf{n}}+\mu \hat{\mathbf{t}}
+\end{cases}$$
+
+The wrenches $\hat{\mathbf{w}}_{1},\hat{\mathbf{w}}_{2}$ represent two action lines emanating from the contact point $\mathbf{r}$ which are directed along the two edges of the friction cone. When the contact is slipping ${v}_{t}\neq 0$, the contact force satisfies $\mathbf{f}\cdot \hat{\mathbf{t}}=-\mathrm{sgn}({v}_{t})\mu(\mathbf{f}\cdot\hat{\mathbf{n}})$ and $\mathbf{f}\cdot\hat{\mathbf{n}}\geq 0$.
+
+![[HDY1_003 Contact Kinematics 2025-12-20 16.45.38.excalidraw.svg]]^figure-no-slip-slipping-contact
+>No-slip and slipping contact.
+
+
+>[!example] Example:
+> We are given heavy bar on two moving supports with friction. It is prescribed to a slow relative motion of its supports (quasistatic motion).
+> 
+> ![[HDY1_003 Contact Kinematics 2025-12-16 15.17.05.excalidraw.svg]]^figure-heavy-bar
+> >Heavy bar on two moving supports with friction.
+> 
+> - Which contact(s) is slipping?
+> - Is it possible that both are sticking? **No**. Kinematically infeasible, relative distance is changing.
+> - Is it possible that both are slipping? **No**, except for specific location of center of mass. Statics is [[SLD1_002 שיווי משקל#מסויימות סטטית|under-determinate]].
+> 
+> Let's apply **moment labeling**. assuming that both contact slip, we know that direction of the two contact forces, one two opposing edges of friction cones. Moment labeling implies that COM must lie on the vertical line passing through the intersection point of the force lines - too specific.
+> 
+> ![[HDY1_003 Contact Kinematics 2025-12-16 15.29.06.excalidraw.svg]]^figure-moving-supports-both-slip
+> >Bar on moving supports - assuming both contacts slip.
+> 
+> Now assume one contact slips and the other sticks. Which COM loads can be resisted by the contacts?
+> 
+> ![[HDY1_003 Contact Kinematics 2025-12-20 16.07.24.excalidraw.svg]]^figure-moving-supports-one-slips-plus-minus
+> >Bar on moving supports - assuming one contact slips and the other sticks.
+> 
+> ![[HDY1_003 Contact Kinematics 2025-12-20 16.15.45.excalidraw.svg]]^figure-slip-stick-p-plus-minus
+> >${P}_{+}(W)$ and ${P}_{-}(W)$ of slip-stick configuration. 
+> 
+> 
+> The contact which is closer to COM (in horizontal distance) is sticking, while the other one is slipping. Same happens when supports that are moving *away* from each other. For supports that are moving *away* from each other, the farther contact from COM will keep slipping. For supports that are moving *towards* each other, the two contacts *alternate* between stick and slip.
+> 
+> ![](https://www.youtube.com/watch?v=oGveAEHsBhg)
+> 
+
+The bipedal crawling locomotion example - periodically varying distance between two feet with passive frictional contacts. Manipulating COM location can dictate the stick-slip motion of contacts to induce net propulsion of inchworm-like crawling.
+
+![](https://www.youtube.com/watch?v=oHybLY7uaAo)
+
+![](https://www.youtube.com/watch?v=8Y4mvwLYnKY)
+
+
+# Linear Programming
+The moment labeling method provides geometric intuition, but for computational analysis of contact forces, we can formulate the problem as a Linear Programming problem.
+
+The **linear programming problem (LP)** is a constrained minimization problem with objective function and inequality constraints which are both linear (polyhedral) in variables. It is defined as:
+$$\min_{\mathbf{x}\in \mathbb{R}^{n}}\mathbf{c}^{T}\mathbf{x}\qquad \text{under contraints}\qquad \mathbf{A}\mathbf{x}\leq  \mathbf{b}\tag{3.11}$$
+
+For $n=2$ (i.e., the 2D case), the problem is simple:
+![[HDY1_003 Contact Kinematics 2025-12-16 16.27.32.excalidraw.svg]]^figure-lp-constraints-visualization
+>Visualization of the constraints $\mathbf{A}\mathbf{x}\leq \mathbf{b}$.
+
+The value to minimize (the cost function) will be of the form:
+$$\min_{}\{ {c}_{1}{x}_{1}+{c}_{2}{x}_{2} \}$$
+In linear programming, because the gradient $\begin{pmatrix}{c}_{1} & {c}_{2}\end{pmatrix}^{T}$ is constant, the minima (or maxima) occur only at the vertices!
+
+## The Fundamental Theorem of Linear Programming
+If the minimum/maximum solution of (LP) exists, then it is attained at a **vertex point** of the polyhedral set defined by $\text{(3.9)}$. For $m>n$, a vertex point is a solution $\mathbf{x}$ of the linear system ${{\mathbf{a}_{i}}}^{T}\mathbf{x}={b}_{i}$ for $i={i}_{1},{i}_{2},\dots,{i}_{n}\in \{ 1\dots m \}$. That is, each vertex is obtained by choosing $n$ out of the $m$ scalar inequalities from $\text{(3.9)}$, treating them as equalities, and solving a $n\times n$ linear system (one should check that the solution satisfied all other $m-n$ inequalities, otherwise it is infeasible vertex). The maximal number of possible vertices (vertex points) is
+$$\begin{pmatrix}
+m \\
+n
+\end{pmatrix}=\dfrac{m!}{n!(m-n)!}$$
+The theorem enables solving the optimization by reducing our search of $n$-dimensional space to a discrete list of vertex points only, and there exist standard algorithms for conducting this search in a systematic and efficient ways (simplex, interior point, and more).
+
+There are two typical cases when a solution the the LP problem does not exist:
+1. Infeasible case - when the set $\{ \mathbf{x}:\mathbf{A}\mathbf{x}\leq \mathbf{b} \}$ is empty since the inequalities are contradicting.
+2. Unbounded case - the minimum is $(-\infty)$, occurs only when the set $\{ \mathbf{x}:\mathbf{A}\mathbf{x}\leq \mathbf{b} \}$ is unbounded.
+
+## Generalization of the LP Problem
+1. Find a maximum instead of a minimum: equivalent to original problem since $\max_{}(\mathbf{c}^{T}\mathbf{x})=-\min_{}(-\mathbf{c}^{T}\mathbf{x})$.
+2. Adding $\tilde{m}$ equalities to the polynomial set $\{ \mathbf{x}:{\mathbf{A}}\mathbf{x}\leq {\mathbf{b}} \quad\text{and} \quad \tilde{\mathbf{A}}\mathbf{x}=\tilde{\mathbf{b}} \}$. The number of equities must satisfy $\tilde{m}<n$. In such case one can define a vector of variables with reduced dimension $\mathbf{z}\in \mathbb{R}^{n-\tilde{m}}$ which parametrizes the subspace of all possible solutions of $\tilde{\mathbf{A}}\mathbf{x}=\tilde{\mathbf{b}}$ as $\mathbf{x}=\mathbf{P}\mathbf{z}+\mathbf{q}$ where $\mathbf{q}$ is a particular solution and $\mathbf{P}$ is a matrix whose columns span the nullspace of $\tilde{\mathbf{A}}$, that is, it satisfied $\tilde{\mathbf{A}}\mathbf{P}=0$. The convex polyhedral set $\mathbf{A}\mathbf{x}\leq \mathbf{b}$ can thus be formulated in terms of the reduced vector $\mathbf{z}$ as $\mathbf{A}(\mathbf{P}\mathbf{z}+\mathbf{q})\leq \mathbf{b}$ and then minimize $\mathbf{c}^{T}(\mathbf{P}\mathbf{z}+\mathbf{q})$ gives an equivalent LP problem without equality constraints.
