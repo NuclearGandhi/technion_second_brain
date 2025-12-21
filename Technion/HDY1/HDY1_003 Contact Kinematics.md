@@ -323,7 +323,8 @@ $$W=\left\{  \begin{pmatrix}
 \hat{\mathbf{z}}\cdot(\mathbf{r}\times \mathbf{f})
 \end{pmatrix} \mid -\mu(\mathbf{f}\cdot\hat{\mathbf{n}})\leq  \mathbf{f}\cdot \hat{\mathbf{t}}\leq  \mu(\mathbf{f}\cdot\hat{\mathbf{n}})  \right\}$$
 
-On the other hand, $W$ can be formulated as in $\text{(3.7)}$, where the two generators are $$\hat{\mathbf{w}}_{i}=\begin{pmatrix}\hat{\mathbf{u}}_{i}\\\hat{\mathbf{z}}\cdot(\mathbf{r}\times\hat{\mathbf{u}}_{i})\end{pmatrix}\quad \text{where}\quad \begin{cases}
+On the other hand, $W$ can be formulated as in $\text{(3.7)}$, where the two generators are
+$$\hat{\mathbf{w}}_{i}=\begin{pmatrix}\hat{\mathbf{u}}_{i}\\\hat{\mathbf{z}}\cdot(\mathbf{r}\times\hat{\mathbf{u}}_{i})\end{pmatrix}\quad \text{where}\quad \begin{cases}
 \hat{\mathbf{u}}_{1}=\hat{\mathbf{n}}-\mu \hat{\mathbf{t}} \\
 \hat{\mathbf{u}}_{2}=\hat{\mathbf{n}}+\mu \hat{\mathbf{t}}
 \end{cases}$$

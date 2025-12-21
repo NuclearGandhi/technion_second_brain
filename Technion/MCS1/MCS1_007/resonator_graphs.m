@@ -100,7 +100,7 @@ for idx = 1:length(K_values)
     % Convert to dB
     H_dB = 20 * log10(H_norm);
     
-    plot(omega_t, H_dB, '-', 'Color', colors(idx,:), 'LineWidth', 1.5, ...
+    plot(omega_t, H_dB, '-', 'Color', colors(idx,:), ...
         'DisplayName', sprintf('$K = %.2f,\\, \\Omega = %.2f$', K, Omega));
 end
 
@@ -152,7 +152,7 @@ for idx = 1:length(K_values)
     Y_norm = abs(Y_total) * Omega / gamma;
     Y_dB = 20 * log10(Y_norm);
     
-    plot(omega_t_bode, Y_dB, '-', 'Color', colors(idx,:), 'LineWidth', 1.5, ...
+    plot(omega_t_bode, Y_dB, '-', 'Color', colors(idx,:), ...
         'DisplayName', sprintf('$K = %.2f$', K));
 end
 
@@ -186,7 +186,7 @@ for idx = 1:length(K_values)
     Y_total = 1i * (1 + gamma ./ denom);
     phi = angle(Y_total) * 180 / pi;
     
-    plot(omega_t_bode, phi, '-', 'Color', colors(idx,:), 'LineWidth', 1.5, ...
+    plot(omega_t_bode, phi, '-', 'Color', colors(idx,:), ...
         'DisplayName', sprintf('$K = %.2f$', K));
 end
 
