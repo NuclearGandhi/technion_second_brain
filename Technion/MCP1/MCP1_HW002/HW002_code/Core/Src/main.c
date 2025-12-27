@@ -268,27 +268,7 @@ int main(void) {
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
     while (1) {
-        HAL_Delay(10);  // wait for some time or it looks weird
-
-        // Send data if requested (could be triggered by a command, but for now just check if we finished recording)
-        // Note: The original code had DO_SEND. We can keep a mechanism to send if needed, 
-        // but the requirements don't explicitly ask for a "send" command, just "record".
-        // However, to get the data out, we likely need to send it. 
-        // Let's assume if we transition from SQUARE to IDLE automatically, we might want to send, 
-        // or we can add a specific command later. For now, I'll leave the send logic commented out 
-        // or removed as it was tied to DO_SEND which is gone. 
-        // If the user wants to dump data, they might need a specific command.
-        
-        /* 
-        if (mode == DO_SEND) {
-            uart_tx_flag = TX_BUSY;
-            HAL_UART_Transmit_IT(UART, (uint8_t *)REC, 10 * NP); // 5 int16_t = 10 bytes
-            mode = DO_IDLE;  // send only once
-            uart_tx_flag = TX_READY;
-            s = 1;  // make sure we start positive next time
-        }
-        */
-
+        HAL_Delay(10);
         handle_comm();
         /* USER CODE END WHILE */
 
@@ -1045,86 +1025,6 @@ void set_drive_pwm(void) {
     // Motor 2 (SW) -> Pwm[1]
     // Motor 3 (NW) -> Pwm[2]
     // Motor 4 (NE) -> Pwm[3]
-    
-    // Wait, the user said:
-    // motor 1 is positioned at se
-    // motor 2 is sw
-    // motor 3 is nw
-    // motor 4 is ne
-    
-    // Standard Mecanum configuration (Top View):
-    //      Front
-    //  NW(3)   NE(4)
-    //
-    //  SW(2)   SE(1)
-    //      Back
-    
-    // Forward: All +
-    // Backward: All -
-    // Slide Right: NW+, SE+, NE-, SW-
-    // Slide Left: NW-, SE-, NE+, SW+
-    // CW: Left+, Right- => NW+, SW+, NE-, SE-
-    // CCW: Left-, Right+ => NW-, SW-, NE+, SE+
-    
-    // Let's re-evaluate the kinematic matrix based on the user's mapping.
-    // If the user provided modes are correct for a standard cart, I just need to ensure
-    // the Pwm array indices match the physical locations.
-    
-    // The previous code assumed:
-    // Pwm[0] = Front Left? No, it was just 0,1,2,3.
-    
-    // Let's stick to the user's specific request:
-    // "motor 1 is positioned at se, 2 is sw, 3 is nw, 4 is ne"
-    
-    // And the modes:
-    // f, b, cw, ccw, nw, sw, ne, se
-    
-    // Let's derive the signs for each wheel for each move:
-    // Forward: All wheels forward.
-    // Backward: All wheels backward.
-    // CW (Turn Right): Left wheels forward, Right wheels backward.
-    //      Left wheels: 2(SW), 3(NW) -> +
-    //      Right wheels: 1(SE), 4(NE) -> -
-    // CCW (Turn Left): Left wheels backward, Right wheels forward.
-    //      Left wheels: 2(SW), 3(NW) -> -
-    //      Right wheels: 1(SE), 4(NE) -> +
-    
-    // Diagonal NW: Front-Left and Back-Right wheels move forward. Others stop?
-    //      Actually, for mecanum:
-    //      Move NW: FL(3) stops? No.
-    //      Vector sum forces.
-    //      To go NW: FL(3) backward? FR(4) forward? BL(2) forward? BR(1) backward?
-    //      Let's use the standard mecanum logic:
-    //      A wheel turns forward -> Force vector is 45 deg inward/forward.
-    //      Let's assume standard rollers (45 deg).
-    
-    //      Let's look at the previous implementation which was likely standard:
-    //      NW: Pwm[0]=0, Pwm[1]=speed, Pwm[2]=speed, Pwm[3]=0
-    //      If Pwm[0] is SE, Pwm[1] is SW, Pwm[2] is NW, Pwm[3] is NE.
-    //      Then SW and NW move forward. SE and NE stop.
-    //      If Left side moves forward, and Right side stops -> Turn Right + Move Forward?
-    //      This doesn't seem like pure NW translation.
-    
-    //      Standard Mecanum Translation:
-    //      Move Forward: All +
-    //      Move Right: FL+, RR+, FR-, RL-
-    //      Move NW: FL(3) 0, FR(4) +, RL(2) +, RR(1) 0  <-- This matches the pattern!
-    //      So:
-    //      NW: NE(4)+, SW(2)+. Others 0.
-    //      SW: SE(1)-, NW(3)-. Others 0. (Or SE+, NW+ for SE move?)
-    
-    //      Let's correct the logic based on the user's motor mapping:
-    //      1:SE, 2:SW, 3:NW, 4:NE
-    
-    //      Forward: All +
-    //      Backward: All -
-    //      CW: Left(2,3)+, Right(1,4)-
-    //      CCW: Left(2,3)-, Right(1,4)+
-    
-    //      NW: NE(4)+, SW(2)+
-    //      SE: NE(4)-, SW(2)-
-    //      NE: NW(3)+, SE(1)+
-    //      SW: NW(3)-, SE(1)-
     
     switch (drive_mode) {
         case MODE_F: // Forward

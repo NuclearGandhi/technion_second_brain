@@ -33,7 +33,9 @@ uint8_t TxBuffer[TX_BUF_LEN];
 extern int16_t Pwm[4], Ref[4];
 extern uint16_t mode;
 extern uint16_t drive_mode;
-extern float kp, ki, kd, ka;
+extern float kp, ki, kd;
+extern int16_t ka;
+extern int16_t REC[1000][5];  // NP=1000, 5 values per sample
 
 void apply_command(void);
 
@@ -132,5 +134,18 @@ void apply_command(void) {
 
     if (0 == strcmp(sCmd, "mode")) {
         drive_mode = param;
+    }
+    
+    if (0 == strcmp(sCmd, "send")) {
+        // Wait for the echo to be fully transmitted before starting blocking transfer
+        while (uart_tx_flag != TX_READY) {
+            asm(" nop");
+        }
+
+        // Send recorded data: 1000 samples * 5 int16_t * 2 bytes = 10000 bytes
+        uart_tx_flag = TX_BUSY;
+        HAL_UART_Transmit(UART, (uint8_t *)REC, 10000, 5000);  // blocking with 5s timeout
+        uart_tx_flag = TX_READY;
+        transmit_msg_out("DONE\r\n");
     }
 }

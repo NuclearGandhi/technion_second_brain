@@ -1,4 +1,6 @@
 {
+  "copyLinkToElemenetAnchorTo100": false,
+  "copyFrameLinkByName": false,
   "disableDoubleClickTextEditing": false,
   "folder": "Excalidraw",
   "cropFolder": "",
@@ -39,6 +41,8 @@
   "overrideObsidianFontSize": false,
   "dynamicStyling": "colorful",
   "isLeftHanded": false,
+  "desktopUIMode": "tray",
+  "tabletUIMode": "compact",
   "iframeMatchExcalidrawTheme": true,
   "matchTheme": false,
   "matchThemeAlways": true,
@@ -48,6 +52,7 @@
   "penModeDoubleTapEraser": true,
   "penModeSingleFingerPanning": true,
   "penModeCrosshairVisible": false,
+  "panWithRightMouseButton": false,
   "renderImageInMarkdownReadingMode": false,
   "renderImageInHoverPreviewForMDNotes": false,
   "renderImageInMarkdownToPDF": false,
@@ -56,6 +61,9 @@
   "zoomToFitOnOpen": true,
   "zoomToFitOnResize": true,
   "zoomToFitMaxLevel": 2,
+  "zoomStep": 0.05,
+  "zoomMin": 0.1,
+  "zoomMax": 30,
   "linkPrefix": "📍",
   "urlPrefix": "🌐",
   "parseTODO": false,
@@ -104,8 +112,75 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.13.0",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.18.3",
     "libraryItems": [
+      {
+        "status": "unpublished",
+        "elements": [
+          {
+            "id": "fhJ2xe0hao2B9IqYQdvzu",
+            "type": "ellipse",
+            "x": -46.66666666666667,
+            "y": -66.66666666666666,
+            "width": 13.333333333333332,
+            "height": 13.333333333333332,
+            "angle": 0.007656584400155708,
+            "strokeColor": "transparent",
+            "backgroundColor": "#1e1e1e",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "groupIds": [
+              "jbuR_90ToK-XvBha-DTcx"
+            ],
+            "frameId": null,
+            "index": "a5",
+            "roundness": null,
+            "seed": 1360316691,
+            "version": 551,
+            "versionNonce": 1892833341,
+            "isDeleted": false,
+            "boundElements": [],
+            "updated": 1766828775573,
+            "link": null,
+            "locked": false
+          },
+          {
+            "id": "HUUflsU8xV97yi_YVbj73",
+            "type": "rectangle",
+            "x": -60,
+            "y": -80,
+            "width": 40,
+            "height": 40,
+            "angle": 0,
+            "strokeColor": "transparent",
+            "backgroundColor": "transparent",
+            "fillStyle": "solid",
+            "strokeWidth": 0.5,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "groupIds": [
+              "jbuR_90ToK-XvBha-DTcx"
+            ],
+            "frameId": null,
+            "index": "a6",
+            "roundness": null,
+            "seed": 239486365,
+            "version": 130,
+            "versionNonce": 1823885469,
+            "isDeleted": false,
+            "boundElements": [],
+            "updated": 1766828775573,
+            "link": null,
+            "locked": false
+          }
+        ],
+        "id": "No-Y_dlu3y8vYlnBaP2wg",
+        "created": 1766828781104
+      },
       {
         "status": "unpublished",
         "elements": [
@@ -6518,9 +6593,11 @@
             "lastCommittedPoint": null,
             "startBinding": {
               "elementId": "3GJWQwDG_6Es4zvKwVmLQ",
-              "focus": 8.881784197001254e-17,
-              "gap": 1,
-              "fixedPoint": null
+              "mode": "orbit",
+              "fixedPoint": [
+                0,
+                0.5001
+              ]
             },
             "endBinding": null,
             "startArrowhead": null,
@@ -10919,9 +10996,11 @@
             "lastCommittedPoint": null,
             "startBinding": {
               "elementId": "zdGfxfUw20S2fWUesv7DX",
-              "focus": 8.881784197001254e-17,
-              "gap": 1,
-              "fixedPoint": null
+              "mode": "orbit",
+              "fixedPoint": [
+                0,
+                0.5001
+              ]
             },
             "endBinding": null,
             "startArrowhead": null,
@@ -12539,9 +12618,11 @@
             "lastCommittedPoint": null,
             "startBinding": {
               "elementId": "brIenKHOS9jtmb5a9_ShX",
-              "focus": 0,
-              "gap": 1,
-              "fixedPoint": null
+              "mode": "orbit",
+              "fixedPoint": [
+                0,
+                0.5001
+              ]
             },
             "endBinding": null,
             "startArrowhead": null,
@@ -19776,9 +19857,9 @@
       "User Prompt": ""
     }
   },
-  "defaultTrayMode": false,
   "previousRelease": "2.2.10",
   "showReleaseNotes": false,
+  "compareManifestToPluginVersion": true,
   "showNewVersionNotification": false,
   "latexBoilerplate": "\\color{red}",
   "latexPreambleLocation": "preamble.sty",
@@ -20135,6 +20216,7 @@
   "aiEnabled": true,
   "openAIAPIToken": "",
   "openAIDefaultTextModel": "gpt-3.5-turbo-1106",
+  "openAIDefaultTextModelMaxTokens": 4096,
   "openAIDefaultVisionModel": "gpt-4o",
   "openAIDefaultImageGenerationModel": "dall-e-3",
   "openAIURL": "https://api.openai.com/v1/chat/completions",
@@ -20462,6 +20544,8 @@
     "alignment": "center",
     "margin": "normal"
   },
+  "disableContextMenu": false,
+  "defaultTrayMode": false,
   "autosaveInterval": 15000,
   "mathjaxSourceURL": "https://cdn.jsdelivr.net/npm/mathjax@3.2.1/es5/tex-svg.js"
 }

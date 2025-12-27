@@ -13,9 +13,11 @@ Teacher: Prof. Yizhar Or
 - [[HDY1_001 Introduction]]
 - [[HDY1_002 Constrained Lagrangian Mechanics]]
 - [[HDY1_003 Contact Kinematics]]
+- [[HDY1_004 Unilateral Contact Dynamics]]
 # Homework
 - [[HDY1_HW001 Homework 1]]
 - [[HDY1_HW002 Homework 2]]
+- [[HDY1_HW003 Homework 3]]
 # Exams
 
 # Bibliography

@@ -2,7 +2,6 @@
   "accentColor": "",
   "enabledCssSnippets": [
     "something",
-    "rtl_export",
     "default"
   ],
   "baseFontSize": 22,
