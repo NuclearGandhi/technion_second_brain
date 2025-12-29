@@ -372,6 +372,9 @@ The bipedal crawling locomotion example - periodically varying distance between 
 
 
 # Linear Programming
+
+![](https://www.youtube.com/watch?v=E72DWgKP_1Y)
+
 The moment labeling method provides geometric intuition, but for computational analysis of contact forces, we can formulate the problem as a Linear Programming problem.
 
 The **linear programming problem (LP)** is a constrained minimization problem with objective function and inequality constraints which are both linear (polyhedral) in variables. It is defined as:
