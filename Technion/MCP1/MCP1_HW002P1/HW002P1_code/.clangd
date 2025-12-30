@@ -1,0 +1,42 @@
+CompileFlags:
+  Add:
+    - '-DDEBUG'
+    - '-DUSE_HAL_DRIVER'
+    - '-DSTM32G474xx'
+    - '-ICore/Inc'
+    - '-IDrivers/STM32G4xx_HAL_Driver/Inc'
+    - '-IDrivers/STM32G4xx_HAL_Driver/Inc/Legacy'
+    - '-IDrivers/CMSIS/Device/ST/STM32G4xx/Include'
+    - '-IDrivers/CMSIS/Include'
+    - '-std=gnu11'
+    - '-Wall'
+    - '-Wno-unknown-pragmas'
+  Remove:
+    - '-ffunction-sections'
+    - '-fdata-sections'
+    - '-fstack-usage'
+    - '-fcyclomatic-complexity'
+    - '--specs=nano.specs'
+    - '-MMD'
+    - '-MP'
+    - '-mcpu=cortex-m4'
+    - '-mthumb'
+    - '-mfpu=fpv4-sp-d16'
+    - '-mfloat-abi=hard'
+    - '--target=arm-none-eabi'
+  CompilationDatabase: build/Debug
+Diagnostics:
+  UnusedIncludes: None
+  MissingIncludes: None
+  ClangTidy:
+    Remove:
+      - readability-magic-numbers
+      - cppcoreguidelines-avoid-magic-numbers
+  Suppress:
+    - pp_file_not_found
+    - unknown-warning-option
+    - unused-command-line-argument
+    - implicit-function-declaration
+    - ext_implicit_lib_function_decl
+Index:
+  Background: Build

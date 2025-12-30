@@ -1,0 +1,10 @@
+17:42:20 **** Incremental Build of configuration Debug for project HW002P2 ****
+make -j28 all 
+arm-none-eabi-size  HW002P2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50356	    120	  13544	  64020	   fa14	HW002P2.elf
+Finished building: default.size.stdout
+ 
+
+17:42:21 Build Finished. 0 errors, 0 warnings. (took 343ms)
+
