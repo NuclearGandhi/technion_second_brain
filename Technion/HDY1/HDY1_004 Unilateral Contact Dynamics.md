@@ -4,7 +4,7 @@ aliases:
 # Dynamics with a Single Unilateral Frictionless Contact
 Consider a mechanical system of rigid bodies (robot / mechanism with links and joint) subject to a single unilateral contact constraint. The system's **unconstrained** (redundant) coordinates are $\mathbf{q}\in \mathbb{R}^{N}$ and the contact is represented by a unilateral inequality of distance ${d}_{21}(\mathbf{q})\geq 0$, where ${d}_{21}(\mathbf{q})=\lVert \mathbf{r}_{2}(\mathbf{q})-\mathbf{r}_{1}(\mathbf{q}) \rVert$ is the distance between two closest points on the system's two rigid bodies / links.
 
-When the system move while keeping persistent contact ${d}_{21}(\mathbf{q}(t))=0$, this gives dynamic equations with a holonomic constraint:
+When the system moves while keeping persistent contact ${d}_{21}(\mathbf{q}(t))=0$, this gives dynamic equations with a holonomic constraint:
 $$\mathbf{M}(\mathbf{q})\ddot{\mathbf{q}}+\mathbf{B}(\mathbf{q},\dot{\mathbf{q}})+\mathbf{G}(\mathbf{q})=\mathbf{F}_{q}+\mathbf{W}^{T}(\mathbf{q})\lambda\tag{4.1}$$
 Where
 $$\mathbf{W}(\mathbf{q})=\dfrac{\mathrm{d}}{\mathrm{d}\mathbf{q}}({d}_{21})$$
@@ -36,7 +36,7 @@ $$\dot{\mathbf{x}}=\tiny\begin{pmatrix}
 
 >[!Question] Is the state transition "contact to separation" at $t={t}_{s}$ well defined?  
 >That is, for times $t\leq {t}_{s}$, does the solution satisfy $d(\mathbf{q}(t))\geq 0$? Is it possible that penetration occurs, i.e. $d(\mathbf{q}(t^{+}_{s}))<0$?
->Right before separation ($t=t^{-}_{s}$, we have $d=\dot{d}=\ddot{d}=0$. We know that $\lambda(t)$ changes continuously at time ${t}_{s}$, so that $\lambda(t^{-}_{s})=\lambda(t^{+}_{s})=0$. But $\dot{\lambda}$ jumps such that $\dot{\lambda}(t^{-}_{s})<0$ and $\dot{\lambda}(t^{+}_{s})=0$. From $\text{(4.1)}$, this implies that $\mathbf{q},\dot{\mathbf{q}},\ddot{\mathbf{q}}$ also changes continuously at ${t}_{s}$, so that $d(t^{+}_{s})=\dot{d}(t^{+}_{s})=\ddot{d}(t^+_{s})=0$. But what about the third order, $\dddot{d}(t^{+}_{s})$?
+>Right before separation ($t=t^{-}_{s}$), we have $d=\dot{d}=\ddot{d}=0$. We know that $\lambda(t)$ changes continuously at time ${t}_{s}$, so that $\lambda(t^{-}_{s})=\lambda(t^{+}_{s})=0$. But $\dot{\lambda}$ jumps such that $\dot{\lambda}(t^{-}_{s})<0$ and $\dot{\lambda}(t^{+}_{s})=0$. From $\text{(4.1)}$, this implies that $\mathbf{q},\dot{\mathbf{q}},\ddot{\mathbf{q}}$ also changes continuously at ${t}_{s}$, so that $d(t^{+}_{s})=\dot{d}(t^{+}_{s})=\ddot{d}(t^+_{s})=0$. But what about the third order, $\dddot{d}(t^{+}_{s})$?
 >
 >Since the inertia matrix $\mathbf{M}$ is positive (semi-) definite, we know that $\mathbf{W}\mathbf{M}^{-1}\mathbf{W}^{T}\geq 0$. Defining $A(\mathbf{q},\dot{\mathbf{q}}):=\mathbf{W}\mathbf{M}^{-1}(\mathbf{B}+\mathbf{G}-\mathbf{F}_{q})-\dot{\mathbf{W}}\dot{\mathbf{q}}$,  from $\text{(4.2)}$ and $\text{(4.3)}$ we obtain that $A(t^{+}_{s})=0$ and $\dot{A}(t^{+}_{s})<0$. Time-derivatives of the distance $d(t)$ are obtained at $\dot{d}(t)=\mathbf{W}(\mathbf{q},\dot{\mathbf{q}})$ and $\ddot{d}(t)=\dot{\mathbf{W}}\dot{\mathbf{q}}+\mathbf{W} \ddot{\mathbf{q}}$. During separation for $t>{t}_{s}$ one can substitute $\lambda=0$ into $\text{(4.2)}$ to obtain $\ddot{\mathbf{q}}=\mathbf{M}^{-1}(\mathbf{F}_{q}-\mathbf{B}-\mathbf{G})$. This precisely gives that $\ddot{d}(t)=-A(t)$. Therefore, one obtains that $\dddot{d}(t^{+}_{s})=-\dot{A}(t^{+}_{s})>0$, so that separation indeed continues.
 >
@@ -86,7 +86,7 @@ The system's unconstrained coordinates $\mathbf{q}\in \mathbb{R}^{N}$. The conta
 We know we can write the equations of motion in the form of [[HDY1_002 Constrained Lagrangian Mechanics|equation]] $\text{(2.12)}$:
 $$\mathbf{M}(\mathbf{q})\ddot{\mathbf{q}}+\mathbf{B}(\mathbf{q},\dot{\mathbf{q}})+\mathbf{G}(\mathbf{q})=\mathbf{F}_{q}+\mathbf{W}^{T}(\mathbf{q})\boldsymbol{\lambda}$$
 When the system moves while keeping persistent no-slip contact, the constraint dynamic equations are:
-$$\mathbf{M}(\mathbf{q})\ddot{\mathbf{q}}+\mathbf{B}(\mathbf{q},\dot{\mathbf{q}})+\mathbf{G}(\mathbf{q})=\mathbf{F}_{q}+{{\mathbf{W}_{t}}}^{T}(\mathbf{q})\boldsymbol{\lambda}_{t}+{{\mathbf{w}_{n}}}^{T}{\lambda}_{n} \tag{4.5}$$
+$$\mathbf{M}(\mathbf{q})\ddot{\mathbf{q}}+\mathbf{B}(\mathbf{q},\dot{\mathbf{q}})+\mathbf{G}(\mathbf{q})=\mathbf{F}_{q}+{{\mathbf{w}_{t}}}^{T}(\mathbf{q})\boldsymbol{\lambda}_{t}+{{\mathbf{w}_{n}}}^{T}{\lambda}_{n} \tag{4.5}$$
 The constraint force vector is composed as $\boldsymbol{\lambda}=\begin{pmatrix}\boldsymbol{\lambda}_{t}&{\lambda}_{n}\end{pmatrix}^{T}$. In case of 2D motion, ${\lambda}_{t}$ is also a scalar. Expression for the vector of constraint forces $\boldsymbol{\lambda}(\mathbf{q},\dot{\mathbf{q}})$ can be extracted as in equation $\text{(4.2)}$ above. For *unilateral* contact, the normal force must satisfy ${\lambda}_{n}\geq 0$. When this constraint is violated, one expects a state transition to separation state. If there is bounded friction, Coulomb's law imposes the additional constraint $\lVert \boldsymbol{\lambda}_{t} \rVert\leq \mu{\lambda}_{n}$ in 3D or $\lvert {\lambda}_{t} \rvert\leq \mu{\lambda}_{n}$ in 2D. When this constraint is violated, the contact begins to **slip**, and this transition generally occurs *before* separation. The reason is that as ${\lambda}_{n}$ decreases toward zero, the friction cone $\lvert {\lambda}_{t} \rvert\leq \mu{\lambda}_{n}$ shrinks. Unless ${\lambda}_{t}$ also decreases at least as fast, which is not generally the case, the friction bound will be exceeded while ${\lambda}_{n}>0$, triggering slippage before separation can occur.
 
 It is sometimes tempting to assume "ideal no-slip contact", without any transition to slippage, just to separation. This is equivalent to assuming "infinite friction", so that slippage is ignored, assuming that crossing ${\lambda}_{n}=0$ leads directly to separation. The problem is that *this does not always work*, as demonstrated in the following example.
@@ -187,9 +187,103 @@ Thus, from $\text{(4.12)}$ we find that for $\alpha\geq 3/4$, there exists a val
 In fact, if we increase initial velocity ${\omega}_{0}$, we can reach contact separation at any desired value of $\theta$. We denote the contact separation time by ${t}_{s}$, so that $\theta({t}_{s})={\theta}_{s}$. After that time, $t\geq t^{+}_{s}$, the rod is supposed to begin contact-free flight motion, 3-DOF. This motion satisfies the same equation of unconstrained motion $\text{(4.6)}$ with zero contact forces ${\lambda}_{t}={\lambda}_{n}=0$. We now calculate the normal acceleration of the rod's end, $\ddot{y}(t^{+}_{s})$. From $\text{(4.6)}$ with zero contact forces, one obtains $\ddot{\mathbf{q}}=-\mathbf{M}^{-1}(\mathbf{B}+\mathbf{G})$. Substituting the expressions of $\mathbf{M},\mathbf{B},\mathbf{G}$ in $\text{(4.6)}$ one obtains:
 $$\ddot{y}(t^{+}_{s})=\ell\dot{\theta}^{2}({t}_{s})\cos{\theta}_{s}-g\tag{4.13}$$
 Note that unlike the case of frictionless contact, the accelerations $\ddot{\mathbf{q}}$ change discontinuously at separation since the tangential force ${\lambda}_{t}$ jumps to zero at $t={t}_{s}$. However, the velocity $\dot{\theta}$ changes continuously at ${t}_{s}$ and we can substitute the relation $\text{(4.10)}$ which holds also at $t={t}_{s}$ (assuming ${\omega}_{0} \to 0$) into $\text{(4.13)}$ to obtain an expression that depends on ${\theta}_{s}$ only:
-$$\ddot{y}(t^{+}_{s})=g[2\alpha \cos{\theta}_{s}(1-\cos\theta)-1]\tag{4.14}$$
+$$\ddot{y}(t^{+}_{s})=g[2\alpha \cos{\theta}_{s}(1-\cos{\theta}_{s})-1]\tag{4.14}$$
 It can be proven that $\ddot{y}(t^{+}_{s})<0$ holds for any ${\theta}_{s}(0,\pi /2)$ and $\alpha \in(1/2,1)$ (substitute $z=\cos{\theta}_{s}$). This gives a **paradox**: the constrained equations imply that no-slip contact is impossible at $t>{t}_{s}$ since ${\lambda}_{n}({t}_{s})=0$ and $\dot{\lambda}_{n}(t^{-}_{s})<0$, but the unconstrained equations of contact-free flight imply that separation is impossible since $\ddot{y}(t^{+}_{s})<0$, in contradiction to non-penetration of rigid bodies. That is, the contact to separation transition is ill-defined!
 
 The obvious way to resolve this paradox is to consider a **finite** coefficient of friction, and transition to *slippage* when the constraint $\lvert {\lambda}_{t} \rvert\leq \mu {\lambda}_{n}$ is reached. Note that when ${\lambda}_{n}\to 0$, this no-slip constraint is generally violated *before* separation.
 
 For a better explanation, watch the following [talk](https://www.birs.ca/events/2014/5-day-workshops/14w5147/videos/watch/201402170910-Ruina.html).
+
+# Dynamics with a Slipping Contact
+In the case of a *slipping* contact, due to Coulomb's law for slipping (if we are assuming Coulomb friction), we can define $\sigma=\mathrm{sgn}({v}_{t})=\pm 1$, such that:
+$${\lambda}_{t}=-\sigma \mu{\lambda}_{n}$$
+Plugging into $\text{(4.6)}$:
+$$\mathbf{M}(\mathbf{q})\ddot{\mathbf{q}}+\mathbf{B}(\mathbf{q},\dot{\mathbf{q}})+\mathbf{G}(\mathbf{q})=\mathbf{F}_{q}+({{\mathbf{w}_{n}}}-\sigma \mu \mathbf{w}_{t})^{T}{\lambda}_{n} \tag{4.15}$$Assuming $\mathbf{M}$ is non-singular, we can write:
+$$\ddot{\mathbf{q}}=\mathbf{M}^{-1}(\mathbf{F}_{q}-\mathbf{B}-\mathbf{G}+(\mathbf{w}_{n}-\sigma \mu \mathbf{w}_{t})^{T}{\lambda}_{n})$$
+Differentiating normal constraint $\mathbf{w}_{n}\dot{\mathbf{q}}=0$, we get
+$$\dot{\mathbf{w}}_{n}\dot{\mathbf{q}}+\mathbf{w}_{n}\ddot{\mathbf{q}}=0$$
+substituting into the expression for $\ddot{\mathbf{q}}$ we get:
+$$\dot{\mathbf{w}}_{n}\dot{\mathbf{q}}+\mathbf{w}_{n}\mathbf{M}^{-1}(\mathbf{F}_{q}-\mathbf{B}-\mathbf{G}+(\mathbf{w}_{n}-\sigma \mu \mathbf{w}_{t})^{T}{\lambda}_{n})=0$$
+
+Rearranging:
+$$\underbrace{ \mathbf{w}_{n}\mathbf{M}^{-1}(\mathbf{w}_{n}-\sigma \mu \mathbf{w}_{t})^{T} }_{ \alpha (\mathbf{q},\sigma,\mu) }{\lambda}_{n}=\underbrace{ \mathbf{w}_{n}\mathbf{M}^{-1}(\mathbf{B}+\mathbf{G}-\mathbf{F}_{q})-\dot{\mathbf{w}}_{n}\dot{\mathbf{q}} }_{ \beta(\mathbf{q},\dot{\mathbf{q}}) }\tag{4.16}$$
+Which allows us to write:
+$${\lambda}_{n}=\dfrac{\beta(\mathbf{q},\dot{\mathbf{q}})}{\alpha (\mathbf{q},\sigma,\mu)}\geq  0\tag{4.17}$$
+The physical meaning of $\alpha$ and $\beta$ is as follows:
+- **$\alpha$** represents the *effective compliance* of the system in the normal direction, accounting for coupling between normal and tangential directions due to friction. It can be interpreted as the normal acceleration response per unit normal force. When $\alpha>0$, applying a normal contact force causes the bodies to accelerate apart (normal behavior). When $\alpha<0$, the friction coupling is so strong that a normal contact force causes the bodies to accelerate *toward* each other - a paradoxical response.
+- **$\beta$** represents the *free normal acceleration* - the normal acceleration that would occur at the contact point if there were no contact force (${\lambda}_{n}=0$). It captures the combined effect of inertial forces ($\mathbf{B}$), gravity ($\mathbf{G}$), and applied forces ($\mathbf{F}_{q}$) on the tendency of the contact to separate or persist.
+
+But, what happens if $\alpha(\mathbf{q}(t),\sigma,\mu)\to 0$? Well, we get ${\lambda}_{n}\to \infty$. Is it this possible? How do we handle singularity?
+
+For the frictionless case $\mu=0$, we have $\alpha=\mathbf{w}_{n}\mathbf{M}^{-1}\mathbf{w}^{T}_{n}>0$, but for high $\mu$ and $\sigma=\pm1$ (take $\mathbf{q}=\mathbf{q}_{0}$ and $\sigma=\mathrm{sgn}(\mathbf{w}\mathbf{M}^{-1}\mathbf{w}^{T}_{t}(\mathbf{q}_{0}))$), meaning for high $\mu$ we can get $\alpha<0$.
+
+For example, the [[#The Falling Pencil Problem|the slipping pencil]]:
+$$\mathbf{q}=(x,y,\theta),\, \mathbf{w}_{t}=\begin{pmatrix}
+1 & 0 & 0
+\end{pmatrix},\, \mathbf{w}_{n}=\begin{pmatrix}
+0 & 1 & 0
+\end{pmatrix}$$
+We get:
+$$\begin{aligned}
+ & \mathbf{M}=\begin{pmatrix}
+m & 0 & -m\ell \cos\theta \\
+0 & m & -m\ell \sin\theta \\
+-m\ell \cos\theta & -m\ell \sin\theta & {I}_{c}+m\ell ^{2}
+\end{pmatrix} \\[3ex]
+ & \mathbf{B}=\begin{pmatrix}
+m\ell\dot{\theta}^{2}\sin\theta \\
+-m\ell\dot{\theta}^{2}\cos\theta \\
+0
+\end{pmatrix} \\[3ex]
+ & \mathbf{G}=\begin{pmatrix}
+0 \\
+mg \\
+-mg\ell \sin\theta
+\end{pmatrix}
+\end{aligned}$$
+In that example, $\alpha$ would be:
+$$\begin{aligned}
+\alpha (\mathbf{q},\sigma,\mu) & =\mathbf{w}_{n}\mathbf{M}^{-1}(\mathbf{w}_{n}-\sigma \mu \mathbf{w}_{t})^{T} \\[1ex]
+ & =\dfrac{{I}_{c}+m\ell ^{2}(\sin ^{2}\theta-\sigma \mu \sin\theta \cos\theta)}{m\ell ^{2}}
+\end{aligned}$$
+
+$\beta$ would be:
+$$\begin{aligned}
+\beta (\mathbf{q},\dot{\mathbf{q}}) & =\mathbf{w}_{n}\mathbf{M}^{-1}(\mathbf{B}+\mathbf{G}-\cancel{ \mathbf{F}_{q} })-\cancel{ \dot{\mathbf{w}}_{n}\dot{\mathbf{q}} } \\[1ex]
+ & =g-\ell\dot{\theta}^{2}\cos\theta
+\end{aligned}$$
+
+For the frictionless limit $\mu \to 0$, we get $\alpha \to ({I}_{c}+m\ell ^{2}\sin ^{2}\theta)/(m\ell^{2})>0$ (except for the degenerate case of a point mass at $\theta=0$). This confirms that without friction, $\alpha$ remains positive and no paradox occurs.
+
+However, as friction increases, the term $-\sigma \mu \sin\theta \cos\theta$ in the expression for $\alpha$ can eventually make $\alpha$ negative. The critical question is: for what friction coefficient ${\mu}_{\min_{}}$ does $\alpha$ first reach zero?
+
+To find this critical friction coefficient, we solve for $\alpha=0$. Substituting the trigonometric identities $\sin ^{2}\theta=\dfrac{1-\cos 2\theta}{2}$ and $\sin\theta \cos\theta=\dfrac{1}{2}\sin 2\theta$, and introducing the friction angle $\gamma$ where $\mu=\tan\gamma$, we obtain:
+$$\cos(2\theta-\gamma)=\dfrac{2{I}_{c}+m\ell ^{2}}{m\ell ^{2}\sqrt{ 1+\mu ^{2} }}\leq   1$$
+Which means:
+$$\mu \geq   \sqrt{ \left( \dfrac{2{I}_{c}+m\ell ^{2}}{m\ell ^{2}} \right)^{2}-1 }:={\mu}_{\min_{}}$$
+
+For a uniform rod ${I}_{c}=m\ell ^{2}/3$, we get ${\mu}_{\min_{}}=4/3$, which is quite high. As we move ${I}_{c}\to 0$, that is, change the distribution of the rod to be a point mass in the center, we get ${\mu}_{\min_{}}\to 0$.
+
+We reach a singularity if $\alpha(\mathbf{q}(t))\to 0$, because then ${\lambda}_{n}\to \infty$.
+For $\beta(\mathbf{q}(t),\dot{\mathbf{q}}(t))\to 0$, we get ${\lambda}_{n}\to 0$, which means contact separation... maybe?
+
+For separation, we need to verify that ${a}_{n}=\dot{v}_{n}=\dot{\mathbf{w}}_{n}\dot{\mathbf{q}}+\mathbf{w}_{n} \ddot{\mathbf{q}}>0$.
+We get:
+$${a}_{n}=\dot{\mathbf{w}}_{n}\dot{\mathbf{q}}+\mathbf{w}_{n}\mathbf{M}^{-1}(\mathbf{F}_{q}-\mathbf{B}-\mathbf{G}+\cancel{ (\mathbf{w}_{n}-\sigma \mu \mathbf{w}_{t})^{T}{\lambda}_{n} })>0$$
+For transition case ${d}_{n}={v}_{n}=0$, we get a consistent slip if ${\lambda}_{n}=\dfrac{\beta(\mathbf{q},\dot{\mathbf{q}})}{\alpha(\mathbf{q},\sigma,\mu)}>0$, and consistent separation if ${\alpha}_{n}=-\beta(\mathbf{q},\dot{\mathbf{q}})>0$.
+
+The following table summarizes all possible combinations of signs of $\alpha$ and $\beta$, and their implications for whether slip or separation can occur consistently:
+
+| **Case** | $\mathrm{sgn}(\alpha)$ | $\mathrm{sgn}(\beta)$ | Slip Consistency ${\lambda}_{n}=\beta /\alpha>0$ | Separation Consistency ${a}_{n}=-\beta>0$ | Contact State     |
+| -------- | ---------------------- | --------------------- | ------------------------------------------------ | ----------------------------------------- | ----------------- |
+| 1        | $+$                    | $+$                   | Yes                                              | No                                        | Slip              |
+| 2        | $+$                    | $-$                   | No                                               | Yes                                       | Separation        |
+| 3        | $-$                    | $+$                   | No                                               | No                                        | ==inconsistency== |
+| 4        | $-$                    | $-$                   | Yes                                              | Yes                                       | ==indeterminacy== |
+
+The 3rd and 4th cases are paradoxes. For the 3rd case (inconsistency), neither slip nor separation is physically possible - there is no solution to the rigid-body equations. For the 4th case (indeterminacy), both slip and separation satisfy the equations - there are multiple solutions. These paradoxes are collectively known as the **Painlevé paradox**, named after Paul Painlevé who first identified them in 1895 while studying the motion of a slender rod sliding on a rough surface^[Painlevé, P. (1895). Sur les lois du frottement de glissement. *Comptes Rendus de l'Académie des Sciences*, 121, 112–115.]. The paradox arises whenever $\alpha(\mathbf{q},\sigma ,\mu)<0$, which occurs when friction coupling is sufficiently strong.
+
+We now can now draw a more general state transition graph than we have previously seen in [[#^figure-state-transition-graph|figure]]:
+
+![[HDY1_004 Unilateral Contact Dynamics 2025-12-30 16.32.15.excalidraw.svg]]^figure-general-state-transitions
+>General state transition graph for unilateral contact with friction. The graph includes transitions between contact (no-slip), slipping, and separation states.
