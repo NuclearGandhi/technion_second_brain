@@ -118,6 +118,96 @@
         "status": "unpublished",
         "elements": [
           {
+            "id": "C5NL8Ve4nkGuAWvzeUP2m",
+            "type": "rectangle",
+            "x": -20,
+            "y": -240,
+            "width": 40,
+            "height": 40,
+            "angle": 0,
+            "strokeColor": "transparent",
+            "backgroundColor": "transparent",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "groupIds": [
+              "-9362nD3mApw9VXu9XptO"
+            ],
+            "frameId": null,
+            "index": "aU",
+            "roundness": null,
+            "seed": 502121478,
+            "version": 133,
+            "versionNonce": 1016443462,
+            "isDeleted": false,
+            "boundElements": [],
+            "updated": 1767357735623,
+            "link": null,
+            "locked": false
+          },
+          {
+            "id": "JPxo81yD0-aeItWnsjtaF",
+            "type": "line",
+            "x": 0,
+            "y": -231.11111111111111,
+            "width": 22.22222222222222,
+            "height": 20,
+            "angle": 0,
+            "strokeColor": "transparent",
+            "backgroundColor": "#1e1e1e",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "groupIds": [
+              "-9362nD3mApw9VXu9XptO"
+            ],
+            "frameId": null,
+            "index": "aV",
+            "roundness": null,
+            "seed": 399616730,
+            "version": 148,
+            "versionNonce": 1022589318,
+            "isDeleted": false,
+            "boundElements": [],
+            "updated": 1767357735623,
+            "link": null,
+            "locked": false,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                -11.11111111111111,
+                20
+              ],
+              [
+                11.11111111111111,
+                20
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "startBinding": null,
+            "endBinding": null,
+            "startArrowhead": null,
+            "endArrowhead": null,
+            "polygon": true
+          }
+        ],
+        "id": "iydAAFlVu1d2YPSFpAwFO",
+        "created": 1767357744507
+      },
+      {
+        "status": "unpublished",
+        "elements": [
+          {
             "id": "7Rbo2mUmzCbe7estZYGHU",
             "type": "rectangle",
             "x": 20,
