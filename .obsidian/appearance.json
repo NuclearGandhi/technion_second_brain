@@ -2,7 +2,8 @@
   "accentColor": "",
   "enabledCssSnippets": [
     "something",
-    "default"
+    "default",
+    "rtl_export"
   ],
   "baseFontSize": 22,
   "theme": "system"

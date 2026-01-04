@@ -4,7 +4,7 @@
   "displayHeader": false,
   "displayFooter": true,
   "headerTemplate": "<div\n  style=\"\n    width: 100vw;\n    font-size: 10px;\n    text-align: right;\n    margin-right: 1.4cm;\n    margin-bottom: 0.7cm;\n    direction: ltr;\n    font-family: David;\n  \"\n>\n  <span class=\"pageNumber\"></span> out of <span class=\"totalPages\"></span>\n</div>\n\n<div\n  style=\"\n    width: 100vw;\n    font-size: 10px;\n    text-align: left;\n    margin-left: 1.4cm;\n    margin-bottom: 0.7cm;\n    direction: rtl;\n    font-family: David;\n  \"\n>\n  <span class=\"pageNumber\"></span> מתוך <span class=\"totalPages\"></span>\n</div>\n\n",
-  "footerTemplate": "<div\n  style=\"\n    width: 100vw;\n    font-size: 10px;\n    text-align: right;\n    margin-right: 1.4cm;\n    margin-bottom: 0.7cm;\n    direction: ltr;\n    font-family: David;\n  \"\n>\n  <span class=\"pageNumber\"></span> out of <span class=\"totalPages\"></span>\n</div>",
+  "footerTemplate": "<div\n  style=\"\n    width: 100vw;\n    font-size: 10px;\n    text-align: left;\n    margin-left: 1.4cm;\n    margin-bottom: 0.7cm;\n    direction: rtl;\n    font-family: David;\n  \"\n>\n  <span class=\"pageNumber\"></span> מתוך <span class=\"totalPages\"></span>\n</div>\n",
   "printBackground": false,
   "generateTaggedPDF": false,
   "displayMetadata": false,
