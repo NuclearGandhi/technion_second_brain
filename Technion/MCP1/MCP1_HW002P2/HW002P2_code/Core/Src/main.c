@@ -135,6 +135,10 @@ int16_t E1[4] = {0};  // Previous error
 int16_t E2[4] = {0};  // Two samples ago error
 float U[4] = {0};     // Control output (integrator state)
 
+// Motor dead zone compensation
+// Motors don't start spinning until ~900 PWM due to static friction
+#define PWM_DEADZONE 900
+
 int16_t W = 0, W1 = 0, W2 = 0;
 int16_t We[4], We1[4], We2[4];  // Wheel velocities (encoder counts per sample)
 int32_t Enc32[4] = {0};         // Extended encoder counts (prevent overflow)
@@ -187,36 +191,46 @@ static void MX_USART3_UART_Init(void);
 /**
  * @brief Set PWM outputs for all 4 motors
  * @param Pwm Array of PWM values (-9999 to 9999) for each motor
+ *
+ * Dead zone compensation is applied: when commanding non-zero velocity,
+ * the output jumps over the static friction zone (PWM_DEADZONE).
  */
 void set_pwm(int16_t Pwm[]) {
-    float temp1, temp2;
+    int16_t pwm_out[4];
+
+    // Apply dead zone compensation
+    // If PWM is non-zero, add offset to overcome static friction
+    for (int q = 0; q < 4; q++) {
+        if (Pwm[q] > 0) {
+            pwm_out[q] = Pwm[q] + PWM_DEADZONE;
+        } else if (Pwm[q] < 0) {
+            pwm_out[q] = Pwm[q] - PWM_DEADZONE;
+        } else {
+            pwm_out[q] = 0;
+        }
+    }
 
     // Motor 0 direction pins
-    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, Pwm[0] * motor_sign[0] < 0);
-    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, (Pwm[0] * motor_sign[0] > 0));
+    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, pwm_out[0] * motor_sign[0] < 0);
+    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, (pwm_out[0] * motor_sign[0] > 0));
 
     // Motor 1 direction pins
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, (Pwm[1] * motor_sign[1] < 0));
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, (Pwm[1] * motor_sign[1] > 0));
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, (pwm_out[1] * motor_sign[1] < 0));
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, (pwm_out[1] * motor_sign[1] > 0));
 
     // Motor 2 direction pins
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, (Pwm[2] * motor_sign[2] < 0));
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, (Pwm[2] * motor_sign[2] > 0));
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, (pwm_out[2] * motor_sign[2] < 0));
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, (pwm_out[2] * motor_sign[2] > 0));
 
     // Motor 3 direction pins
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, (Pwm[3] * motor_sign[3] < 0));
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, (Pwm[3] * motor_sign[3] > 0));
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, (pwm_out[3] * motor_sign[3] < 0));
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, (pwm_out[3] * motor_sign[3] > 0));
 
-    // Set PWM duty cycle (magnitude only)
-    temp1 = Pwm[0];
-    temp2 = Pwm[1];
-    TIM2->CCR1 = (uint16_t)SAT10k(ABS(temp1));
-    TIM2->CCR2 = (uint16_t)SAT10k(ABS(temp2));
-
-    temp1 = Pwm[2];
-    temp2 = Pwm[3];
-    TIM2->CCR3 = (uint16_t)SAT10k((ABS(temp1)));
-    TIM2->CCR4 = (uint16_t)SAT10k((ABS(temp2)));
+    // Set PWM duty cycle (magnitude only, with saturation)
+    TIM2->CCR1 = (uint16_t)SAT10k(ABS(pwm_out[0]));
+    TIM2->CCR2 = (uint16_t)SAT10k(ABS(pwm_out[1]));
+    TIM2->CCR3 = (uint16_t)SAT10k(ABS(pwm_out[2]));
+    TIM2->CCR4 = (uint16_t)SAT10k(ABS(pwm_out[3]));
 }
 
 /**
@@ -439,27 +453,43 @@ void start_trajectory(void) {
     traj_running = 1;
     reset_pid();
 
-    // Initialize TIM5 for output compare
+    // Reconfigure TIM5 Channel 2 for Output Compare mode
+    // (It was initialized as Input Capture by CubeMX)
+    TIM_OC_InitTypeDef sConfigOC = {0};
+    sConfigOC.OCMode = TIM_OCMODE_TIMING;  // No output pin, just interrupt
+    sConfigOC.Pulse = 0;
+    sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+    sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+
+    // Stop any previous OC and reconfigure
+    HAL_TIM_OC_Stop_IT(&htim5, TIM_CHANNEL_2);
+    HAL_TIM_OC_ConfigChannel(&htim5, &sConfigOC, TIM_CHANNEL_2);
+
+    // Reset and configure TIM5 counter
     __HAL_TIM_SET_COUNTER(&htim5, 0);
 
-    // Set first compare value
+    // Set first compare value (first time delta)
     if (traj_index < tt_clk_len) {
         traj_next_time = tt_clk[traj_index];
         __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_2, traj_next_time);
     }
 
-    // Start TIM5 in output compare interrupt mode
+    // Enable the output compare interrupt
+    __HAL_TIM_ENABLE_IT(&htim5, TIM_IT_CC2);
+
+    // Enable TIM5 NVIC interrupt (not enabled by CubeMX since TIM5 was input capture)
+    HAL_NVIC_SetPriority(TIM5_IRQn, 1, 0);
+    HAL_NVIC_EnableIRQ(TIM5_IRQn);
+
+    // Start TIM5 base timer (counter runs continuously)
+    HAL_TIM_Base_Start(&htim5);
+
+    // Start output compare interrupt mode
     HAL_TIM_OC_Start_IT(&htim5, TIM_CHANNEL_2);
 
-    // Apply first trajectory point
-    if (traj_index < vt_len) {
-        int16_t vel = vt[traj_index];
-        // For now, apply same velocity to all wheels (forward motion)
-        // This will be enhanced for full kinematics
-        Ref[0] = vel * motor_sign[0];
-        Ref[1] = vel * motor_sign[1];
-        Ref[2] = vel * motor_sign[2];
-        Ref[3] = vel * motor_sign[3];
+    // Apply first trajectory point using kinematics
+    if (traj_index < traj_len) {
+        kinematics_to_wheel_vel(vx_t[traj_index], vy_t[traj_index], wz_t[traj_index]);
     }
 }
 
@@ -484,19 +514,15 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef* htim) {
 
         traj_index++;
 
-        // Check for end of trajectory (special value 9999)
-        if (traj_index >= vt_len || vt[traj_index] == 9999) {
+        // Check for end of trajectory
+        if (traj_index >= traj_len) {
             stop_trajectory();
             mode = STATE_IDLE;
             return;
         }
 
-        // Apply next trajectory point
-        int16_t vel = vt[traj_index];
-        Ref[0] = vel * motor_sign[0];
-        Ref[1] = vel * motor_sign[1];
-        Ref[2] = vel * motor_sign[2];
-        Ref[3] = vel * motor_sign[3];
+        // Apply next trajectory point using kinematics
+        kinematics_to_wheel_vel(vx_t[traj_index], vy_t[traj_index], wz_t[traj_index]);
 
         // Schedule next interrupt
         if (traj_index < tt_clk_len) {
@@ -1310,17 +1336,15 @@ static void MX_GPIO_Init(void) {
  */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
     if (htim->Instance == TIM15) {
-        // Check obstacle and stop if enabled
+        // Check obstacle - pause motion if enabled but DON'T cancel trajectory
         if (obstacle_detected && obstacle_stop_enabled &&
             (mode == STATE_TRAJECTORY || mode == STATE_KINEMATICS)) {
-            // Stop motors but keep mode (can resume later)
+            // Pause: stop motors but keep mode and trajectory index
+            // When obstacle clears, trajectory will resume automatically
+            Ref[0] = Ref[1] = Ref[2] = Ref[3] = 0;  // Zero velocity reference
             Pwm[0] = Pwm[1] = Pwm[2] = Pwm[3] = 0;
             set_pwm(Pwm);
-            if (mode == STATE_TRAJECTORY) {
-                stop_trajectory();
-                mode = STATE_IDLE;
-            }
-            return;
+            return;  // Skip control loop while paused
         }
 
         switch (mode) {

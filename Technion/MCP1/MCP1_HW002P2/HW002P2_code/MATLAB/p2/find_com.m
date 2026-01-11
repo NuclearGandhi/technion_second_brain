@@ -9,7 +9,7 @@ function comPort = find_com(preferred)
     %   Returns the COM port string (e.g., 'COM3') or empty if not found.
 
     if nargin < 1
-        preferred = 'COM13';
+        preferred = '';
     end
 
     comPort = '';
