@@ -13,31 +13,23 @@ clear; close all; clc;
 
 %% Configuration
 BAUD_RATE = 115200;
-Ts = 0.01;              % Sample period (100 Hz)
-test_duration = 3;      % Test duration [s]
-step_delay = 0.5;       % Delay before step [s]
+Ts = 0.01; % Sample period (100 Hz)
+test_duration = 3; % Test duration [s]
+step_delay = 0.5; % Delay before step [s]
 
 % Step reference (encoder counts per sample period)
-ref_value = 20;         % Target velocity
+ref_value = 20; % Target velocity
 
 %% Connect to STM32
 fprintf('=== Velocity Control Test ===\n\n');
 
 port = find_com();
+
 if isempty(port)
     error('No COM port found. Connect STM32 and try again.');
 end
 
-% Clean up any existing connections
-try
-    old_objs = serialportfind('Port', port);
-    if ~isempty(old_objs)
-        delete(old_objs);
-        pause(0.5);
-    end
-catch
-end
-
+% find_com() already cleaned up existing connections, so we can connect directly
 try
     s = serialport(port, BAUD_RATE);
     configureTerminator(s, "CR/LF");
@@ -77,10 +69,11 @@ fprintf('\n--- Recording Step Response ---\n');
 n_samples = round(test_duration / Ts);
 n_step = round(step_delay / Ts);
 
-time_rec = (0:n_samples-1)' * Ts;
+time_rec = (0:n_samples - 1)' * Ts;
 ref_rec = zeros(n_samples, 4);
 
 tic;
+
 for i = 1:n_samples
     % Apply step at appropriate time
     if i == n_step
@@ -88,9 +81,9 @@ for i = 1:n_samples
         cmd = sprintf('ref %d %d %d %d', ref_value, ref_value, ref_value, ref_value);
         writeline(s, cmd);
     end
-    
+
     ref_rec(i, :) = (i >= n_step) * ref_value;
-    
+
     pause(Ts);
 end
 
@@ -104,22 +97,24 @@ fprintf('Test complete (%.2f s)\n', toc);
 if exist('record_data.mat', 'file')
     load('record_data.mat');
     fprintf('\nLoaded recorded data from record_data.mat\n');
-    
+
     % Plot comparison
     figure('Position', [100, 100, 1000, 600]);
-    
+
     subplot(2, 1, 1);
     hold on;
+
     for motor = 1:4
         plot(time, omega_data(:, motor), 'LineWidth', 1.5, ...
-             'DisplayName', sprintf('Motor %d', motor));
+            'DisplayName', sprintf('Motor %d', motor));
     end
+
     xlabel('Time [s]');
     ylabel('Velocity [counts/sample]');
     title('Measured Velocity Response');
     legend('Location', 'best');
     grid on;
-    
+
     subplot(2, 1, 2);
     hold on;
     plot(time_rec, ref_rec(:, 1), 'k--', 'LineWidth', 2, 'DisplayName', 'Reference');
@@ -128,31 +123,31 @@ if exist('record_data.mat', 'file')
     title('Reference Input');
     legend('Location', 'best');
     grid on;
-    
+
     sgtitle('Closed-Loop Velocity Control Test');
 end
 
 %% Simulation Comparison (using system_id results)
 if exist('system_id_results.mat', 'file')
     load('system_id_results.mat');
-    
+
     fprintf('\n--- Simulation Comparison ---\n');
     fprintf('Using identified parameters:\n');
     fprintf('  K = %.2f, tau = %.3f\n', results.K_avg, results.tau_avg);
     fprintf('  kp = %.2f, ki = %.3f\n', results.kp, results.ki);
-    
+
     % Create transfer functions
     G = tf(results.K_avg, [results.tau_avg, 1]);
     C = pid(results.kp, results.ki);
     T = feedback(C * G, 1);
-    
+
     % Simulate step response
     t_sim = 0:Ts:test_duration;
     u_sim = [zeros(1, n_step), ref_value * ones(1, n_samples - n_step + 1)];
     u_sim = u_sim(1:length(t_sim));
-    
+
     [y_sim, t_sim] = lsim(T, u_sim, t_sim);
-    
+
     % Plot
     figure('Position', [100, 100, 800, 500]);
     plot(t_sim, u_sim, 'k--', 'LineWidth', 2, 'DisplayName', 'Reference');
@@ -163,7 +158,7 @@ if exist('system_id_results.mat', 'file')
     title(sprintf('Simulated Closed-Loop Step Response (kp=%.2f, ki=%.3f)', results.kp, results.ki));
     legend('Location', 'best');
     grid on;
-    
+
     % Performance metrics
     info = stepinfo(y_sim(n_step:end), t_sim(n_step:end) - t_sim(n_step), ref_value);
     fprintf('\nSimulated Performance:\n');
@@ -175,7 +170,7 @@ end
 %% Kinematics Test
 fprintf('\n--- Kinematics Quick Test ---\n');
 
-writeline(s, 'state 6');  % STATE_KINEMATICS
+writeline(s, 'state 6'); % STATE_KINEMATICS
 pause(0.2);
 
 % Test forward motion
@@ -211,13 +206,16 @@ fprintf('========================================\n');
 
 %% Cleanup
 function cleanup_serial(s)
+
     try
         writeline(s, 'state 1');
         pause(0.1);
     catch
     end
+
     if ~isempty(s) && isvalid(s)
         delete(s);
         disp('Serial port closed.');
     end
+
 end

@@ -17,28 +17,20 @@ clear; close all; clc;
 
 %% Configuration
 BAUD_RATE = 115200;
-NP = 1000;              % Number of points to record (matches firmware)
-Ts = 0.01;              % Sample period (100 Hz)
-TIMEOUT = 15;           % Seconds to wait for recording
+NP = 1000; % Number of points to record (matches firmware)
+Ts = 0.01; % Sample period (100 Hz)
+TIMEOUT = 15; % Seconds to wait for recording
 
 %% Connect to STM32
 fprintf('=== Motor Response Recording ===\n\n');
 
 port = find_com();
+
 if isempty(port)
     error('No COM port found. Connect STM32 and try again.');
 end
 
-% Clean up any existing connections to this port
-try
-    old_objs = serialportfind('Port', port);
-    if ~isempty(old_objs)
-        delete(old_objs);
-        pause(0.5);
-    end
-catch
-end
-
+% find_com() already cleaned up existing connections, so we can connect directly
 try
     s = serialport(port, BAUD_RATE);
     configureTerminator(s, "CR/LF");
@@ -71,7 +63,7 @@ end
 
 %% Start Recording
 fprintf('\n--- Starting Square Wave Recording ---\n');
-fprintf('Recording %d samples at %.0f Hz (%.1f seconds)...\n', NP, 1/Ts, NP*Ts);
+fprintf('Recording %d samples at %.0f Hz (%.1f seconds)...\n', NP, 1 / Ts, NP * Ts);
 
 % Set mode to SQUARE (state 3) to start recording
 flush(s);
@@ -79,6 +71,7 @@ writeline(s, 'state 3');
 
 % Read command echo
 pause(0.1);
+
 try
     echo = readline(s);
     fprintf('Echo: %s\n', echo);
@@ -99,6 +92,7 @@ writeline(s, 'send');
 
 % Read command echo
 pause(0.1);
+
 try
     echo = readline(s);
     fprintf('Echo: %s\n', echo);
@@ -124,13 +118,14 @@ fprintf('Received %d bytes\n', length(raw_data));
 % Convert to int16 matrix
 data_int16 = typecast(uint8(raw_data), 'int16');
 n_values = floor(length(data_int16) / 5);
-data_int16 = data_int16(1:n_values*5);
+data_int16 = data_int16(1:n_values * 5);
 
 REC = reshape(data_int16, [5, n_values])';
 fprintf('Received %d x 5 data matrix\n', n_values);
 
 % Wait for DONE message
 pause(0.5);
+
 try
     done_msg = readline(s);
     fprintf('Response: %s\n', done_msg);
@@ -138,18 +133,27 @@ catch
 end
 
 %% Process and Plot Data
-time = (0:size(REC, 1)-1)' * Ts;
+time = (0:size(REC, 1) - 1)' * Ts;
 
 % Extract columns (convert to double for calculations)
 pwm_data = double(REC(:, 1));
-enc_data = double(REC(:, 2:5));
+enc_data_raw = double(REC(:, 2:5));
+
+% Zero encoder positions relative to first sample
+% This handles the case where wheels were rotated before recording
+enc_data = enc_data_raw - enc_data_raw(1, :);
 
 % Compute velocities (encoder counts per sample)
-omega_data = [zeros(1, 4); diff(enc_data)];
+% Handle 16-bit counter wraparound: if delta > 32767, it wrapped negative
+% if delta < -32767, it wrapped positive
+raw_diff = diff(enc_data_raw);
+raw_diff(raw_diff > 32767) = raw_diff(raw_diff > 32767) - 65536;
+raw_diff(raw_diff < -32767) = raw_diff(raw_diff < -32767) + 65536;
+omega_data = [zeros(1, 4); raw_diff];
 
 % Convert to rad/s
-ENCODER_CPR = 630;
-omega_rad = omega_data * (2*pi / ENCODER_CPR) / Ts;
+ENCODER_CPR = 1320; % counts per revolution (x4 mode: 4 * 330 encoder lines)
+omega_rad = omega_data * (2 * pi / ENCODER_CPR) / Ts;
 
 %% Visualization
 figure('Position', [100, 100, 1200, 800]);
@@ -165,9 +169,11 @@ grid on;
 % Encoder positions
 subplot(2, 2, 2);
 hold on;
+
 for i = 1:4
     plot(time, enc_data(:, i), 'LineWidth', 1.5, 'DisplayName', sprintf('Motor %d', i));
 end
+
 xlabel('Time [s]');
 ylabel('Encoder [counts]');
 title('Encoder Positions');
@@ -177,11 +183,13 @@ grid on;
 % Encoder velocities (counts/sample)
 subplot(2, 2, 3);
 hold on;
+
 for i = 1:4
     plot(time, omega_data(:, i), 'LineWidth', 1.5, 'DisplayName', sprintf('Motor %d', i));
 end
+
 xlabel('Time [s]');
-ylabel('\Delta Encoder [counts/sample]');
+ylabel('$\Delta$ Encoder [counts/sample]');
 title('Encoder Velocities');
 legend('Location', 'best');
 grid on;
@@ -189,11 +197,13 @@ grid on;
 % Angular velocities (rad/s)
 subplot(2, 2, 4);
 hold on;
+
 for i = 1:4
     plot(time, omega_rad(:, i), 'LineWidth', 1.5, 'DisplayName', sprintf('Motor %d', i));
 end
+
 xlabel('Time [s]');
-ylabel('\omega [rad/s]');
+ylabel('$\omega$ [rad/s]');
 title('Angular Velocities');
 legend('Location', 'best');
 grid on;
@@ -218,13 +228,16 @@ fprintf('========================================\n');
 
 %% Cleanup Function
 function cleanup_serial(s)
+
     try
-        writeline(s, 'state 1');  % Return to IDLE
+        writeline(s, 'state 1'); % Return to IDLE
         pause(0.1);
     catch
     end
+
     if ~isempty(s) && isvalid(s)
         delete(s);
         disp('Serial port closed.');
     end
+
 end

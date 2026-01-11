@@ -55,17 +55,17 @@
 #define UART &hlpuart1
 
 // Mecanum wheel geometry (meters)
-#define WHEEL_RADIUS 0.030f      // 30mm wheel radius
-#define WHEEL_BASE_L 0.080f      // half of wheelbase (front-back)
-#define WHEEL_BASE_W 0.075f      // half of track width (left-right)
+#define WHEEL_RADIUS 0.030f  // 30mm wheel radius
+#define WHEEL_BASE_L 0.080f  // half of wheelbase (front-back)
+#define WHEEL_BASE_W 0.075f  // half of track width (left-right)
 #define L_PLUS_W (WHEEL_BASE_L + WHEEL_BASE_W)
 
 // Encoder conversion: encoder counts per revolution / 2*pi
-#define ENCODER_CPR 630          // counts per revolution (adjust based on your encoder)
+#define ENCODER_CPR 1320  // counts per revolution (x4 mode: 4 * encoder lines)
 #define COUNTS_TO_RAD (two_pi / ENCODER_CPR)
 
 // Control loop frequency
-#define CONTROL_FREQ 100.0f      // 100 Hz control loop
+#define CONTROL_FREQ 100.0f  // 100 Hz control loop
 #define CONTROL_DT (1.0f / CONTROL_FREQ)
 
 /* USER CODE END PD */
@@ -127,25 +127,26 @@ extern volatile uint8_t uart_tx_flag;
 int16_t Enc[4], Enc1[4], Enc2[4], ka = 0;
 
 // PI Controller variables
-float kp = 1.67f;
-float ki = 0.4200f;
+float kp = 1.43f;
+float ki = 0.2106f;
 float kd = 0.0f;
-int16_t E[4] = {0};      // Current error
-int16_t E1[4] = {0};     // Previous error
-int16_t E2[4] = {0};     // Two samples ago error
-float U[4] = {0};        // Control output (integrator state)
+int16_t E[4] = {0};   // Current error
+int16_t E1[4] = {0};  // Previous error
+int16_t E2[4] = {0};  // Two samples ago error
+float U[4] = {0};     // Control output (integrator state)
 
 int16_t W = 0, W1 = 0, W2 = 0;
 int16_t We[4], We1[4], We2[4];  // Wheel velocities (encoder counts per sample)
-int32_t Enc32[4] = {0};        // Extended encoder counts (prevent overflow)
+int32_t Enc32[4] = {0};         // Extended encoder counts (prevent overflow)
 
-// Motor direction signs (adjust based on motor wiring)
-int16_t motor_sign[4] = {1, -1, -1, 1};
+// Motor direction signs (for kinematics reference calculation)
+// All +1 when encoder signs are configured correctly
+int16_t motor_sign[4] = {-1, 1, -1, 1};
 
 // Kinematics control variables
-float vx_ref = 0.0f;     // Cart velocity x (m/s)
-float vy_ref = 0.0f;     // Cart velocity y (m/s)
-float wz_ref = 0.0f;     // Cart angular velocity (rad/s)
+float vx_ref = 0.0f;  // Cart velocity x (m/s)
+float vy_ref = 0.0f;  // Cart velocity y (m/s)
+float wz_ref = 0.0f;  // Cart angular velocity (rad/s)
 
 // Trajectory following variables
 volatile uint32_t traj_index = 0;
@@ -191,20 +192,20 @@ void set_pwm(int16_t Pwm[]) {
     float temp1, temp2;
 
     // Motor 0 direction pins
-    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, Pwm[0] < 0);
-    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, (Pwm[0] > 0));
+    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, Pwm[0] * motor_sign[0] < 0);
+    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, (Pwm[0] * motor_sign[0] > 0));
 
     // Motor 1 direction pins
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, (Pwm[1] < 0));
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, (Pwm[1] > 0));
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, (Pwm[1] * motor_sign[1] < 0));
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, (Pwm[1] * motor_sign[1] > 0));
 
     // Motor 2 direction pins
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, (Pwm[2] < 0));
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, (Pwm[2] > 0));
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_11, (Pwm[2] * motor_sign[2] < 0));
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, (Pwm[2] * motor_sign[2] > 0));
 
     // Motor 3 direction pins
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, (Pwm[3] < 0));
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, (Pwm[3] > 0));
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, (Pwm[3] * motor_sign[3] < 0));
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, (Pwm[3] * motor_sign[3] > 0));
 
     // Set PWM duty cycle (magnitude only)
     temp1 = Pwm[0];
@@ -220,6 +221,7 @@ void set_pwm(int16_t Pwm[]) {
 
 /**
  * @brief Read encoders and compute wheel velocities (open-loop, just reads)
+ *        Encoder signs are applied so that forward motion = positive velocity
  */
 void read_encoders(void) {
     // Store previous values
@@ -230,11 +232,11 @@ void read_encoders(void) {
         We1[q] = We[q];
     }
 
-    // Read current encoder values
-    Enc[0] = TIM1->CNT;
-    Enc[1] = -TIM8->CNT;  // Inverted based on motor wiring
-    Enc[2] = -TIM3->CNT;
-    Enc[3] = TIM4->CNT;
+    // Read current encoder values with sign correction
+    Enc[0] = motor_sign[0] * (int16_t)TIM1->CNT;
+    Enc[1] = motor_sign[1] * (int16_t)TIM8->CNT;
+    Enc[2] = motor_sign[2] * (int16_t)TIM3->CNT;
+    Enc[3] = motor_sign[3] * (int16_t)TIM4->CNT;
 
     // Compute wheel velocities (encoder counts per sample)
     for (int q = 0; q < 4; q++) {
@@ -325,7 +327,7 @@ void kinematics_to_wheel_vel(float vx, float vy, float wz) {
     // counts/sample = (rad/s) * (counts/rad) * (s/sample)
     for (int q = 0; q < 4; q++) {
         float counts_per_sec = omega[q] / COUNTS_TO_RAD;
-        Ref[q] = (int16_t)(counts_per_sec * CONTROL_DT * motor_sign[q]);
+        Ref[q] = (int16_t)(counts_per_sec * CONTROL_DT);
     }
 }
 
@@ -360,37 +362,59 @@ void set_drive_pwm(void) {
 
     switch (drive_mode) {
         case MODE_F:  // Forward
-            p[0] = speed; p[1] = speed; p[2] = speed; p[3] = speed;
+            p[0] = speed;
+            p[1] = speed;
+            p[2] = speed;
+            p[3] = speed;
             break;
         case MODE_B:  // Backward
-            p[0] = -speed; p[1] = -speed; p[2] = -speed; p[3] = -speed;
+            p[0] = -speed;
+            p[1] = -speed;
+            p[2] = -speed;
+            p[3] = -speed;
             break;
         case MODE_CW:  // Clockwise rotation
-            p[0] = -speed; p[1] = speed; p[2] = speed; p[3] = -speed;
+            p[0] = -speed;
+            p[1] = speed;
+            p[2] = speed;
+            p[3] = -speed;
             break;
         case MODE_CCW:  // Counter-clockwise rotation
-            p[0] = speed; p[1] = -speed; p[2] = -speed; p[3] = speed;
+            p[0] = speed;
+            p[1] = -speed;
+            p[2] = -speed;
+            p[3] = speed;
             break;
         case MODE_NW:  // Diagonal NW
-            p[0] = 0; p[1] = speed; p[2] = 0; p[3] = speed;
+            p[0] = 0;
+            p[1] = speed;
+            p[2] = 0;
+            p[3] = speed;
             break;
         case MODE_SE:  // Diagonal SE
-            p[0] = 0; p[1] = -speed; p[2] = 0; p[3] = -speed;
+            p[0] = 0;
+            p[1] = -speed;
+            p[2] = 0;
+            p[3] = -speed;
             break;
         case MODE_NE:  // Diagonal NE
-            p[0] = speed; p[1] = 0; p[2] = speed; p[3] = 0;
+            p[0] = speed;
+            p[1] = 0;
+            p[2] = speed;
+            p[3] = 0;
             break;
         case MODE_SW:  // Diagonal SW
-            p[0] = -speed; p[1] = 0; p[2] = -speed; p[3] = 0;
+            p[0] = -speed;
+            p[1] = 0;
+            p[2] = -speed;
+            p[3] = 0;
             break;
         default:
-            p[0] = 0; p[1] = 0; p[2] = 0; p[3] = 0;
+            p[0] = 0;
+            p[1] = 0;
+            p[2] = 0;
+            p[3] = 0;
             break;
-    }
-
-    // Apply motor signs
-    for (int q = 0; q < 4; q++) {
-        Pwm[q] = p[q] * motor_sign[q];
     }
 }
 
@@ -399,7 +423,7 @@ void set_drive_pwm(void) {
  */
 void check_obstacle(void) {
     pSensor = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7);
-    obstacle_detected = (pSensor > 0);
+    obstacle_detected = (pSensor == 0);
 
     // Visual feedback on LED
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, obstacle_detected);
@@ -454,7 +478,7 @@ void stop_trajectory(void) {
 /**
  * @brief TIM5 Output Compare callback for trajectory timing
  */
-void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim) {
+void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef* htim) {
     if (htim->Instance == TIM5 && htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2) {
         if (!traj_running) return;
 
@@ -836,7 +860,7 @@ static void MX_TIM1_Init(void) {
     htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
     htim1.Init.RepetitionCounter = 0;
     htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-    sConfig.EncoderMode = TIM_ENCODERMODE_TI1;
+    sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
     sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
     sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
     sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
@@ -941,7 +965,7 @@ static void MX_TIM3_Init(void) {
     htim3.Init.Period = 65535;
     htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
     htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-    sConfig.EncoderMode = TIM_ENCODERMODE_TI1;
+    sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
     sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
     sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
     sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
@@ -985,7 +1009,7 @@ static void MX_TIM4_Init(void) {
     htim4.Init.Period = 65535;
     htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
     htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-    sConfig.EncoderMode = TIM_ENCODERMODE_TI1;
+    sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
     sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
     sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
     sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
@@ -1019,15 +1043,15 @@ static void MX_TIM5_Init(void) {
 
     TIM_ClockConfigTypeDef sClockSourceConfig = {0};
     TIM_MasterConfigTypeDef sMasterConfig = {0};
-    TIM_OC_InitTypeDef sConfigOC = {0};
+    TIM_IC_InitTypeDef sConfigIC = {0};
 
     /* USER CODE BEGIN TIM5_Init 1 */
 
     /* USER CODE END TIM5_Init 1 */
     htim5.Instance = TIM5;
-    htim5.Init.Prescaler = 9;  // 170MHz / 10 = 17MHz tick
+    htim5.Init.Prescaler = 9;
     htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
-    htim5.Init.Period = 4294967295;  // Full 32-bit range
+    htim5.Init.Period = 4294967295;
     htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
     htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
     if (HAL_TIM_Base_Init(&htim5) != HAL_OK) {
@@ -1037,7 +1061,7 @@ static void MX_TIM5_Init(void) {
     if (HAL_TIM_ConfigClockSource(&htim5, &sClockSourceConfig) != HAL_OK) {
         Error_Handler();
     }
-    if (HAL_TIM_OC_Init(&htim5) != HAL_OK) {
+    if (HAL_TIM_IC_Init(&htim5) != HAL_OK) {
         Error_Handler();
     }
     sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
@@ -1045,11 +1069,11 @@ static void MX_TIM5_Init(void) {
     if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK) {
         Error_Handler();
     }
-    sConfigOC.OCMode = TIM_OCMODE_TIMING;
-    sConfigOC.Pulse = 0;
-    sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
-    sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-    if (HAL_TIM_OC_ConfigChannel(&htim5, &sConfigOC, TIM_CHANNEL_2) != HAL_OK) {
+    sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+    sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+    sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+    sConfigIC.ICFilter = 0;
+    if (HAL_TIM_IC_ConfigChannel(&htim5, &sConfigIC, TIM_CHANNEL_2) != HAL_OK) {
         Error_Handler();
     }
     /* USER CODE BEGIN TIM5_Init 2 */
@@ -1080,7 +1104,7 @@ static void MX_TIM8_Init(void) {
     htim8.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
     htim8.Init.RepetitionCounter = 0;
     htim8.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-    sConfig.EncoderMode = TIM_ENCODERMODE_TI1;
+    sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
     sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
     sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
     sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
@@ -1120,9 +1144,9 @@ static void MX_TIM15_Init(void) {
 
     /* USER CODE END TIM15_Init 1 */
     htim15.Instance = TIM15;
-    htim15.Init.Prescaler = 33;  // 170MHz / 34 = 5MHz
+    htim15.Init.Prescaler = 67;
     htim15.Init.CounterMode = TIM_COUNTERMODE_UP;
-    htim15.Init.Period = 49999;  // 5MHz / 50000 = 100Hz
+    htim15.Init.Period = 49999;
     htim15.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
     htim15.Init.RepetitionCounter = 0;
     htim15.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -1256,13 +1280,14 @@ static void MX_GPIO_Init(void) {
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
 
-    /*Configure GPIO pin : PA7 (Proximity Sensor) */
+    /*Configure GPIO pin : PA7 */
     GPIO_InitStruct.Pin = GPIO_PIN_7;
     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-    /*Configure GPIO pins : PB11 PB13 PB14 PB4 PB5 PB6 PB7 */
+    /*Configure GPIO pins : PB11 PB13 PB14 PB4
+                             PB5 PB6 PB7 */
     GPIO_InitStruct.Pin =
         GPIO_PIN_11 | GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -1283,9 +1308,8 @@ static void MX_GPIO_Init(void) {
 /**
  * @brief Timer period elapsed callback - Main control loop (100 Hz)
  */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
     if (htim->Instance == TIM15) {
-
         // Check obstacle and stop if enabled
         if (obstacle_detected && obstacle_stop_enabled &&
             (mode == STATE_TRAJECTORY || mode == STATE_KINEMATICS)) {
@@ -1378,7 +1402,7 @@ void Error_Handler(void) {
  * @param  line: assert_param error line source number
  * @retval None
  */
-void assert_failed(uint8_t *file, uint32_t line) {
+void assert_failed(uint8_t* file, uint32_t line) {
     /* USER CODE BEGIN 6 */
     /* User can add his own implementation to report the file name and line number,
        ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */

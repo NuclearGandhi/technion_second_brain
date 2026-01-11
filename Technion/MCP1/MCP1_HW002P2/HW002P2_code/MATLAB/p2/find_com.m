@@ -1,23 +1,33 @@
 function comPort = find_com(preferred)
-%FIND_COM Find available COM port for STM32 connection
-%   comPort = find_com() - Auto-detect COM port with UI selection
-%   comPort = find_com('COM12') - Try preferred port first
-%
-%   Returns the COM port string (e.g., 'COM3') or empty if not found.
+    %FIND_COM Find available COM port for STM32 connection
+    %   comPort = find_com() - Auto-detect COM port with UI selection
+    %   comPort = find_com('COM12') - Try preferred port first
+    %
+    %   This function also cleans up any existing serial connections
+    %   to prevent "port already in use" errors.
+    %
+    %   Returns the COM port string (e.g., 'COM3') or empty if not found.
 
     if nargin < 1
-        preferred = 'COM12';
+        preferred = 'COM13';
     end
 
     comPort = '';
-    ports = {};
+
+    % Clean up ALL existing serial connections first
+    % This ensures re-running scripts works even if the previous run was interrupted
+    cleanup_serial_connections();
 
     % Get available serial ports
+    ports = {};
+
     try
         portList = serialportlist("available");
+
         if ~isempty(portList)
             ports = cellstr(portList);
         end
+
     catch
         % serialportlist not available
     end
@@ -46,6 +56,7 @@ function comPort = find_com(preferred)
 
     % Multiple ports - let user select via UI
     disp('Available COM ports:');
+
     for i = 1:numel(ports)
         fprintf('  [%d] %s\n', i, ports{i});
     end
@@ -62,4 +73,37 @@ function comPort = find_com(preferred)
     else
         disp('No COM port selected.');
     end
+
+end
+
+function cleanup_serial_connections()
+    %CLEANUP_SERIAL_CONNECTIONS Close all existing serial port connections
+    %   This helper function closes any open serial connections to prevent
+    %   "port already in use" errors when re-running scripts.
+
+    try
+        all_ports = serialportfind();
+
+        if ~isempty(all_ports)
+            fprintf('Closing %d existing serial connection(s)...\n', numel(all_ports));
+            delete(all_ports);
+            pause(0.3);
+        end
+
+    catch
+        % Fallback: try instrfindall for older MATLAB versions
+        try
+            old_serial = instrfindall; %#ok<INSTRFINDALL>
+
+            if ~isempty(old_serial)
+                fclose(old_serial);
+                delete(old_serial);
+                pause(0.3);
+            end
+
+        catch
+        end
+
+    end
+
 end
