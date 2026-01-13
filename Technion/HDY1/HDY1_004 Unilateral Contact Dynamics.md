@@ -198,7 +198,10 @@ For a better explanation, watch the following [talk](https://www.birs.ca/events/
 In the case of a *slipping* contact, due to Coulomb's law for slipping (if we are assuming Coulomb friction), we can define $\sigma=\mathrm{sgn}({v}_{t})=\pm 1$, such that:
 $${\lambda}_{t}=-\sigma \mu{\lambda}_{n}$$
 Plugging into $\text{(4.6)}$:
-$$\mathbf{M}(\mathbf{q})\ddot{\mathbf{q}}+\mathbf{B}(\mathbf{q},\dot{\mathbf{q}})+\mathbf{G}(\mathbf{q})=\mathbf{F}_{q}+({{\mathbf{w}_{n}}}-\sigma \mu \mathbf{w}_{t})^{T}{\lambda}_{n} \tag{4.15}$$Assuming $\mathbf{M}$ is non-singular, we can write:
+
+$$\mathbf{M}(\mathbf{q})\ddot{\mathbf{q}}+\mathbf{B}(\mathbf{q},\dot{\mathbf{q}})+\mathbf{G}(\mathbf{q})=\mathbf{F}_{q}+({{\mathbf{w}_{n}}}-\sigma \mu \mathbf{w}_{t})^{T}{\lambda}_{n} \tag{4.15}$$
+
+Assuming $\mathbf{M}$ is non-singular, we can write:
 $$\ddot{\mathbf{q}}=\mathbf{M}^{-1}(\mathbf{F}_{q}-\mathbf{B}-\mathbf{G}+(\mathbf{w}_{n}-\sigma \mu \mathbf{w}_{t})^{T}{\lambda}_{n})$$
 Differentiating normal constraint $\mathbf{w}_{n}\dot{\mathbf{q}}=0$, we get
 $$\dot{\mathbf{w}}_{n}\dot{\mathbf{q}}+\mathbf{w}_{n}\ddot{\mathbf{q}}=0$$
