@@ -118,6 +118,89 @@
         "status": "unpublished",
         "elements": [
           {
+            "id": "80rdLsWlkQB-Hx2u7XGDF",
+            "type": "rectangle",
+            "x": -60,
+            "y": -380,
+            "width": 20,
+            "height": 90,
+            "angle": 0,
+            "strokeColor": "transparent",
+            "backgroundColor": "transparent",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "groupIds": [
+              "jZ3uFcPEBdNNW32QWH0ix"
+            ],
+            "frameId": null,
+            "index": "aJ",
+            "roundness": null,
+            "seed": 426868572,
+            "version": 111,
+            "versionNonce": 1638878044,
+            "isDeleted": false,
+            "boundElements": [],
+            "updated": 1768250962373,
+            "link": null,
+            "locked": false
+          },
+          {
+            "id": "YCXB7JUdA1FTKOUmm45DV",
+            "type": "arrow",
+            "x": -50,
+            "y": -300,
+            "width": 0,
+            "height": 70.00000000000001,
+            "angle": 0,
+            "strokeColor": "#1971c2",
+            "backgroundColor": "transparent",
+            "fillStyle": "solid",
+            "strokeWidth": 4,
+            "strokeStyle": "solid",
+            "roughness": 0,
+            "opacity": 100,
+            "groupIds": [
+              "jZ3uFcPEBdNNW32QWH0ix"
+            ],
+            "frameId": null,
+            "index": "aK",
+            "roundness": null,
+            "seed": 678340964,
+            "version": 132,
+            "versionNonce": 216367068,
+            "isDeleted": false,
+            "boundElements": [],
+            "updated": 1768250962373,
+            "link": null,
+            "locked": false,
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                -70.00000000000001
+              ]
+            ],
+            "startBinding": null,
+            "endBinding": null,
+            "startArrowhead": null,
+            "endArrowhead": "triangle",
+            "elbowed": false,
+            "moveMidPointsWithElement": false
+          }
+        ],
+        "id": "bwl1sK6zo2L5AQfI_x9h-",
+        "created": 1768250968786
+      },
+      {
+        "status": "unpublished",
+        "elements": [
+          {
             "type": "line",
             "version": 3503,
             "versionNonce": 801662159,
