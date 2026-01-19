@@ -37,7 +37,6 @@ fprintf('Normal constraint gradient w_n:\n');
 disp(w_n);
 
 % Velocity of contact point P
-% v_P = v_B + omega x r_PB = (x_dot + R*theta_dot)*e1 + y_dot*e2
 v_t = x_dot + R * theta_dot;
 fprintf('Tangential velocity: v_t = x_dot + R*theta_dot\n');
 
@@ -54,14 +53,14 @@ disp(W);
 %% Kinematics and Energy
 fprintf('--- Kinematics ---\n\n');
 
-% Position of horse body COM (distance h below B along symmetry axis)
+% Position of horse body COM
 r_1c = [x + h * s_theta; y - h * c_theta];
 v_1c = jacobian(r_1c, q) * q_dot;
 v_1c = simplify(v_1c);
 fprintf('Horse COM velocity v_1c:\n');
 disp(v_1c);
 
-% Position of pendulum COM (distance l from B, at angle theta-phi from vertical)
+% Position of pendulum COM
 r_2c = [x + l * s_theta_phi; y - l * c_theta_phi];
 v_2c = jacobian(r_2c, q) * q_dot;
 v_2c = simplify(v_2c);
@@ -88,15 +87,7 @@ fprintf('--- Deriving EoM ---\n\n');
 L = T - V;
 
 % Compute mass matrix M from kinetic energy
-M = sym(zeros(4, 4));
-
-for i = 1:4
-
-    for j = 1:4
-        M(i, j) = diff(diff(T, q_dot(i)), q_dot(j));
-    end
-
-end
+M = hessian(T, q_dot);
 
 M = simplify(M);
 fprintf('Mass matrix M:\n');
@@ -130,22 +121,6 @@ G = jacobian(V, q).';
 G = simplify(G);
 fprintf('Gravity vector G:\n');
 disp(G);
-
-%% Verify against homework expressions (HW4.30-32)
-fprintf('--- Verification of M, B, G ---\n');
-
-% Expected M from homework
-M_expected = [m1 + m2, 0, h * m1 * c_theta + l * m2 * c_theta_phi, -l * m2 * c_theta_phi;
-              0, m1 + m2, h * m1 * s_theta + l * m2 * s_theta_phi, -l * m2 * s_theta_phi;
-              h * m1 * c_theta + l * m2 * c_theta_phi, h * m1 * s_theta + l * m2 * s_theta_phi, J1 + J2 + h ^ 2 * m1 + l ^ 2 * m2, -J2 - l ^ 2 * m2;
-              -l * m2 * c_theta_phi, -l * m2 * s_theta_phi, -J2 - l ^ 2 * m2, J2 + l ^ 2 * m2];
-
-% Note: The homework has a sign issue in M(2,3) - it shows h*m1*s_theta - l*m2*s_theta_phi
-% but kinematically it should be h*m1*s_theta + l*m2*s_theta_phi (checking derivative)
-
-M_diff = simplify(M - M_expected);
-fprintf('Difference M - M_expected:\n');
-disp(M_diff);
 
 %% Solve for Constrained Dynamics (No-Slip Case)
 fprintf('--- No-Slip Constrained Dynamics ---\n\n');
@@ -186,50 +161,20 @@ for i = 1:4
     disp(EoM(i));
 end
 
-% From row 4 (no external torque on pendulum):
-eq4 = EoM(4);
-fprintf('Equation 4 (pendulum equation, no constraint forces):\n');
-disp(eq4);
+% Solve all 4 equations directly for all 4 unknowns
+sol_stick = solve(EoM_lhs == EoM_rhs, [theta_ddot, phi_ddot, lambda_n, lambda_t]);
 
-% From rows 1 and 3, we can form the theta equation
-% Row 1: ... = lambda_t
-% Row 3: ... = R*lambda_t
-% Multiply row 1 by R and subtract from row 3 to eliminate lambda_t
-
-eq1 = EoM_lhs(1);
-eq3 = EoM_lhs(3);
-eq_theta = simplify(eq3 - R * eq1);
-fprintf('Combined theta equation (row3 - R*row1, eliminates lambda_t):\n');
-disp(eq_theta);
-
-% Now we have a 2x2 system for [theta_ddot; phi_ddot]
-% Collect coefficients
-[c_theta_ddot_eq4, ~] = coeffs(eq4, [theta_ddot, phi_ddot]);
-[c_theta_ddot_eq_theta, ~] = coeffs(eq_theta, [theta_ddot, phi_ddot]);
-
-% Solve the 2x2 system symbolically
-sol_acc = solve([eq_theta == 0, eq4 == 0], [theta_ddot, phi_ddot]);
-theta_ddot_sol = simplify(sol_acc.theta_ddot);
-phi_ddot_sol = simplify(sol_acc.phi_ddot);
+theta_ddot_sol = simplify(sol_stick.theta_ddot);
+phi_ddot_sol = simplify(sol_stick.phi_ddot);
+lambda_n_sol_stick = simplify(sol_stick.lambda_n);
+lambda_t_sol_stick = simplify(sol_stick.lambda_t);
 
 fprintf('theta_ddot (no-slip):\n');
 disp(theta_ddot_sol);
 fprintf('phi_ddot (no-slip):\n');
 disp(phi_ddot_sol);
-
-% Now find lambda_n and lambda_t from rows 1 and 2
-% Row 2: M_21*x_ddot + M_22*y_ddot + M_23*theta_ddot + M_24*phi_ddot + B_2 + G_2 = lambda_n
-% With x_ddot = -R*theta_ddot, y_ddot = 0
-lambda_n_expr = EoM_lhs(2);
-lambda_n_sol_stick = subs(lambda_n_expr, [theta_ddot, phi_ddot], [theta_ddot_sol, phi_ddot_sol]);
-lambda_n_sol_stick = simplify(lambda_n_sol_stick);
 fprintf('lambda_n (no-slip):\n');
 disp(lambda_n_sol_stick);
-
-% Row 1: M_11*x_ddot + M_12*y_ddot + M_13*theta_ddot + M_14*phi_ddot + B_1 + G_1 = lambda_t
-lambda_t_expr = EoM_lhs(1);
-lambda_t_sol_stick = subs(lambda_t_expr, [theta_ddot, phi_ddot], [theta_ddot_sol, phi_ddot_sol]);
-lambda_t_sol_stick = simplify(lambda_t_sol_stick);
 fprintf('lambda_t (no-slip):\n');
 disp(lambda_t_sol_stick);
 
@@ -282,6 +227,31 @@ disp(phi_ddot_sol_slip);
 fprintf('lambda_n (slipping):\n');
 disp(lambda_n_sol_slip);
 
+%% Solve for Separation Dynamics (Free Flight)
+fprintf('\n--- Separation Dynamics (Free Flight) ---\n\n');
+
+% No constraints: lambda_n = 0, lambda_t = 0
+% EoM: M*q_ddot + B + G = 0
+% q = [x; y; theta; phi]
+
+rhs_sep = -B - G;
+q_ddot_sol_sep = M \ rhs_sep;
+q_ddot_sol_sep = simplify(q_ddot_sol_sep);
+
+x_ddot_sep = q_ddot_sol_sep(1);
+y_ddot_sep = q_ddot_sol_sep(2);
+theta_ddot_sep = q_ddot_sol_sep(3);
+phi_ddot_sep = q_ddot_sol_sep(4);
+
+fprintf('x_ddot (separation):\n');
+disp(x_ddot_sep);
+fprintf('y_ddot (separation):\n');
+disp(y_ddot_sep);
+fprintf('theta_ddot (separation):\n');
+disp(theta_ddot_sep);
+fprintf('phi_ddot (separation):\n');
+disp(phi_ddot_sep);
+
 %% Export Numerical Functions
 fprintf('\n--- Exporting Numerical Functions ---\n\n');
 
@@ -313,6 +283,15 @@ matlabFunction(x_ddot_sol_slip, theta_ddot_sol_slip, phi_ddot_sol_slip, lambda_n
     'File', fullfile(output_dir, 'slip_accelerations.m'), ...
     'Vars', {theta, phi, x_dot, theta_dot, phi_dot, m1, m2, J1, J2, R, h, l, g, mu, sigma}, ...
     'Outputs', {'x_ddot', 'theta_ddot', 'phi_ddot', 'lambda_n'});
+
+% For separation dynamics: need x_ddot, y_ddot, theta_ddot, phi_ddot
+% State is X = [x; y; theta; phi; x_dot; y_dot; theta_dot; phi_dot]
+
+fprintf('Exporting sep_accelerations.m...\n');
+matlabFunction(x_ddot_sep, y_ddot_sep, theta_ddot_sep, phi_ddot_sep, ...
+    'File', fullfile(output_dir, 'sep_accelerations.m'), ...
+    'Vars', {theta, phi, theta_dot, phi_dot, m1, m2, J1, J2, R, h, l, g}, ...
+    'Outputs', {'x_ddot', 'y_ddot', 'theta_ddot', 'phi_ddot'});
 
 fprintf('\nAll functions exported successfully!\n');
 fprintf('=== Symbolic Derivations Complete ===\n');

@@ -85,11 +85,9 @@ alwaysApply: true
 - When referring to an existing figure, add an inline link to its anchor (for example `[[#^figure-anchor|איור]]`).
 - Use consistent image sizing (typically 600px width for main figures), unless the figure is an excalidraw svg file, in which case use the original size of the file.
 - Leave appropriate space and context for figures to be inserted
+- For figures use the format: `![[imagename.png|bookhue|size]]^figure-insert-name-here`
 
 ## Language Consistency
 - When content is primarily in English, use English callout titles
 - When content is primarily in Hebrew, use Hebrew callout titles
 - Match the language of callout blocks to the language of the surrounding content
-
-# Additional Rules for Code Files
-
