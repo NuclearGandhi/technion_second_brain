@@ -72,8 +72,17 @@
 // These compensate for any mismatch between model and actual hardware
 // Calibrated 2026-01-19: vx expected 2.5m actual 1.5m, wz expected 172° actual 90°
 #define CAL_VX 1.67f  // Forward/backward velocity multiplier (CALIBRATED)
-#define CAL_VY 1.5f   // Left/right velocity multiplier (NOT YET CALIBRATED)
+#define CAL_VY 1.5f   // Left/right velocity multiplier (ESTIMATED)
 #define CAL_WZ 2.1f   // Rotation velocity multiplier (CALIBRATED)
+
+// Global trajectory distance scale (1.0 = exact m/s from MATLAB)
+// Increase this to make ALL trajectories larger/faster without changing MATLAB
+#define DISTANCE_SCALE 8.0f
+
+// Combined scaling factors (applied in kinematics)
+#define SCALE_VX (CAL_VX * DISTANCE_SCALE)
+#define SCALE_VY (CAL_VY * DISTANCE_SCALE)
+#define SCALE_WZ (CAL_WZ)  // Rotation usually shouldn't scale with distance
 
 /* USER CODE END PD */
 
@@ -378,10 +387,10 @@ void reset_pid(void) {
 void kinematics_to_wheel_vel(float vx, float vy, float wz) {
     float omega[4];
 
-    // Apply calibration factors to compensate for model/hardware mismatch
-    vx = vx * CAL_VX;
-    vy = vy * CAL_VY;
-    wz = wz * CAL_WZ;
+    // Apply combined scaling factors (Calibration * Distance)
+    vx = vx * SCALE_VX;
+    vy = vy * SCALE_VY;
+    wz = wz * SCALE_WZ;
 
     // Compute wheel angular velocities (rad/s)
     // Index 0 = RR (Rear Right)

@@ -18,8 +18,8 @@ clear; close all; clc;
 addpath('../p2-given');
 
 % Trajectory parameters
-v_min = 50; % Minimum speed [mm/s equivalent units]
-v_max = 200; % Maximum speed
+v_min = 0.03; % Minimum speed [m/s]
+v_max = 0.2; % Maximum speed [m/s]
 samples_per_segment = 25; % Spline resolution
 
 % Target rectangle size (for reference grid)
@@ -30,7 +30,7 @@ target_height = 1.0; % meters
 f_clk = 170e6; % 170 MHz
 
 % Total trajectory time
-total_time = 10; % seconds
+total_time = 30; % seconds
 
 %% Interactive Point Selection
 fprintf('=== Interactive Rectangle Trajectory ===\n\n');
@@ -49,9 +49,9 @@ hold on;
 grid on;
 axis equal;
 
-% Set axis limits for ~2m x 1m workspace
-xlim([-0.5, 2.5]);
-ylim([-0.5, 1.5]);
+% Set axis limits for wider workspace
+xlim([-1.0, 3.0]);
+ylim([-1.0, 2.0]);
 
 xlabel('X [m]');
 ylabel('Y [m]');
@@ -174,9 +174,8 @@ dt_scaled = diff(tt_scaled);
 [vx, vy, wz, heading] = path_to_body_velocities(xs, ys, tt_scaled);
 
 % Speed profile from spline fitting (vt_raw is in internal units)
-% Scale vt_raw to m/s for export
-speed_scale = 1.0/1000.0; % Convert from internal units to m/s
-vx = vt_raw(:)' * speed_scale; % Use spline speed profile as forward velocity
+% Since v_min/v_max are in m/s, vt_raw is already in m/s.
+vx = vt_raw(:)'; % Use spline speed profile as forward velocity
 vy = zeros(size(vx)); % No sideways motion during path following
 
 % Limit wz to reasonable values

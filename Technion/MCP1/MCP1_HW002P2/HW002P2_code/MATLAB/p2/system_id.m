@@ -32,8 +32,8 @@ pwm_to_volt = V_MAX / PWM_MAX;
 %% Load Data
 fprintf('=== Motor System Identification ===\n\n');
 
-% Try to load data from Part 1
-data_file = '../p2/record_data.mat';
+% Try to load recorded data
+data_file = 'record_data.mat';
 
 if exist(data_file, 'file')
     load(data_file);

@@ -24,12 +24,12 @@ clear; close all; clc;
 
 %% Configuration
 % Figure-8 dimensions (in meters)
-A = 6; % Amplitude/size of figure-8 (smaller = faster to complete)
-total_time = 15; % Total trajectory time [s]
+A = 1; % Amplitude/size of figure-8 (smaller = faster to complete)
+total_time = 30; % Total trajectory time [s]
 
 % Speed limits
-v_min = 0.05; % Minimum speed [m/s] - increased to avoid dead zone
-v_max = 0.6; % Maximum speed [m/s]
+v_min = 0.03; % Minimum speed [m/s]
+v_max = 0.2; % Maximum speed [m/s]
 
 % Sampling
 n_points = 100; % Number of trajectory points (fewer = less memory)
@@ -205,7 +205,7 @@ trajectory_data.v_profile = v_profile;
 trajectory_data.curvature = curvature;
 trajectory_data.time = time;
 trajectory_data.dt = dt;
-trajectory_data.vt = vt;
+trajectory_data.v_profile = v_profile;
 trajectory_data.dt_clk = dt_clk;
 
 save('figure8_trajectory_data.mat', 'trajectory_data');

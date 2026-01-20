@@ -18,8 +18,8 @@ function kinematics_gui()
     BAUD_RATE = 115200;
 
     % Velocity limits
-    VX_MAX = 0.8; % m/s
-    VY_MAX = 0.8; % m/s
+    VX_MAX = 0.16; % m/s
+    VY_MAX = 0.16; % m/s
     WZ_MAX = 4; % rad/s
 
     %% Create Serial Connection
@@ -198,11 +198,7 @@ function kinematics_gui()
     function send_velocity()
 
         try
-            vx
-            vy
-            wz
             cmd = sprintf('vel %.4f %.4f %.4f', vx, vy, wz);
-            cmd
             flush(s);
             writeline(s, cmd);
             set(status_text, 'String', sprintf('Sent: vx=%.3f vy=%.3f wz=%.3f', vx, vy, wz));
