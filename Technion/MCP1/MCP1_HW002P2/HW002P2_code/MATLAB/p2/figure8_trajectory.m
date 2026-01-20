@@ -7,18 +7,29 @@
 % - Curvature-based adaptive speed profile
 % - Output: vx, vy, wz arrays and timing for STM32
 %
+% COORDINATE SYSTEM (matches firmware kinematics):
+%   +vx = move forward (front of cart)
+%   +vy = move left
+%   +wz = rotate counter-clockwise (CCW)
+%
+% MOTOR INDEX MAPPING (firmware):
+%   Motor 0 = Rear Right  (RR), Timer = TIM1
+%   Motor 1 = Rear Left   (RL), Timer = TIM8
+%   Motor 2 = Front Left  (FL), Timer = TIM3
+%   Motor 3 = Front Right (FR), Timer = TIM4
+%
 % The output is exported to trajectory.h for inclusion in firmware.
 
 clear; close all; clc;
 
 %% Configuration
 % Figure-8 dimensions (in meters)
-A = 0.3; % Amplitude/size of figure-8 (smaller = faster to complete)
-total_time = 8; % Total trajectory time [s]
+A = 6; % Amplitude/size of figure-8 (smaller = faster to complete)
+total_time = 15; % Total trajectory time [s]
 
 % Speed limits
-v_min = 0.08; % Minimum speed [m/s]
-v_max = 0.4; % Maximum speed [m/s]
+v_min = 0.05; % Minimum speed [m/s] - increased to avoid dead zone
+v_max = 0.6; % Maximum speed [m/s]
 
 % Sampling
 n_points = 100; % Number of trajectory points (fewer = less memory)
@@ -63,24 +74,7 @@ v_profile = v_max ./ (1 + k_scale * curvature);
 v_profile = max(v_profile, v_min);
 v_profile = min(v_profile, v_max);
 
-%% Compute Cart Velocities (vx, vy, wz)
-% Normalize velocity direction
-vx = v_profile .* dx_dt ./ speed_param;
-vy = v_profile .* dy_dt ./ speed_param;
-
-% Angular velocity: rate of heading change
-heading = atan2(dy_dt, dx_dt);
-heading_unwrapped = unwrap(heading);
-
-% Compute heading derivative (angular velocity)
-wz = gradient(heading_unwrapped) / Ts * (total_time / (2 * pi));
-
-% Scale wz to be physically reasonable
-wz_max = 2.0; % rad/s
-wz = wz * v_max / max(abs(wz) + 0.01);
-wz = max(min(wz, wz_max), -wz_max);
-
-%% Compute Time Spacing
+%% Compute Time Spacing FIRST (needed for body velocity computation)
 % Use arc length for adaptive timing
 arc_length = zeros(1, n_points);
 
@@ -105,13 +99,24 @@ fprintf('Path length: %.2f m\n', arc_length(end));
 fprintf('Total time: %.2f s\n', time(end));
 fprintf('Average speed: %.3f m/s\n', arc_length(end) / time(end));
 
-%% Convert to STM32 Format
-% Velocities stay in m/s and rad/s - the firmware handles the conversion
-velocity_scale = 1.0; % Scale factor (1.0 = full speed)
+%% Compute Body-Frame Velocities (vx, vy, wz)
+% Use shared function for correct path-following velocities
+[vx, vy, wz, heading] = path_to_body_velocities(x, y, time);
 
-vx_export = vx * velocity_scale;
-vy_export = vy * velocity_scale;
-wz_export = wz * velocity_scale;
+% Scale speed to match the curvature-based profile
+% (path_to_body_velocities computes speed from gradient, but we have v_profile)
+vx = v_profile; % Use our curvature-based speed profile
+vy = zeros(size(vx)); % No sideways motion during path following
+
+% Limit wz to reasonable values
+wz_max = 3.0; % rad/s
+wz = max(min(wz, wz_max), -wz_max);
+
+%% Convert to STM32 Format
+% Velocities are in m/s and rad/s - firmware applies calibration factors
+vx_export = vx;
+vy_export = vy;
+wz_export = wz;
 
 % Convert time deltas to clock counts (TIM5 runs at 17MHz after prescaler=9)
 f_tim5 = 17e6; % 170MHz / 10 = 17MHz

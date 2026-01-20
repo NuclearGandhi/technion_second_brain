@@ -4,12 +4,23 @@ function trajectory_to_c(vx, vy, wz, dt_clk, output_file, trajectory_name)
     %   trajectory_to_c(vx, vy, wz, dt_clk, output_file, trajectory_name)
     %
     %   Inputs:
-    %       vx          - X velocity array [m/s]
-    %       vy          - Y velocity array [m/s]
-    %       wz          - Angular velocity array [rad/s]
-    %       dt_clk      - Time delta array (uint32 clock counts)
+    %       vx          - X velocity array [m/s], +vx = forward
+    %       vy          - Y velocity array [m/s], +vy = left
+    %       wz          - Angular velocity array [rad/s], +wz = CCW
+    %       dt_clk      - Time delta array (uint32 clock counts at 17MHz)
     %       output_file - Output file path (e.g., 'trajectory.h')
     %       trajectory_name - Name for comments (e.g., 'figure8')
+    %
+    %   COORDINATE SYSTEM (matches firmware kinematics):
+    %       +vx = move forward (front of cart)
+    %       +vy = move left
+    %       +wz = rotate counter-clockwise (CCW)
+    %
+    %   MOTOR INDEX MAPPING (firmware):
+    %       Motor 0 = Rear Right  (RR), Timer = TIM1
+    %       Motor 1 = Rear Left   (RL), Timer = TIM8
+    %       Motor 2 = Front Left  (FL), Timer = TIM3
+    %       Motor 3 = Front Right (FR), Timer = TIM4
     %
     %   The output file contains:
     %       const float vx_t[]     - X velocity samples [m/s]

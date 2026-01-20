@@ -56,8 +56,8 @@
 
 // Mecanum wheel geometry (meters)
 #define WHEEL_RADIUS 0.030f  // 30mm wheel radius
-#define WHEEL_BASE_L 0.080f  // half of wheelbase (front-back)
-#define WHEEL_BASE_W 0.075f  // half of track width (left-right)
+#define WHEEL_BASE_L 0.095f  // half of wheelbase (front-back)
+#define WHEEL_BASE_W 0.080f  // half of track width (left-right)
 #define L_PLUS_W (WHEEL_BASE_L + WHEEL_BASE_W)
 
 // Encoder conversion: encoder counts per revolution / 2*pi
@@ -67,6 +67,13 @@
 // Control loop frequency
 #define CONTROL_FREQ 100.0f  // 100 Hz control loop
 #define CONTROL_DT (1.0f / CONTROL_FREQ)
+
+// Kinematics calibration factors
+// These compensate for any mismatch between model and actual hardware
+// Calibrated 2026-01-19: vx expected 2.5m actual 1.5m, wz expected 172° actual 90°
+#define CAL_VX 1.67f  // Forward/backward velocity multiplier (CALIBRATED)
+#define CAL_VY 1.5f   // Left/right velocity multiplier (NOT YET CALIBRATED)
+#define CAL_WZ 2.1f   // Rotation velocity multiplier (CALIBRATED)
 
 /* USER CODE END PD */
 
@@ -127,8 +134,8 @@ extern volatile uint8_t uart_tx_flag;
 int16_t Enc[4], Enc1[4], Enc2[4], ka = 0;
 
 // PI Controller variables
-float kp = 1.43f;
-float ki = 0.2106f;
+float kp = 3.2f;
+float ki = 10.2f;
 float kd = 0.0f;
 int16_t E[4] = {0};   // Current error
 int16_t E1[4] = {0};  // Previous error
@@ -143,14 +150,42 @@ int16_t W = 0, W1 = 0, W2 = 0;
 int16_t We[4], We1[4], We2[4];  // Wheel velocities (encoder counts per sample)
 int32_t Enc32[4] = {0};         // Extended encoder counts (prevent overflow)
 
-// Motor direction signs (for kinematics reference calculation)
-// All +1 when encoder signs are configured correctly
-int16_t motor_sign[4] = {-1, 1, -1, 1};
+int8_t sensor_sign = 1;
+
+/*
+ * ==========================================================================
+ * MOTOR INDEX MAPPING (view from above, front of cart is UP):
+ * ==========================================================================
+ *              FRONT
+ *        +---------------+
+ *        |  [2]     [3]  |     Motor 2 = Front Left  (FL)
+ *        |   FL      FR  |     Motor 3 = Front Right (FR)
+ *        |               |
+ *        |       +-----> x (forward)
+ *        |       |       |
+ *        |       v       |
+ *        |       y       |     y points LEFT
+ *        |   RL      RR  |
+ *        |  [1]     [0]  |     Motor 1 = Rear Left   (RL)
+ *        +---------------+     Motor 0 = Rear Right  (RR)
+ *              BACK
+ *
+ * ENCODER TIMERS:
+ *   Motor 0 (RR) = TIM1
+ *   Motor 1 (RL) = TIM8
+ *   Motor 2 (FL) = TIM3
+ *   Motor 3 (FR) = TIM4
+ * ==========================================================================
+ */
+
+// Motor direction signs for H-bridge control
+// Sign correction to ensure positive PWM = forward wheel rotation
+int16_t motor_sign[4] = {1, -1, -1, 1};  // {RR, RL, FL, FR}
 
 // Kinematics control variables
-float vx_ref = 0.0f;  // Cart velocity x (m/s)
-float vy_ref = 0.0f;  // Cart velocity y (m/s)
-float wz_ref = 0.0f;  // Cart angular velocity (rad/s)
+float vx_ref = 0.0f;  // Cart velocity x (m/s), +x = forward
+float vy_ref = 0.0f;  // Cart velocity y (m/s), +y = left
+float wz_ref = 0.0f;  // Cart angular velocity (rad/s), +wz = CCW
 
 // Trajectory following variables
 volatile uint32_t traj_index = 0;
@@ -315,30 +350,50 @@ void reset_pid(void) {
  * @brief Convert cart velocities (vx, vy, wz) to wheel velocity references
  *        Using Mecanum wheel inverse kinematics
  *
- * Wheel arrangement (top view):
- *   FL(0) -------- FR(1)
- *     |     ^x     |
- *     |     |      |
- *     |  y<-+      |
- *   RL(2) -------- RR(3)
+ * ==========================================================================
+ * MOTOR INDEX MAPPING (view from above, front of cart is UP):
+ * ==========================================================================
  *
- * Mecanum equations:
- *   omega_FL = (vx - vy - (L+W)*wz) / r
- *   omega_FR = (vx + vy + (L+W)*wz) / r
- *   omega_RL = (vx + vy - (L+W)*wz) / r
- *   omega_RR = (vx - vy + (L+W)*wz) / r
+ *              FRONT
+ *        +---------------+
+ *        |  [2]     [3]  |     Motor 2 = Front Left  (FL)
+ *        |   FL      FR  |     Motor 3 = Front Right (FR)
+ *        |               |
+ *        |       +-----> x (forward)
+ *        |       |       |
+ *        |       v       |
+ *        |       y       |     y points LEFT
+ *        |   RL      RR  |
+ *        |  [1]     [0]  |     Motor 1 = Rear Left   (RL)
+ *        +---------------+     Motor 0 = Rear Right  (RR)
+ *              BACK
+ *
+ * SIGN CONVENTIONS:
+ *   +vx = move forward (front direction)
+ *   +vy = move left
+ *   +wz = rotate counter-clockwise (CCW)
+ *
+ * ==========================================================================
  */
 void kinematics_to_wheel_vel(float vx, float vy, float wz) {
     float omega[4];
 
+    // Apply calibration factors to compensate for model/hardware mismatch
+    vx = vx * CAL_VX;
+    vy = vy * CAL_VY;
+    wz = wz * CAL_WZ;
+
     // Compute wheel angular velocities (rad/s)
-    omega[0] = (vx - vy - L_PLUS_W * wz) / WHEEL_RADIUS;  // FL
-    omega[1] = (vx + vy + L_PLUS_W * wz) / WHEEL_RADIUS;  // FR
-    omega[2] = (vx + vy - L_PLUS_W * wz) / WHEEL_RADIUS;  // RL
-    omega[3] = (vx - vy + L_PLUS_W * wz) / WHEEL_RADIUS;  // RR
+    // Index 0 = RR (Rear Right)
+    // Index 1 = RL (Rear Left)
+    // Index 2 = FL (Front Left)
+    // Index 3 = FR (Front Right)
+    omega[0] = (vx - vy + L_PLUS_W * wz) / WHEEL_RADIUS;  // RR
+    omega[1] = (vx + vy - L_PLUS_W * wz) / WHEEL_RADIUS;  // RL
+    omega[2] = (vx - vy - L_PLUS_W * wz) / WHEEL_RADIUS;  // FL
+    omega[3] = (vx + vy + L_PLUS_W * wz) / WHEEL_RADIUS;  // FR
 
     // Convert to encoder counts per sample period
-    // counts/sample = (rad/s) * (counts/rad) * (s/sample)
     for (int q = 0; q < 4; q++) {
         float counts_per_sec = omega[q] / COUNTS_TO_RAD;
         Ref[q] = (int16_t)(counts_per_sec * CONTROL_DT);
@@ -430,6 +485,7 @@ void set_drive_pwm(void) {
             p[3] = 0;
             break;
     }
+    set_pwm(p);
 }
 
 /**
@@ -437,7 +493,7 @@ void set_drive_pwm(void) {
  */
 void check_obstacle(void) {
     pSensor = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7);
-    obstacle_detected = (pSensor == 0);
+    obstacle_detected = (pSensor == 0) ^ sensor_sign;
 
     // Visual feedback on LED
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, obstacle_detected);
@@ -500,8 +556,10 @@ void stop_trajectory(void) {
     traj_running = 0;
     HAL_TIM_OC_Stop_IT(&htim5, TIM_CHANNEL_2);
 
-    // Stop motors
+    // Stop motors - zero all references and PWM
     Ref[0] = Ref[1] = Ref[2] = Ref[3] = 0;
+    Pwm[0] = Pwm[1] = Pwm[2] = Pwm[3] = 0;
+    set_pwm(Pwm);
     reset_pid();
 }
 
@@ -515,7 +573,7 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef* htim) {
         traj_index++;
 
         // Check for end of trajectory
-        if (traj_index >= traj_len) {
+        if (traj_index >= traj_len - 1) {
             stop_trajectory();
             mode = STATE_IDLE;
             return;
@@ -525,10 +583,14 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef* htim) {
         kinematics_to_wheel_vel(vx_t[traj_index], vy_t[traj_index], wz_t[traj_index]);
 
         // Schedule next interrupt
+        // Note: We need to schedule even for the last point so stop_trajectory gets called
         if (traj_index < tt_clk_len) {
             traj_next_time += tt_clk[traj_index];
-            __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_2, traj_next_time);
+        } else {
+            // Last point: schedule a short delay (100ms) to trigger stop
+            traj_next_time += 1700000;  // ~100ms at 17MHz
         }
+        __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_2, traj_next_time);
     }
 }
 

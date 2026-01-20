@@ -7,6 +7,7 @@
 #include "main.h"
 
 #define UART &huart3
+// # define UART &hlpuart1
 
 #define RX_CMD_LEN 8
 #define RX_BUF_LEN 64  // Increased for longer commands

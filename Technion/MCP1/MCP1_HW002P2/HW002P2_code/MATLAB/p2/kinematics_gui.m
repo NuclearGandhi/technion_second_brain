@@ -18,9 +18,9 @@ function kinematics_gui()
     BAUD_RATE = 115200;
 
     % Velocity limits
-    VX_MAX = 1; % m/s
-    VY_MAX = 1; % m/s
-    WZ_MAX = 2.0; % rad/s
+    VX_MAX = 0.8; % m/s
+    VY_MAX = 0.8; % m/s
+    WZ_MAX = 4; % rad/s
 
     %% Create Serial Connection
     port = find_com();
