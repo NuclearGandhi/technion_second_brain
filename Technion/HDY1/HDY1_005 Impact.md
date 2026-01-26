@@ -417,7 +417,8 @@ $$\mathbf{g}(\mathbf{x})=\begin{cases}
 
 Consider a point particle colliding with a surface where friction is present. The relative velocity and impulse vectors are decomposed into tangential and normal components:
 
-![[HDY1_005 Impact placeholder - impact with friction.svg]]
+![[HDY1_005 Impact 2026-01-20 15.22.51.excalidraw.svg]]
+
 >General impact configuration with friction showing tangential and normal directions.
 
 **Relative velocity vector**:
@@ -431,8 +432,6 @@ $$\boldsymbol{\Lambda}=m\Delta \mathbf{v}=m(\mathbf{v}^{+}-\mathbf{v}^{-})\tag{5
 
 For given pre-impact velocity $\mathbf{v}^{-}$, we need to find the impulse $\boldsymbol{\Lambda}$ and the post-impact velocity $\mathbf{v}^{+}$ (2 scalar unknowns).
 
-### Restitution Laws
-
 In the **normal direction**, we apply the standard restitution law:
 $$v^{+}_{n}=-{e}_{n}v^{-}_{n},\qquad {e}_{n}\in[0,1]\tag{5.25}$$
 
@@ -440,8 +439,6 @@ By analogy, one might suggest a **tangential restitution** law:
 $$v^{+}_{t}=-{e}_{t}v^{-}_{t}\tag{5.26}$$
 
 But what is the valid range of ${e}_{t}$?
-
-### Energy Constraints
 
 The change in kinetic energy is:
 $$\begin{aligned}
@@ -454,8 +451,6 @@ For physical consistency, we require $\Delta T\leq 0$ (energy cannot be created 
 
 Is ${e}_{t}$ with negative values physical? Perhaps not directly, but it is a convenient mathematical abstraction that captures velocity reversal in the tangential direction.
 
-### Friction Constraints
-
 The friction bound on impulses is:
 $$\lvert {\Lambda}_{t} \rvert\leq \mu{\Lambda}_{n}\tag{5.28}$$
 
@@ -463,8 +458,8 @@ This is justified because $\boldsymbol{\Lambda}=\int \boldsymbol{\lambda}(t) \, 
 
 From the impulse-momentum relations:
 $$\begin{aligned}
-{\Lambda}_{n} & =m\Delta {v}_{n}=-m(1+{e}_{n})v^{-}_{n} \\[1ex]
-{\Lambda}_{t} & =m\Delta {v}_{t}=-m(1+{e}_{t})v^{-}_{t}
+ & {\Lambda}_{n}=m\Delta {v}_{n}=-m(1+{e}_{n})v^{-}_{n} \\[1ex]
+ & {\Lambda}_{t}\, =m\Delta {v}_{t}=-m(1+{e}_{t})v^{-}_{t}
 \end{aligned}\tag{5.29}$$
 
 Substituting into the friction bound:
@@ -473,10 +468,7 @@ $$\left\lvert  \dfrac{{\Lambda}_{t}}{{\Lambda}_{n}}  \right\rvert =\dfrac{(1+{e}
 **Special case ${e}_{t}={e}_{n}$**: The friction bound becomes:
 $$\dfrac{\lvert v^{-}_{t}\rvert}{\lvert v^{-}_{n} \rvert}\leq \mu$$
 
-This means that the negative of the incoming velocity $-\mathbf{v}^{-}$ must lie inside a friction cone:
-
-![[HDY1_005 Impact placeholder - tangential restitution cone.svg]]
->Tangential restitution cone. For ${e}_{t}={e}_{n}$, valid incoming velocities satisfy $-\mathbf{v}^{-}$ inside the friction cone.
+This means that the negative of the incoming velocity $-\mathbf{v}^{-}$ must lie inside a friction cone.
 
 **General case ${e}_{t}\neq {e}_{n}$**: The friction bound becomes:
 $$\dfrac{\lvert v^{-}_{t}\rvert}{\lvert v^{-}_{n} \rvert}\leq \dfrac{(1+{e}_{n})}{(1+{e}_{t})}\mu$$
@@ -495,9 +487,10 @@ $${\Lambda}_{t}=\begin{cases}
 -\sigma \mu{\Lambda}_{n} & \text{if } \sigma=\mathrm{sgn}(v^{-}_{t})\neq 0 \quad (\text{slip})
 \end{cases}\tag{5.31}$$
 
-### Example: Nearly Normal Impact
-
 Consider $v^{-}_{n}=-{v}_{0}<0$ and $v^{-}_{t}=\varepsilon {v}_{0}>0$ with $0<\varepsilon\ll 1$ (nearly normal impact).
+
+![[HDY1_005 Impact 2026-01-23 16.32.23.excalidraw.svg]]^figure-almost-vertical-impact
+>Almost vertical impact
 
 **Impulses**:
 $${\Lambda}_{n}=m(1+{e}_{n}){v}_{0},\qquad {\Lambda}_{t}=-\mu m(1+{e}_{n}){v}_{0}$$
@@ -514,7 +507,7 @@ $$\begin{aligned}
 Taking $\varepsilon \to 0$:
 $$\Delta T=\dfrac{1}{2}m{v}_{0}^{2}\left[(1+{e}_{n})^{2}\mu ^{2}+{e}_{n}^{2}-1\right]\tag{5.32}$$
 
-**Unphysical result**: For $\mu ^{2}>\dfrac{1-{e}_{n}^{2}}{(1+{e}_{n})^{2}}=\dfrac{1-{e}_{n}}{1+{e}_{n}}$, we get $\Delta T>0$ — energy is *created* during impact!
+**Unphysical result**: For $\mu ^{2}>\dfrac{1-{e}_{n}^{2}}{(1+{e}_{n})^{2}}=\dfrac{1-{e}_{n}}{1+{e}_{n}}$, we get $\Delta T>0$ - energy is *created* during impact!
 
 **Why did this happen?** We assumed ${\Lambda}_{t}=-\sigma \mu{\Lambda}_{n}$ with constant $\sigma=\mathrm{sgn}(v^{-}_{t})$. But notice that $v^{+}_{t}=[\varepsilon-(1+{e}_{n})\mu]{v}_{0}<0$ for small $\varepsilon$, meaning $\mathrm{sgn}(v^{+}_{t})\neq \mathrm{sgn}(v^{-}_{t})$. The velocity changes sign during impact!
 
@@ -534,12 +527,11 @@ $${\lambda}_{t}(t)=\begin{cases}
 0 & {v}_{t}(t)=0 \quad (\text{sticking})
 \end{cases}\tag{5.35}$$
 
-### Analysis in the Impulse Plane
-
 We analyze the impact process in the $({\Lambda}_{t},{\Lambda}_{n})$ plane:
 $$({\Lambda}_{t}(t),{\Lambda}_{n}(t))=\int_{{t}_{c}}^{t} ({\lambda}_{t}(t'),{\lambda}_{n}(t')) \, \mathrm{d}t' $$
 
-![[HDY1_005 Impact placeholder - impulse plane.svg]]
+![[HDY1_005 Impact 2026-01-20 15.29.57.excalidraw.svg]]
+
 >Impact analysis in the $({\Lambda}_{t},{\Lambda}_{n})$ impulse plane showing the s-line, t-line, and friction cone constraints.
 
 **Initial conditions**: $v^{-}_{n}=-{v}_{0}<0$, $v^{-}_{t}=\varepsilon {v}_{0}>0$, with ${\Lambda}_{t}(0)={\Lambda}_{n}(0)=0$.
@@ -550,7 +542,7 @@ $$({\Lambda}_{t}(t),{\Lambda}_{n}(t))=\int_{{t}_{c}}^{t} ({\lambda}_{t}(t'),{\la
 $${\Lambda}_{t}=-mv^{-}_{t}\tag{5.36}$$
 
 2. **T-line (termination line)**: The locus where ${v}_{n}=-{e}_{n}v^{-}_{n}$. From ${v}_{n}(t)=v^{-}_{n}+{\Lambda}_{n}(t)/m=-{e}_{n}v^{-}_{n}$:
-$${\Lambda}_{n}=-m(1+{e}_{n})v^{-}_{n}=m(1+{e}_{n}){v}_{0}\tag{5.37}$$
+$${\Lambda}_{n}=-m(1+{e}_{n})v^{-}_{n}\tag{5.37}$$
 
 **Impact trajectory in the impulse plane**:
 
@@ -559,20 +551,18 @@ $$\dfrac{\mathrm{d}{\Lambda}_{t}}{\mathrm{d}{\Lambda}_{n}}=\dfrac{{\lambda}_{t}}
 
 The trajectory moves along a line of slope $-\mu$ (inside the friction cone).
 
-**Case 1: Sticking before termination** — If the trajectory reaches the s-line before the t-line:
+**Case 1: Sticking before termination** - If the trajectory reaches the s-line before the t-line:
 - Phase 1 (slipping): Follow slope $-\mu$ until reaching s-line where ${v}_{t}=0$
 - Phase 2 (sticking): Move vertically (${\Lambda}_{t}=\text{const}$) until reaching t-line
 
-**Case 2: Termination before sticking** — If the trajectory reaches the t-line first:
+**Case 2: Termination before sticking** - If the trajectory reaches the t-line first:
 - Only slipping phase along slope $-\mu$
 
-**Case 3: Velocity reversal** — For shallow angles, the trajectory may:
+**Case 3: Velocity reversal** - For shallow angles, the trajectory may:
 - First slip with ${v}_{t}>0$ (slope $-\mu$)
 - Reach ${v}_{t}=0$
 - Continue slipping with ${v}_{t}<0$ (slope $+\mu$)
 
-![[HDY1_005 Impact placeholder - impulse trajectories.svg]]
->Different impact trajectories depending on initial conditions. The c-line corresponds to ${v}_{n}=0$ (compression-decompression transition).
 
 **Total impulse**: The final impulse $\boldsymbol{\Lambda}=\boldsymbol{\Lambda}({t}_{f})$ is found at the intersection of the trajectory with the t-line:
 $$\mathbf{v}^{+}=\mathbf{v}^{-}+\dfrac{1}{m}\boldsymbol{\Lambda}$$
@@ -596,7 +586,7 @@ The result is:
 - $v^{+}_{n}=-{e}_{n}v^{-}_{n}$ (normal restitution always satisfied)
 - $v^{+}_{t}=0$ when sliding stops at impact, or $v^{+}_{t}\neq -{e}_{t}v^{-}_{t}$ when friction limits the tangential impulse
 
-![[HDY1_005 Impact placeholder - chatterjee projection.svg]]
+![[HDY1_005 Impact 2026-01-20 15.41.37.excalidraw.svg]]
 >Chatterjee's algebraic law: the candidate impulse $\hat{\boldsymbol{\Lambda}}$ is projected onto the friction cone when it violates friction bounds.
 
 **Energy consistency**: One can verify that this law always satisfies $\Delta T\leq 0$, avoiding the unphysical energy creation of the naive model.
@@ -618,10 +608,17 @@ $$\boldsymbol{\Lambda}=\begin{pmatrix}{\Lambda}_{t}\\{\Lambda}_{n}\end{pmatrix}\
 ## Impulse-Momentum Relation
 
 The velocity jump is:
-$$\Delta\dot{\mathbf{q}}=\dot{\mathbf{q}}(t^{+}_{c})-\dot{\mathbf{q}}(t^{-}_{c})=\mathbf{M}^{-1}_{c}\mathbf{W}^{T}_{c}\boldsymbol{\Lambda}\tag{5.42}$$
+$$\begin{align}
+\Delta\dot{\mathbf{q}} & =\dot{\mathbf{q}}(t^{+}_{c})-\dot{\mathbf{q}}(t^{-}_{c}) \\[1ex]
+ & =\mathbf{M}^{-1}_{c}\mathbf{W}^{T}_{c}\boldsymbol{\Lambda}\tag{5.42}
+\end{align}$$
 
 The contact velocity jump is:
-$$\Delta\mathbf{v}=\mathbf{v}^{+}-\mathbf{v}^{-}=\mathbf{W}_{c}\Delta\dot{\mathbf{q}}=\mathbf{W}_{c}\mathbf{M}^{-1}_{c}\mathbf{W}^{T}_{c}\boldsymbol{\Lambda}=\mathbf{A}_{c}\boldsymbol{\Lambda}\tag{5.43}$$
+$$\begin{align}
+\Delta\mathbf{v} & =\mathbf{v}^{+}-\mathbf{v}^{-}=\mathbf{W}_{c}\Delta\dot{\mathbf{q}} \\[1ex]
+ & =\mathbf{W}_{c}\mathbf{M}^{-1}_{c}\mathbf{W}^{T}_{c}\boldsymbol{\Lambda} \\[1ex]
+ & =\mathbf{A}_{c}\boldsymbol{\Lambda}\tag{5.43}
+\end{align}$$
 
 where the **collision matrix** is:
 $$\mathbf{A}_{c}=\mathbf{W}_{c}\mathbf{M}^{-1}_{c}\mathbf{W}^{T}_{c}\tag{5.44}$$
@@ -633,15 +630,18 @@ $$\mathbf{A}_{c}=\begin{bmatrix}A_{11} & A_{12}\\A_{12} & A_{22}\end{bmatrix}=\m
 >
 >Consider a rigid body with mass $m$, moment of inertia ${I}_{c}$, and radius of gyration $\rho=\sqrt{{I}_{c}/m}$ (so ${I}_{c}=m\rho^{2}$).
 >
->![[HDY1_005 Impact placeholder - rigid body impact.svg]]
->>Single rigid body impact configuration. P is the contact point, C is the center of mass.
+>![[HDY1_005 Impact 2026-01-23 16.55.50.excalidraw.svg]]^figure-single-rigid-body-example
+>>Single rigid body impact configuration. $P$ is the contact point, $c$ is the center of mass.
 >
->**Coordinates**: $\mathbf{q}=(x,y,\theta)^{T}$ where $(x,y)$ is the position of the center of mass C.
+>**Coordinates**: $\mathbf{q}=(x,y,\theta)^{T}$ where $(x,y)$ is the position of the center of mass $c$.
 >
->The contact point P is located at $\mathbf{r}_{PC}={r}_{t}\mathbf{e}_{t}+{r}_{n}\mathbf{e}_{n}$ relative to C.
+>The contact point $P$ is located at $\mathbf{r}_{Pc}={r}_{t}\mathbf{e}_{t}+{r}_{n}\mathbf{e}_{n}$ relative to $c$.
 >
 >**Contact velocities**: The velocity of point P is:
->$$\mathbf{v}_{P}=\mathbf{v}_{C}+\boldsymbol{\omega}\times\mathbf{r}_{PC}=\dot{x}\mathbf{e}_{t}+\dot{y}\mathbf{e}_{n}+\dot{\theta}\mathbf{e}_{3}\times({r}_{t}\mathbf{e}_{t}+{r}_{n}\mathbf{e}_{n})$$
+>$$\begin{aligned}
+\mathbf{v}_{P} & =\mathbf{v}_{c}+\boldsymbol{\omega}\times\mathbf{r}_{Pc} \\[1ex]
+  & =\dot{x}\mathbf{e}_{t}+\dot{y}\mathbf{e}_{n}+\dot{\theta}\mathbf{e}_{3}\times({r}_{t}\mathbf{e}_{t}+{r}_{n}\mathbf{e}_{n})
+\end{aligned}$$
 >
 >Expanding the cross product (with frame $(\mathbf{e}_{t},\mathbf{e}_{n})$ aligned with contact directions):
 >$$\mathbf{v}_{P}=(\dot{x}+\dot{\theta}{r}_{n})\mathbf{e}_{t}+(\dot{y}-\dot{\theta}{r}_{t})\mathbf{e}_{n}$$
@@ -666,7 +666,7 @@ $$\mathbf{A}_{c}=\begin{bmatrix}A_{11} & A_{12}\\A_{12} & A_{22}\end{bmatrix}=\m
 >- Diagonal terms $A_{11}$ and $A_{22}$ represent "effective inverse masses" for tangential and normal impulse response
 >- Off-diagonal term $A_{12}={r}_{n}{r}_{t}/(m\rho^{2})$ represents **coupling** between tangential impulse and normal velocity change (and vice versa)
 >
->**Special case: ${r}_{t}=0$ or ${r}_{n}=0$** — The collision matrix becomes diagonal, and there is no coupling between tangential and normal directions.
+>**Special case: ${r}_{t}=0$ or ${r}_{n}=0$** - The collision matrix becomes diagonal, and there is no coupling between tangential and normal directions.
 
 ## Fully-Plastic Impact Law
 
@@ -676,10 +676,16 @@ From $\mathbf{v}^{+}=\mathbf{0}=-\mathbf{A}_{c}\boldsymbol{\Lambda}$:
 $$\boldsymbol{\Lambda}=-\mathbf{A}^{-1}_{c}\mathbf{v}^{-}\tag{5.48}$$
 
 The generalized velocity jump is:
-$$\dot{\mathbf{q}}^{+}=\dot{\mathbf{q}}^{-}+\Delta\dot{\mathbf{q}}=\dot{\mathbf{q}}^{-}+\mathbf{M}^{-1}_{c}\mathbf{W}^{T}_{c}\boldsymbol{\Lambda}$$
+$$\begin{aligned}
+\dot{\mathbf{q}}^{+} & =\dot{\mathbf{q}}^{-}+\Delta\dot{\mathbf{q}} \\[1ex]
+ & =\dot{\mathbf{q}}^{-}+\mathbf{M}^{-1}_{c}\mathbf{W}^{T}_{c}\boldsymbol{\Lambda}
+\end{aligned}$$
 
 Substituting $\boldsymbol{\Lambda}$:
-$$\dot{\mathbf{q}}^{+}=\dot{\mathbf{q}}^{-}-\mathbf{M}^{-1}_{c}\mathbf{W}^{T}_{c}\mathbf{A}^{-1}_{c}\mathbf{W}_{c}\dot{\mathbf{q}}^{-}=(\mathbf{I}-\mathbf{M}^{-1}_{c}\mathbf{W}^{T}_{c}\mathbf{A}^{-1}_{c}\mathbf{W}_{c})\dot{\mathbf{q}}^{-}\tag{5.49}$$
+$$\begin{align}
+\dot{\mathbf{q}}^{+} & =\dot{\mathbf{q}}^{-}-\mathbf{M}^{-1}_{c}\mathbf{W}^{T}_{c}\mathbf{A}^{-1}_{c}\mathbf{W}_{c}\dot{\mathbf{q}}^{-} \\[1ex]
+ & =(\mathbf{I}-\mathbf{M}^{-1}_{c}\mathbf{W}^{T}_{c}\mathbf{A}^{-1}_{c}\mathbf{W}_{c})\dot{\mathbf{q}}^{-}\tag{5.49}
+\end{align}$$
 
 ## Energy Balance with Friction
 
@@ -697,11 +703,109 @@ Using $\mathbf{W}_{c}\dot{\mathbf{q}}^{-}=\mathbf{v}^{-}$:
 $$\Delta T=\dfrac{1}{2}\boldsymbol{\Lambda}^{T}\mathbf{A}_{c}\boldsymbol{\Lambda}+\boldsymbol{\Lambda}^{T}\mathbf{v}^{-}\tag{5.50}$$
 
 **For fully-plastic impact** with $\boldsymbol{\Lambda}=-\mathbf{A}^{-1}_{c}\mathbf{v}^{-}$:
-$$\Delta T=\dfrac{1}{2}\mathbf{v}^{-T}\mathbf{A}^{-1}_{c}\mathbf{v}^{-}-\mathbf{v}^{-T}\mathbf{A}^{-1}_{c}\mathbf{v}^{-}=-\dfrac{1}{2}\mathbf{v}^{-T}\mathbf{A}^{-1}_{c}\mathbf{v}^{-}\leq 0\tag{5.51}$$
+$$\begin{align}
+\Delta T & =\dfrac{1}{2}\mathbf{v}^{-T}\mathbf{A}^{-1}_{c}\mathbf{v}^{-}-\mathbf{v}^{-T}\mathbf{A}^{-1}_{c}\mathbf{v}^{-} \\[1ex]
+ & =-\dfrac{1}{2}\mathbf{v}^{-T}\mathbf{A}^{-1}_{c}\mathbf{v}^{-}\leq 0\tag{5.51}
+\end{align}$$
 
 Since $\mathbf{A}_{c}$ is positive definite, $\mathbf{A}^{-1}_{c}$ is also positive definite, confirming $\Delta T\leq 0$ (energy is dissipated).
 
->[!Question] What about friction constraints $\lvert {\Lambda}_{t}\rvert\leq\mu{\Lambda}_{n}$? And nonzero restitution $v^{+}_{n}=-{e}_{n}v^{-}_{n}$ with ${e}_{n}>0$?? 
+>[!Question] What about friction constraints $\lvert {\Lambda}_{t}\rvert\leq\mu{\Lambda}_{n}$? And nonzero restitution $v^{+}_{n}=-{e}_{n}v^{-}_{n}$ with ${e}_{n}>0$? 
 >
->These require more sophisticated treatment — either the impulse plane analysis described earlier, or advanced methods like Routh's graphical method, which handles the interplay between friction and restitution during the impact process.
+>These require more sophisticated treatment - either the impulse plane analysis described earlier, or advanced methods like Routh's graphical method, which handles the interplay between friction and restitution during the impact process.
 
+# Detailed Algebraic Impact Law (Chatterjee)
+
+Consider a general Lagrangian system where the velocity jump is governed by the collision matrix $\mathbf{A}_{c}$:
+$$\Delta \mathbf{v}=\mathbf{v}^{+}-\mathbf{v}^{-}=\mathbf{A}_{c}\boldsymbol{\Lambda}\tag{5.52}$$
+
+where $\mathbf{A}_{c}=\begin{bmatrix}A_{11} & A_{12} \\ A_{12} & A_{22}\end{bmatrix}$.
+
+We define two reference impulse vectors:
+
+1.  **Frictionless impulse** $\boldsymbol{\Lambda}^{I}$: The impulse that results in zero normal velocity ($v^{+}_{n}=0$) assuming no friction (${\Lambda}_{t}=0$).
+    $$\boldsymbol{\Lambda}^{I}=\begin{pmatrix}0 \\ -v^{-}_{n}/A_{22}\end{pmatrix}\tag{5.53}$$
+
+2.  **Completely plastic impulse** $\boldsymbol{\Lambda}^{II}$: The impulse that results in zero contact velocity ($\mathbf{v}^{+}=\mathbf{0}$).
+    $$\boldsymbol{\Lambda}^{II}=-\mathbf{A}^{-1}_{c}\mathbf{v}^{-}\tag{5.54}$$
+
+We construct a **candidate impulse** $\hat{\boldsymbol{\Lambda}}$ that combines these reference impulses with restitution coefficients:
+$$\hat{\boldsymbol{\Lambda}}=(1+{e}_{n})\boldsymbol{\Lambda}^{I}+(1+{e}_{t})(\boldsymbol{\Lambda}^{II}-\boldsymbol{\Lambda}^{I})\tag{5.55}$$
+
+This candidate impulse satisfies the kinematic restitution laws:
+$$v^{+}_{n}=-{e}_{n}v^{-}_{n}, \qquad v^{+}_{t}=-{e}_{t}v^{-}_{t}\tag{5.56}$$
+
+>[!notes] Note: 
+>The tangential part holds strictly only if $\mathbf{A}_{c}$ is diagonal or ${e}_{t}={e}_{n}$).
+
+### Friction-Bounded Impulse
+
+To satisfy Coulomb's friction bound $\lvert {\Lambda}_{t} \rvert \leq \mu {\Lambda}_{n}$, Chatterjee proposes a modified impulse:
+$$\boldsymbol{\Lambda}=(1+{e}_{n})\boldsymbol{\Lambda}^{I}+\kappa(\boldsymbol{\Lambda}^{II}-\boldsymbol{\Lambda}^{I})\tag{5.57}$$
+
+where the coefficient $\kappa$ is determined by:
+$$\kappa=\begin{cases}
+1+{e}_{t} & \text{if } \lvert \hat{\Lambda}_{t} \rvert \leq \mu\hat{\Lambda}_{n} \\
+\dfrac{\mu(1+{e}_{n}){\Lambda}^{I}_{n}}{\lvert \Lambda^{II}_{t} \rvert-\mu(\Lambda^{II}_{n}-\Lambda^{I}_{n})} & \text{otherwise}
+\end{cases}\tag{5.58}$$
+
+**Geometric Interpretation**:
+- If the candidate impulse $\hat{\boldsymbol{\Lambda}}$ is inside the friction cone, we use it directly ($\boldsymbol{\Lambda}=\hat{\boldsymbol{\Lambda}}$).
+- If not, we project $\hat{\boldsymbol{\Lambda}}$ onto the "closest" edge of the friction cone along the direction of the vector $(\boldsymbol{\Lambda}^{II}-\boldsymbol{\Lambda}^{I})$.
+
+This formulation ensures energy consistency ($\Delta T \leq 0$) for any $-1 \leq {e}_{t} \leq 1$ and $0 \leq {e}_{n} \leq 1$.
+
+# Routh's Graphical Method for General Systems
+
+Routh's method treats impact as a continuous process in the impulse plane $(\Lambda_{t}, \Lambda_{n})$. For a general system with coupling ($A_{12} \neq 0$), the analysis is more complex than for a point mass.
+
+### Process Evolution
+During the collision interval $[0, \Delta t]$, the accumulated impulse $\boldsymbol{\Lambda}(t)$ and contact velocity $\mathbf{v}(t)$ evolve as:
+$$\mathbf{v}(t)=\mathbf{v}^{-}+\mathbf{A}_{c}\boldsymbol{\Lambda}(t)\tag{5.59}$$
+or in components:
+$$\begin{pmatrix}v_{t}(t) \\ v_{n}(t)\end{pmatrix}=\begin{pmatrix}v^{-}_{t} \\ v^{-}_{n}\end{pmatrix}+\begin{bmatrix}A_{11} & A_{12} \\ A_{12} & A_{22}\end{bmatrix}\begin{pmatrix}\Lambda_{t}(t) \\ \Lambda_{n}(t)\end{pmatrix}$$
+
+### Key Lines in the Impulse Plane
+
+We identify specific lines in the $(\Lambda_{t}, \Lambda_{n})$ plane that define flow regions and boundaries:
+
+1.  **Line of Full Compression ($c$-line)**: Defined by $v_{n}(t)=0$.
+    $$v^{-}_{n}+A_{12}\Lambda_{t}+A_{22}\Lambda_{n}=0\tag{5.60}$$
+    Crossing this line marks the transition from the **compression phase** ($v_{n}<0$) to the **restitution phase** ($v_{n}>0$). The accumulated normal impulse at this point is $\Lambda_{nc}$.
+
+2.  **Line of Sticking ($s$-line)**: Defined by $v_{t}(t)=0$.
+    $$v^{-}_{t}+A_{11}\Lambda_{t}+A_{12}\Lambda_{n}=0\tag{5.61}$$
+    On this line, the contact point sticks.
+
+3.  **Friction Cone Edges**: defined by $\Lambda_{t}=\pm \mu \Lambda_{n}$.
+
+4.  **Termination Line ($t$-line)**: Defines when the collision ends ($t=\Delta t$). Its position depends on the definition of ${e}_{n}$:
+    *   **Newton's (Kinematic) Restitution**: $v^{+}_{n}=-{e}_{n}v^{-}_{n}$. The line is parallel to the $c$-line:
+        $$v^{-}_{n}+A_{12}\Lambda_{t}+A_{22}\Lambda_{n}=-{e}_{n}v^{-}_{n}\tag{5.62}$$
+    *   **Poisson's (Impulse) Restitution**: Defined by the ratio of impulses during restitution and compression phases: ${e}_{n}=(\Lambda_{nf}-\Lambda_{nc})/\Lambda_{nc}$. This gives a horizontal termination line:
+        $$\Lambda_{n}(t_{f})=(1+{e}_{n})\Lambda_{nc}\tag{5.63}$$
+    *   **Stronge's (Energetic) Restitution**: Ratio of work done during restitution to work done during compression. Used when energy consistency is critical in complex systems.
+
+> [!info] Newton vs. Poisson
+> For a point particle (diagonal $\mathbf{A}_{c}$), Newton and Poisson definitions are equivalent. For coupled systems ($A_{12} \neq 0$), they differ. Poisson's definition guarantees energy consistency ($\Delta T \leq 0$), while Newton's may occasionally violate it for certain parameters.
+
+### Algorithm for Impulse Accumulation
+
+To solve the impact problem graphically or numerically:
+
+1.  **Start at origin**: $(\Lambda_{t}, \Lambda_{n})=(0,0)$.
+2.  **Determine initial slip direction**: Check $\mathrm{sgn}(v^{-}_{t})$.
+3.  **March upwards** (increasing $\Lambda_{n}$):
+    *   If slipping ($v_{t} \neq 0$): Move along the friction cone edge $\Lambda_{t}=-\mathrm{sgn}(v_{t})\mu\Lambda_{n}$.
+    *   If sticking ($v_{t}=0$): If the $s$-line lies *inside* the friction cone, move along the $s$-line. If not, slip along the appropriate cone edge.
+4.  **Monitor crossings**:
+    *   If $s$-line is crossed: Velocity $v_{t}$ reverses sign. Slip direction changes (move to opposite cone edge).
+    *   If $c$-line is crossed ($v_{n}=0$): Record current normal impulse $\Lambda_{nc}$.
+5.  **Terminate**:
+    *   Stop when the **Total Normal Impulse** reaches the value defined by the termination line (e.g., $\Lambda_{n}=(1+{e}_{n})\Lambda_{nc}$ for Poisson).
+6.  **Result**: The point reached in the plane gives the final impulse $\boldsymbol{\Lambda}$, determining the post-impact velocity $\mathbf{v}^{+}$.
+
+This method resolves paradoxes like **Painlevé's paradox** (where rigid body dynamics equations have no solution or non-unique solutions), by treating impact as a proper evolution process.
+
+![[HDY1_005 Impact 2026-01-20 17.15.42.excalidraw.svg]]^figure-rigid-body-impulse-accumulation
+>Routh method for rigid body impact.
