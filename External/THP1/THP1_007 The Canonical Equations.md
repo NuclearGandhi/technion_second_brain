@@ -154,3 +154,10 @@ H = \frac{p_r^2}{2m} + \frac{p_\theta^2}{2mr^2} + \frac{p_\phi^2}{2mr^2\sin^2\th
  }
 $$
 
+>[!TODO] TODO: להשלים
+
+## Exercise 2
+Find the Hamiltonian for a particle in a uniformly rotating frame of reference.
+
+**Solution**:
+Expressing the velocity $\mathbf{v}$ in the energy in terms of the momentum $\mathbf{p}$, we have
