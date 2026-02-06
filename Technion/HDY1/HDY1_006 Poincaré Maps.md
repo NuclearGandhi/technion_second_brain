@@ -122,7 +122,7 @@ When the Poincaré map is **scalar** (1D), we can analyze it graphically. Plotti
 - **Fixed points** are intersections with the line $y=z$
 - **Stability** is determined by the slope $\left\lvert \dfrac{\mathrm{d}\Pi}{\mathrm{d}z}\right\rvert_{z=z^{*}}<1$
 
-![[HDY1_006/HDY1_006 SLIP Poincare map.png|bookhue|600]]^figure-slip-poincare-map
+![[HDY1_006 SLIP Poincare map.png|bookhue|600]]^figure-slip-poincare-map
 >Poincaré map for the SLIP model showing $\bar{y}_{k+1}$ vs $\bar{y}_{k}$ for different touchdown angles ${\theta}_{0}$. Fixed points occur at intersections with the dashed line $y=x$. Stability requires the curve to cross the diagonal with slope magnitude less than 1.
 
 For even 2D maps, graphical visualization through contour plots of $\lVert \mathbf{G}(\mathbf{z}) \rVert$ where $\mathbf{G}(\mathbf{z})=\Pi(\mathbf{z})-\mathbf{z}$ can help locate fixed points as local minima.
@@ -196,6 +196,8 @@ $$\theta(t)={\theta}_{0}-\omega(t-{t}_{\text{peak}})\tag{6.18}$$
 where $\omega>0$ is a retraction rate and ${t}_{\text{peak}}$ is the time of the previous apex. The leg sweeps backward during flight, reducing the effective touchdown angle as the body descends.
 
 This control law flattens the Poincaré map curve near the fixed point, reducing $\lvert \mathrm{d}\Pi/\mathrm{d}y \rvert$ and improving stability. Remarkably, swing leg retraction is observed in running animals and is believed to contribute to their robust dynamic stability.
+
+>[!TODO] TODO: לעבור
 
 # Example: The Rimless Spoked Wheel
 

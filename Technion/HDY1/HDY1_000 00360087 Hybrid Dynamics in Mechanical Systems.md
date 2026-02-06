@@ -21,6 +21,7 @@ Teacher: Prof. Yizhar Or
 - [[HDY1_HW002 Homework 2]]
 - [[HDY1_HW003 Homework 3]]
 - [[HDY1_HW004 Homework 4]]
+- [[HDY1_P001 Final Project 1]]
 
 # Exams
 
