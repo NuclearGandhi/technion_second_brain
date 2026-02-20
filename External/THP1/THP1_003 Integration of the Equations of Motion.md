@@ -146,7 +146,7 @@ $$\mathcal{L}=\dfrac{1}{2}m(\dot{r}^{2}+r^{2}\dot{\phi}^{2})-U(r)\tag{LL14.1}$$
 This function does not involve the coordinate $\dot{\phi}$ explicitly. Any generalized coordinate ${q}_{i}$ which does not appear explicitly in the Lagrangian is said to be *cyclic*. For such a coordinate we have, by Lagrange's equation, $(\mathrm{d}/\mathrm{d}t)\partial L/\partial \dot{q}_{i}=\partial L/\partial {q}_{i}=0$, so that the corresponding generalized momentum ${p}_{i}=\partial L/\partial \dot{q}_{i}$ is an integral of the motion. This leads to a considerable simplification of the problem of integrating the equations of motion when there are cyclic coordinates.
 In the present case, the generalized momentum ${p}_{\phi}=mr^{2}\dot{\phi}$ is the same as the angular momentum ${M}_{z}=M$, and we return to the known law of conservation of angular momentum:
 $$M=mr^{2}\dot{\phi}=\text{const} $$
-This law has a simple geometrical interpretation in the plane motion of a single particle in a center field. The expression $\dfrac{1}{2}r\cdot r\,\mathrm{d}\phi$ is the area of the sector bounded by two neighboring radius vectors and an element of the path.
+This law has a simple geometrical interpretation in the plane motion of a single particle in a center field. The expression $\frac{1}{2}r\cdot r\,\mathrm{d}\phi$ is the area of the sector bounded by two neighboring radius vectors and an element of the path.
 
 ![[Pasted image 20260204151306.png|bookhue|300]]^figure-mechanics
 
@@ -154,6 +154,51 @@ This law has a simple geometrical interpretation in the plane motion of a single
 Calling this area $\mathrm{d}f$, we can write the angular momentum of the particle as
 $$M=2mf\tag{LL14.3}$$
 where the derivative $f$ is called the **sectorial velocity**. Hence the conservation of angular momentum implies the constancy of the sectorial velocity: in equal times the radius vector of the particle sweeps out equal areas (*Kepler's second law*).
+
+The complete solution of the problem of the motion of a particle in a central field is most simply obtained by starting from laws of conservation of energy and angular momentum, without writing out the equation of motion themselves.
+
+Expressing $\dot{\phi}$ in terms of $M$ from $\text{(LL14.2)}$ and substituting in the expression for the energy, we obtain
+$$\begin{align}
+E & =\dfrac{1}{2}m(\dot{r}^{2}+r^{2}\dot{\phi}^{2})+U(r) \\[3ex]
+ & \implies E=\dfrac{1}{2}m\dot{r}^{2}+\dfrac{1}{2} \dfrac{M^{2}}{mr^{2}}+U(r) \tag{LL14.4}
+\end{align}$$
+Hence
+$$\dot{r}\equiv  \dfrac{\mathrm{d}r}{\mathrm{d}t}=\sqrt{ \dfrac{2}{m}[E-U(r)]-\dfrac{M^{2}}{m^{2}r^{2}} } \tag{LL14.5}$$
+or, integrating,
+$$t=\int_{}^{} \dfrac{1}{\sqrt{ (2/m)[E-U(r)] -M^{2}/(m^{2}r^{2})}}\,\mathrm{d}r+\text{const}  \tag{LL14.6}$$
+
+Writing $(L{L}_{14}.2)$ as $\mathrm{d}\phi=M\,\mathrm{d}t/(mr^{2})$, substituting $\mathrm{d}t$ from $\text{(LL14.5)}$ and integrating, we find
+$$\phi=\int \dfrac{M/r^{2}}{\sqrt{ 2m[E-U(r)]-M^{2}/r^{2} }} \, \mathrm{d}r\tag{LL14.7} $$
+Formula $\text{(LL14.6)}$ and $\text{(LL14.7)}$ give the general solution of the problem. The latter formula gives the relation between $r$ and $\phi$, i.e. the equations of the path.
+Formula $\text{(LL14.6)}$ gives the distance $r$ from the center as an implicit function of time. The angle $\phi$, it should be noted, always varies monotonically with time, since $\text{(LL14.2)}$ shows that $\dot{\phi}$ can never change sign.
+
+The expression $\text{(LL14.4)}$ shows that the radial part of the motion can be regarded as taking place in one dimension in a field where the "effective potential energy" is
+$${U}_{\text{eff}}=U(r)+\dfrac{M^{2}}{2mr^{2}}\tag{LL14.8}$$
+The quantity $M^{2}/(2mr^{2})$ is called the **centrifugal energy**. The values of $r$ for which
+$$U(r)+\dfrac{M^{2}}{2mr^{2}}=E\tag{LL14.9}$$
+determine the limits of the motion as regards distance from the center. When equation $\text{(LL14.9)}$ is satisfied, the radial velocity $\dot{r}$ is zero. This does not mean that the particle comes to rest as in true one-dimensional motion, since the angular velocity $\dot{\phi}$ is not zero. The value $\dot{r}=0$ indicates a *turning point* of the path, where $r(t)$ begins to decrease instead of increasing, or vice versa.
+If the range in which $r$ may vary is limited only by the condition $r\geq {r}_{\min_{}}$, the motion is infinite: the particle comes from, and returns to, infinity.
+
+If the range of $r$ has two limits ${r}_{\min_{}}$ and ${r}_{\max_{}}$, the motion is finite and the path lies entirely within the annulus bounded by the circles $r={r}_{\max_{}}$ and $r={r}_{\min_{}}$. This does not mean, however, that the path must be a closed curve. During the time in which $r$ varies from ${r}_{\max_{}}$ to ${r}_{\min_{}}$ and back, the radius vector turns through an angle $\Delta \phi$ which, according to $\text{(LL14.7)}$, is given by
+$$\Delta \phi = 2\int_{{r}_{\min_{}}}^{{r}_{\max_{}}} \dfrac{M/r^{2}}{\sqrt{ [2m(E-U)-M^{2}/r^{2}] }}  \, \mathrm{d}r\tag{LL14.10} $$
+The condition for the path to be closed is that this angle should be a rational fraction of $2\pi$, i.e. that $\Delta \phi=2\pi m/n$, where $m$ and $n$ are integers. In that case, after $n$ periods, the radius vector of the particle will have made $m$ complete revolutions and will occupy its original position, so that the path is closed.
+
+Such cases are exceptional, however, and when the form of $U(r)$ is arbitrary the angle $\Delta \phi$ is not a rational fraction of $2\pi$. In general, therefore, the path of a particle executing a finite motion is not closed. It passes through the minimum and maximum distances an infinity amount of times, and after infinite time it covers the entire annulus between the bounding circles. The path shown in the following figure is an example:
+
+![[Pasted image 20260211174007.png|bookhue|450]]^figure-not-closed-path
+>Unclosed path of a particle. [[THP1_000 Course of Theoretical Physics - Mechanics#Bibliography|(Landau & Lifšic, 1976)]].
+
+There are two types of center field in which all finite motions take place in closed paths. They are those in which the potential energy of the particles as $1/r$ or as $r^{2}$. The former case is discussed shortly. The latter is that of **space oscillator**.
+
+At a turning point the square root in $\text{(LL14.5)}$, and therefore the integrands in $\text{(LL14.6)}$ and $\text{(LL14.6)}$, change sign. If the angle $\phi$ is measured from the direction of the radius vector to the turning point, the parts of the path on each side of that point differ only in the sign of $\phi$ for each value of $r$, i.e. the path is symmetrical about the line $\phi=0$. Starting, say, from a point where $r={r}_{\max_{}}$ the particle traverses a segment of the path as far as a point with $r={r}_{\min_{}}$, then follows a symmetrically placed segment to the next point where $r={r}_{\max_{}}$, and so on. Thus the entire path is obtained by repeating identical segments forwards and backwards. This applies also to infinite paths, which consist of two symmetrical branches extending from the turning point ($r={r}_{\min_{}}$) to infinity.
+
+The presence of the centrifugal energy when $M\neq 0$, which becomes infinite as $1/r^{2}$ when $r\to 0$, generally renders it impossible for the particle to reach the center of the field, even if the field is an attractive one. A "fall" of the particle to the center is possible only if the potential energy tends sufficiently rapidly to $-\infty$ as $r\to 0$. From the inequality
+$$\dfrac{1}{2}m \dot{r}^{2}=E-U(r)-\dfrac{M^{2}}{2mr^{2}}>0$$
+or $r^{2}U(r)+M^{2}/2m<Er^{2}$, it follows that $r$ can take values tending to zero only if
+$$[r^{2}U(r)]_{r\to  0}<-M^{2}/2m\tag{LL14.11}$$
+i.e. $U(r)$ must tend to $-\infty$ either as $-\alpha /r^{2}$ with $\alpha> M^{2}/2m$, or proportionally to $-1/r^{n}$ with $n>2$.
+
+# Kepler's Problem
 
 
 
@@ -193,3 +238,27 @@ $$M\mathbf{R}+m\sum_{}^{} \mathbf{R}_{a}=0 $$
 Hence, $\mathbf{R}=-(m/\mu)\sum_{}^{}\mathbf{r}_{a}$, where $\mu\equiv M+mn$; $\mathbf{R}_{a}=\mathbf{R}+\mathbf{r}_{a}$. Substitution in the Lagrangian $L=\dfrac{1}{2}M\dot{R}^{2}+\dfrac{1}{2}m\sum_{}^{}{\dot{\mathbf{R}}_{a}}^{2}-U$ gives
 $$\mathcal{L}=\dfrac{1}{2}m\sum_{a}^{}{{\mathbf{v}_{a}}}^{2}-\dfrac{1}{2}\left( \dfrac{m^{2}}{\mu} \right)\left( \sum_{a}^{}\mathbf{v}_{a}  \right)^{2}-U,\quad \text{where}\quad \mathbf{v}_{a}\equiv \dot{\mathbf{r}}_{a} $$
 The potential energy depends only on the distances between the particles, and so can be written as a function of the $\mathbf{r}\mathbf{_{a}}$.
+
+## Question 3
+Integrate the equations of motion for a *spherical pendulum* (a particle of mass $m$ moving on the surface of a sphere of radius $\ell$ in a gravitational field).
+
+**Solution**:
+In spherical coordinates, with the origin at the center of the sphere and the polar axis vertically downwards, the Lagrangian of the pendulum is
+$$\dfrac{1}{2}m\ell ^{2}(\dot{\theta}^{2}+\phi ^{2}\sin ^{2}\theta)+mg\ell \cos\theta\tag{EX3.1}$$
+The coordinate $\phi$ is *cyclic*, and hence the generalized momentum ${p}_{\phi}$, which is the same as the $z$-component of angular momentum, is conserved:
+$$m\ell ^{2}\phi \sin ^{2}\theta={M}_{z}=\text{const} $$
+The energy is
+$$\begin{aligned}
+E & =\dfrac{1}{2}m\ell ^{2}(\dot{\theta}^{2}+\dot{\phi}^{2}\sin ^{2}\theta)-mg\ell \cos\theta \\[1ex]
+ & =\dfrac{1}{2}m\ell ^{2}\dot{\theta}^{2}+\dfrac{1}{2}\dfrac{{M}_{z}}{m\ell ^{2}\sin ^{2}\theta}-mg\ell \cos\theta
+\end{aligned}\tag{EX3.2}$$
+Hence
+$$t=\int \dfrac{1}{\sqrt{ 2[E-{U}_{\text{eff}}(\theta)]/m\ell ^{2} }} \, \mathrm{d}\theta \tag{EX3.3}$$
+where the *effective potential energy* is
+$${U}_{\text{eff}}(\theta)=\dfrac{1}{2} \dfrac{{{{M}_{z}}}^{2}}{m\ell ^{2}\sin ^{2}\theta}-mg\ell \cos\theta$$
+For the angle $\phi$ we find, using $\text{(EX3.1)}$:
+$$\phi=\dfrac{{M}_{z}}{\ell\sqrt{ 2m }} \int \dfrac{1}{\sin ^{2}\theta\sqrt{ E-{U}_{\text{eff}}(\theta) }} \, \mathrm{d}\theta \tag{EX3.4}$$
+The integral $\text{(EX3.3)}$ and $\text{(EX3.4)}$ lead to elliptic integral of the first and third kinds respectively.
+
+The range of $\theta$ in which the motion takes place is that where $E>{U}_{\text{eff}}$, and its limits are given by the equation $E={U}_{\text{eff}}$. This is a cubic equation for $\cos\theta$, having two roots between $-1$ and $+1$; these define two circles of latitude on the sphere, between which the path lies.
+
