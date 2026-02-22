@@ -149,12 +149,11 @@ aliases:
 - [[FNL1_000 Final Project]]
 
 
-%%
-
 ## אקסטרני
 - [[HML1_000 Hands-On Machine Learning]]
 - [[THP1_000 Course of Theoretical Physics - Mechanics]]
 
+%%
 ## סמסטר יד'
 - [[LGR1_000 00210233 פרויקט בגרמנית לינארית]]
 - [[DFA1_000 05030322 תיאוריה של חקלאות דיסקרטית]]
