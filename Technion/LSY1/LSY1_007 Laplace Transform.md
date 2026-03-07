@@ -21,6 +21,8 @@ aliases:
   - Schur
   - monic
 ---
+![](https://www.youtube.com/watch?v=65yw9klPklk)
+
 # Introduction
 From [[LSY1_000 034032 Linear Systems E#Bibliography|(Lathi & Green, 2018)]]:
 Because of the linearity property of linear time-invaraint systems, we can find the response of these systems by breaking the input $x(t)$ into several components and then summing the system response to all the components of $x(t)$. In **frequency domain analysis** we are breaking up the input $x(t)$ into exponentials of the form $e^{st}$, where the parameter $s$ is the complex frequency of the signal $e^{st}$.

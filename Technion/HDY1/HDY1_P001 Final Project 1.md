@@ -15,7 +15,7 @@ title: Final Project 1
 >[!quote] Declaration of independent work
 >I confirm that this submission reflects my own work and understanding. ChatGPT/Claude/Gemini were used solely to validate algebraic manipulations, and all results were independently reviewed.
 
-**MATLAB Code**: All related code files can be found on [GitHub](URL_PLACEHOLDER) as well as [OneDrive](URL_PLACEHOLDER).
+**MATLAB Code**: All related code files can be found on [GitHub](https://github.com/NuclearGandhi/technion_second_brain/tree/master/Technion/HDY1/HDY1_P001/code) as well as [OneDrive](https://technionmail-my.sharepoint.com/:f:/g/personal/ido_fang_campus_technion_ac_il/IgD45m2UrEczT5_KSBWzIvnLAbe_P8jEVC_rfGIoKPJjKNY?e=5TCGrL).
 
 
 <div><hr><hr></div>
@@ -153,15 +153,18 @@ Write MATLAB function of the form `Xnew = impact_law(Xold)` for calculating the 
 
 **Solution:**
 
-The swing foot collides with the ground when its height reaches zero: $\tilde{y} = 2\ell\cos\theta_1 - 2\ell\cos\theta_2 = 0$. This gives the impact condition $\cos\theta_1 = \cos\theta_2$, which corresponds to $\theta_1 = \theta_2$ for typical walking configurations where both angles are positive. The pre-impact state is $\mathbf{X}^- = (\theta_1^-, \theta_2^-, \dot{\theta}_1^-, \dot{\theta}_2^-)^T$.
+The swing foot collides with the ground when its height reaches zero: $\tilde{y} = 2\ell\cos\theta_1 - 2\ell\cos\theta_2 = 0$. This gives the impact condition $\cos\theta_1 = \cos\theta_2$, which corresponds to $\theta_1 = \theta_2$ for typical walking configurations where both angles have the same sign. The pre-impact state is $\mathbf{X}^- = (\theta_1^-, \theta_2^-, \dot{\theta}_1^-, \dot{\theta}_2^-)^T$.
 
 For a fully-plastic collision ($e_n = e_t = 0$), Chatterjee's impact law requires the post-impact contact velocity to be zero. The collision matrix relates the contact velocity to the impulse: $\mathbf{A}_c = \tilde{\mathbf{W}}_c \mathbf{M}_c^{-1} \tilde{\mathbf{W}}_c^T$, where $\tilde{\mathbf{W}}_c$ and $\mathbf{M}_c$ are evaluated at the impact configuration. The candidate impulse for fully-plastic impact is $\hat{\boldsymbol{\Lambda}} = -\mathbf{A}_c^{-1} \mathbf{v}^-$, where $\mathbf{v}^- = (\dot{\tilde{x}}^-, \dot{\tilde{y}}^-)^T$ is the pre-impact swing foot velocity.
 
-The impulse must satisfy Coulomb's friction bound $|\Lambda_t| \leq \mu \Lambda_n$. If violated, the tangential impulse is projected onto the friction cone boundary with $\Lambda_t = \mathrm{sgn}(\hat{\Lambda}_t) \cdot \mu \Lambda_n$, and $\Lambda_n$ is adjusted to ensure $v_n^+ = 0$. The post-impact generalized velocities are then $\dot{\mathbf{q}}^+ = \dot{\mathbf{q}}^- + \mathbf{M}_c^{-1} \tilde{\mathbf{W}}_c^T \boldsymbol{\Lambda}$.
+The impulse must satisfy Coulomb's friction bound $|\Lambda_t| \leq \mu \Lambda_n$. If violated, the tangential impulse is projected onto the friction cone boundary with $\Lambda_t = \sigma \mu \Lambda_n$ where $\sigma = \mathrm{sgn}(\hat{\Lambda}_t)$, and $\Lambda_n$ is adjusted to ensure $\dot{\tilde{y}}^+ = 0$:
+$$\Lambda_n = \frac{-\dot{\tilde{y}}^-}{A_{c,22} + \sigma\mu \, A_{c,21}}$$
+The post-impact generalized velocities are then $\dot{\mathbf{q}}^+ = \dot{\mathbf{q}}^- + \mathbf{M}_c^{-1} \tilde{\mathbf{W}}_c^T \boldsymbol{\Lambda}$.
 
-After impact, the swing foot becomes the new stance foot. The coordinates are relabeled by swapping both angles and angular velocities: $\theta_1^{\text{new}} = \theta_2^-$, $\theta_2^{\text{new}} = \theta_1^-$, $\dot{\theta}_1^{\text{new}} = \dot{\theta}_2^{+}$, $\dot{\theta}_2^{\text{new}} = \dot{\theta}_1^{+}$.
+After impact, the swing foot becomes the new stance foot. Since the positive-rotation conventions for $\theta_1$ (CW) and $\theta_2$ (CCW) are opposite, the relabeling includes a sign change:
+$$\theta_1^{\text{new}} = -\theta_2^-,\quad \theta_2^{\text{new}} = -\theta_1^-,\quad \dot{\theta}_1^{\text{new}} = -\dot{\theta}_2^{+},\quad \dot{\theta}_2^{\text{new}} = -\dot{\theta}_1^{+}$$
 
-For a valid step, the old stance foot (now rear foot) must lift off the ground. This requires $\dot{y}_{\text{rear}}^+ = 2\ell\sin\theta_c(\dot{\theta}_2^{\text{new}} - \dot{\theta}_1^{\text{new}}) > 0$, where $\theta_c = \theta_1^- = \theta_2^-$ is the common angle at impact. If this condition is violated, the function returns a failure status indicating double-foot impact.
+For a valid step, the old stance foot (now rear foot) must lift off the ground. This requires $\dot{\tilde{y}}_{\text{rear}}^+ = 2\ell\sin\theta_c(\dot{\theta}_1^{\text{new}} - \dot{\theta}_2^{\text{new}}) > 0$, where $\theta_c = \theta_1^- = \theta_2^-$ is the common angle at impact. If this condition is violated, the function returns a failure status indicating double-foot impact.
 
 
 <div><hr><hr></div>
@@ -199,7 +202,23 @@ All graphs should have labels and units, and all lines should have width $\geq 2
 
 To find the fixed point, we define the residual function $\mathbf{G}(\mathbf{z}) = \Pi(\mathbf{z}) - \mathbf{z}$ and use MATLAB's `fsolve` to find $\mathbf{z}^*$ such that $\mathbf{G}(\mathbf{z}^*) = \mathbf{0}$. If the Poincaré map fails (due to falling, slip, or double-foot impact), the residual returns a large penalty value to guide the solver away from infeasible regions.
 
-*[Fixed point values and graphs to be added after running the code]*
+Using the initial guess from Gamus's thesis, `fsolve` converges in 4 iterations with residual norm $\|\mathbf{G}\| = 5.14 \times 10^{-15}$. The fixed point is:
+$$\mathbf{z}^* = \begin{pmatrix} \theta_c \\ \dot{\theta}_1 \\ \dot{\theta}_2 \end{pmatrix} = \begin{pmatrix} -0.1665 \text{ rad} \; (-9.542°) \\ 0.8033 \text{ rad/s} \\ -0.4490 \text{ rad/s} \end{pmatrix} \tag{P5.1}$$
+
+![[task5_a_angles.png|bookhue|600]]
+>(a) Angles vs time for the periodic solution. Scuffing occurs in the mid-stride region where $\tilde{y} < 0$.
+
+![[task5_b_phase.png|bookhue|600]]
+>(b) Phase portrait of the periodic solution. Collision points marked with $\times$, scuffing points with $\circ$. Impact jumps (including foot relabeling) shown as dotted lines.
+
+![[task5_c_normal_force.png|bookhue|600]]
+>(c) Normal contact force at the stance foot. The force remains positive throughout, confirming sustained contact.
+
+![[task5_d_force_ratio.png|bookhue|600]]
+>(d) Force ratio $\lambda_t / \lambda_n$ with friction bounds $\pm\mu$. The impact impulse ratio $\Lambda_t / \Lambda_n$ is marked at the end of the period.
+
+![[task5_e_swing_height.png|bookhue|600]]
+>(e) Swing foot height during the periodic solution. The scuffing interval where $\tilde{y} < 0$ is marked by dashed vertical lines.
 
 
 <div><hr><hr></div>
@@ -210,12 +229,23 @@ Find the minimal value of friction coefficient $\mu_{\min}$ such that no-slip co
 
 **Solution:**
 
+The no-slip periodic solution's dynamics are independent of $\mu$ -- neither the constrained equations of motion nor the fully-plastic no-slip impact law involve the friction coefficient. Therefore, $\mu_{\min}$ can be determined directly from the periodic solution found in Task 5 by computing the maximum friction demand across both the continuous phase and the impact event.
 
+During the continuous phase, no-slip contact requires $|\lambda_t(t)| \leq \mu \lambda_n(t)$ at all times. At the impact, the no-slip impulse must satisfy $|\Lambda_t| \leq \mu \Lambda_n$. The minimum friction coefficient ensuring no-slip throughout the entire cycle is therefore:
+$$\mu_{\min} = \max\!\left(\max_t \left|\frac{\lambda_t(t)}{\lambda_n(t)}\right|, \; \left|\frac{\Lambda_t}{\Lambda_n}\right|\right) \tag{P6.1}$$
+
+This corresponds to the peak of graph (d) in Task 5, which shows the force ratio over the period along with the impact impulse ratio. Running the computation yields:
+$$\max_t \left|\frac{\lambda_t(t)}{\lambda_n(t)}\right| = 0.2000 \quad (\text{at } t = 0), \qquad \left|\frac{\Lambda_t}{\Lambda_n}\right| = 0.1580$$
+
+The continuous-phase demand exceeds the impact demand, so the critical instant is at $t = 0$ (immediately after impact). Therefore:
+$$\boxed{\mu_{\min} \approx 0.200} \tag{P6.2}$$
+
+This result means that the stance foot is most prone to slipping right at the start of each step, when the post-impact contact forces have the highest tangential-to-normal ratio. For any $\mu > 0.200$, the entire periodic walking cycle proceeds without slippage.
 
 
 <div><hr><hr></div>
 
-
+%%
 ## Task 7
 Now, assume that at some time along the periodic solution, the stance foot is given a perturbation of small slippage, $\dot{x} = \pm\varepsilon$. Find a condition on the friction coefficient $\mu$ in order to avoid Painlevé paradox, and explain. Find the maximal value of the friction coefficient $\mu_{\max}$ such that for all $\mu < \mu_{\max}$, the no-slip motion is safe of Painlevé paradox under small slippage perturbation at any time along the periodic solution.
 
@@ -302,3 +332,5 @@ Reduce friction coefficient "continuously" (i.e. in small increments) from $\mu_
 Identify all critical values of $\mu$ for which a qualitative change in the periodic solution occurs — change in the sequence of contact states, change in the impact, change in stability, and loss of existence. Show plots of type 5(b) for each different type of periodic solution. Discuss your findings.
 
 **Solution:**
+
+%%

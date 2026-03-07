@@ -11,7 +11,7 @@ function animate_compass_biped()
     params.l = 0.8;
     params.g = 10;
     params.alpha = deg2rad(1);
-    params.mu = 1.5;
+    params.mu = 0.3;
 
     T_max = 10;
     max_steps = 50;
@@ -35,11 +35,13 @@ function animate_compass_biped()
 
     fprintf('Complete: %.2f s, %d segments\n', T_seg{end}(end), length(T_seg));
 
-    %% Animate
-    animate(T_seg, X_seg, x_stance_seg, swap_count_seg, params);
+    %% Animate (and save to videos folder)
+    video_dir = fullfile(fileparts(mfilename('fullpath')), 'videos');
+    animate(T_seg, X_seg, x_stance_seg, swap_count_seg, params, video_dir);
 end
 
-function animate(T_seg, X_seg, x_stance_seg, swap_count_seg, params)
+
+function animate(T_seg, X_seg, x_stance_seg, swap_count_seg, params, video_dir)
     l = params.l;
     alpha = params.alpha;
 
@@ -95,6 +97,16 @@ function animate(T_seg, X_seg, x_stance_seg, swap_count_seg, params)
     step_txt = text(ax, 0.02, 0.88, 'Step: 0', 'Units', 'normalized', 'FontSize', 12, 'Interpreter', 'latex');
 
     legend(ax, [leg_A, leg_B], {'Leg A', 'Leg B'}, 'Location', 'northeast', 'Interpreter', 'latex');
+
+    %% Video writer
+    if nargin < 6, video_dir = []; end
+    if ~isempty(video_dir)
+        if ~exist(video_dir, 'dir'), mkdir(video_dir); end
+        video_path = fullfile(video_dir, 'compass_biped_animation.mp4');
+        writer = VideoWriter(video_path, 'MPEG-4');
+        writer.FrameRate = 50;
+        open(writer);
+    end
 
     %% Animation Loop
     dt = 0.02;
@@ -159,10 +171,17 @@ function animate(T_seg, X_seg, x_stance_seg, swap_count_seg, params)
             set(step_txt, 'String', sprintf('Step: %d', swaps));
 
             drawnow;
+            if ~isempty(video_dir)
+                writeVideo(writer, getframe(fig));
+            end
             pause(dt);
         end
     end
 
+    if ~isempty(video_dir)
+        close(writer);
+        fprintf('Animation saved to: %s\n', video_path);
+    end
     fprintf('Animation complete.\n');
 end
 

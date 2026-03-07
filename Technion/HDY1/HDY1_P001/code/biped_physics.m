@@ -87,11 +87,9 @@ function [value, isterminal, direction] = events_stick(~, X, params)
     l = params.l;
     mu = params.mu;
 
-    % Swing foot height and position
     y_swing = 2*l*cos(theta1) - 2*l*cos(theta2);
     x_swing_rel = 2*l*(sin(theta1) + sin(theta2));
     
-    % Impact: swing foot at ground AND ahead of stance foot
     scuff_threshold = 0.3 * l;
     if x_swing_rel > scuff_threshold
         swing_collision = y_swing;
@@ -99,10 +97,8 @@ function [value, isterminal, direction] = events_stick(~, X, params)
         swing_collision = 1;
     end
 
-    % Falling: hip at ground
     hip_height = cos(theta1);
 
-    % Slip detection
     [lambda_n, lambda_t] = stick_forces(theta1, theta2, theta1_dot, theta2_dot, ...
         params.m, params.m_h, params.I_c, params.l, params.g, params.alpha);
     slip_fwd = lambda_t - mu * lambda_n;
@@ -119,6 +115,17 @@ function [value, isterminal, direction] = events_slip(~, X, params)
     x_dot = X(4);
     theta1_dot = X(5);
     theta2_dot = X(6);
+    l = params.l;
+
+    % Swing foot collision
+    y_swing = 2*l*cos(theta1) - 2*l*cos(theta2);
+    x_swing_rel = 2*l*(sin(theta1) + sin(theta2));
+    scuff_threshold = 0.3 * l;
+    if x_swing_rel > scuff_threshold
+        swing_collision = y_swing;
+    else
+        swing_collision = 1;
+    end
 
     % Slip stops
     slip_velocity = x_dot;
@@ -130,9 +137,9 @@ function [value, isterminal, direction] = events_slip(~, X, params)
     % Falling
     hip_height = cos(theta1);
 
-    value = [slip_velocity; lambda_n; hip_height];
-    isterminal = [1; 1; 1];
-    direction = [0; -1; -1];
+    value = [swing_collision; slip_velocity; lambda_n; hip_height];
+    isterminal = [1; 1; 1; 1];
+    direction = [-1; 0; -1; -1];
 end
 
 %% Impact Law

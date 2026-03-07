@@ -39,6 +39,10 @@ function compass_biped()
         fprintf('Failed to find fixed point (exitflag = %d)\n', exitflag);
     end
     plot_periodic_solution(z_star, params);
+
+    %% Task 6: Minimum Friction Coefficient
+    fprintf('\n=== Task 6: Minimum Friction ===\n\n');
+    mu_min = find_mu_min(z_star, params);
 end
 
 function print_params(p)
@@ -55,6 +59,16 @@ function setup_plots()
     set(groot, 'defaultAxesFontSize', 14);
 end
 
+function colors = get_colors()
+    co = get(groot, 'DefaultAxesColorOrder');
+    if isempty(co) || ischar(co)
+        co = [0 0.4470 0.7410; 0.8500 0.3250 0.0980; 0.9290 0.6940 0.1250];
+    end
+    colors.c1 = co(1,:);
+    colors.c2 = co(2,:);
+    colors.c3 = co(3,:);
+end
+
 function [lambda_n, lambda_t] = compute_forces(X, params)
     N = size(X, 1);
     lambda_n = zeros(N, 1);
@@ -62,6 +76,34 @@ function [lambda_n, lambda_t] = compute_forces(X, params)
     for i = 1:N
         [lambda_n(i), lambda_t(i)] = stick_forces(X(i,1), X(i,2), X(i,3), X(i,4), ...
             params.m, params.m_h, params.I_c, params.l, params.g, params.alpha);
+    end
+end
+
+%% Task 6: Minimum friction coefficient
+function mu_min = find_mu_min(z_star, params)
+    [T, X, Lambda_impact] = simulate_one_period(z_star, params);
+    [lambda_n, lambda_t] = compute_forces(X, params);
+    
+    ratio_continuous = abs(lambda_t ./ lambda_n);
+    mu_continuous = max(ratio_continuous);
+    [~, idx_max] = max(ratio_continuous);
+    
+    fprintf('Continuous phase:\n');
+    fprintf('  max |lambda_t / lambda_n| = %.6f  at t = %.4f s\n', mu_continuous, T(idx_max));
+    
+    mu_impact = 0;
+    if ~isempty(Lambda_impact)
+        mu_impact = abs(Lambda_impact(1) / Lambda_impact(2));
+        fprintf('Impact:\n');
+        fprintf('  |Lambda_t / Lambda_n| = %.6f\n', mu_impact);
+    end
+    
+    mu_min = max(mu_continuous, mu_impact);
+    
+    if mu_impact >= mu_continuous
+        fprintf('\nmu_min = %.6f  (determined by impact)\n', mu_min);
+    else
+        fprintf('\nmu_min = %.6f  (determined by continuous phase at t = %.4f s)\n', mu_min, T(idx_max));
     end
 end
 
@@ -79,19 +121,21 @@ end
 function plot_periodic_solution(z_star, params)
     [T, X, Lambda_impact] = simulate_one_period(z_star, params);
     l = params.l;
+    colors = get_colors();
+    c1 = colors.c1;
+    c2 = colors.c2;
     
     [lambda_n, lambda_t] = compute_forces(X, params);
     y_swing = 2*l*cos(X(:,1)) - 2*l*cos(X(:,2));
     scuff_idx = find(y_swing < 0);
     
-    % Create figures folder
     fig_dir = fullfile(fileparts(mfilename('fullpath')), 'figures');
     if ~exist(fig_dir, 'dir'), mkdir(fig_dir); end
     
     % (a) Angles vs time
     fig_a = figure('Position', [100, 100, 600, 400]);
-    plot(T, rad2deg(X(:,1)), 'b-', 'DisplayName', '$\theta_1$'); hold on;
-    plot(T, rad2deg(X(:,2)), 'r-', 'DisplayName', '$\theta_2$');
+    plot(T, rad2deg(X(:,1)), '-', 'Color', c1, 'DisplayName', '$\theta_1$'); hold on;
+    plot(T, rad2deg(X(:,2)), '-', 'Color', c2, 'DisplayName', '$\theta_2$');
     if ~isempty(scuff_idx)
         xline(T(scuff_idx(1)), 'k--', 'HandleVisibility', 'off');
         xline(T(scuff_idx(end)), 'k--', 'HandleVisibility', 'off');
@@ -105,17 +149,19 @@ function plot_periodic_solution(z_star, params)
     
     % (b) Phase portrait
     fig_b = figure('Position', [150, 150, 600, 400]);
-    plot(rad2deg(X(:,1)), X(:,3), 'b-', 'DisplayName', '$\theta_1$'); hold on;
-    plot(rad2deg(X(:,2)), X(:,4), 'r-', 'DisplayName', '$\theta_2$');
-    plot(rad2deg(X(1,1)), X(1,3), 'bx', 'MarkerSize', 10, 'LineWidth', 2, 'HandleVisibility', 'off');
-    plot(rad2deg(X(1,2)), X(1,4), 'rx', 'MarkerSize', 10, 'LineWidth', 2, 'HandleVisibility', 'off');
-    plot(rad2deg(X(end,1)), X(end,3), 'bo', 'MarkerSize', 8, 'LineWidth', 2, 'HandleVisibility', 'off');
-    plot(rad2deg(X(end,2)), X(end,4), 'ro', 'MarkerSize', 8, 'LineWidth', 2, 'HandleVisibility', 'off');
+    plot(rad2deg(X(:,1)), X(:,3), '-', 'Color', c1, 'DisplayName', '$\theta_1$'); hold on;
+    plot(rad2deg(X(:,2)), X(:,4), '-', 'Color', c2, 'DisplayName', '$\theta_2$');
+    plot(rad2deg(X(1,1)), X(1,3), 'x', 'Color', c1, 'MarkerSize', 10, 'LineWidth', 2, 'HandleVisibility', 'off');
+    plot(rad2deg(X(1,2)), X(1,4), 'x', 'Color', c2, 'MarkerSize', 10, 'LineWidth', 2, 'HandleVisibility', 'off');
+    plot(rad2deg(X(end,1)), X(end,3), 'x', 'Color', c1, 'MarkerSize', 10, 'LineWidth', 2, 'HandleVisibility', 'off');
+    plot(rad2deg(X(end,2)), X(end,4), 'x', 'Color', c2, 'MarkerSize', 10, 'LineWidth', 2, 'HandleVisibility', 'off');
+    plot([rad2deg(X(end,1)), rad2deg(X(1,2))], [X(end,3), X(1,4)], ':', 'Color', c1, 'LineWidth', 1.5, 'HandleVisibility', 'off');
+    plot([rad2deg(X(end,2)), rad2deg(X(1,1))], [X(end,4), X(1,3)], ':', 'Color', c2, 'LineWidth', 1.5, 'HandleVisibility', 'off');
     if ~isempty(scuff_idx)
-        plot(rad2deg(X(scuff_idx(1),1)), X(scuff_idx(1),3), 'ks', 'MarkerSize', 8, ...
-            'MarkerFaceColor', 'k', 'DisplayName', 'Scuffing');
-        plot(rad2deg(X(scuff_idx(1),2)), X(scuff_idx(1),4), 'ks', 'MarkerSize', 8, ...
-            'MarkerFaceColor', 'k', 'HandleVisibility', 'off');
+        plot(rad2deg(X(scuff_idx(1),1)), X(scuff_idx(1),3), 'o', 'Color', c1, 'MarkerSize', 8, 'LineWidth', 2, ...
+            'DisplayName', 'Scuffing');
+        plot(rad2deg(X(scuff_idx(1),2)), X(scuff_idx(1),4), 'o', 'Color', c2, 'MarkerSize', 8, 'LineWidth', 2, ...
+            'HandleVisibility', 'off');
     end
     xlabel('$\theta$ [deg]', 'Interpreter', 'latex'); 
     ylabel('$\dot{\theta}$ [rad/s]', 'Interpreter', 'latex');
@@ -125,7 +171,7 @@ function plot_periodic_solution(z_star, params)
     
     % (c) Normal force
     fig_c = figure('Position', [200, 200, 600, 400]);
-    plot(T, lambda_n, 'b-'); hold on;
+    plot(T, lambda_n, '-', 'Color', c1); hold on;
     yline(0, 'k--', 'HandleVisibility', 'off');
     xlabel('Time [s]', 'Interpreter', 'latex'); 
     ylabel('$\lambda_n$ [N]', 'Interpreter', 'latex');
@@ -135,9 +181,9 @@ function plot_periodic_solution(z_star, params)
     % (d) Force ratio
     fig_d = figure('Position', [250, 250, 600, 400]);
     ratio = lambda_t ./ lambda_n;
-    plot(T, ratio, 'b-', 'DisplayName', '$\lambda_t / \lambda_n$'); hold on;
-    yline(params.mu, 'r--', 'DisplayName', '$\pm \mu$');
-    yline(-params.mu, 'r--', 'HandleVisibility', 'off');
+    plot(T, ratio, '-', 'Color', c1, 'DisplayName', '$\lambda_t / \lambda_n$'); hold on;
+    yline(params.mu, '--', 'Color', c2, 'DisplayName', '$\pm \mu$');
+    yline(-params.mu, '--', 'Color', c2, 'HandleVisibility', 'off');
     if ~isempty(Lambda_impact)
         impulse_ratio = Lambda_impact(1) / Lambda_impact(2);
         plot(T(end), impulse_ratio, 'kx', 'MarkerSize', 12, 'LineWidth', 2, ...
@@ -152,12 +198,12 @@ function plot_periodic_solution(z_star, params)
     
     % (e) Swing foot height
     fig_e = figure('Position', [300, 300, 600, 400]);
-    plot(T, y_swing, 'b-'); hold on;
+    plot(T, y_swing, '-', 'Color', c1); hold on;
     yline(0, 'k--', 'HandleVisibility', 'off');
     if ~isempty(scuff_idx)
         xline(T(scuff_idx(1)), 'k--', 'HandleVisibility', 'off');
         xline(T(scuff_idx(end)), 'k--', 'HandleVisibility', 'off');
-        text(T(scuff_idx(1)), min(y_swing)*0.8, ' scuffing', 'FontSize', 10);
+        text(T(scuff_idx(1)), max(y_swing)*0.8, ' scuffing', 'FontSize', 10);
     end
     xlabel('Time [s]', 'Interpreter', 'latex'); 
     ylabel('$\tilde{y}$ [m]', 'Interpreter', 'latex');
