@@ -151,6 +151,7 @@ W_a = W(:, idx_a);
 %   [ M_pa^T -I    -W_a^T ] [ F_a   ] = [ -M_aa*ddq_a - B_a - G_a + F_q_a_rest ]
 %   [ W_p    0      0     ] [ lambda]   [ -dW_a*dq_a - dW_p*dq_p ]
 
+
 % Note: 2.16 assumes F_q_a is the UNKNOWN actuation force F_qa, and moves it to LHS.
 % Here F_q_a includes tau_psi (actuation) AND dissipation.
 % We should split F_q_a into F_act + F_diss_a

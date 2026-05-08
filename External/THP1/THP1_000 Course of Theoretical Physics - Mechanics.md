@@ -9,6 +9,7 @@ aliases:
 - [[THP1_001 The Equations of Motion]]
 - [[THP1_002 Conservation Laws]]
 - [[THP1_003 Integration of the Equations of Motion]]
+- [[THP1_004 Collisions Between Particles]]
 - [[THP1_007 The Canonical Equations]]
 
 # Bibliography

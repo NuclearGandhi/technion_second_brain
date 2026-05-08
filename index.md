@@ -144,6 +144,11 @@ aliases:
 - [[MCP1_000 00340032 תכן מוצרים מבוססי מיקרו-מעבד מ]]
 - [[PDM1_000 00340371 פרויקט תכן לייצור]]
 
+
+## סמסטר ח'
+- [[MCS2_000 00380800 שיטות אנליזה ומידול במיקרו-מערכות]]
+
+
 %%
 ## פרויקט גמר
 - [[FNL1_000 Final Project]]
@@ -163,5 +168,5 @@ aliases:
 
 >[!Question]- "למה אתה לא לוקח את הקורסי בחירה שאנחנו לוקחים?"
 >סליחה סליחה תנו לי שנייה:
- ![](https://i.makeagif.com/media/7-09-2015/V_Abzw.gif)
+ ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2Q1ZXBydWo2aTI3a250N2kzY3c2OHZxNXQxajdqNzhiMTF3bXpwZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xTDVzvlAh3PVeQcM2a/giphy.gif)
  

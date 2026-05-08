@@ -31,7 +31,7 @@ The swing leg's endpoint, called "swing foot", is located at $\mathbf{p} = (\til
 Note that during the phase where the swing leg passes across the stance leg, it actually penetrates into the ground for a short time, that is, $y_p(t) < 0$. This effect, called "foot scuffing", should be ignored in the analysis and not considered as a collision.
 
 
-![[HDY1_P001 Final Project 1 2026-01-29 14.21.32.excalidraw.svg]]
+![[HDY1_P001 Final Project 1 2026-01-29 14.21.32.excalidraw.svg]]^figure-compass-biped
 >The compass biped passive dynamic walker on an inclined plane.
 
 **Sign Convention:**
@@ -205,19 +205,30 @@ To find the fixed point, we define the residual function $\mathbf{G}(\mathbf{z})
 Using the initial guess from Gamus's thesis, `fsolve` converges in 4 iterations with residual norm $\|\mathbf{G}\| = 5.14 \times 10^{-15}$. The fixed point is:
 $$\mathbf{z}^* = \begin{pmatrix} \theta_c \\ \dot{\theta}_1 \\ \dot{\theta}_2 \end{pmatrix} = \begin{pmatrix} -0.1665 \text{ rad} \; (-9.542°) \\ 0.8033 \text{ rad/s} \\ -0.4490 \text{ rad/s} \end{pmatrix} \tag{P5.1}$$
 
-![[task5_a_angles.png|bookhue|600]]
+<div><hr><hr></div>
+
+
+![[task5_a_angles.png|bookhue|600]]^figure-task-5-a
 >(a) Angles vs time for the periodic solution. Scuffing occurs in the mid-stride region where $\tilde{y} < 0$.
 
-![[task5_b_phase.png|bookhue|600]]
+![[task5_b_phase.png|bookhue|600]]^figure-task-5-b
 >(b) Phase portrait of the periodic solution. Collision points marked with $\times$, scuffing points with $\circ$. Impact jumps (including foot relabeling) shown as dotted lines.
 
-![[task5_c_normal_force.png|bookhue|600]]
+<div><hr><hr></div>
+
+
+![[task5_c_normal_force.png|bookhue|600]]^figure-task-5-c
 >(c) Normal contact force at the stance foot. The force remains positive throughout, confirming sustained contact.
 
-![[task5_d_force_ratio.png|bookhue|600]]
+
+![[task5_d_force_ratio.png|bookhue|600]]^figure-task-5-d
 >(d) Force ratio $\lambda_t / \lambda_n$ with friction bounds $\pm\mu$. The impact impulse ratio $\Lambda_t / \Lambda_n$ is marked at the end of the period.
 
-![[task5_e_swing_height.png|bookhue|600]]
+
+<div><hr><hr></div>
+
+
+![[task5_e_swing_height.png|bookhue|600]]^figure-task-5-e
 >(e) Swing foot height during the periodic solution. The scuffing interval where $\tilde{y} < 0$ is marked by dashed vertical lines.
 
 
@@ -242,10 +253,11 @@ $$\boxed{\mu_{\min} \approx 0.200} \tag{P6.2}$$
 
 This result means that the stance foot is most prone to slipping right at the start of each step, when the post-impact contact forces have the highest tangential-to-normal ratio. For any $\mu > 0.200$, the entire periodic walking cycle proceeds without slippage.
 
+%%
+
 
 <div><hr><hr></div>
 
-%%
 ## Task 7
 Now, assume that at some time along the periodic solution, the stance foot is given a perturbation of small slippage, $\dot{x} = \pm\varepsilon$. Find a condition on the friction coefficient $\mu$ in order to avoid Painlevé paradox, and explain. Find the maximal value of the friction coefficient $\mu_{\max}$ such that for all $\mu < \mu_{\max}$, the no-slip motion is safe of Painlevé paradox under small slippage perturbation at any time along the periodic solution.
 
