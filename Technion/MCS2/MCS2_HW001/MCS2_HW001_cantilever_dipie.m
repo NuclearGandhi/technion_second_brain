@@ -1,4 +1,4 @@
-%% MCS2 HW001 - Cantilever beam voltage iteration and DIPIE
+%% MCS2 HW001 - Cantilever Beam Voltage Iteration and DIPIE
 % Normalized governing equation:
 %   y'''' = 0.5 * V^2 / (1 - y)^2
 %
@@ -13,38 +13,47 @@ set(groot, 'defaultLegendInterpreter', 'latex');
 
 outputDir = fileparts(mfilename('fullpath'));
 
-n = 511;
+n = 1023;                 % number of unknown nodes, including the free tip
 h = 1/n;
 x = (h:h:1)';
-K = cantileverFourthDerivativeMatrix(n);
+K = cantileverStiffnessMatrix(n);
 
 %% Voltage iteration - stable branch only
 voltageList = [0.2:0.1:1.6, 1.65:0.025:1.825];
+maxVoltageIterations = 500;
+tolerance = 1e-10;
+
 y = zeros(n, 1);
 tipVoltageIteration = nan(size(voltageList));
 convergedVoltageIteration = false(size(voltageList));
 
 for i = 1:numel(voltageList)
-    [y, info] = voltageIteration(K, voltageList(i), y, 500, 1e-10);
-    tipVoltageIteration(i) = y(end);
-    convergedVoltageIteration(i) = info.converged;
+    [y, ~, converged] = voltageIteration( ...
+        K, voltageList(i), y, maxVoltageIterations, tolerance);
 
-    if ~info.converged
+    tipVoltageIteration(i) = y(end);
+    convergedVoltageIteration(i) = converged;
+
+    if ~converged
         fprintf('Voltage iteration stopped converging near V = %.4f\n', voltageList(i));
         break;
     end
 end
 
 %% DIPIE - full voltage and charge equilibrium curves
-tipDisplacementList = linspace(0.01, 0.98, 250);
+tipDisplacementList = 0.01:0.01:0.99;
+maxDipieIterations = 80;
+
 voltageDipie = nan(size(tipDisplacementList));
 chargeDipie = nan(size(tipDisplacementList));
-reactionTip = nan(size(tipDisplacementList));
+dipieConvergence = nan(maxDipieIterations, numel(tipDisplacementList));
 
 for i = 1:numel(tipDisplacementList)
-    [yDipie, voltageDipie(i), info] = dipieCantilever(K, tipDisplacementList(i), 700, 1e-11);
+    [yDipie, convergenceHistory, voltageDipie(i)] = dipieCantilever( ...
+        K, tipDisplacementList(i), maxDipieIterations);
+
     chargeDipie(i) = normalizedCharge(x, yDipie, voltageDipie(i));
-    reactionTip(i) = info.reaction(end);
+    dipieConvergence(:, i) = convergenceHistory;
 end
 
 [pullInVoltage, voltagePullInIndex] = max(voltageDipie);
@@ -58,7 +67,6 @@ fprintf('Voltage actuation: V_PI = %.6f at y_tip = %.6f\n', ...
     pullInVoltage, tipAtVoltagePullIn);
 fprintf('Charge actuation:  Q_PI = %.6f at y_tip = %.6f\n', ...
     pullInCharge, tipAtChargePullIn);
-fprintf('Max absolute DIPIE tip reaction residual: %.3e\n', max(abs(reactionTip)));
 
 %% Figures
 fig1 = figure('Position', [100, 100, 600, 400]);
@@ -99,68 +107,46 @@ legend({'stable branch', 'unstable branch', 'pull-in'}, 'Location', 'best');
 exportgraphics(fig3, fullfile(outputDir, 'cantilever_dipie_charge.png'), 'Resolution', 150);
 
 %% Local functions
-function K = cantileverFourthDerivativeMatrix(n)
-    % Unknowns are y_1, ..., y_n. The clamped node y_0 is eliminated.
-    % Free-end ghost nodes are eliminated using y''_n = 0 and y'''_n = 0.
-    K = spalloc(n, n, 5*n);
 
-    for i = 1:n
-        indices = i + (-2:2);
-        values = [1, -4, 6, -4, 1];
-        row = containers.Map('KeyType', 'double', 'ValueType', 'double');
+function K = cantileverStiffnessMatrix(n)
+    % Build the finite-difference fourth-derivative matrix for a cantilever.
+    %
+    % Unknowns are y_1, ..., y_n, where y_n is the free tip and y_0 = 0 is
+    % the clamped displacement. The stencil is [1 -4 6 -4 1].
+    %
+    % Boundary conditions are enforced by eliminating ghost nodes:
+    %   y_{-1} = y_1                                  from y'(0) = 0
+    %   y_{n+1} = 2*y_n - y_{n-1}                    from y''(1) = 0
+    %   y_{n+2} = y_{n-2} - 4*y_{n-1} + 4*y_n        from y'''(1) = 0
 
-        for j = 1:numel(indices)
-            row(indices(j)) = getOrZero(row, indices(j)) + values(j);
-        end
+    c = ones(n, 1);
+    D4 = [c, -4*c, 6*c, -4*c, c];
+    K = spdiags(D4, -2:2, n, n)';
 
-        if isKey(row, -1)
-            row(1) = getOrZero(row, 1) + row(-1);
-            remove(row, -1);
-        end
+    % Left clamp: first row contains y_{-1}; replace it by y_1.
+    K(1, 1) = K(1, 1) + 1;
 
-        if isKey(row, 0)
-            remove(row, 0);
-        end
+    % Free tip: eliminate y_{n+1} from row n-1.
+    K(n - 1, n - 1) = K(n - 1, n - 1) - 1;
+    K(n - 1, n) = K(n - 1, n) + 2;
 
-        if isKey(row, n + 1)
-            c = row(n + 1);
-            row(n) = getOrZero(row, n) + 2*c;
-            row(n - 1) = getOrZero(row, n - 1) - c;
-            remove(row, n + 1);
-        end
-
-        if isKey(row, n + 2)
-            c = row(n + 2);
-            row(n - 2) = getOrZero(row, n - 2) + c;
-            row(n - 1) = getOrZero(row, n - 1) - 4*c;
-            row(n) = getOrZero(row, n) + 4*c;
-            remove(row, n + 2);
-        end
-
-        keysInRow = cell2mat(keys(row));
-        for j = 1:numel(keysInRow)
-            col = keysInRow(j);
-            if col >= 1 && col <= n
-                K(i, col) = row(col);
-            end
-        end
-    end
+    % Free tip: eliminate y_{n+1} and y_{n+2} from row n.
+    K(n, n - 2) = K(n, n - 2) + 1;
+    K(n, n) = K(n, n) - 4;
 end
 
-function value = getOrZero(mapObject, key)
-    if isKey(mapObject, key)
-        value = mapObject(key);
-    else
-        value = 0;
-    end
-end
+function [y, convergenceHistory, converged] = voltageIteration( ...
+        K, voltage, initialGuess, maxIterations, tolerance)
+    % Fixed-point voltage iteration for a prescribed voltage.
+    %
+    % This traces only the stable branch. Near pull-in, convergence slows
+    % down; past pull-in, the voltage-controlled equilibrium disappears.
 
-function [y, info] = voltageIteration(K, voltage, initialGuess, maxIterations, tolerance)
     n = size(K, 1);
     h = 1/n;
     y = initialGuess;
-    info.converged = false;
-    info.iterations = maxIterations;
+    convergenceHistory = nan(maxIterations, 1);
+    converged = false;
 
     for iter = 1:maxIterations
         previousY = y;
@@ -168,9 +154,10 @@ function [y, info] = voltageIteration(K, voltage, initialGuess, maxIterations, t
         y = K \ rhs;
 
         relativeChange = norm(y - previousY, inf) / max(norm(y, inf), eps);
+        convergenceHistory(iter) = relativeChange;
+
         if relativeChange < tolerance && all(isfinite(y)) && max(y) < 1
-            info.converged = true;
-            info.iterations = iter;
+            converged = true;
             return;
         end
 
@@ -180,66 +167,50 @@ function [y, info] = voltageIteration(K, voltage, initialGuess, maxIterations, t
     end
 end
 
-function [y, voltage, info] = dipieCantilever(K, prescribedTipDisplacement, maxIterations, tolerance)
+function [y, convergenceHistory, voltage] = dipieCantilever( ...
+        K, prescribedTipDisplacement, maxIterations)
+    % DIPIE iteration for a cantilever with prescribed tip displacement.
+    %
+    % The tip displacement is fixed. The remaining nodal displacements are
+    % updated by repeatedly estimating a uniform voltage from the current
+    % local nodal voltages, following the lecture DIPIE scheme.
+
     n = size(K, 1);
     h = 1/n;
     tipNode = n;
-    activeNodes = 1:n-1;
+    freeNodes = 1:n-1;
 
     y = zeros(n, 1);
     y(tipNode) = prescribedTipDisplacement;
-    y(activeNodes) = K(activeNodes, activeNodes) \ ...
-        (-K(activeNodes, tipNode)*prescribedTipDisplacement);
 
-    localVoltageSquared = 2*(K*y)/h^4 .* (1 - y).^2;
-    voltageSquared = max(mean(localVoltageSquared), eps);
-    info.converged = false;
-    info.iterations = maxIterations;
+    rhs = -K(:, tipNode)*prescribedTipDisplacement;
+    y(freeNodes) = K(freeNodes, freeNodes) \ rhs(freeNodes);
+
+    convergenceHistory = nan(maxIterations, 1);
+    voltageSquared = 0;
 
     for iter = 1:maxIterations
-        residual = K*y - 0.5*h^4*voltageSquared ./ (1 - y).^2;
+        previousY = y;
 
-        if norm(residual, inf) < tolerance
-            info.converged = true;
-            info.iterations = iter;
-            break;
-        end
+        localVoltageSquared = 2*(K*y)/h^4 .* (1 - y).^2;
+        voltageSquared = mean(localVoltageSquared);
 
-        diagonalCorrection = -h^4*voltageSquared ./ (1 - y).^3;
-        displacementJacobian = K(:, activeNodes) + ...
-            sparse(activeNodes, activeNodes, diagonalCorrection(activeNodes), n, n-1);
-        voltageJacobian = -0.5*h^4 ./ (1 - y).^2;
-        jacobian = [displacementJacobian, voltageJacobian];
+        forcingScale = 0.5*h^4*voltageSquared;
+        rhs = forcingScale ./ (1 - y).^2 - K(:, tipNode)*prescribedTipDisplacement;
 
-        step = -jacobian \ residual;
+        y(freeNodes) = K(freeNodes, freeNodes) \ rhs(freeNodes);
+        y(tipNode) = prescribedTipDisplacement;
 
-        stepScale = 1;
-        for lineSearchIter = 1:12
-            trialY = y;
-            trialY(activeNodes) = y(activeNodes) + stepScale*step(1:end-1);
-            trialY(tipNode) = prescribedTipDisplacement;
-            trialVoltageSquared = voltageSquared + stepScale*step(end);
-
-            if trialVoltageSquared > 0 && max(trialY) < 1
-                trialResidual = K*trialY ...
-                    - 0.5*h^4*trialVoltageSquared ./ (1 - trialY).^2;
-                if norm(trialResidual, inf) < norm(residual, inf)
-                    y = trialY;
-                    voltageSquared = trialVoltageSquared;
-                    break;
-                end
-            end
-
-            stepScale = 0.5*stepScale;
-        end
+        convergenceHistory(iter) = norm(y - previousY, inf) / max(norm(y, inf), eps);
     end
 
     voltage = sqrt(max(voltageSquared, 0));
-    rhs = 0.5*h^4*voltage^2 ./ (1 - y).^2;
-    info.reaction = (K*y - rhs)/h^4;
 end
 
 function charge = normalizedCharge(x, y, voltage)
+    % Normalized charge:
+    %   Q = V * integral_0^1 1/(1-y(x)) dx
+
     xWithClamp = [0; x];
     yWithClamp = [0; y];
     capacitanceShapeFactor = trapz(xWithClamp, 1 ./ (1 - yWithClamp));

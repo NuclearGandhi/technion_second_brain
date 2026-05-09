@@ -8,7 +8,9 @@ Real MEMS beams, however, are **distributed systems** with infinitely many degre
 
 ## Euler-Bernoulli Beam Theory
 As developed in [[MCS1_003 לינאריות קורה בכפיפה|beam bending theory]], the Euler-Bernoulli assumption relates the bending moment $M(x)$ at a cross-section to the local curvature $\kappa$ through:
-$$\dfrac{1}{\rho(x)}=\kappa(x)=\dfrac{M(x)}{EI}\tag{1.1}$$where $E$ is Young's modulus, $I$ is the second moment of the beam cross-section, and $\rho$ is the radius of curvature. The exact curvature for an inextensible beam is:
+$$\dfrac{1}{\rho(x)}=\kappa(x)=\dfrac{M(x)}{EI}\tag{1.1}$$
+
+where $E$ is Young's modulus, $I$ is the second moment of the beam cross-section, and $\rho$ is the radius of curvature. The exact curvature for an inextensible beam is:
 $$\kappa=\dfrac{1}{\rho}=\dfrac{\mathrm{d}\theta}{\mathrm{d}s}$$
 where $\theta$ is the rotation angle of the beam centerline and $s$ is the arc-length coordinate along the beam. For large rotation angles, the governing equation becomes the **Elastica equation**:
 
