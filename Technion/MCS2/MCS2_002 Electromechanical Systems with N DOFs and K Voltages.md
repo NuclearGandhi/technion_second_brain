@@ -241,7 +241,7 @@ $$
 
 This equation describes singular stiffness states. Part of it is the actual pull-in boundary, where ${\lambda}_{\min}=0$. Another part lies inside the unstable domain and corresponds to ${\lambda}_{\max}=0$.
 
-![[MCS2_002/coupled_parallel_plate_q_domain.svg|bookhue|600]]^figure-coupled-parallel-plate-q-domain
+![[coupled_parallel_plate_q_domain.svg|bookhue|600]]^figure-coupled-parallel-plate-q-domain
 >Projection of the coupled parallel-plate equilibrium domain onto displacement space. The reachable equilibrium domain is the wedge between the zero-voltage boundary lines. The red curve is the pull-in line, where ${\lambda}_{\min}=0$. The magenta curve is another singular-stiffness curve, but it has ${\lambda}_{\max}=0$ and is not the stable-domain pull-in boundary.
 
 In this graph each point corresponds to a unique displacement state. The stable region starts near the origin, where the stiffness matrix is positive definite. Moving outward eventually reaches the red curve. Crossing it makes one stiffness eigenvalue negative, so the equilibrium becomes unstable.
@@ -266,7 +266,7 @@ The orange curves are **equi-$\tilde{\psi}$** curves, meaning constant total pot
 ## Voltage Projection
 Mapping the same equilibrium states through $\text{(2.13)}$ gives a projection onto the $({\tilde{V}_{1}},{\tilde{V}_{2}})$ plane.
 
-![[MCS2_002/coupled_parallel_plate_voltage_projection.svg|bookhue|600]]^figure-coupled-parallel-plate-voltage-domain
+![[coupled_parallel_plate_voltage_projection.svg|bookhue|600]]^figure-coupled-parallel-plate-voltage-domain
 >Projection of the same equilibrium domain onto voltage space. The map from displacement space to voltage space folds the equilibrium surface, so stable and unstable equilibria can overlap in the projection.
 
 This is why the voltage-space figure in the lecture is visually harder to understand. The plotted region is not a single sheet. It is a projection of a two-dimensional equilibrium surface, and the projection folds over itself. A point in voltage space may correspond to more than one displacement equilibrium, with different stability.
@@ -296,7 +296,7 @@ $$
 
 where $\tilde{V}$ is a single scalar loading amplitude. The multi-voltage problem is now sliced into a one-parameter problem along a ray in voltage space.
 
-![[MCS2_002/alpha_lines_voltage_projection.svg|bookhue|600]]^figure-alpha-lines-voltage-projection
+![[alpha_lines_voltage_projection.svg|bookhue|600]]^figure-alpha-lines-voltage-projection
 >$\alpha$-lines in the voltage projection. Each line fixes a voltage ratio and asks how far one can move along that direction before reaching the pull-in boundary.
 
 The interpretation is direct:
@@ -420,7 +420,7 @@ In the MATLAB code, the voltages in $\text{(2.20)}$ and $\text{(2.21)}$ are subs
 The pull-in equation is derived in the form
 $$\kappa ^{2}{{\tilde{q}_{2}}}^{4}-[5\kappa(1+\tilde{q}_{1})^{2}+\kappa ^{2}]{{\tilde{q}_{2}}}^{2}-[2\tilde{q}_{1}(1+\tilde{q}_{1})-\kappa](1+\tilde{q}_{1})^{2}=0\tag{2.25}$$
 
-![[MCS2_002/interdigitated_fingers_q_domain.svg|bookhue|600]]^figure-interdigitated-fingers-q-domain
+![[interdigitated_fingers_q_domain.svg|bookhue|600]]^figure-interdigitated-fingers-q-domain
 >Projection of the interdigitated-fingers equilibrium domain onto displacement space for $\kappa=1$. The red curve is the pull-in line. The vertical line $\tilde{q}_{2}=0$ is the comb-drive direction, where $\tilde{V}_{1}=\tilde{V}_{2}$ and the electrostatic force is mainly axial. The side regions are excluded because one of the required squared voltages becomes negative.
 
 The meaning of this figure is the same as in the coupled parallel-plate example, but the geometry is different. The two side electrodes create forces in opposite transverse directions. Equal voltages cancel the transverse component and pull the shuttle in the axial direction. Unequal voltages introduce a transverse bias, so the equilibrium path bends toward one side gap.
