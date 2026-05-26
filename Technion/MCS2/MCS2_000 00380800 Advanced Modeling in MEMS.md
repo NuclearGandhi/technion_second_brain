@@ -9,11 +9,14 @@ Lecturer: Prof. David Elata
 # Notes
 - [[MCS2_001 DIPIE]]
 - [[MCS2_002 Electromechanical Systems with N DOFs and K Voltages]]
+- [[MCS2_003 Floating Electrode Actuator]]
+- [[MCS2_004 Experimental Validation of Electro Mechanical Buckling]]
 
 %%
 # Homework
 - [[MCS2_HW001 Homework 1]]
 - [[MCS2_HW002 Homework 2]]
+- [[MCS2_HW003 Homework 3]]
 
 %%
 
