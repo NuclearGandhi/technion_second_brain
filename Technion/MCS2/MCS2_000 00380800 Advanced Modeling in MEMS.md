@@ -11,7 +11,6 @@ Lecturer: Prof. David Elata
 - [[MCS2_002 Electromechanical Systems with N DOFs and K Voltages]]
 - [[MCS2_003 Floating Electrode Actuator]]
 - [[MCS2_004 Experimental Validation of Electro Mechanical Buckling]]
-- [[MCS2_005 Feedthrough]]
 
 %%
 # Homework
