@@ -158,6 +158,7 @@ aliases:
 ## אקסטרני
 - [[HML1_000 Hands-On Machine Learning]]
 - [[THP1_000 Course of Theoretical Physics - Mechanics]]
+- [[NLD1_000 Nonlinear Dynamics and Chaos]]
 
 %%
 ## סמסטר יד'
