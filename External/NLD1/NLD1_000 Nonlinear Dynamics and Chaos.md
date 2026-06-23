@@ -7,6 +7,7 @@ aliases:
 # Notes
 
 - [[NLD1_002 Flows on the Line]]
+- [[NLD1_003 Bifurcations]]
 
 # Bibliography
 - Strogatz, S. (2019). _Nonlinear dynamics and chaos: With applications to physics, biology, chemistry, and engineering_ (Second edition, first issued in hardback). CRC Press.

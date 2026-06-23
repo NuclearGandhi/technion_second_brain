@@ -12,6 +12,7 @@ Lecturer: Prof. David Elata
 - [[MCS2_003 Floating Electrode Actuator]]
 - [[MCS2_004 Experimental Validation of Electro Mechanical Buckling]]
 - [[MCS2_005 Parametric Resonance]]
+- [[MCS2_006 Dynamic Pull-In]]
 
 %%
 # Homework

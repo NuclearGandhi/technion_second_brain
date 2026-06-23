@@ -30,6 +30,27 @@ This result is exact, but a headache to interpret. For example, can you answer t
 1. Suppose ${x}_{0}=\pi /4$; describe the qualitative features of the solution $x(t)$ for all $t<0$. In particular, what happens as $t \to \infty$?
 2. For an *arbitrary* initial condition ${x}_{0}$, what is the behavior as $x(t)$ as $t \to \infty$.
 
-![[Pasted image 20260613161424.png|bookhue|600]]
+In contrast, a *graphical analysis* of $\text{(SS2.1)}$ is clear and simple, as shown in [[#^figure-2-1-1|figure]]. We think of $t$ as time, $x$ as the position of an imaginary particle moving along the real line, and $\dot{x}$ as the velocity of that particle. Then the differential equations $\dot{x}=\sin x$ represents a *vector field* on the line: it dictates the velocity vector $\dot{x}$ at each $x$. To sketch the vector field, it is convenient to plot $\dot{x}$ versus $x$, and then draw arrows on the $x$-axis to indicate the corresponding velocity vector at each $x$.
+
+![[Pasted image 20260613161424.png|bookhue|600]]^figure-2-1-1
 >Graphical analysis of $\text{(SS2.1)}$. [[#Bibliography|(Strogatz, 2019)]].
 
+A more physical way to think about the vector field is to imagine that fluid is flowing steadily along the $x$-axis with a velocity that varies from place to place, according to the rule $\dot{x}=\sin x$. As shown in [[#^figure-2-1-1|figure]], the *flow* is to the right when $\dot{x}>0$ and to the left when $\dot{x}<0$. At points where $\dot{x}=0$, there is no flow; such points are therefore called *fixed points*. One can see that there are *stable* fixed points called *attractors* or *sinks*, and there are *unstable* fixed points called *repellers* or *sources*.
+
+This approach allows us to answer the question above as follows:
+1. [[#^figure-2-1-1|Figure]] shows that a particle starting at ${x}_{0}=\pi /4$ moves to the right faster and faster until it crosses $x=\pi / 2$ (where $\sin x$ reaches its maximum). Then the particle starts slowing down and eventually approaches the stable fixed point $x=\pi$ from the left. Thus, the qualitative form of the solution is as shown in [[#^figure-2-1-2|figure]].
+	Note that the curve is concave up at first, and then concave down; this corresponds to the initial acceleration for $x<\pi  / 2$, followed by the deceleration toward $x=\pi$.
+
+
+![[Pasted image 20260613221746.png|bookhue|600]]^figure-2-1-2
+>Solution of $\text{(SS2.1)}$ for ${x}_{0}=\pi / 4$. [[#Bibliography|(Strogatz, 2019)]].
+
+The same reasoning applies to any initial condition ${x}_{0}$. [[#^figure-2-1-1|Figure]] shows that if $\dot{x}>0$ initially, the particle heads to the right and asymptotically approaches the nearest stable fixed point. Similarly, if $\dot{x}<0$ initially, the particle approaches the nearest stable fixed point to its left. If $\dot{x}=0$, then $x$ remains constant. The qualitative form of the solution for any initial condition is sketched in 
+
+![[Pasted image 20260613222348.png|bookhue|400]]
+>Various solutions of $\text{(SS2.1)}$ for different initial conditions ${x}_{0}$. [[#Bibliography|(Strogatz, 2019)]].
+
+>[!notes] Notes: 
+ >From here on out, the chapter repeats a lot of material covered in [[LSY1_000 034032 Linear Systems E|Linear Systems]], [[DVI1_000 00340051 דינמיקה ותנודות|Vibrations]], and more.
+
+ 

@@ -159,6 +159,7 @@ aliases:
 - [[HML1_000 Hands-On Machine Learning]]
 - [[THP1_000 Course of Theoretical Physics - Mechanics]]
 - [[NLD1_000 Nonlinear Dynamics and Chaos]]
+- [[CMC1_000 Classical Mechanics]]
 
 %%
 ## סמסטר יד'
