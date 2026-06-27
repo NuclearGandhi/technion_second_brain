@@ -20,6 +20,7 @@ Lecturer: Prof. David Elata
 - [[MCS2_HW002 Homework 2]]
 - [[MCS2_HW003 Homework 3]]
 - [[MCS2_HW004 Homework 4]]
+- [[MCS2_HW005 Homework 5]]
 
 %%
 

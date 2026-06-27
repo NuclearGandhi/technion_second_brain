@@ -12,6 +12,7 @@
   "isTimestamp": false,
   "enabledCss": false,
   "concurrency": "5",
+  "version": "2",
   "prevConfig": {
     "pageSize": "A4",
     "marginType": "3",
