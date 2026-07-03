@@ -11,7 +11,6 @@ Lecturer: Prof. David Elata
 - [[MCS2_002 Electromechanical Systems with N DOFs and K Voltages]]
 - [[MCS2_003 Floating Electrode Actuator]]
 - [[MCS2_004 Experimental Validation of Electro Mechanical Buckling]]
-- [[MCS2_005 Parametric Resonance]]
 - [[MCS2_006 Dynamic Pull-In]]
 
 %%
@@ -21,6 +20,7 @@ Lecturer: Prof. David Elata
 - [[MCS2_HW003 Homework 3]]
 - [[MCS2_HW004 Homework 4]]
 - [[MCS2_HW005 Homework 5]]
+- [[MCS2_HW006 Homework 6]]
 
 %%
 
