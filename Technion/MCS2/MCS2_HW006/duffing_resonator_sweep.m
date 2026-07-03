@@ -45,14 +45,16 @@ function config = default_config()
     config.q3.Q_values = [5, 10, 20, 40];
     config.q3.f0_values = [0.02, 0.05, 0.1, 0.2];
     config.q3.y0 = [1e-3; 0];
-    config.q3.t_end_scale = 15;
-    config.q3.min_t_end = 200;
+    config.q3.t_end = 600;
+    config.q3.peak_window = 5;
+    config.q3.freq_response_case = [20, 0.20];
+    config.q3.freq_response_t_end = 1500;
+    config.q3.freq_response_peak_skip = 2;
     config.q3.example_cases = [ ...
-        20, 0.05; ...
-        20, 0.10; ...
+        5,  0.20; ...
         10, 0.10; ...
-        5,  0.20];
-    config.q3.freq_response_case = [20, 0.10];
+        20, 0.05; ...
+        40, 0.025];
 end
 
 function setup_plotting()
@@ -207,17 +209,18 @@ function run_question_3(config, out_dir)
     amp_x = nan(n_q, n_f);
     amp_v = nan(n_q, n_f);
     omega_inst = nan(n_q, n_f);
+    Qf0 = nan(n_q, n_f);
 
     for q_idx = 1:n_q
         for f_idx = 1:n_f
             Q = q3.Q_values(q_idx);
             f0_tilde = q3.f0_values(f_idx);
-            t_end = max(q3.min_t_end, q3.t_end_scale * Q);
+            Qf0(q_idx, f_idx) = Q * f0_tilde;
 
-            fprintf('Q = %g, f0_tilde = %.5g, t_end = %.0f\n', ...
-                Q, f0_tilde, t_end);
+            fprintf('Q = %g, f0_tilde = %.5g, Qf0 = %.3g, t_end = %.0f\n', ...
+                Q, f0_tilde, Qf0(q_idx, f_idx), q3.t_end);
 
-            response = simulate_autoresonance(Q, f0_tilde, q3.y0, t_end, ...
+            response = simulate_autoresonance(Q, f0_tilde, q3.y0, q3.t_end, ...
                 config.n_peaks, config.peak_tol);
 
             results(q_idx, f_idx).Q = Q;
@@ -233,115 +236,125 @@ function run_question_3(config, out_dir)
     Q_values = q3.Q_values;
     f0_values = q3.f0_values;
     save(fullfile(out_dir, 'hw6_q3_autoresonance.mat'), ...
-        'Q_values', 'f0_values', 'results', 'amp_x', 'amp_v', 'omega_inst');
+        'Q_values', 'f0_values', 'Qf0', 'results', 'amp_x', 'amp_v', 'omega_inst');
 
-    plot_q3_time_examples(config, out_dir, results);
-    plot_q3_parameter_sweeps(config, out_dir, amp_x);
+    plot_q3_time_examples(config, out_dir);
+    plot_q3_amplitude_summary(config, out_dir, amp_v, amp_x, Qf0);
     plot_q3_frequency_response(config, out_dir, results);
 end
 
-function plot_q3_time_examples(config, out_dir, results)
+function plot_q3_time_examples(config, out_dir)
     q3 = config.q3;
+    n_cases = size(q3.example_cases, 1);
+    responses = cell(n_cases, 1);
+    plot_handles = gobjects(n_cases, 1);
+    legend_labels = cell(n_cases, 1);
+
+    for idx = 1:n_cases
+        Q = q3.example_cases(idx, 1);
+        f0_tilde = q3.example_cases(idx, 2);
+        responses{idx} = simulate_autoresonance(Q, f0_tilde, q3.y0, q3.t_end, ...
+            config.n_peaks, config.peak_tol);
+        legend_labels{idx} = sprintf('$Q=%g,\\ \\tilde{f}_0=%.3g$', Q, f0_tilde);
+    end
+
     fig = new_figure();
-    tiledlayout(2, 1, 'TileSpacing', 'compact');
+    tlo = tiledlayout(2, 1, 'TileSpacing', 'compact');
 
-    nexttile;
-    hold on; box on; grid on;
-    for idx = 1:size(q3.example_cases, 1)
-        response = find_autoresonance_response(results, ...
-            q3.example_cases(idx, 1), q3.example_cases(idx, 2));
-        plot(response.t, response.y(:, 1), 'LineWidth', 2.0, ...
-            'DisplayName', sprintf('$Q=%g,\\ \\tilde{f}_0=%.2g$', ...
-            q3.example_cases(idx, 1), q3.example_cases(idx, 2)));
+    ax1 = nexttile(tlo);
+    hold(ax1, 'on'); box(ax1, 'on'); grid(ax1, 'on');
+    for idx = 1:n_cases
+        plot_handles(idx) = plot(ax1, responses{idx}.t, responses{idx}.y(:, 1), ...
+            'LineWidth', 2.0);
     end
-    ylabel('$\tilde{x}$', 'FontSize', 14);
-    legend('Location', 'northwest');
+    ylabel(ax1, '$\tilde{x}$', 'FontSize', 14);
 
-    nexttile;
-    hold on; box on; grid on;
-    for idx = 1:size(q3.example_cases, 1)
-        response = find_autoresonance_response(results, ...
-            q3.example_cases(idx, 1), q3.example_cases(idx, 2));
-        plot(response.t, response.y(:, 2), 'LineWidth', 2.0, ...
-            'DisplayName', sprintf('$Q=%g,\\ \\tilde{f}_0=%.2g$', ...
-            q3.example_cases(idx, 1), q3.example_cases(idx, 2)));
+    ax2 = nexttile(tlo);
+    hold(ax2, 'on'); box(ax2, 'on'); grid(ax2, 'on');
+    for idx = 1:n_cases
+        plot(ax2, responses{idx}.t, responses{idx}.y(:, 2), ...
+            'LineWidth', 2.0, 'HandleVisibility', 'off');
     end
-    xlabel('$\tilde{t}$', 'FontSize', 15);
-    ylabel('$\tilde{v}$', 'FontSize', 14);
+    xlabel(ax2, '$\tilde{t}$', 'FontSize', 15);
+    ylabel(ax2, '$\tilde{v}$', 'FontSize', 14);
+
+    lgd = legend(ax1, plot_handles, legend_labels, 'Interpreter', 'latex');
+    lgd.Orientation = 'vertical';
+    lgd.Position = [0.36, 0.34, 0.32, 0.30];
+
     export_figure(fig, out_dir, 'hw6_q3_time_examples.svg');
 end
 
-function plot_q3_parameter_sweeps(config, out_dir, amp_x)
+function plot_q3_amplitude_summary(config, out_dir, amp_v, amp_x, Qf0)
     q3 = config.q3;
-    colors = lines(numel(q3.Q_values));
+    Qf0_vec = Qf0(:);
+    amp_v_vec = amp_v(:);
+    amp_x_vec = amp_x(:);
 
     fig = new_figure();
     hold on; box on; grid on;
-    for q_idx = 1:numel(q3.Q_values)
-        plot(q3.f0_values, amp_x(q_idx, :), '-o', 'Color', colors(q_idx, :), ...
-            'LineWidth', 2.0, 'DisplayName', sprintf('$Q=%g$', q3.Q_values(q_idx)));
-    end
-    xlabel('$\tilde{f}_0$', 'FontSize', 15);
-    ylabel('$A_{\tilde{x}}$', 'FontSize', 15);
+    plot(Qf0_vec, amp_v_vec, 'ro', 'MarkerSize', 7, 'LineWidth', 1.5, ...
+        'DisplayName', '$A_{\tilde{v}}$');
+    plot(Qf0_vec, amp_x_vec, 'bs', 'MarkerSize', 7, 'LineWidth', 1.5, ...
+        'DisplayName', '$A_{\tilde{x}}$');
+    plot([0, max(Qf0_vec)], [0, max(Qf0_vec)], 'k--', 'LineWidth', 1.5, ...
+        'DisplayName', '$A_{\tilde{v}}=Q\tilde{f}_0$');
+    xlabel('$Q\tilde{f}_0$', 'FontSize', 15);
+    ylabel('Final amplitude', 'FontSize', 15);
     legend('Location', 'northwest');
-    export_figure(fig, out_dir, 'hw6_q3_autoresonance_force_sweep.svg');
+    export_figure(fig, out_dir, 'hw6_q3_autoresonance_qf0_collapse.svg');
 
     fig = new_figure();
-    hold on; box on; grid on;
-    for f_idx = 1:numel(q3.f0_values)
-        plot(q3.Q_values, amp_x(:, f_idx), '-o', 'Color', colors(f_idx, :), ...
-            'LineWidth', 2.0, ...
-            'DisplayName', sprintf('$\\tilde{f}_0=%.2g$', q3.f0_values(f_idx)));
-    end
-    xlabel('$Q$', 'FontSize', 15);
-    ylabel('$A_{\tilde{x}}$', 'FontSize', 15);
-    legend('Location', 'northwest');
-    export_figure(fig, out_dir, 'hw6_q3_autoresonance_q_sweep.svg');
-
-    fig = new_figure();
-    imagesc(q3.f0_values, q3.Q_values, amp_x);
+    imagesc(q3.f0_values, q3.Q_values, amp_v);
     set(gca, 'YDir', 'normal');
     colorbar;
     xlabel('$\tilde{f}_0$', 'FontSize', 15);
     ylabel('$Q$', 'FontSize', 15);
-    title('Final displacement amplitude', 'FontSize', 14);
+    title('$A_{\tilde{v}}$', 'FontSize', 14);
     export_figure(fig, out_dir, 'hw6_q3_autoresonance_final_amplitude.svg');
-
 end
 
-function plot_q3_frequency_response(config, out_dir, results)
+function plot_q3_frequency_response(config, out_dir, ~)
     q3 = config.q3;
-    response = find_autoresonance_response(results, ...
-        q3.freq_response_case(1), q3.freq_response_case(2));
-    trajectory = peak_frequency_trajectory(response);
+    Q = q3.freq_response_case(1);
+    f0_tilde = q3.freq_response_case(2);
+    t_end = q3.freq_response_t_end;
 
-    [omega_backbone, amp_x_backbone, amp_v_backbone] = duffing_backbone_curve();
+    fprintf('Frequency-response figure: Q=%g, f0=%g, t_end=%g\n', Q, f0_tilde, t_end);
+    response = simulate_autoresonance(Q, f0_tilde, q3.y0, t_end, ...
+        config.n_peaks, config.peak_tol);
+    trajectory = peak_frequency_trajectory( ...
+        response, q3.peak_window, q3.freq_response_peak_skip);
+
+    amp_x_lo = max(0.01, min(trajectory.amp_x) * 0.9);
+    amp_x_hi = max(trajectory.amp_x) * 1.05;
+    [omega_backbone, amp_x_backbone, amp_v_backbone] = ...
+        duffing_backbone_curve(amp_x_lo, amp_x_hi);
+
+    omega_lo = min([trajectory.omega_v(:); trajectory.omega_x(:); omega_backbone(1)]);
+    omega_hi = max([trajectory.omega_v(:); trajectory.omega_x(:); omega_backbone(end)]);
 
     fig = new_figure();
+    yyaxis left;
     hold on; box on; grid on;
-    plot(trajectory.omega_x, trajectory.amp_x, 'b-', 'LineWidth', 2.2, ...
-        'DisplayName', 'Autoresonance trajectory');
-    plot(omega_backbone, amp_x_backbone, 'k--', 'LineWidth', 1.8, ...
-        'DisplayName', 'Backbone');
-    xlabel('$\tilde{\omega}$', 'FontSize', 15);
-    ylabel('$A_{\tilde{x}}$', 'FontSize', 15);
-    title(sprintf('$Q=%g,\\ \\tilde{f}_0=%.2g$', ...
-        q3.freq_response_case(1), q3.freq_response_case(2)), 'FontSize', 14);
-    legend('Location', 'northwest');
-    export_figure(fig, out_dir, 'hw6_q3_displacement_frequency_response.svg');
-
-    fig = new_figure();
-    hold on; box on; grid on;
-    plot(trajectory.omega_v, trajectory.amp_v, 'r-', 'LineWidth', 2.2, ...
-        'DisplayName', 'Autoresonance trajectory');
-    plot(omega_backbone, amp_v_backbone, 'k--', 'LineWidth', 1.8, ...
-        'DisplayName', 'Backbone');
-    xlabel('$\tilde{\omega}$', 'FontSize', 15);
+    plot(trajectory.omega_v, trajectory.amp_v, 'r-', 'LineWidth', 2.4, ...
+        'DisplayName', 'Autoresonance, $A_{\tilde{v}}$');
+    plot(omega_backbone, amp_v_backbone, 'r--', 'LineWidth', 1.8, ...
+        'DisplayName', 'Backbone, $A_{\tilde{v}}$');
     ylabel('$A_{\tilde{v}}$', 'FontSize', 15);
-    title(sprintf('$Q=%g,\\ \\tilde{f}_0=%.2g$', ...
-        q3.freq_response_case(1), q3.freq_response_case(2)), 'FontSize', 14);
+
+    yyaxis right;
+    plot(trajectory.omega_x, trajectory.amp_x, 'b-', 'LineWidth', 2.0, ...
+        'DisplayName', 'Autoresonance, $A_{\tilde{x}}$');
+    plot(omega_backbone, amp_x_backbone, 'b--', 'LineWidth', 1.8, ...
+        'DisplayName', 'Backbone, $A_{\tilde{x}}$');
+    ylabel('$A_{\tilde{x}}$', 'FontSize', 15);
+
+    xlabel('$\tilde{\omega}$', 'FontSize', 15);
+    xlim([omega_lo - 0.04, omega_hi + 0.04]);
+    title(sprintf('$Q=%g,\\ Q\\tilde{f}_0=%.2g$', Q, Q * f0_tilde), 'FontSize', 14);
     legend('Location', 'northwest');
-    export_figure(fig, out_dir, 'hw6_q3_velocity_frequency_response.svg');
+    export_figure(fig, out_dir, 'hw6_q3_frequency_response.svg');
 end
 
 function response = find_autoresonance_response(results, Q, f0_tilde)
@@ -462,26 +475,65 @@ function response = simulate_autoresonance(Q, f0_tilde, y0, t_end, n_peaks, peak
     response.v_peaks = v_peaks;
 end
 
-function trajectory = peak_frequency_trajectory(response)
-    min_peaks = 4;
-    trajectory.omega_x = mean_instantaneous_frequency_series(response.t_x);
-    trajectory.amp_x = response.x_peaks(2:end);
-    trajectory.omega_v = mean_instantaneous_frequency_series(response.t_v);
-    trajectory.amp_v = response.v_peaks(2:end);
+function trajectory = peak_frequency_trajectory(response, window, skip)
+    if nargin < 3
+        skip = max(3, window);
+    end
+    [trajectory.omega_v, trajectory.amp_v] = peak_amplitude_frequency( ...
+        response.t_v, response.v_peaks, skip, window);
+    [trajectory.omega_x, trajectory.amp_x] = peak_amplitude_frequency( ...
+        response.t_x, response.x_peaks, skip, window);
+    [trajectory.omega_x, trajectory.amp_x] = trim_frequency_plateau( ...
+        trajectory.omega_x, trajectory.amp_x);
+end
 
-    if numel(trajectory.omega_x) < min_peaks
-        trajectory.omega_x = response.omega;
-        trajectory.amp_x = response.amp_x;
+function [omega, amp] = peak_amplitude_frequency(t_peaks, a_peaks, skip, window)
+    n = numel(t_peaks);
+    if n <= skip + window
+        omega = mean(2 * pi ./ diff(t_peaks));
+        amp = a_peaks(end);
+        return;
     end
 
-    if numel(trajectory.omega_v) < min_peaks
-        trajectory.omega_v = response.omega;
-        trajectory.amp_v = response.amp_v;
+    idx = (skip + window):n;
+    omega = zeros(numel(idx), 1);
+    amp = a_peaks(idx);
+
+    for k = 1:numel(idx)
+        i = idx(k);
+        omega(k) = 2 * pi * window / (t_peaks(i) - t_peaks(i - window));
     end
 end
 
-function [omega_backbone, amp_x_backbone, amp_v_backbone] = duffing_backbone_curve()
-    amp_x_backbone = linspace(0.01, 3.0, 300);
+function [omega, amp] = trim_frequency_plateau(omega, amp, tol)
+    if nargin < 3
+        tol = 1e-3;
+    end
+
+    if numel(omega) < 2
+        return;
+    end
+
+    last_increasing = find(diff(omega) > tol, 1, 'last');
+    if isempty(last_increasing)
+        keep = numel(omega);
+    else
+        keep = last_increasing + 1;
+    end
+
+    omega = omega(1:keep);
+    amp = amp(1:keep);
+end
+
+function [omega_backbone, amp_x_backbone, amp_v_backbone] = duffing_backbone_curve(amp_x_min, amp_x_max)
+    if nargin < 1
+        amp_x_min = 0.01;
+    end
+    if nargin < 2
+        amp_x_max = 3.0;
+    end
+
+    amp_x_backbone = linspace(amp_x_min, amp_x_max, 200);
     amp_v_backbone = amp_x_backbone .* sqrt(1 + 0.5 * amp_x_backbone.^2);
     omega_backbone = zeros(size(amp_x_backbone));
 
@@ -591,15 +643,6 @@ function omega = mean_instantaneous_frequency(peak_times, n_peaks)
     omega = mean(2 * pi ./ diff(recent_times));
 end
 
-function omega_series = mean_instantaneous_frequency_series(peak_times)
-    if numel(peak_times) < 3
-        omega_series = NaN;
-        return;
-    end
-
-    omega_series = 2 * pi ./ diff(peak_times);
-end
-
 function angle = wrap_to_pi(angle)
     angle = mod(angle + pi, 2 * pi) - pi;
 end
@@ -628,11 +671,33 @@ end
 
 %% Plot utilities
 function fig = new_figure()
-    fig = figure('Position', [100, 100, 600, 400]);
+    fig = figure('Position', [100, 100, 700, 400]);
     set(gca, 'FontSize', 12);
 end
 
 function export_figure(fig, out_dir, filename)
-    exportgraphics(fig, fullfile(out_dir, filename), 'ContentType', 'vector');
+    prepare_figure_for_export(fig);
+    filepath = fullfile(out_dir, filename);
+    fig.PaperPositionMode = 'auto';
+    print(fig, filepath, '-dsvg', '-painters');
     close(fig);
+end
+
+function prepare_figure_for_export(fig)
+    drawnow;
+    lgds = findobj(fig, 'Type', 'Legend');
+    for idx = 1:numel(lgds)
+        fit_legend_box(lgds(idx));
+    end
+    drawnow;
+end
+
+function fit_legend_box(lgd)
+    lgd.Interpreter = 'latex';
+    lgd.ItemTokenSize = [45, 18];
+    lgd.Units = 'normalized';
+    pos = lgd.Position;
+    if pos(3) < 0.28
+        lgd.Position = [pos(1), pos(2), pos(3) * 1.55, pos(4)];
+    end
 end
