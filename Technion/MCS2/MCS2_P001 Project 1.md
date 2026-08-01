@@ -161,17 +161,34 @@ These terms let one mode exert a force on the other.
 >
 > The equations above are the conservative canonical analogy. The figures below use the paper-normalized averaged equations and the phenomenological opposite-relative-sign reconstruction documented in [[#^figure-p001-paper-analytical|the Figure 4 discussion]]. They illustrate normalized branch and phase behavior, but they are not direct time integrations of one conservative two-spring potential.
 
+The earlier plots used a shared external-detuning axis $\sigma_2$ for both modes. That made the partner appear to activate “at the same frequency” as the driven mode, which is misleading. Both modes are forced by the same drive, but they respond at different spectral lines:
+
+- under LME the LM responds at $\Omega$ while the HM responds at $2\Omega$;
+- under HME the HM responds at $\Omega$ while the LM responds at $\Omega/2$.
+
+The figures below therefore use each mode's own response frequency on the horizontal axis, normalized by $\omega_1$. With $\omega_1=1$ and $\omega_2=2$, the LME partner band sits near $2$, twice the driven LM band near $1$. Phase is plotted in degrees on $[-90^\circ,90^\circ]$, not as $\beta/\pi$.
+
 ![[MCS2_P001/p001_quadratic_spring_lme.svg|bookhue|700]]^figure-p001-spring-lme
->Dimensionless LME amplitude and phase response of the reconstructed quadratic-coupling slow flow. Solid segments are stable and dashed segments are unstable.
+>LME displacement amplitude and phase versus each mode's response frequency. The partner HM is plotted against $2\Omega/\omega_1$, so its activation appears near twice the LM frequency. Solid segments are stable and dashed segments are unstable.
 
->[!TODO] TODO: I thought I'm supposed to see the partner activation to happen at x2 the frequency of the LME. Are you using different normalization for them?
+An LDV measures velocity, not displacement. For a harmonic component
+$$
+A(t)=a\cos(\Omega_rt-\beta),
+$$
+the corresponding velocity is
+$$
+\dot A(t)=\Omega_r a\cos(\Omega_rt-(\beta-90^\circ)).
+$$
+Thus the velocity amplitude is $\Omega_r a$ and the velocity phase is $\beta-90^\circ$. Under LME, $\Omega_r=\Omega$ for the LM and $\Omega_r=2\Omega$ for the HM.
 
->[!TODO] TODO: There is no need to normalize the phase in the phase diagram. I want to see it from -90 to 90.
-
->[!TODO] TODO: For each of the graphs shown here showing the displacement amplitude/phase, create also graphs of the velocity amplitude/phase.
+![[MCS2_P001/p001_quadratic_spring_lme_velocity.svg|bookhue|700]]^figure-p001-spring-lme-velocity
+>LME velocity amplitude and phase versus each mode's response frequency. These are the quantities closest to an LDV spectral measurement of the same slow-flow states.
 
 ![[MCS2_P001/p001_quadratic_spring_hme.svg|bookhue|700]]^figure-p001-spring-hme
->Dimensionless HME amplitude and phase response of the reconstructed slow flow. The activated LM appears at half the drive frequency while the directly driven HM approaches a saturation branch.
+>HME displacement amplitude and phase. The driven HM is plotted against $\Omega/\omega_1$ and the partner LM against $(\Omega/2)/\omega_1$, so the subharmonic appears at half the drive frequency.
+
+![[MCS2_P001/p001_quadratic_spring_hme_velocity.svg|bookhue|700]]^figure-p001-spring-hme-velocity
+>HME velocity amplitude and phase. After activation, the HM velocity saturates while the LM velocity at $\Omega/2$ continues to grow.
 
 ## Harmonics are not yet internal resonance
 
@@ -427,7 +444,22 @@ The laser spot was placed away from the nodes of both participating modes so one
 
 A second vibrometer is not required to separate the modes because they occupy different frequency bands in the FFT. One spot with $\phi_{\mathrm{II}}(x_{\mathrm{spot}})\neq0$ and $\phi_{\mathrm{III}}(x_{\mathrm{spot}})\neq0$ measures both simultaneously. Two lasers could improve absolute modal-amplitude estimation, but would add optical alignment, calibration, synchronization, and access difficulties inside the vacuum setup. Sequentially moving one laser to two antinodes would lose simultaneity and could sample different nonlinear branches. The authors chose simultaneous relative comparison over separate antinode-calibrated measurements.
 
->[!TODO] TODO: So say they see a certain amplitude on the spot. How do they determine how much of it is due to the first mode and how much is due to the second mode?
+The LDV does **not** spatially unmix one total waveform into two modal displacements at the same frequency. Separation is spectral. At the measurement point,
+
+$$
+v(x_{\mathrm{spot}},t)
+\approx
+\phi_1(x_{\mathrm{spot}})\dot q_1(t)
++
+\phi_2(x_{\mathrm{spot}})\dot q_2(t).
+$$
+
+Under LME, $q_1$ is dominated by content near $\Omega$ and $q_2$ by content near $2\Omega$. The FFT therefore produces two distinct peaks:
+
+- the spectral line at $\Omega$ reports $\lvert\phi_1(x_{\mathrm{spot}})\rvert$ times the LM velocity amplitude;
+- the spectral line at $2\Omega$ reports $\lvert\phi_2(x_{\mathrm{spot}})\rvert$ times the HM velocity amplitude.
+
+Under HME the same idea applies with peaks at $\Omega$ and $\Omega/2$. Because the modes live in different frequency bins, there is no need to solve a spatial inverse problem from a single total amplitude. What remains unknown without calibrated mode-shape values at the spot is the conversion from those spectral peaks to the absolute modal coordinates $a_1$ and $a_2$; for identifying IR activation, relative growth of the partner peak is already sufficient.
 
 # Experimental evidence
 
@@ -1515,8 +1547,8 @@ The model does not reproduce:
 The project scripts are stored in [[MCS2_P001]].
 
 - `quadrature_envelope_demo.m` illustrates how two slow quadratures reconstruct one amplitude- and phase-modulated carrier.
-- `asadi_1to2_slowflow.m` solves the corrected LME steady states, classifies slow-flow stability, and generates the detuning, activation, energy-fraction, and dimensionless amplitude-phase figures.
-- `asadi_2to1_slowflow.m` solves the HME unactivated and activated branches and generates the detuning, saturation, energy-fraction, and dimensionless amplitude-phase figures.
+- `asadi_1to2_slowflow.m` solves the corrected LME steady states, classifies slow-flow stability, and generates the detuning, activation, energy-fraction, and displacement/velocity amplitude-phase figures.
+- `asadi_2to1_slowflow.m` solves the HME unactivated and activated branches and generates the detuning, saturation, energy-fraction, and displacement/velocity amplitude-phase figures.
 - `verify_asadi_derivations_symbolic.m` checks the conservative force pair, polar transformation, and LME steady-amplitude polynomial.
 - `generate_asadi_figures.m` runs the complete Asadi-only verification and figure suite.
 

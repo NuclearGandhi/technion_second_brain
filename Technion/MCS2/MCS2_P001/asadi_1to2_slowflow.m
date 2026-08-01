@@ -41,7 +41,8 @@ validate_family(frequency, 'LME frequency family');
 validate_family(force_sweep, 'LME force family');
 
 plot_frequency_response(frequency, out_dir);
-plot_amplitude_phase_response(frequency, out_dir);
+plot_amplitude_phase_response(frequency, par, out_dir);
+plot_velocity_amplitude_phase_response(frequency, par, out_dir);
 plot_force_response(force_sweep, out_dir);
 plot_energy_fraction(force_sweep, par, out_dir);
 
@@ -221,38 +222,99 @@ function plot_frequency_response(family, out_dir)
     export_svg(fig, out_dir, 'p001_asadi_1to2_detuning_response.svg');
 end
 
-function plot_amplitude_phase_response(family, out_dir)
-    beta1 = squeeze(atan2(family.state(2, :, :), family.state(1, :, :)));
-    beta2 = squeeze(atan2(family.state(4, :, :), family.state(3, :, :)));
-    beta2(family.a2 < 1e-10) = NaN;
+function plot_amplitude_phase_response(family, par, out_dir)
+    [freq_lm, freq_hm, beta1_deg, beta2_deg] = ...
+        lme_response_coordinates(family, par);
 
     fig = figure('Position', [100, 100, 900, 650], 'Color', 'w');
     tiledlayout(2, 2, 'TileSpacing', 'compact');
 
     ax1 = nexttile;
-    plot_branches(ax1, family.parameter, family.a1, family.stable, [0.80, 0.12, 0.12]);
+    plot_branches(ax1, freq_lm, family.a1, family.stable, [0.80, 0.12, 0.12]);
     ylabel(ax1, '$a_1$ (driven LM)');
-    title(ax1, 'Dimensionless LME amplitude');
+    title(ax1, 'LME displacement amplitude');
 
     ax2 = nexttile;
-    plot_branches(ax2, family.parameter, family.a2, family.stable, [0.10, 0.35, 0.85]);
+    plot_branches(ax2, freq_hm, family.a2, family.stable, [0.10, 0.35, 0.85]);
     ylabel(ax2, '$a_2$ (partner HM)');
-    title(ax2, 'Partner activation');
+    title(ax2, 'Partner activation at $2\Omega$');
 
     ax3 = nexttile;
-    plot_phase_branches(ax3, family.parameter, beta1, family.stable, [0.80, 0.12, 0.12]);
-    xlabel(ax3, 'External detuning $\sigma_2$');
-    ylabel(ax3, '$\beta_1/\pi$');
-    title(ax3, 'LM phase relative to drive');
+    plot_phase_branches(ax3, freq_lm, beta1_deg, family.stable, ...
+        [0.80, 0.12, 0.12], [-90, 90]);
+    xlabel(ax3, 'LM response frequency $\Omega/\omega_1$');
+    ylabel(ax3, '$\beta_1$ (deg)');
+    title(ax3, 'LM displacement phase');
 
     ax4 = nexttile;
-    plot_phase_branches(ax4, family.parameter, beta2, family.stable, [0.10, 0.35, 0.85]);
-    xlabel(ax4, 'External detuning $\sigma_2$');
-    ylabel(ax4, '$\beta_2/\pi$');
-    title(ax4, 'HM phase at $2\Omega$');
+    plot_phase_branches(ax4, freq_hm, beta2_deg, family.stable, ...
+        [0.10, 0.35, 0.85], [-90, 90]);
+    xlabel(ax4, 'HM response frequency $2\Omega/\omega_1$');
+    ylabel(ax4, '$\beta_2$ (deg)');
+    title(ax4, 'HM displacement phase');
 
     add_stability_legend(ax1);
     export_svg(fig, out_dir, 'p001_quadratic_spring_lme.svg');
+end
+
+function plot_velocity_amplitude_phase_response(family, par, out_dir)
+    [freq_lm, freq_hm, beta1_deg, beta2_deg] = ...
+        lme_response_coordinates(family, par);
+    Omega = par.omega1 + family.parameter;
+
+    % A = a cos(Omega t - beta) implies
+    % v = Omega a cos(Omega t - (beta - 90 deg)).
+    v1 = Omega .* family.a1;
+    v2 = (2 * Omega) .* family.a2;
+    phi1_deg = wrap_to_pm90(beta1_deg - 90);
+    phi2_deg = wrap_to_pm90(beta2_deg - 90);
+    phi2_deg(family.a2 < 1e-10) = NaN;
+
+    fig = figure('Position', [100, 100, 900, 650], 'Color', 'w');
+    tiledlayout(2, 2, 'TileSpacing', 'compact');
+
+    ax1 = nexttile;
+    plot_branches(ax1, freq_lm, v1, family.stable, [0.80, 0.12, 0.12]);
+    ylabel(ax1, '$\Omega a_1$ (driven LM)');
+    title(ax1, 'LME velocity amplitude');
+
+    ax2 = nexttile;
+    plot_branches(ax2, freq_hm, v2, family.stable, [0.10, 0.35, 0.85]);
+    ylabel(ax2, '$2\Omega a_2$ (partner HM)');
+    title(ax2, 'Partner velocity at $2\Omega$');
+
+    ax3 = nexttile;
+    plot_phase_branches(ax3, freq_lm, phi1_deg, family.stable, ...
+        [0.80, 0.12, 0.12], [-90, 90]);
+    xlabel(ax3, 'LM response frequency $\Omega/\omega_1$');
+    ylabel(ax3, '$\phi_1$ (deg)');
+    title(ax3, 'LM velocity phase');
+
+    ax4 = nexttile;
+    plot_phase_branches(ax4, freq_hm, phi2_deg, family.stable, ...
+        [0.10, 0.35, 0.85], [-90, 90]);
+    xlabel(ax4, 'HM response frequency $2\Omega/\omega_1$');
+    ylabel(ax4, '$\phi_2$ (deg)');
+    title(ax4, 'HM velocity phase');
+
+    add_stability_legend(ax1);
+    export_svg(fig, out_dir, 'p001_quadratic_spring_lme_velocity.svg');
+end
+
+function [freq_lm, freq_hm, beta1_deg, beta2_deg] = ...
+        lme_response_coordinates(family, par)
+    Omega = par.omega1 + family.parameter;
+    freq_lm = Omega;
+    freq_hm = 2 * Omega;
+    beta1_deg = rad2deg(squeeze(atan2( ...
+        family.state(2, :, :), family.state(1, :, :))));
+    beta2_deg = rad2deg(squeeze(atan2( ...
+        family.state(4, :, :), family.state(3, :, :))));
+    beta2_deg(family.a2 < 1e-10) = NaN;
+end
+
+function phase = wrap_to_pm90(phase)
+    phase = mod(phase + 90, 180) - 90;
 end
 
 function plot_force_response(family, out_dir)
@@ -304,12 +366,15 @@ function handles = plot_branches(ax, parameter, amplitude, stable, color)
     end
 end
 
-function plot_phase_branches(ax, parameter, phase, stable, color)
+function plot_phase_branches(ax, parameter, phase_deg, stable, color, phase_limits)
+    if nargin < 6
+        phase_limits = [-90, 90];
+    end
     hold(ax, 'on'); box(ax, 'on'); grid(ax, 'on');
-    for branch = 1:size(phase, 1)
-        stable_data = phase(branch, :) / pi;
+    for branch = 1:size(phase_deg, 1)
+        stable_data = phase_deg(branch, :);
         stable_data(~stable(branch, :)) = NaN;
-        unstable_data = phase(branch, :) / pi;
+        unstable_data = phase_deg(branch, :);
         unstable_data(stable(branch, :)) = NaN;
         stable_data = break_phase_connections(stable_data);
         unstable_data = break_phase_connections(unstable_data);
@@ -319,7 +384,8 @@ function plot_phase_branches(ax, parameter, phase, stable, color)
             set([h1, h2], 'HandleVisibility', 'off');
         end
     end
-    ylim(ax, [-1, 1]);
+    ylim(ax, phase_limits);
+    yticks(ax, phase_limits(1):45:phase_limits(2));
 end
 
 function data = break_discontinuous_connections(data)
@@ -339,7 +405,7 @@ end
 
 function data = break_phase_connections(data)
     steps = abs(diff(data));
-    data([false, steps > 0.75]) = NaN;
+    data([false, steps > 75]) = NaN;
     data = break_discontinuous_connections(data);
 end
 

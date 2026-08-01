@@ -8,7 +8,7 @@ In the previous notes we mostly treated voltage-controlled electrostatic actuato
 
 The important point is that the suspended electrode is **floating**. It is conductive, so it has a single electric potential throughout its volume, but it is not directly wired to a voltage source. Its potential is determined by charge redistribution between the variable drive capacitance and the parasitic capacitance.
 
-![[MCS2_003 Floating Electrode Actuator 2026-05-19 18.32.20.excalidraw.svg]]^figure-floating-electrode-actuator
+![[MCS2_003 Floating Electrode Actuator 2026-05-19 18.32.20.excalidraw.svg|600]]^figure-floating-electrode-actuator
 >Floating electrode actuator.
 
 %%
