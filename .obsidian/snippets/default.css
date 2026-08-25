@@ -320,8 +320,8 @@ PDF only
   h1.__title__ {
     font-size: 2.102em !important;
     text-align: center;
-    margin-top: 320px;
-    margin-bottom: 160px;
+    /* margin-top: 320px; */
+    /* margin-bottom: 160px; */
     font-style: normal;
     font-weight: 400 !important;
   }
@@ -329,8 +329,8 @@ PDF only
   h1.__inner_title__ {
     font-size: 2.102em !important;
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    /* margin-top: 40px; */
+    /* margin-bottom: 40px; */
     font-style: normal;
     font-weight: 400 !important;
   }
@@ -370,7 +370,7 @@ PDF only
     font-family: "David", "Georgia", serif !important;
     --font-interface-override: "David", "Georgia", serif !important;
     --font-print: "David", "Georgia", serif !important;
-    --font-text-size: 14pt !important
+    --font-text-size: 12pt !important
   }
 
   table {
